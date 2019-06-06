@@ -1,0 +1,33 @@
+{
+  "name": "exoticca-ui",
+  "version": "1.0.0",
+  "description": "UI for Exoticca Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exoticcaengineering/exoticca-ui.git"
+  },
+  "author": "Exoticca Engineering",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/exoticcaengineering/exoticca-ui/issues"
+  },
+  "homepage": "https://github.com/exoticcaengineering/exoticca-ui#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.1.1",
+    "@storybook/addon-links": "^5.1.1",
+    "@storybook/addons": "^5.1.1",
+    "@storybook/react": "^5.1.1",
+    "babel-loader": "^8.0.6"
+  }
+}
