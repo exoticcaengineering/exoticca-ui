@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { StyledProps } from './Typography.types';
 
 export const StyledTypographyContainer = styled.div<StyledProps>`
-  font-family: ${({ fontFamily = 'inherit', theme }) =>
+  font-family: ${({ fontFamily = 'main', theme }) =>
     theme.typography.fontFamily[fontFamily]};
   font-size: ${({ theme, fontSize }) =>
     fontSize ? theme.typography.fontSize[fontSize] : 'inherit'};

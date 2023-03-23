@@ -29,4 +29,4 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   letterSpacing?: keyof LetterSpacing;
 }
 
-export interface StyledProps extends Omit<Props, 'component'> {}
+export interface StyledProps extends Omit<Props, 'dangerouslySetInnerHTML' | 'as'> {}
