@@ -1,5 +1,5 @@
 {
-  "name": "exoticca-ui",
+  "name": "@exoticcaengineering/exoticca-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
