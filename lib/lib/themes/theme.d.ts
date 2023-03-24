@@ -1,0 +1,11 @@
+import { DefaultTheme, Colors, FontFamily, FontSize, NewBreakpoints, FontWeight, LetterSpacing, ZIndex } from 'styled-components';
+export declare const fontFamily: FontFamily;
+export declare const letterSpacing: LetterSpacing;
+export declare const fontSize: FontSize;
+export declare const fontSizeBase = "16px";
+export declare const fontWeight: FontWeight;
+export declare const colors: Colors;
+export declare const newBreakpoints: NewBreakpoints;
+export declare const zIndex: ZIndex;
+export declare const themeDefault: DefaultTheme;
+export declare const GlobalStyleDefault: import("styled-components").GlobalStyleComponent<{}, DefaultTheme>;

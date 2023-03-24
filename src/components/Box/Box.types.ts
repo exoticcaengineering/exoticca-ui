@@ -1,4 +1,4 @@
-import { ComponentPropsBaseWithOptionalChildren } from '@/types/ComponentPropsBase';
+import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
 import { BorderRadius, BoxShadow, Colors } from 'styled-components';
 import * as CSS from 'csstype';
 export interface Props extends ComponentPropsBaseWithOptionalChildren {

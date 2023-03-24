@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { ComponentPropsBaseWithOptionalChildren } from '@/types/ComponentPropsBase';
+import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
 import {
   Colors,
   FontFamily,
