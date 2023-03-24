@@ -1,3 +1,4 @@
 node_modules
 .jest-test-results.json
 lib
+dist
