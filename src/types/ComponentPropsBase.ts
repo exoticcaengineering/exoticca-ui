@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface ComponentPropsBase {
+export interface ComponentPropsBase extends JSX.IntrinsicAttributes {
   id?: string;
   className?: string;
   testId?: string;

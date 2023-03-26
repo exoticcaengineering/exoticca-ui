@@ -22,7 +22,7 @@ const borderStyles = [
 ];
 
 export default {
-  title: 'Components/Box',
+  title: 'Components/UI/Box',
   component: Box,
   argTypes: {
     borderColor: {

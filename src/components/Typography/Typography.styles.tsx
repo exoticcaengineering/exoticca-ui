@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'src/utils/styled';
 import { StyledProps } from './Typography.types';
 
 export const StyledTypographyContainer = styled.div<StyledProps>`

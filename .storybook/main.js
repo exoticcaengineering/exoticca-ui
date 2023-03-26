@@ -8,15 +8,14 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "@storybook/addon-jest",
+    "@storybook/addon-interactions"
   ],
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack5"
   },
-  "features": {
-    "interactionsDebugger": true, // 👈 Enable playback controls
+  typescript: {
+    reactDocgen: 'react-docgen-typescript-plugin'
   },
   webpackFinal: async (config) => {
     config.resolve.plugins = [
@@ -25,30 +24,8 @@ module.exports = {
         extensions: config.resolve.extensions,
       }),
     ];
-        // disable whatever is already set to load SVGs
-        config.module.rules
-        .filter(rule => rule.test.test('.svg'))
-        .forEach(rule => rule.exclude = /\.svg$/i);
+        
   
-      // add SVGR instead
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack'
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'static/media/[path][name].[ext]'
-            }
-          }
-        ],
-        type: 'javascript/auto',
-        issuer: {
-          and: [/\.(ts|tsx|js|jsx|md|mdx)$/]
-        }
-      });
     return config;
   },
 }

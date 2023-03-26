@@ -11,7 +11,6 @@ export const parameters = {
   },
 }
 
-
 const withTheme = (Story) => {
   return (
     <ThemeProvider theme={themeDefault}>

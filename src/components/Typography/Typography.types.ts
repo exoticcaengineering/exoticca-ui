@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
+
 import {
   Colors,
   FontFamily,
@@ -8,6 +8,7 @@ import {
   FontWeight,
 } from 'styled-components';
 import { MouseEventHandler } from 'react';
+import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
 
 export interface Props extends ComponentPropsBaseWithOptionalChildren {
   fontSize?: keyof FontSize;
@@ -29,4 +30,4 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   letterSpacing?: keyof LetterSpacing;
 }
 
-export interface StyledProps extends Omit<Props, 'dangerouslySetInnerHTML' | 'as'> {}
+export interface StyledProps extends Omit<Props, 'component'> {}
