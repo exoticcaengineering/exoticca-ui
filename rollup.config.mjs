@@ -4,11 +4,12 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 
 import packageJson from "./package.json" assert { type: "json" };
+import  terser  from "@rollup/plugin-terser";
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 export default [
-  {  external: [
-        "styled-components"
-      ],
+  {  
+    external: ['react-dom'],
     input: "src/index.ts",
     output: [
       {
@@ -23,9 +24,11 @@ export default [
       },
     ],
     plugins: [
+      peerDepsExternal(),
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      terser()
     ],
   },
   {
