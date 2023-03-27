@@ -2,9 +2,6 @@ import { mapCssPxValue } from 'src/utils/mapCssPxValue';
 import styled from 'src/utils/styled';
 import { StyleProps } from './Box.types';
 
-
-
-
 export const StyledBoxWrapper = styled.div<StyleProps>`
   background: ${({ theme, background = 'transparent' }) =>
     theme.colors[background]};

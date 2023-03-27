@@ -13,7 +13,7 @@ export default {
 export const FontWeight: ComponentStory<typeof Typography> = () => (
   <>
     {(Object.keys(fontWeight) as Array<keyof FontWeightType>).map((key) => (
-      <Box boxShadow="s" padding={[2]} gutterBottom={2}>
+      <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
         <Typography fontWeight={key}>
           theme.typography.fontWeight.{key}:
         </Typography>

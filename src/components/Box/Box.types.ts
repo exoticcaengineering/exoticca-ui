@@ -12,15 +12,14 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   padding?: number | number[];
 }
 
-export interface StyleProps
-  extends Pick<
-    Partial<Props>,
-    | 'background'
-    | 'borderRadius'
-    | 'borderColor'
-    | 'gutterBottom'
-    | 'boxShadow'
-    | 'padding'
-    | 'borderWidth'
-    | 'borderStyle'
-  > {}
+export type StyleProps = Pick<
+  Partial<Props>,
+  | 'background'
+  | 'borderRadius'
+  | 'borderColor'
+  | 'gutterBottom'
+  | 'boxShadow'
+  | 'padding'
+  | 'borderWidth'
+  | 'borderStyle'
+>;

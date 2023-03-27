@@ -17,7 +17,7 @@ const TypographyContainer: FC<TypographyContainerProps> = ({ fontFamily }) => {
   return (
     <>
       {fontFamilies.map((key) => (
-        <Box boxShadow="s" padding={[2]} gutterBottom={2}>
+        <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
           <Typography fontFamily={key} gutterBottom={1}>
             theme.typography.fontFamily{key}:
           </Typography>

@@ -21,5 +21,3 @@ export const Typography: FC<Props> = ({
     </StyledTypographyContainer>
   );
 };
-
-

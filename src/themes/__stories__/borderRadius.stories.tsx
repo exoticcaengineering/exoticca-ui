@@ -16,7 +16,12 @@ const borderRadiusArray = Object.keys(themeDefault.borderRadius) as Array<
 export const BorderRadius: ComponentStory<typeof Box> = () => (
   <>
     {borderRadiusArray.map((radius) => (
-      <Box borderRadius={radius} background="exoticcaLogo" gutterBottom={2}>
+      <Box
+        borderRadius={radius}
+        background="exoticcaLogo"
+        gutterBottom={2}
+        key={radius}
+      >
         <Typography align="center">theme.borderRadius.{radius}:</Typography>
         <Typography align="center">
           {themeDefault.borderRadius[radius]}
