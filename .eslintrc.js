@@ -24,5 +24,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     'prettier/prettier': ['error'],
+    '@typescript-eslint/no-empty-interface': 'off',
   },
 };
