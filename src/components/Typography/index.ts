@@ -1,2 +1,2 @@
 export { Typography } from './Typography';
-export * from './Typography.types';
+export {Props as TypographyProps} from './Typography.types';

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { withThemeProvider } from 'src/utils/withThemeProvider';
+
 import { StyledTypographyContainer } from './Typography.styles';
 import { Props } from './Typography.types';
 
@@ -23,4 +23,3 @@ export const Typography: FC<Props> = ({
 };
 
 
-export default withThemeProvider(Typography)

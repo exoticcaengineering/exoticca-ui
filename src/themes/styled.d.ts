@@ -355,7 +355,7 @@ declare module 'styled-components' {
   export type BoxShadow = Record<BoxShadowType, string>;
   export type Duration = Record<DurationType, string>;
   export type ZIndex = Record<ZIndexType, number>;
-  interface Typography {
+  interface Font {
     fontFamily: FontFamily;
     fontSize: FontSize;
     fontSizeBase: string;
@@ -372,7 +372,7 @@ declare module 'styled-components' {
     base: Base;
     breakpoints: Breakpoints;
     newBreakpoints: NewBreakpoints;
-    typography: Typography;
+    typography: Font;
     colors: Colors;
     borderRadius: BorderRadius;
     boxShadow: BoxShadow;
