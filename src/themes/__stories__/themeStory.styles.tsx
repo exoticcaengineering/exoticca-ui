@@ -1,5 +1,5 @@
 import { Box } from 'src/components/Box';
-import styled, { keyframes } from 'styled-components';
+import styled, { Duration, keyframes } from 'styled-components';
 
 const move = keyframes`
  0% { left: 0px; }
@@ -22,7 +22,7 @@ export const StyledColorWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-export const StyledAnimationDot = styled.div<{ durationKey: string }>`
+export const StyledAnimationDot = styled.div<{ durationKey: keyof Duration }>`
   width: 25px;
   height: 25px;
   border-radius: ${({ theme }) => theme.borderRadius.rounded};
