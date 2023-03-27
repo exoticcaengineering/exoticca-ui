@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box } from 'src/components/ui/Box';
+import { Box } from 'src/components/Box';
 import { StyledProps } from './LandingBox.types';
 
 export const StyledWrapper = styled(Box)<StyledProps>`
