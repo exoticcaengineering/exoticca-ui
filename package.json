@@ -2,13 +2,14 @@
   "name": "@exoticcaengineering/exoticca-ui",
   "version": "1.0.0",
   "private": true,
+  "author": "exoticcaengineering",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
