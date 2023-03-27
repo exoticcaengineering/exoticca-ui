@@ -59,7 +59,7 @@ const textDecorations = [
 const fontStyles = ['normal', 'italic', 'oblique'];
 
 export default {
-  title: 'Components/UI/Typography',
+  title: 'Components/Typography',
   component: Typography,
   argTypes: {
     fontFamily: {

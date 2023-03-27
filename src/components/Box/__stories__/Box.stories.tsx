@@ -22,7 +22,7 @@ const borderStyles = [
 ];
 
 export default {
-  title: 'Components/UI/Box',
+  title: 'Components/Box',
   component: Box,
   argTypes: {
     borderColor: {
@@ -61,6 +61,7 @@ Base.play = async ({ canvasElement }) => {
   await expect(
     canvas.getByText('Box component works as a container'),
   ).toBeInTheDocument();
+  await expect(canvas.getByTestId('basic-box')).toHaveStyle('display: block');
 };
 
 export const WithBorder = Template.bind({});

@@ -3,7 +3,7 @@ import { Typography } from 'src/components/Typography';
 import { LandingBox } from '../LandingBox';
 
 export default {
-  title: 'Components/UI/LandingBox',
+  title: 'Components/LandingBox',
   component: LandingBox,
 } as ComponentMeta<typeof LandingBox>;
 
