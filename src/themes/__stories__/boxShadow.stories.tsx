@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
-import { BoxShadow as BoxShadowType } from 'styled-components';
+import { BoxShadow as BoxShadowType } from 'src/types/theme';
 import { themeDefault } from '../theme';
 
 export default {

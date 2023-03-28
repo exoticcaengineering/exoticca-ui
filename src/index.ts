@@ -1,3 +1,4 @@
 export * from './components';
 export * from './themes';
-export * from 'styled-components';
+export * from './types';
+export { ThemeProvider } from 'styled-components';

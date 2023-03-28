@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FC } from 'react';
 import { Typography } from 'src/components/Typography';
-import { FontFamily, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { FontFamily } from 'src/types/theme';
 import { themeJournaway } from '../themeJournaway';
 import { themePromoland } from '../themePromoland';
 import { themeSecretEscapes } from '../themeSecretEscapes';

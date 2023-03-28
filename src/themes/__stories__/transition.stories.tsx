@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
-import { Duration as DurationType } from 'styled-components';
+import { Duration as DurationType } from 'src/types/theme';
 
 import { themeDefault } from '../theme';
 import { StyledAnimationDot, StyledDurationWrapper } from './themeStory.styles';

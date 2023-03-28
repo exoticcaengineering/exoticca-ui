@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from 'src/components/Box';
 
 import { Typography } from 'src/components/Typography';
-import { FontWeight as FontWeightType } from 'styled-components';
+import { FontWeight as FontWeightType } from 'src/types/theme';
 import { fontWeight } from '../theme';
 
 export default {

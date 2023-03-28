@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from 'src/components/Box';
 
 import { Typography } from 'src/components/Typography';
-import { ZIndex as ZIndexType } from 'styled-components';
+import { ZIndex as ZIndexType } from 'src/types/theme';
 
 import { zIndex } from '../theme';
 

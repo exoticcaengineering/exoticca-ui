@@ -1,5 +1,5 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { Colors } from 'styled-components';
+import { Colors } from 'src/types/theme';
 import * as CSS from 'csstype';
 
 export interface Props extends ComponentPropsBase {

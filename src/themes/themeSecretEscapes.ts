@@ -1,9 +1,6 @@
-import {
-  createGlobalStyle,
-  DefaultTheme,
-  Colors,
-  FontFamily,
-} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+
+import { Colors, FontFamily, Theme } from 'src/types/theme';
 import { GlobalStyleDefaultCss } from './global.css';
 
 import { colors as colorsDefault, themeDefault } from './theme';
@@ -48,7 +45,7 @@ export const colors: Colors = {
   textFooterColorLight: 'rgba(255, 255, 255, 0.36)',
 };
 
-export const themeSecretEscapes: DefaultTheme = {
+export const themeSecretEscapes: Theme = {
   ...themeDefault,
   typography: {
     ...themeDefault.typography,

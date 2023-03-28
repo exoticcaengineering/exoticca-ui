@@ -4,7 +4,7 @@ import { Typography } from 'src/components/Typography';
 import {
   Breakpoints as BreakpointsType,
   NewBreakpoints as NewBreakpointsType,
-} from 'styled-components';
+} from 'src/types/theme';
 import { themeDefault } from '../theme';
 
 export default {

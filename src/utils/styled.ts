@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import styled from 'styled-components';
 
-// @ts-ignore
-const MyStyled: typeof styled = typeof styled === 'function' ? styled : styled.default;
+const MyStyled: typeof styled =
+  // @ts-ignore
+  typeof styled === 'function' ? styled : styled.default;
 
 export default MyStyled;

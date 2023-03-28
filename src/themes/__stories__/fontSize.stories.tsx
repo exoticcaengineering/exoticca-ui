@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from 'src/components/Box';
 
 import { Typography } from 'src/components/Typography';
-import { FontSize as FontSizeType } from 'styled-components';
+import { FontSize as FontSizeType } from 'src/types/theme';
 import { fontSize } from '../theme';
 
 export default {

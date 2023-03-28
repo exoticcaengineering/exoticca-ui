@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
-import { BorderRadius as BorderRadiusType } from 'styled-components';
+import { BorderRadius as BorderRadiusType } from 'src/types/theme';
 
 import { themeDefault } from '../theme';
 export default {

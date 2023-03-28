@@ -1,6 +1,7 @@
+import { createGlobalStyle } from 'styled-components';
+
 import {
-  createGlobalStyle,
-  DefaultTheme,
+  Theme,
   Breakpoints,
   Colors,
   FontFamily,
@@ -14,7 +15,7 @@ import {
   Duration,
   LetterSpacing,
   ZIndex,
-} from 'styled-components';
+} from 'src/types/theme';
 
 import { GlobalStyleDefaultCss } from './global.css';
 
@@ -399,7 +400,7 @@ const boxShadow: BoxShadow = {
 
 const spacingBaseUnit = 8;
 
-const mapSpacingValue: MapSpacingValue = (...args) => {
+const mapSpacingValue: MapSpacingValue = (...args: number[]) => {
   const length = args.length;
   if (length < 1 || length > 4) return '0px';
   return args.map((space) => `${space * spacingBaseUnit}px`).join(' ');
@@ -428,7 +429,7 @@ export const zIndex: ZIndex = {
   level9: 1100,
   level10: 1200,
 };
-export const themeDefault: DefaultTheme = {
+export const themeDefault: Theme = {
   breakpoints,
   newBreakpoints,
   typography: {

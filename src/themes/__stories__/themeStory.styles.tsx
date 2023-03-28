@@ -1,5 +1,6 @@
 import { Box } from 'src/components/Box';
-import styled, { Duration, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { Duration } from 'src/types/theme';
 
 const move = keyframes`
  0% { left: 0px; }

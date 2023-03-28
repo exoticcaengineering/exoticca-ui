@@ -1,5 +1,5 @@
 import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
-import { BorderRadius, BoxShadow, Colors } from 'styled-components';
+import { BorderRadius, BoxShadow, Colors } from 'src/types/theme';
 import * as CSS from 'csstype';
 export interface Props extends ComponentPropsBaseWithOptionalChildren {
   background?: keyof Colors;

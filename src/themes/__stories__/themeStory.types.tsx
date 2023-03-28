@@ -1,4 +1,4 @@
-import { Colors, FontFamily } from 'styled-components';
+import { Colors, FontFamily } from 'src/types/theme';
 
 export interface ColorBlockProps {
   colorName: keyof Colors;

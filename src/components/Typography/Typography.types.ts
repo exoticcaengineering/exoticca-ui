@@ -6,7 +6,7 @@ import {
   LetterSpacing,
   FontSize,
   FontWeight,
-} from 'styled-components';
+} from 'src/types/theme';
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
 
