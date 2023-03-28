@@ -313,6 +313,7 @@ type BorderRadiusType =
   | 'rounded';
 
 type BoxShadowType = 'none' | 'xs' | 's';
+type TextShadowType = 'none' | 'xs' | 's' | 'm';
 
 type DurationType =
   | 'shortest'
@@ -346,6 +347,7 @@ export type NewPalette = Record<NewPaletteType, string>;
 export type Colors = Record<ColorsType, string>;
 export type BorderRadius = Record<BorderRadiusType, string>;
 export type BoxShadow = Record<BoxShadowType, string>;
+export type TextShadow = Record<TextShadowType, string>;
 export type Duration = Record<DurationType, string>;
 export type ZIndex = Record<ZIndexType, number>;
 interface Font {
@@ -368,6 +370,7 @@ export interface Theme {
   colors: Colors;
   borderRadius: BorderRadius;
   boxShadow: BoxShadow;
+  textShadow: TextShadow;
   spacing: MapSpacingValue;
   transition: Transition;
   zIndex: ZIndex;

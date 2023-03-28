@@ -15,6 +15,7 @@ import {
   Duration,
   LetterSpacing,
   ZIndex,
+  TextShadow,
 } from 'src/types/theme';
 
 import { GlobalStyleDefaultCss } from './global.css';
@@ -398,6 +399,13 @@ const boxShadow: BoxShadow = {
   s: '0 2px 8px 0 rgba(0, 0, 0, 0.2)',
 };
 
+const textShadow: TextShadow = {
+  none: 'none',
+  xs: '0px 2px 2px rgba(0, 0, 0, 0.15)',
+  s: '0px 2px 10px rgba(0, 0, 0, 0.69)',
+  m: '0px 2px 16px rgba(0, 0, 0, 0.7)',
+};
+
 const spacingBaseUnit = 8;
 
 const mapSpacingValue: MapSpacingValue = (...args: number[]) => {
@@ -442,6 +450,7 @@ export const themeDefault: Theme = {
   colors,
   borderRadius,
   boxShadow,
+  textShadow,
   spacing: mapSpacingValue,
   transition: {
     duration,
