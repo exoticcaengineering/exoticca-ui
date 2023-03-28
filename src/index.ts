@@ -1,3 +1,3 @@
 export * from './components';
 export * from './themes';
-export * from 'styled-components';
+export { Theme } from 'styled-components';
