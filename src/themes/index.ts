@@ -1,4 +1,7 @@
-export { themeDefault } from './theme';
-export { themeJournaway } from './themeJournaway';
-export { themePromoland } from './themePromoland';
-export { themeSecretEscapes } from './themeSecretEscapes';
+export { themeDefault, GlobalStyleDefault } from './theme';
+export { themeJournaway, GlobalStyleJournaway } from './themeJournaway';
+export { themePromoland, GlobalStylePromoland } from './themePromoland';
+export {
+  themeSecretEscapes,
+  GlobalStyleSecretEscapes,
+} from './themeSecretEscapes';

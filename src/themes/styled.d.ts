@@ -2,8 +2,6 @@
 import 'styled-components';
 import {} from 'styled-components/cssprop';
 
-type BaseType = 'gridSize' | 'gutterWidth' | 'outerMargin';
-
 type BreakpointsType = 'xs' | 'ms' | 'sm' | 'md' | 'mdLegacy' | 'lg' | 'xl';
 
 type NewBreakpointsType =
@@ -342,7 +340,6 @@ type ZIndexType =
   | 'level9'
   | 'level10';
 declare module 'styled-components' {
-  export type Base = Record<BaseType, number>;
   export type Breakpoints = Record<BreakpointsType, string>;
   export type NewBreakpoints = Record<NewBreakpointsType, string>;
   export type FontFamily = Record<FontFamilyType, string>;
@@ -369,7 +366,6 @@ declare module 'styled-components' {
 
   export type MapSpacingValue = (...args: number[]) => string;
   export interface DefaultTheme {
-    base: Base;
     breakpoints: Breakpoints;
     newBreakpoints: NewBreakpoints;
     typography: Font;

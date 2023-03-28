@@ -1,7 +1,6 @@
 import {
   createGlobalStyle,
   DefaultTheme,
-  Base,
   Breakpoints,
   Colors,
   FontFamily,
@@ -18,12 +17,6 @@ import {
 } from 'styled-components';
 
 import { GlobalStyleDefaultCss } from './global.css';
-
-const base: Base = {
-  gridSize: 12,
-  gutterWidth: 1,
-  outerMargin: 2,
-};
 
 export const fontFamily: FontFamily = {
   main: `'Red Hat Text', sans-serif`,
@@ -436,7 +429,6 @@ export const zIndex: ZIndex = {
   level10: 1200,
 };
 export const themeDefault: DefaultTheme = {
-  base,
   breakpoints,
   newBreakpoints,
   typography: {
