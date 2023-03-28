@@ -1,6 +1,6 @@
 import {
   createGlobalStyle,
-  Theme,
+  DefaultTheme,
   Colors,
   FontFamily,
 } from 'styled-components';
@@ -47,7 +47,7 @@ export const colors: Colors = {
   textFooterColorLight: 'rgba(255, 255, 255, 0.36)',
 };
 
-export const themeJournaway: Theme = {
+export const themeJournaway: DefaultTheme = {
   ...themeDefault,
   typography: {
     ...themeDefault.typography,

@@ -365,7 +365,7 @@ declare module 'styled-components' {
   }
 
   export type MapSpacingValue = (...args: number[]) => string;
-  export interface Theme {
+  export interface DefaultTheme {
     breakpoints: Breakpoints;
     newBreakpoints: NewBreakpoints;
     typography: Font;

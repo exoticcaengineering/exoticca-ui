@@ -1,4 +1,4 @@
-import { createGlobalStyle, Theme, Colors } from 'styled-components';
+import { createGlobalStyle, DefaultTheme, Colors } from 'styled-components';
 import { GlobalStyleDefaultCss } from './global.css';
 import { colors as colorsDefault, themeDefault } from './theme';
 
@@ -32,7 +32,7 @@ export const colors: Colors = {
   textFooterColorLight: 'rgba(255, 255, 255, 0.36)',
 };
 
-export const themePromoland: Theme = {
+export const themePromoland: DefaultTheme = {
   ...themeDefault,
   colors,
 };
