@@ -23,7 +23,7 @@ const newBreakpointsArray = Object.keys(themeDefault.newBreakpoints) as Array<
 export const Breakpoint: ComponentStory<typeof Box> = () => (
   <>
     {breakpointsArray.map((breakpoint) => (
-      <Box boxShadow="s" padding={[2]} gutterBottom={2}>
+      <Box boxShadow="s" padding={[2]} gutterBottom={2} key={breakpoint}>
         <Typography align="center">theme.breakpoints.{breakpoint}:</Typography>
         <Typography align="center" color="exoticcaLogo">
           {themeDefault.breakpoints[breakpoint]}
@@ -36,7 +36,7 @@ export const Breakpoint: ComponentStory<typeof Box> = () => (
 export const NewBreakpoint: ComponentStory<typeof Box> = () => (
   <>
     {newBreakpointsArray.map((breakpoint) => (
-      <Box boxShadow="s" padding={[2]} gutterBottom={2}>
+      <Box boxShadow="s" padding={[2]} gutterBottom={2} key={breakpoint}>
         <Typography align="center">
           theme.newBreakpoints.{breakpoint}:
         </Typography>
