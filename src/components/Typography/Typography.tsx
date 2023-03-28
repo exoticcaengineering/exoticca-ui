@@ -5,7 +5,6 @@ import { Props } from './Typography.types';
 
 export const Typography: FC<Props> = ({
   children,
-  as = 'p',
   testId,
   className,
   ...props
@@ -14,7 +13,6 @@ export const Typography: FC<Props> = ({
     <StyledTypographyContainer
       className={className}
       data-testid={testId}
-      as={as}
       {...props}
     >
       {children}
