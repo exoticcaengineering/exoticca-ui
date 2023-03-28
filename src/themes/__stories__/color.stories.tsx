@@ -39,7 +39,11 @@ const ColorPalette: FC<ColorPaletteProps> = ({ colors }) => {
   return (
     <StyledColorWrapper>
       {sortedColorKeys.map((colorName) => (
-        <ColorBlock colorName={colorName} colorValue={colors[colorName]} />
+        <ColorBlock
+          colorName={colorName}
+          colorValue={colors[colorName]}
+          key={colorName}
+        />
       ))}
     </StyledColorWrapper>
   );
