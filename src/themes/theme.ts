@@ -1,6 +1,6 @@
 import {
   createGlobalStyle,
-  DefaultTheme,
+  Theme,
   Breakpoints,
   Colors,
   FontFamily,
@@ -428,7 +428,7 @@ export const zIndex: ZIndex = {
   level9: 1100,
   level10: 1200,
 };
-export const themeDefault: DefaultTheme = {
+export const themeDefault: Theme = {
   breakpoints,
   newBreakpoints,
   typography: {
