@@ -30,6 +30,8 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
+      - run: git config --global user.name "GitHub CD bot"
+      - run: git config --global user.email "github-cd-bot@exoticca.com"
       - run: npm version ${{ github.event.release.tag_name }}
       - run: npm run build
       - run: npm publish
