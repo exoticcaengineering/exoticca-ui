@@ -289,6 +289,7 @@ type FontVariantType =
   | 'small3'
   | 'small4'
   | 'subtitle1'
+  | 'subtitle2'
   | 'tabletBannerTitle';
 
 type FontWeightType =

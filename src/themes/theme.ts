@@ -78,7 +78,8 @@ export const fontSize: FontSize = {
   h2: '1.875rem', // 30px
   tabletBannerTitle: '2rem', // 32px
   h3: '1.5rem', // 24px
-  subtitle1: '1.25rem', // 20px
+  subtitle1: '1.375rem', // 22px
+  subtitle2: '1.25rem', // 20px
   h4: '1.125rem', // 18px
   h5: '0.875rem', // 14px
   h6: '0.75rem', // 12px
