@@ -17,6 +17,7 @@ import {
   LetterSpacing,
   ZIndex,
   TextShadow,
+  PrintSize,
 } from 'src/types/theme';
 
 import { GlobalStyleDefaultCss, GlobalStyleNewBrandingCss } from './global.css';
@@ -101,13 +102,20 @@ export const fontSize: FontSize = {
   body1: '1rem', // 16px
   body2: '0.875rem', // 14px
   body3: '0.75rem', // 12px
-  body4: '8pt', // 10px, this value is only for pdf, print size
-  body5: '6pt', // 8px, this value is only for pdf, print size
   button1: '1.25rem', // 20px
   button2: '1rem', // 16px
   button3: '0.875rem', // 14px
   caption: '0.75rem', // 12px
   overline: '0.75rem', // 12px
+};
+
+export const printSize: PrintSize = {
+  heading3: '15pt', // 20px
+  body1: '12pt', // 16px
+  body2: '10.5pt', // 14px
+  body3: '9', // 12px
+  body4: '8pt', // 10px
+  body5: '6pt', // 8px
 };
 
 export const fontSizeBase = '16px';

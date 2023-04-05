@@ -276,7 +276,7 @@ type FontFamilyType =
   | 'YoutubeAd'
   | 'newBranding';
 
-type FontVariantType =
+type FontSizeType =
   | 'display'
   | 'h1'
   | 'h2'
@@ -300,13 +300,19 @@ type FontVariantType =
   | 'body1'
   | 'body2'
   | 'body3'
-  | 'body4'
-  | 'body5'
   | 'button1'
   | 'button2'
   | 'button3'
   | 'caption'
   | 'overline';
+
+type PrintSizeType =
+  | 'heading3'
+  | 'body1'
+  | 'body2'
+  | 'body3'
+  | 'body4'
+  | 'body5';
 
 type FontWeightType =
   | 'lighter'
@@ -359,7 +365,8 @@ type ZIndexType =
 export type Breakpoints = Record<BreakpointsType, string>;
 export type NewBreakpoints = Record<NewBreakpointsType, string>;
 export type FontFamily = Record<FontFamilyType, string>;
-export type FontSize = Record<FontVariantType, string>;
+export type FontSize = Record<FontSizeType, string>;
+export type PrintSize = Record<PrintSizeType, string>;
 export type FontWeight = Record<FontWeightType, number>;
 export type LetterSpacing = Record<LetterSpacingType, string>;
 export type LineHeight = Record<LineHeightType, number>;
