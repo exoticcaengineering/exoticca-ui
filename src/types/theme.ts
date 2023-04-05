@@ -10,6 +10,7 @@ type NewBreakpointsType =
   | 'desktopMAX';
 
 type RebrandPaletteType =
+  | 'polarNightLight'
   | 'polarNight'
   | 'arcticWind'
   | 'pacificOcean'
