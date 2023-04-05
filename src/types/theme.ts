@@ -290,7 +290,22 @@ type FontVariantType =
   | 'small4'
   | 'subtitle1'
   | 'subtitle2'
-  | 'tabletBannerTitle';
+  | 'tabletBannerTitle'
+  | 'display1'
+  | 'display2'
+  | 'heading1'
+  | 'heading2'
+  | 'heading3'
+  | 'body1'
+  | 'body2'
+  | 'body3'
+  | 'body4'
+  | 'body5'
+  | 'button1'
+  | 'button2'
+  | 'button3'
+  | 'caption'
+  | 'overline';
 
 type FontWeightType =
   | 'lighter'

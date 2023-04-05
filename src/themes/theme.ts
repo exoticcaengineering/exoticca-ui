@@ -68,9 +68,11 @@ export const letterSpacing: LetterSpacing = {
 // 38px = 2.375rem
 // 39px = 2.438rem
 // 40px = 2.5rem
+// 44px = 2.75rem
 // 46px = 2.875rem
 // 48px = 3rem
 // 52px = 3.25rem
+// 60px = 3.75rem
 
 export const fontSize: FontSize = {
   display: '2.875rem', // 46px
@@ -88,6 +90,22 @@ export const fontSize: FontSize = {
   small2: '0.625rem', // 10px
   small3: '0.5rem', // 8px
   small4: '0.375rem', // 6px
+  // new branding font size
+  display1: '3.75rem', // 60px
+  display2: '2.75rem', // 44px
+  heading1: '2rem', // 32px
+  heading2: '1.5rem', // 24px
+  heading3: '1.25rem', // 20px
+  body1: '1rem', // 16px
+  body2: '0.875rem', // 14px
+  body3: '0.75rem', // 12px
+  body4: '8pt', // 10px, this value is only for pdf, print size
+  body5: '6pt', // 8px, this value is only for pdf, print size
+  button1: '1.25rem', // 20px
+  button2: '1rem', // 16px
+  button3: '0.875rem', // 14px
+  caption: '0.75rem', // 12px
+  overline: '0.75rem', // 12px
 };
 
 export const fontSizeBase = '16px';
