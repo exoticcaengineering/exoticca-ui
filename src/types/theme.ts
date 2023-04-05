@@ -273,7 +273,8 @@ type FontFamilyType =
   | 'secondaryMedium'
   | 'tertiary'
   | 'tertiaryMedium'
-  | 'YoutubeAd';
+  | 'YoutubeAd'
+  | 'newBranding';
 
 type FontVariantType =
   | 'display'

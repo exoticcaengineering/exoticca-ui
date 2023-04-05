@@ -1,4 +1,8 @@
-export { themeDefault, GlobalStyleDefault } from './theme';
+export {
+  themeDefault,
+  GlobalStyleDefault,
+  GlobalStyleNewBranding,
+} from './theme';
 export { themeJournaway, GlobalStyleJournaway } from './themeJournaway';
 export { themePromoland, GlobalStylePromoland } from './themePromoland';
 export {

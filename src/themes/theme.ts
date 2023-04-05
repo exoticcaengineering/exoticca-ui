@@ -18,7 +18,7 @@ import {
   TextShadow,
 } from 'src/types/theme';
 
-import { GlobalStyleDefaultCss } from './global.css';
+import { GlobalStyleDefaultCss, GlobalStyleNewBrandingCss } from './global.css';
 
 export const fontFamily: FontFamily = {
   main: `'Red Hat Text', sans-serif`,
@@ -28,6 +28,7 @@ export const fontFamily: FontFamily = {
   tertiary: `'Playfair Display', serif`,
   tertiaryMedium: `'Playfair Display', serif`,
   YoutubeAd: `'DrukCond', sans-serif`,
+  newBranding: `'Oakes Grotesk', sans-serif`,
 };
 
 export const letterSpacing: LetterSpacing = {
@@ -479,4 +480,8 @@ export const themeDefault: Theme = {
 
 export const GlobalStyleDefault = createGlobalStyle`
  ${GlobalStyleDefaultCss}
+`;
+
+export const GlobalStyleNewBranding = createGlobalStyle`
+ ${GlobalStyleNewBrandingCss}
 `;
