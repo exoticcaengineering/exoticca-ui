@@ -13,6 +13,7 @@ export const fontFamily: FontFamily = {
   tertiary: 'Barlow Condensed, serif',
   tertiaryMedium: 'Barlow Condensed, serif',
   YoutubeAd: `'DrukCond', sans-serif`,
+  newBranding: `'Oakes Grotesk', sans-serif`,
 };
 
 export const colors: Colors = {

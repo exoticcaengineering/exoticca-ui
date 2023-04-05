@@ -6,12 +6,13 @@ import {
   LetterSpacing,
   FontSize,
   FontWeight,
+  PrintSize,
 } from 'src/types/theme';
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
 
 export interface Props extends ComponentPropsBaseWithOptionalChildren {
-  fontSize?: keyof FontSize;
+  fontSize?: keyof FontSize | keyof PrintSize;
   align?: CSS.Property.TextAlign;
   gutterBottom?: number;
   as?: keyof JSX.IntrinsicElements;
