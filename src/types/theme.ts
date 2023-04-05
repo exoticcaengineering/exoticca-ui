@@ -380,6 +380,7 @@ export type ZIndex = Record<ZIndexType, number>;
 interface Font {
   fontFamily: FontFamily;
   fontSize: FontSize;
+  printSize: PrintSize;
   fontSizeBase: string;
   fontWeight: FontWeight;
   letterSpacing: LetterSpacing;
