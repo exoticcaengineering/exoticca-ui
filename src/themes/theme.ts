@@ -16,6 +16,7 @@ import {
   LetterSpacing,
   ZIndex,
   TextShadow,
+  RebrandPalette,
 } from 'src/types/theme';
 
 import { GlobalStyleDefaultCss } from './global.css';
@@ -99,6 +100,15 @@ export const fontWeight: FontWeight = {
   semibold: 500,
   bold: 600,
   bolder: 700,
+};
+
+const rebrandPalette: RebrandPalette = {
+  polarNight: '#121212',
+  arcticWind: '#ffffff',
+  pacificOcean: '#68ACF8',
+  savageForest: '#67D071',
+  silentSavana: '#F8D447',
+  carribeanSunrise: '#F2773B',
 };
 
 const newPalette: NewPalette = {
@@ -220,7 +230,9 @@ const newPalette: NewPalette = {
 };
 
 export const colors: Colors = {
-  // 🎨 New Palette from 2021-Branding 🎨
+  // 🎨 New Palette from 2023-Branding 🎨
+  ...rebrandPalette,
+  // 🎨 Palette from 2021-Branding 🎨
   ...newPalette,
   transparent: 'transparent',
   emperor: '#535353',
