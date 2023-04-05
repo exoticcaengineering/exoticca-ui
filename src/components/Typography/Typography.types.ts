@@ -7,12 +7,14 @@ import {
   FontSize,
   FontWeight,
   PrintSize,
+  LineHeight,
 } from 'src/types/theme';
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
 
 export interface Props extends ComponentPropsBaseWithOptionalChildren {
-  fontSize?: keyof FontSize | keyof PrintSize;
+  fontSize?: keyof FontSize;
+  printSize?: keyof PrintSize;
   align?: CSS.Property.TextAlign;
   gutterBottom?: number;
   as?: keyof JSX.IntrinsicElements;
@@ -25,6 +27,7 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   onClick?: MouseEventHandler;
   fontStyle?: CSS.Property.FontStyle;
   fontFamily?: keyof FontFamily;
+  lineHeight?: keyof LineHeight;
   dangerouslySetInnerHTML?: {
     __html: string;
   };
