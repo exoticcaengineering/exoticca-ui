@@ -6,6 +6,7 @@ import {
   Colors,
   FontFamily,
   FontSize,
+  LineHeight,
   NewBreakpoints,
   NewPalette,
   FontWeight,
@@ -118,6 +119,12 @@ export const fontWeight: FontWeight = {
   semibold: 500,
   bold: 600,
   bolder: 700,
+};
+
+// lineHeight
+export const lineHeight: LineHeight = {
+  tight: 1.25,
+  normal: 1.5,
 };
 
 const newPalette: NewPalette = {
@@ -466,6 +473,7 @@ export const themeDefault: Theme = {
     fontWeight,
     letterSpacing,
     fontSizeBase,
+    lineHeight,
   },
   colors,
   borderRadius,

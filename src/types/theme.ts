@@ -318,6 +318,8 @@ type FontWeightType =
 
 type LetterSpacingType = 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
 
+type LineHeightType = 'tight' | 'normal'; // | 'loose';
+
 type BorderRadiusType =
   | 'none'
   | 'xs'
@@ -360,6 +362,7 @@ export type FontFamily = Record<FontFamilyType, string>;
 export type FontSize = Record<FontVariantType, string>;
 export type FontWeight = Record<FontWeightType, number>;
 export type LetterSpacing = Record<LetterSpacingType, string>;
+export type LineHeight = Record<LineHeightType, number>;
 export type NewPalette = Record<NewPaletteType, string>;
 export type Colors = Record<ColorsType, string>;
 export type BorderRadius = Record<BorderRadiusType, string>;
@@ -373,6 +376,7 @@ interface Font {
   fontSizeBase: string;
   fontWeight: FontWeight;
   letterSpacing: LetterSpacing;
+  lineHeight: LineHeight;
 }
 
 interface Transition {
