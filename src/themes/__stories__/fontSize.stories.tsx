@@ -17,9 +17,11 @@ const remStringToPx = (remString: string) => {
   return Number(numberString) * fontBase;
 };
 
+const fontSizes = Object.keys(fontSize) as Array<keyof FontSizeType>;
+
 export const FontSize: ComponentStory<typeof Typography> = () => (
   <>
-    {(Object.keys(fontSize) as Array<keyof FontSizeType>).map((key) => (
+    {fontSizes.map((key) => (
       <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
         <Typography fontSize={key}>theme.typography.fontSize.{key}:</Typography>
         <Typography fontSize={key} color="exoticcaLogo">

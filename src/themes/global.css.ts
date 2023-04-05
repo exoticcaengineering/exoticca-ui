@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { DefaultTheme, css } from 'styled-components';
 
 export const GlobalStyleDefaultCss = css`
   *,
@@ -178,5 +178,13 @@ export const GlobalStyleDefaultCss = css`
     font-weight: normal;
     font-style: normal;
     font-display: block;
+  }
+`;
+
+export const GlobalStyleNewBrandingCss = css`
+  ${GlobalStyleDefaultCss}
+  * {
+    font-family: ${({ theme }: { theme: DefaultTheme }) =>
+      `${theme.typography.fontFamily.newBranding} !important`}; // override default font-family
   }
 `;

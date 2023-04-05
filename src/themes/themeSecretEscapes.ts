@@ -13,6 +13,7 @@ export const fontFamily: FontFamily = {
   tertiary: 'QuatroItalic, serif',
   tertiaryMedium: 'QuatroMediumItalic, serif',
   YoutubeAd: `'DrukCond', sans-serif`,
+  newBranding: `'Oakes Grotesk', sans-serif`,
 };
 
 export const colors: Colors = {

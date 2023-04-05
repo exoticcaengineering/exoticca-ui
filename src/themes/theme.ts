@@ -6,6 +6,7 @@ import {
   Colors,
   FontFamily,
   FontSize,
+  LineHeight,
   NewBreakpoints,
   NewPalette,
   FontWeight,
@@ -17,9 +18,10 @@ import {
   ZIndex,
   TextShadow,
   RebrandPalette,
+  PrintSize,
 } from 'src/types/theme';
 
-import { GlobalStyleDefaultCss } from './global.css';
+import { GlobalStyleDefaultCss, GlobalStyleNewBrandingCss } from './global.css';
 
 export const fontFamily: FontFamily = {
   main: `'Red Hat Text', sans-serif`,
@@ -29,6 +31,7 @@ export const fontFamily: FontFamily = {
   tertiary: `'Playfair Display', serif`,
   tertiaryMedium: `'Playfair Display', serif`,
   YoutubeAd: `'DrukCond', sans-serif`,
+  newBranding: `'Oakes Grotesk', sans-serif`,
 };
 
 export const letterSpacing: LetterSpacing = {
@@ -69,9 +72,11 @@ export const letterSpacing: LetterSpacing = {
 // 38px = 2.375rem
 // 39px = 2.438rem
 // 40px = 2.5rem
+// 44px = 2.75rem
 // 46px = 2.875rem
 // 48px = 3rem
 // 52px = 3.25rem
+// 60px = 3.75rem
 
 export const fontSize: FontSize = {
   display: '2.875rem', // 46px
@@ -89,6 +94,29 @@ export const fontSize: FontSize = {
   small2: '0.625rem', // 10px
   small3: '0.5rem', // 8px
   small4: '0.375rem', // 6px
+  // new branding font size
+  display1: '3.75rem', // 60px
+  display2: '2.75rem', // 44px
+  heading1: '2rem', // 32px
+  heading2: '1.5rem', // 24px
+  heading3: '1.25rem', // 20px
+  body1: '1rem', // 16px
+  body2: '0.875rem', // 14px
+  body3: '0.75rem', // 12px
+  button1: '1.25rem', // 20px
+  button2: '1rem', // 16px
+  button3: '0.875rem', // 14px
+  caption: '0.75rem', // 12px
+  overline: '0.75rem', // 12px
+};
+
+export const printSize: PrintSize = {
+  heading3: '15pt', // 20px
+  body1: '12pt', // 16px
+  body2: '10.5pt', // 14px
+  body3: '9', // 12px
+  body4: '8pt', // 10px
+  body5: '6pt', // 8px
 };
 
 export const fontSizeBase = '16px';
@@ -109,6 +137,12 @@ const rebrandPalette: RebrandPalette = {
   savageForest: '#67D071',
   silentSavana: '#F8D447',
   carribeanSunrise: '#F2773B',
+};
+
+// lineHeight
+export const lineHeight: LineHeight = {
+  tight: 1.25,
+  normal: 1.5,
 };
 
 const newPalette: NewPalette = {
@@ -459,6 +493,7 @@ export const themeDefault: Theme = {
     fontWeight,
     letterSpacing,
     fontSizeBase,
+    lineHeight,
   },
   colors,
   borderRadius,
@@ -473,4 +508,8 @@ export const themeDefault: Theme = {
 
 export const GlobalStyleDefault = createGlobalStyle`
  ${GlobalStyleDefaultCss}
+`;
+
+export const GlobalStyleNewBranding = createGlobalStyle`
+ ${GlobalStyleNewBrandingCss}
 `;
