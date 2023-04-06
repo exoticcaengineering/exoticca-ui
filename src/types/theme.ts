@@ -16,7 +16,10 @@ type RebrandPaletteType =
   | 'pacificOcean'
   | 'savageForest'
   | 'silentSavana'
-  | 'carribeanSunrise';
+  | 'carribeanSunrise'
+  | 'success'
+  | 'pending'
+  | 'error';
 
 type NewPaletteType =
   // ExoticcaLogo
