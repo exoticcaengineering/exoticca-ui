@@ -10,6 +10,8 @@ export type IconSize =
 export interface Props extends ComponentPropsBase {
   icon: IconName;
   size?: IconSize;
+  fill?: string;
+  stroke?: string;
 }
 
 export interface StyledProps extends Omit<Props, 'icon'> {}

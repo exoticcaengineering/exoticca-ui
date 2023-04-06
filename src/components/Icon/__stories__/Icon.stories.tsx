@@ -10,9 +10,9 @@ export default {
   component: Icon,
   argTypes: {
     size: {
-      options: [24, 48, 72, 96, 120, 144],
+      options: ['small', 'regular', 'medium', 'large', 'xLarge', 'auto'],
       control: { type: 'radio' },
-      defaultValue: 72,
+      defaultValue: 'large',
     },
   },
 } as ComponentMeta<typeof Icon>;
@@ -23,7 +23,7 @@ export const Icons: ComponentStory<typeof Icon> = (args) => {
       {iconNames.map((iconName) => (
         <Box boxShadow="s" padding={[2]} background="cararra" key={iconName}>
           <Typography>{iconName}</Typography>
-          <Icon {...args} icon={iconName} />
+          <Icon {...args} icon={iconName} fill="savageForest" />
         </Box>
       ))}
     </StyledIconsWrapper>
