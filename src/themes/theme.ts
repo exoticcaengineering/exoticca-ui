@@ -17,6 +17,7 @@ import {
   LetterSpacing,
   ZIndex,
   TextShadow,
+  RebrandPalette,
   PrintSize,
 } from 'src/types/theme';
 
@@ -127,6 +128,19 @@ export const fontWeight: FontWeight = {
   semibold: 500,
   bold: 600,
   bolder: 700,
+};
+
+const rebrandPalette: RebrandPalette = {
+  polarNight: '#121212',
+  polarNightLight: '#E5E5E5',
+  arcticWind: '#ffffff',
+  pacificOcean: '#68ACF8',
+  savageForest: '#67D071',
+  silentSavana: '#F8D447',
+  carribeanSunrise: '#F2773B',
+  success: '#67D071',
+  pending: '#F8D447',
+  error: '#F2773B',
 };
 
 // lineHeight
@@ -254,7 +268,9 @@ const newPalette: NewPalette = {
 };
 
 export const colors: Colors = {
-  // 🎨 New Palette from 2021-Branding 🎨
+  // 🎨 New Palette from 2023-Branding 🎨
+  ...rebrandPalette,
+  // 🎨 Palette from 2021-Branding 🎨
   ...newPalette,
   transparent: 'transparent',
   emperor: '#535353',
@@ -428,6 +444,18 @@ const borderRadius: BorderRadius = {
   rounded: '100%',
 };
 
+const newBorderRadius: BorderRadius = {
+  none: '0px',
+  xs: '8px',
+  s: '12px',
+  m: '16px',
+  l: '24px',
+  xl: '32px',
+  xxl: '40px',
+  semiRounded: '100px',
+  rounded: '100%',
+};
+
 const boxShadow: BoxShadow = {
   none: 'none',
   xs: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
@@ -486,6 +514,7 @@ export const themeDefault: Theme = {
   },
   colors,
   borderRadius,
+  newBorderRadius,
   boxShadow,
   textShadow,
   spacing: mapSpacingValue,
