@@ -444,6 +444,18 @@ const borderRadius: BorderRadius = {
   rounded: '100%',
 };
 
+const newBorderRadius: BorderRadius = {
+  none: '0px',
+  xs: '8px',
+  s: '12px',
+  m: '16px',
+  l: '24px',
+  xl: '32px',
+  xxl: '40px',
+  semiRounded: '100px',
+  rounded: '100%',
+};
+
 const boxShadow: BoxShadow = {
   none: 'none',
   xs: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
@@ -501,6 +513,7 @@ export const themeDefault: Theme = {
   },
   colors,
   borderRadius,
+  newBorderRadius,
   boxShadow,
   textShadow,
   spacing: mapSpacingValue,

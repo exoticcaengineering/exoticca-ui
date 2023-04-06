@@ -411,6 +411,7 @@ export interface Theme {
   typography: Font;
   colors: Colors;
   borderRadius: BorderRadius;
+  newBorderRadius: BorderRadius;
   boxShadow: BoxShadow;
   textShadow: TextShadow;
   spacing: MapSpacingValue;
