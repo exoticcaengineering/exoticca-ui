@@ -4,8 +4,11 @@ import { StyledProps } from './Typography.types';
 export const StyledTypographyContainer = styled.p<StyledProps>`
   font-family: ${({ fontFamily = 'main', theme }) =>
     theme.typography.fontFamily[fontFamily]};
-  font-size: ${({ theme, fontSize }) =>
-    fontSize ? theme.typography.fontSize[fontSize] : 'inherit'};
+  font-size: ${({ theme, fontSize, printSize }) => {
+    if (fontSize) return theme.typography.fontSize[fontSize];
+    if (printSize) return theme.typography.printSize[printSize];
+    return 'inherit';
+  }};
   font-weight: ${({ theme, fontWeight = 'normal' }) =>
     theme.typography.fontWeight[fontWeight]};
   font-style: ${({ fontStyle = 'inherit' }) => fontStyle};
@@ -22,4 +25,6 @@ export const StyledTypographyContainer = styled.p<StyledProps>`
   cursor: ${({ cursor }) => cursor};
   letter-spacing: ${({ theme, letterSpacing = 'normal' }) =>
     theme.typography.letterSpacing[letterSpacing]};
+  line-height: ${({ theme, lineHeight = 'normal' }) =>
+    theme.typography.lineHeight[lineHeight]};
 `;

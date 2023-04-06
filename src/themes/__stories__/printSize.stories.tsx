@@ -21,10 +21,10 @@ export const PrintSize: ComponentStory<typeof Typography> = () => (
   <>
     {printSizes.map((key) => (
       <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
-        <Typography fontSize={key}>
+        <Typography printSize={key}>
           theme.typography.printSize.{key}:
         </Typography>
-        <Typography fontSize={key} color="exoticcaLogo">
+        <Typography printSize={key} color="exoticcaLogo">
           {`${printSize[key]}: ${ptStringToPx(printSize[key])}px`}
         </Typography>
       </Box>

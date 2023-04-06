@@ -506,6 +506,7 @@ export const themeDefault: Theme = {
   typography: {
     fontFamily,
     fontSize,
+    printSize,
     fontWeight,
     letterSpacing,
     fontSizeBase,
