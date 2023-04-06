@@ -9,6 +9,18 @@ type NewBreakpointsType =
   | 'desktopXL'
   | 'desktopMAX';
 
+type RebrandPaletteType =
+  | 'polarNightLight'
+  | 'polarNight'
+  | 'arcticWind'
+  | 'pacificOcean'
+  | 'savageForest'
+  | 'silentSavana'
+  | 'carribeanSunrise'
+  | 'success'
+  | 'pending'
+  | 'error';
+
 type NewPaletteType =
   // ExoticcaLogo
   | 'exoticcaLogo'
@@ -126,6 +138,7 @@ type NewPaletteType =
 
 type ColorsType =
   | NewPaletteType
+  | RebrandPaletteType
   | 'transparent'
   // 🎨 New Palette from 2021-Branding 🎨
   | 'emperor'
@@ -369,6 +382,7 @@ export type FontSize = Record<FontSizeType, string>;
 export type PrintSize = Record<PrintSizeType, string>;
 export type FontWeight = Record<FontWeightType, number>;
 export type LetterSpacing = Record<LetterSpacingType, string>;
+export type RebrandPalette = Record<RebrandPaletteType, string>;
 export type LineHeight = Record<LineHeightType, number>;
 export type NewPalette = Record<NewPaletteType, string>;
 export type Colors = Record<ColorsType, string>;
@@ -397,6 +411,7 @@ export interface Theme {
   typography: Font;
   colors: Colors;
   borderRadius: BorderRadius;
+  newBorderRadius: BorderRadius;
   boxShadow: BoxShadow;
   textShadow: TextShadow;
   spacing: MapSpacingValue;
