@@ -15,5 +15,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-  }
+  },
+  "include": ["src/components", "custom.d.ts"]
 }

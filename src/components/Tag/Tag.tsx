@@ -10,7 +10,7 @@ export const Tag: FC<Props> = ({
   color = 'arcticWind',
   variant = 'contained',
   className,
-  testId,
+  testId = 'tag',
 }) => {
   const renderText = () => {
     if (size === 'small') {
