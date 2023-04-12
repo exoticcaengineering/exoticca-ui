@@ -132,6 +132,7 @@ export const fontWeight: FontWeight = {
 
 const rebrandPalette: RebrandPalette = {
   polarNight: '#121212',
+  polarNightMedium: '#717171',
   polarNightLight: '#E5E5E5',
   arcticWind: '#ffffff',
   pacificOcean: '#68ACF8',
