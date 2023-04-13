@@ -1,7 +1,9 @@
-export const menuItems: any[] = [
+import { MenuItems } from '../Dropdown.types';
+
+export const menuItems: MenuItems[] = [
   [
     {
-      title: 'Trip Style',
+      title: 'Dropdown',
       items: [
         {
           parent: {
@@ -44,6 +46,31 @@ export const menuItems: any[] = [
               icon: 'arrow',
               name: 'Breakpoints',
               slug: '?path=/story/theme-breakpoint--new-breakpoint',
+            },
+            {
+              icon: 'arrow',
+              name: 'Typography',
+              slug: '?path=/story/theme-borderradius--border-radius',
+            },
+            {
+              icon: 'arrow',
+              name: 'HeroWrapper',
+              slug: '?path=/story/theme-colors--default-color-palette',
+            },
+            {
+              icon: 'arrow',
+              name: 'Header',
+              slug: '?path=/story/theme-breakpoint--new-breakpoint',
+            },
+            {
+              icon: 'arrow',
+              name: 'Element 1',
+              slug: '?path=/story/theme-borderradius--border-radius',
+            },
+            {
+              icon: 'arrow',
+              name: 'Element 2',
+              slug: '?path=/story/theme-colors--default-color-palette',
             },
           ],
         },

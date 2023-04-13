@@ -1,18 +1,9 @@
 import { useState } from 'react';
 import { DropdownButton, IconArrow, DropdownList } from './Dropdown.styles';
 import { Item } from '../Item/Item';
+import { DropdownProps } from './Dropdown.types';
 
-/* export const Dropdown: FC<MenuPropsType> = ({ items }) => {
-  return (
-    <ul>
-      {items.map((item: JSX.IntrinsicAttributes & DropdownListProps) => (
-        <DropdownList key={item.text} {...item} />
-      ))}
-    </ul>
-  );
-}; */
-
-export const Dropdown = ({ children }: any) => {
+export const Dropdown = ({ children, position = 'right' }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {

@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import { menuItems } from './mockData';
 import { Dropdown } from '../Dropdown';
 import { MenuPropsType } from '../Dropdown.types';
-import { DropdownList } from '../DropdownList';
+import { DropdownList } from './DropdownList';
 
 export default {
   title: 'Dropdown',
