@@ -6,12 +6,15 @@ type Props = {
 };
 export const Row = styled.div<Props>`
   display: grid;
-  grid-template-columns: auto 100%;
   direction: ${({ position }) => position === 'left' && 'rtl'}; ;
 `;
 
 export const Container = styled.ul`
   padding: 0;
+`;
+
+export const Title = styled.ul`
+  text-decoration: underline;
 `;
 
 export const ParentButton = styled.button`

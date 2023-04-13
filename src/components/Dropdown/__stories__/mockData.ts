@@ -57,26 +57,6 @@ export const menuItems: MenuItems[] = [
                 name: 'Typography',
                 slug: '?path=/story/theme-borderradius--border-radius',
               },
-              {
-                icon: 'arrow',
-                name: 'HeroWrapper',
-                slug: '?path=/story/theme-colors--default-color-palette',
-              },
-              {
-                icon: 'arrow',
-                name: 'Header',
-                slug: '?path=/story/theme-breakpoint--new-breakpoint',
-              },
-              {
-                icon: 'arrow',
-                name: 'Element 1',
-                slug: '?path=/story/theme-borderradius--border-radius',
-              },
-              {
-                icon: 'arrow',
-                name: 'Element 2',
-                slug: '?path=/story/theme-colors--default-color-palette',
-              },
             ],
           },
         },

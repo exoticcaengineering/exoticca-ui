@@ -1,6 +1,6 @@
 import { Item } from 'src/components/Item/Item';
 import { ListChildrenItemsProps } from '../Dropdown.types';
-import { ChildrenIcon, Container } from './DropdownList.styles';
+import { ChildrenIcon, Container, Title } from './DropdownList.styles';
 
 export const ListChildrenItems = ({
   isSelected,
@@ -14,13 +14,11 @@ export const ListChildrenItems = ({
             gridColumnStart: 2,
           }}
         >
-          <Item hover="underlined">
-            <p>{childrenItems.parent.name}</p>
-          </Item>
+          <Title>{childrenItems.children.title}</Title>
 
           {childrenItems.children.items.map((subItem) => (
             <Item key={subItem.name} hover="underlined">
-              <a href={subItem.slug}>
+              <a href={subItem.slug} style={{ whiteSpace: 'nowrap' }}>
                 <ChildrenIcon icon={'arrow'} />
                 {subItem.name}
               </a>

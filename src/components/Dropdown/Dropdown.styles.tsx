@@ -42,9 +42,10 @@ export const CloseIcon = styled(Icon)`
   cursor: pointer;
 `;
 
-export const CloseWrapper = styled.button`
+export const CloseWrapper = styled.button<Props>`
   all: unset;
   position: absolute;
-  right: ${({ theme }) => theme.spacing(1)};
+  right: ${({ theme, position }) => position === 'right' && theme.spacing(1)};
+  left: ${({ theme, position }) => position === 'left' && theme.spacing(-0.5)};
   top: ${({ theme }) => theme.spacing(1)};
 `;
