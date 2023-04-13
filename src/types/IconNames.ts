@@ -1,4 +1,4 @@
-export const iconNames = ['logo-rebrand'] as const;
+export const iconNames = ['logo-rebrand', 'arrow'] as const;
 
 type IconNameType = typeof iconNames[number];
 
