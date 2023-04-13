@@ -7,6 +7,22 @@ import { DropdownList } from './DropdownList';
 export default {
   title: 'Dropdown',
   component: Dropdown,
+  argTypes: {
+    position: {
+      options: ['right', 'left'],
+      control: { type: 'select' },
+      category: 'Prop',
+    },
+    withCloseButton: {
+      category: 'Prop',
+    },
+    itemText: {
+      table: {
+        category: 'Text',
+        control: 'text',
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<MenuPropsType> = (args) => (
@@ -26,7 +42,10 @@ const Template: Story<MenuPropsType> = (args) => (
       }}
     >
       <Dropdown {...args}>
-        <DropdownList subMenuItems={menuItems[0][0].items} />
+        <DropdownList
+          position={args.position}
+          subMenuItems={menuItems[0][0].items}
+        />
       </Dropdown>
     </div>
   </div>
@@ -35,4 +54,6 @@ const Template: Story<MenuPropsType> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   items: menuItems,
+  position: 'right',
+  withCloseButton: false,
 };

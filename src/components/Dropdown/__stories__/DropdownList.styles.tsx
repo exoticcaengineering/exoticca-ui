@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import { Icon } from '../../Icon/Icon';
 
-export const Row = styled.div`
+type Props = {
+  position?: 'left' | 'right';
+};
+export const Row = styled.div<Props>`
   display: grid;
-  width: 100%;
+  grid-template-columns: auto 100%;
+  direction: ${({ position }) => position === 'left' && 'rtl'}; ;
 `;
 
 export const Container = styled.ul`
@@ -13,7 +17,6 @@ export const Container = styled.ul`
 export const ParentButton = styled.button`
   all: unset;
   height: fit-content;
-  width: auto;
 `;
 
 export const ChildrenIcon = styled(Icon)`

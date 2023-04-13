@@ -3,7 +3,8 @@ import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
 
 type Props = {
-  isOpen: boolean;
+  isOpen?: boolean;
+  position?: 'left' | 'right';
 };
 
 export const DropdownButton = styled.button<Props>`
@@ -22,9 +23,11 @@ export const IconArrow = styled(Icon)<Props>`
   transform: ${({ isOpen }) => (isOpen ? 'rotate(180deg)' : 'rotate(0)')};
 `;
 
-export const DropdownList = styled(Box)`
+export const DropdownList = styled(Box)<Props>`
   position: absolute;
   animation: fadein 0.3s linear;
+  right: ${({ position }) => position === 'left' && '0'};
+  transform: ${({ position }) => position === 'left' && 'translateX(0)'};
   @keyframes fadein {
     from {
       opacity: 0;
@@ -33,4 +36,15 @@ export const DropdownList = styled(Box)`
       opacity: 1;
     }
   }
+`;
+
+export const CloseIcon = styled(Icon)`
+  cursor: pointer;
+`;
+
+export const CloseWrapper = styled.button`
+  all: unset;
+  position: absolute;
+  right: ${({ theme }) => theme.spacing(1)};
+  top: ${({ theme }) => theme.spacing(1)};
 `;
