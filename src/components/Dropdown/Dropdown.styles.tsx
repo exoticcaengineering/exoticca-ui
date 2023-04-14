@@ -44,8 +44,9 @@ export const CloseIcon = styled(Icon)`
 
 export const CloseWrapper = styled.button<Props>`
   all: unset;
+
   position: absolute;
   right: ${({ theme, position }) => position === 'right' && theme.spacing(1)};
-  left: ${({ theme, position }) => position === 'left' && theme.spacing(-0.5)};
-  top: ${({ theme }) => theme.spacing(1)};
+  left: ${({ theme, position }) => position === 'left' && theme.spacing(1)};
+  top: ${({ theme }) => theme.spacing(0.5)};
 `;

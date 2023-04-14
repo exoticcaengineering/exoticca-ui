@@ -5,7 +5,7 @@ import { MenuPropsType } from '../Dropdown.types';
 import { DropdownList } from './DropdownList';
 
 export default {
-  title: 'Dropdown',
+  title: 'components/Dropdown',
   component: Dropdown,
   argTypes: {
     position: {

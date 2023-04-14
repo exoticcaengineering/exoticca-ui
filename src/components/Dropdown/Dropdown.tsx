@@ -26,6 +26,8 @@ export const Dropdown = ({
     return ['none', 'l', 'l', 'l'];
   };
 
+  console.log(position);
+
   return (
     <div style={{ position: 'relative' }}>
       <DropdownButton isOpen={isOpen} onClick={toggleDropdown}>
@@ -49,7 +51,7 @@ export const Dropdown = ({
           borderRadius={setBorderRadius(position)}
         >
           {withCloseButton && (
-            <CloseWrapper onClick={toggleDropdown}>
+            <CloseWrapper position={position} onClick={toggleDropdown}>
               <CloseIcon icon={'close'} />
             </CloseWrapper>
           )}
