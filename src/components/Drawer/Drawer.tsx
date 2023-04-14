@@ -1,21 +1,43 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { forwardRef } from 'react';
+import { useState } from 'react';
+import { useImperativeHandle } from 'react';
+import { Icon } from '../Icon/Icon';
+import {
+  BottomBar,
+  ContentWrapper,
+  DrawerContainer,
+  IconWrapper,
+  TopBar,
+} from './Drawer.styles';
+import { DrawerRef } from './Drawer.types';
 
 type Props = {
   openHeight: number;
   children: React.ReactNode;
 };
 
-const DrawerContainer = styled.div<{ heightProp: number }>`
-  width: 100%;
-  height: fit-content;
-  max-height: ${({ heightProp }) => `${heightProp}vh`}
-  overflow: hidden;
-  transition: 0.3s ease-in-out height;
-`;
+const Drawer = ({ openHeight, children }: Props, ref: React.Ref<DrawerRef>) => {
+  const [open, setOpen] = useState(true);
 
-const Drawer = ({ openHeight, children }: Props) => {
-  return <DrawerContainer heightProp={openHeight}>{children}</DrawerContainer>;
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  useImperativeHandle(ref, () => ({
+    open: handleOpen,
+    close: handleClose,
+  }));
+
+  return (
+    <DrawerContainer heightProp={openHeight} isOpen={open}>
+      <TopBar>
+        <IconWrapper onClick={handleClose}>
+          <Icon icon="ico-close" size={'regular'} />
+        </IconWrapper>
+      </TopBar>
+      <ContentWrapper>{children}</ContentWrapper>
+      <BottomBar />
+    </DrawerContainer>
+  );
 };
 
-export default Drawer;
+export default forwardRef(Drawer);
