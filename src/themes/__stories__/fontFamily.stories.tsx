@@ -3,13 +3,8 @@ import { FC } from 'react';
 import { Typography } from 'src/components/Typography';
 import { ThemeProvider } from 'styled-components';
 import { FontFamily } from 'src/types/theme';
-import { themeJournaway } from '../themeJournaway';
-import { themePromoland } from '../themePromoland';
-import { themeSecretEscapes } from '../themeSecretEscapes';
 
 import { fontFamily as defaultThemeFontFamily } from '../theme';
-import { fontFamily as journawayThemeFontFamily } from '../themeJournaway';
-import { fontFamily as secretEscapesThemeFontFamily } from '../themeSecretEscapes';
 import { TypographyContainerProps } from './themeStory.types';
 import { Box } from 'src/components/Box';
 
@@ -45,49 +40,4 @@ export const DefaultThemeFontFamily = Template.bind({});
 
 DefaultThemeFontFamily.args = {
   fontFamily: defaultThemeFontFamily,
-};
-
-// Theme Journaway
-export const JournawayThemeFontFamily = Template.bind({});
-
-JournawayThemeFontFamily.decorators = [
-  (Story) => (
-    <ThemeProvider theme={themeJournaway}>
-      <Story />
-    </ThemeProvider>
-  ),
-];
-
-JournawayThemeFontFamily.args = {
-  fontFamily: journawayThemeFontFamily,
-};
-
-// Theme Promoland
-export const PromolandThemeFontFamily = Template.bind({});
-
-PromolandThemeFontFamily.decorators = [
-  (Story) => (
-    <ThemeProvider theme={themePromoland}>
-      <Story />
-    </ThemeProvider>
-  ),
-];
-
-PromolandThemeFontFamily.args = {
-  fontFamily: defaultThemeFontFamily,
-};
-
-// Theme Secret Escapes
-export const SecretEscapesThemeFontFamily = Template.bind({});
-
-SecretEscapesThemeFontFamily.decorators = [
-  (Story) => (
-    <ThemeProvider theme={themeSecretEscapes}>
-      <Story />
-    </ThemeProvider>
-  ),
-];
-
-SecretEscapesThemeFontFamily.args = {
-  fontFamily: secretEscapesThemeFontFamily,
 };
