@@ -7,7 +7,7 @@ export default {
   title: 'Components/Drawer',
   component: Drawer,
   args: {
-    text: 'HELLo WORLD',
+    text: 'Drawer contents :)',
     openHeight: 50,
   },
   argTypes: {
