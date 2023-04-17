@@ -4,10 +4,11 @@ import { Props } from './Icon.types';
 import { StyledWrapper } from './Icon.styles';
 import { iconComponents } from './iconComponents';
 
-export const Icon: FC<Props> = ({ icon, testId = 'icon', ...props }) => {
+export const Icon: FC<Props> = ({ icon, testId, ...props }) => {
+  const defaultTestId = `${icon}-icon`;
   const IconComponent = iconComponents[icon];
   return (
-    <StyledWrapper data-testid={testId} {...props}>
+    <StyledWrapper data-testid={testId || defaultTestId} {...props}>
       <IconComponent />
     </StyledWrapper>
   );
