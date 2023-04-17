@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { Button } from '../Button';
 import { ComponentProps } from 'react';
+import BannerExample from './Banner';
 
 type CustomItemProps = ComponentProps<typeof Button> & { itemText: string };
 
@@ -31,6 +32,7 @@ const Template: Story<CustomItemProps> = ({ ...props }: CustomItemProps) => (
       }}
     >
       <Button {...props} />
+      <BannerExample />
     </div>
   </div>
 );
