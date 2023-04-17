@@ -15,9 +15,9 @@ export const Header: FC<Props> = ({
 }) => {
   return (
     <StyledHeaderWrapper backgroundType={backgroundType}>
-      <StyledHeaderContent>{leftComponent?.() ?? ''}</StyledHeaderContent>
-      <StyledCenterContent>{centerComponent?.()}</StyledCenterContent>
-      <StyledRightContent>{rightComponent?.()}</StyledRightContent>
+      <StyledHeaderContent>{leftComponent ?? ''}</StyledHeaderContent>
+      <StyledCenterContent>{centerComponent ?? ''}</StyledCenterContent>
+      <StyledRightContent>{rightComponent ?? ''}</StyledRightContent>
     </StyledHeaderWrapper>
   );
 };

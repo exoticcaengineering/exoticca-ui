@@ -1,9 +1,9 @@
 type BackgroundType = 'transparent' | 'solid';
 
 export interface Props {
-  leftComponent?: () => React.ReactNode;
-  centerComponent?: () => React.ReactNode;
-  rightComponent?: () => React.ReactNode;
+  leftComponent?: JSX.Element;
+  centerComponent?: JSX.Element;
+  rightComponent?: JSX.Element;
   backgroundType?: BackgroundType;
 }
 

@@ -29,21 +29,28 @@ const RightComponent = () => (
 export const LeftCenterRight = Template.bind({});
 
 LeftCenterRight.args = {
-  leftComponent: LeftComponent,
-  centerComponent: CenterComponent,
-  rightComponent: RightComponent,
+  leftComponent: <LeftComponent />,
+  centerComponent: <CenterComponent />,
+  rightComponent: <RightComponent />,
 };
 
 export const LeftCenter = Template.bind({});
 
 LeftCenter.args = {
-  leftComponent: LeftComponent,
-  centerComponent: CenterComponent,
+  leftComponent: <LeftComponent />,
+  centerComponent: <CenterComponent />,
 };
 
 export const LeftRight = Template.bind({});
 
 LeftRight.args = {
-  leftComponent: LeftComponent,
-  rightComponent: RightComponent,
+  leftComponent: <LeftComponent />,
+  rightComponent: <RightComponent />,
+};
+
+export const CenterRight = Template.bind({});
+
+CenterRight.args = {
+  centerComponent: <CenterComponent />,
+  rightComponent: <RightComponent />,
 };
