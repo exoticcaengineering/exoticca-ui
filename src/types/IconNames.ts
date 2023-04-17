@@ -4,6 +4,8 @@ export const iconNames = [
   'contact',
   'user',
   'search',
+  'arrow',
+  'close',
 ] as const;
 
 type IconNameType = typeof iconNames[number];
