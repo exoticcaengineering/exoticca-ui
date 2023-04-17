@@ -58,7 +58,7 @@ export const StyledButton = styled.button<StyledProps>`
     variant === 'secondary'
       ? `0.15rem solid ${setContainColor(theme, color)}`
       : 'none'};
-
+  white-space: nowrap;
   &:hover {
     background-color: ${({ theme, color }) =>
       colorWithOpacity(setColor(theme)[color], 80)};
