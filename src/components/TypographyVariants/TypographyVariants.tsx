@@ -13,14 +13,16 @@ import {
   StyledDisplay1,
   StyledDisplay2,
   StyledHeading1,
+  StyledHeading2,
+  StyledHeading3,
   StyledOverline,
 } from './TypographyVariants.styles';
 
 export const TextDisplay1: FC<Props> = (props) => <StyledDisplay1 {...props} />;
 export const TextDisplay2: FC<Props> = (props) => <StyledDisplay2 {...props} />;
 export const TextHeading1: FC<Props> = (props) => <StyledHeading1 {...props} />;
-export const TextHeading2: FC<Props> = (props) => <StyledHeading1 {...props} />;
-export const TextHeading3: FC<Props> = (props) => <StyledHeading1 {...props} />;
+export const TextHeading2: FC<Props> = (props) => <StyledHeading2 {...props} />;
+export const TextHeading3: FC<Props> = (props) => <StyledHeading3 {...props} />;
 export const TextBody1: FC<Props> = (props) => <StyledBody1 {...props} />;
 export const TextBody2: FC<Props> = (props) => <StyledBody2 {...props} />;
 export const TextBody3: FC<Props> = (props) => <StyledBody3 {...props} />;
