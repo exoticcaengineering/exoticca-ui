@@ -31,7 +31,7 @@ const Drawer = ({ openHeight, children }: Props, ref: React.Ref<DrawerRef>) => {
     <DrawerContainer heightProp={openHeight} isOpen={open}>
       <TopBar>
         <IconWrapper onClick={handleClose}>
-          <Icon icon="ico-close" size={'regular'} />
+          <Icon icon="ico-close" size={'medium'} />
         </IconWrapper>
       </TopBar>
       <ContentWrapper>{children}</ContentWrapper>
