@@ -3,8 +3,6 @@ import { FC } from 'react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
 import { Colors } from 'src/types/theme';
-
-import { ThemeProvider } from 'styled-components';
 import { colors as defaultThemeColors } from '../theme';
 
 import {
