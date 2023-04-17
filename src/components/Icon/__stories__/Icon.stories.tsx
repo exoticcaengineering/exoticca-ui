@@ -12,7 +12,7 @@ export default {
     size: {
       options: ['small', 'regular', 'medium', 'large', 'xLarge', 'auto'],
       control: { type: 'radio' },
-      defaultValue: 'large',
+      defaultValue: 'regular',
     },
   },
 } as ComponentMeta<typeof Icon>;
@@ -23,7 +23,7 @@ export const Icons: ComponentStory<typeof Icon> = (args) => {
       {iconNames.map((iconName) => (
         <Box boxShadow="s" padding={[2]} background="cararra" key={iconName}>
           <Typography>{iconName}</Typography>
-          <Icon {...args} icon={iconName} fill="savageForest" />
+          <Icon {...args} icon={iconName} />
         </Box>
       ))}
     </StyledIconsWrapper>

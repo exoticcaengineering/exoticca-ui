@@ -16,5 +16,5 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
   },
-  "include": ["src/components", "custom.d.ts"]
+  "include": ["src", "custom.d.ts"]
 }

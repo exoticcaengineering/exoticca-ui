@@ -1,4 +1,13 @@
-export const iconNames = ['logo-rebrand', 'ico-close'] as const;
+export const iconNames = [
+  'logo-rebrand',
+  'pill-status',
+  'contact',
+  'user',
+  'search',
+  'arrow',
+  'close',
+  'ico-close',
+] as const;
 
 type IconNameType = typeof iconNames[number];
 
