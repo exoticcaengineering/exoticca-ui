@@ -11,6 +11,7 @@ type NewBreakpointsType =
 
 type RebrandPaletteType =
   | 'polarNightLight'
+  | 'polarNightMedium'
   | 'polarNight'
   | 'arcticWind'
   | 'pacificOcean'

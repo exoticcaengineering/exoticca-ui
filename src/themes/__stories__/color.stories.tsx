@@ -6,18 +6,7 @@ import { Colors } from 'src/types/theme';
 
 import { ThemeProvider } from 'styled-components';
 import { colors as defaultThemeColors } from '../theme';
-import {
-  colors as journawaythemeColors,
-  themeJournaway,
-} from '../themeJournaway';
-import {
-  colors as promolandThemeColors,
-  themePromoland,
-} from '../themePromoland';
-import {
-  colors as secretEscapesThemeColors,
-  themeSecretEscapes,
-} from '../themeSecretEscapes';
+
 import {
   StyledColorBlockTextWrapper,
   StyledColorWrapper,
@@ -64,46 +53,4 @@ export const DefaultColorPalette = Template.bind({});
 
 DefaultColorPalette.args = {
   colors: defaultThemeColors,
-};
-
-export const JournawaythemeColorPalette = Template.bind({});
-
-JournawaythemeColorPalette.decorators = [
-  (Story) => (
-    <ThemeProvider theme={themeJournaway}>
-      <Story />
-    </ThemeProvider>
-  ),
-];
-
-JournawaythemeColorPalette.args = {
-  colors: journawaythemeColors,
-};
-
-export const PromolandThemeColorPalette = Template.bind({});
-
-PromolandThemeColorPalette.decorators = [
-  (Story) => (
-    <ThemeProvider theme={themePromoland}>
-      <Story />
-    </ThemeProvider>
-  ),
-];
-
-PromolandThemeColorPalette.args = {
-  colors: promolandThemeColors,
-};
-
-export const SecretEscapesThemeColorPalette = Template.bind({});
-
-SecretEscapesThemeColorPalette.decorators = [
-  (Story) => (
-    <ThemeProvider theme={themeSecretEscapes}>
-      <Story />
-    </ThemeProvider>
-  ),
-];
-
-SecretEscapesThemeColorPalette.args = {
-  colors: secretEscapesThemeColors,
 };
