@@ -9,7 +9,7 @@ export default {
   title: 'Components/Button',
   component: Button,
   args: {
-    text: 'Pepito',
+    text: 'I am a button',
     size: 'medium',
     color: 'black',
     shape: 'rounded',
