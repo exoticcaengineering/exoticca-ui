@@ -7,8 +7,9 @@ import { getIconSize, getStrokeWidth } from './Icon.helpers';
 export const StyledWrapper = styled(Box)<StyledProps>`
   line-height: 0;
   display: inline-block;
-  width: ${({ size }) => getIconSize(size)};
-  height: ${({ size }) => getIconSize(size)};
+  width: ${({ size, fullWidth }) => (fullWidth ? '100%' : getIconSize(size))};
+  height: ${({ size, fullHeight }) =>
+    fullHeight ? '100%' : getIconSize(size)};
   z-index: 1;
   & > svg {
     width: 100%;

@@ -34,13 +34,6 @@ export const GlobalStyleDefaultCss = css`
       border: 0;
       border-top: 1px solid ${({ theme }) => theme.colors.silver};
     }
-    header {
-      margin-top: 0;
-      width: 100%;
-      top: 0;
-      position: fixed;
-      z-index: 15;
-    }
     body {
       color: ${({ theme }) => theme.colors.black};
       font-size: 1rem;
@@ -77,9 +70,6 @@ export const GlobalStyleDefaultCss = css`
       font-family: inherit;
       font-size: inherit;
       line-height: inherit;
-    }
-    svg:not(:root) {
-      overflow: hidden;
     }
     p {
       margin: 0 0 10px;

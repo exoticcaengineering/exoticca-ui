@@ -11,7 +11,9 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
     backgroundType === 'solid'
       ? theme.colors.polarNight
       : theme.colors.transparent};
-  padding: ${({ theme }) => theme.spacing(0, 3)};
+  padding: ${({ theme }) => theme.spacing(1, 3)};
+  transition: background-color
+    ${({ theme }) => theme.transition.duration.standard};
   @media (min-width: ${({ theme }) => theme.newBreakpoints.tablet}) {
     height: 70px;
   }
@@ -20,13 +22,18 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
 export const StyledHeaderContent = styled(Box)`
   color: ${({ theme }) => theme.colors.arcticWind};
   flex: 1 0 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;
 
 export const StyledLeftContent = styled(StyledHeaderContent)``;
 export const StyledCenterContent = styled(StyledHeaderContent)`
-  text-align: center;
+  display: flex;
+  justify-content: center;
 `;
 
 export const StyledRightContent = styled(StyledHeaderContent)`
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 `;
