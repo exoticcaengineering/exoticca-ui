@@ -1,6 +1,7 @@
 import { FC, SVGProps } from 'react';
 import { ReactComponent as LogoRebrand } from 'src/assets/icons/logo-rebrand.svg';
 import { ReactComponent as Arrow } from 'src/assets/icons/Arrow.svg';
+import { ReactComponent as Loader } from 'src/assets/icons/loader.svg';
 import { ReactComponent as Close } from 'src/assets/icons/Close.svg';
 import { ReactComponent as Promo } from 'src/assets/icons/pill-status.svg';
 import { ReactComponent as IconContact } from 'src/assets/icons/contact.svg';
@@ -12,6 +13,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
   arrow: Arrow,
   close: Close,
+  loader: Loader,
   'pill-status': Promo,
   contact: IconContact,
   user: IconUser,

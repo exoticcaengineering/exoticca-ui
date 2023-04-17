@@ -1,7 +1,13 @@
 import styled from 'src/utils/styled';
 import { StyledProps } from './Item.types';
+import { Colors, Theme } from 'src/types';
+import { DefaultTheme } from 'styled-components';
 
-const setColor = (selected, theme, color) => {
+const setColor = (
+  selected: boolean | undefined,
+  theme: Theme & DefaultTheme,
+  color: keyof typeof theme.colors | undefined,
+) => {
   if (selected) return theme.colors.arcticWind;
   if (color) return theme.colors[color];
   return theme.colors.polarNight;
