@@ -1,14 +1,9 @@
 import { FC } from 'react';
 import { Props } from './Button.types';
-import {
-  StyledButton,
-  Wrapper,
-  setContainColor,
-  setTertiaryColor,
-} from './Button.styles';
+import { StyledButton, Wrapper } from './Button.styles';
 import { Icon } from '../Icon/Icon';
 import { Spinner } from './Spinner';
-import { useTheme } from 'styled-components';
+import { setContainColor, setTertiaryColor } from './Button.helpers';
 
 export const Button: FC<Props> = ({
   text,
@@ -22,16 +17,9 @@ export const Button: FC<Props> = ({
   state,
   variant,
 }) => {
-  const theme = useTheme();
-
   const setColor = () => {
-    let settedColor;
-    if (variant === 'tertiary') {
-      settedColor = setTertiaryColor(theme, color);
-    } else {
-      settedColor = setContainColor(theme, color);
-    }
-    return settedColor === '#ffffff' ? 'white' : 'black';
+    if (variant === 'tertiary') setTertiaryColor(color);
+    return setContainColor(color);
   };
 
   return (

@@ -7,6 +7,4 @@ export interface Props extends ComponentPropsBase {
   selected?: boolean;
 }
 
-export interface StyledProps extends Props {
-  theme: Theme;
-}
+export interface StyledProps extends Props {}

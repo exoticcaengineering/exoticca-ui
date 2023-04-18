@@ -1,10 +1,11 @@
+import { Colors } from 'src/types';
 import { Icon } from '../Icon/Icon';
 import { Animation } from './Button.styles';
 
 export interface SpinnerProps {
   customStyle?: object;
   size?: 'small' | 'medium' | 'large';
-  color?: string;
+  color?: keyof Colors;
 }
 
 export const Spinner = ({
@@ -18,7 +19,7 @@ export const Spinner = ({
   };
   return (
     <Animation data-testid="spinner" style={customStyle} size={setSize()}>
-      <Icon icon={'loader'} stroke={color === '#ffffff' ? 'white' : 'black'} />
+      <Icon icon={'loader'} stroke={color} />
     </Animation>
   );
 };
