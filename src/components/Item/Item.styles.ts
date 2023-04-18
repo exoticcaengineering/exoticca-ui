@@ -1,7 +1,7 @@
 import styled from 'src/utils/styled';
-import { StyledProps } from './Item.types';
+import { SetColorParams, StyledProps } from './Item.types';
 
-const setColor = (selected, theme, color) => {
+const setColor = ({ selected, theme, color }: SetColorParams) => {
   if (selected) return theme.colors.arcticWind;
   if (color) return theme.colors[color];
   return theme.colors.polarNight;
@@ -16,7 +16,8 @@ export const StyledWrapper = styled.li<StyledProps>`
   border-radius: ${({ theme }) => theme.newBorderRadius.xs};
   font-family: ${({ theme }) =>
     `${theme.typography.fontFamily.newBranding} !important`};
-  color: ${({ theme, color, selected }) => setColor(selected, theme, color)};
+  color: ${({ theme, color = 'polarNight', selected }) =>
+    setColor({ selected, theme, color })};
   background: ${({ theme, selected }) => selected && theme.colors.polarNight};
 
   &:hover {

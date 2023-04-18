@@ -1,3 +1,4 @@
+import { Colors } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconName } from 'src/types/IconNames';
 
@@ -10,8 +11,12 @@ export type IconSize =
 export interface Props extends ComponentPropsBase {
   icon: IconName;
   size?: IconSize;
-  fill?: string;
-  stroke?: string;
+  fill?: keyof Colors;
+  stroke?: keyof Colors;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
+  width?: number;
+  height?: number;
 }
 
 export interface StyledProps extends Omit<Props, 'icon'> {}

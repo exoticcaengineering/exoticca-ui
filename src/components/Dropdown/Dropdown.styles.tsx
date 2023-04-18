@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
+import styled from 'src/utils/styled';
 
 type Props = {
   isOpen?: boolean;
