@@ -1,6 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react';
-import { ComponentProps, useRef, useState } from 'react';
-import Drawer from '../Drawer';
+import { ComponentProps, useRef } from 'react';
+import { Drawer } from '../Drawer';
 import { DrawerRef } from '../Drawer.types';
 
 export default {

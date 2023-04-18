@@ -16,7 +16,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Drawer = ({ openHeight, children }: Props, ref: React.Ref<DrawerRef>) => {
+const DrawerComp = (
+  { openHeight, children }: Props,
+  ref: React.Ref<DrawerRef>,
+) => {
   const [open, setOpen] = useState(true);
 
   const handleOpen = () => setOpen(true);
@@ -31,7 +34,7 @@ const Drawer = ({ openHeight, children }: Props, ref: React.Ref<DrawerRef>) => {
     <DrawerContainer heightProp={openHeight} isOpen={open}>
       <TopBar>
         <IconWrapper onClick={handleClose}>
-          <Icon icon="ico-close" size={'medium'} />
+          <Icon icon="close" size={'medium'} />
         </IconWrapper>
       </TopBar>
       <ContentWrapper>{children}</ContentWrapper>
@@ -40,4 +43,4 @@ const Drawer = ({ openHeight, children }: Props, ref: React.Ref<DrawerRef>) => {
   );
 };
 
-export default forwardRef(Drawer);
+export const Drawer = forwardRef(DrawerComp);
