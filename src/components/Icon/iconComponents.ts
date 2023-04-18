@@ -1,4 +1,5 @@
 import { FC, SVGProps } from 'react';
+
 import { IconName } from 'src/types/IconNames';
 import { IconArrowUp } from './SVGIcons/IconArrowUp';
 import { IconArrowDown } from './SVGIcons/IconArrowDown';
