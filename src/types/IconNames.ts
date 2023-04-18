@@ -5,6 +5,7 @@ export const iconNames = [
   'user',
   'search',
   'arrow',
+  'loader',
   'close',
   'flag-us',
 ] as const;
