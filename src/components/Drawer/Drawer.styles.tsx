@@ -10,7 +10,7 @@ export const DrawerContainer = styled.div<{
   width: 100vw;
   height: ${({ heightProp }) => `${heightProp}vh`};
   overflow: scroll;
-  transition: 0.2s ease-in-out;
+  transition: ${({ theme }) => theme.transition.duration.short} ease-in-out;
   background-color: ${({ theme }) => theme.colors.arcticWind};
   border-top-right-radius: ${({ theme }) => theme.newBorderRadius.l};
   border-top-left-radius: ${({ theme }) => theme.newBorderRadius.l};

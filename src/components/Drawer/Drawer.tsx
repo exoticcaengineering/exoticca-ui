@@ -9,15 +9,10 @@ import {
   IconWrapper,
   TopBar,
 } from './Drawer.styles';
-import { DrawerRef } from './Drawer.types';
-
-type Props = {
-  openHeight: number;
-  children: React.ReactNode;
-};
+import { DrawerProps, DrawerRef } from './Drawer.types';
 
 const DrawerComp = (
-  { openHeight, children }: Props,
+  { openHeight, children }: DrawerProps,
   ref: React.Ref<DrawerRef>,
 ) => {
   const [open, setOpen] = useState(true);
