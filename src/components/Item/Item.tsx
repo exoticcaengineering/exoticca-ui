@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Props } from './Item.types';
 import { StyledWrapper } from './Item.styles';
+import { Icon } from 'src/components/Icon';
 
 export const Item: FC<Props> = ({
   className,
@@ -8,6 +9,8 @@ export const Item: FC<Props> = ({
   children,
   color,
   selected,
+  startIcon,
+  endIcon,
 }) => {
   return (
     <StyledWrapper
@@ -16,7 +19,9 @@ export const Item: FC<Props> = ({
       hover={hover}
       color={color}
     >
+      {startIcon && <Icon icon={startIcon} size="regular" />}
       {children}
+      {endIcon && <Icon icon={endIcon} size="regular" />}
     </StyledWrapper>
   );
 };
