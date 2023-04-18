@@ -7,6 +7,7 @@ export const iconNames = [
   'arrow',
   'loader',
   'close',
+  'flag-us',
 ] as const;
 
 type IconNameType = typeof iconNames[number];

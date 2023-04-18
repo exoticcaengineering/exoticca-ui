@@ -8,8 +8,16 @@ import { Colors } from 'src/types';
 export const StyledWrapper = styled(Box)<StyledProps>`
   line-height: 0;
   display: inline-block;
-  width: ${({ size }) => getIconSize(size)};
-  height: ${({ size }) => getIconSize(size)};
+  width: ${({ size, fullWidth, width }) => {
+    if (fullWidth) return '100%';
+    if (width) return `${width}px`;
+    return getIconSize(size);
+  }};
+  height: ${({ size, fullHeight, height }) => {
+    if (fullHeight) return '100%';
+    if (height) return `${height}px`;
+    return getIconSize(size);
+  }};
   z-index: 1;
   & > svg {
     width: 100%;

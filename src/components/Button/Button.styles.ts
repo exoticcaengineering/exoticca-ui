@@ -24,7 +24,7 @@ export const StyledButton = styled.button<StyledProps>`
   font-size: ${({ theme, size }) => setFontsize(theme)[size]};
   border: ${({ theme, color, variant }) =>
     variant === 'secondary'
-      ? `8px solid ${theme.colors[setContainColor(color)]}`
+      ? `3px solid ${theme.colors[setContainColor(color)]}`
       : 'none'};
   white-space: nowrap;
   &:hover {

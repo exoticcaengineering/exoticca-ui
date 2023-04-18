@@ -8,7 +8,7 @@ import {
 } from './Dropdown.styles';
 import { Item } from '../Item/Item';
 import { DropdownProps } from './Dropdown.types';
-import { BorderRadius } from 'src/types';
+import { BorderRadius } from 'src/types/theme';
 
 export const Dropdown = ({
   children,
@@ -21,7 +21,9 @@ export const Dropdown = ({
     setIsOpen(!isOpen);
   };
 
-  const setBorderRadius = (position: 'left' | 'right') => {
+  const setBorderRadius = (
+    position: 'left' | 'right',
+  ): Array<keyof BorderRadius> => {
     if (position === 'left') return ['l', 'none', 'l', 'l'];
 
     return ['none', 'l', 'l', 'l'];
