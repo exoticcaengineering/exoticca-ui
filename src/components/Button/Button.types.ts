@@ -18,9 +18,9 @@ export interface Props extends ComponentPropsBase {
   shape?: 'square' | 'rounded';
   state?: 'normal' | 'disabled' | 'loading';
   variant?: 'primary' | 'secondary' | 'tertiary';
-  leftIcon?: IconName | '';
-  rightIcon?: IconName | '';
-  centerIcon?: IconName | '';
+  leftIcon?: IconName;
+  rightIcon?: IconName;
+  centerIcon?: IconName;
   onClick: MouseEventHandler | undefined;
 }
 
