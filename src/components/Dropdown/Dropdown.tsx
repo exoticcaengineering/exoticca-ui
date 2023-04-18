@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import {
   DropdownButton,
   DropdownList,
@@ -8,6 +8,7 @@ import {
 } from './Dropdown.styles';
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
+import { useOnClickOutside } from 'src/hooks';
 
 export const Dropdown: FC<Props> = ({
   children,
@@ -17,6 +18,11 @@ export const Dropdown: FC<Props> = ({
   size = 'medium',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const closeDropdown = () => setIsOpen(false);
+
+  useOnClickOutside(dropdownRef, closeDropdown);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -31,7 +37,7 @@ export const Dropdown: FC<Props> = ({
   };
 
   return (
-    <StyledDropdownWrapper>
+    <StyledDropdownWrapper ref={dropdownRef}>
       <DropdownButton
         isOpen={isOpen}
         onClick={toggleDropdown}
