@@ -9,6 +9,7 @@ export const StyledDropdownWrapper = styled(Box)<StyledProps>`
 `;
 
 export const DropdownButton = styled(Item)<StyledProps>`
+  border-radius: ${({ theme }) => theme.newBorderRadius.s};
   border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
   border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};
   background-color: transparent;
