@@ -9,6 +9,7 @@ import {
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
+import { getIconSize, getTextComponentBySize } from './Dropdown.helpers';
 
 export const Dropdown: FC<Props> = ({
   children,
@@ -36,15 +37,22 @@ export const Dropdown: FC<Props> = ({
     return ['none', 'l', 'l', 'l'];
   };
 
+  const TextComponent = getTextComponentBySize(size);
+
+  const iconSize = getIconSize(size);
+
   return (
     <StyledDropdownWrapper ref={dropdownRef}>
       <DropdownButton
-        isOpen={isOpen}
         onClick={toggleDropdown}
-        text={buttonText}
-        size={size}
-        rightIcon={isOpen ? 'arrowUp' : 'arrowDown'}
-      />
+        endIcon={isOpen ? 'arrowUp' : 'arrowDown'}
+        iconSize={iconSize}
+        hover="underlined-bold"
+        isOpen={isOpen}
+      >
+        <TextComponent>{buttonText}</TextComponent>
+      </DropdownButton>
+
       {isOpen && (
         <DropdownList
           position={position}

@@ -23,8 +23,8 @@ export default {
       },
     },
     size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
+      options: ['small', 'medium'],
+      control: { type: 'radio' },
     },
   },
 } as ComponentMeta<typeof Dropdown>;

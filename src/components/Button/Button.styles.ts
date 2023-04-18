@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import { keyframes } from 'styled-components';
 import { StyledProps } from './Button.types';
 import { colorWithOpacity } from 'src/utils/getColorWithOpacity';
 import {
@@ -8,6 +8,7 @@ import {
   setSize,
   setTertiaryColor,
 } from './Button.helpers';
+import styled from 'src/utils/styled';
 
 export const StyledButton = styled.button<StyledProps>`
   background-color: ${({ theme, color = 'white', variant }) =>

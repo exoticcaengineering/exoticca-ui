@@ -2,23 +2,19 @@ import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
 import styled from 'src/utils/styled';
 import { StyledProps } from './Dropdown.types';
-import { Button } from 'src/components/Button';
+import { Item } from 'src/components/Item';
 
 export const StyledDropdownWrapper = styled(Box)<StyledProps>`
   position: relative;
 `;
 
-export const DropdownButton = styled(Button)<StyledProps>`
+export const DropdownButton = styled(Item)<StyledProps>`
   border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
   border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};
   background-color: transparent;
   border: none;
   background-color: ${({ theme, isOpen }) =>
     isOpen ? theme.colors.arcticWind : 'transparent'};
-  &:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-  }
 `;
 
 export const IconArrow = styled(Icon)<StyledProps>`

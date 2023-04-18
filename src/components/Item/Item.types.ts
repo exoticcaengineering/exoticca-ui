@@ -12,6 +12,7 @@ export interface Props extends ComponentPropsBase {
   startIcon?: IconName;
   endIcon?: IconName;
   iconSize?: IconSize;
+  onClick?: () => void;
 }
 
 export interface StyledProps
