@@ -3,24 +3,33 @@ import { Props } from './Button.types';
 import { StyledButton, Wrapper } from './Button.styles';
 import { Icon } from '../Icon/Icon';
 import { Spinner } from './Spinner';
-import { setContainColor, setTertiaryColor } from './Button.helpers';
+import {
+  getIconSize,
+  setContainColor,
+  setTertiaryColor,
+} from './Button.helpers';
+import { Typography } from '../Typography';
 
 export const Button: FC<Props> = ({
   text,
-  size,
-  color,
+  size = 'medium',
+  color = 'white',
   onClick,
-  shape,
+  shape = 'square',
   leftIcon,
   rightIcon,
   centerIcon,
   state,
-  variant,
+  variant = 'primary',
+  className,
+  testId,
 }) => {
   const setColor = () => {
     if (variant === 'tertiary') setTertiaryColor(color);
     return setContainColor(color);
   };
+
+  const iconSize = getIconSize(size);
 
   return (
     <StyledButton
@@ -30,18 +39,20 @@ export const Button: FC<Props> = ({
       size={size}
       onClick={onClick}
       disabled={state === 'disabled'}
+      className={className}
+      data-testid={testId}
     >
       {centerIcon ? (
-        <Icon size="regular" icon={centerIcon} stroke={setColor()} />
+        <Icon size={iconSize} icon={centerIcon} stroke={setColor()} />
       ) : (
         <Wrapper>
-          {rightIcon && (
-            <Icon size="regular" icon={rightIcon} stroke={setColor()} />
-          )}
-          {text && text}
-          {state === 'loading' && <Spinner size={size} color={setColor()} />}
           {leftIcon && (
-            <Icon size="regular" icon={leftIcon} stroke={setColor()} />
+            <Icon size={iconSize} icon={leftIcon} stroke={setColor()} />
+          )}
+          {text && <Typography as="span">{text}</Typography>}
+          {state === 'loading' && <Spinner size={size} color={setColor()} />}
+          {rightIcon && (
+            <Icon size={iconSize} icon={rightIcon} stroke={setColor()} />
           )}
         </Wrapper>
       )}

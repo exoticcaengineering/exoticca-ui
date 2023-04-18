@@ -1,20 +1,21 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import {
   DropdownButton,
-  IconArrow,
   DropdownList,
   CloseIcon,
   CloseWrapper,
+  StyledDropdownWrapper,
 } from './Dropdown.styles';
-import { Item } from '../Item/Item';
-import { DropdownProps } from './Dropdown.types';
+import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 
-export const Dropdown = ({
+export const Dropdown: FC<Props> = ({
   children,
   position = 'right',
   withCloseButton,
-}: DropdownProps) => {
+  buttonText,
+  size = 'medium',
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -22,7 +23,7 @@ export const Dropdown = ({
   };
 
   const setBorderRadius = (
-    position: 'left' | 'right',
+    position: DropDownPosition,
   ): Array<keyof BorderRadius> => {
     if (position === 'left') return ['l', 'none', 'l', 'l'];
 
@@ -30,26 +31,20 @@ export const Dropdown = ({
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <DropdownButton isOpen={isOpen} onClick={toggleDropdown}>
-        <Item
-          hover="underlined-bold"
-          color={isOpen ? 'polarNight' : 'arcticWind'}
-        >
-          Dropdown
-          <IconArrow
-            isOpen={isOpen}
-            icon={'arrow'}
-            stroke={isOpen ? 'polarNight' : 'arcticWind'}
-          />
-        </Item>
-      </DropdownButton>
+    <StyledDropdownWrapper>
+      <DropdownButton
+        isOpen={isOpen}
+        onClick={toggleDropdown}
+        text={buttonText}
+        size={size}
+        rightIcon={isOpen ? 'arrowUp' : 'arrowDown'}
+      />
       {isOpen && (
         <DropdownList
           position={position}
           background="arcticWind"
           padding={[1.5, 2.875]}
-          borderRadius={setBorderRadius(position) as Array<keyof BorderRadius>}
+          borderRadius={setBorderRadius(position)}
         >
           {withCloseButton && (
             <CloseWrapper position={position} onClick={toggleDropdown}>
@@ -59,6 +54,6 @@ export const Dropdown = ({
           {children}
         </DropdownList>
       )}
-    </div>
+    </StyledDropdownWrapper>
   );
 };
