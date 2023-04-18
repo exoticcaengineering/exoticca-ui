@@ -16,10 +16,10 @@ export const getTextComponentBySize = (size: DropDownSize) => {
 export const getIconSize = (size: DropDownSize): IconSize => {
   switch (size) {
     case 'small':
-      return 'small';
+      return 'regular';
     case 'medium':
-      return 'regular';
+      return 'medium';
     default:
-      return 'regular';
+      return 'medium';
   }
 };

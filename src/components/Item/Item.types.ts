@@ -5,13 +5,19 @@ import { IconSize } from 'src/components/Icon/Icon.types';
 
 type ItemColor = Extract<keyof Colors, 'arcticWind' | 'polarNight'>;
 
+export interface ItemIconConfig {
+  name: IconName;
+  size?: IconSize;
+  fill?: ItemColor;
+  stroke?: ItemColor;
+}
+
 export interface Props extends ComponentPropsBase {
   hover?: 'underlined' | 'background' | 'underlined-bold';
   color?: ItemColor;
   selected?: boolean;
-  startIcon?: IconName;
-  endIcon?: IconName;
-  iconSize?: IconSize;
+  startIcon?: ItemIconConfig;
+  endIcon?: ItemIconConfig;
   onClick?: () => void;
 }
 
