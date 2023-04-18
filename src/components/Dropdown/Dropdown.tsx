@@ -1,10 +1,10 @@
 import { FC, useRef, useState } from 'react';
 import {
   DropdownButton,
-  DropdownList,
   CloseIcon,
   CloseWrapper,
   StyledDropdownWrapper,
+  StyledDropdownList,
 } from './Dropdown.styles';
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
@@ -61,10 +61,10 @@ export const Dropdown: FC<Props> = ({
       </DropdownButton>
 
       {isOpen && (
-        <DropdownList
+        <StyledDropdownList
           position={position}
           background="arcticWind"
-          padding={[1.5, 2.875]}
+          padding={[1.5, 2]}
           borderRadius={setBorderRadius(position)}
         >
           {withCloseButton && (
@@ -73,7 +73,7 @@ export const Dropdown: FC<Props> = ({
             </CloseWrapper>
           )}
           {children}
-        </DropdownList>
+        </StyledDropdownList>
       )}
     </StyledDropdownWrapper>
   );

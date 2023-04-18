@@ -17,12 +17,7 @@ export const DropdownButton = styled(Item)<StyledProps>`
     isOpen ? theme.colors.arcticWind : 'transparent'};
 `;
 
-export const IconArrow = styled(Icon)<StyledProps>`
-  transition: transform ${({ theme }) => theme.transition.duration.short};
-  transform: ${({ isOpen }) => (isOpen ? 'rotate(180deg)' : 'rotate(0)')};
-`;
-
-export const DropdownList = styled(Box)<StyledProps>`
+export const StyledDropdownList = styled(Box)<StyledProps>`
   position: absolute;
   animation: fadein 0.3s linear;
   right: ${({ position }) => position === 'left' && '0'};
