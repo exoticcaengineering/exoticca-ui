@@ -57,7 +57,7 @@ export const Dropdown: FC<Props> = ({
         isOpen={isOpen}
         color={isOpen ? 'polarNight' : 'arcticWind'}
       >
-        <TextComponent>{buttonText}</TextComponent>
+        <TextComponent noWrap>{buttonText}</TextComponent>
       </DropdownButton>
 
       {isOpen && (
