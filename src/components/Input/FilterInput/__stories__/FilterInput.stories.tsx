@@ -1,13 +1,16 @@
 import { Meta, Story } from '@storybook/react';
 import { FilterInput } from '../FilterInput';
 import { iconNames } from 'src/types/IconNames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Item } from 'src/components/Item';
+import { Typography } from 'src/components/Typography';
+import { InputFilterProps } from '../../Input.types';
 
 export default {
   title: 'Components/Input/FilterInput',
   component: FilterInput,
   args: {
-    icon: 'arrow',
+    icon: 'arrowUp',
     label: 'Label',
     placeholder: 'Placeholder',
     rounded: 'both',
@@ -24,10 +27,48 @@ export default {
       category: 'Prop',
     },
   },
-} as Meta<InputProps>;
+} as Meta<InputFilterProps>;
 
-const Template: Story<InputProps> = ({ icon, label, placeholder, rounded }) => {
+const Template: Story<InputFilterProps> = ({
+  icon,
+  label,
+  placeholder,
+  rounded,
+}: InputFilterProps) => {
   const [value, setValue] = useState('');
+  const [selectedValue, setselectedValue] = useState('');
+
+  const LIST = [
+    { item: 'Item 1', id: '1' },
+    { item: 'Item 2', id: '2' },
+    { item: 'Item 3', id: '3' },
+    { item: 'Item 4', id: '4' },
+    { item: 'Item 5', id: '5' },
+  ];
+
+  useEffect(() => {
+    setValue(selectedValue);
+  }, [selectedValue]);
+
+  const [list, setList] = useState(LIST);
+
+  const filterBySearch = () => {
+    const list = [...LIST];
+
+    const updatedList = list.filter(
+      ({ item }) => item.toLowerCase().indexOf(value.toLowerCase()) !== -1,
+    );
+    if (updatedList.length === 0) {
+      setList([{ item: 'No Items with this text', id: '1' }]);
+      return;
+    }
+
+    setList(updatedList);
+  };
+
+  useEffect(() => {
+    filterBySearch();
+  }, [value]);
 
   return (
     <div
@@ -50,8 +91,13 @@ const Template: Story<InputProps> = ({ icon, label, placeholder, rounded }) => {
           rounded={rounded}
           setValue={setValue}
           value={value}
+          selectedValue={selectedValue}
         >
-          <div style={{ height: '5rem' }} />
+          {list.map(({ item, id }) => (
+            <Item key={id} onClick={() => setselectedValue(item)}>
+              <Typography fontSize="body2">{item}</Typography>
+            </Item>
+          ))}
         </FilterInput>
       </div>
     </div>

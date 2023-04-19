@@ -8,7 +8,7 @@ export default {
   title: 'Components/Input',
   component: Input,
   args: {
-    icon: 'arrow',
+    icon: 'user',
     label: 'Label',
     placeholder: 'Placeholder',
     rounded: 'both',
