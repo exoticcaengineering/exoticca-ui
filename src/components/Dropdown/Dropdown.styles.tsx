@@ -8,7 +8,7 @@ export const StyledDropdownWrapper = styled(Box)<StyledProps>`
   position: relative;
 `;
 
-export const DropdownButton = styled(Button)<StyledProps>`
+export const StyledDropdownButton = styled(Button)<StyledProps>`
   border-radius: ${({ theme }) => theme.newBorderRadius.s};
   border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
   border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};

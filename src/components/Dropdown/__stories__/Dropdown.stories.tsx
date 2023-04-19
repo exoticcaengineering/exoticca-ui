@@ -46,7 +46,7 @@ const Template: Story<MenuPropsType> = (args) => (
         background: 'lightblue',
       }}
     >
-      <Dropdown {...args} buttonText="dropdown button">
+      <Dropdown {...args} text="dropdown button">
         <DropdownList
           position={args.position}
           subMenuItems={menuItems[0][0].items}

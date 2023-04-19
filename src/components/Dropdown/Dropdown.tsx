@@ -1,6 +1,6 @@
 import { FC, useRef, useState } from 'react';
 import {
-  DropdownButton,
+  StyledDropdownButton,
   CloseIcon,
   CloseWrapper,
   StyledDropdownWrapper,
@@ -14,8 +14,9 @@ export const Dropdown: FC<Props> = ({
   children,
   position = 'right',
   withCloseButton,
-  buttonText,
+  text,
   size = 'medium',
+  startIcon,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -38,14 +39,15 @@ export const Dropdown: FC<Props> = ({
 
   return (
     <StyledDropdownWrapper ref={dropdownRef}>
-      <DropdownButton
+      <StyledDropdownButton
         onClick={toggleDropdown}
         endIcon={isOpen ? 'arrowUp' : 'arrowDown'}
         isOpen={isOpen}
         color={isOpen ? 'black' : 'white'}
-        text={buttonText}
+        text={text}
         variant="tertiary"
         size={size}
+        startIcon={startIcon}
       />
 
       {isOpen && (
