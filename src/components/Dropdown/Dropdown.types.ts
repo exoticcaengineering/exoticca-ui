@@ -3,15 +3,15 @@ import {
   ComponentPropsBase,
   ComponentPropsBaseWithChildren,
 } from 'src/types/ComponentPropsBase';
+import { ButtonSize } from '../Button';
 
 export type DropDownPosition = 'left' | 'right';
 
-export type DropDownSize = 'small' | 'medium';
 export interface Props extends ComponentPropsBaseWithChildren {
   position?: DropDownPosition;
   withCloseButton?: boolean;
   buttonText: string;
-  size?: DropDownSize;
+  size?: ButtonSize;
 }
 
 export interface StyledProps extends Pick<Props, 'position'> {

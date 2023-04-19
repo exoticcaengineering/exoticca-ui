@@ -1,4 +1,4 @@
-export const FlagUs = () => (
+export const FlagUS = () => (
   <svg viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="14" height="10" rx="2" fill="white" />
     <mask

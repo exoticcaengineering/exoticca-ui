@@ -28,7 +28,7 @@ export const StyledWrapper = styled.li<StyledProps>`
     text-decoration: ${({ hover = 'underlined' }) =>
       (hover === 'underlined' || hover === 'underlined-bold') && 'underline'};
     text-decoration-thickness: ${({ hover }) =>
-      hover === 'underlined-bold' && '0.2rem'};
+      hover === 'underlined-bold' && '3px'};
     background: ${({ theme, hover, selected }) =>
       hover === 'background' && !selected && theme.colors.polarNightLight};
   }

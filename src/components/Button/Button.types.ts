@@ -18,10 +18,11 @@ export interface Props extends ComponentPropsBase {
   shape?: 'square' | 'rounded';
   state?: 'normal' | 'disabled' | 'loading';
   variant?: 'primary' | 'secondary' | 'tertiary';
-  leftIcon?: IconName;
-  rightIcon?: IconName;
+  startIcon?: IconName;
+  endIcon?: IconName;
   centerIcon?: IconName;
   onClick: MouseEventHandler | undefined;
+  originalIconColor?: boolean;
 }
 
 export interface StyledProps extends Props {}
