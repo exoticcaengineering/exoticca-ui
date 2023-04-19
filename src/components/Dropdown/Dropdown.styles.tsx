@@ -24,7 +24,7 @@ export const StyledDropdownButton = styled(Button)<StyledProps>`
 
 export const StyledDropdownList = styled(Box)<StyledProps>`
   position: absolute;
-  animation: fadein 0.3s linear;
+  animation: fadein ${({ theme }) => theme.transition.duration.shortest} linear;
   right: ${({ position }) => position === 'left' && '0'};
   transform: ${({ position }) => position === 'left' && 'translateX(0)'};
   @keyframes fadein {
