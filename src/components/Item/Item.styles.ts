@@ -10,7 +10,7 @@ const setColor = ({ selected, theme, color }: SetColorParams) => {
 
 export const StyledWrapper = styled.li<StyledProps>`
   display: flex;
-  gap: ${({ theme }) => theme.spacing(0.75)};
+  gap: ${({ theme }) => theme.spacing(1)};
   align-items: center;
   height: fit-content;
   width: 100%;
