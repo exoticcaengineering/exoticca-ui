@@ -10,7 +10,7 @@ import { LogoRebrand } from './SVGIcons/LogoRebrand';
 import { IconUser } from './SVGIcons/IconUser';
 import { IconSearch } from './SVGIcons/IconSearch';
 import { IconLoader } from './SVGIcons/IconLoader';
-import { FlagUs } from './SVGIcons/FlagUs';
+import { FlagUS } from './SVGIcons/FlagUS';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -21,6 +21,6 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   contact: IconContact,
   user: IconUser,
   search: IconSearch,
-  'flag-us': FlagUs,
+  'flag-us': FlagUS,
   loader: IconLoader,
 };
