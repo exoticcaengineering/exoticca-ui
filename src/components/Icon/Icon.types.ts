@@ -17,6 +17,7 @@ export interface Props extends ComponentPropsBase {
   fullHeight?: boolean;
   width?: number;
   height?: number;
+  originalIconColor?: boolean;
 }
 
 export interface StyledProps extends Omit<Props, 'icon'> {}
