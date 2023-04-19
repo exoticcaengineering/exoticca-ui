@@ -17,6 +17,7 @@ export const Dropdown: FC<Props> = ({
   text,
   size = 'medium',
   startIcon,
+  originalIconColor,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,7 @@ export const Dropdown: FC<Props> = ({
         variant="tertiary"
         size={size}
         startIcon={startIcon}
+        originalIconColor={originalIconColor}
       />
 
       {isOpen && (
@@ -58,7 +60,7 @@ export const Dropdown: FC<Props> = ({
           borderRadius={setBorderRadius(position)}
         >
           {withCloseButton && (
-            <CloseWrapper position={position} onClick={toggleDropdown}>
+            <CloseWrapper position={position} onClick={closeDropdown}>
               <CloseIcon icon={'close'} />
             </CloseWrapper>
           )}
