@@ -1,7 +1,7 @@
 import { Colors, Theme } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconName } from 'src/types/IconNames';
-import { IconSize } from 'src/components/Icon/Icon.types';
+import { IconSize, IconConfig } from 'src/components/Icon/Icon.types';
 
 type ItemColor = Extract<keyof Colors, 'arcticWind' | 'polarNight'>;
 
@@ -18,8 +18,8 @@ export interface Props extends ComponentPropsBase {
   hover?: 'underlined' | 'background' | 'underlined-bold';
   color?: ItemColor;
   selected?: boolean;
-  startIcon?: ItemIconConfig;
-  endIcon?: ItemIconConfig;
+  startIcon?: IconConfig;
+  endIcon?: IconConfig;
   onClick?: () => void;
   size?: ItemSize;
 }
