@@ -15,7 +15,7 @@ export const StyledWrapper = styled.li<StyledProps>`
   width: 100%;
   cursor: pointer;
   list-style-type: none;
-  padding: ${({ theme }) => theme.spacing(1, 3)};
+  padding: ${({ theme }) => theme.spacing(1, 2)};
   border-radius: ${({ theme }) => theme.newBorderRadius.xs};
   font-family: ${({ theme }) =>
     `${theme.typography.fontFamily.newBranding} !important`};
