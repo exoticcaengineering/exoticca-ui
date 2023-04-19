@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, Story } from '@storybook/react';
 import { menuItems } from './mockData';
 import { Dropdown } from '../Dropdown';
 import { MenuPropsType } from '../Dropdown.types';
@@ -22,8 +22,12 @@ export default {
         control: 'text',
       },
     },
+    size: {
+      options: ['small', 'medium'],
+      control: { type: 'radio' },
+    },
   },
-} as Meta;
+} as ComponentMeta<typeof Dropdown>;
 
 const Template: Story<MenuPropsType> = (args) => (
   <div
@@ -39,9 +43,10 @@ const Template: Story<MenuPropsType> = (args) => (
     <div
       style={{
         marginTop: '5rem',
+        background: 'lightblue',
       }}
     >
-      <Dropdown {...args}>
+      <Dropdown {...args} buttonText="dropdown button">
         <DropdownList
           position={args.position}
           subMenuItems={menuItems[0][0].items}

@@ -34,7 +34,7 @@ export const StyledWrapper = styled(Box)<StyledProps>`
     stroke &&
     css`
       & > svg * {
-        stroke: ${theme.colors[stroke as keyof Colors]};
+        stroke: ${theme.colors[stroke]};
       }
     `}
 
@@ -42,7 +42,7 @@ export const StyledWrapper = styled(Box)<StyledProps>`
     fill &&
     css`
       & > svg * {
-        fill: ${theme.colors[fill as keyof Colors]};
+        fill: ${theme.colors[fill]};
       }
     `}
 `;

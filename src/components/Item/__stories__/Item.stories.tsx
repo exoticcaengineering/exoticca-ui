@@ -13,6 +13,10 @@ export default {
     hover: 'background',
   },
   argTypes: {
+    selected: {
+      control: { type: 'radio' },
+      options: [true, false],
+    },
     hover: {
       options: ['background', 'underlined', 'underlined-bold'],
       control: { type: 'select' },
@@ -41,7 +45,6 @@ const Template: Story<CustomItemProps> = ({
     <div
       style={{
         margin: '5rem',
-        width: '15rem',
       }}
     >
       <Box boxShadow="s" padding={[1]} borderRadius={'xl'}>
@@ -53,3 +56,14 @@ const Template: Story<CustomItemProps> = ({
   </div>
 );
 export const Base = Template.bind({});
+
+export const withStartIcon = Template.bind({});
+
+withStartIcon.args = {
+  startIcon: { name: 'arrowUp' },
+};
+
+export const withEndIcon = Template.bind({});
+withEndIcon.args = {
+  endIcon: { name: 'arrowUp' },
+};

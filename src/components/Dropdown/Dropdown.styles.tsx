@@ -1,29 +1,24 @@
 import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
 import styled from 'src/utils/styled';
+import { StyledProps } from './Dropdown.types';
+import { Item } from 'src/components/Item';
 
-type Props = {
-  isOpen?: boolean;
-  position?: 'left' | 'right';
-};
+export const StyledDropdownWrapper = styled(Box)<StyledProps>`
+  position: relative;
+`;
 
-export const DropdownButton = styled.button<Props>`
-  border-top-left-radius: ${({ theme }) => theme.newBorderRadius.s};
-  border-top-right-radius: ${({ theme }) => theme.newBorderRadius.s};
+export const DropdownButton = styled(Item)<StyledProps>`
+  border-radius: ${({ theme }) => theme.newBorderRadius.s};
+  border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
+  border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};
   background-color: transparent;
   border: none;
-  padding: ${({ theme }) => theme.spacing(0.6, 0)};
   background-color: ${({ theme, isOpen }) =>
     isOpen ? theme.colors.arcticWind : 'transparent'};
 `;
 
-export const IconArrow = styled(Icon)<Props>`
-  margin-left: ${({ theme }) => theme.spacing(1)};
-  transition: all 0.2s;
-  transform: ${({ isOpen }) => (isOpen ? 'rotate(180deg)' : 'rotate(0)')};
-`;
-
-export const DropdownList = styled(Box)<Props>`
+export const StyledDropdownList = styled(Box)<StyledProps>`
   position: absolute;
   animation: fadein 0.3s linear;
   right: ${({ position }) => position === 'left' && '0'};
@@ -42,7 +37,7 @@ export const CloseIcon = styled(Icon)`
   cursor: pointer;
 `;
 
-export const CloseWrapper = styled.button<Props>`
+export const CloseWrapper = styled.button<StyledProps>`
   all: unset;
 
   position: absolute;

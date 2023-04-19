@@ -1,19 +1,31 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
-import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
+import { Dispatch, SetStateAction } from 'react';
+import {
+  ComponentPropsBase,
+  ComponentPropsBaseWithChildren,
+} from 'src/types/ComponentPropsBase';
+
+export type DropDownPosition = 'left' | 'right';
+
+export type DropDownSize = 'small' | 'medium';
+export interface Props extends ComponentPropsBaseWithChildren {
+  position?: DropDownPosition;
+  withCloseButton?: boolean;
+  buttonText: string;
+  size?: DropDownSize;
+}
+
+export interface StyledProps extends Pick<Props, 'position'> {
+  isOpen?: boolean;
+}
 
 export type MenuPropsType = {
   items: MenuItems[];
-  position: 'left' | 'right';
+  position: DropDownPosition;
   withCloseButton: boolean;
 };
 
-export interface DropdownProps extends ComponentPropsBase {
-  children: ReactNode;
-  position?: 'left' | 'right';
-  withCloseButton: boolean;
-}
 export interface DropdownListProps extends ComponentPropsBase {
-  position: 'left' | 'right';
+  position: DropDownPosition;
   subMenuItems: {
     parent: ParentItem;
     children: ChildItem;

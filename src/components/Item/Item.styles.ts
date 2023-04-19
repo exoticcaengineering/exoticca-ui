@@ -1,5 +1,6 @@
 import styled from 'src/utils/styled';
 import { SetColorParams, StyledProps } from './Item.types';
+import { getPaddingBySize } from './Item.helper';
 
 const setColor = ({ selected, theme, color }: SetColorParams) => {
   if (selected) return theme.colors.arcticWind;
@@ -8,11 +9,14 @@ const setColor = ({ selected, theme, color }: SetColorParams) => {
 };
 
 export const StyledWrapper = styled.li<StyledProps>`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(0.75)};
+  align-items: center;
   height: fit-content;
   width: 100%;
   cursor: pointer;
   list-style-type: none;
-  padding: ${({ theme }) => theme.spacing(1, 3)};
+  padding: ${({ theme, size = 'medium' }) => getPaddingBySize(theme, size)};
   border-radius: ${({ theme }) => theme.newBorderRadius.xs};
   font-family: ${({ theme }) =>
     `${theme.typography.fontFamily.newBranding} !important`};
@@ -21,7 +25,7 @@ export const StyledWrapper = styled.li<StyledProps>`
   background: ${({ theme, selected }) => selected && theme.colors.polarNight};
 
   &:hover {
-    text-decoration: ${({ hover }) =>
+    text-decoration: ${({ hover = 'underlined' }) =>
       (hover === 'underlined' || hover === 'underlined-bold') && 'underline'};
     text-decoration-thickness: ${({ hover }) =>
       hover === 'underlined-bold' && '0.2rem'};
