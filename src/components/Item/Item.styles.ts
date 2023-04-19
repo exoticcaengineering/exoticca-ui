@@ -1,5 +1,6 @@
 import styled from 'src/utils/styled';
 import { SetColorParams, StyledProps } from './Item.types';
+import { getPaddingBySize } from './Item.helper';
 
 const setColor = ({ selected, theme, color }: SetColorParams) => {
   if (selected) return theme.colors.arcticWind;
@@ -15,7 +16,7 @@ export const StyledWrapper = styled.li<StyledProps>`
   width: 100%;
   cursor: pointer;
   list-style-type: none;
-  padding: ${({ theme }) => theme.spacing(1, 2)};
+  padding: ${({ theme, size = 'medium' }) => getPaddingBySize(theme, size)};
   border-radius: ${({ theme }) => theme.newBorderRadius.xs};
   font-family: ${({ theme }) =>
     `${theme.typography.fontFamily.newBranding} !important`};

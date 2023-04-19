@@ -12,6 +12,8 @@ export interface ItemIconConfig {
   stroke?: ItemColor;
 }
 
+export type ItemSize = 'xSmall' | 'small' | 'medium' | 'large';
+
 export interface Props extends ComponentPropsBase {
   hover?: 'underlined' | 'background' | 'underlined-bold';
   color?: ItemColor;
@@ -19,10 +21,11 @@ export interface Props extends ComponentPropsBase {
   startIcon?: ItemIconConfig;
   endIcon?: ItemIconConfig;
   onClick?: () => void;
+  size?: ItemSize;
 }
 
 export interface StyledProps
-  extends Pick<Props, 'hover' | 'color' | 'selected'> {}
+  extends Pick<Props, 'hover' | 'color' | 'selected' | 'size'> {}
 
 export interface SetColorParams extends Pick<Props, 'selected' | 'color'> {
   theme: Theme;

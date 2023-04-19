@@ -12,6 +12,7 @@ export const Item: FC<Props> = ({
   startIcon,
   endIcon,
   onClick,
+  size = 'medium',
 }) => {
   return (
     <StyledWrapper
@@ -20,6 +21,7 @@ export const Item: FC<Props> = ({
       hover={hover}
       color={color}
       onClick={() => onClick?.()}
+      size={size}
     >
       {startIcon && (
         <Icon
