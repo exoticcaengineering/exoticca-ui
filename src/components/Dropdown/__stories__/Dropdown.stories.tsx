@@ -23,7 +23,7 @@ export default {
       },
     },
     size: {
-      options: ['small', 'medium'],
+      options: ['small', 'medium', 'large'],
       control: { type: 'radio' },
     },
   },
