@@ -27,12 +27,12 @@ export const setFontsize = (theme: Theme) => ({
   large: theme.typography.fontSize.button1,
 });
 
-export const setContainColor = (color: string): keyof Colors => {
+export const setContainColor = (color: ButtonColor): keyof Colors => {
   if (color === 'black') return 'arcticWind';
   return 'polarNight';
 };
 
-export const setTertiaryColor = (color: string): keyof Colors => {
+export const setTertiaryColor = (color: ButtonColor): keyof Colors => {
   if (color === 'white') return 'arcticWind';
   return 'polarNight';
 };

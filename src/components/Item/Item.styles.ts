@@ -10,7 +10,7 @@ const setColor = ({ selected, theme, color }: SetColorParams) => {
 
 export const StyledWrapper = styled.li<StyledProps>`
   display: flex;
-  gap: ${({ theme }) => theme.spacing(0.75)};
+  gap: ${({ theme }) => theme.spacing(1)};
   align-items: center;
   height: fit-content;
   width: 100%;
@@ -28,7 +28,7 @@ export const StyledWrapper = styled.li<StyledProps>`
     text-decoration: ${({ hover = 'underlined' }) =>
       (hover === 'underlined' || hover === 'underlined-bold') && 'underline'};
     text-decoration-thickness: ${({ hover }) =>
-      hover === 'underlined-bold' && '0.2rem'};
+      hover === 'underlined-bold' && '3px'};
     background: ${({ theme, hover, selected }) =>
       hover === 'background' && !selected && theme.colors.polarNightLight};
   }

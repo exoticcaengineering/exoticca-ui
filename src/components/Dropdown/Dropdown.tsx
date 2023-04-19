@@ -1,6 +1,6 @@
 import { FC, useRef, useState } from 'react';
 import {
-  DropdownButton,
+  StyledDropdownButton,
   CloseIcon,
   CloseWrapper,
   StyledDropdownWrapper,
@@ -9,15 +9,14 @@ import {
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
-import { getIconSize, getTextComponentBySize } from './Dropdown.helpers';
-import { ItemIconConfig } from '../Item';
 
 export const Dropdown: FC<Props> = ({
   children,
   position = 'right',
   withCloseButton,
-  buttonText,
+  text,
   size = 'medium',
+  startIcon,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -38,27 +37,18 @@ export const Dropdown: FC<Props> = ({
     return ['none', 'l', 'l', 'l'];
   };
 
-  const TextComponent = getTextComponentBySize(size);
-
-  const iconSize = getIconSize(size);
-
-  const iconConfig: ItemIconConfig = {
-    name: isOpen ? 'arrowUp' : 'arrowDown',
-    size: iconSize,
-    stroke: isOpen ? 'polarNight' : 'arcticWind',
-  };
-
   return (
     <StyledDropdownWrapper ref={dropdownRef}>
-      <DropdownButton
+      <StyledDropdownButton
         onClick={toggleDropdown}
-        endIcon={iconConfig}
-        hover="underlined-bold"
+        endIcon={isOpen ? 'arrowUp' : 'arrowDown'}
         isOpen={isOpen}
-        color={isOpen ? 'polarNight' : 'arcticWind'}
-      >
-        <TextComponent noWrap>{buttonText}</TextComponent>
-      </DropdownButton>
+        color={isOpen ? 'black' : 'white'}
+        text={text}
+        variant="tertiary"
+        size={size}
+        startIcon={startIcon}
+      />
 
       {isOpen && (
         <StyledDropdownList

@@ -23,23 +23,9 @@ export const Item: FC<Props> = ({
       onClick={() => onClick?.()}
       size={size}
     >
-      {startIcon && (
-        <Icon
-          icon={startIcon.name}
-          size={startIcon.size}
-          fill={startIcon.fill}
-          stroke={startIcon.stroke}
-        />
-      )}
+      {startIcon && <Icon {...startIcon} />}
       {children}
-      {endIcon && (
-        <Icon
-          icon={endIcon.name}
-          size={endIcon.size}
-          fill={endIcon.fill}
-          stroke={endIcon.stroke}
-        />
-      )}
+      {endIcon && <Icon {...endIcon} />}
     </StyledWrapper>
   );
 };
