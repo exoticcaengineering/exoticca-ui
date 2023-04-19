@@ -9,7 +9,7 @@ export type IconSize =
   | 'large' // 40px
   | 'xLarge'; // 50px
 export interface Props extends ComponentPropsBase {
-  icon: IconName;
+  icon: keyof IconName;
   size?: IconSize;
   fill?: keyof Colors;
   stroke?: keyof Colors;
