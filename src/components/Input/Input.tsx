@@ -15,6 +15,7 @@ export const Input = ({
   rounded,
   setValue,
   value,
+  onClick,
 }: InputProps) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -32,6 +33,7 @@ export const Input = ({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
+          onClick={onClick}
         />
       </StyledInputInner>
     </StyledInputWrapper>
