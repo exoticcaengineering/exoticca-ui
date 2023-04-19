@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import { keyframes } from 'styled-components';
 import { StyledProps } from './Button.types';
 import { colorWithOpacity } from 'src/utils/getColorWithOpacity';
 import {
@@ -8,11 +8,12 @@ import {
   setSize,
   setTertiaryColor,
 } from './Button.helpers';
+import styled from 'src/utils/styled';
 
 export const StyledButton = styled.button<StyledProps>`
-  background-color: ${({ theme, color, variant }) =>
-    variant === 'tertiary' ? 'transparent' : setColor(theme)[color]};
-  color: ${({ theme, color, variant }) =>
+  background-color: ${({ theme, color = 'white', variant }) =>
+    variant === 'tertiary' ? 'transparent' : setColor(theme, color)};
+  color: ${({ theme, color = 'white', variant }) =>
     variant === 'tertiary'
       ? theme.colors[setTertiaryColor(color)]
       : theme.colors[setContainColor(color)]};
@@ -20,21 +21,21 @@ export const StyledButton = styled.button<StyledProps>`
     shape === 'rounded'
       ? theme.newBorderRadius.semiRounded
       : theme.newBorderRadius.m};
-  padding: ${({ theme, size }) => setSize(theme)[size]};
-  font-size: ${({ theme, size }) => setFontsize(theme)[size]};
-  border: ${({ theme, color, variant }) =>
+  padding: ${({ theme, size = 'medium' }) => setSize(theme)[size]};
+  font-size: ${({ theme, size = 'medium' }) => setFontsize(theme)[size]};
+  border: ${({ theme, color = 'white', variant }) =>
     variant === 'secondary'
       ? `3px solid ${theme.colors[setContainColor(color)]}`
       : 'none'};
   white-space: nowrap;
   &:hover {
-    background-color: ${({ theme, color }) =>
-      colorWithOpacity(setColor(theme)[color], 80)};
+    background-color: ${({ theme, color = 'white' }) =>
+      colorWithOpacity(setColor(theme, color), 80)};
   }
 
   &:disabled {
-    background-color: ${({ theme, color }) =>
-      colorWithOpacity(setColor(theme)[color], 20)};
+    background-color: ${({ theme, color = 'white' }) =>
+      colorWithOpacity(setColor(theme, color), 20)};
     color: ${({ theme }) => theme.colors.polarNightMedium};
     border: 0.15rem solid ${({ theme }) => theme.colors.polarNightMedium};
     cursor: not-allowed;

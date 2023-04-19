@@ -1,55 +1,71 @@
-import { useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import {
   DropdownButton,
-  IconArrow,
-  DropdownList,
   CloseIcon,
   CloseWrapper,
+  StyledDropdownWrapper,
+  StyledDropdownList,
 } from './Dropdown.styles';
-import { Item } from '../Item/Item';
-import { DropdownProps } from './Dropdown.types';
+import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
+import { useOnClickOutside } from 'src/hooks';
+import { getIconSize, getTextComponentBySize } from './Dropdown.helpers';
+import { ItemIconConfig } from '../Item';
 
-export const Dropdown = ({
+export const Dropdown: FC<Props> = ({
   children,
   position = 'right',
   withCloseButton,
-}: DropdownProps) => {
+  buttonText,
+  size = 'medium',
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const closeDropdown = () => setIsOpen(false);
+
+  useOnClickOutside(dropdownRef, closeDropdown);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   const setBorderRadius = (
-    position: 'left' | 'right',
+    position: DropDownPosition,
   ): Array<keyof BorderRadius> => {
     if (position === 'left') return ['l', 'none', 'l', 'l'];
 
     return ['none', 'l', 'l', 'l'];
   };
 
+  const TextComponent = getTextComponentBySize(size);
+
+  const iconSize = getIconSize(size);
+
+  const iconConfig: ItemIconConfig = {
+    name: isOpen ? 'arrowUp' : 'arrowDown',
+    size: iconSize,
+    stroke: isOpen ? 'polarNight' : 'arcticWind',
+  };
+
   return (
-    <div style={{ position: 'relative' }}>
-      <DropdownButton isOpen={isOpen} onClick={toggleDropdown}>
-        <Item
-          hover="underlined-bold"
-          color={isOpen ? 'polarNight' : 'arcticWind'}
-        >
-          Dropdown
-          <IconArrow
-            isOpen={isOpen}
-            icon={'arrow'}
-            stroke={isOpen ? 'polarNight' : 'arcticWind'}
-          />
-        </Item>
+    <StyledDropdownWrapper ref={dropdownRef}>
+      <DropdownButton
+        onClick={toggleDropdown}
+        endIcon={iconConfig}
+        hover="underlined-bold"
+        isOpen={isOpen}
+        color={isOpen ? 'polarNight' : 'arcticWind'}
+      >
+        <TextComponent noWrap>{buttonText}</TextComponent>
       </DropdownButton>
+
       {isOpen && (
-        <DropdownList
+        <StyledDropdownList
           position={position}
           background="arcticWind"
-          padding={[1.5, 2.875]}
-          borderRadius={setBorderRadius(position) as Array<keyof BorderRadius>}
+          padding={[1.5, 2]}
+          borderRadius={setBorderRadius(position)}
         >
           {withCloseButton && (
             <CloseWrapper position={position} onClick={toggleDropdown}>
@@ -57,8 +73,8 @@ export const Dropdown = ({
             </CloseWrapper>
           )}
           {children}
-        </DropdownList>
+        </StyledDropdownList>
       )}
-    </div>
+    </StyledDropdownWrapper>
   );
 };

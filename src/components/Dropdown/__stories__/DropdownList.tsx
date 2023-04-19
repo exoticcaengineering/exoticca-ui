@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DropdownListProps, SubMenuItem } from './../Dropdown.types';
-import { Container, Row, Wrapper } from './DropdownList.styles';
+import { Row, Wrapper } from './DropdownList.styles';
 import { ListChildrenItems } from './ListChildrenItems';
 import { ListParentItems } from './ListParentItems';
 
