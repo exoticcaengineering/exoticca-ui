@@ -1,7 +1,7 @@
 import { IconName } from 'src/types/IconNames';
 
 export interface InputProps {
-  icon: IconName | '';
+  icon: IconName | undefined;
   label: string;
   placeholder: string;
   rounded: 'left' | 'right' | 'both';
@@ -11,7 +11,7 @@ export interface InputProps {
 }
 
 export interface StyleProps {
-  icon?: IconName;
+  icon?: IconName | '';
   label?: string;
   placeholder?: string;
   rounded?: 'left' | 'right' | 'both';
