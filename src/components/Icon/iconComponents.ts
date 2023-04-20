@@ -16,6 +16,18 @@ import { FlagCA } from './SVGIcons/FlagCA';
 import { FlagDE } from './SVGIcons/FlagDE';
 import { FlagMX } from './SVGIcons/FlagMX';
 import { FlagFR } from './SVGIcons/FlagFR';
+import { Adventure } from './SVGIcons/Adventure';
+import { Beach } from './SVGIcons/Beach';
+import { Culture } from './SVGIcons/Culture';
+import { Fall } from './SVGIcons/Fall';
+import { Honeymoon } from './SVGIcons/Honeymoon';
+import { Luxury } from './SVGIcons/Luxury';
+import { MultiCountry } from './SVGIcons/MultiCountry';
+import { Nature } from './SVGIcons/Nature';
+import { Safari } from './SVGIcons/Safari';
+import { Spring } from './SVGIcons/Spring';
+import { Summer } from './SVGIcons/Summer';
+import { Winter } from './SVGIcons/Winter';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -33,4 +45,16 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'flag-mx': FlagMX,
   'flag-fr': FlagFR,
   loader: IconLoader,
+  adventure: Adventure,
+  beach: Beach,
+  culture: Culture,
+  fall: Fall,
+  honeymoon: Honeymoon,
+  luxury: Luxury,
+  'multi-country': MultiCountry,
+  nature: Nature,
+  safari: Safari,
+  spring: Spring,
+  summer: Summer,
+  winter: Winter,
 };
