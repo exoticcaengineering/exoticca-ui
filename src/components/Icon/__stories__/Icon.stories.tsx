@@ -14,6 +14,10 @@ export default {
       control: { type: 'radio' },
       defaultValue: 'regular',
     },
+    rotate: {
+      control: { type: 'number' },
+      defaultValue: 0,
+    },
   },
 } as ComponentMeta<typeof Icon>;
 
