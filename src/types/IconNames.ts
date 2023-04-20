@@ -22,6 +22,7 @@ export const iconNames = [
   'logo-rebrand',
   'pill-status',
   'flag-us',
+  'arrowSquare',
   'flag-uk',
   'flag-es',
   'flag-fr',
