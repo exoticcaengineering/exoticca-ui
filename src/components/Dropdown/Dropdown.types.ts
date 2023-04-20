@@ -13,6 +13,8 @@ export interface Props
     Pick<ButtonProps, 'text' | 'startIcon' | 'size'> {
   position?: DropDownPosition;
   withCloseButton?: boolean;
+  onClick?: (isOpen: boolean) => void;
+  onClose?: () => void;
 }
 
 export interface StyledProps extends Pick<Props, 'position'> {

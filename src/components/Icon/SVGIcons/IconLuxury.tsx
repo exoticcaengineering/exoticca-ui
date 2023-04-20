@@ -1,4 +1,4 @@
-export const Luxury = () => (
+export const IconLuxury = () => (
   <svg
     width="24"
     height="24"

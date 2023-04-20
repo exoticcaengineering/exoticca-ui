@@ -1,4 +1,4 @@
-export const Adventure = () => (
+export const IconCulture = () => (
   <svg
     width="24"
     height="24"
@@ -7,58 +7,70 @@ export const Adventure = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M22 21L15.3833 8.53125C15.2099 8.20436 14.8701 8 14.5 8C14.1299 8 13.7901 8.20436 13.6167 8.53125L7 21"
+      d="M12 15V21"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M18.0802 13.6133L16.29 14.6133"
+      d="M13 21H11"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M14.5 13.6133L16.2902 14.6133"
+      d="M12 15C10.8505 16.2733 9.2154 17 7.5 17C5.7846 17 4.14949 16.2733 3 15"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M12.71 14.6133L14.5001 13.6133"
+      d="M21 15C19.8505 16.2733 18.2154 17 16.5 17C14.7846 17 13.1495 16.2733 12 15"
+      stroke="#121212"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <rect
+      x="3"
+      y="15"
+      width="0.1"
+      height="6"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M10.9199 13.6133L12.7101 14.6133"
+      d="M2 21H4"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M23 21H1"
+      d="M21 15V21"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M8.43506 4.5188C9.35978 4.61493 10.0468 5.41905 9.99748 6.34744C9.94813 7.27583 9.1797 8.00257 8.25 8.00012H4.5C3.67157 8.00012 3 7.32855 3 6.50012C3 5.6717 3.67157 5.00012 4.5 5.00012C4.49826 3.9899 5.25139 3.13757 6.25414 3.01491C7.2569 2.89226 8.19325 3.53794 8.43506 4.5188Z"
+      d="M22 21H20"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path
-      d="M9.95966 15.4228L8.378 12.5214C8.20283 12.2 7.86604 12 7.5 12C7.13396 12 6.79717 12.2 6.622 12.5214L2 21.0001"
+    <rect
+      x="5"
+      y="3"
+      width="14"
+      height="9"
+      rx="1"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"

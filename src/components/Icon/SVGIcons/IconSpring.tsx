@@ -1,4 +1,4 @@
-export const Spring = () => (
+export const IconSpring = () => (
   <svg
     width="24"
     height="24"

@@ -18,6 +18,7 @@ export const iconNames = [
   'spring',
   'summer',
   'winter',
+  'phone-call',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',

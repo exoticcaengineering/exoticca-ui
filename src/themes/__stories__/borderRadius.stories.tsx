@@ -22,9 +22,9 @@ export const BorderRadius: ComponentStory<typeof Box> = () => (
         gutterBottom={2}
         key={radius}
       >
-        <Typography align="center">theme.borderRadius.{radius}:</Typography>
+        <Typography align="center">theme.newBorderRadius.{radius}:</Typography>
         <Typography align="center">
-          {themeDefault.borderRadius[radius]}
+          {themeDefault.newBorderRadius[radius]}
         </Typography>
       </Box>
     ))}
