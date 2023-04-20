@@ -1,4 +1,4 @@
-export const MultiCountry = () => (
+export const IconMultiCountry = () => (
   <svg
     width="24"
     height="24"

@@ -7,9 +7,11 @@ export const StyledBoxWrapper = styled.div<StyleProps>`
     theme.colors[background]};
   border-radius: ${({ theme, borderRadius = 's' }) => {
     if (Array.isArray(borderRadius)) {
-      return borderRadius.map((radius) => theme.borderRadius[radius]).join(' ');
+      return borderRadius
+        .map((radius) => theme.newBorderRadius[radius])
+        .join(' ');
     }
-    return theme.borderRadius[borderRadius];
+    return theme.newBorderRadius[borderRadius];
   }};
   border-width: ${({ borderWidth = [1] }) => {
     if (Array.isArray(borderWidth)) {

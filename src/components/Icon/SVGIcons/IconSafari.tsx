@@ -1,4 +1,4 @@
-export const Culture = () => (
+export const IconSafari = () => (
   <svg
     width="24"
     height="24"
@@ -6,71 +6,77 @@ export const Culture = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M12 15V21"
+    <circle
+      cx="11.9998"
+      cy="11.9998"
+      r="9.00375"
+      stroke="#121212"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle
+      cx="11.9998"
+      cy="11.9998"
+      r="9.00375"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M13 21H11"
+      d="M10.0107 10.0098L13.9889 13.9879"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M12 15C10.8505 16.2733 9.2154 17 7.5 17C5.7846 17 4.14949 16.2733 3 15"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M14.2404 13.5829L15.9881 8.33961C16.0192 8.24637 15.9949 8.14356 15.9254 8.07406C15.8559 8.00456 15.7531 7.98029 15.6598 8.01137L10.4166 9.75911C10.1066 9.86243 9.86338 10.1057 9.76007 10.4156L8.01234 15.6589C7.98127 15.7521 8.00554 15.855 8.07504 15.9245C8.14454 15.994 8.24734 16.0182 8.34059 15.9871L13.5839 14.2394C13.8938 14.1361 14.1371 13.8929 14.2404 13.5829V13.5829Z"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M21 15C19.8505 16.2733 18.2154 17 16.5 17C14.7846 17 13.1495 16.2733 12 15"
-      stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <rect
-      x="3"
-      y="15"
-      width="0.1"
-      height="6"
+      d="M19.0029 11.9983H21.0038"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M2 21H4"
+      d="M4.99693 11.9983H2.99609"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M21 15V21"
+      d="M16.9521 16.9512L18.3669 18.366"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M22 21H20"
+      d="M7.04859 7.04761L5.63379 5.63281"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <rect
-      x="5"
-      y="3"
-      width="14"
-      height="9"
-      rx="1"
+    <path
+      d="M12.0002 19.002V21.0028"
+      stroke="#121212"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.0002 4.99693V2.99609"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"

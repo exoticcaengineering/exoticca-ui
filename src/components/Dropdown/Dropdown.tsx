@@ -17,16 +17,24 @@ export const Dropdown: FC<Props> = ({
   text,
   size = 'medium',
   startIcon,
+  className,
+  testId,
+  onClick,
+  onClose,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const closeDropdown = () => setIsOpen(false);
+  const closeDropdown = () => {
+    onClose?.();
+    setIsOpen(false);
+  };
 
   useOnClickOutside(dropdownRef, closeDropdown);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    if (isOpen) return closeDropdown();
+    return setIsOpen(!isOpen);
   };
 
   const setBorderRadius = (
@@ -37,10 +45,18 @@ export const Dropdown: FC<Props> = ({
     return ['none', 'l', 'l', 'l'];
   };
 
+  const handleOnClick = () => {
+    onClick?.(isOpen);
+    toggleDropdown();
+  };
+
   return (
-    <StyledDropdownWrapper ref={dropdownRef}>
+    <StyledDropdownWrapper
+      ref={dropdownRef}
+      data-testid={testId ?? 'dropdown-button'}
+    >
       <StyledDropdownButton
-        onClick={toggleDropdown}
+        onClick={handleOnClick}
         endIcon={{ icon: 'arrow', rotate: isOpen ? 0 : 180 }}
         isOpen={isOpen}
         color={isOpen ? 'black' : 'white'}
@@ -48,6 +64,7 @@ export const Dropdown: FC<Props> = ({
         variant="tertiary"
         size={size}
         startIcon={startIcon}
+        className={className}
       />
 
       {isOpen && (

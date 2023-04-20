@@ -1,4 +1,4 @@
-export const Beach = () => (
+export const IconBeach = () => (
   <svg
     width="24"
     height="24"
