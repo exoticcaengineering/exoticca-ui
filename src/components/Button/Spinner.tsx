@@ -15,11 +15,16 @@ export const Spinner = ({
 }: SpinnerProps) => {
   const setSize = () => {
     if (size === 'large') return 32;
-    return 26;
+    if (size === 'medium') return 26;
+    return 22;
   };
   return (
     <Animation data-testid="spinner" style={customStyle} size={setSize()}>
-      <Icon icon={'loader'} stroke={color} />
+      <Icon
+        icon={'loader'}
+        stroke={color}
+        size={size === 'small' ? 'regular' : 'medium'}
+      />
     </Animation>
   );
 };
