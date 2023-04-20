@@ -51,7 +51,7 @@ export const StyledInput = styled.input`
   background: transparent;
   padding-right: ${({ theme }) => theme.spacing(0)};
   height: 23px;
-  font-size: ${({ theme }) => theme.typography.fontSize.body3};
+  font-size: ${({ theme }) => theme.typography.fontSize.body1};
 
   ::placeholder {
     color: ${({ theme }) => theme.colors.grey70};
