@@ -3,7 +3,6 @@ import { StyledProps } from './Icon.types';
 import { Box } from 'src/components/Box';
 import { css } from 'styled-components';
 import { getIconSize, getStrokeWidth } from './Icon.helpers';
-import { Colors } from 'src/types';
 
 export const StyledWrapper = styled(Box)<StyledProps>`
   line-height: 0;
