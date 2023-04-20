@@ -10,6 +10,7 @@ import { IconUser } from './SVGIcons/IconUser';
 import { IconSearch } from './SVGIcons/IconSearch';
 import { IconLoader } from './SVGIcons/IconLoader';
 import { FlagUs } from './SVGIcons/FlagUs';
+import { ArrowSquare } from './SVGIcons/ArrowSquare';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -21,4 +22,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   search: IconSearch,
   'flag-us': FlagUs,
   loader: IconLoader,
+  arrowSquare: ArrowSquare,
 };
