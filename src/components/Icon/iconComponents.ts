@@ -10,6 +10,7 @@ import { LogoRebrand } from './SVGIcons/LogoRebrand';
 import { IconUser } from './SVGIcons/IconUser';
 import { IconSearch } from './SVGIcons/IconSearch';
 import { IconLoader } from './SVGIcons/IconLoader';
+import { ArrowSquare } from './SVGIcons/ArrowSquare';
 import { FlagUS } from './SVGIcons/FlagUS';
 import { FlagUK } from './SVGIcons/FlagUK';
 import { FlagES } from './SVGIcons/FlagES';
@@ -35,4 +36,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'flag-mx': FlagMX,
   'flag-fr': FlagFR,
   loader: IconLoader,
+  arrowSquare: ArrowSquare,
 };

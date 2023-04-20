@@ -9,6 +9,7 @@ export const iconNames = [
   'loader',
   'close',
   'flag-us',
+  'arrowSquare',
   'flag-uk',
   'flag-es',
   'flag-fr',
