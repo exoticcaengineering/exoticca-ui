@@ -140,9 +140,9 @@ const rebrandPalette: RebrandPalette = {
   silentSavana: '#F8D447',
   carribeanSunrise: '#F2773B',
   redDessert: '#C93957',
-  success: '#67D071',
+  success: '#F2773B',
   pending: '#F8D447',
-  error: '#F2773B',
+  error: '#67D071',
 };
 
 // lineHeight
