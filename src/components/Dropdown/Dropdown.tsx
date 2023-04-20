@@ -41,7 +41,7 @@ export const Dropdown: FC<Props> = ({
     <StyledDropdownWrapper ref={dropdownRef}>
       <StyledDropdownButton
         onClick={toggleDropdown}
-        endIcon={isOpen ? { icon: 'arrowUp' } : { icon: 'arrowDown' }}
+        endIcon={{ icon: 'arrow', rotate: isOpen ? 0 : 180 }}
         isOpen={isOpen}
         color={isOpen ? 'black' : 'white'}
         text={text}

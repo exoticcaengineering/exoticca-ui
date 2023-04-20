@@ -1,4 +1,4 @@
-export const IconArrowUp = () => (
+export const IconArrow = () => (
   <svg
     width="24"
     height="24"

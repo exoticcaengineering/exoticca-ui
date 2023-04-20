@@ -1,8 +1,7 @@
 import { FC, SVGProps } from 'react';
 
 import { IconName } from 'src/types/IconNames';
-import { IconArrowUp } from './SVGIcons/IconArrowUp';
-import { IconArrowDown } from './SVGIcons/IconArrowDown';
+import { IconArrow } from './SVGIcons/IconArrow';
 import { IconClose } from './SVGIcons/IconClose';
 import { Promo } from './SVGIcons/Promo';
 import { IconContact } from './SVGIcons/IconContact';
@@ -20,8 +19,7 @@ import { FlagFR } from './SVGIcons/FlagFR';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
-  arrowUp: IconArrowUp,
-  arrowDown: IconArrowDown,
+  arrow: IconArrow,
   close: IconClose,
   'pill-status': Promo,
   contact: IconContact,
