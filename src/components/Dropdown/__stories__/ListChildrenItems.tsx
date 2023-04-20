@@ -19,7 +19,7 @@ export const ListChildrenItems = ({
           {childrenItems.children.items.map((subItem) => (
             <Item key={subItem.name} hover="underlined">
               <a href={subItem.slug} style={{ whiteSpace: 'nowrap' }}>
-                <ChildrenIcon icon={'arrow'} />
+                <ChildrenIcon icon={'arrowUp'} />
                 {subItem.name}
               </a>
             </Item>

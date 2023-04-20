@@ -1,28 +1,37 @@
-import { useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import {
-  DropdownButton,
-  IconArrow,
-  DropdownList,
+  StyledDropdownButton,
   CloseIcon,
   CloseWrapper,
+  StyledDropdownWrapper,
+  StyledDropdownList,
 } from './Dropdown.styles';
-import { Item } from '../Item/Item';
-import { DropdownProps } from './Dropdown.types';
+import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
+import { useOnClickOutside } from 'src/hooks';
 
-export const Dropdown = ({
+export const Dropdown: FC<Props> = ({
   children,
   position = 'right',
   withCloseButton,
-}: DropdownProps) => {
+  text,
+  size = 'medium',
+  startIcon,
+  originalIconColor,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const closeDropdown = () => setIsOpen(false);
+
+  useOnClickOutside(dropdownRef, closeDropdown);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   const setBorderRadius = (
-    position: 'left' | 'right',
+    position: DropDownPosition,
   ): Array<keyof BorderRadius> => {
     if (position === 'left') return ['l', 'none', 'l', 'l'];
 
@@ -30,35 +39,34 @@ export const Dropdown = ({
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <DropdownButton isOpen={isOpen} onClick={toggleDropdown}>
-        <Item
-          hover="underlined-bold"
-          color={isOpen ? 'polarNight' : 'arcticWind'}
-        >
-          Dropdown
-          <IconArrow
-            isOpen={isOpen}
-            icon={'arrow'}
-            stroke={isOpen ? 'polarNight' : 'arcticWind'}
-          />
-        </Item>
-      </DropdownButton>
+    <StyledDropdownWrapper ref={dropdownRef}>
+      <StyledDropdownButton
+        onClick={toggleDropdown}
+        endIcon={isOpen ? 'arrowUp' : 'arrowDown'}
+        isOpen={isOpen}
+        color={isOpen ? 'black' : 'white'}
+        text={text}
+        variant="tertiary"
+        size={size}
+        startIcon={startIcon}
+        originalIconColor={originalIconColor}
+      />
+
       {isOpen && (
-        <DropdownList
+        <StyledDropdownList
           position={position}
           background="arcticWind"
-          padding={[1.5, 2.875]}
-          borderRadius={setBorderRadius(position) as Array<keyof BorderRadius>}
+          padding={[1.5, 2]}
+          borderRadius={setBorderRadius(position)}
         >
           {withCloseButton && (
-            <CloseWrapper position={position} onClick={toggleDropdown}>
+            <CloseWrapper position={position} onClick={closeDropdown}>
               <CloseIcon icon={'close'} />
             </CloseWrapper>
           )}
           {children}
-        </DropdownList>
+        </StyledDropdownList>
       )}
-    </div>
+    </StyledDropdownWrapper>
   );
 };

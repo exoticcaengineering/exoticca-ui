@@ -13,7 +13,7 @@ export const getIconSize = (size?: IconSize) => {
     case 'xLarge':
       return '50px';
     default:
-      return 'auto';
+      return '18px'; // default size
   }
 };
 

@@ -30,19 +30,21 @@ export const StyledWrapper = styled(Box)<StyledProps>`
     stroke-width: ${({ size }) => getStrokeWidth(size)};
   }
 
-  ${({ stroke, theme }) =>
+  ${({ stroke, theme, originalIconColor }) =>
     stroke &&
+    !originalIconColor &&
     css`
       & > svg * {
-        stroke: ${theme.colors[stroke as keyof Colors]};
+        stroke: ${theme.colors[stroke]};
       }
     `}
 
-  ${({ fill, theme }) =>
+  ${({ fill, theme, originalIconColor }) =>
     fill &&
+    !originalIconColor &&
     css`
       & > svg * {
-        fill: ${theme.colors[fill as keyof Colors]};
+        fill: ${theme.colors[fill]};
       }
     `}
 `;

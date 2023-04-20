@@ -1,31 +1,30 @@
 import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
 import styled from 'src/utils/styled';
+import { StyledProps } from './Dropdown.types';
+import { Button } from 'src/components/Button';
 
-type Props = {
-  isOpen?: boolean;
-  position?: 'left' | 'right';
-};
+export const StyledDropdownWrapper = styled(Box)<StyledProps>`
+  position: relative;
+`;
 
-export const DropdownButton = styled.button<Props>`
-  border-top-left-radius: ${({ theme }) => theme.newBorderRadius.s};
-  border-top-right-radius: ${({ theme }) => theme.newBorderRadius.s};
-  background-color: transparent;
-  border: none;
-  padding: ${({ theme }) => theme.spacing(0.6, 0)};
+export const StyledDropdownButton = styled(Button)<StyledProps>`
+  border-radius: ${({ theme }) => theme.newBorderRadius.s};
+  border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
+  border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};
   background-color: ${({ theme, isOpen }) =>
     isOpen ? theme.colors.arcticWind : 'transparent'};
+  &:hover {
+    background-color: ${({ theme, isOpen }) =>
+      isOpen ? theme.colors.arcticWind : 'transparent'};
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
 `;
 
-export const IconArrow = styled(Icon)<Props>`
-  margin-left: ${({ theme }) => theme.spacing(1)};
-  transition: all 0.2s;
-  transform: ${({ isOpen }) => (isOpen ? 'rotate(180deg)' : 'rotate(0)')};
-`;
-
-export const DropdownList = styled(Box)<Props>`
+export const StyledDropdownList = styled(Box)<StyledProps>`
   position: absolute;
-  animation: fadein 0.3s linear;
+  animation: fadein ${({ theme }) => theme.transition.duration.shortest} linear;
   right: ${({ position }) => position === 'left' && '0'};
   transform: ${({ position }) => position === 'left' && 'translateX(0)'};
   @keyframes fadein {
@@ -42,7 +41,7 @@ export const CloseIcon = styled(Icon)`
   cursor: pointer;
 `;
 
-export const CloseWrapper = styled.button<Props>`
+export const CloseWrapper = styled.button<StyledProps>`
   all: unset;
 
   position: absolute;

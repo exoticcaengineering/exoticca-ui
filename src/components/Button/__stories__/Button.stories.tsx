@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory, Meta, Story } from '@storybook/react';
 import { Button } from '../Button';
 import { MouseEventHandler, useState } from 'react';
 import { Banner } from './Banner';
@@ -15,9 +15,6 @@ export default {
     shape: 'rounded',
     state: 'normal',
     variant: 'primary',
-    leftIcon: '',
-    centerIcon: '',
-    rightIcon: '',
   },
   argTypes: {
     color: {
@@ -52,25 +49,25 @@ export default {
       control: { type: 'select' },
       category: 'Prop',
     },
-    leftIcon: {
-      options: [...iconNames, ''],
+    startIcon: {
+      options: iconNames,
       control: { type: 'select' },
       category: 'Prop',
     },
-    rightIcon: {
-      options: [...iconNames, ''],
+    endIcon: {
+      options: iconNames,
       control: { type: 'select' },
       category: 'Prop',
     },
     centerIcon: {
-      options: [...iconNames, ''],
+      options: iconNames,
       control: { type: 'select' },
       category: 'Prop',
     },
   },
-} as Meta<Props>;
+} as ComponentMeta<typeof Button>;
 
-const Template: Story<Props> = ({ ...props }: Props) => {
+const Template: ComponentStory<typeof Button> = ({ ...props }: Props) => {
   const [showBanner, setShowBanner] = useState(false);
   const [bannerPosition, setBannerPosition] = useState({ top: 0, left: 0 });
 

@@ -3,24 +3,34 @@ import { Props } from './Button.types';
 import { StyledButton, Wrapper } from './Button.styles';
 import { Icon } from '../Icon/Icon';
 import { Spinner } from './Spinner';
-import { setContainColor, setTertiaryColor } from './Button.helpers';
+import {
+  getIconSize,
+  setContainColor,
+  setTertiaryColor,
+} from './Button.helpers';
+import { Typography } from '../Typography';
 
 export const Button: FC<Props> = ({
   text,
-  size,
-  color,
+  size = 'medium',
+  color = 'white',
   onClick,
-  shape,
-  leftIcon,
-  rightIcon,
+  shape = 'square',
+  startIcon,
+  endIcon,
   centerIcon,
   state,
-  variant,
+  variant = 'primary',
+  className,
+  testId,
+  originalIconColor,
 }) => {
   const setColor = () => {
-    if (variant === 'tertiary') setTertiaryColor(color);
+    if (variant === 'tertiary') return setTertiaryColor(color);
     return setContainColor(color);
   };
+
+  const iconSize = getIconSize(size);
 
   return (
     <StyledButton
@@ -30,18 +40,35 @@ export const Button: FC<Props> = ({
       size={size}
       onClick={onClick}
       disabled={state === 'disabled'}
+      className={className}
+      data-testid={testId}
     >
       {centerIcon ? (
-        <Icon size="regular" icon={centerIcon} stroke={setColor()} />
+        <Icon
+          size={iconSize}
+          icon={centerIcon}
+          stroke={setColor()}
+          originalIconColor={originalIconColor}
+        />
       ) : (
         <Wrapper>
-          {rightIcon && (
-            <Icon size="regular" icon={rightIcon} stroke={setColor()} />
+          {startIcon && (
+            <Icon
+              size={iconSize}
+              icon={startIcon}
+              stroke={setColor()}
+              originalIconColor={originalIconColor}
+            />
           )}
-          {text && text}
+          {text && <Typography as="span">{text}</Typography>}
           {state === 'loading' && <Spinner size={size} color={setColor()} />}
-          {leftIcon && (
-            <Icon size="regular" icon={leftIcon} stroke={setColor()} />
+          {endIcon && (
+            <Icon
+              size={iconSize}
+              icon={endIcon}
+              stroke={setColor()}
+              originalIconColor={originalIconColor}
+            />
           )}
         </Wrapper>
       )}
