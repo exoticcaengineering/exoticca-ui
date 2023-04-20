@@ -10,7 +10,7 @@ export type DropDownPosition = 'left' | 'right';
 export type DropDownSize = 'small' | 'medium';
 export interface Props
   extends ComponentPropsBaseWithChildren,
-    Pick<ButtonProps, 'text' | 'startIcon' | 'originalIconColor' | 'size'> {
+    Pick<ButtonProps, 'text' | 'startIcon' | 'size'> {
   position?: DropDownPosition;
   withCloseButton?: boolean;
 }

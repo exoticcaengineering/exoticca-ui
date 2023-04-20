@@ -60,6 +60,5 @@ export const Default = Template.bind({});
 Default.args = {
   position: 'right',
   withCloseButton: false,
-  startIcon: 'flag-us',
-  originalIconColor: true,
+  startIcon: { icon: 'flag-us', originalIconColor: true },
 };

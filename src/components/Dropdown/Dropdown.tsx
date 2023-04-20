@@ -17,7 +17,6 @@ export const Dropdown: FC<Props> = ({
   text,
   size = 'medium',
   startIcon,
-  originalIconColor,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -42,14 +41,13 @@ export const Dropdown: FC<Props> = ({
     <StyledDropdownWrapper ref={dropdownRef}>
       <StyledDropdownButton
         onClick={toggleDropdown}
-        endIcon={isOpen ? 'arrowUp' : 'arrowDown'}
+        endIcon={isOpen ? { icon: 'arrowUp' } : { icon: 'arrowDown' }}
         isOpen={isOpen}
         color={isOpen ? 'black' : 'white'}
         text={text}
         variant="tertiary"
         size={size}
         startIcon={startIcon}
-        originalIconColor={originalIconColor}
       />
 
       {isOpen && (

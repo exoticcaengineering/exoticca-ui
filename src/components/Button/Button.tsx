@@ -23,7 +23,6 @@ export const Button: FC<Props> = ({
   variant = 'primary',
   className,
   testId,
-  originalIconColor,
 }) => {
   const setColor = () => {
     if (variant === 'tertiary') return setTertiaryColor(color);
@@ -44,32 +43,15 @@ export const Button: FC<Props> = ({
       data-testid={testId}
     >
       {centerIcon ? (
-        <Icon
-          size={iconSize}
-          icon={centerIcon}
-          stroke={setColor()}
-          originalIconColor={originalIconColor}
-        />
+        <Icon size={iconSize} stroke={setColor()} {...centerIcon} />
       ) : (
         <Wrapper>
           {startIcon && (
-            <Icon
-              size={iconSize}
-              icon={startIcon}
-              stroke={setColor()}
-              originalIconColor={originalIconColor}
-            />
+            <Icon size={iconSize} stroke={setColor()} {...startIcon} />
           )}
           {text && <Typography as="span">{text}</Typography>}
           {state === 'loading' && <Spinner size={size} color={setColor()} />}
-          {endIcon && (
-            <Icon
-              size={iconSize}
-              icon={endIcon}
-              stroke={setColor()}
-              originalIconColor={originalIconColor}
-            />
-          )}
+          {endIcon && <Icon size={iconSize} stroke={setColor()} {...endIcon} />}
         </Wrapper>
       )}
     </StyledButton>

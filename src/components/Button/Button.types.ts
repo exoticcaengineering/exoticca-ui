@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconName } from 'src/types/IconNames';
+import { IconConfig } from '../Icon';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 
@@ -18,11 +18,10 @@ export interface Props extends ComponentPropsBase {
   shape?: 'square' | 'rounded';
   state?: 'normal' | 'disabled' | 'loading';
   variant?: 'primary' | 'secondary' | 'tertiary';
-  startIcon?: IconName;
-  endIcon?: IconName;
-  centerIcon?: IconName;
+  startIcon?: IconConfig;
+  endIcon?: IconConfig;
+  centerIcon?: IconConfig;
   onClick: MouseEventHandler | undefined;
-  originalIconColor?: boolean;
 }
 
 export interface StyledProps extends Props {}
