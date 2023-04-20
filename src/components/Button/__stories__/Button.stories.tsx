@@ -49,12 +49,12 @@ export default {
       control: { type: 'select' },
       category: 'Prop',
     },
-    leftIcon: {
+    startIcon: {
       options: iconNames,
       control: { type: 'select' },
       category: 'Prop',
     },
-    rightIcon: {
+    endIcon: {
       options: iconNames,
       control: { type: 'select' },
       category: 'Prop',

@@ -8,7 +8,8 @@ export type IconSize =
   | 'medium' //24px
   | 'large' // 40px
   | 'xLarge'; // 50px
-export interface Props extends ComponentPropsBase {
+
+export interface IconConfig {
   icon: IconName;
   size?: IconSize;
   fill?: keyof Colors;
@@ -17,6 +18,8 @@ export interface Props extends ComponentPropsBase {
   fullHeight?: boolean;
   width?: number;
   height?: number;
+  originalIconColor?: boolean;
 }
+export interface Props extends ComponentPropsBase, IconConfig {}
 
 export interface StyledProps extends Omit<Props, 'icon'> {}
