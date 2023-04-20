@@ -139,9 +139,10 @@ const rebrandPalette: RebrandPalette = {
   savageForest: '#67D071',
   silentSavana: '#F8D447',
   carribeanSunrise: '#F2773B',
-  success: '#67D071',
+  redDessert: '#C93957',
+  success: '#F2773B',
   pending: '#F8D447',
-  error: '#F2773B',
+  error: '#67D071',
 };
 
 // lineHeight
