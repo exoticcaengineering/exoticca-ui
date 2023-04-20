@@ -38,6 +38,6 @@ export const setTertiaryColor = (color: ButtonColor): keyof Colors => {
 };
 
 export const getIconSize = (size: ButtonSize): IconSize => {
-  if (size === 'small') return 'small';
-  return 'regular';
+  if (size === 'small') return 'regular';
+  return 'medium';
 };

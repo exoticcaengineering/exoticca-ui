@@ -10,14 +10,14 @@ export default {
   title: 'Components/Input/FilterInput',
   component: FilterInput,
   args: {
-    icon: 'arrowUp',
+    icon: 'arrow',
     label: 'Label',
     placeholder: 'Placeholder',
     rounded: 'both',
   },
   argTypes: {
     icon: {
-      options: [...iconNames, ''],
+      options: [...iconNames, undefined],
       control: { type: 'select' },
       category: 'Prop',
     },

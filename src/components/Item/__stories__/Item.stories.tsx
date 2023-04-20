@@ -65,5 +65,5 @@ withStartIcon.args = {
 
 export const withEndIcon = Template.bind({});
 withEndIcon.args = {
-  endIcon: { icon: 'arrowUp' },
+  endIcon: { icon: 'arrow' },
 };

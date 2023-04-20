@@ -19,6 +19,7 @@ export interface IconConfig {
   width?: number;
   height?: number;
   originalIconColor?: boolean;
+  rotate?: number;
 }
 export interface Props extends ComponentPropsBase, IconConfig {}
 

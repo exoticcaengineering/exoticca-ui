@@ -17,6 +17,7 @@ export const StyledWrapper = styled(Box)<StyledProps>`
     if (height) return `${height}px`;
     return getIconSize(size);
   }};
+  transform: ${({ rotate = 0 }) => `rotate(${rotate}deg)`};
   z-index: 1;
   & > svg {
     width: 100%;

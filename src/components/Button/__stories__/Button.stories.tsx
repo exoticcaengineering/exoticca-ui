@@ -1,9 +1,8 @@
-import { ComponentMeta, ComponentStory, Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Button } from '../Button';
 import { MouseEventHandler, useState } from 'react';
 import { Banner } from './Banner';
 import { Props } from '../Button.types';
-import { iconNames } from 'src/types/IconNames';
 
 export default {
   title: 'Components/Button',
@@ -49,25 +48,10 @@ export default {
       control: { type: 'select' },
       category: 'Prop',
     },
-    startIcon: {
-      options: iconNames,
-      control: { type: 'select' },
-      category: 'Prop',
-    },
-    endIcon: {
-      options: iconNames,
-      control: { type: 'select' },
-      category: 'Prop',
-    },
-    centerIcon: {
-      options: iconNames,
-      control: { type: 'select' },
-      category: 'Prop',
-    },
   },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = ({ ...props }: Props) => {
+const Template: ComponentStory<typeof Button> = (props: Props) => {
   const [showBanner, setShowBanner] = useState(false);
   const [bannerPosition, setBannerPosition] = useState({ top: 0, left: 0 });
 
@@ -115,3 +99,25 @@ const Template: ComponentStory<typeof Button> = ({ ...props }: Props) => {
   );
 };
 export const Base = Template.bind({});
+
+export const WithStartIcon = Template.bind({});
+
+WithStartIcon.args = {
+  startIcon: {
+    icon: 'arrow',
+  },
+};
+
+export const WithEndIcon = Template.bind({});
+WithEndIcon.args = {
+  endIcon: {
+    icon: 'arrow',
+  },
+};
+
+export const WithCenterIcon = Template.bind({});
+WithCenterIcon.args = {
+  centerIcon: {
+    icon: 'arrow',
+  },
+};
