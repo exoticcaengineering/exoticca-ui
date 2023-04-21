@@ -23,6 +23,6 @@ export const getStrokeWidth = (size?: IconSize) => {
     case 'xLarge':
       return 2;
     default:
-      return 'unset';
+      return '1.5';
   }
 };
