@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import styled from 'styled-components';
+import styled from 'src/utils/styled';
 
 const MyStyled: typeof styled =
   // @ts-ignore

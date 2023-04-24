@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'src/utils/styled';
 import { Icon } from '../../Icon/Icon';
 
 type Props = {
