@@ -2,7 +2,9 @@ import styled from 'src/utils/styled';
 import { Box } from 'src/components/Box';
 import { StyledProps } from './Header.types';
 
-export const StyledHeaderWrapper = styled(Box)<StyledProps>`
+export const StyledHeaderWrapper = styled(Box).attrs({
+  borderRadius: 'none',
+})<StyledProps>`
   display: flex;
   align-items: center;
   width: 100%;
