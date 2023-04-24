@@ -50,5 +50,6 @@ export const AccordionContent = styled.div<{ isOpen: boolean }>`
   word-break: break-word;
   opacity: ${(props) => (props.isOpen ? 1 : 0)};
   transform: translateY(${(props) => (props.isOpen ? '15px' : 0)});
-  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: ${({ theme }) =>
+    `opacity ${theme.transition.duration.standard} ease-in-out, transform ${theme.transition.duration.standard} ease-in-out`};
 `;
