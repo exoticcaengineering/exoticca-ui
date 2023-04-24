@@ -60,10 +60,11 @@ export const Base = Template.bind({});
 export const withStartIcon = Template.bind({});
 
 withStartIcon.args = {
-  startIcon: { icon: 'flag-es' },
+  startIcon: { icon: 'arrow' },
 };
 
 export const withEndIcon = Template.bind({});
+
 withEndIcon.args = {
   endIcon: { icon: 'arrow' },
 };
