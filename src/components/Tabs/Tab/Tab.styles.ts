@@ -4,7 +4,7 @@ import { Theme } from 'src/types';
 
 const borderSize = '2.5px';
 
-const borderBottom = (theme: Theme) =>
+const setBorderBottom = (theme: Theme) =>
   `${borderSize} solid ${theme.colors.polarNight}`;
 
 export const StyledWrapper = styled.li<StyledProps>`
@@ -12,9 +12,9 @@ export const StyledWrapper = styled.li<StyledProps>`
   padding-bottom: ${({ theme }) => theme.spacing(1)};
   cursor: pointer;
   border-bottom: ${({ theme, isSelected }) =>
-    isSelected && borderBottom(theme)};
+    isSelected && setBorderBottom(theme)};
 
   &:hover {
-    border-bottom: ${({ theme }) => borderBottom(theme)};
+    border-bottom: ${({ theme }) => setBorderBottom(theme)};
   }
 `;

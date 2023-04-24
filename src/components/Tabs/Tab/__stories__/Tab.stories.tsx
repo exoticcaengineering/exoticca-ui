@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { Tab } from '../Tab';
 import { Box } from 'src/components/Box';
-import { ComponentProps, useEffect, useState } from 'react';
+import { ComponentProps, useState } from 'react';
 import { Typography } from 'src/components/Typography';
 
 type CustomTabProps = ComponentProps<typeof Tab> & { text: string };

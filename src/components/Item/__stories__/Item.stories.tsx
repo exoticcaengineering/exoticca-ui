@@ -56,3 +56,15 @@ const Template: Story<CustomItemProps> = ({
   </div>
 );
 export const Base = Template.bind({});
+
+export const withStartIcon = Template.bind({});
+
+withStartIcon.args = {
+  startIcon: { icon: 'arrow' },
+};
+
+export const withEndIcon = Template.bind({});
+
+withEndIcon.args = {
+  endIcon: { icon: 'arrow' },
+};
