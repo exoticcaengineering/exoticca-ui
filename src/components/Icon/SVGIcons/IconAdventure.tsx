@@ -1,4 +1,4 @@
-export const Winter = () => (
+export const IconAdventure = () => (
   <svg
     width="24"
     height="24"
@@ -7,63 +7,58 @@ export const Winter = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M12 3V21"
+      d="M22 21L15.3833 8.53125C15.2099 8.20436 14.8701 8 14.5 8C14.1299 8 13.7901 8.20436 13.6167 8.53125L7 21"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M14.168 4.42188L12 6.59087L9.83203 4.42188"
+      d="M18.0802 13.6133L16.29 14.6133"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M20 7.38086L4 16.6209"
+      d="M14.5 13.6133L16.2902 14.6133"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M19.6465 10.087L16.6855 9.29403L17.4785 6.33203"
+      d="M12.71 14.6133L14.5001 13.6133"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M4.35254 13.9121L7.31354 14.7051L6.52054 17.6671"
+      d="M10.9199 13.6133L12.7101 14.6133"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M4 7.38086L20 16.6209"
+      d="M23 21H1"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M4.35254 10.087L7.31354 9.29403L6.52054 6.33203"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.43506 4.5188C9.35978 4.61493 10.0468 5.41905 9.99748 6.34744C9.94813 7.27583 9.1797 8.00257 8.25 8.00012H4.5C3.67157 8.00012 3 7.32855 3 6.50012C3 5.6717 3.67157 5.00012 4.5 5.00012C4.49826 3.9899 5.25139 3.13757 6.25414 3.01491C7.2569 2.89226 8.19325 3.53794 8.43506 4.5188Z"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M19.6465 13.9121L16.6855 14.7051L17.4785 17.6671"
-      stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M9.83203 19.5792L12 17.4102L14.168 19.5792"
+      d="M9.95966 15.4228L8.378 12.5214C8.20283 12.2 7.86604 12 7.5 12C7.13396 12 6.79717 12.2 6.622 12.5214L2 21.0001"
       stroke="#121212"
       strokeWidth="1.5"
       strokeLinecap="round"

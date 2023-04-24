@@ -17,18 +17,22 @@ import { FlagCA } from './SVGIcons/FlagCA';
 import { FlagDE } from './SVGIcons/FlagDE';
 import { FlagMX } from './SVGIcons/FlagMX';
 import { FlagFR } from './SVGIcons/FlagFR';
-import { Adventure } from './SVGIcons/Adventure';
-import { Beach } from './SVGIcons/Beach';
-import { Culture } from './SVGIcons/Culture';
+import { IconAdventure } from './SVGIcons/IconAdventure';
+import { IconBeach } from './SVGIcons/IconBeach';
+import { IconCulture } from './SVGIcons/IconCulture';
 import { Fall } from './SVGIcons/Fall';
-import { Honeymoon } from './SVGIcons/Honeymoon';
-import { Luxury } from './SVGIcons/Luxury';
-import { MultiCountry } from './SVGIcons/MultiCountry';
-import { Nature } from './SVGIcons/Nature';
-import { Safari } from './SVGIcons/Safari';
-import { Spring } from './SVGIcons/Spring';
-import { Summer } from './SVGIcons/Summer';
-import { Winter } from './SVGIcons/Winter';
+import { Honeymoon } from './SVGIcons/IconHoneymoon';
+import { IconLuxury } from './SVGIcons/IconLuxury';
+import { IconMultiCountry } from './SVGIcons/IconMultiCountry';
+import { IconNature } from './SVGIcons/IconNature';
+import { IconSafari } from './SVGIcons/IconSafari';
+import { IconSpring } from './SVGIcons/IconSpring';
+import { IconSummer } from './SVGIcons/IconSummer';
+import { IconWinter } from './SVGIcons/IconWinter';
+import { IconPhoneCall } from './SVGIcons/IconPhoneCall';
+import { IconLogout } from './SVGIcons/IconLogout';
+import { IconEasterEgg } from './SVGIcons/IconEasterEgg';
+import { IconTree } from './SVGIcons/IconTree';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -46,17 +50,21 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'flag-mx': FlagMX,
   'flag-fr': FlagFR,
   loader: IconLoader,
-  adventure: Adventure,
-  beach: Beach,
-  culture: Culture,
+  adventure: IconAdventure,
+  beach: IconBeach,
+  culture: IconCulture,
   fall: Fall,
   honeymoon: Honeymoon,
-  luxury: Luxury,
-  'multi-country': MultiCountry,
-  nature: Nature,
-  safari: Safari,
-  spring: Spring,
-  summer: Summer,
-  winter: Winter,
+  luxury: IconLuxury,
+  'multi-country': IconMultiCountry,
+  nature: IconNature,
+  safari: IconSafari,
+  spring: IconSpring,
+  summer: IconSummer,
+  winter: IconWinter,
   arrowSquare: IconArrowSquare,
+  'phone-call': IconPhoneCall,
+  logout: IconLogout,
+  'easter-egg': IconEasterEgg,
+  tree: IconTree,
 };

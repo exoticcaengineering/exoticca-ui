@@ -16,6 +16,7 @@ type RebrandPaletteType =
   | 'arcticWind'
   | 'pacificOcean'
   | 'savageForest'
+  | 'redDessert'
   | 'silentSavana'
   | 'carribeanSunrise'
   | 'success'
