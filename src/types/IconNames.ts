@@ -37,6 +37,7 @@ export const iconNames = [
   'flag-ca',
   'payment-success',
   'user-circle',
+  'exclamation',
 ] as const;
 
 type IconNameType = typeof iconNames[number];

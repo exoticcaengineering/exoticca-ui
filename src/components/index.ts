@@ -5,5 +5,6 @@ export { Icon } from './Icon';
 export { Tag } from './Tag';
 export { Item } from './Item';
 export { Dropdown } from './Dropdown';
+export { Button } from './Button';
 export { Header } from './Header';
 export { Drawer, DrawerRef } from './Drawer';
