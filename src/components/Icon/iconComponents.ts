@@ -30,6 +30,9 @@ import { IconSpring } from './SVGIcons/IconSpring';
 import { IconSummer } from './SVGIcons/IconSummer';
 import { IconWinter } from './SVGIcons/IconWinter';
 import { IconPhoneCall } from './SVGIcons/IconPhoneCall';
+import { IconLogout } from './SVGIcons/IconLogout';
+import { IconEasterEgg } from './SVGIcons/IconEasterEgg';
+import { IconTree } from './SVGIcons/IconTree';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -61,4 +64,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   winter: IconWinter,
   arrowSquare: IconArrowSquare,
   'phone-call': IconPhoneCall,
+  logout: IconLogout,
+  'easter-egg': IconEasterEgg,
+  tree: IconTree,
 };
