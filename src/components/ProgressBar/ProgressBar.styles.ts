@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import { css, keyframes } from 'src/utils/styled';
 import styled from 'src/utils/styled';
 import { StyledProps } from './ProgressBar.types';
 

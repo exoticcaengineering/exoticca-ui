@@ -1,5 +1,5 @@
 import { StylesProps } from './Banner.types';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes, css } from 'src/utils/styled';
 
 export const BannerWrapper = styled.div<StylesProps>`
   position: absolute;

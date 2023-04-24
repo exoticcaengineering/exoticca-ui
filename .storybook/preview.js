@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'src/utils/styled';
 import { GlobalStyleDefault, themeDefault } from 'src/themes/theme';
 
 export const parameters = {

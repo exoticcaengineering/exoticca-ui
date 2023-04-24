@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { keyframes } from 'src/utils/styled';
 import { StyledProps } from './Button.types';
 import { colorWithOpacity } from 'src/utils/getColorWithOpacity';
 import {

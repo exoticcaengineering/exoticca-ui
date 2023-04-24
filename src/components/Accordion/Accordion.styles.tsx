@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'src/utils/styled';
 
 export const Header = styled.h3<{
   isOpen?: boolean;

@@ -1,5 +1,5 @@
 import { Theme } from 'src/types';
-import { css } from 'styled-components';
+import { css } from 'src/utils/styled';
 
 export const GlobalStyleDefaultCss = css`
   *,

@@ -1,5 +1,5 @@
 import { Box } from 'src/components/Box';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'src/utils/styled';
 import { Duration } from 'src/types/theme';
 
 const move = keyframes`

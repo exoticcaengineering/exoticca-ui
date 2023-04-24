@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from 'src/utils/styled';
 import styled from 'src/utils/styled';
 import { StyledProps } from './HeroWrapper.types';
 

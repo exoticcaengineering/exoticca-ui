@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from 'src/utils/styled';
 import styled from 'src/utils/styled';
 import { Box } from 'src/components/Box';
 import { Position, StyledProps } from './Tooltip.types';

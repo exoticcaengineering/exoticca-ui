@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FC } from 'react';
 import { Typography } from 'src/components/Typography';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'src/utils/styled';
 import { FontFamily } from 'src/types/theme';
 
 import { fontFamily as defaultThemeFontFamily } from '../theme';

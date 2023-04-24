@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'src/utils/styled';
 import { StyleProps } from './Input.types';
 import { Icon } from '../Icon';
 

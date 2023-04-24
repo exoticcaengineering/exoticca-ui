@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'src/utils/styled';
 
 export const LoadingContainer = styled.div`
   display: inline-block;
