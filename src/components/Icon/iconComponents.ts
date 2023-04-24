@@ -2,6 +2,7 @@ import { FC, SVGProps } from 'react';
 
 import { IconName } from 'src/types/IconNames';
 import { IconArrow } from './SVGIcons/IconArrow';
+import { IconArrowSimple } from './SVGIcons/IconArrowSimple';
 import { IconClose } from './SVGIcons/IconClose';
 import { Promo } from './SVGIcons/Promo';
 import { IconContact } from './SVGIcons/IconContact';
@@ -33,10 +34,12 @@ import { IconPhoneCall } from './SVGIcons/IconPhoneCall';
 import { IconLogout } from './SVGIcons/IconLogout';
 import { IconEasterEgg } from './SVGIcons/IconEasterEgg';
 import { IconTree } from './SVGIcons/IconTree';
+import { IconHamburgerMenu } from './SVGIcons/IconHamburgerMenu';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
   arrow: IconArrow,
+  'arrow-simple': IconArrowSimple,
   close: IconClose,
   'pill-status': Promo,
   contact: IconContact,
@@ -62,9 +65,10 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   spring: IconSpring,
   summer: IconSummer,
   winter: IconWinter,
-  arrowSquare: IconArrowSquare,
+  'arrow-square': IconArrowSquare,
   'phone-call': IconPhoneCall,
   logout: IconLogout,
   'easter-egg': IconEasterEgg,
   tree: IconTree,
+  'hamburger-menu': IconHamburgerMenu,
 };
