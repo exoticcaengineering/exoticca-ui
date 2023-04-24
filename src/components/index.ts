@@ -6,3 +6,4 @@ export { Tag } from './Tag';
 export { Item } from './Item';
 export { Dropdown } from './Dropdown';
 export { Header } from './Header';
+export { Drawer, DrawerRef } from './Drawer';
