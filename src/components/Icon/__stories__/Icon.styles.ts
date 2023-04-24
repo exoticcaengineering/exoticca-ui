@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'src/utils/styled';
 
 export const StyledIconsWrapper = styled.div`
   display: flex;
