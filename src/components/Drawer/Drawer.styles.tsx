@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import { css } from 'styled-components';
+import { StyledProps } from './Drawer.types';
+import styled from 'src/utils/styled';
 
-export const DrawerContainer = styled.div<{
-  heightProp: number;
-  isOpen: boolean;
-}>`
+export const DrawerContainer = styled.div<StyledProps>`
   position: fixed;
   left: 0;
-  bottom: ${({ isOpen, heightProp }) => (isOpen ? 0 : `-${heightProp}vh`)};
+  bottom: 0;
+  transform: translateY(100%);
   width: 100vw;
   height: ${({ heightProp }) => `${heightProp}vh`};
   overflow: scroll;
@@ -16,9 +16,15 @@ export const DrawerContainer = styled.div<{
   border-top-left-radius: ${({ theme }) => theme.newBorderRadius.l};
   padding: ${({ theme }) => theme.spacing(2)};
   border: 1px solid black;
+  z-index: ${({ theme }) => theme.zIndex.level10};
+  ${({ isOpen }) =>
+    isOpen &&
+    css`
+      transform: translateY(0);
+    `}
 `;
 
-export const TopBar = styled.div`
+export const StyledIconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -37,5 +43,3 @@ export const BottomBar = styled.div`
   bottom: 0;
   left: 0;
 `;
-
-export const IconWrapper = styled.div``;

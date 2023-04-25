@@ -10,6 +10,7 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   gutterBottom?: number;
   boxShadow?: keyof BoxShadow;
   padding?: number | number[];
+  onClick?: () => void;
 }
 
 export type StyleProps = Pick<

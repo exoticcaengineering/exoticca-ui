@@ -1,11 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled from 'src/utils/styled';
+import { css } from 'styled-components';
+import { StyledProps } from './Accordion.types';
+import { Box } from 'src/components/Box';
 
-export const Header = styled.h3<{
-  isOpen?: boolean;
-  titleBackground?: string;
-  isDisabled?: boolean;
-  customAccordionButton?: boolean;
-}>`
+export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   display: flex;
   justify-content: space-between;
   padding: 0;
@@ -13,43 +11,33 @@ export const Header = styled.h3<{
     `${theme.newBorderRadius.xs} ${theme.newBorderRadius.xs} 0 0 `};
   margin-top: 0;
   margin-bottom: 0;
+  cursor: pointer;
 
-  ${(props) =>
-    props.isOpen &&
-    !props.titleBackground &&
+  ${({ isOpen, backgroundColor }) =>
+    isOpen &&
+    !backgroundColor &&
     css`
       padding-bottom: 0;
     `}
 
-  ${(props) =>
-    props.isDisabled &&
+  ${({ isDisabled }) =>
+    isDisabled &&
     css`
       opacity: 0.3;
       cursor: not-allowed;
-      padding-bottom: 24px;
+      padding-bottom: ${({ theme }) => theme.spacing(3)};
     `}
 `;
 
-export const AccordionButton = styled.div<{
-  isOpen: boolean;
-  isDisabled: boolean;
-}>`
-  transition: 0.3ms ease-out;
-  ${(props) =>
-    props.isOpen &&
-    !props.isDisabled &&
-    css`
-      transform: rotate(180deg);
-    `};
-`;
-
-export const AccordionContent = styled.div<{ isOpen: boolean }>`
+export const StyledContent = styled.div<StyledProps>`
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
   word-break: break-word;
-  opacity: ${(props) => (props.isOpen ? 1 : 0)};
-  transform: translateY(${(props) => (props.isOpen ? '15px' : 0)});
-  transition: ${({ theme }) =>
-    `opacity ${theme.transition.duration.standard} ease-in-out, transform ${theme.transition.duration.standard} ease-in-out`};
+`;
+
+export const StyledHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1)};
 `;

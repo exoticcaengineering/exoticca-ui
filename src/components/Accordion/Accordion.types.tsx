@@ -1,11 +1,17 @@
-import { ReactChild } from 'react';
-import { IconName } from 'src/types';
+import { Colors, IconName } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
+import { IconConfig } from '../Icon';
 
-export interface AccordionProps extends ComponentPropsBase {
-  header?: string | ReactChild | undefined;
-  content: string | ReactChild;
-  isOpen: boolean;
-  isDisabled: boolean;
-  icon: IconName;
+export interface Props extends ComponentPropsBase {
+  header?: string | JSX.Element;
+  content: string | JSX.Element;
+  isOpen?: boolean;
+  isDisabled?: boolean;
+  icon?: IconName;
+  backgroundColor?: keyof Colors;
+  startIcon?: IconConfig;
+  endIcon?: IconConfig;
 }
+
+export interface StyledProps
+  extends Pick<Props, 'isOpen' | 'isDisabled' | 'backgroundColor'> {}

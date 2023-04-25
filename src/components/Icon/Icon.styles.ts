@@ -18,6 +18,7 @@ export const StyledWrapper = styled(Box)<StyledProps>`
     return getIconSize(size);
   }};
   transform: ${({ rotate = 0 }) => `rotate(${rotate}deg)`};
+  transition: all ${({ theme }) => theme.transition.duration.shorter} ease;
   z-index: 1;
   & > svg {
     width: 100%;
