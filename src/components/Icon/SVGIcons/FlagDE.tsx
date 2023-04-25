@@ -1,12 +1,20 @@
 export const FlagDE = () => (
   <svg
-    height="32"
-    viewBox="0 0 47 32"
-    width="47"
+    version="1.1"
     xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
   >
-    <path d="m0 .03h46.545v31.031h-46.545v-31.031z" fill="#d80027" />
-    <path d="m0 .03h46.545v10.343h-46.545v-10.343z" />
-    <path d="m0 20.717h46.545v10.343h-46.545z" fill="#ffda44" />
+    <title>flag-de</title>
+    <path
+      fill="#262626"
+      d="M0 9.143c0-2.525 2.047-4.571 4.571-4.571h22.857c2.525 0 4.571 2.047 4.571 4.571v3.048h-32v-3.048z"
+    ></path>
+    <path fill="#f01515" d="M0 19.809h32v-7.619h-32v7.619z"></path>
+    <path
+      fill="#ffd521"
+      d="M32 19.81h-32v3.048c0 2.525 2.047 4.571 4.571 4.571h22.857c2.525 0 4.571-2.047 4.571-4.571v-3.048z"
+    ></path>
   </svg>
 );
