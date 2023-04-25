@@ -2,8 +2,10 @@ import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 
 export type DrawerRef = { open(): void; close(): void };
 
-export interface DrawerProps extends ComponentPropsBaseWithChildren {
+export interface Props extends ComponentPropsBaseWithChildren {
   openHeight: number;
+  onOpen?: () => void;
+  onClose?: () => void;
 }
 
 export interface StyledProps {

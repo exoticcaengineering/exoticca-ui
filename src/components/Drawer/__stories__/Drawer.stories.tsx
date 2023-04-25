@@ -7,7 +7,7 @@ export default {
   title: 'Components/Drawer',
   component: Drawer,
   args: {
-    text: 'Drawer contents :)',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia cumque fuga consectetur reprehenderit soluta nihil porro perspiciatis saepe, sint unde deleniti velit rem quae nobis quas provident atque in asperiores?',
     openHeight: 50,
   },
   argTypes: {

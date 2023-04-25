@@ -2,22 +2,35 @@ import React, { forwardRef } from 'react';
 import { useState } from 'react';
 import { useImperativeHandle } from 'react';
 import {
-  BottomBar,
-  ContentWrapper,
-  DrawerContainer,
+  StyledBottomBar,
+  StyledContentWrapper,
+  StyledDrawerContainer,
   StyledIconWrapper,
 } from './Drawer.styles';
-import { DrawerProps, DrawerRef } from './Drawer.types';
+import { Props, DrawerRef } from './Drawer.types';
 import { Button } from 'src/components/Button';
 
 const DrawerComp = (
-  { openHeight, children, className, testId = 'drawer' }: DrawerProps,
+  {
+    openHeight,
+    children,
+    className,
+    testId = 'drawer',
+    onOpen,
+    onClose,
+  }: Props,
   ref: React.Ref<DrawerRef>,
 ) => {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpen = () => {
+    onOpen?.();
+    setOpen(true);
+  };
+  const handleClose = () => {
+    onClose?.();
+    setOpen(false);
+  };
 
   useImperativeHandle(ref, () => ({
     open: handleOpen,
@@ -25,7 +38,7 @@ const DrawerComp = (
   }));
 
   return (
-    <DrawerContainer
+    <StyledDrawerContainer
       heightProp={openHeight}
       isOpen={open}
       className={className}
@@ -40,14 +53,13 @@ const DrawerComp = (
             />
           </StyledIconWrapper>
 
-          <ContentWrapper data-testid="drawer-content-wrapper">
+          <StyledContentWrapper data-testid="drawer-content-wrapper">
             {children}
-          </ContentWrapper>
-
-          <BottomBar />
+          </StyledContentWrapper>
         </>
       )}
-    </DrawerContainer>
+      <StyledBottomBar />
+    </StyledDrawerContainer>
   );
 };
 
