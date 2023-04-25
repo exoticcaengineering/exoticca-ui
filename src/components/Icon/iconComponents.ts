@@ -35,6 +35,9 @@ import { IconLogout } from './SVGIcons/IconLogout';
 import { IconEasterEgg } from './SVGIcons/IconEasterEgg';
 import { IconTree } from './SVGIcons/IconTree';
 import { IconHamburgerMenu } from './SVGIcons/IconHamburgerMenu';
+import { IconPaymentSuccess } from './SVGIcons/IconPaymentSuccess';
+import { IconUserCircle } from './SVGIcons/IconUserCircle';
+import { IconExclamation } from './SVGIcons/IconExclamation';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -71,4 +74,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'easter-egg': IconEasterEgg,
   tree: IconTree,
   'hamburger-menu': IconHamburgerMenu,
+  'payment-success': IconPaymentSuccess,
+  'user-circle': IconUserCircle,
+  exclamation: IconExclamation,
 };
