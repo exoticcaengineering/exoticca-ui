@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Props } from './Button.types';
-import { StyledButton, Wrapper } from './Button.styles';
+import { StyledButton } from './Button.styles';
 import { Icon } from '../Icon/Icon';
 import { Spinner } from './Spinner';
 import {
@@ -45,14 +45,14 @@ export const Button: FC<Props> = ({
       {centerIcon ? (
         <Icon size={iconSize} stroke={setColor()} {...centerIcon} />
       ) : (
-        <Wrapper>
+        <>
           {startIcon && (
             <Icon size={iconSize} stroke={setColor()} {...startIcon} />
           )}
           {text && <Typography as="span">{text}</Typography>}
           {state === 'loading' && <Spinner size={size} color={setColor()} />}
           {endIcon && <Icon size={iconSize} stroke={setColor()} {...endIcon} />}
-        </Wrapper>
+        </>
       )}
     </StyledButton>
   );

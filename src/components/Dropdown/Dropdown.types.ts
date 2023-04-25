@@ -4,6 +4,7 @@ import {
   ComponentPropsBaseWithChildren,
 } from 'src/types/ComponentPropsBase';
 import { ButtonProps } from '../Button';
+import { ButtonColor } from '../Button/Button.types';
 
 export type DropDownPosition = 'left' | 'right';
 
@@ -15,6 +16,8 @@ export interface Props
   withCloseButton?: boolean;
   onClick?: (isOpen: boolean) => void;
   onClose?: () => void;
+  buttonOpenColor?: Extract<ButtonColor, 'black' | 'white'>;
+  buttonCloseColor?: Extract<ButtonColor, 'black' | 'white'>;
 }
 
 export interface StyledProps extends Pick<Props, 'position'> {

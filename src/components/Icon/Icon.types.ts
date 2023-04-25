@@ -21,6 +21,8 @@ export interface IconConfig {
   originalIconColor?: boolean;
   rotate?: number;
 }
-export interface Props extends ComponentPropsBase, IconConfig {}
+export interface Props extends ComponentPropsBase, IconConfig {
+  onClick?: () => void;
+}
 
 export interface StyledProps extends Omit<Props, 'icon'> {}

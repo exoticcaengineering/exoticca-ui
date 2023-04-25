@@ -33,17 +33,13 @@ type CustomItemProps = ComponentProps<typeof Accordion> & {
 const Template: Story<CustomItemProps> = ({
   withHeaderTitle,
   headerText,
-  isOpen,
   contentText,
-  isDisabled,
-  icon,
+  ...props
 }: CustomItemProps) => {
   return (
     <div style={{ height: '10rem', width: '15rem' }}>
       <Accordion
-        icon={icon}
-        isOpen={isOpen}
-        isDisabled={isDisabled}
+        {...props}
         header={
           withHeaderTitle ? (
             <Typography fontSize="body1">{headerText}</Typography>
@@ -55,3 +51,11 @@ const Template: Story<CustomItemProps> = ({
   );
 };
 export const Base = Template.bind({});
+
+export const WithStartIcon = Template.bind({});
+
+WithStartIcon.args = {
+  startIcon: {
+    icon: 'honeymoon',
+  },
+};

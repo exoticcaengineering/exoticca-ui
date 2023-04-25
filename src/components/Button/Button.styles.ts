@@ -23,11 +23,17 @@ export const StyledButton = styled.button<StyledProps>`
       : theme.newBorderRadius.m};
   padding: ${({ theme, size = 'medium' }) => setSize(theme)[size]};
   font-size: ${({ theme, size = 'medium' }) => setFontsize(theme)[size]};
-  border: ${({ theme, color = 'white', variant }) =>
+  border-width: 2px;
+  border-style: solid;
+  border-color: ${({ theme, color = 'white', variant }) =>
     variant === 'secondary'
-      ? `3px solid ${theme.colors[setContainColor(color)]}`
-      : 'none'};
+      ? theme.colors[setContainColor(color)]
+      : theme.colors.transparent};
   white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1)};
   &:hover {
     background-color: ${({ theme, color = 'white' }) =>
       colorWithOpacity(setColor(theme, color), 80)};
@@ -37,15 +43,9 @@ export const StyledButton = styled.button<StyledProps>`
     background-color: ${({ theme, color = 'white' }) =>
       colorWithOpacity(setColor(theme, color), 20)};
     color: ${({ theme }) => theme.colors.polarNightMedium};
-    border: 0.15rem solid ${({ theme }) => theme.colors.polarNightMedium};
+    border-color: ${({ theme }) => theme.colors.polarNightMedium};
     cursor: not-allowed;
   }
-`;
-
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(1)};
 `;
 
 const rotate360 = keyframes`

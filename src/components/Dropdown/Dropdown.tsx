@@ -21,6 +21,8 @@ export const Dropdown: FC<Props> = ({
   testId,
   onClick,
   onClose,
+  buttonOpenColor = 'black',
+  buttonCloseColor = 'white',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -59,7 +61,7 @@ export const Dropdown: FC<Props> = ({
         onClick={handleOnClick}
         endIcon={{ icon: 'arrow', rotate: isOpen ? 0 : 180 }}
         isOpen={isOpen}
-        color={isOpen ? 'black' : 'white'}
+        color={isOpen ? buttonOpenColor : buttonCloseColor}
         text={text}
         variant="tertiary"
         size={size}

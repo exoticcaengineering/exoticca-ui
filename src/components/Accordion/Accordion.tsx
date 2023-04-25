@@ -1,15 +1,22 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Icon } from '../Icon';
-import { AccordionButton, AccordionContent, Header } from './Accordion.styles';
-import { AccordionProps } from './Accordion.types';
+import {
+  StyledContent,
+  StyledHeader,
+  StyledHeaderWrapper,
+} from './Accordion.styles';
+import { Props } from './Accordion.types';
 
-export const Accordion = ({
+export const Accordion: FC<Props> = ({
   header,
   content,
-  isOpen,
+  isOpen = false,
   isDisabled,
-  icon = 'arrow',
-}: AccordionProps) => {
+  startIcon,
+  endIcon = { icon: 'arrow' },
+  className,
+  testId = 'accordion',
+}) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(isOpen);
 
   useEffect(() => {
@@ -17,23 +24,36 @@ export const Accordion = ({
   }, [isOpen]);
 
   const toggleIsOpen = () => setIsAccordionOpen(!isAccordionOpen);
+  const isEnabledAndOpen = !isDisabled && isAccordionOpen;
+  console.log('startIcon', startIcon);
 
   return (
     <>
       {header && (
-        <Header
+        <StyledHeaderWrapper
           onClick={toggleIsOpen}
           isOpen={isAccordionOpen}
           isDisabled={isDisabled}
+          className={className}
+          data-testid={testId}
         >
-          {header}
-          <AccordionButton isOpen={isAccordionOpen} isDisabled={isDisabled}>
-            <Icon icon={icon} size={'regular'} stroke={'polarNight'} />
-          </AccordionButton>
-        </Header>
+          <StyledHeader>
+            {startIcon && (
+              <Icon size="regular" stroke="polarNight" {...startIcon} />
+            )}
+            {header}
+          </StyledHeader>
+
+          <Icon
+            size="regular"
+            stroke="polarNight"
+            rotate={isEnabledAndOpen ? 180 : 0}
+            {...endIcon}
+          />
+        </StyledHeaderWrapper>
       )}
-      {!isDisabled && (
-        <AccordionContent isOpen={isAccordionOpen}>{content}</AccordionContent>
+      {isEnabledAndOpen && (
+        <StyledContent isOpen={isAccordionOpen}>{content}</StyledContent>
       )}
     </>
   );

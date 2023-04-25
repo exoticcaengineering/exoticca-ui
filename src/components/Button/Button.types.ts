@@ -21,7 +21,7 @@ export interface Props extends ComponentPropsBase {
   startIcon?: IconConfig;
   endIcon?: IconConfig;
   centerIcon?: IconConfig;
-  onClick: MouseEventHandler | undefined;
+  onClick?: MouseEventHandler | undefined;
 }
 
 export interface StyledProps extends Props {}
