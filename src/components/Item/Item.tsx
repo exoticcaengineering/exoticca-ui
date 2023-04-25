@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Props } from './Item.types';
-import { StyledWrapper } from './Item.styles';
+import { StyledContent, StyledWrapper } from './Item.styles';
 import { Icon } from 'src/components/Icon';
 
 export const Item: FC<Props> = ({
@@ -13,6 +13,7 @@ export const Item: FC<Props> = ({
   endIcon,
   onClick,
   size = 'medium',
+  layout = 'flex-start',
 }) => {
   return (
     <StyledWrapper
@@ -22,9 +23,12 @@ export const Item: FC<Props> = ({
       color={color}
       onClick={() => onClick?.()}
       size={size}
+      layout={layout}
     >
-      {startIcon && <Icon {...startIcon} />}
-      {children}
+      <StyledContent>
+        {startIcon && <Icon {...startIcon} />}
+        {children}
+      </StyledContent>
       {endIcon && <Icon {...endIcon} />}
     </StyledWrapper>
   );

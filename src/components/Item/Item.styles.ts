@@ -12,6 +12,7 @@ export const StyledWrapper = styled.li<StyledProps>`
   display: flex;
   gap: ${({ theme }) => theme.spacing(1)};
   align-items: center;
+  justify-content: ${({ layout = 'flex-start' }) => layout};
   height: fit-content;
   width: 100%;
   cursor: pointer;
@@ -32,4 +33,9 @@ export const StyledWrapper = styled.li<StyledProps>`
     background: ${({ theme, hover, selected }) =>
       hover === 'background' && !selected && theme.colors.polarNightLight};
   }
+`;
+
+export const StyledContent = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(1)};
 `;

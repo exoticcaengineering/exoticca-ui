@@ -21,7 +21,7 @@ import { FlagFR } from './SVGIcons/FlagFR';
 import { IconAdventure } from './SVGIcons/IconAdventure';
 import { IconBeach } from './SVGIcons/IconBeach';
 import { IconCulture } from './SVGIcons/IconCulture';
-import { Fall } from './SVGIcons/Fall';
+import { IconFall } from './SVGIcons/IconFall';
 import { Honeymoon } from './SVGIcons/IconHoneymoon';
 import { IconLuxury } from './SVGIcons/IconLuxury';
 import { IconMultiCountry } from './SVGIcons/IconMultiCountry';
@@ -38,6 +38,7 @@ import { IconHamburgerMenu } from './SVGIcons/IconHamburgerMenu';
 import { IconPaymentSuccess } from './SVGIcons/IconPaymentSuccess';
 import { IconUserCircle } from './SVGIcons/IconUserCircle';
 import { IconExclamation } from './SVGIcons/IconExclamation';
+import { IconFallback } from './SVGIcons/IconFallback';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -59,7 +60,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   adventure: IconAdventure,
   beach: IconBeach,
   culture: IconCulture,
-  fall: Fall,
+  fall: IconFall,
   honeymoon: Honeymoon,
   luxury: IconLuxury,
   'multi-country': IconMultiCountry,
@@ -77,4 +78,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'payment-success': IconPaymentSuccess,
   'user-circle': IconUserCircle,
   exclamation: IconExclamation,
+  fallback: IconFallback,
 };

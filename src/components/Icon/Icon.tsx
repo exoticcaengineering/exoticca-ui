@@ -6,7 +6,7 @@ import { iconComponents } from './iconComponents';
 
 export const Icon: FC<Props> = ({ icon, testId, ...props }) => {
   const defaultTestId = `${icon}-icon`;
-  const IconComponent = iconComponents[icon];
+  const IconComponent = iconComponents[icon] ?? iconComponents['fallback'];
 
   return (
     <StyledWrapper data-testid={testId || defaultTestId} {...props}>
