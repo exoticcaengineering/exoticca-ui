@@ -1,6 +1,7 @@
 import { Colors, IconName } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconConfig } from '../Icon';
+import { BoxProps } from '../Box';
 
 export interface Props extends ComponentPropsBase {
   header?: string | JSX.Element;

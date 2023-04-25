@@ -1,4 +1,4 @@
-export const Fall = () => (
+export const IconFall = () => (
   <svg
     width="24"
     height="24"

@@ -3,7 +3,7 @@ export { Typography } from './Typography';
 export * from './TypographyVariants';
 export { Icon } from './Icon';
 export { Tag } from './Tag';
-export { Item } from './Item';
+export { Item, ItemProps } from './Item';
 export { Dropdown, DropdownProps } from './Dropdown';
 export { Header } from './Header';
 export { Drawer, DrawerRef } from './Drawer';

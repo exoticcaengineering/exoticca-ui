@@ -25,33 +25,33 @@ export const Accordion: FC<Props> = ({
 
   const toggleIsOpen = () => setIsAccordionOpen(!isAccordionOpen);
   const isEnabledAndOpen = !isDisabled && isAccordionOpen;
-  console.log('startIcon', startIcon);
 
   return (
     <>
-      {header && (
-        <StyledHeaderWrapper
-          onClick={toggleIsOpen}
-          isOpen={isAccordionOpen}
-          isDisabled={isDisabled}
-          className={className}
-          data-testid={testId}
-        >
+      <StyledHeaderWrapper
+        onClick={toggleIsOpen}
+        isOpen={isAccordionOpen}
+        isDisabled={isDisabled}
+        className={className}
+        data-testid={testId}
+      >
+        {header && (
           <StyledHeader>
             {startIcon && (
               <Icon size="regular" stroke="polarNight" {...startIcon} />
             )}
             {header}
           </StyledHeader>
+        )}
 
-          <Icon
-            size="regular"
-            stroke="polarNight"
-            rotate={isEnabledAndOpen ? 180 : 0}
-            {...endIcon}
-          />
-        </StyledHeaderWrapper>
-      )}
+        <Icon
+          size="regular"
+          stroke="polarNight"
+          rotate={isEnabledAndOpen ? 180 : 0}
+          {...endIcon}
+        />
+      </StyledHeaderWrapper>
+
       {isEnabledAndOpen && (
         <StyledContent isOpen={isAccordionOpen}>{content}</StyledContent>
       )}

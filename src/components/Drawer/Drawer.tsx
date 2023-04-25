@@ -11,7 +11,7 @@ import { DrawerProps, DrawerRef } from './Drawer.types';
 import { Button } from 'src/components/Button';
 
 const DrawerComp = (
-  { openHeight, children }: DrawerProps,
+  { openHeight, children, className, testId = 'drawer' }: DrawerProps,
   ref: React.Ref<DrawerRef>,
 ) => {
   const [open, setOpen] = useState(false);
@@ -25,15 +25,28 @@ const DrawerComp = (
   }));
 
   return (
-    <DrawerContainer heightProp={openHeight} isOpen={open}>
-      <StyledIconWrapper>
-        <Button
-          centerIcon={{ icon: 'close', size: 'medium' }}
-          onClick={handleClose}
-        />
-      </StyledIconWrapper>
-      <ContentWrapper>{children}</ContentWrapper>
-      <BottomBar />
+    <DrawerContainer
+      heightProp={openHeight}
+      isOpen={open}
+      className={className}
+      data-testid={testId}
+    >
+      {open && (
+        <>
+          <StyledIconWrapper>
+            <Button
+              centerIcon={{ icon: 'close', size: 'medium' }}
+              onClick={handleClose}
+            />
+          </StyledIconWrapper>
+
+          <ContentWrapper data-testid="drawer-content-wrapper">
+            {children}
+          </ContentWrapper>
+
+          <BottomBar />
+        </>
+      )}
     </DrawerContainer>
   );
 };

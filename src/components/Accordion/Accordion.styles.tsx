@@ -6,6 +6,7 @@ import { Box } from 'src/components/Box';
 export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0;
   border-radius: ${({ theme }) =>
     `${theme.newBorderRadius.xs} ${theme.newBorderRadius.xs} 0 0 `};
