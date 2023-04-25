@@ -2,19 +2,19 @@ import { css } from 'styled-components';
 import { StyledProps } from './Drawer.types';
 import styled from 'src/utils/styled';
 
-export const DrawerContainer = styled.div<StyledProps>`
+export const StyledDrawerContainer = styled.div<StyledProps>`
   position: fixed;
   left: 0;
+  right: 0;
   bottom: 0;
   transform: translateY(100%);
-  width: 100vw;
   height: ${({ heightProp }) => `${heightProp}vh`};
-  overflow: scroll;
+  overflow: hidden;
   transition: ${({ theme }) => theme.transition.duration.short} ease-in-out;
   background-color: ${({ theme }) => theme.colors.arcticWind};
   border-top-right-radius: ${({ theme }) => theme.newBorderRadius.l};
   border-top-left-radius: ${({ theme }) => theme.newBorderRadius.l};
-  padding: ${({ theme }) => theme.spacing(2)};
+  padding: ${({ theme }) => theme.spacing(9, 0, 4, 3)};
   border: 1px solid black;
   z-index: ${({ theme }) => theme.zIndex.level10};
   ${({ isOpen }) =>
@@ -27,15 +27,19 @@ export const DrawerContainer = styled.div<StyledProps>`
 export const StyledIconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  position: absolute;
+  right: 16px;
+  top: 16px;
 `;
 
-export const ContentWrapper = styled.div`
+export const StyledContentWrapper = styled.div`
   width: 100%;
-  padding: ${({ theme }) => theme.spacing(0, 2, 2, 2)};
+  overflow: auto;
+  height: 100%;
+  padding-right: ${({ theme }) => theme.spacing(3)};
 `;
 
-export const BottomBar = styled.div`
+export const StyledBottomBar = styled.div`
   width: 100%;
   height: 6px;
   background-color: ${({ theme }) => theme.colors.polarNight};
