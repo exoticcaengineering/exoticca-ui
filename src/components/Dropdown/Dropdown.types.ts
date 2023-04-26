@@ -16,6 +16,7 @@ export interface Props
   withCloseButton?: boolean;
   onClick?: (isOpen: boolean) => void;
   onClose?: () => void;
+  isCloseDropdown?: boolean;
   buttonOpenColor?: Extract<ButtonColor, 'black' | 'white'>;
   buttonCloseColor?: Extract<ButtonColor, 'black' | 'white'>;
 }

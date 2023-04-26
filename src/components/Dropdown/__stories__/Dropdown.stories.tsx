@@ -1,7 +1,6 @@
-import { ComponentMeta, ComponentStory, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { menuItems } from './mockData';
 import { Dropdown } from '../Dropdown';
-import { MenuPropsType } from '../Dropdown.types';
 import { DropdownList } from './DropdownList';
 
 export default {
@@ -14,6 +13,9 @@ export default {
       category: 'Prop',
     },
     withCloseButton: {
+      category: 'Prop',
+    },
+    isCloseDropdown: {
       category: 'Prop',
     },
     itemText: {
@@ -60,5 +62,6 @@ export const Default = Template.bind({});
 Default.args = {
   position: 'right',
   withCloseButton: false,
+  isCloseDropdown: false,
   startIcon: { icon: 'flag-us', originalIconColor: true },
 };
