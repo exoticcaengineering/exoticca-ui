@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import {
   StyledDropdownButton,
   CloseIcon,
@@ -21,6 +21,7 @@ export const Dropdown: FC<Props> = ({
   testId,
   onClick,
   onClose,
+  isCloseDropdown,
   buttonOpenColor = 'black',
   buttonCloseColor = 'white',
 }) => {
@@ -31,6 +32,10 @@ export const Dropdown: FC<Props> = ({
     onClose?.();
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    if (isCloseDropdown && isOpen) setIsOpen(false);
+  }, [isCloseDropdown]);
 
   useOnClickOutside(dropdownRef, closeDropdown);
 
