@@ -15,17 +15,25 @@ export const setColor = (theme: Theme, color: ButtonColor) => {
   return colors[color];
 };
 
-export const setSize = (theme: Theme) => ({
-  small: theme.spacing(1.375),
-  medium: theme.spacing(2, 2.25),
-  large: theme.spacing(2.313, 2.75),
-});
+export const setSize = (theme: Theme, size: ButtonSize) => {
+  const sizes = {
+    small: theme.spacing(1.375),
+    medium: theme.spacing(2, 2.25),
+    large: theme.spacing(2.313, 2.75),
+  };
 
-export const setFontsize = (theme: Theme) => ({
-  small: theme.typography.fontSize.body2,
-  medium: theme.typography.fontSize.default,
-  large: theme.typography.fontSize.button1,
-});
+  return sizes[size];
+};
+
+export const setFontsize = (theme: Theme, size: ButtonSize) => {
+  const fontSizes = {
+    small: theme.typography.fontSize.body2,
+    medium: theme.typography.fontSize.default,
+    large: theme.typography.fontSize.button1,
+  };
+
+  return fontSizes[size];
+};
 
 export const setContainColor = (color: ButtonColor): keyof Colors => {
   if (color === 'black') return 'arcticWind';

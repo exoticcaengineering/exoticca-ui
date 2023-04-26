@@ -8,7 +8,7 @@ export const StyledHeaderWrapper = styled(Box).attrs({
   display: flex;
   align-items: center;
   width: 100%;
-  height: 59px;
+  height: 60px;
   background: ${({ theme, backgroundType }) =>
     backgroundType === 'solid'
       ? theme.colors.polarNight
