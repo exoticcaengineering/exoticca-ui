@@ -28,8 +28,8 @@ export const StyledIconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  right: 16px;
-  top: 16px;
+  right: 0px;
+  top: 0px;
 `;
 
 export const StyledContentWrapper = styled.div`

@@ -21,8 +21,8 @@ export const StyledButton = styled.button<StyledProps>`
     shape === 'rounded'
       ? theme.newBorderRadius.semiRounded
       : theme.newBorderRadius.m};
-  padding: ${({ theme, size = 'medium' }) => setSize(theme)[size]};
-  font-size: ${({ theme, size = 'medium' }) => setFontsize(theme)[size]};
+  padding: ${({ theme, size = 'medium' }) => setSize(theme, size)};
+  font-size: ${({ theme, size = 'medium' }) => setFontsize(theme, size)};
   border-width: 2px;
   border-style: solid;
   border-color: ${({ theme, color = 'white', variant }) =>
