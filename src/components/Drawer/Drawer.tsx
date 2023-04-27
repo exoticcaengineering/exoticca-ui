@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useRef } from 'react';
 import { useState } from 'react';
 import { useImperativeHandle } from 'react';
 import {
@@ -9,6 +9,7 @@ import {
 } from './Drawer.styles';
 import { Props, DrawerRef } from './Drawer.types';
 import { Button } from 'src/components/Button';
+import { useOnClickOutside } from 'src/hooks';
 
 const DrawerComp = (
   {
@@ -22,6 +23,7 @@ const DrawerComp = (
   ref: React.Ref<DrawerRef>,
 ) => {
   const [open, setOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   const handleOpen = () => {
     onOpen?.();
@@ -37,8 +39,11 @@ const DrawerComp = (
     close: handleClose,
   }));
 
+  useOnClickOutside(drawerRef, handleClose);
+
   return (
     <StyledDrawerContainer
+      ref={drawerRef}
       heightProp={openHeight}
       isOpen={open}
       className={className}
