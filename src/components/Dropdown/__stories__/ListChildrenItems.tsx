@@ -1,6 +1,7 @@
 import { Item } from 'src/components/Item/Item';
-import { ListChildrenItemsProps } from '../Dropdown.types';
+
 import { ChildrenIcon, Container, Title } from './DropdownList.styles';
+import { ListChildrenItemsProps } from './Story.types';
 
 export const ListChildrenItems = ({
   isSelected,

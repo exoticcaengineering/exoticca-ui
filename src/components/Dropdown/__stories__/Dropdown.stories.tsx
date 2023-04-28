@@ -48,12 +48,17 @@ const Template: ComponentStory<typeof Dropdown> = (args) => (
         background: 'lightblue',
       }}
     >
-      <Dropdown {...args} text="dropdown button">
-        <DropdownList
-          position={args.position ?? 'left'}
-          subMenuItems={menuItems[0][0].items}
-        />
-      </Dropdown>
+      <Dropdown
+        {...args}
+        text="dropdown button"
+        dropdownList={(props) => (
+          <DropdownList
+            {...props}
+            position={args.position ?? 'left'}
+            subMenuItems={menuItems[0][0].items}
+          />
+        )}
+      />
     </div>
   </div>
 );
@@ -62,6 +67,5 @@ export const Default = Template.bind({});
 Default.args = {
   position: 'right',
   withCloseButton: false,
-  isCloseDropdown: false,
   startIcon: { icon: 'flag-us', originalIconColor: true },
 };

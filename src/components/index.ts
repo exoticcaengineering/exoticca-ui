@@ -4,7 +4,7 @@ export * from './TypographyVariants';
 export { Icon } from './Icon';
 export { Tag } from './Tag';
 export { Item, ItemProps } from './Item';
-export { Dropdown, DropdownProps } from './Dropdown';
+export { Dropdown, DropdownProps, DropdownListProps } from './Dropdown';
 export { Header } from './Header';
 export { Drawer, DrawerRef } from './Drawer';
 export { Button } from './Button';

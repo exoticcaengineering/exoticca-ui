@@ -1,4 +1,4 @@
-import { MenuItems } from '../Dropdown.types';
+import { MenuItems } from './Story.types';
 
 export const menuItems: MenuItems[] = [
   [

@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { DropdownListProps, SubMenuItem } from './../Dropdown.types';
+
 import { Row, Wrapper } from './DropdownList.styles';
 import { ListChildrenItems } from './ListChildrenItems';
 import { ListParentItems } from './ListParentItems';
+import { DropdownListProps, SubMenuItem } from './Story.types';
 
 export const DropdownList = ({ subMenuItems, position }: DropdownListProps) => {
   const [isSelected, setIsSelected] = useState('');
