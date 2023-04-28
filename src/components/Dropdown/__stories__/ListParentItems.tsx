@@ -1,6 +1,7 @@
 import { Item } from 'src/components/Item/Item';
-import { ListParentItemsProps } from '../Dropdown.types';
+
 import { ParentButton } from './DropdownList.styles';
+import { ListParentItemsProps } from './Story.types';
 
 export const ListParentItems = ({
   subItem,

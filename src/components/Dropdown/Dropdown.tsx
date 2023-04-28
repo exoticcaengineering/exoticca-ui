@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, cloneElement, useEffect, useRef, useState } from 'react';
 import {
   StyledDropdownButton,
   CloseIcon,
@@ -11,7 +11,7 @@ import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
 
 export const Dropdown: FC<Props> = ({
-  children,
+  dropdownList,
   position = 'right',
   withCloseButton,
   text,
@@ -21,7 +21,6 @@ export const Dropdown: FC<Props> = ({
   testId,
   onClick,
   onClose,
-  isCloseDropdown,
   buttonOpenColor = 'black',
   buttonCloseColor = 'white',
 }) => {
@@ -32,10 +31,6 @@ export const Dropdown: FC<Props> = ({
     onClose?.();
     setIsOpen(false);
   };
-
-  useEffect(() => {
-    if (isCloseDropdown && isOpen) setIsOpen(false);
-  }, [isCloseDropdown]);
 
   useOnClickOutside(dropdownRef, closeDropdown);
 
@@ -86,7 +81,9 @@ export const Dropdown: FC<Props> = ({
               <CloseIcon icon={'close'} />
             </CloseWrapper>
           )}
-          {children}
+          {dropdownList({
+            closeDropdown,
+          })}
         </StyledDropdownList>
       )}
     </StyledDropdownWrapper>
