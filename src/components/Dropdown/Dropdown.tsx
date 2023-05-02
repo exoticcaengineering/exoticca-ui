@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import {
   StyledDropdownButton,
   CloseIcon,
@@ -66,6 +66,14 @@ export const Dropdown: FC<Props> = ({
         return <TextBody1>{text}</TextBody1>;
     }
   };
+
+  useEffect(() => {
+    window.addEventListener('scroll', closeDropdown);
+
+    return () => {
+      window.removeEventListener('scroll', closeDropdown);
+    };
+  }, []);
 
   return (
     <StyledDropdownWrapper
