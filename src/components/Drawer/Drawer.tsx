@@ -55,6 +55,9 @@ const DrawerComp = (
             <Button
               centerIcon={{ icon: 'close', size: 'medium' }}
               onClick={handleClose}
+              color="white"
+              shape="rounded"
+              size="small"
             />
           </StyledIconWrapper>
 
