@@ -25,7 +25,11 @@ export default {
       },
     },
     size: {
-      options: ['small', 'medium', 'large'],
+      options: ['small', 'medium'],
+      control: { type: 'radio' },
+    },
+    inverseStyle: {
+      options: [true, false],
       control: { type: 'radio' },
     },
   },
@@ -56,6 +60,7 @@ const Template: ComponentStory<typeof Dropdown> = (args) => (
             {...props}
             position={args.position ?? 'left'}
             subMenuItems={menuItems[0][0].items}
+            inverseStyle={args.inverseStyle}
           />
         )}
       />

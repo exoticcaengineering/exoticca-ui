@@ -5,7 +5,11 @@ import { ListChildrenItems } from './ListChildrenItems';
 import { ListParentItems } from './ListParentItems';
 import { DropdownListProps, SubMenuItem } from './Story.types';
 
-export const DropdownList = ({ subMenuItems, position }: DropdownListProps) => {
+export const DropdownList = ({
+  subMenuItems,
+  position,
+  inverseStyle,
+}: DropdownListProps) => {
   const [isSelected, setIsSelected] = useState('');
   const [childrenItems, setChildrenItems] = useState<SubMenuItem | null>(null);
 
@@ -14,6 +18,7 @@ export const DropdownList = ({ subMenuItems, position }: DropdownListProps) => {
       <Wrapper>
         {subMenuItems.map((subItem) => (
           <ListParentItems
+            inverseStyle={inverseStyle}
             key={subItem.parent.name}
             subItem={subItem}
             setIsSelected={setIsSelected}
@@ -24,6 +29,7 @@ export const DropdownList = ({ subMenuItems, position }: DropdownListProps) => {
       </Wrapper>
       {childrenItems && childrenItems.children.items.length !== 0 && (
         <ListChildrenItems
+          inverseStyle={inverseStyle}
           isSelected={isSelected}
           childrenItems={childrenItems}
         />

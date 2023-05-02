@@ -6,6 +6,7 @@ import { ListChildrenItemsProps } from './Story.types';
 export const ListChildrenItems = ({
   isSelected,
   childrenItems,
+  inverseStyle,
 }: ListChildrenItemsProps) => {
   return (
     <>
@@ -18,7 +19,11 @@ export const ListChildrenItems = ({
           <Title>{childrenItems.children.title}</Title>
 
           {childrenItems.children.items.map((subItem) => (
-            <Item key={subItem.name} hover="underlined">
+            <Item
+              key={subItem.name}
+              hover="underlined"
+              color={inverseStyle ? 'arcticWind' : 'polarNight'}
+            >
               <a href={subItem.slug} style={{ whiteSpace: 'nowrap' }}>
                 <ChildrenIcon icon="arrow" />
                 {subItem.name}

@@ -1,14 +1,18 @@
-import { FC, cloneElement, useEffect, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import {
   StyledDropdownButton,
   CloseIcon,
   CloseWrapper,
   StyledDropdownWrapper,
   StyledDropdownList,
+  StyledFirstPart,
+  StyledButtonTextWrapper,
 } from './Dropdown.styles';
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
+import { Icon } from '../Icon';
+import { TextBody1, TextBody2 } from '../TypographyVariants';
 
 export const Dropdown: FC<Props> = ({
   dropdownList,
@@ -17,12 +21,12 @@ export const Dropdown: FC<Props> = ({
   text,
   size = 'medium',
   startIcon,
+  endIcon,
   className,
   testId,
   onClick,
   onClose,
-  buttonOpenColor = 'black',
-  buttonCloseColor = 'white',
+  inverseStyle,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -52,6 +56,17 @@ export const Dropdown: FC<Props> = ({
     toggleDropdown();
   };
 
+  const renderText = () => {
+    switch (size) {
+      case 'small':
+        return <TextBody2>{text}</TextBody2>;
+      case 'medium':
+        return <TextBody1>{text}</TextBody1>;
+      default:
+        return <TextBody1>{text}</TextBody1>;
+    }
+  };
+
   return (
     <StyledDropdownWrapper
       ref={dropdownRef}
@@ -59,20 +74,23 @@ export const Dropdown: FC<Props> = ({
     >
       <StyledDropdownButton
         onClick={handleOnClick}
-        endIcon={{ icon: 'arrow', rotate: isOpen ? 0 : 180 }}
         isOpen={isOpen}
-        color={isOpen ? buttonOpenColor : buttonCloseColor}
-        text={text}
-        variant="tertiary"
         size={size}
-        startIcon={startIcon}
         className={className}
-      />
+        inverseStyle={inverseStyle}
+      >
+        <StyledFirstPart>
+          {startIcon && <Icon {...startIcon} />}
+          <StyledButtonTextWrapper>{renderText()}</StyledButtonTextWrapper>
+        </StyledFirstPart>
+
+        <Icon icon="arrow" rotate={isOpen ? 0 : 180} {...endIcon} />
+      </StyledDropdownButton>
 
       {isOpen && (
         <StyledDropdownList
           position={position}
-          background="arcticWind"
+          background={inverseStyle ? 'polarNight' : 'arcticWind'}
           padding={[1.5, 2]}
           borderRadius={setBorderRadius(position)}
         >

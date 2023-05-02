@@ -13,16 +13,18 @@ import { Typography } from '../Typography';
 export const Button: FC<Props> = ({
   text,
   size = 'medium',
-  color = 'white',
+  color = 'black',
   onClick,
   shape = 'square',
   startIcon,
   endIcon,
   centerIcon,
-  state,
   variant = 'primary',
   className,
   testId,
+  isLoading,
+  isDisabled,
+  fullWidth,
 }) => {
   const setColor = () => {
     if (variant === 'tertiary') return setTertiaryColor(color);
@@ -33,12 +35,13 @@ export const Button: FC<Props> = ({
 
   return (
     <StyledButton
+      fullWidth={fullWidth}
       variant={variant}
       shape={shape}
       color={color}
       size={size}
       onClick={onClick}
-      disabled={state === 'disabled'}
+      disabled={isDisabled}
       className={className}
       data-testid={testId}
     >
@@ -50,7 +53,7 @@ export const Button: FC<Props> = ({
             <Icon size={iconSize} stroke={setColor()} {...startIcon} />
           )}
           {text && <Typography as="span">{text}</Typography>}
-          {state === 'loading' && <Spinner size={size} color={setColor()} />}
+          {isLoading && <Spinner size={size} color={setColor()} />}
           {endIcon && <Icon size={iconSize} stroke={setColor()} {...endIcon} />}
         </>
       )}

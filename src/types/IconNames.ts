@@ -24,21 +24,22 @@ export const iconNames = [
   'easter-egg',
   'tree',
   'hamburger-menu',
+  'payment-success',
+  'user-circle',
+  'exclamation',
   'fallback',
+  'arrow-square',
+  'check',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
   'flag-us',
-  'arrow-square',
   'flag-uk',
   'flag-es',
   'flag-fr',
   'flag-de',
   'flag-mx',
   'flag-ca',
-  'payment-success',
-  'user-circle',
-  'exclamation',
 ] as const;
 
 type IconNameType = typeof iconNames[number];
