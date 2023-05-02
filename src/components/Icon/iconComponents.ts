@@ -39,6 +39,7 @@ import { IconPaymentSuccess } from './SVGIcons/IconPaymentSuccess';
 import { IconUserCircle } from './SVGIcons/IconUserCircle';
 import { IconExclamation } from './SVGIcons/IconExclamation';
 import { IconFallback } from './SVGIcons/IconFallback';
+import { IconCheck } from './SVGIcons/IconCheck';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -79,4 +80,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'user-circle': IconUserCircle,
   exclamation: IconExclamation,
   fallback: IconFallback,
+  check: IconCheck,
 };

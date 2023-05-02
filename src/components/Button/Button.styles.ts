@@ -11,6 +11,7 @@ import {
 import styled from 'src/utils/styled';
 
 export const StyledButton = styled.button<StyledProps>`
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
   background-color: ${({ theme, color = 'white', variant }) =>
     variant === 'tertiary' ? 'transparent' : setColor(theme, color)};
   color: ${({ theme, color = 'white', variant }) =>

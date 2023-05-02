@@ -12,7 +12,7 @@ export default {
     size: 'medium',
     color: 'black',
     shape: 'rounded',
-    state: 'normal',
+    state: 'default',
     variant: 'primary',
   },
   argTypes: {
@@ -39,7 +39,7 @@ export default {
       category: 'Prop',
     },
     state: {
-      options: ['disabled', 'loading', 'normal'],
+      options: ['disabled', 'loading', 'default'],
       control: { type: 'select' },
       category: 'Prop',
     },

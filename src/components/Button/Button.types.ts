@@ -16,12 +16,14 @@ export interface Props extends ComponentPropsBase {
   size?: ButtonSize;
   color?: ButtonColor;
   shape?: 'square' | 'rounded';
-  state?: 'normal' | 'disabled' | 'loading';
+  isLoading?: boolean;
+  isDisabled?: boolean;
   variant?: 'primary' | 'secondary' | 'tertiary';
   startIcon?: IconConfig;
   endIcon?: IconConfig;
   centerIcon?: IconConfig;
   onClick?: MouseEventHandler | undefined;
+  fullWidth?: boolean;
 }
 
 export interface StyledProps extends Props {}

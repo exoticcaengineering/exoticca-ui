@@ -1,13 +1,13 @@
-export const IconArrow = () => (
+export const IconCheck = () => (
   <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M18 15L12 9L6 15"
+      d="M10 3.00085L4.5 8.50085L2 6.00085"
       stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
