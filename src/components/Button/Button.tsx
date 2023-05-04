@@ -14,7 +14,6 @@ export const Button: FC<Props> = ({
   shape = 'square',
   startIcon,
   endIcon,
-  centerIcon,
   variant = 'primary',
   className,
   testId,
@@ -24,7 +23,9 @@ export const Button: FC<Props> = ({
 }) => {
   const iconSize = getIconSize(size);
 
-  const iconColor = setTextColor(variant, color);
+  const iconColor = isDisabled
+    ? 'polarNightMedium'
+    : setTextColor(variant, color);
 
   return (
     <StyledButton
@@ -38,18 +39,10 @@ export const Button: FC<Props> = ({
       className={className}
       data-testid={testId}
     >
-      {centerIcon ? (
-        <Icon size={iconSize} stroke={iconColor} {...centerIcon} />
-      ) : (
-        <>
-          {startIcon && (
-            <Icon size={iconSize} stroke={iconColor} {...startIcon} />
-          )}
-          {text && <Typography as="span">{text}</Typography>}
-          {isLoading && <Spinner size={size} color={iconColor} />}
-          {endIcon && <Icon size={iconSize} stroke={iconColor} {...endIcon} />}
-        </>
-      )}
+      {startIcon && <Icon size={iconSize} stroke={iconColor} {...startIcon} />}
+      {text && <Typography as="span">{text}</Typography>}
+      {isLoading && <Spinner size={size} color={iconColor} />}
+      {endIcon && <Icon size={iconSize} stroke={iconColor} {...endIcon} />}
     </StyledButton>
   );
 };

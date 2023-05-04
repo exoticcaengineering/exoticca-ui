@@ -23,13 +23,13 @@ export const setBackgroundColor = (
   theme: Theme,
   variant: ButtonVariant,
   color: ButtonColor,
-) => {
+): keyof Colors => {
   if (variant === 'primary') return mapButtonColorToThemeColor(color);
-  return theme.colors.transparent;
+  return 'transparent';
 };
 
 export const setPrimaryTextColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'white') return 'arcticWind';
+  if (color === 'black') return 'arcticWind';
   return 'polarNight';
 };
 
@@ -77,9 +77,11 @@ export const getIconSize = (size: ButtonSize): IconSize => {
   return 'medium';
 };
 
-export const getIconButtonSize = (theme: Theme, size: ButtonSize) => {
+export const getIconButtonSize = (size: ButtonSize) => {
+  console.log('size', size);
+
   const sizes = {
-    small: '36px',
+    small: '32px',
     medium: '42px',
     large: '48px',
   };

@@ -3,6 +3,7 @@ import { Button } from '../Button';
 import { MouseEventHandler, useState } from 'react';
 import { Banner } from './Banner';
 import { Props } from '../Button.types';
+import { IconButton } from '../IconButton';
 
 export default {
   title: 'Components/Button',
@@ -103,6 +104,7 @@ const Template: ComponentStory<typeof Button> = (props: Props) => {
     </div>
   );
 };
+
 export const Base = Template.bind({});
 
 export const WithStartIcon = Template.bind({});

@@ -23,7 +23,6 @@ export interface Props extends ComponentPropsBase {
   variant?: ButtonVariant;
   startIcon?: IconConfig;
   endIcon?: IconConfig;
-  centerIcon?: IconConfig;
   onClick?: MouseEventHandler | undefined;
   fullWidth?: boolean;
 }
