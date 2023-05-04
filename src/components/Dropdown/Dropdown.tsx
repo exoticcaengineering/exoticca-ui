@@ -32,6 +32,8 @@ export const Dropdown: FC<Props> = ({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const closeDropdown = () => {
+    if (!isOpen) return;
+
     onClose?.();
     setIsOpen(false);
   };

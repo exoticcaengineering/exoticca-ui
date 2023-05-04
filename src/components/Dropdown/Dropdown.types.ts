@@ -26,5 +26,5 @@ export interface StyledProps
 }
 
 export interface DropdownListProps {
-  closeDropdown: () => void;
+  closeDropdown?: () => void;
 }
