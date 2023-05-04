@@ -37,6 +37,7 @@ const DrawerComp = (
   useImperativeHandle(ref, () => ({
     open: handleOpen,
     close: handleClose,
+    isOpen: open,
   }));
 
   useOnClickOutside(drawerRef, handleClose);

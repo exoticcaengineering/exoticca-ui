@@ -38,9 +38,14 @@ export default {
       control: { type: 'select' },
       category: 'Prop',
     },
-    state: {
-      options: ['disabled', 'loading', 'default'],
-      control: { type: 'select' },
+    isLoading: {
+      options: [true, false],
+      control: { type: 'radio' },
+      category: 'Prop',
+    },
+    isDisabled: {
+      options: [true, false],
+      control: { type: 'radio' },
       category: 'Prop',
     },
     shape: {
@@ -111,13 +116,6 @@ WithStartIcon.args = {
 export const WithEndIcon = Template.bind({});
 WithEndIcon.args = {
   endIcon: {
-    icon: 'arrow',
-  },
-};
-
-export const WithCenterIcon = Template.bind({});
-WithCenterIcon.args = {
-  centerIcon: {
     icon: 'arrow',
   },
 };

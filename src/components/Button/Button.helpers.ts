@@ -1,21 +1,58 @@
 import { Colors, Theme } from 'src/types';
-import { ButtonColor, ButtonSize } from './Button.types';
+import { ButtonColor, ButtonSize, ButtonVariant } from './Button.types';
 import { IconSize } from '../Icon';
 
-export const setColor = (theme: Theme, color: ButtonColor) => {
-  const colors = {
-    promoYellow: theme.colors.silentSavana,
-    promoOrange: theme.colors.carribeanSunrise,
-    promoBlue: theme.colors.pacificOcean,
-    promoGreen: theme.colors.savageForest,
-    black: theme.colors.polarNight,
-    white: theme.colors.arcticWind,
+export const mapButtonColorToThemeColor = (
+  color: ButtonColor,
+): keyof Colors => {
+  const colors: Record<ButtonColor, keyof Colors> = {
+    promoYellow: 'silentSavana',
+    promoOrange: 'carribeanSunrise',
+    promoBlue: 'pacificOcean',
+    promoGreen: 'savageForest',
+    black: 'polarNight',
+    white: 'arcticWind',
   };
 
   return colors[color];
 };
 
-export const setSize = (theme: Theme, size: ButtonSize) => {
+export const setSecondaryBackgroundColor = () => 'transparent';
+
+export const setBackgroundColor = (
+  theme: Theme,
+  variant: ButtonVariant,
+  color: ButtonColor,
+) => {
+  if (variant === 'primary') return mapButtonColorToThemeColor(color);
+  return theme.colors.transparent;
+};
+
+export const setPrimaryTextColor = (color: ButtonColor): keyof Colors => {
+  if (color === 'white') return 'arcticWind';
+  return 'polarNight';
+};
+
+export const setSecondaryTextColor = (color: ButtonColor): keyof Colors =>
+  mapButtonColorToThemeColor(color);
+
+export const setTertiaryTextColor = (color: ButtonColor): keyof Colors => {
+  if (color === 'white') return 'arcticWind';
+  return 'polarNight';
+};
+
+export const setTextColor = (variant: ButtonVariant, color: ButtonColor) => {
+  switch (variant) {
+    case 'primary':
+      return setPrimaryTextColor(color);
+    case 'secondary':
+      return setSecondaryTextColor(color);
+    case 'tertiary':
+      return setTertiaryTextColor(color);
+  }
+};
+
+export const setPadding = (theme: Theme, size: ButtonSize) => {
   const sizes = {
     small: theme.spacing(1.375),
     medium: theme.spacing(2, 2.25),
@@ -35,17 +72,17 @@ export const setFontsize = (theme: Theme, size: ButtonSize) => {
   return fontSizes[size];
 };
 
-export const setContainColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'black') return 'arcticWind';
-  return 'polarNight';
-};
-
-export const setTertiaryColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'white') return 'arcticWind';
-  return 'polarNight';
-};
-
 export const getIconSize = (size: ButtonSize): IconSize => {
   if (size === 'small') return 'regular';
   return 'medium';
+};
+
+export const getIconButtonSize = (theme: Theme, size: ButtonSize) => {
+  const sizes = {
+    small: '36px',
+    medium: '42px',
+    large: '48px',
+  };
+
+  return sizes[size];
 };

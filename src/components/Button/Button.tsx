@@ -3,11 +3,7 @@ import { Props } from './Button.types';
 import { StyledButton } from './Button.styles';
 import { Icon } from '../Icon/Icon';
 import { Spinner } from './Spinner';
-import {
-  getIconSize,
-  setContainColor,
-  setTertiaryColor,
-} from './Button.helpers';
+import { getIconSize, setTextColor } from './Button.helpers';
 import { Typography } from '../Typography';
 
 export const Button: FC<Props> = ({
@@ -26,12 +22,9 @@ export const Button: FC<Props> = ({
   isDisabled,
   fullWidth,
 }) => {
-  const setColor = () => {
-    if (variant === 'tertiary') return setTertiaryColor(color);
-    return setContainColor(color);
-  };
-
   const iconSize = getIconSize(size);
+
+  const iconColor = setTextColor(variant, color);
 
   return (
     <StyledButton
@@ -46,15 +39,15 @@ export const Button: FC<Props> = ({
       data-testid={testId}
     >
       {centerIcon ? (
-        <Icon size={iconSize} stroke={setColor()} {...centerIcon} />
+        <Icon size={iconSize} stroke={iconColor} {...centerIcon} />
       ) : (
         <>
           {startIcon && (
-            <Icon size={iconSize} stroke={setColor()} {...startIcon} />
+            <Icon size={iconSize} stroke={iconColor} {...startIcon} />
           )}
           {text && <Typography as="span">{text}</Typography>}
-          {isLoading && <Spinner size={size} color={setColor()} />}
-          {endIcon && <Icon size={iconSize} stroke={setColor()} {...endIcon} />}
+          {isLoading && <Spinner size={size} color={iconColor} />}
+          {endIcon && <Icon size={iconSize} stroke={iconColor} {...endIcon} />}
         </>
       )}
     </StyledButton>

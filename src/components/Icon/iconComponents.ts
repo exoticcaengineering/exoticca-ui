@@ -40,6 +40,9 @@ import { IconUserCircle } from './SVGIcons/IconUserCircle';
 import { IconExclamation } from './SVGIcons/IconExclamation';
 import { IconFallback } from './SVGIcons/IconFallback';
 import { IconCheck } from './SVGIcons/IconCheck';
+import { IconEmptyHeart } from './SVGIcons/IconEmptyHeart';
+import { IconEmptyMoon } from './SVGIcons/IconEmptyMoon';
+import { IconCalendar } from './SVGIcons/IconCalendar';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -81,4 +84,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   exclamation: IconExclamation,
   fallback: IconFallback,
   check: IconCheck,
+  'empty-heart': IconEmptyHeart,
+  'empty-moon': IconEmptyMoon,
+  calendar: IconCalendar,
 };

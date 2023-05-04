@@ -30,6 +30,9 @@ export const iconNames = [
   'fallback',
   'arrow-square',
   'check',
+  'calendar',
+  'empty-moon',
+  'empty-heart',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
