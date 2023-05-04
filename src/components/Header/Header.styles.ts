@@ -7,6 +7,7 @@ export const StyledHeaderWrapper = styled(Box).attrs({
 })<StyledProps>`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 60px;
   background: ${({ theme, backgroundType }) =>
@@ -23,7 +24,6 @@ export const StyledHeaderWrapper = styled(Box).attrs({
 
 export const StyledHeaderContent = styled(Box)`
   color: ${({ theme }) => theme.colors.arcticWind};
-  flex: 1 0 0;
   height: 100%;
   display: flex;
   align-items: center;
