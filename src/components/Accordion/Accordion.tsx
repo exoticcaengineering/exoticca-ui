@@ -9,6 +9,7 @@ import { Props } from './Accordion.types';
 
 export const Accordion: FC<Props> = ({
   header,
+  onClose,
   content,
   isOpen = false,
   isDisabled,
@@ -23,7 +24,10 @@ export const Accordion: FC<Props> = ({
     setIsAccordionOpen(isOpen);
   }, [isOpen]);
 
-  const toggleIsOpen = () => setIsAccordionOpen(!isAccordionOpen);
+  const toggleIsOpen = () => {
+    if (isAccordionOpen) onClose?.();
+    setIsAccordionOpen(!isAccordionOpen);
+  };
   const isEnabledAndOpen = !isDisabled && isAccordionOpen;
 
   return (
