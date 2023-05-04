@@ -59,11 +59,11 @@ export const Dropdown: FC<Props> = ({
   const renderText = () => {
     switch (size) {
       case 'small':
-        return <TextBody2>{text}</TextBody2>;
+        return <TextBody2 noWrap>{text}</TextBody2>;
       case 'medium':
-        return <TextBody1>{text}</TextBody1>;
+        return <TextBody1 noWrap>{text}</TextBody1>;
       default:
-        return <TextBody1>{text}</TextBody1>;
+        return <TextBody1 noWrap>{text}</TextBody1>;
     }
   };
 
