@@ -30,7 +30,7 @@ const buttonCommonStyle = css<StyledProps>`
   cursor: pointer;
   &:hover {
     background-color: ${({ theme, color = 'black' }) =>
-      colorWithOpacity(theme.colors[mapButtonColorToThemeColor(color)], 20)};
+      colorWithOpacity(theme.colors[mapButtonColorToThemeColor(color)], 80)};
   }
   &:disabled {
     background-color: ${({ theme, color = 'black' }) =>
@@ -70,7 +70,7 @@ export const Animation = styled.div<{ size: number }>`
   transform-origin: center;
 `;
 
-export const StyledIconButtonWrapper = styled.div<StyledProps>`
+export const StyledIconButtonWrapper = styled.button<StyledProps>`
   width: ${({ size = 'medium' }) => getIconButtonSize(size)};
   height: ${({ size = 'medium' }) => getIconButtonSize(size)};
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};

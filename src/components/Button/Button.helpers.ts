@@ -78,8 +78,6 @@ export const getIconSize = (size: ButtonSize): IconSize => {
 };
 
 export const getIconButtonSize = (size: ButtonSize) => {
-  console.log('size', size);
-
   const sizes = {
     small: '32px',
     medium: '42px',

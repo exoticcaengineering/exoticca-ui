@@ -1,4 +1,4 @@
-export const IconEmptyMoon = () => (
+export const IconMoon = () => (
   <svg
     width="20"
     height="21"

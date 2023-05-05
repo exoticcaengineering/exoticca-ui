@@ -10,8 +10,6 @@ export const ListParentItems = ({
   setChildrenItems,
   inverseStyle,
 }: ListParentItemsProps) => {
-  console.log('inverseStyle', inverseStyle);
-
   const handleClick = () => {
     if (isSelected === subItem.parent.name) return setIsSelected('');
     setIsSelected(subItem.parent.name);

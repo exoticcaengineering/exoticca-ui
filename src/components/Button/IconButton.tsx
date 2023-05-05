@@ -8,6 +8,7 @@ export const IconButton: FC<IconButtonProps> = ({
   color = 'black',
   variant = 'primary',
   size = 'medium',
+  isDisabled,
   ...props
 }) => {
   const getIconSize = (size: ButtonSize): IconSize => {
@@ -27,6 +28,7 @@ export const IconButton: FC<IconButtonProps> = ({
       color={color}
       variant={variant}
       size={size}
+      disabled={isDisabled}
       {...props}
     >
       <Icon {...icon} size={getIconSize(size)} />

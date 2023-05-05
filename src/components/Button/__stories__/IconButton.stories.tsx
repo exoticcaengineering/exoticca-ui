@@ -27,6 +27,11 @@ export default {
       control: { type: 'select' },
       category: 'Prop',
     },
+    isDisabled: {
+      options: [true, false],
+      control: { type: 'radio' },
+      category: 'Prop',
+    },
   },
 } as ComponentMeta<typeof IconButton>;
 

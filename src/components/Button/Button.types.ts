@@ -28,7 +28,7 @@ export interface Props extends ComponentPropsBase {
 }
 export interface IconButtonProps
   extends ComponentPropsBase,
-    Pick<Props, 'color' | 'size' | 'onClick' | 'variant'> {
+    Pick<Props, 'color' | 'size' | 'onClick' | 'variant' | 'isDisabled'> {
   icon: IconConfig;
 }
 
