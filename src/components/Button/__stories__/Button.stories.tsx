@@ -3,6 +3,7 @@ import { Button } from '../Button';
 import { MouseEventHandler, useState } from 'react';
 import { Banner } from './Banner';
 import { Props } from '../Button.types';
+import { IconButton } from '../IconButton';
 
 export default {
   title: 'Components/Button',
@@ -38,9 +39,14 @@ export default {
       control: { type: 'select' },
       category: 'Prop',
     },
-    state: {
-      options: ['disabled', 'loading', 'default'],
-      control: { type: 'select' },
+    isLoading: {
+      options: [true, false],
+      control: { type: 'radio' },
+      category: 'Prop',
+    },
+    isDisabled: {
+      options: [true, false],
+      control: { type: 'radio' },
       category: 'Prop',
     },
     shape: {
@@ -98,6 +104,7 @@ const Template: ComponentStory<typeof Button> = (props: Props) => {
     </div>
   );
 };
+
 export const Base = Template.bind({});
 
 export const WithStartIcon = Template.bind({});
@@ -111,13 +118,6 @@ WithStartIcon.args = {
 export const WithEndIcon = Template.bind({});
 WithEndIcon.args = {
   endIcon: {
-    icon: 'arrow',
-  },
-};
-
-export const WithCenterIcon = Template.bind({});
-WithCenterIcon.args = {
-  centerIcon: {
     icon: 'arrow',
   },
 };

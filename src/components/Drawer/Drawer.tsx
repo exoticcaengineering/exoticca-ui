@@ -8,7 +8,7 @@ import {
   StyledIconWrapper,
 } from './Drawer.styles';
 import { Props, DrawerRef } from './Drawer.types';
-import { Button } from 'src/components/Button';
+import { Button, IconButton } from 'src/components/Button';
 import { useOnClickOutside } from 'src/hooks';
 
 const DrawerComp = (
@@ -37,6 +37,7 @@ const DrawerComp = (
   useImperativeHandle(ref, () => ({
     open: handleOpen,
     close: handleClose,
+    isOpen: open,
   }));
 
   useOnClickOutside(drawerRef, handleClose);
@@ -52,13 +53,7 @@ const DrawerComp = (
       {open && (
         <>
           <StyledIconWrapper>
-            <Button
-              centerIcon={{ icon: 'close', size: 'medium' }}
-              onClick={handleClose}
-              color="white"
-              shape="rounded"
-              size="small"
-            />
+            <IconButton icon={{ icon: 'close' }} color="white" />
           </StyledIconWrapper>
 
           <StyledContentWrapper data-testid="drawer-content-wrapper">

@@ -40,6 +40,14 @@ import { IconUserCircle } from './SVGIcons/IconUserCircle';
 import { IconExclamation } from './SVGIcons/IconExclamation';
 import { IconFallback } from './SVGIcons/IconFallback';
 import { IconCheck } from './SVGIcons/IconCheck';
+import { IconHeart } from './SVGIcons/IconHeart';
+import { IconMoon } from './SVGIcons/IconMoon';
+import { IconCalendar } from './SVGIcons/IconCalendar';
+import { Star5 } from './SVGIcons/Star5';
+import { Star5GL } from './SVGIcons/Star5GL';
+import { Star4 } from './SVGIcons/Star4';
+import { Star4SP } from './SVGIcons/Star4SP';
+import { Star3SP } from './SVGIcons/Star3SP';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -81,4 +89,12 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   exclamation: IconExclamation,
   fallback: IconFallback,
   check: IconCheck,
+  heart: IconHeart,
+  moon: IconMoon,
+  calendar: IconCalendar,
+  'star-5': Star5,
+  'star-5-gl': Star5GL,
+  'star-4': Star4,
+  'star-4-sp': Star4SP,
+  'star-3-sp': Star3SP,
 };

@@ -4,6 +4,8 @@ import { IconConfig } from '../Icon';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+
 export type ButtonColor =
   | 'black'
   | 'white'
@@ -18,12 +20,16 @@ export interface Props extends ComponentPropsBase {
   shape?: 'square' | 'rounded';
   isLoading?: boolean;
   isDisabled?: boolean;
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: ButtonVariant;
   startIcon?: IconConfig;
   endIcon?: IconConfig;
-  centerIcon?: IconConfig;
   onClick?: MouseEventHandler | undefined;
   fullWidth?: boolean;
+}
+export interface IconButtonProps
+  extends ComponentPropsBase,
+    Pick<Props, 'color' | 'size' | 'onClick' | 'variant' | 'isDisabled'> {
+  icon: IconConfig;
 }
 
 export interface StyledProps extends Props {}

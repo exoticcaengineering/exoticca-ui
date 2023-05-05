@@ -2,7 +2,13 @@ import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
 import styled from 'src/utils/styled';
 import { StyledProps } from './Dropdown.types';
-import { getPadding, getUnderLineBottomPosition } from './Dropdown.hepers';
+import {
+  getBackgroundColor,
+  getBorderColor,
+  getColor,
+  getPadding,
+  getUnderLineBottomPosition,
+} from './Dropdown.helpers';
 
 export const StyledDropdownWrapper = styled(Box)<StyledProps>`
   position: relative;
@@ -13,29 +19,28 @@ export const StyledDropdownButton = styled.button<StyledProps>`
   gap: ${({ theme }) => theme.spacing(1)};
   justify-content: space-between;
   align-items: center;
-  border-color: ${({ theme }) => theme.colors.transparent};
+  border-width: 1px;
+  border-color: ${({ theme, isOpen, inverseStyle }) =>
+    theme.colors[getBorderColor({ isOpen, inverseStyle })]};
+  border-bottom: none;
   border-radius: ${({ theme }) => theme.newBorderRadius.s};
   border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
   border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};
-  background-color: ${({ theme, isOpen, inverseStyle }) => {
-    if (!isOpen) return theme.colors.transparent;
-    return inverseStyle ? theme.colors.polarNight : theme.colors.arcticWind;
-  }};
+  background-color: ${({ theme, isOpen, inverseStyle }) =>
+    theme.colors[getBackgroundColor({ isOpen, inverseStyle })]};
   padding: ${({ theme, size = 'medium' }) => getPadding(theme, size)};
-  color: ${({ theme, inverseStyle, isOpen }) => {
-    if (!inverseStyle) {
-      return isOpen ? theme.colors.polarNight : theme.colors.arcticWind;
-    }
-    return isOpen ? theme.colors.arcticWind : theme.colors.polarNight;
-  }};
+  color: ${({ theme, inverseStyle, isOpen }) =>
+    theme.colors[getColor({ inverseStyle, isOpen })]};
 `;
 
 export const StyledDropdownList = styled(Box)<StyledProps>`
   position: absolute;
-  min-width: calc(100% + 30px);
+  min-width: 100%;
   animation: fadein ${({ theme }) => theme.transition.duration.shortest} linear;
   right: ${({ position }) => position === 'left' && '0'};
-  transform: ${({ position }) => position === 'left' && 'translateX(0)'};
+  border-color: ${({ theme, isOpen, inverseStyle }) =>
+    theme.colors[getBorderColor({ isOpen, inverseStyle })]};
+  border-top: none;
   @keyframes fadein {
     from {
       opacity: 0;

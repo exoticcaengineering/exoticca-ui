@@ -7,5 +7,5 @@ export { Item, ItemProps } from './Item';
 export { Dropdown, DropdownProps, DropdownListProps } from './Dropdown';
 export { Header } from './Header';
 export { Drawer, DrawerRef } from './Drawer';
-export { Button } from './Button';
+export * from './Button';
 export { Accordion } from './Accordion';

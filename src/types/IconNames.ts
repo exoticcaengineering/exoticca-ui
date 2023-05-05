@@ -30,6 +30,9 @@ export const iconNames = [
   'fallback',
   'arrow-square',
   'check',
+  'calendar',
+  'moon',
+  'heart',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
@@ -40,6 +43,11 @@ export const iconNames = [
   'flag-de',
   'flag-mx',
   'flag-ca',
+  'star-5',
+  'star-5-gl',
+  'star-4',
+  'star-4-sp',
+  'star-3-sp',
 ] as const;
 
 type IconNameType = typeof iconNames[number];
