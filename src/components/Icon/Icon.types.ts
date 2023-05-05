@@ -16,8 +16,10 @@ export interface IconConfig {
   stroke?: keyof Colors;
   fullWidth?: boolean;
   fullHeight?: boolean;
-  width?: number;
-  height?: number;
+  autoWidth?: boolean;
+  autoHeight?: boolean;
+  width?: number | 'auto';
+  height?: number | 'auto';
   originalIconColor?: boolean;
   rotate?: number;
 }

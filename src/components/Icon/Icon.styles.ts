@@ -7,13 +7,15 @@ import { getIconSize, getStrokeWidth } from './Icon.helpers';
 export const StyledWrapper = styled(Box)<StyledProps>`
   line-height: 0;
   display: inline-block;
-  width: ${({ size, fullWidth, width }) => {
+  width: ${({ size, fullWidth, width, autoWidth }) => {
     if (fullWidth) return '100%';
+    if (autoWidth) return 'auto';
     if (width) return `${width}px`;
     return getIconSize(size);
   }};
-  height: ${({ size, fullHeight, height }) => {
+  height: ${({ size, fullHeight, height, autoHeight }) => {
     if (fullHeight) return '100%';
+    if (autoHeight) return 'auto';
     if (height) return `${height}px`;
     return getIconSize(size);
   }};
