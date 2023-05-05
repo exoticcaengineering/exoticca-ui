@@ -7,16 +7,12 @@ import { getIconSize, getStrokeWidth } from './Icon.helpers';
 export const StyledWrapper = styled(Box)<StyledProps>`
   line-height: 0;
   display: inline-block;
-  width: ${({ size, fullWidth, width, autoWidth }) => {
-    if (fullWidth) return '100%';
-    if (autoWidth) return 'auto';
-    if (width) return `${width}px`;
+  width: ${({ size, width }) => {
+    if (width) return width;
     return getIconSize(size);
   }};
-  height: ${({ size, fullHeight, height, autoHeight }) => {
-    if (fullHeight) return '100%';
-    if (autoHeight) return 'auto';
-    if (height) return `${height}px`;
+  height: ${({ size, height }) => {
+    if (height) return height;
     return getIconSize(size);
   }};
   transform: ${({ rotate = 0 }) => `rotate(${rotate}deg)`};
