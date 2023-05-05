@@ -1,7 +1,7 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { ButtonColor } from '../Button/Button.types';
 import { IconConfig } from '../Icon';
-import { Colors } from 'src/types';
+import { Colors, Theme } from 'src/types';
 
 export type DropDownPosition = 'left' | 'right';
 
@@ -27,4 +27,9 @@ export interface StyledProps
 
 export interface DropdownListProps {
   closeDropdown: () => void;
+}
+
+export interface GetColorParams {
+  isOpen?: boolean;
+  inverseStyle?: boolean;
 }

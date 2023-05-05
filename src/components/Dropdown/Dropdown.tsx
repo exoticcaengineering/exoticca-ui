@@ -99,6 +99,8 @@ export const Dropdown: FC<Props> = ({
 
       {isOpen && (
         <StyledDropdownList
+          inverseStyle={inverseStyle}
+          isOpen={isOpen}
           position={position}
           background={inverseStyle ? 'polarNight' : 'arcticWind'}
           padding={[1.5, 2]}
