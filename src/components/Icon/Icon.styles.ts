@@ -8,11 +8,11 @@ export const StyledWrapper = styled(Box)<StyledProps>`
   line-height: 0;
   display: inline-block;
   width: ${({ size, width }) => {
-    if (width) return width;
+    if (width) return typeof width === 'number' ? `${width}px` : width;
     return getIconSize(size);
   }};
   height: ${({ size, height }) => {
-    if (height) return height;
+    if (height) return typeof height === 'number' ? `${height}px` : height;
     return getIconSize(size);
   }};
   transform: ${({ rotate = 0 }) => `rotate(${rotate}deg)`};

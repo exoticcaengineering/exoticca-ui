@@ -15,8 +15,8 @@ export interface IconConfig {
   size?: IconSize;
   fill?: keyof Colors;
   stroke?: keyof Colors;
-  width?: CSS.Property.Width;
-  height?: CSS.Property.Height;
+  width?: CSS.Property.Width | number;
+  height?: CSS.Property.Height | number;
   originalIconColor?: boolean;
   rotate?: number;
 }
