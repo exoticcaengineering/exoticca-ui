@@ -1,6 +1,7 @@
 import { Colors } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconName } from 'src/types/IconNames';
+import * as CSS from 'csstype';
 
 export type IconSize =
   | 'small' //12px
@@ -14,10 +15,8 @@ export interface IconConfig {
   size?: IconSize;
   fill?: keyof Colors;
   stroke?: keyof Colors;
-  fullWidth?: boolean;
-  fullHeight?: boolean;
-  width?: number;
-  height?: number;
+  width?: CSS.Property.Width | number;
+  height?: CSS.Property.Height | number;
   originalIconColor?: boolean;
   rotate?: number;
 }
