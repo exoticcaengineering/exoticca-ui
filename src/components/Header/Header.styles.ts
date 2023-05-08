@@ -27,12 +27,14 @@ export const StyledHeaderContent = styled(Box)`
   height: 100%;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 0;
 `;
 
 export const StyledLeftContent = styled(StyledHeaderContent)``;
 export const StyledCenterContent = styled(StyledHeaderContent)`
-  display: flex;
-  justify-content: center;
+  flex-grow: 0;
 `;
 
 export const StyledRightContent = styled(StyledHeaderContent)`
