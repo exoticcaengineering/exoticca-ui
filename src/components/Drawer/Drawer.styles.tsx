@@ -3,6 +3,7 @@ import { StyledProps } from './Drawer.types';
 import styled from 'src/utils/styled';
 
 export const StyledDrawerWrapper = styled.div<StyledProps>`
+  position: relative;
   z-index: ${({ theme, isOpen }) =>
     isOpen ? theme.zIndex.level10 : theme.zIndex.negative};
   pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};

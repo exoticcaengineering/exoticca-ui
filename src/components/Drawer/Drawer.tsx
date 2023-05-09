@@ -44,13 +44,12 @@ const DrawerComp = (
   return (
     <>
       {createPortal(
-        <StyledDrawerWrapper isOpen={open}>
+        <StyledDrawerWrapper isOpen={open} data-testid={testId}>
           {open && <StyledOverlay isOpen={open} onClick={handleClose} />}
           <StyledDrawerInnerContainer
             heightProp={openHeight}
             isOpen={open}
             className={className}
-            data-testid={testId}
           >
             {open && (
               <>
