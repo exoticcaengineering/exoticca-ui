@@ -365,6 +365,7 @@ type DurationType =
   | 'longest';
 
 type ZIndexType =
+  | 'negative'
   | 'level0'
   | 'level1'
   | 'level2'

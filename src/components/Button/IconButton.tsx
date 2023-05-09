@@ -16,11 +16,11 @@ export const IconButton: FC<IconButtonProps> = ({
       case 'small':
         return 'regular';
       case 'medium':
-        return 'regular';
-      case 'large':
         return 'medium';
+      case 'large':
+        return 'large';
       default:
-        return 'regular';
+        return 'medium';
     }
   };
   return (

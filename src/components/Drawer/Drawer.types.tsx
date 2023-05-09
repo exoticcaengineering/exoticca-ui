@@ -9,6 +9,6 @@ export interface Props extends ComponentPropsBaseWithChildren {
 }
 
 export interface StyledProps {
-  heightProp: number;
-  isOpen: boolean;
+  heightProp?: number;
+  isOpen?: boolean;
 }
