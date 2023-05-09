@@ -36,6 +36,11 @@ export const iconNames = [
   'blog',
   'plane',
   'map-pin',
+  'facebook-box',
+  'instagram-box',
+  'twitter-box',
+  'youtube-box',
+  'spotify-box',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',

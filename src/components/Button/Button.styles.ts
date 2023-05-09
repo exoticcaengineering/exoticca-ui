@@ -17,7 +17,7 @@ const buttonCommonStyle = css<StyledProps>`
   align-items: center;
   gap: ${({ theme }) => theme.spacing(1)};
   background-color: ${({ theme, color = 'black', variant = 'primary' }) =>
-    theme.colors[setBackgroundColor(theme, variant, color)]};
+    theme.colors[setBackgroundColor(variant, color)]};
   color: ${({ theme, color = 'black', variant = 'primary' }) =>
     theme.colors[setTextColor(variant, color)]};
   border-width: 2px;
@@ -29,8 +29,13 @@ const buttonCommonStyle = css<StyledProps>`
   }};
   cursor: pointer;
   &:hover {
-    background-color: ${({ theme, color = 'black' }) =>
-      colorWithOpacity(theme.colors[mapButtonColorToThemeColor(color)], 80)};
+    background-color: ${({ theme, color = 'black', variant = 'primary' }) => {
+      const opacity = variant === 'primary' ? 80 : 20;
+      return colorWithOpacity(
+        theme.colors[mapButtonColorToThemeColor(color)],
+        opacity,
+      );
+    }};
   }
   &:disabled {
     background-color: ${({ theme, color = 'black' }) =>

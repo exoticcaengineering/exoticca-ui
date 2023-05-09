@@ -75,7 +75,7 @@ export const Dropdown: FC<Props> = ({
     return () => {
       window.removeEventListener('scroll', closeDropdown);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <StyledDropdownWrapper
