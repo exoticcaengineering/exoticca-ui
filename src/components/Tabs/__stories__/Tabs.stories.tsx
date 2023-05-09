@@ -13,7 +13,7 @@ export default {
 } as Meta;
 
 const Template: Story = () => {
-  const [selectedTab, setSelectedTab] = useState('');
+  const [selectedTabId, setSelectedTabId] = useState('');
   const TABS = [
     { text: 'Item 1', id: '1' },
     { text: 'Item 2', id: '2' },
@@ -22,8 +22,10 @@ const Template: Story = () => {
   ];
 
   const handleTabClick = (id: string) => {
-    setSelectedTab(id);
+    setSelectedTabId(id);
   };
+
+  const selectedTab = TABS.find((tab) => tab.id === selectedTabId);
 
   return (
     <div
@@ -43,13 +45,14 @@ const Template: Story = () => {
             {TABS.map(({ text, id }) => (
               <Tab
                 key={id}
-                isSelected={selectedTab === id}
+                isSelected={selectedTabId === id}
                 onClick={() => handleTabClick(id)}
               >
                 <Typography key={id}>{text}</Typography>
               </Tab>
             ))}
           </Tabs>
+          {selectedTab && <Typography>{selectedTab.text}</Typography>}
         </Box>
       </div>
     </div>

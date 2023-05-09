@@ -5,6 +5,5 @@ export const StyledWrapper = styled.li<StyledProps>`
   display: table;
   table-layout: fixed;
   text-align: center;
-  border-bottom: 1px solid black;
   width: 100%;
 `;

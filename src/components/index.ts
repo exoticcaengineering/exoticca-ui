@@ -9,3 +9,4 @@ export { Header } from './Header';
 export { Drawer, DrawerRef } from './Drawer';
 export * from './Button';
 export { Accordion } from './Accordion';
+export { Tabs, Tab } from './Tabs';
