@@ -20,7 +20,6 @@ export const mapButtonColorToThemeColor = (
 export const setSecondaryBackgroundColor = () => 'transparent';
 
 export const setBackgroundColor = (
-  theme: Theme,
   variant: ButtonVariant,
   color: ButtonColor,
 ): keyof Colors => {
