@@ -1,7 +1,5 @@
-import { ComponentMeta, ComponentStory, Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Tabs } from '../Tabs';
-import { Box } from 'src/components/Box';
-import { useState } from 'react';
 
 import { Tab } from '../Tabs.types';
 

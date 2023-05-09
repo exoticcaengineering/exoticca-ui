@@ -14,6 +14,7 @@ export const StyledTabs = styled.ul`
 
 export const StyledTitleWrapper = styled.li<StyledProps>`
   all: unset;
+  display: block;
   padding-bottom: ${({ theme }) => theme.spacing(1)};
   border-bottom: ${({ theme, isSelected }) =>
     isSelected && setBorderBottom(theme)};
