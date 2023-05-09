@@ -13,9 +13,8 @@ export const StyledTabs = styled.ul`
 `;
 
 export const StyledTitleWrapper = styled.li<StyledProps>`
-  display: table-cell;
+  all: unset;
   padding-bottom: ${({ theme }) => theme.spacing(1)};
-  cursor: pointer;
   border-bottom: ${({ theme, isSelected }) =>
     isSelected && setBorderBottom(theme)};
   background: ${({ theme, isSelected }) =>
@@ -23,8 +22,9 @@ export const StyledTitleWrapper = styled.li<StyledProps>`
   color: ${({ theme, isSelected }) =>
     isSelected ? theme.colors.polarNight : theme.colors.polarNightMedium};
   padding: ${({ theme }) => theme.spacing(1, 2)};
+  flex: 1 0 0;
+  text-align: center;
   cursor: pointer;
-
   &:hover {
     border-bottom: ${({ theme }) => setBorderBottom(theme)};
   }

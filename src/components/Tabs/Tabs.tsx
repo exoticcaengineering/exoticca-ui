@@ -3,7 +3,7 @@ import { Props } from './Tabs.types';
 import { StyledContentWrapper, StyledTabs } from './Tabs.styles';
 import { Tab } from './Tab';
 
-export const Tabs: FC<Props> = ({ tabs, className, testId }) => {
+export const Tabs: FC<Props> = ({ tabs, className, testId, titleFontSize }) => {
   const [selectedTabId, setSelectedTabId] = useState(tabs[0].id);
   const handleOnClick = (id: string) => setSelectedTabId(id);
   const selectedTab = tabs.find(({ id }) => id === selectedTabId);
@@ -16,6 +16,7 @@ export const Tabs: FC<Props> = ({ tabs, className, testId }) => {
             title={title}
             onClick={() => handleOnClick(id)}
             isSelected={selectedTabId === id}
+            titleFontSize={titleFontSize}
           />
         ))}
       </StyledTabs>

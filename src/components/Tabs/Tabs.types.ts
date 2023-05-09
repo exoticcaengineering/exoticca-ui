@@ -5,14 +5,17 @@ export interface Tab {
   id: string;
   isSelected?: boolean;
   title: string;
-  fontSize?: keyof FontSize;
   content: JSX.Element;
 }
-export interface TabProps extends Omit<Tab, 'content' | 'id'> {
-  onClick: () => void;
-}
+
 export interface Props extends ComponentPropsBase {
   tabs: Tab[];
+  titleFontSize?: keyof FontSize;
+}
+export interface TabProps
+  extends Omit<Tab, 'content' | 'id'>,
+    Pick<Props, 'titleFontSize'> {
+  onClick: () => void;
 }
 
 export interface StyledProps extends Pick<TabProps, 'isSelected'> {}
