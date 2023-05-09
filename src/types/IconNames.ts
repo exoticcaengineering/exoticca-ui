@@ -33,6 +33,9 @@ export const iconNames = [
   'calendar',
   'moon',
   'heart',
+  'blog',
+  'plane',
+  'map-pin',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
