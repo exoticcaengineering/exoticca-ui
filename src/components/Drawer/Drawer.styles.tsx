@@ -14,7 +14,7 @@ export const StyledDrawerContainer = styled.div<StyledProps>`
   background-color: ${({ theme }) => theme.colors.arcticWind};
   border-top-right-radius: ${({ theme }) => theme.newBorderRadius.l};
   border-top-left-radius: ${({ theme }) => theme.newBorderRadius.l};
-  padding: ${({ theme }) => theme.spacing(9, 0, 4, 3)};
+  padding: ${({ theme }) => theme.spacing(5, 0, 4, 3)};
   border: 1px solid black;
   z-index: ${({ theme }) => theme.zIndex.level10};
   ${({ isOpen }) =>

@@ -53,7 +53,7 @@ const DrawerComp = (
       {open && (
         <>
           <StyledIconWrapper>
-            <IconButton icon={{ icon: 'close' }} color="white" />
+            <IconButton icon={{ icon: 'close' }} color="white" size="large" />
           </StyledIconWrapper>
 
           <StyledContentWrapper data-testid="drawer-content-wrapper">
