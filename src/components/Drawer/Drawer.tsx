@@ -8,7 +8,7 @@ import {
   StyledIconWrapper,
 } from './Drawer.styles';
 import { Props, DrawerRef } from './Drawer.types';
-import { Button, IconButton } from 'src/components/Button';
+import { IconButton } from 'src/components/Button';
 import { useOnClickOutside } from 'src/hooks';
 
 const DrawerComp = (

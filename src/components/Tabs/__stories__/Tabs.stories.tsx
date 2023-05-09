@@ -1,58 +1,23 @@
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory, Meta, Story } from '@storybook/react';
 import { Tabs } from '../Tabs';
 import { Box } from 'src/components/Box';
 import { useState } from 'react';
-import { Typography } from 'src/components/Typography';
-import { Tab } from '../Tab/Tab';
+
+import { Tab } from '../Tabs.types';
 
 export default {
   title: 'Components/Tabs',
   component: Tabs,
   args: {},
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof Tabs>;
 
-const Template: Story = () => {
-  const [selectedTab, setSelectedTab] = useState('');
-  const TABS = [
-    { text: 'Item 1', id: '1' },
-    { text: 'Item 2', id: '2' },
-    { text: 'Item 3', id: '3' },
-    { text: 'Item 4', id: '4' },
-  ];
+const TABS: Tab[] = [
+  { title: 'Item 1', id: '1', content: <div>content 1</div> },
+  { title: 'Item 2', id: '2', content: <div>content 2</div> },
+  { title: 'Item 3', id: '3', content: <div>content 3</div> },
+  { title: 'Item 4', id: '4', content: <div>content 4</div> },
+];
 
-  const handleTabClick = (id: string) => {
-    setSelectedTab(id);
-  };
-
-  return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <div
-        style={{
-          margin: '5rem',
-        }}
-      >
-        <Box padding={[1]} borderRadius={'xl'}>
-          <Tabs>
-            {TABS.map(({ text, id }) => (
-              <Tab
-                key={id}
-                isSelected={selectedTab === id}
-                onClick={() => handleTabClick(id)}
-              >
-                <Typography key={id}>{text}</Typography>
-              </Tab>
-            ))}
-          </Tabs>
-        </Box>
-      </div>
-    </div>
-  );
-};
+const Template: ComponentStory<typeof Tabs> = () => <Tabs tabs={TABS} />;
 export const Base = Template.bind({});

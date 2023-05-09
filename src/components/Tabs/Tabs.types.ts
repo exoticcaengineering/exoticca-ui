@@ -1,7 +1,18 @@
-import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
+import { FontSize } from 'src/types';
+import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 
-export type ItemSize = 'xSmall' | 'small' | 'medium' | 'large';
+export interface Tab {
+  id: string;
+  isSelected?: boolean;
+  title: string;
+  fontSize?: keyof FontSize;
+  content: JSX.Element;
+}
+export interface TabProps extends Omit<Tab, 'content' | 'id'> {
+  onClick: () => void;
+}
+export interface Props extends ComponentPropsBase {
+  tabs: Tab[];
+}
 
-export interface Props extends ComponentPropsBaseWithChildren {}
-
-export interface StyledProps {}
+export interface StyledProps extends Pick<TabProps, 'isSelected'> {}

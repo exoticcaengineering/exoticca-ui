@@ -1,7 +1,25 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Props } from './Tabs.types';
-import { StyledWrapper } from './Tabs.styles';
+import { StyledContentWrapper, StyledTabs } from './Tabs.styles';
+import { Tab } from './Tab';
 
-export const Tabs: FC<Props> = ({ children }) => {
-  return <StyledWrapper>{children}</StyledWrapper>;
+export const Tabs: FC<Props> = ({ tabs, className, testId }) => {
+  const [selectedTabId, setSelectedTabId] = useState(tabs[0].id);
+  const handleOnClick = (id: string) => setSelectedTabId(id);
+  const selectedTab = tabs.find(({ id }) => id === selectedTabId);
+  return (
+    <div className={className} data-testid={testId}>
+      <StyledTabs>
+        {tabs.map(({ title, id }) => (
+          <Tab
+            key={title}
+            title={title}
+            onClick={() => handleOnClick(id)}
+            isSelected={selectedTabId === id}
+          />
+        ))}
+      </StyledTabs>
+      <StyledContentWrapper>{selectedTab?.content}</StyledContentWrapper>
+    </div>
+  );
 };
