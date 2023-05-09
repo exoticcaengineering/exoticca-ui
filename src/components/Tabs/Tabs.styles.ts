@@ -21,7 +21,7 @@ export const StyledTitleWrapper = styled.li<StyledProps>`
     isSelected ? theme.colors.arcticWind : theme.colors.polarNightLight};
   color: ${({ theme, isSelected }) =>
     isSelected ? theme.colors.polarNight : theme.colors.polarNightMedium};
-  padding: ${({ theme }) => theme.spacing(1, 2)};
+  padding: ${({ theme }) => theme.spacing(1.5, 2)};
   flex: 1 0 0;
   text-align: center;
   cursor: pointer;
