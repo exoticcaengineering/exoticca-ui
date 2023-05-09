@@ -1,15 +1,17 @@
-import React, { forwardRef, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import React, { forwardRef } from 'react';
 import { useState } from 'react';
 import { useImperativeHandle } from 'react';
 import {
   StyledBottomBar,
   StyledContentWrapper,
-  StyledDrawerContainer,
+  StyledDrawerInnerContainer,
+  StyledDrawerWrapper,
   StyledIconWrapper,
+  StyledOverlay,
 } from './Drawer.styles';
 import { Props, DrawerRef } from './Drawer.types';
-import { Button, IconButton } from 'src/components/Button';
-import { useOnClickOutside } from 'src/hooks';
+import { IconButton } from 'src/components/Button';
 
 const DrawerComp = (
   {
@@ -23,7 +25,6 @@ const DrawerComp = (
   ref: React.Ref<DrawerRef>,
 ) => {
   const [open, setOpen] = useState(false);
-  const drawerRef = useRef<HTMLDivElement>(null);
 
   const handleOpen = () => {
     onOpen?.();
@@ -40,29 +41,38 @@ const DrawerComp = (
     isOpen: open,
   }));
 
-  useOnClickOutside(drawerRef, handleClose);
-
   return (
-    <StyledDrawerContainer
-      ref={drawerRef}
-      heightProp={openHeight}
-      isOpen={open}
-      className={className}
-      data-testid={testId}
-    >
-      {open && (
-        <>
-          <StyledIconWrapper>
-            <IconButton icon={{ icon: 'close' }} color="white" size="large" />
-          </StyledIconWrapper>
+    <>
+      {createPortal(
+        <StyledDrawerWrapper isOpen={open} data-testid={testId}>
+          {open && <StyledOverlay isOpen={open} onClick={handleClose} />}
+          <StyledDrawerInnerContainer
+            heightProp={openHeight}
+            isOpen={open}
+            className={className}
+          >
+            {open && (
+              <>
+                <StyledIconWrapper>
+                  <IconButton
+                    icon={{ icon: 'close' }}
+                    color="white"
+                    size="medium"
+                    onClick={handleClose}
+                  />
+                </StyledIconWrapper>
 
-          <StyledContentWrapper data-testid="drawer-content-wrapper">
-            {children}
-          </StyledContentWrapper>
-        </>
+                <StyledContentWrapper data-testid="drawer-content-wrapper">
+                  {children}
+                </StyledContentWrapper>
+              </>
+            )}
+            <StyledBottomBar />
+          </StyledDrawerInnerContainer>
+        </StyledDrawerWrapper>,
+        document.body,
       )}
-      <StyledBottomBar />
-    </StyledDrawerContainer>
+    </>
   );
 };
 

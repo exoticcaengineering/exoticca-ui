@@ -2,7 +2,15 @@ import { css } from 'styled-components';
 import { StyledProps } from './Drawer.types';
 import styled from 'src/utils/styled';
 
-export const StyledDrawerContainer = styled.div<StyledProps>`
+export const StyledDrawerWrapper = styled.div<StyledProps>`
+  position: relative;
+  z-index: ${({ theme, isOpen }) =>
+    isOpen ? theme.zIndex.level10 : theme.zIndex.negative};
+  pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+  transition: all ${({ theme }) => theme.transition.duration.short} ease-in-out;
+`;
+
+export const StyledDrawerInnerContainer = styled.div<StyledProps>`
   position: fixed;
   left: 0;
   right: 0;
@@ -46,4 +54,12 @@ export const StyledBottomBar = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+`;
+
+export const StyledOverlay = styled.div<StyledProps>`
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 `;

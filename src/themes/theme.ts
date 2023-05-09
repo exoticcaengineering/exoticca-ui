@@ -490,6 +490,7 @@ const duration: Duration = {
 };
 
 export const zIndex: ZIndex = {
+  negative: -1,
   level0: 0,
   level1: 1,
   level2: 2,
