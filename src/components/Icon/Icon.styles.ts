@@ -2,7 +2,7 @@ import styled from 'src/utils/styled';
 import { StyledProps } from './Icon.types';
 import { Box } from 'src/components/Box';
 import { css } from 'styled-components';
-import { getIconSize, getStrokeWidth } from './Icon.helpers';
+import { getIconSize } from './Icon.helpers';
 
 export const StyledWrapper = styled(Box)<StyledProps>`
   line-height: 0;
@@ -23,10 +23,6 @@ export const StyledWrapper = styled(Box)<StyledProps>`
     height: 100%;
     vertical-align: middle;
     display: inline-block;
-  }
-
-  & > svg * {
-    stroke-width: ${({ size }) => getStrokeWidth(size)};
   }
 
   ${({ stroke, theme, originalIconColor }) =>
