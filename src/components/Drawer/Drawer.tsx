@@ -42,37 +42,32 @@ const DrawerComp = (
   }));
 
   return (
-    <>
-      {createPortal(
-        <StyledDrawerWrapper isOpen={open} data-testid={testId}>
-          {open && <StyledOverlay isOpen={open} onClick={handleClose} />}
-          <StyledDrawerInnerContainer
-            heightProp={openHeight}
-            isOpen={open}
-            className={className}
-          >
-            {open && (
-              <>
-                <StyledIconWrapper>
-                  <IconButton
-                    icon={{ icon: 'close' }}
-                    color="white"
-                    size="medium"
-                    onClick={handleClose}
-                  />
-                </StyledIconWrapper>
+    <StyledDrawerWrapper isOpen={open} data-testid={testId}>
+      {open && <StyledOverlay isOpen={open} onClick={handleClose} />}
+      <StyledDrawerInnerContainer
+        heightProp={openHeight}
+        isOpen={open}
+        className={className}
+      >
+        {open && (
+          <>
+            <StyledIconWrapper>
+              <IconButton
+                icon={{ icon: 'close' }}
+                color="white"
+                size="medium"
+                onClick={handleClose}
+              />
+            </StyledIconWrapper>
 
-                <StyledContentWrapper data-testid="drawer-content-wrapper">
-                  {children}
-                </StyledContentWrapper>
-              </>
-            )}
-            <StyledBottomBar />
-          </StyledDrawerInnerContainer>
-        </StyledDrawerWrapper>,
-        document.body,
-      )}
-    </>
+            <StyledContentWrapper data-testid="drawer-content-wrapper">
+              {children}
+            </StyledContentWrapper>
+          </>
+        )}
+        <StyledBottomBar />
+      </StyledDrawerInnerContainer>
+    </StyledDrawerWrapper>
   );
 };
 
