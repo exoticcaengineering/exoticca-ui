@@ -17,11 +17,14 @@ export const FilterInput = ({
   value,
   children,
   selectedValue,
+  inputRef,
+  onClick,
 }: InputFilterProps) => {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const onClick = () => {
+  const handleClick = () => {
+    onClick?.();
     setDropdownIsOpen(true);
   };
   const closeDropdown = () => setDropdownIsOpen(false);
@@ -29,19 +32,21 @@ export const FilterInput = ({
   useOnClickOutside(dropdownRef, closeDropdown);
 
   useEffect(() => {
+    console.log(selectedValue);
     closeDropdown();
   }, [selectedValue]);
 
   return (
     <StyledFilter ref={dropdownRef}>
       <Input
+        inputRef={inputRef}
         icon={icon}
         label={label}
         placeholder={placeholder}
         rounded={rounded}
         setValue={setValue}
         value={value}
-        onClick={onClick}
+        onClick={handleClick}
       />
       {dropdownIsOpen && (
         <StyledDropDown>

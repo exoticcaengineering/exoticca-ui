@@ -7,7 +7,7 @@ export const StyledDropDown = styled.div<StyleProps>`
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
   margin-top: ${({ theme }) => theme.spacing(0.5)};
   position: absolute;
-  max-width: 328px;
+  max-width: 350px;
   width: 100%;
   left: 0;
   z-index: ${({ theme }) => theme.zIndex.level8};

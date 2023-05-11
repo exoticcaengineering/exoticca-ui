@@ -5,6 +5,7 @@ export { Icon } from './Icon';
 export { Tag } from './Tag';
 export { Item, ItemProps } from './Item';
 export { Dropdown, DropdownProps, DropdownListProps } from './Dropdown';
+export { FilterInput } from './Input/FilterInput';
 export { Header } from './Header';
 export { Drawer, DrawerRef } from './Drawer';
 export * from './Button';

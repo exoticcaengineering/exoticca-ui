@@ -16,6 +16,7 @@ export const Input = ({
   setValue,
   value,
   onClick,
+  inputRef,
 }: InputProps) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -23,9 +24,7 @@ export const Input = ({
 
   return (
     <StyledInputWrapper tabIndex={0} rounded={rounded} icon={icon}>
-      {icon && (
-        <StyledIcon icon={icon} stroke={'polarNight'} size={'regular'} />
-      )}
+      {icon && <StyledIcon icon={icon} stroke={'polarNight'} size={'medium'} />}
       <StyledInputInner>
         <StyledLabel icon={icon}>{label}</StyledLabel>
         <StyledInput
@@ -34,6 +33,7 @@ export const Input = ({
           placeholder={placeholder}
           onChange={onChange}
           onClick={() => onClick?.()}
+          ref={inputRef}
         />
       </StyledInputInner>
     </StyledInputWrapper>

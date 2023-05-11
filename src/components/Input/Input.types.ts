@@ -8,6 +8,7 @@ export interface InputProps {
   setValue: (state: string) => void;
   onClick?: () => void;
   value: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
 }
 
 export interface StyleProps {
@@ -20,4 +21,5 @@ export interface StyleProps {
 export interface InputFilterProps extends InputProps {
   children: React.ReactNode;
   selectedValue: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
 }
