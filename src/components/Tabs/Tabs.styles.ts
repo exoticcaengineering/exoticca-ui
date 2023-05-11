@@ -1,10 +1,11 @@
 import styled from 'src/utils/styled';
 import { StyledProps } from './Tabs.types';
 
-export const StyledWrapper = styled.li<StyledProps>`
+export const StyledWrapper = styled.ul<StyledProps>`
+  margin: 0;
+  padding: 0;
   display: table;
   table-layout: fixed;
   text-align: center;
-  border-bottom: 1px solid black;
   width: 100%;
 `;

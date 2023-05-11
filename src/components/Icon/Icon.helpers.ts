@@ -16,13 +16,3 @@ export const getIconSize = (size?: IconSize) => {
       return '18px'; // default size
   }
 };
-
-export const getStrokeWidth = (size?: IconSize) => {
-  switch (size) {
-    case 'large':
-    case 'xLarge':
-      return 2;
-    default:
-      return '1.5';
-  }
-};

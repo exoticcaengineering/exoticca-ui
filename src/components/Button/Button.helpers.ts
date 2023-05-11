@@ -20,7 +20,6 @@ export const mapButtonColorToThemeColor = (
 export const setSecondaryBackgroundColor = () => 'transparent';
 
 export const setBackgroundColor = (
-  theme: Theme,
   variant: ButtonVariant,
   color: ButtonColor,
 ): keyof Colors => {
@@ -79,9 +78,9 @@ export const getIconSize = (size: ButtonSize): IconSize => {
 
 export const getIconButtonSize = (size: ButtonSize) => {
   const sizes = {
-    small: '32px',
+    small: '34px',
     medium: '42px',
-    large: '48px',
+    large: '56px',
   };
 
   return sizes[size];

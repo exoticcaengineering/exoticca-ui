@@ -48,6 +48,14 @@ import { Star5GL } from './SVGIcons/Star5GL';
 import { Star4 } from './SVGIcons/Star4';
 import { Star4SP } from './SVGIcons/Star4SP';
 import { Star3SP } from './SVGIcons/Star3SP';
+import { IconBlog } from './SVGIcons/IconBlog';
+import { IconPlane } from './SVGIcons/IconPlane';
+import { IconMapPin } from './SVGIcons/IconMapPin';
+import { IconFacebookBox } from './SVGIcons/IconFacebookBox';
+import { IconInstagramBox } from './SVGIcons/IconInstagramBox';
+import { IconTwitterBox } from './SVGIcons/IconTwitterBox';
+import { IconYoutubeBox } from './SVGIcons/IconYoutubeBox';
+import { IconSpotifyBox } from './SVGIcons/IconSpotifyBox';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -97,4 +105,12 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'star-4': Star4,
   'star-4-sp': Star4SP,
   'star-3-sp': Star3SP,
+  blog: IconBlog,
+  plane: IconPlane,
+  'map-pin': IconMapPin,
+  'facebook-box': IconFacebookBox,
+  'instagram-box': IconInstagramBox,
+  'twitter-box': IconTwitterBox,
+  'youtube-box': IconYoutubeBox,
+  'spotify-box': IconSpotifyBox,
 };
