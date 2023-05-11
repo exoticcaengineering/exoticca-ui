@@ -1,5 +1,6 @@
 import { themeDefault } from 'src/themes';
 import styled from 'styled-components';
+import { TextHeading1, TextHeading3 } from '../TypographyVariants';
 
 export const Shade = styled.div`
   position: fixed !important; /* Must have !important because POSE adds absolute */
@@ -10,7 +11,6 @@ export const Shade = styled.div`
   bottom: 0;
   z-index: ${({ theme }) => theme.zIndex.level10};
   overflow: hidden;
-  height: 100vh;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     background: rgba(0, 0, 0, 0.4);
@@ -29,15 +29,11 @@ export const ModalWrapper = styled.div<{
   ${({ mobileFullscreen }) =>
     mobileFullscreen
       ? `
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
-  width: 100vw;
-  min-width: 100vw;
-  max-width: 100vw;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0) !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0) !important;
 `
       : `max-height: 85vh`}
 
@@ -66,17 +62,13 @@ export const ContentWrapper = styled.div<{
   max-height: 85vh;
   overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : 'auto')};
   ${({ mobileFullscreen }) =>
-    mobileFullscreen
-      ? `
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
-  width: 100vw;
-  min-width: 100vw;
-  max-width: 100vw;
-  top: 0;
-`
-      : `max-height: 85vh;`}
+    mobileFullscreen &&
+    `
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    `}
 
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     max-height: 85vh;
@@ -189,7 +181,7 @@ export const StyledCloseIcon = styled.div<{
     relative ? '0' : shiftLeft ? shiftLeft : '16px'};
   border: ${({ fullScreen, theme }) =>
     fullScreen ? undefined : `1px solid ${theme.colors.polarNightMedium}`};
-  border-radius: 50%;
+  border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
   background-color: ${(props) =>
     props.transparantBg
       ? 'transparent'
@@ -251,31 +243,28 @@ export const HighlightText = styled.div`
   text-align: center;
   width: 90px;
   height: 36px;
-  margin-top: 8px;
+  margin-top: ${({ theme }) => theme.spacing(1)};
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     margin-top: 10px;
   }
 `;
 
-export const Title = styled.div<{ margin: number }>`
+export const Title = styled(TextHeading1)<{ margin: number }>`
   margin: calc(8px + ${(props) => props.margin}px) 0 2px;
-  font-size: 1.5rem;
-  font-weight: 700;
+  margin-top: ${({ theme }) => theme.typography.fontSize.heading2};
   line-height: 30px;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     margin: calc(16px + ${(props) => props.margin}px) 0 16px;
-    font-size: 2rem;
+    margin-top: ${({ theme }) => theme.typography.fontSize.heading1};
     line-height: 40px;
     text-align: center;
   }
 `;
 
-export const Subtitle = styled.div`
-  font-size: 1.125rem;
+export const Subtitle = styled(TextHeading3)`
   line-height: 22.5px;
-  font-weight: 500;
   text-align: center;
 `;
 
