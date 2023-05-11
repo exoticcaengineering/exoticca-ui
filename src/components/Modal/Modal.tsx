@@ -6,17 +6,8 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
-import {
-  createRandomId,
-  disableScroll,
-  enableScroll,
-  getCookie,
-} from './Modal.Helpers';
 import ReactDOM from 'react-dom';
-import TagManager from 'react-gtm-module';
 import { Icon } from 'src/components/Icon';
-import { IconName } from 'src/types/IconNames';
-import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 import {
   CloseBtnWrapper,
   Container,
@@ -40,44 +31,11 @@ import {
   Subtitle,
   Title,
 } from './Modal.styles';
+import { enableScroll } from 'src/utils/enableScroll';
+import { disableScroll } from 'src/utils/disableScroll';
+import { ModalProps } from './Modal.types';
+import { createRandomId } from 'src/utils/createRandomId';
 
-export interface ButtonComponentProps {
-  onClose: () => void;
-}
-
-interface ModalProps extends ComponentPropsBaseWithChildren {
-  id: string;
-  headerContent?: React.ReactNode;
-  image?: string;
-  blackoutHeader?: boolean;
-  title?: string | JSX.Element;
-  subtitle?: string | JSX.Element;
-  highlights?: {
-    icon?: IconName;
-    image?: string;
-    text?: string;
-    color?: string;
-  }[];
-  footer?: string | JSX.Element;
-  ButtonComponent?: (props: ButtonComponentProps) => JSX.Element | null;
-  footerBackgroundColor?: string;
-  width?: string;
-  fullScreen?: boolean;
-  isClosable?: boolean;
-  onOpenCallback?(): void;
-  onCloseCallback?(): void;
-  customContentSpacing?: object;
-  disableCloseOnClickOutside?: boolean;
-  closableFixed?: boolean;
-  closeBtnshiftLeft?: string;
-  closeBtnTransparant?: boolean;
-  closeBtnText?: string;
-  darkMode?: boolean;
-  fullWidthContent?: boolean;
-  fullHeightContent?: boolean;
-  mobileFullscreen?: boolean;
-  overflowHidden?: boolean;
-}
 const Modal = (
   {
     id,
@@ -123,26 +81,10 @@ const Modal = (
   }, []);
 
   const handleOpenModal = useCallback(() => {
-    const cookieAB = getCookie('newsletterModal-version');
-    const testVersion = cookieAB === 'v2' ? 'b' : 'a';
-    const paramsObject = {
-      ...(id === 'LeadModal' && {
-        //include AB test params only for leadModal
-        test: 'pop_up_generic_lead',
-        version: testVersion,
-      }),
-      event: 'gaEventNonInteractive',
-      eventCategory: 'modal',
-      eventAction: `Open_Modal_${id}`,
-      eventLabel: `Open_Modal_${id}`,
-    };
     if (isOpen) return;
     disableScroll();
     setIsOpen(true);
     onOpenCallback?.();
-    TagManager.dataLayer({
-      dataLayer: paramsObject,
-    });
   }, [onOpenCallback, id, isOpen]);
 
   const handleCloseModal = useCallback(() => {
@@ -150,14 +92,6 @@ const Modal = (
     enableScroll();
     setIsOpen(false);
     onCloseCallback?.();
-    TagManager.dataLayer({
-      dataLayer: {
-        event: 'gaEventNonInteractive',
-        eventCategory: 'modal',
-        eventAction: `Close_Modal_${id}`,
-        eventLabel: `Close_Modal_${id}`,
-      },
-    });
   }, [isClosable, onCloseCallback, id]);
 
   useImperativeHandle(

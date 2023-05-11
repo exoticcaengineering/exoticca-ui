@@ -153,7 +153,7 @@ export const CloseBtnWrapper = styled.div`
   cursor: pointer;
   border-radius: 3px;
   z-index: 10;
-  transition: 0.3s all ease-out;
+  transition: ${({ theme }) => theme.transition.duration.standard} all ease-out;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.polarNightLight};
