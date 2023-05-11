@@ -36,7 +36,7 @@ import { disableScroll } from 'src/utils/disableScroll';
 import { ModalProps } from './Modal.types';
 import { createRandomId } from 'src/utils/createRandomId';
 
-const Modal = (
+const ModalComponent = (
   {
     id,
     headerContent,
@@ -295,4 +295,4 @@ const Modal = (
   );
 };
 
-export default forwardRef(Modal);
+export const Modal = forwardRef(ModalComponent);
