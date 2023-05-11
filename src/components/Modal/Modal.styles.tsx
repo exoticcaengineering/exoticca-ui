@@ -1,3 +1,4 @@
+import { themeDefault } from 'src/themes';
 import styled from 'styled-components';
 
 export const Shade = styled.div`
@@ -7,7 +8,7 @@ export const Shade = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1001;
+  z-index: ${({ theme }) => theme.zIndex.level10};
   overflow: hidden;
   height: 100vh;
 
@@ -21,12 +22,10 @@ export const ModalWrapper = styled.div<{
   mobileFullscreen?: boolean;
 }>`
   position: fixed;
-  z-index: 9999999;
+  z-index: ${({ theme }) => theme.zIndex.level10};
   border-radius: ${({ theme }) => theme.newBorderRadius.l};
   overflow-y: auto;
   overflow: hidden;
-  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
-    0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
   ${({ mobileFullscreen }) =>
     mobileFullscreen
       ? `
@@ -62,8 +61,8 @@ export const ContentWrapper = styled.div<{
 }>`
   background: ${({ theme, darkMode }) =>
     darkMode ? theme.colors.polarNight : theme.colors.arcticWind};
-  padding-bottom: ${({ hasButton, noPadding }) =>
-    noPadding ? '0' : hasButton ? '96px' : '16px'};
+  padding-bottom: ${({ hasButton, noPadding, theme }) =>
+    noPadding ? '0' : hasButton ? theme.spacing(12) : theme.spacing(2)};
   max-height: 85vh;
   overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : 'auto')};
   ${({ mobileFullscreen }) =>
@@ -131,7 +130,7 @@ export const ModalFooter = styled.div<{ backgroundColor?: string }>`
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 16px;
+    padding: ${theme.spacing(2)};
     background-color: ${backgroundColor ?? 'transparent'}
 
     @media (min-width:${theme.newBreakpoints.phablet}) {
@@ -152,7 +151,7 @@ export const CloseBtnWrapper = styled.div`
   right: 10px;
   cursor: pointer;
   border-radius: 3px;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.level10};
   transition: ${({ theme }) => theme.transition.duration.standard} all ease-out;
 
   &:hover {
@@ -184,7 +183,8 @@ export const StyledCloseIcon = styled.div<{
   width: 24px;
   height: 24px;
   top: ${({ relative }) => (relative ? '0' : '10px')};
-  z-index: ${({ closableFixed }) => (closableFixed ? `2` : 'none')};
+  z-index: ${({ closableFixed, theme }) =>
+    closableFixed ? theme.zIndex.level2 : 'none'};
   right: ${({ shiftLeft, relative }) =>
     relative ? '0' : shiftLeft ? shiftLeft : '16px'};
   border: ${({ fullScreen, theme }) =>
@@ -199,7 +199,7 @@ export const StyledCloseIcon = styled.div<{
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.level10};
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     width: 32px;
@@ -214,13 +214,13 @@ export const Highlights = styled.div<{ margin: number }>`
   justify-content: space-evenly;
   position: absolute;
   width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: ${({ theme }) => theme.spacing(2)};
+  padding-right: ${({ theme }) => theme.spacing(2)};
   bottom: calc(-26px - ${(props) => props.margin}px);
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: ${({ theme }) => theme.spacing(4)};
+    padding-right: ${({ theme }) => theme.spacing(4)};
   }
 `;
 
@@ -286,8 +286,9 @@ export const ModalContent = styled.div<{ noPadding: boolean }>`
   overflow: auto;
   max-height: 100%;
   scrollbar-width: none;
-  padding-bottom: ${({ noPadding }) => (noPadding ? '0' : '16px')};
-  z-index: 10;
+  padding-bottom: ${({ noPadding, theme }) =>
+    noPadding ? '0' : themeDefault.spacing(2)};
+  z-index: ${({ theme }) => theme.zIndex.level10};
 `;
 
 export const Container = styled.div`
@@ -304,14 +305,14 @@ export const ContentContainer = styled.div`
 `;
 
 export const GridPadding = styled.div`
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: ${({ theme }) => theme.spacing(2)};
+  padding-right: ${({ theme }) => theme.spacing(2)};
   width: 100%;
   display: flex;
   justify-content: center;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
-    padding: 0 25px;
+    padding: 0 ${({ theme }) => theme.spacing(3)};
   }
 `;
 
@@ -319,6 +320,6 @@ export const StyledButtonWrapper = styled.div`
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 25px;
-  z-index: 1;
+  padding: ${({ theme }) => theme.spacing(3)};
+  z-index: ${({ theme }) => theme.zIndex.level1};
 `;
