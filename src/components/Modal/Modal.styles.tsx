@@ -1,6 +1,6 @@
 import { themeDefault } from 'src/themes';
 import styled from 'styled-components';
-import { TextHeading1, TextHeading3 } from '../TypographyVariants';
+import { TextBody3, TextHeading1, TextHeading3 } from '../TypographyVariants';
 
 export const Shade = styled.div`
   position: fixed !important; /* Must have !important because POSE adds absolute */
@@ -238,8 +238,7 @@ export const HighlightIcon = styled.div<{ color?: string }>`
   background-color: ${(props) => props.theme.colors.polarNightLight};
 `;
 
-export const HighlightText = styled.div`
-  font-size: 0.75rem;
+export const HighlightText = styled(TextBody3)`
   text-align: center;
   width: 90px;
   height: 36px;
