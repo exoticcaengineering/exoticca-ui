@@ -1,0 +1,20 @@
+
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as TypographyStories from './Typography.stories';
+
+<Meta of={TypographyStories} />
+
+# Typography
+
+A Typography component is used to render simple text. 
+<Canvas of={TypographyStories.BoldText} />
+
+## Here are some props you can pass to the Typography component:
+ - fontSize: 
+The fontSize prop is used to set the size of the text.
+<Canvas of={TypographyStories.HeaderText} />
+
+ - color: 
+The color prop is used to set the color of the text.
+<Canvas of={TypographyStories.ColoredText} />
