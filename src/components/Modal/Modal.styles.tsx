@@ -275,7 +275,7 @@ export const ModalContent = styled.div<{ noPadding: boolean }>`
   overflow: auto;
   max-height: 100%;
   scrollbar-width: none;
-  padding-bottom: ${({ noPadding, theme }) =>
+  padding-bottom: ${({ noPadding }) =>
     noPadding ? '0' : themeDefault.spacing(2)};
   z-index: ${({ theme }) => theme.zIndex.level10};
 `;
@@ -298,7 +298,7 @@ export const GridPadding = styled.div`
   padding-right: ${({ theme }) => theme.spacing(2)};
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     padding: 0 ${({ theme }) => theme.spacing(3)};
