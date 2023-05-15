@@ -56,6 +56,7 @@ import { IconInstagramBox } from './SVGIcons/IconInstagramBox';
 import { IconTwitterBox } from './SVGIcons/IconTwitterBox';
 import { IconYoutubeBox } from './SVGIcons/IconYoutubeBox';
 import { IconSpotifyBox } from './SVGIcons/IconSpotifyBox';
+import { IconClock } from './SVGIcons/IconClock';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -113,4 +114,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'twitter-box': IconTwitterBox,
   'youtube-box': IconYoutubeBox,
   'spotify-box': IconSpotifyBox,
+  clock: IconClock,
 };
