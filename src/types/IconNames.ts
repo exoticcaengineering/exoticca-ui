@@ -56,6 +56,7 @@ export const iconNames = [
   'star-4',
   'star-4-sp',
   'star-3-sp',
+  'clock',
 ] as const;
 
 type IconNameType = typeof iconNames[number];
