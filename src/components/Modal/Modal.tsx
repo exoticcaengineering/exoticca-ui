@@ -40,7 +40,6 @@ const ModalComponent = (
   {
     id,
     headerContent,
-    image,
     highlights,
     title,
     subtitle,
@@ -157,9 +156,8 @@ const ModalComponent = (
         overflowHidden={!!overflowHidden}
       >
         <ModalHeader
-          image={image}
           blackoutHeader={blackoutHeader}
-          withImage={!!(image || blackoutHeader)}
+          withImage={!!blackoutHeader}
           hasHighlight={!!highlights?.length}
           id="modalHeader"
         >

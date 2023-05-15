@@ -1,6 +1,7 @@
 import { IconName } from 'src/types/IconNames';
 import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 
+export type ModalRef = { open(): void; close(): void };
 export interface ButtonComponentProps {
   onClose: () => void;
 }
@@ -8,7 +9,6 @@ export interface ButtonComponentProps {
 export interface ModalProps extends ComponentPropsBaseWithChildren {
   id: string;
   headerContent?: React.ReactNode;
-  image?: string;
   blackoutHeader?: boolean;
   title?: string | JSX.Element;
   subtitle?: string | JSX.Element;

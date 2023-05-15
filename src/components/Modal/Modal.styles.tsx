@@ -9,7 +9,7 @@ export const Shade = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: ${({ theme }) => theme.zIndex.level10};
+  z-index: ${({ theme }) => theme.zIndex.level7};
   overflow: hidden;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
@@ -35,7 +35,7 @@ export const ModalWrapper = styled.div<{
     left: 0;
     transform: translate(0, 0) !important;
 `
-      : `max-height: 85vh`}
+      : `max-height: 85vh`};
 
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     top: 50%;
@@ -59,6 +59,7 @@ export const ContentWrapper = styled.div<{
     darkMode ? theme.colors.polarNight : theme.colors.arcticWind};
   padding-bottom: ${({ hasButton, noPadding, theme }) =>
     noPadding ? '0' : hasButton ? theme.spacing(12) : theme.spacing(2)};
+  padding-top: ${({ theme }) => theme.spacing(3.5)};
   max-height: 85vh;
   overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : 'auto')};
   ${({ mobileFullscreen }) =>
