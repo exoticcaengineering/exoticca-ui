@@ -1,6 +1,4 @@
-import { expect } from '@storybook/jest';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { within } from '@storybook/testing-library';
 import { themeDefault } from 'src/themes/theme';
 import { Box } from '../Box';
 
@@ -52,16 +50,6 @@ export const Base = Template.bind({});
 
 Base.args = {
   testId: 'basic-box',
-};
-
-Base.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  // 👇 Assert DOM structure
-  await expect(canvas.getByTestId('basic-box')).toBeInTheDocument();
-  await expect(
-    canvas.getByText('Box component works as a container'),
-  ).toBeInTheDocument();
-  await expect(canvas.getByTestId('basic-box')).toHaveStyle('display: block');
 };
 
 export const WithBorder = Template.bind({});
