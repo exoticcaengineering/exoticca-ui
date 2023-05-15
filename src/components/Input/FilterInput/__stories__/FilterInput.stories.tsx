@@ -91,14 +91,20 @@ const Template: Story<InputFilterProps> = ({
           rounded={rounded}
           setValue={setValue}
           value={value}
-          selectedValue={selectedValue}
-        >
-          {list.map(({ item, id }) => (
-            <Item key={id} onClick={() => setselectedValue(item)}>
-              <Typography fontSize="body2">{item}</Typography>
-            </Item>
-          ))}
-        </FilterInput>
+          inputList={(props) => {
+            return list.map(({ item, id }) => (
+              <Item
+                key={id}
+                onClick={() => {
+                  setselectedValue(item);
+                  props.closeDropdown();
+                }}
+              >
+                <Typography fontSize="body2">{item}</Typography>
+              </Item>
+            ));
+          }}
+        ></FilterInput>
       </div>
     </div>
   );

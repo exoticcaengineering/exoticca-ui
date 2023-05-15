@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   StyledDropDown,
   StyledDropDownInner,
@@ -15,8 +15,7 @@ export const FilterInput = ({
   rounded,
   setValue,
   value,
-  children,
-  selectedValue,
+  inputList,
 }: InputFilterProps) => {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -27,10 +26,6 @@ export const FilterInput = ({
   const closeDropdown = () => setDropdownIsOpen(false);
 
   useOnClickOutside(dropdownRef, closeDropdown);
-
-  useEffect(() => {
-    closeDropdown();
-  }, [selectedValue]);
 
   return (
     <StyledFilter ref={dropdownRef}>
@@ -45,7 +40,11 @@ export const FilterInput = ({
       />
       {dropdownIsOpen && (
         <StyledDropDown>
-          <StyledDropDownInner>{children}</StyledDropDownInner>
+          <StyledDropDownInner>
+            {inputList({
+              closeDropdown,
+            })}
+          </StyledDropDownInner>
         </StyledDropDown>
       )}
     </StyledFilter>

@@ -4,7 +4,7 @@ export interface InputProps {
   icon: IconName | undefined;
   label: string;
   placeholder: string;
-  rounded: 'left' | 'right' | 'both';
+  rounded: 'none' | 'left' | 'right' | 'both';
   setValue: (state: string) => void;
   onClick?: () => void;
   value: string;
@@ -14,10 +14,13 @@ export interface StyleProps {
   icon?: IconName | '';
   label?: string;
   placeholder?: string;
-  rounded?: 'left' | 'right' | 'both';
+  rounded?: 'none' | 'left' | 'right' | 'both';
 }
 
 export interface InputFilterProps extends InputProps {
-  children: React.ReactNode;
-  selectedValue: string;
+  inputList: (props: InputListProps) => JSX.Element[] | JSX.Element;
+}
+
+export interface InputListProps {
+  closeDropdown: () => void;
 }
