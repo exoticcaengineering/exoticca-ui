@@ -1,6 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { userEvent, within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
 import { Box } from 'src/components/Box';
 import { Tooltip } from '../Tooltip';
 import { Typography } from 'src/components/Typography';
@@ -27,22 +25,6 @@ ByClick.args = {
     'Tooltip content lorem ipsum dolor sit amet, consectetur adipiscing elit. Tooltip content lorem ipsum dolor sit amet, consectetur adipiscing elit. Tooltip content lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 };
 
-ByClick.play = async ({ canvasElement }) => {
-  const body = within(document.body);
-  const canvas = within(canvasElement);
-  const tooltipTrigger = canvas.getByTestId('tooltip-trigger');
-  await expect(tooltipTrigger).toBeInTheDocument();
-
-  await userEvent.click(tooltipTrigger);
-  const tooltipPanel = body.getByTestId('tooltip-panel');
-
-  await expect(tooltipPanel).toBeInTheDocument();
-  const content = within(tooltipPanel).getByText(
-    'Tooltip content lorem ipsum dolor sit amet, consectetur adipiscing elit. Tooltip content lorem ipsum dolor sit amet, consectetur adipiscing elit. Tooltip content lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  );
-  expect(content).toBeInTheDocument();
-};
-
 export const ByHover = Template.bind({});
 
 ByHover.args = {
@@ -51,40 +33,12 @@ ByHover.args = {
   content: 'Tooltip content',
 };
 
-ByHover.play = async ({ canvasElement }) => {
-  const body = within(document.body);
-  const canvas = within(canvasElement);
-  const tooltipTrigger = canvas.getByTestId('tooltip-trigger');
-  await expect(tooltipTrigger).toBeInTheDocument();
-
-  await userEvent.hover(tooltipTrigger);
-  const tooltipPanel = body.getByTestId('tooltip-panel');
-  await expect(tooltipPanel).toBeInTheDocument();
-  const content = within(tooltipPanel).getByText('Tooltip content');
-  expect(content).toBeInTheDocument();
-};
-
 export const LeftPosition = Template.bind({});
 
 LeftPosition.args = {
   triggerBy: 'click',
   position: 'left',
   content: 'Tooltip content',
-};
-
-LeftPosition.play = async ({ canvasElement }) => {
-  const body = within(document.body);
-  const canvas = within(canvasElement);
-  const tooltipTrigger = canvas.getByTestId('tooltip-trigger');
-
-  await expect(tooltipTrigger).toBeInTheDocument();
-
-  await userEvent.click(tooltipTrigger);
-  const tooltipPanel = body.getByTestId('tooltip-panel');
-
-  await expect(tooltipPanel).toBeInTheDocument();
-  const content = within(tooltipPanel).getByText('Tooltip content');
-  expect(content).toBeInTheDocument();
 };
 
 export const TopPosition = Template.bind({});

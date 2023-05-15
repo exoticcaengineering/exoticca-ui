@@ -1,7 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 import { FC } from 'react';
 import { Typography } from 'src/components/Typography';
-import { ThemeProvider } from 'styled-components';
 import { FontFamily } from 'src/types/theme';
 
 import { fontFamily as defaultThemeFontFamily } from '../theme';
@@ -29,7 +28,7 @@ const TypographyContainer: FC<TypographyContainerProps> = ({ fontFamily }) => {
 export default {
   title: 'Theme/Typography/FontFamily',
   component: Typography,
-} as ComponentMeta<typeof TypographyContainer>;
+};
 
 const Template: ComponentStory<typeof TypographyContainer> = (args) => (
   <TypographyContainer {...args} />

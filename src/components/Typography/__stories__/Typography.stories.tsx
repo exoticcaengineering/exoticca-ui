@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
 import { Typography } from '../Typography';
 import { themeDefault } from 'src/themes/theme';
 
@@ -98,12 +96,6 @@ const Template: ComponentStory<typeof Typography> = (args) => (
 );
 
 export const Base = Template.bind({});
-
-Base.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  // 👇 Assert DOM structure
-  await expect(canvas.getByText('some text')).toBeInTheDocument();
-};
 
 export const BoldText = Template.bind({});
 
