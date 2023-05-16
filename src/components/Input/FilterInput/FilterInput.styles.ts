@@ -12,11 +12,11 @@ export const StyledDropDown = styled.div<StyleProps>`
   left: 0;
   z-index: ${({ theme }) => theme.zIndex.level8};
   font-size: inherit;
+  overflow-y: auto;
 `;
 
 export const StyledDropDownInner = styled.div`
   padding: ${({ theme }) => theme.spacing(1.5)};
-  max-height: 360px;
   overflow-y: auto;
   cursor: default;
 `;
