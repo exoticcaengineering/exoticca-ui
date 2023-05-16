@@ -16,6 +16,6 @@ describe('Typography', () => {
   it('renders text correctly', () => {
     render(<BoldText />);
     const text = screen.getByText('some text');
-    expect(text).toHaveStyle('font-weight: 700;');
+    expect(text).toHaveStyle('font-weight: 600;');
   });
 });
