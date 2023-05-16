@@ -33,7 +33,7 @@ export const Input = ({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          onClick={() => onClick?.()}
+          onClick={(e) => onClick?.(e)}
         />
       </StyledInputInner>
     </StyledInputWrapper>

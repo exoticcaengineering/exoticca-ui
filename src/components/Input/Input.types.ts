@@ -6,7 +6,7 @@ export interface InputProps {
   placeholder: string;
   rounded: 'none' | 'left' | 'right' | 'both';
   setValue: (state: string) => void;
-  onClick?: () => void;
+  onClick?: (event?: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
   value: string;
 }
 

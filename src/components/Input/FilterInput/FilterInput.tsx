@@ -16,12 +16,14 @@ export const FilterInput = ({
   setValue,
   value,
   inputList,
+  onClick,
 }: InputFilterProps) => {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const onClick = () => {
+  const handleClick = () => {
     setDropdownIsOpen(true);
+    onClick?.();
   };
   const closeDropdown = () => setDropdownIsOpen(false);
 
@@ -36,7 +38,7 @@ export const FilterInput = ({
         rounded={rounded}
         setValue={setValue}
         value={value}
-        onClick={onClick}
+        onClick={handleClick}
       />
       {dropdownIsOpen && (
         <StyledDropDown>
