@@ -20,8 +20,14 @@ export const StyledInputWrapper = styled.div<StyleProps>`
   padding-bottom: ${({ theme }) => theme.spacing(0.2)};
   padding-left: ${({ icon }) => (icon ? ICON_SPACE : NO_ICON_PADDING)};
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
-
+  height: 50px;
+  min-width: 250px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.arcticWind};
   border-radius: ${({ rounded, theme }) => {
+    if (rounded === 'none') {
+      return;
+    }
     if (rounded === 'left') {
       return `${theme.newBorderRadius.l} 0 0 ${theme.newBorderRadius.l}`;
     }

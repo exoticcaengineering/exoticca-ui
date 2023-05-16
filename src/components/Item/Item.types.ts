@@ -1,6 +1,8 @@
 import { Colors, Theme } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconConfig } from 'src/components/Icon/Icon.types';
+import { SyntheticEvent, MouseEvent } from 'react';
+
 import * as CSS from 'csstype';
 
 type ItemColor = Extract<keyof Colors, 'arcticWind' | 'polarNight'>;
@@ -13,7 +15,9 @@ export interface Props extends ComponentPropsBase {
   selected?: boolean;
   startIcon?: IconConfig;
   endIcon?: IconConfig;
-  onClick?: () => void;
+  onClick?: (
+    event: SyntheticEvent<HTMLLIElement> | MouseEvent<HTMLElement, MouseEvent>,
+  ) => void;
   size?: ItemSize;
   layout?: CSS.Property.JustifyContent;
 }

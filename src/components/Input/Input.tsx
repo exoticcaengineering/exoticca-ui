@@ -27,13 +27,13 @@ export const Input = ({
         <StyledIcon icon={icon} stroke={'polarNight'} size={'regular'} />
       )}
       <StyledInputInner>
-        <StyledLabel icon={icon}>{label}</StyledLabel>
+        {value === '' && <StyledLabel icon={icon}>{label}</StyledLabel>}
         <StyledInput
           type="text"
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          onClick={() => onClick?.()}
+          onClick={(e) => onClick?.(e)}
         />
       </StyledInputInner>
     </StyledInputWrapper>
