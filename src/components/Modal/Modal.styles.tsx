@@ -59,7 +59,7 @@ export const ContentWrapper = styled.div<{
     darkMode ? theme.colors.polarNight : theme.colors.arcticWind};
   padding-bottom: ${({ hasButton, noPadding, theme }) =>
     noPadding ? '0' : hasButton ? theme.spacing(12) : theme.spacing(2)};
-  padding-top: ${({ theme }) => theme.spacing(3.5)};
+  padding-top: ${({ theme }) => theme.spacing(5)};
   max-height: 85vh;
   overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : 'auto')};
   ${({ mobileFullscreen }) =>
@@ -75,7 +75,6 @@ export const ContentWrapper = styled.div<{
     max-height: 85vh;
     height: unset;
     min-height: unset;
-    max-height: unset;
     width: unset;
     min-width: unset;
     max-width: unset;
