@@ -1,20 +1,14 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { FilterInput } from '../FilterInput';
 import { iconNames } from 'src/types/IconNames';
 import { useEffect, useState } from 'react';
 import { Item } from 'src/components/Item';
 import { Typography } from 'src/components/Typography';
-import { InputFilterProps } from '../../Input.types';
+import { InputFilterProps } from '../FilterInput.types';
 
 export default {
   title: 'Components/Input/FilterInput',
   component: FilterInput,
-  args: {
-    icon: 'arrow',
-    label: 'Label',
-    placeholder: 'Placeholder',
-    rounded: 'both',
-  },
   argTypes: {
     icon: {
       options: [...iconNames, undefined],
@@ -29,14 +23,11 @@ export default {
   },
 } as Meta<InputFilterProps>;
 
-const Template: Story<InputFilterProps> = ({
-  icon,
-  label,
-  placeholder,
-  rounded,
-}: InputFilterProps) => {
+type Story = StoryObj<InputFilterProps>;
+
+const Template = ({ ...args }) => {
   const [value, setValue] = useState('');
-  const [selectedValue, setselectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState('');
 
   const LIST = [
     { item: 'Item 1', id: '1' },
@@ -85,10 +76,10 @@ const Template: Story<InputFilterProps> = ({
         }}
       >
         <FilterInput
-          icon={icon}
-          label={label}
-          placeholder={placeholder}
-          rounded={rounded}
+          icon="arrow"
+          label="Label"
+          placeholder="Placeholder"
+          rounded="both"
           setValue={setValue}
           value={value}
           inputList={(props) => {
@@ -96,7 +87,7 @@ const Template: Story<InputFilterProps> = ({
               <Item
                 key={id}
                 onClick={() => {
-                  setselectedValue(item);
+                  setSelectedValue(item);
                   props.closeDropdown();
                 }}
               >
@@ -104,9 +95,13 @@ const Template: Story<InputFilterProps> = ({
               </Item>
             ));
           }}
+          {...args}
         ></FilterInput>
       </div>
     </div>
   );
 };
-export const Base = Template.bind({});
+
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
+};

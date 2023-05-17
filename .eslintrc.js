@@ -26,5 +26,6 @@ module.exports = {
     'react/display-name': 'off',
     'prettier/prettier': ['error'],
     '@typescript-eslint/no-empty-interface': 'off',
+    'react/prop-types': 'off',
   },
 };

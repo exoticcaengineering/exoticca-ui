@@ -7,9 +7,8 @@ export const StyledDropDown = styled.div<StyleProps>`
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
   margin-top: ${({ theme }) => theme.spacing(0.5)};
   position: absolute;
-  max-width: 328px;
-  width: 100%;
   left: 0;
+  min-width: 100%;
   z-index: ${({ theme }) => theme.zIndex.level8};
   font-size: inherit;
   overflow-y: auto;
