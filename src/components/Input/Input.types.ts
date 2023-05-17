@@ -16,11 +16,3 @@ export interface StyleProps {
   placeholder?: string;
   rounded?: 'none' | 'left' | 'right' | 'both';
 }
-
-export interface InputFilterProps extends InputProps {
-  inputList: (props: InputListProps) => JSX.Element[] | JSX.Element;
-}
-
-export interface InputListProps {
-  closeDropdown: () => void;
-}

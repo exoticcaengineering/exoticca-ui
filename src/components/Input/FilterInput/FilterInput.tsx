@@ -6,7 +6,7 @@ import {
 } from './FilterInput.styles';
 import { Input } from '../Input';
 import { useOnClickOutside } from 'src/hooks';
-import { InputFilterProps } from '../Input.types';
+import { InputFilterProps } from './FilterInput.types';
 
 export const FilterInput = ({
   icon,
