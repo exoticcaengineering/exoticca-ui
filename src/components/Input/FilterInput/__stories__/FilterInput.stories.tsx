@@ -24,19 +24,8 @@ export default {
 } as Meta<InputFilterProps>;
 
 type Story = StoryObj<InputFilterProps>;
-interface TemplateProps
-  extends Pick<
-    InputFilterProps,
-    'icon' | 'label' | 'placeholder' | 'rounded'
-  > {}
 
-const Template = ({
-  icon,
-  label,
-  placeholder,
-  rounded,
-  ...args
-}: TemplateProps) => {
+const Template = ({ ...args }) => {
   const [value, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
 
@@ -87,10 +76,10 @@ const Template = ({
         }}
       >
         <FilterInput
-          icon={icon}
-          label={label}
-          placeholder={placeholder}
-          rounded={rounded}
+          icon="arrow"
+          label="Label"
+          placeholder="Placeholder"
+          rounded="both"
           setValue={setValue}
           value={value}
           inputList={(props) => {
@@ -113,12 +102,6 @@ const Template = ({
   );
 };
 
-const props: TemplateProps = {
-  icon: 'arrow',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  rounded: 'both',
-};
 export const Base: Story = {
-  render: (args) => <Template {...props} {...args} />,
+  render: (args) => <Template {...args} />,
 };
