@@ -4,6 +4,8 @@ import { StyledProps } from './Header.types';
 
 export const StyledHeaderWrapper = styled(Box).attrs({
   borderRadius: 'none',
+  role: 'heading',
+  ariaLevel: '1',
 })<StyledProps>`
   display: flex;
   align-items: center;
