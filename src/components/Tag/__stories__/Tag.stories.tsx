@@ -1,27 +1,29 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Tag } from '../Tag';
 
 export default {
   title: 'Components/Tag',
   component: Tag,
-} as ComponentMeta<typeof Tag>;
+} as Meta<typeof Tag>;
 
-const Template: ComponentStory<typeof Tag> = (props) => <Tag {...props} />;
+type Story = StoryObj<typeof Tag>;
 
-export const Contained = Template.bind({});
-Contained.args = {
-  text: 'Contained',
-  textColor: 'polarNight',
-  size: 'small',
-  color: 'silentSavana',
-  variant: 'contained',
+export const Contained: Story = {
+  args: {
+    text: 'Contained',
+    textColor: 'polarNight',
+    size: 'small',
+    color: 'silentSavana',
+    variant: 'contained',
+  },
 };
 
-export const Outlined = Template.bind({});
-Outlined.args = {
-  text: 'Outlined',
-  textColor: 'polarNight',
-  size: 'small',
-  color: 'savageForest',
-  variant: 'outlined',
+export const Outlined: Story = {
+  args: {
+    text: 'Outlined',
+    textColor: 'polarNight',
+    size: 'small',
+    color: 'savageForest',
+    variant: 'outlined',
+  },
 };

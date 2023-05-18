@@ -7,6 +7,7 @@ import {
   StyledDropdownList,
   StyledFirstPart,
   StyledButtonTextWrapper,
+  StyledIcon,
 } from './Dropdown.styles';
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
@@ -61,11 +62,11 @@ export const Dropdown: FC<Props> = ({
   const renderText = () => {
     switch (size) {
       case 'small':
-        return <TextBody2 noWrap>{text}</TextBody2>;
+        return <TextBody2 ellipsis>{text}</TextBody2>;
       case 'medium':
-        return <TextBody1 noWrap>{text}</TextBody1>;
+        return <TextBody1 ellipsis>{text}</TextBody1>;
       default:
-        return <TextBody1 noWrap>{text}</TextBody1>;
+        return <TextBody1 ellipsis>{text}</TextBody1>;
     }
   };
 
@@ -90,11 +91,11 @@ export const Dropdown: FC<Props> = ({
         inverseStyle={inverseStyle}
       >
         <StyledFirstPart>
-          {startIcon && <Icon {...startIcon} />}
+          {startIcon && <StyledIcon {...startIcon} />}
           <StyledButtonTextWrapper>{renderText()}</StyledButtonTextWrapper>
         </StyledFirstPart>
 
-        <Icon icon="arrow" rotate={isOpen ? 0 : 180} {...endIcon} />
+        <StyledIcon icon="arrow" rotate={isOpen ? 0 : 180} {...endIcon} />
       </StyledDropdownButton>
 
       {isOpen && (

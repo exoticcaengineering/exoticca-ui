@@ -66,12 +66,13 @@ export const CloseWrapper = styled.button<StyledProps>`
 export const StyledFirstPart = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(1)};
-  justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 export const StyledButtonTextWrapper = styled.div<StyledProps>`
   position: relative;
+  overflow: hidden;
   &:hover {
     &:after {
       content: '';
@@ -83,4 +84,8 @@ export const StyledButtonTextWrapper = styled.div<StyledProps>`
       background-color: currentColor;
     }
   }
+`;
+
+export const StyledIcon = styled(Icon)`
+  flex-shrink: 0;
 `;
