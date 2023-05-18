@@ -1,7 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { menuItems } from './mockData';
 import { Dropdown } from '../Dropdown';
 import { DropdownList } from './DropdownList';
+import { Props } from '../Dropdown.types';
 
 export default {
   title: 'components/Dropdown',
@@ -33,9 +34,11 @@ export default {
       control: { type: 'radio' },
     },
   },
-} as ComponentMeta<typeof Dropdown>;
+} as Meta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
+type Story = StoryObj<typeof Dropdown>;
+
+const Template = (args: Props) => (
   <div
     style={{
       width: '100%',
@@ -54,6 +57,7 @@ const Template: ComponentStory<typeof Dropdown> = (args) => (
     >
       <Dropdown
         {...args}
+        startIcon={{ icon: 'flag-uk' }}
         text="dropdown button"
         dropdownList={(props) => (
           <DropdownList
@@ -68,9 +72,6 @@ const Template: ComponentStory<typeof Dropdown> = (args) => (
   </div>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  position: 'right',
-  withCloseButton: false,
-  startIcon: { icon: 'flag-us', originalIconColor: true },
+export const Default: Story = {
+  render: (args) => <Template {...args} />,
 };

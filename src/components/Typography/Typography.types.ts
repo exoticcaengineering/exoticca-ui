@@ -28,6 +28,7 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   fontStyle?: CSS.Property.FontStyle;
   fontFamily?: keyof FontFamily;
   lineHeight?: keyof LineHeight;
+  ellipsis?: boolean;
   dangerouslySetInnerHTML?: {
     __html: string;
   };
