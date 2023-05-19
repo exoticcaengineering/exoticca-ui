@@ -19,7 +19,6 @@ export const Shade = styled.div`
 
 export const ModalWrapper = styled.div<{
   width?: string;
-  mobileFullscreen?: boolean;
 }>`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.level10};
@@ -37,8 +36,6 @@ export const ModalWrapper = styled.div<{
     transform: translate(-50%, -50%) !important;
     width: ${({ width }) => (width ? width : '544px')};
     max-width: calc(100% - 32px);
-    max-height: 90%;
-    height: unset;
   }
 `;
 
