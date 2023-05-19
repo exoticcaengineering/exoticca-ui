@@ -30,9 +30,6 @@ export const ModalWrapper = styled.div<{
   top: 50%;
   transform: translate(-50%, -50%);
   width: 95vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     top: 50%;
