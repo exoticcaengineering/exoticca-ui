@@ -57,6 +57,9 @@ import { IconTwitterBox } from './SVGIcons/IconTwitterBox';
 import { IconYoutubeBox } from './SVGIcons/IconYoutubeBox';
 import { IconSpotifyBox } from './SVGIcons/IconSpotifyBox';
 import { IconClock } from './SVGIcons/IconClock';
+import { IconClockFast } from './SVGIcons/iconClockFast';
+import { IconSmile } from './SVGIcons/iconSmile';
+import { IconCog } from './SVGIcons/iconCog';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -115,4 +118,8 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'youtube-box': IconYoutubeBox,
   'spotify-box': IconSpotifyBox,
   clock: IconClock,
+  'clock-fast': IconClockFast,
+  'cog': IconCog,
+  'smile': IconSmile,
+
 };
