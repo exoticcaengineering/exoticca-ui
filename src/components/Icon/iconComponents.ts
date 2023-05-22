@@ -58,7 +58,7 @@ import { IconYoutubeBox } from './SVGIcons/IconYoutubeBox';
 import { IconSpotifyBox } from './SVGIcons/IconSpotifyBox';
 import { IconClock } from './SVGIcons/IconClock';
 import { IconClockFast } from './SVGIcons/IconClockFast';
-import { IconSmile } from './SVGIcons/IconSmile';
+import { IconSmile } from './SVGIcons/IconSmileONE';
 import { IconCog } from './SVGIcons/IconCog';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
