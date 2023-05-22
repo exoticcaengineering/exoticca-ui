@@ -12,7 +12,6 @@ import {
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
-import { Icon } from '../Icon';
 import { TextBody1, TextBody2 } from '../TypographyVariants';
 
 export const Dropdown: FC<Props> = ({
@@ -24,7 +23,7 @@ export const Dropdown: FC<Props> = ({
   startIcon,
   endIcon,
   className,
-  testId,
+  testId = 'dropdown',
   onClick,
   onClose,
   inverseStyle,
@@ -106,6 +105,7 @@ export const Dropdown: FC<Props> = ({
           background={inverseStyle ? 'polarNight' : 'arcticWind'}
           padding={[1.5, 2]}
           borderRadius={setBorderRadius(position)}
+          testId={`${testId}-list`}
         >
           {withCloseButton && (
             <CloseWrapper position={position} onClick={closeDropdown}>
