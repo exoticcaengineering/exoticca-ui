@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Typography } from '../Typography';
 import { themeDefault } from 'src/themes/theme';
 
@@ -89,46 +89,54 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Typography>;
+} as Meta<typeof Typography>;
 
-const Template: ComponentStory<typeof Typography> = (args) => (
-  <Typography {...args}>some text</Typography>
-);
+type Story = StoryObj<typeof Typography>;
 
-export const Base = Template.bind({});
-
-export const BoldText = Template.bind({});
-
-BoldText.args = {
-  fontWeight: 'bolder',
+export const Base: Story = {
+  args: {
+    children: 'some text',
+  },
 };
 
-export const ItalicText = Template.bind({});
-
-ItalicText.args = {
-  fontStyle: 'italic',
+export const BoldText: Story = {
+  args: {
+    ...Base.args,
+    fontWeight: 'bold',
+  },
 };
 
-export const UnderlinedText = Template.bind({});
-
-UnderlinedText.args = {
-  textDecoration: 'underline',
+export const ItalicText: Story = {
+  args: {
+    ...Base.args,
+    fontStyle: 'italic',
+  },
 };
 
-export const CenteredText = Template.bind({});
-
-CenteredText.args = {
-  align: 'center',
+export const UnderlinedText: Story = {
+  args: {
+    ...Base.args,
+    textDecoration: 'underline',
+  },
 };
 
-export const ColoredText = Template.bind({});
-
-ColoredText.args = {
-  color: 'exoticcaLogo',
+export const CenteredText: Story = {
+  args: {
+    ...Base.args,
+    align: 'center',
+  },
 };
 
-export const HeaderText = Template.bind({});
+export const ColoredText: Story = {
+  args: {
+    ...Base.args,
+    color: 'exoticcaLogo',
+  },
+};
 
-HeaderText.args = {
-  fontSize: 'h1',
+export const HeaderText: Story = {
+  args: {
+    ...Base.args,
+    fontSize: 'h1',
+  },
 };

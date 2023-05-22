@@ -1,7 +1,5 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { ButtonColor } from '../Button/Button.types';
 import { IconConfig } from '../Icon';
-import { Colors, Theme } from 'src/types';
 
 export type DropDownPosition = 'left' | 'right';
 

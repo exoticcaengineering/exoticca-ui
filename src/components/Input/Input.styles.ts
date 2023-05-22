@@ -19,9 +19,15 @@ export const StyledInputWrapper = styled.div<StyleProps>`
   padding-top: ${({ theme }) => theme.spacing(0.2)};
   padding-bottom: ${({ theme }) => theme.spacing(0.2)};
   padding-left: ${({ icon }) => (icon ? ICON_SPACE : NO_ICON_PADDING)};
+  padding-right: ${({ theme }) => theme.spacing(2)};
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
-
+  height: 50px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.arcticWind};
   border-radius: ${({ rounded, theme }) => {
+    if (rounded === 'none') {
+      return;
+    }
     if (rounded === 'left') {
       return `${theme.newBorderRadius.l} 0 0 ${theme.newBorderRadius.l}`;
     }
@@ -41,18 +47,19 @@ export const StyledInputWrapper = styled.div<StyleProps>`
 `;
 
 export const StyledInputInner = styled.div`
-  width: 100%;
+  flex-grow: 1;
 `;
 
 export const StyledInput = styled.input`
-  width: 100%;
+  display: block;
   border: none;
   outline: none;
   background: transparent;
   padding-right: ${({ theme }) => theme.spacing(0)};
   height: 23px;
   font-size: ${({ theme }) => theme.typography.fontSize.body1};
-
+  width: 100%;
+  text-overflow: ellipsis;
   ::placeholder {
     color: ${({ theme }) => theme.colors.grey70};
     font-weight: ${({ theme }) => theme.typography.fontWeight.normal};

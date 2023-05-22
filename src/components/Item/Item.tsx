@@ -21,7 +21,7 @@ export const Item: FC<Props> = ({
       className={className}
       hover={hover}
       color={color}
-      onClick={() => onClick?.()}
+      onClick={(event) => onClick?.(event)}
       size={size}
       layout={layout}
     >

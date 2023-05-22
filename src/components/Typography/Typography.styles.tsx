@@ -1,5 +1,6 @@
 import styled from 'src/utils/styled';
 import { StyledProps } from './Typography.types';
+import { css } from 'styled-components';
 
 export const StyledTypographyContainer = styled.p<StyledProps>`
   font-family: ${({ fontFamily = 'main', theme }) =>
@@ -27,4 +28,11 @@ export const StyledTypographyContainer = styled.p<StyledProps>`
     theme.typography.letterSpacing[letterSpacing]};
   line-height: ${({ theme, lineHeight = 'normal' }) =>
     theme.typography.lineHeight[lineHeight]};
+  ${({ ellipsis }) =>
+    ellipsis &&
+    css`
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    `}
 `;

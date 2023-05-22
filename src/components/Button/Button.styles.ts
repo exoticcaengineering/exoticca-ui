@@ -76,6 +76,7 @@ export const Animation = styled.div<{ size: number }>`
 `;
 
 export const StyledIconButtonWrapper = styled.button<StyledProps>`
+  all: unset;
   width: ${({ size = 'medium' }) => getIconButtonSize(size)};
   height: ${({ size = 'medium' }) => getIconButtonSize(size)};
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};

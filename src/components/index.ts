@@ -11,3 +11,4 @@ export * from './Button';
 export { Accordion } from './Accordion';
 export { Tabs, Tab } from './Tabs';
 export { Modal } from './Modal';
+export { FilterInput } from './Input/FilterInput';
