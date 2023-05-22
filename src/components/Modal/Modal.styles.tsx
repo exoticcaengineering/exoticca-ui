@@ -4,7 +4,7 @@ import { TextBody3, TextHeading1, TextHeading3 } from '../TypographyVariants';
 
 export const Shade = styled.div`
   position: fixed !important; /* Must have !important because POSE adds absolute */
-  background: ${(props) => props.theme.colors.polarNightMedium};
+  background: rgba(0, 0, 0, 0.6);
   top: 0;
   left: 0;
   right: 0;
@@ -19,23 +19,16 @@ export const Shade = styled.div`
 
 export const ModalWrapper = styled.div<{
   width?: string;
-  mobileFullscreen?: boolean;
 }>`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.level10};
   border-radius: ${({ theme }) => theme.newBorderRadius.l};
   overflow-y: auto;
   overflow: hidden;
-  ${({ mobileFullscreen }) =>
-    mobileFullscreen
-      ? `
-    left: 0;
-    right: 0;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0) !important;
-`
-      : `max-height: 85vh`};
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 95vw;
 
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     top: 50%;
@@ -43,7 +36,6 @@ export const ModalWrapper = styled.div<{
     transform: translate(-50%, -50%) !important;
     width: ${({ width }) => (width ? width : '544px')};
     max-width: calc(100% - 32px);
-    max-height: 90%;
   }
 `;
 
@@ -59,7 +51,7 @@ export const ContentWrapper = styled.div<{
     darkMode ? theme.colors.polarNight : theme.colors.arcticWind};
   padding-bottom: ${({ hasButton, noPadding, theme }) =>
     noPadding ? '0' : hasButton ? theme.spacing(12) : theme.spacing(2)};
-  padding-top: ${({ theme }) => theme.spacing(5)};
+  padding-top: ${({ theme }) => theme.spacing(6)};
   max-height: 85vh;
   overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : 'auto')};
   ${({ mobileFullscreen }) =>
@@ -196,7 +188,7 @@ export const StyledCloseIcon = styled.div<{
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     width: 32px;
     height: 32px;
-    top: ${({ relative }) => (relative ? '0' : '16px')};
+    top: ${({ relative, theme }) => (relative ? '0' : theme.spacing(1))};
   }
 `;
 
