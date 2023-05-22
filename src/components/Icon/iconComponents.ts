@@ -119,7 +119,6 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'spotify-box': IconSpotifyBox,
   clock: IconClock,
   'clock-fast': IconClockFast,
-  'cog': IconCog,
-  'smile': IconSmile,
-
+  cog: IconCog,
+  smile: IconSmile,
 };
