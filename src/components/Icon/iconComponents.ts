@@ -57,9 +57,9 @@ import { IconTwitterBox } from './SVGIcons/IconTwitterBox';
 import { IconYoutubeBox } from './SVGIcons/IconYoutubeBox';
 import { IconSpotifyBox } from './SVGIcons/IconSpotifyBox';
 import { IconClock } from './SVGIcons/IconClock';
-import { IconClockFast } from './SVGIcons/iconClockFast';
-import { IconSmile } from './SVGIcons/iconSmile';
-import { IconCog } from './SVGIcons/iconCog';
+import { IconClockFast } from './SVGIcons/IconClockFast';
+import { IconSmile } from './SVGIcons/IconSmile';
+import { IconCog } from './SVGIcons/IconCog';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
