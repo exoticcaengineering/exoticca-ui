@@ -60,6 +60,9 @@ import { IconClock } from './SVGIcons/IconClock';
 import { IconClockFast } from './SVGIcons/IconClockFast';
 import { IconSmile } from './SVGIcons/IconSmile';
 import { IconCog } from './SVGIcons/IconCog';
+import { IconBaggage } from 'src/components/Icon/SVGIcons/IconBaggage';
+import { IconNoBaggage } from 'src/components/Icon/SVGIcons/IconNoBaggage';
+import { IconHandBaggage } from 'src/components/Icon/SVGIcons/IconHandBaggage';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -121,4 +124,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'clock-fast': IconClockFast,
   cog: IconCog,
   smile: IconSmile,
+  'travel-baggage': IconBaggage,
+  'travel-no-baggage': IconNoBaggage,
+  'travel-hand-baggage': IconHandBaggage,
 };
