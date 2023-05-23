@@ -281,7 +281,6 @@ const ModalComponent = (
         id="modalWrapper"
         key={modalUniqueKey}
         width={stringwidhtPX}
-        mobileFullscreen={mobileFullscreen}
       >
         {content}
       </ModalWrapper>

@@ -1,6 +1,5 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { StyledProps } from './Drawer.types';
-import styled from 'src/utils/styled';
 
 export const StyledDrawerWrapper = styled.div<StyledProps>`
   position: relative;

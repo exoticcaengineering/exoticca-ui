@@ -1,6 +1,5 @@
-import styled from 'src/utils/styled';
 import { StyledProps } from './Typography.types';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledTypographyContainer = styled.p<StyledProps>`
   font-family: ${({ fontFamily = 'main', theme }) =>

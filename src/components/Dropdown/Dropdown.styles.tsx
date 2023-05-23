@@ -1,6 +1,6 @@
 import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { StyledProps } from './Dropdown.types';
 import {
   getBackgroundColor,

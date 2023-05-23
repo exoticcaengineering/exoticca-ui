@@ -1,4 +1,4 @@
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { SetColorParams, StyledProps } from './Item.types';
 import { getPaddingBySize } from './Item.helper';
 

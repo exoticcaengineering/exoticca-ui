@@ -1,4 +1,4 @@
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { Typography } from 'src/components/Typography';
 
 export const StyledDisplay1 = styled(Typography).attrs({
