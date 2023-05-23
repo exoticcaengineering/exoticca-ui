@@ -60,6 +60,9 @@ export const iconNames = [
   'clock-fast',
   'smile',
   'cog',
+  'travel-baggage',
+  'travel-no-baggage',
+  'travel-hand-baggage',
 ] as const;
 
 type IconNameType = typeof iconNames[number];
