@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { StyledProps } from './Button.types';
 import { colorWithOpacity } from 'src/utils/getColorWithOpacity';
 import {
@@ -9,7 +9,6 @@ import {
   setPadding,
   mapButtonColorToThemeColor,
 } from './Button.helpers';
-import styled from 'src/utils/styled';
 
 const buttonCommonStyle = css<StyledProps>`
   display: flex;

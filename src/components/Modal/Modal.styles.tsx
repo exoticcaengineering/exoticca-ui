@@ -1,5 +1,5 @@
 import { themeDefault } from 'src/themes';
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { TextBody3, TextHeading1, TextHeading3 } from '../TypographyVariants';
 
 export const Shade = styled.div`

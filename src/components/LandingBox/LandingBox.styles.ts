@@ -1,4 +1,4 @@
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { Box } from 'src/components/Box';
 import { StyledProps } from './LandingBox.types';
 

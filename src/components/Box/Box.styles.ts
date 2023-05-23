@@ -1,5 +1,5 @@
 import { mapCssPxValue } from 'src/utils/mapCssPxValue';
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { StyleProps } from './Box.types';
 
 export const StyledBoxWrapper = styled.div<StyleProps>`

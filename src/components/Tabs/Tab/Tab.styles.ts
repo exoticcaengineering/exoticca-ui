@@ -1,4 +1,4 @@
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { StyledProps } from './Tab.types';
 import { Theme } from 'src/types';
 

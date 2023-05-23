@@ -1,7 +1,6 @@
-import styled from 'src/utils/styled';
 import { StyledProps } from './Icon.types';
 import { Box } from 'src/components/Box';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { getIconSize } from './Icon.helpers';
 
 export const StyledWrapper = styled(Box)<StyledProps>`

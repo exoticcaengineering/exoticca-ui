@@ -1,5 +1,4 @@
-import styled from 'src/utils/styled';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { StyledProps } from './Accordion.types';
 import { Box } from 'src/components/Box';
 

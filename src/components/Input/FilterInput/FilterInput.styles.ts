@@ -1,4 +1,4 @@
-import styled from 'src/utils/styled';
+import styled from 'styled-components';
 import { StyleProps } from './FilterInput.types';
 
 export const StyledDropDown = styled.div<StyleProps>`

@@ -1,5 +1,4 @@
-import { css } from 'styled-components';
-import styled from 'src/utils/styled';
+import styled, { css } from 'styled-components';
 import { StyledProps } from './HeroWrapper.types';
 
 export const Wrapper = styled.div<StyledProps>`

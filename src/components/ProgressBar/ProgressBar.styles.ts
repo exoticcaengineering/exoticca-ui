@@ -1,5 +1,4 @@
-import { css, keyframes } from 'styled-components';
-import styled from 'src/utils/styled';
+import styled, { css, keyframes } from 'styled-components';
 import { StyledProps } from './ProgressBar.types';
 
 const progress = ({ progressFrom = 0, progressTo = 100 }) => keyframes`

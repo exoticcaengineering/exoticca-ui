@@ -1,12 +1,12 @@
-import styled from 'src/utils/styled';
-import { Icon } from '../../Icon/Icon';
+import styled from 'styled-components';
+import { Icon } from 'src/components/Icon';
 
 type Props = {
   position?: 'left' | 'right';
 };
 export const Row = styled.div<Props>`
   display: grid;
-  direction: ${({ position }) => position === 'left' && 'rtl'}; ;
+  direction: ${({ position }) => position === 'left' && 'rtl'};
 `;
 
 export const Container = styled.ul`
