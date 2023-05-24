@@ -9,21 +9,16 @@ import { useOnClickOutside } from 'src/hooks';
 import { InputFilterProps } from './FilterInput.types';
 
 export const FilterInput = ({
-  icon,
-  label,
-  placeholder,
-  rounded,
-  setValue,
-  value,
   inputList,
   onClick,
+  ...inputProps
 }: InputFilterProps) => {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleClick = () => {
+  const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
     setDropdownIsOpen(true);
-    onClick?.();
+    onClick?.(e);
   };
   const closeDropdown = () => setDropdownIsOpen(false);
 
@@ -31,15 +26,7 @@ export const FilterInput = ({
 
   return (
     <StyledFilter ref={dropdownRef}>
-      <Input
-        icon={icon}
-        label={label}
-        placeholder={placeholder}
-        rounded={rounded}
-        setValue={setValue}
-        value={value}
-        onClick={handleClick}
-      />
+      <Input onClick={handleClick} {...inputProps} />
       {dropdownIsOpen && (
         <StyledDropDown>
           <StyledDropDownInner>
