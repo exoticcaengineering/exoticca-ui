@@ -1,6 +1,7 @@
+import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconName } from 'src/types/IconNames';
 
-export interface InputProps {
+export interface InputProps extends ComponentPropsBase {
   icon: IconName | undefined;
   label: string;
   placeholder: string;

@@ -18,6 +18,8 @@ export const Input = ({
   onClick,
   readOnly,
   disabled,
+  className,
+  testId = 'input',
 }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -36,6 +38,8 @@ export const Input = ({
       rounded={rounded}
       icon={icon}
       onClick={handleOnClick}
+      className={className}
+      data-testid={testId}
     >
       {icon && (
         <StyledIcon icon={icon} stroke={'polarNight'} size={'regular'} />

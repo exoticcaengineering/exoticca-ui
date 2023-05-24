@@ -11,6 +11,7 @@ import { InputFilterProps } from './FilterInput.types';
 export const FilterInput = ({
   inputList,
   onClick,
+  testId = 'filter-input',
   ...inputProps
 }: InputFilterProps) => {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
@@ -26,7 +27,7 @@ export const FilterInput = ({
 
   return (
     <StyledFilter ref={dropdownRef}>
-      <Input onClick={handleClick} {...inputProps} />
+      <Input onClick={handleClick} testId={testId} {...inputProps} />
       {dropdownIsOpen && (
         <StyledDropDown>
           <StyledDropDownInner>
