@@ -7,6 +7,28 @@ import { Box } from 'src/components/Box';
 export default {
   title: 'Components/Header',
   component: Header,
+  argTypes: {
+    leftComponent: {
+      description:
+        'Instantiate a component and it will be displayed on the left side.',
+      type: { required: false },
+    },
+
+    centerComponent: {
+      description:
+        'Instantiate a component and it will be displayed on the center side.',
+      type: { required: false },
+    },
+    rightComponent: {
+      description:
+        'Instantiate a component and it will be displayed on the right side.',
+      type: { required: false },
+    },
+    backgroundType: {
+      description:
+        'Pass it one of the props and it will display a different background.',
+    },
+  },
 } as ComponentMeta<typeof Header>;
 
 const Template: ComponentStory<typeof Header> = (args) => {
