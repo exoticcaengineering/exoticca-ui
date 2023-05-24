@@ -1,9 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
 import { MouseEventHandler, useState } from 'react';
 import { Banner } from './Banner';
 import { Props } from '../Button.types';
-import { IconButton } from '../IconButton';
 
 export default {
   title: 'Components/Button',
@@ -55,9 +54,11 @@ export default {
       category: 'Prop',
     },
   },
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (props: Props) => {
+type StoryType = StoryObj<typeof Button>;
+
+const Template = (props: Props) => {
   const [showBanner, setShowBanner] = useState(false);
   const [bannerPosition, setBannerPosition] = useState({ top: 0, left: 0 });
 
@@ -105,19 +106,66 @@ const Template: ComponentStory<typeof Button> = (props: Props) => {
   );
 };
 
-export const Base = Template.bind({});
-
-export const WithStartIcon = Template.bind({});
-
-WithStartIcon.args = {
-  startIcon: {
-    icon: 'arrow',
+export const Primary: StoryType = {
+  args: {
+    variant: 'primary',
   },
+  render: Template,
+};
+export const Secondary: StoryType = {
+  args: {
+    variant: 'secondary',
+  },
+  render: Template,
+};
+export const Tertiary: StoryType = {
+  args: {
+    variant: 'tertiary',
+  },
+  render: Template,
 };
 
-export const WithEndIcon = Template.bind({});
-WithEndIcon.args = {
-  endIcon: {
-    icon: 'arrow',
+export const WithStartIcon: StoryType = {
+  args: {
+    startIcon: {
+      icon: 'calendar',
+    },
   },
+  render: Template,
+};
+
+export const WithStartIconLoading: StoryType = {
+  args: {
+    startIcon: {
+      icon: 'calendar',
+    },
+    isLoading: true,
+  },
+  render: Template,
+};
+
+export const WithEndIcon: StoryType = {
+  args: {
+    endIcon: {
+      icon: 'calendar',
+    },
+  },
+  render: Template,
+};
+
+export const WithEndIconLoading: StoryType = {
+  args: {
+    endIcon: {
+      icon: 'calendar',
+    },
+    isLoading: true,
+  },
+  render: Template,
+};
+
+export const Disabled: StoryType = {
+  args: {
+    isDisabled: true,
+  },
+  render: Template,
 };

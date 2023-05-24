@@ -6,6 +6,7 @@ export const IconCalendar = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <title>calendar</title>
     <path
       d="M7.5 6V3"
       stroke="currentColor"
