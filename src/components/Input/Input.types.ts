@@ -6,8 +6,10 @@ export interface InputProps {
   placeholder: string;
   rounded: 'none' | 'left' | 'right' | 'both';
   setValue: (state: string) => void;
-  onClick?: (event?: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
   value: string;
+  readOnly?: boolean;
+  disabled?: boolean;
 }
 
 export interface StyleProps {
