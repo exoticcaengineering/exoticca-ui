@@ -5,6 +5,7 @@ import { Icon } from 'src/components/Icon';
 
 export const Item: FC<Props> = ({
   className,
+  testId = 'item',
   hover,
   children,
   color,
@@ -24,6 +25,7 @@ export const Item: FC<Props> = ({
       onClick={(event) => onClick?.(event)}
       size={size}
       layout={layout}
+      data-testid={testId}
     >
       <StyledContent>
         {startIcon && <Icon {...startIcon} />}
