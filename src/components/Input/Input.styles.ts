@@ -5,13 +5,6 @@ import { Icon } from '../Icon';
 const ICON_SPACE = '44px';
 const NO_ICON_PADDING = '16px';
 
-export const StyledFilter = styled.div`
-  flex-grow: 1;
-  position: relative;
-  cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-`;
-
 export const StyledInputWrapper = styled.div<StyleProps>`
   position: relative;
   display: flex;
@@ -51,12 +44,7 @@ export const StyledInputInner = styled.div`
 `;
 
 export const StyledInput = styled.input`
-  display: block;
-  border: none;
-  outline: none;
-  background: transparent;
-  padding-right: ${({ theme }) => theme.spacing(0)};
-  height: 23px;
+  all: unset;
   font-size: ${({ theme }) => theme.typography.fontSize.body1};
   width: 100%;
   text-overflow: ellipsis;
