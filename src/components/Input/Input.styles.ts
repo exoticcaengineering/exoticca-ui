@@ -5,13 +5,6 @@ import { Icon } from '../Icon';
 const ICON_SPACE = '44px';
 const NO_ICON_PADDING = '16px';
 
-export const StyledFilter = styled.div`
-  flex-grow: 1;
-  position: relative;
-  cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-`;
-
 export const StyledInputWrapper = styled.div<StyleProps>`
   position: relative;
   display: flex;

@@ -16,7 +16,6 @@ export const StyledWrapper = styled(Box)<StyledProps>`
   }};
   transform: ${({ rotate = 0 }) => `rotate(${rotate}deg)`};
   transition: all ${({ theme }) => theme.transition.duration.shorter} ease;
-  z-index: 1;
   & > svg {
     width: 100%;
     height: 100%;
