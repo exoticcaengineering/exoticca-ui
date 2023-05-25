@@ -10,6 +10,8 @@ import {
   mapButtonColorToThemeColor,
   setBorderColor,
   setDisabledBorderColor,
+  setFocusBoxShadowColor,
+  setFocusBorderColor,
 } from './Button.helpers';
 
 const buttonCommonStyle = css<StyledProps>`
@@ -42,6 +44,18 @@ const buttonCommonStyle = css<StyledProps>`
     border-color: ${({ theme, variant = 'primary' }) =>
       theme.colors[setDisabledBorderColor(variant)]};
     cursor: not-allowed;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px
+      ${({ theme, variant = 'primary', color = 'black' }) => {
+        const shadowColor =
+          theme.colors[setFocusBoxShadowColor(variant, color)];
+        if (variant === 'secondary') return colorWithOpacity(shadowColor, 20);
+        return shadowColor;
+      }};
+    border-color: ${({ theme, variant = 'primary', color = 'black' }) =>
+      theme.colors[setFocusBorderColor(variant, color)]};
   }
 `;
 

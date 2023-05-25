@@ -61,6 +61,23 @@ export const setTextColor = (variant: ButtonVariant, color: ButtonColor) => {
   }
 };
 
+export const setFocusBoxShadowColor = (
+  variant: ButtonVariant,
+  color: ButtonColor,
+) => {
+  if (variant === 'primary') return setBackgroundColor(variant, color);
+  if (variant === 'secondary') return setTextColor(variant, color);
+  return 'transparent';
+};
+
+export const setFocusBorderColor = (
+  variant: ButtonVariant,
+  color: ButtonColor,
+) => {
+  if (variant === 'primary') return setTextColor(variant, color);
+  return setTextColor(variant, color);
+};
+
 export const setPadding = (theme: Theme, size: ButtonSize) => {
   const sizes = {
     small: theme.spacing(1.375),

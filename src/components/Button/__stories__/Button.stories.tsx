@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
 import { Props } from '../Button.types';
-import { StyledWrapper } from './Story.styles';
+import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
+import { useEffect, useRef } from 'react';
 
 export default {
   title: 'Components/Button',
@@ -59,77 +60,86 @@ type StoryType = StoryObj<typeof Button>;
 
 const ButtonVariations = (props: Props) => {
   return (
-    <StyledWrapper>
+    <StyledRowWrapper>
       <Button {...props} variant="primary" text="primary button" />
       <Button {...props} variant="secondary" text="secondary button" />
       <Button {...props} variant="tertiary" text="tertiary button" />
-    </StyledWrapper>
+    </StyledRowWrapper>
   );
 };
 
 const ButtonSizes = (props: Props) => {
   return (
-    <StyledWrapper>
+    <StyledRowWrapper>
       <Button {...props} size="small" text="small button" />
       <Button {...props} size="medium" text="medium button" />
       <Button {...props} size="large" text="large button" />
-    </StyledWrapper>
+    </StyledRowWrapper>
   );
 };
 
 const ButtonShapes = (props: Props) => {
   return (
-    <StyledWrapper>
+    <StyledRowWrapper>
       <Button {...props} shape="square" text="square button" />
       <Button {...props} shape="rounded" text="rounded button" />
-    </StyledWrapper>
+    </StyledRowWrapper>
   );
 };
 
 const ButtonWithIcon = (props: Props) => {
   return (
-    <StyledWrapper>
-      <Button {...props} startIcon={{ icon: 'calendar' }} text="start icon" />
-      <Button
-        {...props}
-        startIcon={{ icon: 'calendar' }}
-        text="start icon loading"
-        isLoading
-      />
-      <Button {...props} endIcon={{ icon: 'calendar' }} text=" end icon" />
-      <Button
-        {...props}
-        endIcon={{ icon: 'calendar' }}
-        text="end icon loading"
-        isLoading
-      />
-    </StyledWrapper>
+    <StyledColumnWrapper>
+      <StyledRowWrapper>
+        <Button {...props} startIcon={{ icon: 'calendar' }} text="start icon" />
+        <Button
+          {...props}
+          startIcon={{ icon: 'calendar' }}
+          text="start icon loading"
+          isLoading
+        />
+      </StyledRowWrapper>
+
+      <StyledRowWrapper>
+        <Button {...props} endIcon={{ icon: 'calendar' }} text=" end icon" />
+        <Button
+          {...props}
+          endIcon={{ icon: 'calendar' }}
+          text="end icon loading"
+          isLoading
+        />
+      </StyledRowWrapper>
+    </StyledColumnWrapper>
   );
 };
 
 const ButtonStates = (props: Props) => {
   return (
-    <StyledWrapper>
-      <Button {...props} isLoading text="button loading" />
-      <Button
-        {...props}
-        isDisabled
-        variant="primary"
-        text="primary button disabled"
-      />
-      <Button
-        {...props}
-        isDisabled
-        variant="secondary"
-        text="secondary button disabled"
-      />
-      <Button
-        {...props}
-        isDisabled
-        variant="tertiary"
-        text="tertiary button disabled"
-      />
-    </StyledWrapper>
+    <StyledColumnWrapper>
+      <StyledRowWrapper>
+        <Button {...props} isLoading text="button loading" />
+      </StyledRowWrapper>
+      <StyledRowWrapper>
+        <Button
+          {...props}
+          isDisabled
+          variant="primary"
+          text="primary button disabled"
+        />
+        <Button
+          {...props}
+          isDisabled
+          variant="secondary"
+          text="secondary button disabled"
+        />
+        <Button
+          {...props}
+          isDisabled
+          variant="tertiary"
+          text="tertiary button disabled"
+        />
+      </StyledRowWrapper>
+    </StyledColumnWrapper>
   );
 };
 
