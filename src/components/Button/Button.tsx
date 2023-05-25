@@ -27,6 +27,8 @@ export const Button: FC<Props> = ({
     ? 'polarNightMedium'
     : setTextColor(variant, color);
 
+  const hasIcon = startIcon || endIcon;
+
   const renderLoadingIcon = () => <Spinner size={size} color={iconColor} />;
 
   const renderStartIcon = () => {
@@ -55,6 +57,7 @@ export const Button: FC<Props> = ({
     >
       {renderStartIcon()}
       {text && <Typography as="span">{text}</Typography>}
+      {!hasIcon && isLoading && renderLoadingIcon()}
       {renderEndIcon()}
     </StyledButton>
   );

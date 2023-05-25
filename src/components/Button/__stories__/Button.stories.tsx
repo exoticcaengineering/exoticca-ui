@@ -1,8 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
-import { MouseEventHandler, useState } from 'react';
-import { Banner } from './Banner';
 import { Props } from '../Button.types';
+import { StyledWrapper } from './Story.styles';
 
 export default {
   title: 'Components/Button',
@@ -58,114 +57,98 @@ export default {
 
 type StoryType = StoryObj<typeof Button>;
 
-const Template = (props: Props) => {
-  const [showBanner, setShowBanner] = useState(false);
-  const [bannerPosition, setBannerPosition] = useState({ top: 0, left: 0 });
-
-  const handleButtonClick: MouseEventHandler<HTMLButtonElement> = (event) => {
-    const buttonElement = event.target as HTMLButtonElement;
-    if (buttonElement !== null) {
-      const buttonPosition = buttonElement.getBoundingClientRect();
-      setBannerPosition({
-        top: buttonPosition.top - 40,
-        left: buttonPosition.left + buttonPosition.width / 2 - 60,
-      });
-      setShowBanner(true);
-
-      setTimeout(() => {
-        setShowBanner(false);
-      }, 2000);
-    }
-  };
-
+const ButtonVariations = (props: Props) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '5rem',
-          width: '15rem',
-          backgroundColor: '#e9e5e5',
-          borderRadius: '10px',
-        }}
-      >
-        <Button {...props} onClick={handleButtonClick} />
-        {showBanner && (
-          <Banner showBanner={showBanner} bannerPosition={bannerPosition} />
-        )}
-      </div>
-    </div>
+    <StyledWrapper>
+      <Button {...props} variant="primary" text="primary button" />
+      <Button {...props} variant="secondary" text="secondary button" />
+      <Button {...props} variant="tertiary" text="tertiary button" />
+    </StyledWrapper>
   );
 };
 
-export const Primary: StoryType = {
-  args: {
-    variant: 'primary',
-  },
-  render: Template,
-};
-export const Secondary: StoryType = {
-  args: {
-    variant: 'secondary',
-  },
-  render: Template,
-};
-export const Tertiary: StoryType = {
-  args: {
-    variant: 'tertiary',
-  },
-  render: Template,
+const ButtonSizes = (props: Props) => {
+  return (
+    <StyledWrapper>
+      <Button {...props} size="small" text="small button" />
+      <Button {...props} size="medium" text="medium button" />
+      <Button {...props} size="large" text="large button" />
+    </StyledWrapper>
+  );
 };
 
-export const WithStartIcon: StoryType = {
-  args: {
-    startIcon: {
-      icon: 'calendar',
-    },
-  },
-  render: Template,
+const ButtonShapes = (props: Props) => {
+  return (
+    <StyledWrapper>
+      <Button {...props} shape="square" text="square button" />
+      <Button {...props} shape="rounded" text="rounded button" />
+    </StyledWrapper>
+  );
 };
 
-export const WithStartIconLoading: StoryType = {
-  args: {
-    startIcon: {
-      icon: 'calendar',
-    },
-    isLoading: true,
-  },
-  render: Template,
+const ButtonWithIcon = (props: Props) => {
+  return (
+    <StyledWrapper>
+      <Button {...props} startIcon={{ icon: 'calendar' }} text="start icon" />
+      <Button
+        {...props}
+        startIcon={{ icon: 'calendar' }}
+        text="start icon loading"
+        isLoading
+      />
+      <Button {...props} endIcon={{ icon: 'calendar' }} text=" end icon" />
+      <Button
+        {...props}
+        endIcon={{ icon: 'calendar' }}
+        text="end icon loading"
+        isLoading
+      />
+    </StyledWrapper>
+  );
 };
 
-export const WithEndIcon: StoryType = {
-  args: {
-    endIcon: {
-      icon: 'calendar',
-    },
-  },
-  render: Template,
+const ButtonStates = (props: Props) => {
+  return (
+    <StyledWrapper>
+      <Button {...props} isLoading text="button loading" />
+      <Button
+        {...props}
+        isDisabled
+        variant="primary"
+        text="primary button disabled"
+      />
+      <Button
+        {...props}
+        isDisabled
+        variant="secondary"
+        text="secondary button disabled"
+      />
+      <Button
+        {...props}
+        isDisabled
+        variant="tertiary"
+        text="tertiary button disabled"
+      />
+    </StyledWrapper>
+  );
 };
 
-export const WithEndIconLoading: StoryType = {
-  args: {
-    endIcon: {
-      icon: 'calendar',
-    },
-    isLoading: true,
-  },
-  render: Template,
+export const Variations: StoryType = {
+  render: ButtonVariations,
 };
 
-export const Disabled: StoryType = {
-  args: {
-    isDisabled: true,
-  },
-  render: Template,
+export const Sizes: StoryType = {
+  render: ButtonSizes,
+};
+
+export const Shapes: StoryType = {
+  render: ButtonShapes,
+};
+
+export const WithIconAndLoading: StoryType = {
+  render: ButtonWithIcon,
+};
+
+export const States: StoryType = {
+  render: ButtonStates,
 };

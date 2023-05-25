@@ -27,6 +27,16 @@ export const setBackgroundColor = (
   return 'transparent';
 };
 
+export const setBorderColor = (variant: ButtonVariant, color: ButtonColor) => {
+  if (variant === 'secondary') return setTextColor(variant, color);
+  return 'transparent';
+};
+
+export const setDisabledBorderColor = (variant: ButtonVariant) => {
+  if (variant === 'secondary') return 'polarNightMedium';
+  return 'transparent';
+};
+
 export const setPrimaryTextColor = (color: ButtonColor): keyof Colors => {
   if (color === 'black') return 'arcticWind';
   return 'polarNight';
@@ -55,7 +65,7 @@ export const setPadding = (theme: Theme, size: ButtonSize) => {
   const sizes = {
     small: theme.spacing(1.375),
     medium: theme.spacing(2, 2.25),
-    large: theme.spacing(2.313, 2.75),
+    large: theme.spacing(2.25, 2.75),
   };
 
   return sizes[size];
