@@ -16,7 +16,6 @@ describe('FilterInput', () => {
     const filterInput = screen.getByTestId('filter-input');
     // Open dropdown
     fireEvent.click(filterInput);
-    screen.debug();
     const listItems = screen.getAllByRole('listitem');
     expect(listItems).toHaveLength(5);
   });
