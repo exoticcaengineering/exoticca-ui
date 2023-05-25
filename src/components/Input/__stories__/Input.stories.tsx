@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { Input } from '../Input';
 import { useState } from 'react';
 import { iconNames } from 'src/types/IconNames';
@@ -15,7 +15,7 @@ export default {
   },
   argTypes: {
     icon: {
-      options: [...iconNames, ''],
+      options: [...iconNames, 'user'],
       control: { type: 'select' },
       category: 'Prop',
     },
@@ -27,7 +27,7 @@ export default {
   },
 } as Meta<InputProps>;
 
-const Template: Story<InputProps> = ({ ...props }) => {
+const Template: ComponentStory<typeof Input> = ({ ...props }) => {
   const [value, setValue] = useState('');
 
   return (
@@ -49,4 +49,35 @@ const Template: Story<InputProps> = ({ ...props }) => {
     </div>
   );
 };
+
 export const Base = Template.bind({});
+
+export const LeftRounded = Template.bind({});
+
+LeftRounded.args = {
+  rounded: 'left',
+};
+
+export const RightRounded = Template.bind({});
+
+RightRounded.args = {
+  rounded: 'right',
+};
+
+export const WithoutIcon = Template.bind({});
+
+WithoutIcon.args = {
+  icon: undefined,
+};
+
+export const ReadOnly = Template.bind({});
+
+ReadOnly.args = {
+  readOnly: true,
+};
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  disabled: true,
+};
