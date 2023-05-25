@@ -8,7 +8,26 @@ export default {
   component: Drawer,
   argTypes: {
     openHeight: {
+      description: 'The height of the drawer when open',
       control: 'number',
+    },
+    children: {
+      description: 'The content to be displayed inside the drawer',
+    },
+    onOpen: {
+      description: 'Callback function triggered when the drawer is opened',
+    },
+    onClose: {
+      description: 'Callback function triggered when the drawer is closed.',
+    },
+    id: {
+      description: 'ID for identifying the drawer component',
+    },
+    testId: {
+      description: 'Test ID for identifying the drawer component',
+    },
+    className: {
+      description: 'Additional CSS class name to apply to the drawer',
     },
   },
 } as Meta<typeof Drawer>;

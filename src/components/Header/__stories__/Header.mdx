@@ -26,13 +26,17 @@ Below is an example of how to use the Header component:
 import React from 'react';
 import { Header } from 'header-component-library';
 
-const LeftComponent = () => <div>Left</div>;
-const CenterComponent = () => <div>Center</div>;
-const RightComponent = () => <div>Right</div>;
+export const MyComponent = () => {
+  const LeftComponent = () => <div>Left</div>;
+  const CenterComponent = () => <div>Center</div>;
+  const RightComponent = () => <div>Right</div>;
 
-<Header
-  leftComponent={<LeftComponent />}
-  centerComponent={<CenterComponent />}
-  rightComponent={<RightComponent />}
-/>;
+  return (
+    <Header
+      leftComponent={<LeftComponent />}
+      centerComponent={<CenterComponent />}
+      rightComponent={<RightComponent />}
+    />
+  );
+};
 ```
