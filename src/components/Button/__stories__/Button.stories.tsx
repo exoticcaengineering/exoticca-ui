@@ -2,7 +2,6 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
 import { Props } from '../Button.types';
 import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
-import { useEffect, useRef } from 'react';
 
 export default {
   title: 'Components/Button',
@@ -143,22 +142,43 @@ const ButtonStates = (props: Props) => {
   );
 };
 
+/**
+ *
+ * There are 3 variations of buttons: primary, secondary and tertiary.
+ */
 export const Variations: StoryType = {
   render: ButtonVariations,
 };
 
+/**
+ *
+ * There are 3 button sizes of buttons: small, medium and large.
+ */
 export const Sizes: StoryType = {
   render: ButtonSizes,
 };
 
+/**
+ *
+ * There are 2 button shapes of buttons: square and rounded.
+ */
 export const Shapes: StoryType = {
   render: ButtonShapes,
 };
 
+/**
+ *
+ * Button can have a start icon or an end icon.
+ * When the button is loading, the icon is replaced by a spinner.
+ */
 export const WithIconAndLoading: StoryType = {
   render: ButtonWithIcon,
 };
 
+/**
+ *
+ * There are 2 states of buttons: loading and disabled.
+ */
 export const States: StoryType = {
   render: ButtonStates,
 };
