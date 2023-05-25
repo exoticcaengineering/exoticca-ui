@@ -44,12 +44,7 @@ export const StyledInputInner = styled.div`
 `;
 
 export const StyledInput = styled.input`
-  display: block;
-  border: none;
-  outline: none;
-  background: transparent;
-  padding-right: ${({ theme }) => theme.spacing(0)};
-  height: 23px;
+  all: unset;
   font-size: ${({ theme }) => theme.typography.fontSize.body1};
   width: 100%;
   text-overflow: ellipsis;
