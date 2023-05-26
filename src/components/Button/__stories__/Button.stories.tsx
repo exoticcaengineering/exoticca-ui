@@ -3,6 +3,9 @@ import { Button } from '../Button';
 import { Props } from '../Button.types';
 import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
 
+/**
+ *  ## Button can have variations, sizes, shapes, icons, states.
+ */
 export default {
   title: 'Components/Button',
   component: Button,
