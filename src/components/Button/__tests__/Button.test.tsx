@@ -10,7 +10,9 @@ describe('Button variations', () => {
   // //primary
   it('renders primary button correctly', () => {
     render(<Variations />);
-    const primaryButton = screen.getByText('primary button').closest('button');
+    const primaryButton = screen
+      .getByText('default primary button')
+      .closest('button');
     expect(primaryButton).toBeInTheDocument();
     expect(primaryButton).toHaveStyle('background-color: #121212');
     expect(primaryButton).toHaveStyle('color: #ffffff');
@@ -128,7 +130,7 @@ describe('Button states', () => {
       .closest('button');
     expect(disabledButton).toBeInTheDocument();
     expect(disabledButton).toHaveStyle('cursor: not-allowed');
-    expect(disabledButton).toHaveStyle('background-color: rgba(18,18,18,0.2)');
+    expect(disabledButton).toHaveStyle('background-color: #E5E5E5');
     expect(disabledButton).toHaveStyle('border-color: transparent');
     expect(disabledButton).toHaveStyle('color: #717171');
   });

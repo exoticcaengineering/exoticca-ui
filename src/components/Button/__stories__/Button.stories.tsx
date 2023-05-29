@@ -13,7 +13,7 @@ export default {
   args: {
     text: 'I am a button',
     size: 'medium',
-    color: 'black',
+    color: 'polarNight',
     shape: 'rounded',
     state: 'default',
     variant: 'primary',
@@ -21,12 +21,12 @@ export default {
   argTypes: {
     color: {
       options: [
-        'black',
-        'white',
-        'promoOrange',
-        'promoGreen',
-        'promoYellow',
-        'promoBlue',
+        'polarNight',
+        'arcticWind',
+        'pacificOcean',
+        'savageForest',
+        'silentSavana',
+        'carribeanSunrise',
       ],
       control: { type: 'select' },
       category: 'Prop',
@@ -63,11 +63,46 @@ type Story = StoryObj<typeof Button>;
 
 const ButtonVariations = (props: Props) => {
   return (
-    <StyledRowWrapper>
-      <Button {...props} variant="primary" text="primary button" />
-      <Button {...props} variant="secondary" text="secondary button" />
-      <Button {...props} variant="tertiary" text="tertiary button" />
-    </StyledRowWrapper>
+    <StyledColumnWrapper>
+      <StyledRowWrapper>
+        <Button
+          {...props}
+          variant="primary"
+          text="default primary button"
+          color="polarNight"
+        />
+        <Button
+          {...props}
+          variant="primary"
+          text="primary button"
+          color="pacificOcean"
+        />
+        <Button
+          {...props}
+          variant="primary"
+          text="primary button"
+          color="savageForest"
+        />
+        <Button
+          {...props}
+          variant="primary"
+          text="primary button"
+          color="silentSavana"
+        />
+        <Button
+          {...props}
+          variant="primary"
+          text="primary button"
+          color="carribeanSunrise"
+        />
+      </StyledRowWrapper>
+      <StyledRowWrapper>
+        <Button {...props} variant="secondary" text="secondary button" />
+      </StyledRowWrapper>
+      <StyledRowWrapper>
+        <Button {...props} variant="tertiary" text="tertiary button" />
+      </StyledRowWrapper>
+    </StyledColumnWrapper>
   );
 };
 
@@ -148,8 +183,10 @@ const ButtonStates = (props: Props) => {
 
 /**
  *
- * There are 3 variations of buttons: primary, secondary and tertiary.
- * Button render the text by takeing a prop called text, not a children
+ * - There are 3 variations of buttons: primary, secondary and tertiary.
+ * - Button render the text by takeing a prop called text, not a children
+ * - Primary button is the default variation, and can have different colors.
+ * - But secondary and tertiary buttons can only be black or white.
  */
 export const Variations: Story = {
   render: ButtonVariations,

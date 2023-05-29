@@ -9,7 +9,7 @@ import { Typography } from '../Typography';
 export const Button: FC<Props> = ({
   text,
   size = 'medium',
-  color = 'black',
+  color = 'polarNight',
   onClick,
   shape = 'square',
   startIcon,

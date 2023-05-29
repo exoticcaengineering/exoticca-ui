@@ -5,7 +5,7 @@ import { ButtonSize, IconButtonProps } from './Button.types';
 
 export const IconButton: FC<IconButtonProps> = ({
   icon,
-  color = 'black',
+  color = 'polarNight',
   variant = 'primary',
   size = 'medium',
   isDisabled,
