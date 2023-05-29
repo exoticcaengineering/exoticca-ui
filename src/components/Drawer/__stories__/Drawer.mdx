@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ArgTypes } from '@storybook/blocks';
+
+import * as DrawerStories from './Drawer.stories';
+
+<Meta title="Components/Drawer" component={DrawerStories} />
+
+# Drawer
+
+The `Drawer` component provides a drawer functionality for web applications.
+
+<div>
+  <Canvas of={DrawerStories.Base} />
+</div>
+
+## Props
+
+Here is a list of props that you can pass to this component.
+
+<ArgTypes of={DrawerStories.Base} />
+
+## Usage
+
+Below is an example of how to use the Drawer component:
+
+```jsx
+  import React, { useRef } from 'react';
+  import { Drawer } from 'drawer-component-library';
+
+  const MyComponent = () => {
+    const drawerRef = useRef();
+
+    const handleOpen = () => {
+      drawerRef.current?.open();
+    };
+
+    const handleClose = () => {
+      drawerRef.current?.close();
+    };
+
+    return (
+     <div>
+        <div onClick={handleOpen}>
+          Open Drawer
+       </div>
+       <Drawer ref={drawerRef} openHeight={50}>
+          <h4>Drawer contents...</h4>
+      </div>
+    );
+  };
+```

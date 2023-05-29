@@ -1,4 +1,3 @@
-import { createPortal } from 'react-dom';
 import React, { forwardRef } from 'react';
 import { useState } from 'react';
 import { useImperativeHandle } from 'react';
@@ -60,7 +59,10 @@ const DrawerComp = (
               />
             </StyledIconWrapper>
 
-            <StyledContentWrapper data-testid="drawer-content-wrapper">
+            <StyledContentWrapper
+              data-testid="drawer-content-wrapper"
+              role="navigation"
+            >
               {children}
             </StyledContentWrapper>
           </>
