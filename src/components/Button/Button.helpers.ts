@@ -2,33 +2,55 @@ import { Colors, Theme } from 'src/types';
 import { ButtonColor, ButtonSize, ButtonVariant } from './Button.types';
 import { IconSize } from '../Icon';
 
-export const mapButtonColorToThemeColor = (
-  color: ButtonColor,
-): keyof Colors => {
-  const colors: Record<ButtonColor, keyof Colors> = {
-    promoYellow: 'silentSavana',
-    promoOrange: 'carribeanSunrise',
-    promoBlue: 'pacificOcean',
-    promoGreen: 'savageForest',
-    black: 'polarNight',
-    white: 'arcticWind',
-  };
-
-  return colors[color];
+const primaryHoverBackgroundColor: Record<ButtonColor, keyof Colors> = {
+  arcticWind: 'polarNightMedium',
+  polarNight: 'polarNightMedium',
+  pacificOcean: 'pacificOceanMedium',
+  savageForest: 'savageForestMedium',
+  silentSavana: 'silentSavanaMedium',
+  carribeanSunrise: 'carribeanSunriseMedium',
 };
 
-export const setSecondaryBackgroundColor = () => 'transparent';
+const secondaryHoverBackgroundColor: Partial<
+  Record<keyof Colors, keyof Colors>
+> = {
+  arcticWind: 'polarNightMedium',
+  polarNight: 'polarNightLight',
+};
+
+const primaryDisabledBackgroundColor: Record<ButtonColor, keyof Colors> = {
+  arcticWind: 'polarNightLight',
+  polarNight: 'polarNightLight',
+  pacificOcean: 'pacificOceanLight',
+  savageForest: 'savageForestLight',
+  silentSavana: 'silentSavanaLight',
+  carribeanSunrise: 'carribeanSunriseLight',
+};
 
 export const setBackgroundColor = (
   variant: ButtonVariant,
   color: ButtonColor,
 ): keyof Colors => {
-  if (variant === 'primary') return mapButtonColorToThemeColor(color);
+  if (variant === 'primary') return color;
   return 'transparent';
 };
 
-export const setBorderColor = (variant: ButtonVariant, color: ButtonColor) => {
-  if (variant === 'secondary') return setTextColor(variant, color);
+export const setHoverBackgroundColor = (
+  variant: ButtonVariant,
+  color: ButtonColor,
+) => {
+  if (variant === 'primary')
+    return primaryHoverBackgroundColor[color] ?? 'polarNightMedium';
+
+  return secondaryHoverBackgroundColor[color] ?? 'polarNightLight';
+};
+
+export const setDisabledBackgroundColor = (
+  variant: ButtonVariant,
+  color: ButtonColor,
+) => {
+  if (variant === 'primary')
+    return primaryDisabledBackgroundColor[color] ?? 'polarNightLight';
   return 'transparent';
 };
 
@@ -38,15 +60,19 @@ export const setDisabledBorderColor = (variant: ButtonVariant) => {
 };
 
 export const setPrimaryTextColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'black') return 'arcticWind';
+  if (color === 'polarNight') return 'arcticWind';
   return 'polarNight';
 };
 
-export const setSecondaryTextColor = (color: ButtonColor): keyof Colors =>
-  mapButtonColorToThemeColor(color);
+//secondary  only have polarNight and arcticWind colors
+export const setSecondaryTextColor = (color: ButtonColor): keyof Colors => {
+  if (color === 'arcticWind') return 'arcticWind';
+  return 'polarNight';
+};
 
+// tertiary only have polarNight and arcticWind colors
 export const setTertiaryTextColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'white') return 'arcticWind';
+  if (color === 'arcticWind') return 'arcticWind';
   return 'polarNight';
 };
 
@@ -59,6 +85,11 @@ export const setTextColor = (variant: ButtonVariant, color: ButtonColor) => {
     case 'tertiary':
       return setTertiaryTextColor(color);
   }
+};
+
+export const setBorderColor = (variant: ButtonVariant, color: ButtonColor) => {
+  if (variant === 'secondary') return setTextColor(variant, color);
+  return 'transparent';
 };
 
 export const setFocusBoxShadowColor = (

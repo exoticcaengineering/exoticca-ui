@@ -4,7 +4,7 @@ export const StyledRowWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing(2)};
-  background: ${({ theme }) => theme.colors.polarNightLight};
+  background: #c1c4c5;
   padding: ${({ theme }) => theme.spacing(3)};
   align-items: baseline;
 `;

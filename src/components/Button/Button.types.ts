@@ -1,18 +1,21 @@
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconConfig } from '../Icon';
+import { Colors } from 'src/types';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 
-export type ButtonColor =
-  | 'black'
-  | 'white'
-  | 'promoBlue'
-  | 'promoGreen'
-  | 'promoYellow'
-  | 'promoOrange';
+export type ButtonColor = Extract<
+  keyof Colors,
+  | 'polarNight'
+  | 'arcticWind'
+  | 'pacificOcean'
+  | 'savageForest'
+  | 'silentSavana'
+  | 'carribeanSunrise'
+>;
 export interface Props extends ComponentPropsBase {
   text?: string;
   size?: ButtonSize;

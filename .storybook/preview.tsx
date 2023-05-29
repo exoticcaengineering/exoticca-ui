@@ -26,19 +26,18 @@ import { Title, Subtitle, Description, Stories,ArgTypes } from '@storybook/block
   },
 };
 
-const withTheme = (Story) => {
-  return (
-    <ThemeProvider theme={themeDefault}>
-      <GlobalStyleDefault />
-      <Story />
-    </ThemeProvider>
-  );
-};
 
 const preview: Preview = {
   parameters,
   decorators: [
-    withTheme,
+    (Story) => {
+      return (
+        <ThemeProvider theme={themeDefault}>
+          <GlobalStyleDefault />
+          <Story />
+        </ThemeProvider>
+      );
+    }
   ],
   
 };

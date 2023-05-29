@@ -7,12 +7,12 @@ export default {
   argTypes: {
     color: {
       options: [
-        'black',
-        'white',
-        'promoOrange',
-        'promoGreen',
-        'promoYellow',
-        'promoBlue',
+        'polarNight',
+        'arcticWind',
+        'pacificOcean',
+        'savageForest',
+        'silentSavana',
+        'carribeanSunrise',
       ],
       control: { type: 'select' },
       category: 'Prop',

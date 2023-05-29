@@ -7,11 +7,12 @@ import {
   setTextColor,
   setFontsize,
   setPadding,
-  mapButtonColorToThemeColor,
   setBorderColor,
   setDisabledBorderColor,
   setFocusBoxShadowColor,
   setFocusBorderColor,
+  setHoverBackgroundColor,
+  setDisabledBackgroundColor,
 } from './Button.helpers';
 
 const buttonCommonStyle = css<StyledProps>`
@@ -19,27 +20,28 @@ const buttonCommonStyle = css<StyledProps>`
   justify-content: center;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(1)};
-  background-color: ${({ theme, color = 'black', variant = 'primary' }) =>
+  background-color: ${({ theme, color = 'polarNight', variant = 'primary' }) =>
     theme.colors[setBackgroundColor(variant, color)]};
-  color: ${({ theme, color = 'black', variant = 'primary' }) =>
+  color: ${({ theme, color = 'polarNight', variant = 'primary' }) =>
     theme.colors[setTextColor(variant, color)]};
   border-width: 2px;
   border-style: solid;
-  border-color: ${({ theme, color = 'black', variant = 'primary' }) =>
+  border-color: ${({ theme, color = 'polarNight', variant = 'primary' }) =>
     theme.colors[setBorderColor(variant, color)]};
   cursor: pointer;
   &:hover {
-    background-color: ${({ theme, color = 'black', variant = 'primary' }) => {
-      const opacity = variant === 'primary' ? 80 : 20;
-      return colorWithOpacity(
-        theme.colors[mapButtonColorToThemeColor(color)],
-        opacity,
-      );
-    }};
+    background-color: ${({
+      theme,
+      color = 'polarNight',
+      variant = 'primary',
+    }) => theme.colors[setHoverBackgroundColor(variant, color)]};
   }
   &:disabled {
-    background-color: ${({ theme, color = 'black', variant = 'primary' }) =>
-      colorWithOpacity(theme.colors[setBackgroundColor(variant, color)], 20)};
+    background-color: ${({
+      theme,
+      color = 'polarNight',
+      variant = 'primary',
+    }) => theme.colors[setDisabledBackgroundColor(variant, color)]};
     color: ${({ theme }) => theme.colors.polarNightMedium};
     border-color: ${({ theme, variant = 'primary' }) =>
       theme.colors[setDisabledBorderColor(variant)]};
@@ -48,13 +50,13 @@ const buttonCommonStyle = css<StyledProps>`
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px
-      ${({ theme, variant = 'primary', color = 'black' }) => {
+      ${({ theme, variant = 'primary', color = 'polarNight' }) => {
         const shadowColor =
           theme.colors[setFocusBoxShadowColor(variant, color)];
         if (variant === 'secondary') return colorWithOpacity(shadowColor, 20);
         return shadowColor;
       }};
-    border-color: ${({ theme, variant = 'primary', color = 'black' }) =>
+    border-color: ${({ theme, variant = 'primary', color = 'polarNight' }) =>
       theme.colors[setFocusBorderColor(variant, color)]};
   }
 `;
