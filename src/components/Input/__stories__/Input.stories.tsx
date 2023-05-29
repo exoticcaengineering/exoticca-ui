@@ -1,4 +1,4 @@
-import { ComponentStory, Meta } from '@storybook/react';
+import { ComponentStory, Meta, StoryObj } from '@storybook/react';
 import { Input } from '../Input';
 import { useState } from 'react';
 import { iconNames } from 'src/types/IconNames';
@@ -27,6 +27,8 @@ export default {
   },
 } as Meta<InputProps>;
 
+type Story = StoryObj<InputProps>;
+
 const Template: ComponentStory<typeof Input> = ({ ...props }) => {
   const [value, setValue] = useState('');
 
@@ -50,34 +52,26 @@ const Template: ComponentStory<typeof Input> = ({ ...props }) => {
   );
 };
 
-export const Base = Template.bind({});
-
-export const LeftRounded = Template.bind({});
-
-LeftRounded.args = {
-  rounded: 'left',
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
 };
 
-export const RightRounded = Template.bind({});
-
-RightRounded.args = {
-  rounded: 'right',
+export const LeftRounded: Story = {
+  render: (args) => <Template {...args} rounded="left" />,
 };
 
-export const WithoutIcon = Template.bind({});
-
-WithoutIcon.args = {
-  icon: undefined,
+export const RightRounded: Story = {
+  render: (args) => <Template {...args} rounded="right" />,
 };
 
-export const ReadOnly = Template.bind({});
-
-ReadOnly.args = {
-  readOnly: true,
+export const WithoutIcon: Story = {
+  render: (args) => <Template {...args} icon={undefined} />,
 };
 
-export const Disabled = Template.bind({});
+export const ReadOnly: Story = {
+  render: (args) => <Template {...args} readOnly />,
+};
 
-Disabled.args = {
-  disabled: true,
+export const Disabled: Story = {
+  render: (args) => <Template {...args} disabled />,
 };
