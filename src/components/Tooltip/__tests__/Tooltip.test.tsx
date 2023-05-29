@@ -6,23 +6,25 @@ import userEvent from '@testing-library/user-event';
 const { ByClick, ByHover } = composeStories(stories);
 
 describe('Tooltip', () => {
-  it('should be true', async () => {
+  it('should show text panel when click in icon', async () => {
     render(<ByClick />);
+
     const title = screen.getByText('Tooltip');
     expect(title).toBeInTheDocument();
-    //test click
     await userEvent.click(screen.getByText('Tooltip'));
     const tooltipPanel = screen.getByTestId('tooltip-panel');
+
     expect(tooltipPanel).toBeInTheDocument();
   });
 
-  it('should be true', async () => {
+  it('should show text panel when hover in icon', async () => {
     render(<ByHover />);
+
     const title = screen.getByText('Tooltip');
     expect(title).toBeInTheDocument();
-    //test hover
     await userEvent.hover(screen.getByText('Tooltip'));
     const tooltipPanel = screen.getByTestId('tooltip-panel');
+
     expect(tooltipPanel).toBeInTheDocument();
   });
 });
