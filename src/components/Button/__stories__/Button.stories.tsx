@@ -1,10 +1,12 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
-import { MouseEventHandler, useState } from 'react';
-import { Banner } from './Banner';
 import { Props } from '../Button.types';
-import { IconButton } from '../IconButton';
+import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
 
+/**
+ *  ## Button can have variations, sizes, shapes, icons, states.
+ *
+ */
 export default {
   title: 'Components/Button',
   component: Button,
@@ -55,69 +57,133 @@ export default {
       category: 'Prop',
     },
   },
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (props: Props) => {
-  const [showBanner, setShowBanner] = useState(false);
-  const [bannerPosition, setBannerPosition] = useState({ top: 0, left: 0 });
+type Story = StoryObj<typeof Button>;
 
-  const handleButtonClick: MouseEventHandler<HTMLButtonElement> = (event) => {
-    const buttonElement = event.target as HTMLButtonElement;
-    if (buttonElement !== null) {
-      const buttonPosition = buttonElement.getBoundingClientRect();
-      setBannerPosition({
-        top: buttonPosition.top - 40,
-        left: buttonPosition.left + buttonPosition.width / 2 - 60,
-      });
-      setShowBanner(true);
-
-      setTimeout(() => {
-        setShowBanner(false);
-      }, 2000);
-    }
-  };
-
+const ButtonVariations = (props: Props) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '5rem',
-          width: '15rem',
-          backgroundColor: '#e9e5e5',
-          borderRadius: '10px',
-        }}
-      >
-        <Button {...props} onClick={handleButtonClick} />
-        {showBanner && (
-          <Banner showBanner={showBanner} bannerPosition={bannerPosition} />
-        )}
-      </div>
-    </div>
+    <StyledRowWrapper>
+      <Button {...props} variant="primary" text="primary button" />
+      <Button {...props} variant="secondary" text="secondary button" />
+      <Button {...props} variant="tertiary" text="tertiary button" />
+    </StyledRowWrapper>
   );
 };
 
-export const Base = Template.bind({});
-
-export const WithStartIcon = Template.bind({});
-
-WithStartIcon.args = {
-  startIcon: {
-    icon: 'arrow',
-  },
+const ButtonSizes = (props: Props) => {
+  return (
+    <StyledRowWrapper>
+      <Button {...props} size="small" text="small button" />
+      <Button {...props} size="medium" text="medium button" />
+      <Button {...props} size="large" text="large button" />
+    </StyledRowWrapper>
+  );
 };
 
-export const WithEndIcon = Template.bind({});
-WithEndIcon.args = {
-  endIcon: {
-    icon: 'arrow',
-  },
+const ButtonShapes = (props: Props) => {
+  return (
+    <StyledRowWrapper>
+      <Button {...props} shape="square" text="square button" />
+      <Button {...props} shape="rounded" text="rounded button" />
+    </StyledRowWrapper>
+  );
+};
+
+const ButtonWithIcon = (props: Props) => {
+  return (
+    <StyledColumnWrapper>
+      <StyledRowWrapper>
+        <Button {...props} startIcon={{ icon: 'calendar' }} text="start icon" />
+        <Button
+          {...props}
+          startIcon={{ icon: 'calendar' }}
+          text="start icon loading"
+          isLoading
+        />
+      </StyledRowWrapper>
+
+      <StyledRowWrapper>
+        <Button {...props} endIcon={{ icon: 'calendar' }} text=" end icon" />
+        <Button
+          {...props}
+          endIcon={{ icon: 'calendar' }}
+          text="end icon loading"
+          isLoading
+        />
+      </StyledRowWrapper>
+    </StyledColumnWrapper>
+  );
+};
+
+const ButtonStates = (props: Props) => {
+  return (
+    <StyledColumnWrapper>
+      <StyledRowWrapper>
+        <Button {...props} isLoading text="button loading" />
+      </StyledRowWrapper>
+      <StyledRowWrapper>
+        <Button
+          {...props}
+          isDisabled
+          variant="primary"
+          text="primary button disabled"
+        />
+        <Button
+          {...props}
+          isDisabled
+          variant="secondary"
+          text="secondary button disabled"
+        />
+        <Button
+          {...props}
+          isDisabled
+          variant="tertiary"
+          text="tertiary button disabled"
+        />
+      </StyledRowWrapper>
+    </StyledColumnWrapper>
+  );
+};
+
+/**
+ *
+ * There are 3 variations of buttons: primary, secondary and tertiary.
+ * Button render the text by takeing a prop called text, not a children
+ */
+export const Variations: Story = {
+  render: ButtonVariations,
+};
+
+/**
+ *
+ * There are 3 button sizes of buttons: small, medium and large.
+ */
+export const Sizes: Story = {
+  render: ButtonSizes,
+};
+
+/**
+ *
+ * There are 2 button shapes of buttons: square and rounded.
+ */
+export const Shapes: Story = {
+  render: ButtonShapes,
+};
+
+/**
+ *
+ * Button can have a start icon or an end icon.
+ * When the button is loading, the icon is replaced by a spinner.
+ */
+export const WithIconAndLoading: Story = {
+  render: ButtonWithIcon,
+};
+
+/**
+ *
+ * There are 2 states of buttons: loading and disabled.
+ */
+export const States: Story = {
+  render: ButtonStates,
 };

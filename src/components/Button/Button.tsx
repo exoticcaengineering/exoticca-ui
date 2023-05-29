@@ -27,6 +27,22 @@ export const Button: FC<Props> = ({
     ? 'polarNightMedium'
     : setTextColor(variant, color);
 
+  const hasIcon = startIcon || endIcon;
+
+  const renderLoadingIcon = () => <Spinner size={size} color={iconColor} />;
+
+  const renderStartIcon = () => {
+    if (!startIcon) return;
+    if (isLoading) return renderLoadingIcon();
+    return <Icon size={iconSize} stroke={iconColor} {...startIcon} />;
+  };
+
+  const renderEndIcon = () => {
+    if (!endIcon) return;
+    if (isLoading) return renderLoadingIcon();
+    return <Icon size={iconSize} stroke={iconColor} {...endIcon} />;
+  };
+
   return (
     <StyledButton
       fullWidth={fullWidth}
@@ -39,10 +55,10 @@ export const Button: FC<Props> = ({
       className={className}
       data-testid={testId}
     >
-      {startIcon && <Icon size={iconSize} stroke={iconColor} {...startIcon} />}
+      {renderStartIcon()}
       {text && <Typography as="span">{text}</Typography>}
-      {isLoading && <Spinner size={size} color={iconColor} />}
-      {endIcon && <Icon size={iconSize} stroke={iconColor} {...endIcon} />}
+      {!hasIcon && isLoading && renderLoadingIcon()}
+      {renderEndIcon()}
     </StyledButton>
   );
 };

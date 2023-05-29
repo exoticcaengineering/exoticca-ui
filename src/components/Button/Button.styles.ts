@@ -8,6 +8,10 @@ import {
   setFontsize,
   setPadding,
   mapButtonColorToThemeColor,
+  setBorderColor,
+  setDisabledBorderColor,
+  setFocusBoxShadowColor,
+  setFocusBorderColor,
 } from './Button.helpers';
 
 const buttonCommonStyle = css<StyledProps>`
@@ -21,11 +25,8 @@ const buttonCommonStyle = css<StyledProps>`
     theme.colors[setTextColor(variant, color)]};
   border-width: 2px;
   border-style: solid;
-  border-color: ${({ theme, color = 'black', variant = 'primary' }) => {
-    if (variant === 'secondary')
-      return theme.colors[setTextColor(variant, color)];
-    return theme.colors.transparent;
-  }};
+  border-color: ${({ theme, color = 'black', variant = 'primary' }) =>
+    theme.colors[setBorderColor(variant, color)]};
   cursor: pointer;
   &:hover {
     background-color: ${({ theme, color = 'black', variant = 'primary' }) => {
@@ -37,11 +38,24 @@ const buttonCommonStyle = css<StyledProps>`
     }};
   }
   &:disabled {
-    background-color: ${({ theme, color = 'black' }) =>
-      colorWithOpacity(theme.colors[mapButtonColorToThemeColor(color)], 20)};
+    background-color: ${({ theme, color = 'black', variant = 'primary' }) =>
+      colorWithOpacity(theme.colors[setBackgroundColor(variant, color)], 20)};
     color: ${({ theme }) => theme.colors.polarNightMedium};
-    border-color: ${({ theme }) => theme.colors.polarNightMedium};
+    border-color: ${({ theme, variant = 'primary' }) =>
+      theme.colors[setDisabledBorderColor(variant)]};
     cursor: not-allowed;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px
+      ${({ theme, variant = 'primary', color = 'black' }) => {
+        const shadowColor =
+          theme.colors[setFocusBoxShadowColor(variant, color)];
+        if (variant === 'secondary') return colorWithOpacity(shadowColor, 20);
+        return shadowColor;
+      }};
+    border-color: ${({ theme, variant = 'primary', color = 'black' }) =>
+      theme.colors[setFocusBorderColor(variant, color)]};
   }
 `;
 
@@ -50,7 +64,7 @@ export const StyledButton = styled.button<StyledProps>`
   border-radius: ${({ shape, theme }) =>
     shape === 'rounded'
       ? theme.newBorderRadius.semiRounded
-      : theme.newBorderRadius.m};
+      : theme.newBorderRadius.s};
   padding: ${({ theme, size = 'medium' }) => setPadding(theme, size)};
   font-size: ${({ theme, size = 'medium' }) => setFontsize(theme, size)};
   white-space: nowrap;
