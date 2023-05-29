@@ -6,27 +6,22 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
   border-radius: ${({ theme }) =>
     `${theme.newBorderRadius.xs} ${theme.newBorderRadius.xs} 0 0 `};
-  margin-top: 0;
-  margin-bottom: 0;
   cursor: pointer;
-
   ${({ isOpen, backgroundColor }) =>
     isOpen &&
     !backgroundColor &&
     css`
       padding-bottom: 0;
     `}
-
   ${({ isDisabled }) =>
     isDisabled &&
     css`
       opacity: 0.3;
       cursor: not-allowed;
       padding-bottom: ${({ theme }) => theme.spacing(3)};
-    `}
+    `};
 `;
 
 export const StyledContent = styled.div<StyledProps>`

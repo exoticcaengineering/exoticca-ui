@@ -5,6 +5,7 @@ import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
 
 /**
  *  ## Button can have variations, sizes, shapes, icons, states.
+ *
  */
 export default {
   title: 'Components/Button',
@@ -58,7 +59,7 @@ export default {
   },
 } as Meta<typeof Button>;
 
-type StoryType = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Button>;
 
 const ButtonVariations = (props: Props) => {
   return (
@@ -148,8 +149,9 @@ const ButtonStates = (props: Props) => {
 /**
  *
  * There are 3 variations of buttons: primary, secondary and tertiary.
+ * Button render the text by takeing a prop called text, not a children
  */
-export const Variations: StoryType = {
+export const Variations: Story = {
   render: ButtonVariations,
 };
 
@@ -157,7 +159,7 @@ export const Variations: StoryType = {
  *
  * There are 3 button sizes of buttons: small, medium and large.
  */
-export const Sizes: StoryType = {
+export const Sizes: Story = {
   render: ButtonSizes,
 };
 
@@ -165,7 +167,7 @@ export const Sizes: StoryType = {
  *
  * There are 2 button shapes of buttons: square and rounded.
  */
-export const Shapes: StoryType = {
+export const Shapes: Story = {
   render: ButtonShapes,
 };
 
@@ -174,7 +176,7 @@ export const Shapes: StoryType = {
  * Button can have a start icon or an end icon.
  * When the button is loading, the icon is replaced by a spinner.
  */
-export const WithIconAndLoading: StoryType = {
+export const WithIconAndLoading: Story = {
   render: ButtonWithIcon,
 };
 
@@ -182,6 +184,6 @@ export const WithIconAndLoading: StoryType = {
  *
  * There are 2 states of buttons: loading and disabled.
  */
-export const States: StoryType = {
+export const States: Story = {
   render: ButtonStates,
 };

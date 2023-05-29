@@ -1,20 +1,36 @@
-import { ComponentMeta, Story } from '@storybook/react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from '../Accordion';
 import { Typography } from 'src/components/Typography';
 import { iconNames } from 'src/types/IconNames';
+import { Props } from '../Accordion.types';
+import { Wrapper } from './Story.styles';
 
+/**
+ * ## Accordion is a component that can be used to hide and show content.
+ */
 export default {
   title: 'Components/Accordion',
   component: Accordion,
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <Story />
+      </Wrapper>
+    ),
+  ],
   args: {
     isDisabled: false,
     withHeaderTitle: true,
-    headerText: 'I am a Header Text :)',
+    header: <Typography fontSize="heading3">I am a Header Text</Typography>,
     isOpen: false,
     icon: 'arrow',
-    contentText:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat risus eu varius fringilla. Fusce luctus ipsum vitae nunc tincidunt, id tincidunt mauris accumsan.',
+    content: (
+      <Typography fontSize="body1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat
+        risus eu varius fringilla. Fusce luctus ipsum vitae nunc tincidunt, id
+        tincidunt mauris accumsan.
+      </Typography>
+    ),
   },
   argTypes: {
     icon: {
@@ -22,40 +38,23 @@ export default {
       options: [...iconNames, ''],
     },
   },
-} as ComponentMeta<typeof Accordion>;
+} as Meta<typeof Accordion>;
 
-type CustomItemProps = ComponentProps<typeof Accordion> & {
-  withHeaderTitle: boolean;
-  headerText: string;
-  contentText: string;
+type Story = StoryObj<typeof Accordion>;
+
+/**
+ * Both Accordions's header and content con be a string or a component. But it's better to use a component.Because with string we can't control the font size and color. The default font size is 1rem
+ */
+export const Base: Story = {
+  render: (args) => <Accordion {...args} />,
 };
 
-const Template: Story<CustomItemProps> = ({
-  withHeaderTitle,
-  headerText,
-  contentText,
-  ...props
-}: CustomItemProps) => {
-  return (
-    <div style={{ height: '10rem', width: '15rem' }}>
-      <Accordion
-        {...props}
-        header={
-          withHeaderTitle ? (
-            <Typography fontSize="body1">{headerText}</Typography>
-          ) : undefined
-        }
-        content={<Typography>{contentText}</Typography>}
-      />
-    </div>
-  );
-};
-export const Base = Template.bind({});
-
-export const WithStartIcon = Template.bind({});
-
-WithStartIcon.args = {
-  startIcon: {
-    icon: 'honeymoon',
+/**
+ * Accordions also can take a startIcon props to show an icon at the start of the header.
+ */
+export const WithStartIcon: Story = {
+  args: {
+    startIcon: { icon: 'calendar' },
   },
+  render: (args) => <Accordion {...args} />,
 };
