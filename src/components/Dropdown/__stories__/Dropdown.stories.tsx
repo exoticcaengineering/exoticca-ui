@@ -73,5 +73,5 @@ const Template = (args: Props) => (
 );
 
 export const Default: Story = {
-  render: Template,
+  render: (args) => <Template {...args} />,
 };
