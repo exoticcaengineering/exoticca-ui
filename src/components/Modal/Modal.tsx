@@ -174,11 +174,7 @@ const ModalComponent = (
                   transparantBg={true}
                   relative
                 >
-                  <Icon
-                    stroke={darkMode ? 'arcticWind' : 'polarNight'}
-                    size={'regular'}
-                    icon="close"
-                  />
+                  <Icon stroke="currentColor" size={'regular'} icon="close" />
                 </StyledCloseIcon>
               </CloseBtnWrapper>
             ) : (
@@ -190,11 +186,7 @@ const ModalComponent = (
                 shiftLeft={closeBtnshiftLeft}
                 transparantBg={closeBtnTransparant}
               >
-                <Icon
-                  stroke={darkMode ? 'arcticWind' : 'polarNight'}
-                  size={'regular'}
-                  icon="close"
-                />
+                <Icon stroke="currentColor" size={'regular'} icon="close" />
               </StyledCloseIcon>
             ))}
           <Highlights margin={highlightsTextExtraMargin}>

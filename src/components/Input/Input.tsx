@@ -41,9 +41,7 @@ export const Input = ({
       className={className}
       data-testid={testId}
     >
-      {icon && (
-        <StyledIcon icon={icon} stroke={'polarNight'} size={'regular'} />
-      )}
+      {icon && <StyledIcon icon={icon} stroke="primary" size={'regular'} />}
       <StyledInputInner>
         {value === '' && <StyledLabel icon={icon}>{label}</StyledLabel>}
         <StyledInput

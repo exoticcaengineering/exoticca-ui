@@ -3,13 +3,13 @@ import { Props } from './Button.types';
 import { StyledButton } from './Button.styles';
 import { Icon } from '../Icon/Icon';
 import { Spinner } from './Spinner';
-import { getIconSize, setTextColor } from './Button.helpers';
+import { getIconSize } from './Button.helpers';
 import { Typography } from '../Typography';
 
 export const Button: FC<Props> = ({
   text,
   size = 'medium',
-  color = 'polarNight',
+  color = 'primary',
   onClick,
   shape = 'square',
   startIcon,
@@ -23,24 +23,20 @@ export const Button: FC<Props> = ({
 }) => {
   const iconSize = getIconSize(size);
 
-  const iconColor = isDisabled
-    ? 'polarNightMedium'
-    : setTextColor(variant, color);
-
   const hasIcon = startIcon || endIcon;
 
-  const renderLoadingIcon = () => <Spinner size={size} color={iconColor} />;
+  const renderLoadingIcon = () => <Spinner size={size} color="currentColor" />;
 
   const renderStartIcon = () => {
     if (!startIcon) return;
     if (isLoading) return renderLoadingIcon();
-    return <Icon size={iconSize} stroke={iconColor} {...startIcon} />;
+    return <Icon size={iconSize} stroke="currentColor" {...startIcon} />;
   };
 
   const renderEndIcon = () => {
     if (!endIcon) return;
     if (isLoading) return renderLoadingIcon();
-    return <Icon size={iconSize} stroke={iconColor} {...endIcon} />;
+    return <Icon size={iconSize} stroke="currentColor" {...endIcon} />;
   };
 
   return (

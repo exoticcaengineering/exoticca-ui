@@ -1,17 +1,17 @@
-import { Colors } from 'src/types';
+import { Palette } from 'src/types';
 import { Icon } from '../Icon/Icon';
 import { Animation } from './Button.styles';
 
 export interface SpinnerProps {
   customStyle?: object;
   size?: 'small' | 'medium' | 'large';
-  color?: keyof Colors;
+  color?: keyof Palette | 'currentColor';
 }
 
 export const Spinner = ({
   customStyle,
   size = 'medium',
-  color,
+  color = 'primary',
 }: SpinnerProps) => {
   const setSize = () => {
     if (size === 'large') return 32;

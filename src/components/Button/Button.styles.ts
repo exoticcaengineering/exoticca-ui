@@ -13,6 +13,7 @@ import {
   setFocusBorderColor,
   setHoverBackgroundColor,
   setDisabledBackgroundColor,
+  setFocusBackgroundColor,
 } from './Button.helpers';
 
 const buttonCommonStyle = css<StyledProps>`
@@ -20,28 +21,21 @@ const buttonCommonStyle = css<StyledProps>`
   justify-content: center;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(1)};
-  background-color: ${({ theme, color = 'polarNight', variant = 'primary' }) =>
-    theme.colors[setBackgroundColor(variant, color)]};
-  color: ${({ theme, color = 'polarNight', variant = 'primary' }) =>
-    theme.colors[setTextColor(variant, color)]};
+  background-color: ${({ theme, color, variant }) =>
+    setBackgroundColor({ theme, variant, color })};
+
   border-width: 2px;
   border-style: solid;
-  border-color: ${({ theme, color = 'polarNight', variant = 'primary' }) =>
-    theme.colors[setBorderColor(variant, color)]};
+  border-color: ${({ theme, color, variant }) =>
+    setBorderColor({ theme, variant, color })};
   cursor: pointer;
   &:hover {
-    background-color: ${({
-      theme,
-      color = 'polarNight',
-      variant = 'primary',
-    }) => theme.colors[setHoverBackgroundColor(variant, color)]};
+    background-color: ${({ theme, color, variant }) =>
+      setHoverBackgroundColor({ theme, variant, color })};
   }
   &:disabled {
-    background-color: ${({
-      theme,
-      color = 'polarNight',
-      variant = 'primary',
-    }) => theme.colors[setDisabledBackgroundColor(variant, color)]};
+    background-color: ${({ theme, color, variant }) =>
+      setDisabledBackgroundColor({ theme, variant, color })};
     color: ${({ theme }) => theme.colors.polarNightMedium};
     border-color: ${({ theme, variant = 'primary' }) =>
       theme.colors[setDisabledBorderColor(variant)]};
@@ -50,18 +44,18 @@ const buttonCommonStyle = css<StyledProps>`
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px
-      ${({ theme, variant = 'primary', color = 'polarNight' }) => {
-        const shadowColor =
-          theme.colors[setFocusBoxShadowColor(variant, color)];
-        if (variant === 'secondary') return colorWithOpacity(shadowColor, 20);
-        return shadowColor;
-      }};
-    border-color: ${({ theme, variant = 'primary', color = 'polarNight' }) =>
-      theme.colors[setFocusBorderColor(variant, color)]};
+      ${({ theme, variant, color }) =>
+        setFocusBoxShadowColor({ theme, variant, color })};
+    border-color: ${({ theme, variant, color }) =>
+      setFocusBorderColor({ theme, variant, color })};
+    background-color: ${({ theme, color, variant }) =>
+      setFocusBackgroundColor({ theme, variant, color })};
   }
 `;
 
 export const StyledButton = styled.button<StyledProps>`
+  color: ${({ theme, color, variant }) =>
+    setTextColor({ theme, variant, color })};
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
   border-radius: ${({ shape, theme }) =>
     shape === 'rounded'
@@ -92,6 +86,8 @@ export const Animation = styled.div<{ size: number }>`
 
 export const StyledIconButtonWrapper = styled.button<StyledProps>`
   all: unset;
+  color: ${({ theme, color, variant }) =>
+    setTextColor({ theme, variant, color })};
   width: ${({ size = 'medium' }) => getIconButtonSize(size)};
   height: ${({ size = 'medium' }) => getIconButtonSize(size)};
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};

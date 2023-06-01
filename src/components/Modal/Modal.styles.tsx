@@ -47,8 +47,12 @@ export const ContentWrapper = styled.div<{
   noPadding?: boolean;
   overflowHidden?: boolean;
 }>`
+color: ${({ theme, darkMode }) =>
+  darkMode ? theme.palette.background.main : theme.palette.background.contrast};
   background: ${({ theme, darkMode }) =>
-    darkMode ? theme.colors.polarNight : theme.colors.arcticWind};
+    darkMode
+      ? theme.palette.background.contrast
+      : theme.palette.background.main};
   padding-bottom: ${({ hasButton, noPadding, theme }) =>
     noPadding ? '0' : hasButton ? theme.spacing(12) : theme.spacing(2)};
   padding-top: ${({ theme }) => theme.spacing(6)};
@@ -178,8 +182,8 @@ export const StyledCloseIcon = styled.div<{
     props.transparantBg
       ? 'transparent'
       : props.darkMode
-      ? props.theme.colors.polarNight
-      : props.theme.colors.arcticWind};
+      ? props.theme.palette.background.contrast
+      : props.theme.palette.background.main};
   display: flex;
   justify-content: center;
   align-items: center;

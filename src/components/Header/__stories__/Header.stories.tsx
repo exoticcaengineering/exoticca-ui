@@ -43,7 +43,7 @@ const CenterComponent = () => (
 );
 const RightComponent = () => (
   <Box>
-    <Icon icon="search" size="regular" stroke="arcticWind" />
+    <Icon icon="search" size="regular" stroke="currentColor" />
     <TextBody2 as="span">right</TextBody2>
   </Box>
 );

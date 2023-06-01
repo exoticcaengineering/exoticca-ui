@@ -42,7 +42,7 @@ export const Accordion: FC<Props> = ({
         {header && (
           <StyledHeader>
             {startIcon && (
-              <Icon size="regular" stroke="polarNight" {...startIcon} />
+              <Icon size="regular" stroke="primary" {...startIcon} />
             )}
             {header}
           </StyledHeader>
@@ -50,7 +50,7 @@ export const Accordion: FC<Props> = ({
 
         <Icon
           size="regular"
-          stroke="polarNight"
+          stroke="primary"
           rotate={isEnabledAndOpen ? 180 : 0}
           {...endIcon}
         />

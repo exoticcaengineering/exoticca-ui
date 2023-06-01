@@ -6,14 +6,7 @@ export default {
   component: IconButton,
   argTypes: {
     color: {
-      options: [
-        'polarNight',
-        'arcticWind',
-        'pacificOcean',
-        'savageForest',
-        'silentSavana',
-        'carribeanSunrise',
-      ],
+      options: ['primary', 'secondary', 'promotion'],
       control: { type: 'select' },
       category: 'Prop',
     },

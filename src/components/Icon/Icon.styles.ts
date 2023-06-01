@@ -23,21 +23,25 @@ export const StyledWrapper = styled(Box)<StyledProps>`
     display: inline-block;
   }
 
-  ${({ stroke, theme, originalIconColor }) =>
+  ${({ stroke, theme, originalIconColor, strokeShade = 'main' }) =>
     stroke &&
     !originalIconColor &&
     css`
       & > svg * {
-        stroke: ${theme.colors[stroke]};
+        stroke: ${stroke === 'currentColor'
+          ? 'currentColor'
+          : theme.palette[stroke][strokeShade]};
       }
     `}
 
-  ${({ fill, theme, originalIconColor }) =>
+  ${({ fill, theme, originalIconColor, fillShade = 'main' }) =>
     fill &&
     !originalIconColor &&
     css`
       & > svg * {
-        fill: ${theme.colors[fill]};
+        fill: ${fill === 'currentColor'
+          ? 'currentColor'
+          : theme.palette[fill][fillShade]};
       }
     `}
 `;

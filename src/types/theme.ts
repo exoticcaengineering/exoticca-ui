@@ -289,6 +289,15 @@ type ColorsType =
   | 'blue20'
   | 'darkGrey';
 
+export interface ColorShade {
+  main: string;
+  light: string;
+  medium: string;
+  contrast: string;
+}
+
+type PaletteType = 'primary' | 'secondary' | 'promotion' | 'background';
+
 type FontFamilyType =
   | 'main'
   | 'medium'
@@ -397,6 +406,7 @@ export type RebrandPalette = Record<RebrandPaletteType, string>;
 export type LineHeight = Record<LineHeightType, number>;
 export type NewPalette = Record<NewPaletteType, string>;
 export type Colors = Record<ColorsType, string>;
+export type Palette = Record<PaletteType, ColorShade>;
 export type BorderRadius = Record<BorderRadiusType, string>;
 export type BoxShadow = Record<BoxShadowType, string>;
 export type TextShadow = Record<TextShadowType, string>;
@@ -422,6 +432,7 @@ export interface Theme {
   newBreakpoints: NewBreakpoints;
   typography: Font;
   colors: Colors;
+  palette: Palette;
   borderRadius: BorderRadius;
   newBorderRadius: BorderRadius;
   boxShadow: BoxShadow;

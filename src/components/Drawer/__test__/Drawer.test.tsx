@@ -11,7 +11,7 @@ describe('Drawer', () => {
 
     const button = screen.getByText(/Open Drawer/i);
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     const drawer = await screen.findByRole('navigation');
 
@@ -31,7 +31,7 @@ describe('Drawer', () => {
 
     const button = screen.getByText(/Open Drawer/i);
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     const content = await screen.findByText(/Drawer contents/i);
 

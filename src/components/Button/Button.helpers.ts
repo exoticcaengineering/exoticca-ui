@@ -1,56 +1,37 @@
-import { Colors, Theme } from 'src/types';
-import { ButtonColor, ButtonSize, ButtonVariant } from './Button.types';
+import { Theme } from 'src/types';
+import {
+  ButtonColor,
+  ButtonHelperParams,
+  ButtonSize,
+  ButtonVariant,
+} from './Button.types';
 import { IconSize } from '../Icon';
 
-const primaryHoverBackgroundColor: Record<ButtonColor, keyof Colors> = {
-  arcticWind: 'polarNightMedium',
-  polarNight: 'polarNightMedium',
-  pacificOcean: 'pacificOceanMedium',
-  savageForest: 'savageForestMedium',
-  silentSavana: 'silentSavanaMedium',
-  carribeanSunrise: 'carribeanSunriseMedium',
-};
-
-const secondaryHoverBackgroundColor: Partial<
-  Record<keyof Colors, keyof Colors>
-> = {
-  arcticWind: 'polarNightMedium',
-  polarNight: 'polarNightLight',
-};
-
-const primaryDisabledBackgroundColor: Record<ButtonColor, keyof Colors> = {
-  arcticWind: 'polarNightLight',
-  polarNight: 'polarNightLight',
-  pacificOcean: 'pacificOceanLight',
-  savageForest: 'savageForestLight',
-  silentSavana: 'silentSavanaLight',
-  carribeanSunrise: 'carribeanSunriseLight',
-};
-
-export const setBackgroundColor = (
-  variant: ButtonVariant,
-  color: ButtonColor,
-): keyof Colors => {
-  if (variant === 'primary') return color;
+export const setBackgroundColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  if (variant === 'primary') return theme.palette[color].main;
   return 'transparent';
 };
 
-export const setHoverBackgroundColor = (
-  variant: ButtonVariant,
-  color: ButtonColor,
-) => {
-  if (variant === 'primary')
-    return primaryHoverBackgroundColor[color] ?? 'polarNightMedium';
+export const setHoverBackgroundColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  if (variant === 'primary') return theme.palette[color].medium;
 
-  return secondaryHoverBackgroundColor[color] ?? 'polarNightLight';
+  return theme.palette[color].light;
 };
 
-export const setDisabledBackgroundColor = (
-  variant: ButtonVariant,
-  color: ButtonColor,
-) => {
-  if (variant === 'primary')
-    return primaryDisabledBackgroundColor[color] ?? 'polarNightLight';
+export const setDisabledBackgroundColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  if (variant === 'primary') return theme.palette[color].light;
   return 'transparent';
 };
 
@@ -59,54 +40,51 @@ export const setDisabledBorderColor = (variant: ButtonVariant) => {
   return 'transparent';
 };
 
-export const setPrimaryTextColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'polarNight') return 'arcticWind';
-  return 'polarNight';
+export const setTextColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  if (variant === 'primary') return theme.palette[color].contrast;
+  return theme.palette[color].main;
 };
 
-//secondary  only have polarNight and arcticWind colors
-export const setSecondaryTextColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'arcticWind') return 'arcticWind';
-  return 'polarNight';
-};
-
-// tertiary only have polarNight and arcticWind colors
-export const setTertiaryTextColor = (color: ButtonColor): keyof Colors => {
-  if (color === 'arcticWind') return 'arcticWind';
-  return 'polarNight';
-};
-
-export const setTextColor = (variant: ButtonVariant, color: ButtonColor) => {
-  switch (variant) {
-    case 'primary':
-      return setPrimaryTextColor(color);
-    case 'secondary':
-      return setSecondaryTextColor(color);
-    case 'tertiary':
-      return setTertiaryTextColor(color);
-  }
-};
-
-export const setBorderColor = (variant: ButtonVariant, color: ButtonColor) => {
-  if (variant === 'secondary') return setTextColor(variant, color);
+export const setBorderColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  if (variant === 'secondary') return setTextColor({ theme, variant, color });
   return 'transparent';
 };
 
-export const setFocusBoxShadowColor = (
-  variant: ButtonVariant,
-  color: ButtonColor,
-) => {
-  if (variant === 'primary') return setBackgroundColor(variant, color);
-  if (variant === 'secondary') return setTextColor(variant, color);
+export const setFocusBoxShadowColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  if (variant === 'primary')
+    return setBackgroundColor({ theme, variant, color });
+  if (variant === 'secondary') return theme.palette[color].medium;
   return 'transparent';
 };
 
-export const setFocusBorderColor = (
-  variant: ButtonVariant,
-  color: ButtonColor,
-) => {
-  if (variant === 'primary') return setTextColor(variant, color);
-  return setTextColor(variant, color);
+export const setFocusBorderColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  return setTextColor({ theme, variant, color });
+};
+
+// setFocusBackgroundColor
+export const setFocusBackgroundColor = ({
+  theme,
+  variant = 'primary',
+  color = 'primary',
+}: ButtonHelperParams) => {
+  if (variant === 'tertiary') return theme.palette[color].light;
+  return setBackgroundColor({ theme, variant, color });
 };
 
 export const setPadding = (theme: Theme, size: ButtonSize) => {
