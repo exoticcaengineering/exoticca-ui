@@ -438,9 +438,9 @@ const palette: Palette = {
     contrast: rebrandPalette.polarNight,
   },
   promotion: {
-    main: rebrandPalette.savageForest,
-    light: rebrandPalette.savageForestLight,
-    medium: rebrandPalette.savageForestMedium,
+    main: rebrandPalette.carribeanSunrise,
+    light: rebrandPalette.carribeanSunriseLight,
+    medium: rebrandPalette.carribeanSunriseMedium,
     contrast: rebrandPalette.polarNight,
   },
   background: {
