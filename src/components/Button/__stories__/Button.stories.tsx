@@ -76,18 +76,6 @@ const ButtonVariations = (props: Props) => {
           text="primary button promotion color"
           color="promotion"
         />
-        {/* <Button
-          {...props}
-          variant="primary"
-          text="primary button"
-          color="silentSavana"
-        />
-        <Button
-          {...props}
-          variant="primary"
-          text="primary button"
-          color="carribeanSunrise"
-        /> */}
       </StyledRowWrapper>
       <StyledRowWrapper>
         <Button {...props} variant="secondary" text="secondary button" />
