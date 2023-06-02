@@ -35,7 +35,7 @@ export const GlobalStyleDefaultCss = css`
       border-top: 1px solid ${({ theme }) => theme.colors.silver};
     }
     body {
-      color: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.palette.text.main};
       font-size: 1rem;
       line-height: 1.5;
       margin: 0;
@@ -59,7 +59,7 @@ export const GlobalStyleDefaultCss = css`
       color: inherit;
     }
     button {
-      color: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.palette.text.main};
       cursor: pointer;
     }
     picture {
