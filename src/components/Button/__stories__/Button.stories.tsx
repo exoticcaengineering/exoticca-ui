@@ -13,21 +13,14 @@ export default {
   args: {
     text: 'I am a button',
     size: 'medium',
-    color: 'polarNight',
+    color: 'primary',
     shape: 'rounded',
     state: 'default',
     variant: 'primary',
   },
   argTypes: {
     color: {
-      options: [
-        'polarNight',
-        'arcticWind',
-        'pacificOcean',
-        'savageForest',
-        'silentSavana',
-        'carribeanSunrise',
-      ],
+      options: ['primary', 'secondary', 'promotion'],
       control: { type: 'select' },
       category: 'Prop',
     },
@@ -68,32 +61,20 @@ const ButtonVariations = (props: Props) => {
         <Button
           {...props}
           variant="primary"
-          text="default primary button"
-          color="polarNight"
+          text="Primary button primary color"
+          color="primary"
         />
         <Button
           {...props}
           variant="primary"
-          text="primary button"
-          color="pacificOcean"
+          text="primary button secondary color"
+          color="secondary"
         />
         <Button
           {...props}
           variant="primary"
-          text="primary button"
-          color="savageForest"
-        />
-        <Button
-          {...props}
-          variant="primary"
-          text="primary button"
-          color="silentSavana"
-        />
-        <Button
-          {...props}
-          variant="primary"
-          text="primary button"
-          color="carribeanSunrise"
+          text="primary button promotion color"
+          color="promotion"
         />
       </StyledRowWrapper>
       <StyledRowWrapper>

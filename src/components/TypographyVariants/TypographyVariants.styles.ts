@@ -96,6 +96,9 @@ export const StyledButton1 = styled(Typography).attrs({
   fontSize: 'button2',
   lineHeight: 'tight',
 })`
+  @media (min-width: ${({ theme }) => theme.newBreakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.typography.fontSize.button1};
+  }
   @media print {
     font-size: ${({ theme }) => theme.typography.fontSize.button1};
   }
@@ -105,6 +108,9 @@ export const StyledButton2 = styled(Typography).attrs({
   fontSize: 'button3',
   lineHeight: 'tight',
 })`
+  @media (min-width: ${({ theme }) => theme.newBreakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.typography.fontSize.button2};
+  }
   @media print {
     font-size: ${({ theme }) => theme.typography.fontSize.button2};
   }

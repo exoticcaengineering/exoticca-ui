@@ -11,7 +11,7 @@ describe('Button variations', () => {
   it('renders primary button correctly', () => {
     render(<Variations />);
     const primaryButton = screen
-      .getByText('default primary button')
+      .getByText('Primary button primary color')
       .closest('button');
     expect(primaryButton).toBeInTheDocument();
     expect(primaryButton).toHaveStyle('background-color: #121212');

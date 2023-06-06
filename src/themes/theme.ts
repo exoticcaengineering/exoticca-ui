@@ -19,6 +19,7 @@ import {
   TextShadow,
   RebrandPalette,
   PrintSize,
+  Palette,
 } from 'src/types/theme';
 
 import { GlobalStyleDefaultCss, GlobalStyleNewBrandingCss } from './global.css';
@@ -422,6 +423,34 @@ export const colors: Colors = {
   darkGrey: '#AEADAD',
 };
 
+//new color system
+const palette: Palette = {
+  primary: {
+    main: rebrandPalette.polarNight,
+    light: rebrandPalette.polarNightLight,
+    medium: rebrandPalette.polarNightMedium,
+    contrast: rebrandPalette.arcticWind,
+  },
+  secondary: {
+    main: rebrandPalette.arcticWind,
+    light: rebrandPalette.polarNightMedium,
+    medium: rebrandPalette.polarNightMedium,
+    contrast: rebrandPalette.polarNight,
+  },
+  promotion: {
+    main: rebrandPalette.carribeanSunrise,
+    light: rebrandPalette.carribeanSunriseLight,
+    medium: rebrandPalette.carribeanSunriseMedium,
+    contrast: rebrandPalette.polarNight,
+  },
+  background: {
+    main: rebrandPalette.arcticWind,
+    light: rebrandPalette.polarNightLight,
+    medium: rebrandPalette.polarNightMedium,
+    contrast: rebrandPalette.polarNight,
+  },
+};
+
 export const newBreakpoints: NewBreakpoints = {
   mobile: '360px',
   phablet: '640px',
@@ -524,6 +553,7 @@ export const themeDefault: Theme = {
     lineHeight,
   },
   colors,
+  palette,
   borderRadius,
   newBorderRadius,
   boxShadow,

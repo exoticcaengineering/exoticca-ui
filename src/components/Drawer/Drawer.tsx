@@ -53,9 +53,10 @@ const DrawerComp = (
             <StyledIconWrapper>
               <IconButton
                 icon={{ icon: 'close' }}
-                color="white"
+                color="primary"
                 size="medium"
                 onClick={handleClose}
+                variant="tertiary"
               />
             </StyledIconWrapper>
 

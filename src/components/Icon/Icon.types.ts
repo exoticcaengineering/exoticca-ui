@@ -1,4 +1,4 @@
-import { Colors } from 'src/types';
+import { ColorShade, Palette } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconName } from 'src/types/IconNames';
 import * as CSS from 'csstype';
@@ -13,8 +13,10 @@ export type IconSize =
 export interface IconConfig {
   icon: IconName;
   size?: IconSize;
-  fill?: keyof Colors;
-  stroke?: keyof Colors;
+  fill?: keyof Palette | 'currentColor';
+  fillShade?: keyof ColorShade;
+  stroke?: keyof Palette | 'currentColor';
+  strokeShade?: keyof ColorShade;
   width?: CSS.Property.Width | number;
   height?: CSS.Property.Height | number;
   originalIconColor?: boolean;

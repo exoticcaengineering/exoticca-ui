@@ -2,6 +2,7 @@ import { ComponentMeta, Story } from '@storybook/react';
 import { ComponentProps, useRef } from 'react';
 import { Modal } from '../Modal';
 import { ModalRef } from '../Modal.types';
+import { TextBody1 } from 'src/components/TypographyVariants';
 
 export default {
   title: 'Components/Modal',
@@ -42,7 +43,7 @@ const Template: Story = () => {
         Open modal
       </div>
       <Modal ref={modalRef} id={'hello'}>
-        <h3>Hello, I am a modal</h3>
+        <TextBody1>Hello, I am a modal</TextBody1>
       </Modal>
     </div>
   );
