@@ -1,10 +1,5 @@
 import { Theme } from 'src/types';
-import {
-  ButtonColor,
-  ButtonHelperParams,
-  ButtonSize,
-  ButtonVariant,
-} from './Button.types';
+import { ButtonHelperParams, ButtonSize, ButtonVariant } from './Button.types';
 import { IconSize } from '../Icon';
 
 export const setBackgroundColor = ({

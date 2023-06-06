@@ -433,8 +433,8 @@ const palette: Palette = {
   },
   secondary: {
     main: rebrandPalette.arcticWind,
-    light: rebrandPalette.polarNightLight,
-    medium: rebrandPalette.polarNightLight,
+    light: rebrandPalette.polarNightMedium,
+    medium: rebrandPalette.polarNightMedium,
     contrast: rebrandPalette.polarNight,
   },
   promotion: {
