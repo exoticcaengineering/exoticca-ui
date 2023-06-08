@@ -8,6 +8,7 @@ import {
   getColor,
   getPadding,
   getUnderLineBottomPosition,
+  getUnderLineLeftRightPosition,
 } from './Dropdown.helpers';
 
 export const StyledDropdownWrapper = styled(Box)<StyledProps>`
@@ -31,6 +32,17 @@ export const StyledDropdownButton = styled.button<StyledProps>`
   padding: ${({ theme, size = 'medium' }) => getPadding(theme, size)};
   color: ${({ theme, inverseStyle, isOpen }) =>
     theme.colors[getColor({ inverseStyle, isOpen })]};
+  &:hover {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: ${({ size = 'medium' }) => getUnderLineBottomPosition(size)};
+      left: ${({ size = 'medium' }) => getUnderLineLeftRightPosition(size)};
+      right: ${({ size = 'medium' }) => getUnderLineLeftRightPosition(size)};
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
 `;
 
 export const StyledDropdownList = styled(Box)<StyledProps>`
@@ -73,17 +85,6 @@ export const StyledFirstPart = styled.div`
 export const StyledButtonTextWrapper = styled.div<StyledProps>`
   position: relative;
   overflow: hidden;
-  &:hover {
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: ${({ size = 'medium' }) => getUnderLineBottomPosition(size)};
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: currentColor;
-    }
-  }
 `;
 
 export const StyledIcon = styled(Icon)`

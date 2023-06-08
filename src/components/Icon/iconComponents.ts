@@ -63,6 +63,7 @@ import { IconCog } from './SVGIcons/IconCog';
 import { IconBaggage } from 'src/components/Icon/SVGIcons/IconBaggage';
 import { IconNoBaggage } from 'src/components/Icon/SVGIcons/IconNoBaggage';
 import { IconHandBaggage } from 'src/components/Icon/SVGIcons/IconHandBaggage';
+import { IconArrowDownCircle } from 'src/components/Icon/SVGIcons/IconArrowDownCircle';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -127,4 +128,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'travel-baggage': IconBaggage,
   'travel-no-baggage': IconNoBaggage,
   'travel-hand-baggage': IconHandBaggage,
+  'arrow-down-circle': IconArrowDownCircle,
 };

@@ -42,8 +42,17 @@ export const getPadding = (theme: Theme, size: DropDownSize) => {
 export const getUnderLineBottomPosition = (size: DropDownSize) => {
   switch (size) {
     case 'small':
-      return '-6px';
+      return '6px';
     case 'medium':
-      return '-8px';
+      return '6px';
+  }
+};
+
+export const getUnderLineLeftRightPosition = (size: DropDownSize) => {
+  switch (size) {
+    case 'small':
+      return '4px';
+    case 'medium':
+      return '12px';
   }
 };

@@ -11,7 +11,7 @@ export const Button: FC<Props> = ({
   size = 'medium',
   color = 'primary',
   onClick,
-  shape = 'square',
+  shape = 'rounded',
   startIcon,
   endIcon,
   variant = 'primary',

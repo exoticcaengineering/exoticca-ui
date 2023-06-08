@@ -41,6 +41,14 @@ export const iconNames = [
   'twitter-box',
   'youtube-box',
   'spotify-box',
+  'arrow-down-circle',
+  'clock',
+  'clock-fast',
+  'smile',
+  'cog',
+  'travel-baggage',
+  'travel-no-baggage',
+  'travel-hand-baggage',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
@@ -56,15 +64,8 @@ export const iconNames = [
   'star-4',
   'star-4-sp',
   'star-3-sp',
-  'clock',
-  'clock-fast',
-  'smile',
-  'cog',
-  'travel-baggage',
-  'travel-no-baggage',
-  'travel-hand-baggage',
 ] as const;
 
-type IconNameType = typeof iconNames[number];
+type IconNameType = (typeof iconNames)[number];
 
 export type IconName = IconNameType;

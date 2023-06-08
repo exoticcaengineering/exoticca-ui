@@ -56,9 +56,9 @@ const Template = (args: Props) => (
       }}
     >
       <Dropdown
+        text="dropdown button"
         {...args}
         startIcon={{ icon: 'flag-uk' }}
-        text="dropdown button"
         dropdownList={(props) => (
           <DropdownList
             {...props}
@@ -67,6 +67,7 @@ const Template = (args: Props) => (
             inverseStyle={args.inverseStyle}
           />
         )}
+        css={{ maxWidth: '250px' }}
       />
     </div>
   </div>
