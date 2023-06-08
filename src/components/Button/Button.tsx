@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Props } from './Button.types';
-import { StyledButton } from './Button.styles';
-import { Icon } from '../Icon/Icon';
+import { StyledButton, StyledIcon } from './Button.styles';
 import { Spinner } from './Spinner';
 import { getIconSize } from './Button.helpers';
 import { Typography } from '../Typography';
@@ -11,7 +10,7 @@ export const Button: FC<Props> = ({
   size = 'medium',
   color = 'primary',
   onClick,
-  shape = 'square',
+  shape = 'rounded',
   startIcon,
   endIcon,
   variant = 'primary',
@@ -30,13 +29,13 @@ export const Button: FC<Props> = ({
   const renderStartIcon = () => {
     if (!startIcon) return;
     if (isLoading) return renderLoadingIcon();
-    return <Icon size={iconSize} stroke="currentColor" {...startIcon} />;
+    return <StyledIcon size={iconSize} stroke="currentColor" {...startIcon} />;
   };
 
   const renderEndIcon = () => {
     if (!endIcon) return;
     if (isLoading) return renderLoadingIcon();
-    return <Icon size={iconSize} stroke="currentColor" {...endIcon} />;
+    return <StyledIcon size={iconSize} stroke="currentColor" {...endIcon} />;
   };
 
   return (

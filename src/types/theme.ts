@@ -412,7 +412,7 @@ export type BoxShadow = Record<BoxShadowType, string>;
 export type TextShadow = Record<TextShadowType, string>;
 export type Duration = Record<DurationType, string>;
 export type ZIndex = Record<ZIndexType, number>;
-interface Font {
+export interface Font {
   fontFamily: FontFamily;
   fontSize: FontSize;
   printSize: PrintSize;

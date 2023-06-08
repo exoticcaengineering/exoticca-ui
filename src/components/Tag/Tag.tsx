@@ -1,20 +1,19 @@
 import { FC } from 'react';
 import { Props } from './Tag.types';
-import { TextCaption } from 'src/components/TypographyVariants';
 import { StyledWrapper } from './Tag.styles';
+import { TextCaption } from 'src/components/TypographyVariants';
 
 export const Tag: FC<Props> = ({
   text,
-  textColor = 'polarNight',
   size = 'small',
-  color = 'arcticWind',
-  variant = 'contained',
+  color = 'primary',
+  variant = 'primary',
   className,
   testId = 'tag',
 }) => {
   const renderText = () => {
     if (size === 'small') {
-      return <TextCaption color={textColor}>{text}</TextCaption>;
+      return <TextCaption>{text}</TextCaption>;
     }
   };
   return (
