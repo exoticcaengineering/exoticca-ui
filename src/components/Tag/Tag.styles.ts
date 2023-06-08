@@ -7,14 +7,18 @@ export const StyledWrapper = styled(Box)<StyledProps>`
   padding: ${({ theme, size }) => {
     if (size === 'small') return theme.spacing(0.75, 1);
   }};
-  background: ${({ theme, color = 'arcticWind', variant }) => {
-    if (variant === 'contained') return theme.colors[color];
-    return theme.colors.white;
+  background: ${({ theme, color = 'primary', variant }) => {
+    if (variant === 'primary') return theme.palette[color].main;
+    return 'transparent';
   }};
   border-radius: ${({ theme }) => theme.newBorderRadius.semiRounded};
   border: 1px solid
-    ${({ theme, color = 'arcticWind', variant }) => {
-      if (variant === 'outlined') return theme.colors[color];
-      return theme.colors.transparent;
+    ${({ theme, color = 'primary', variant }) => {
+      if (variant === 'primary') return 'transparent';
+      return theme.palette[color].main;
     }};
+  color: ${({ theme, color = 'primary', variant }) => {
+    if (variant === 'primary') return theme.palette[color].contrast;
+    return theme.palette.background.contrast;
+  }};
 `;

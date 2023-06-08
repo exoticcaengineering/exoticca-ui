@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Tag } from '../Tag';
+import { Props } from '../Tag.types';
+import { StyledRowWrapper } from './Story.styles';
 
 export default {
   title: 'Components/Tag',
@@ -8,22 +10,15 @@ export default {
 
 type Story = StoryObj<typeof Tag>;
 
-export const Contained: Story = {
-  args: {
-    text: 'Contained',
-    textColor: 'polarNight',
-    size: 'small',
-    color: 'silentSavana',
-    variant: 'contained',
-  },
+const VariantsStory = (props: Props) => {
+  return (
+    <StyledRowWrapper>
+      <Tag {...props} text="Primary tag" variant="primary" />
+      <Tag {...props} text="Secondary tag" variant="secondary" />
+    </StyledRowWrapper>
+  );
 };
 
-export const Outlined: Story = {
-  args: {
-    text: 'Outlined',
-    textColor: 'polarNight',
-    size: 'small',
-    color: 'savageForest',
-    variant: 'outlined',
-  },
+export const Variants: Story = {
+  render: (args) => <VariantsStory {...args} />,
 };
