@@ -3,7 +3,7 @@ import { DropDownPosition } from '../Dropdown.types';
 
 export interface DropdownListProps {
   position: DropDownPosition;
-  darkMode?: boolean;
+
   subMenuItems: {
     parent: ParentItem;
     children: ChildItem;
@@ -11,7 +11,6 @@ export interface DropdownListProps {
 }
 
 export interface ListParentItemsProps {
-  darkMode?: boolean;
   subItem: SubMenuItem;
   setIsSelected: (state: string) => void;
   isSelected: string;
@@ -19,7 +18,6 @@ export interface ListParentItemsProps {
 }
 
 export interface ListChildrenItemsProps {
-  darkMode?: boolean;
   isSelected: string;
   childrenItems: SubMenuItem;
 }

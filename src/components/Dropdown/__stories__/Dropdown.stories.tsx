@@ -29,10 +29,6 @@ export default {
       options: ['small', 'medium'],
       control: { type: 'radio' },
     },
-    darkMode: {
-      options: [true, false],
-      control: { type: 'radio' },
-    },
   },
 } as Meta<typeof Dropdown>;
 
@@ -57,6 +53,7 @@ const Template = (args: Props) => (
     >
       <Dropdown
         text="dropdown button"
+        textColor="secondary"
         {...args}
         startIcon={{ icon: 'flag-uk' }}
         dropdownList={(props) => (
@@ -64,7 +61,6 @@ const Template = (args: Props) => (
             {...props}
             position={args.position ?? 'left'}
             subMenuItems={menuItems[0][0].items}
-            darkMode={args.darkMode}
           />
         )}
         css={{ maxWidth: '250px' }}

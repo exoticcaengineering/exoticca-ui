@@ -26,7 +26,8 @@ export const Dropdown: FC<Props> = ({
   testId = 'dropdown',
   onClick,
   onClose,
-  darkMode,
+  textColor,
+  openBackgroundColor,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -87,7 +88,8 @@ export const Dropdown: FC<Props> = ({
         isOpen={isOpen}
         size={size}
         className={className}
-        darkMode={darkMode}
+        textColor={textColor}
+        openBackgroundColor={openBackgroundColor}
       >
         <StyledFirstPart>
           {startIcon && <StyledIcon {...startIcon} />}
@@ -99,10 +101,8 @@ export const Dropdown: FC<Props> = ({
 
       {isOpen && (
         <StyledDropdownList
-          darkMode={darkMode}
           isOpen={isOpen}
           position={position}
-          backgroundShade={darkMode ? 'contrast' : 'main'}
           padding={[1.5, 2]}
           borderRadius={setBorderRadius(position)}
           testId={`${testId}-list`}

@@ -1,5 +1,6 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconConfig } from '../Icon';
+import { Palette, Theme } from 'src/types';
 
 export type DropDownPosition = 'left' | 'right';
 
@@ -15,11 +16,15 @@ export interface Props extends ComponentPropsBase {
   startIcon?: IconConfig;
   endIcon?: IconConfig;
   dropdownList: (props: DropdownListProps) => JSX.Element;
-  darkMode?: boolean;
+  textColor?: keyof Palette;
+  openBackgroundColor?: keyof Palette;
 }
 
 export interface StyledProps
-  extends Pick<Props, 'position' | 'size' | 'darkMode'> {
+  extends Pick<
+    Props,
+    'position' | 'size' | 'textColor' | 'openBackgroundColor'
+  > {
   isOpen?: boolean;
 }
 
@@ -28,6 +33,8 @@ export interface DropdownListProps {
 }
 
 export interface GetColorParams {
+  theme: Theme;
   isOpen?: boolean;
-  darkMode?: boolean;
+  openBackgroundColor?: keyof Palette;
+  textColor?: keyof Palette;
 }

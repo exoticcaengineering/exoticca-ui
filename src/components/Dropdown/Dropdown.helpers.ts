@@ -1,34 +1,35 @@
-import { Colors } from 'src/types';
 import { GetColorParams } from './Dropdown.types';
 import { Theme } from 'src/types';
 import { DropDownSize } from './Dropdown.types';
 
 export const getBorderColor = ({
+  theme,
   isOpen,
-  darkMode,
-}: GetColorParams): keyof Colors => {
+  openBackgroundColor = 'background',
+}: GetColorParams) => {
   if (!isOpen) return 'transparent';
-  if (darkMode) return 'arcticWind';
-  return 'polarNightMedium';
+  return theme.palette[openBackgroundColor].medium;
 };
 
 export const getBackgroundColor = ({
+  theme,
   isOpen,
-  darkMode,
-}: GetColorParams): keyof Colors => {
+  openBackgroundColor = 'background',
+}: GetColorParams) => {
   if (!isOpen) return 'transparent';
-  if (darkMode) return 'polarNight';
-  return 'arcticWind';
+  return theme.palette[openBackgroundColor].main;
 };
 
-export const getColor = ({
+export const getTextColor = ({
+  theme,
   isOpen,
-  darkMode,
-}: GetColorParams): keyof Colors => {
-  if (!darkMode) {
-    return isOpen ? 'polarNight' : 'arcticWind';
-  }
-  return isOpen ? 'arcticWind' : 'polarNight';
+  openBackgroundColor = 'background',
+  textColor,
+}: GetColorParams) => {
+  if (isOpen) return theme.palette[openBackgroundColor].contrast;
+  if (textColor) return theme.palette[textColor].main;
+
+  return 'currentColor';
 };
 export const getPadding = (theme: Theme, size: DropDownSize) => {
   const paddings = {
