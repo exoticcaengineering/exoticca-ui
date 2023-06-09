@@ -25,7 +25,7 @@ export const Icons: ComponentStory<typeof Icon> = (args) => {
   return (
     <StyledIconsWrapper>
       {iconNames.map((iconName) => (
-        <Box boxShadow="s" padding={[2]} background="cararra" key={iconName}>
+        <Box boxShadow="s" padding={[2]} key={iconName}>
           <Typography>{iconName}</Typography>
           <Icon {...args} icon={iconName} />
         </Box>

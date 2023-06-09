@@ -5,27 +5,27 @@ import { DropDownSize } from './Dropdown.types';
 
 export const getBorderColor = ({
   isOpen,
-  inverseStyle,
+  darkMode,
 }: GetColorParams): keyof Colors => {
   if (!isOpen) return 'transparent';
-  if (inverseStyle) return 'arcticWind';
+  if (darkMode) return 'arcticWind';
   return 'polarNightMedium';
 };
 
 export const getBackgroundColor = ({
   isOpen,
-  inverseStyle,
+  darkMode,
 }: GetColorParams): keyof Colors => {
   if (!isOpen) return 'transparent';
-  if (inverseStyle) return 'polarNight';
+  if (darkMode) return 'polarNight';
   return 'arcticWind';
 };
 
 export const getColor = ({
   isOpen,
-  inverseStyle,
+  darkMode,
 }: GetColorParams): keyof Colors => {
-  if (!inverseStyle) {
+  if (!darkMode) {
     return isOpen ? 'polarNight' : 'arcticWind';
   }
   return isOpen ? 'arcticWind' : 'polarNight';

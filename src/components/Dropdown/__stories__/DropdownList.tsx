@@ -8,7 +8,7 @@ import { DropdownListProps, SubMenuItem } from './Story.types';
 export const DropdownList = ({
   subMenuItems,
   position,
-  inverseStyle,
+  darkMode,
 }: DropdownListProps) => {
   const [isSelected, setIsSelected] = useState('');
   const [childrenItems, setChildrenItems] = useState<SubMenuItem | null>(null);
@@ -18,7 +18,7 @@ export const DropdownList = ({
       <Wrapper>
         {subMenuItems.map((subItem) => (
           <ListParentItems
-            inverseStyle={inverseStyle}
+            darkMode={darkMode}
             key={subItem.parent.name}
             subItem={subItem}
             setIsSelected={setIsSelected}
@@ -29,7 +29,7 @@ export const DropdownList = ({
       </Wrapper>
       {childrenItems && childrenItems.children.items.length !== 0 && (
         <ListChildrenItems
-          inverseStyle={inverseStyle}
+          darkMode={darkMode}
           isSelected={isSelected}
           childrenItems={childrenItems}
         />

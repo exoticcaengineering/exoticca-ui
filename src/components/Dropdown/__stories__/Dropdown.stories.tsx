@@ -29,7 +29,7 @@ export default {
       options: ['small', 'medium'],
       control: { type: 'radio' },
     },
-    inverseStyle: {
+    darkMode: {
       options: [true, false],
       control: { type: 'radio' },
     },
@@ -64,7 +64,7 @@ const Template = (args: Props) => (
             {...props}
             position={args.position ?? 'left'}
             subMenuItems={menuItems[0][0].items}
-            inverseStyle={args.inverseStyle}
+            darkMode={args.darkMode}
           />
         )}
         css={{ maxWidth: '250px' }}

@@ -17,7 +17,14 @@ export const StyledColorBlockTextWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const StyledColorWrapper = styled.div`
+export const StyledColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(3)};
+  flex-wrap: wrap;
+`;
+
+export const StyledRowWrapper = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(3)};
   flex-wrap: wrap;

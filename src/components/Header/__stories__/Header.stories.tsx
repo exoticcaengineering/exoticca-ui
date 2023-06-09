@@ -24,9 +24,13 @@ export default {
         'Instantiate a component and it will be displayed on the right side.',
       type: { required: false },
     },
-    backgroundType: {
+    background: {
       description:
-        'Pass it one of the props and it will display a different background.',
+        'Pass the background color you want to display. It will be displayed in the background.',
+    },
+    backgroundShade: {
+      description:
+        'Pass the background shade of the background color. By default, it will be displayed in the main shade',
     },
   },
 } as ComponentMeta<typeof Header>;
@@ -36,16 +40,12 @@ const Template: ComponentStory<typeof Header> = (args) => {
 };
 
 const LeftComponent = () => <TextBody2>Left</TextBody2>;
-const CenterComponent = () => (
-  <Box>
-    <TextBody2 as="span">center</TextBody2>
-  </Box>
-);
+const CenterComponent = () => <TextBody2 as="span">center</TextBody2>;
 const RightComponent = () => (
-  <Box>
+  <div>
     <Icon icon="search" size="regular" stroke="currentColor" />
     <TextBody2 as="span">right</TextBody2>
-  </Box>
+  </div>
 );
 
 export const LeftCenterRight = Template.bind({});

@@ -2,39 +2,68 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FC } from 'react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
-import { Colors } from 'src/types/theme';
-import { colors as defaultThemeColors } from '../theme';
+import { Palette } from 'src/types/theme';
+import { palette } from '../theme';
 
 import {
   StyledColorBlockTextWrapper,
-  StyledColorWrapper,
   StyledColorBlock,
+  StyledColumnWrapper,
+  StyledRowWrapper,
 } from './themeStory.styles';
 import { ColorBlockProps, ColorPaletteProps } from './themeStory.types';
 
-const ColorBlock: FC<ColorBlockProps> = ({ colorName, colorValue }) => (
+const ColorBlock: FC<ColorBlockProps> = ({
+  colorName,
+  colorValue,
+  colorShade,
+}) => (
   <Box boxShadow="s" padding={[2]}>
     <StyledColorBlockTextWrapper>
-      <Typography>theme.colors.{colorName}</Typography>
+      <Typography fontSize="heading2">{colorShade}</Typography>
       <Typography>{colorValue}</Typography>
     </StyledColorBlockTextWrapper>
 
-    <StyledColorBlock background={colorName} boxShadow="s" />
+    <StyledColorBlock
+      background={colorName}
+      backgroundShade={colorShade}
+      boxShadow="s"
+    />
   </Box>
 );
 
 const ColorPalette: FC<ColorPaletteProps> = ({ colors }) => {
-  const sortedColorKeys = (Object.keys(colors) as Array<keyof Colors>).sort();
+  const colorKeys = Object.keys(colors) as Array<keyof Palette>;
   return (
-    <StyledColorWrapper>
-      {sortedColorKeys.map((colorName) => (
-        <ColorBlock
-          colorName={colorName}
-          colorValue={colors[colorName]}
-          key={colorName}
-        />
+    <StyledColumnWrapper>
+      {colorKeys.map((colorName) => (
+        <StyledColumnWrapper key={colorName}>
+          <Typography fontSize="heading1">{colorName}</Typography>
+          <StyledRowWrapper>
+            <ColorBlock
+              colorName={colorName}
+              colorShade="main"
+              colorValue={colors[colorName].main}
+            />
+            <ColorBlock
+              colorName={colorName}
+              colorShade="light"
+              colorValue={colors[colorName].light}
+            />
+            <ColorBlock
+              colorName={colorName}
+              colorShade="medium"
+              colorValue={colors[colorName].medium}
+            />
+            <ColorBlock
+              colorName={colorName}
+              colorShade="contrast"
+              colorValue={colors[colorName].contrast}
+            />
+          </StyledRowWrapper>
+        </StyledColumnWrapper>
       ))}
-    </StyledColorWrapper>
+    </StyledColumnWrapper>
   );
 };
 
@@ -50,5 +79,5 @@ const Template: ComponentStory<typeof ColorPalette> = (args) => (
 export const DefaultColorPalette = Template.bind({});
 
 DefaultColorPalette.args = {
-  colors: defaultThemeColors,
+  colors: palette,
 };

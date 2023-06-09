@@ -18,7 +18,7 @@ export const BorderRadius: ComponentStory<typeof Box> = () => (
     {borderRadiusArray.map((radius) => (
       <Box
         borderRadius={radius}
-        background="exoticcaLogo"
+        background="promotion"
         gutterBottom={2}
         key={radius}
       >

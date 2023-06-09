@@ -424,7 +424,7 @@ export const colors: Colors = {
 };
 
 //new color system
-const palette: Palette = {
+export const palette: Palette = {
   primary: {
     main: rebrandPalette.polarNight,
     light: rebrandPalette.polarNightLight,
@@ -448,6 +448,12 @@ const palette: Palette = {
     light: rebrandPalette.polarNightLight,
     medium: rebrandPalette.polarNightMedium,
     contrast: rebrandPalette.polarNight,
+  },
+  header: {
+    main: rebrandPalette.polarNight,
+    light: 'transparent',
+    medium: rebrandPalette.polarNightMedium,
+    contrast: rebrandPalette.arcticWind,
   },
 };
 

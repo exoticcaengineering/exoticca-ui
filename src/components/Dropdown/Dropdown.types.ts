@@ -15,11 +15,11 @@ export interface Props extends ComponentPropsBase {
   startIcon?: IconConfig;
   endIcon?: IconConfig;
   dropdownList: (props: DropdownListProps) => JSX.Element;
-  inverseStyle?: boolean;
+  darkMode?: boolean;
 }
 
 export interface StyledProps
-  extends Pick<Props, 'position' | 'size' | 'inverseStyle'> {
+  extends Pick<Props, 'position' | 'size' | 'darkMode'> {
   isOpen?: boolean;
 }
 
@@ -29,5 +29,5 @@ export interface DropdownListProps {
 
 export interface GetColorParams {
   isOpen?: boolean;
-  inverseStyle?: boolean;
+  darkMode?: boolean;
 }

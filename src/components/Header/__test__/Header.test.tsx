@@ -12,7 +12,7 @@ describe('Header', () => {
   it('should be transparent', () => {
     render(
       <ThemeProvider theme={themeDefault}>
-        <Header backgroundType="transparent" />
+        <Header background="header" backgroundShade="light" />
       </ThemeProvider>,
     );
 
@@ -27,7 +27,7 @@ describe('Header', () => {
   it('should be solid', () => {
     render(
       <ThemeProvider theme={themeDefault}>
-        <Header backgroundType="solid" />
+        <Header background="header" />
       </ThemeProvider>,
     );
 
