@@ -31,9 +31,3 @@ export const CustomTopLineColor = Template.bind({});
 CustomTopLineColor.args = {
   topLineColor: 'blue20',
 };
-
-export const WithBorderNoBcg = Template.bind({});
-WithBorderNoBcg.args = {
-  background: 'transparent',
-  borderColor: 'blue20',
-};

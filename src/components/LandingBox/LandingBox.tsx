@@ -9,7 +9,6 @@ export const LandingBox: FC<Props> = ({
 }) => {
   return (
     <StyledWrapper
-      background="primaryBlue05"
       padding={[4, 1, 8, 1]}
       topLineColor={topLineColor}
       {...boxProps}

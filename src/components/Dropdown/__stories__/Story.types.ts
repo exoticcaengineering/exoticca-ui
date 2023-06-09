@@ -3,7 +3,7 @@ import { DropDownPosition } from '../Dropdown.types';
 
 export interface DropdownListProps {
   position: DropDownPosition;
-  inverseStyle?: boolean;
+
   subMenuItems: {
     parent: ParentItem;
     children: ChildItem;
@@ -11,7 +11,6 @@ export interface DropdownListProps {
 }
 
 export interface ListParentItemsProps {
-  inverseStyle?: boolean;
   subItem: SubMenuItem;
   setIsSelected: (state: string) => void;
   isSelected: string;
@@ -19,7 +18,6 @@ export interface ListParentItemsProps {
 }
 
 export interface ListChildrenItemsProps {
-  inverseStyle?: boolean;
   isSelected: string;
   childrenItems: SubMenuItem;
 }

@@ -97,11 +97,9 @@ const calcRelativePosition = (position: Position) => {
 };
 
 export const StyledTooltipPanel = styled(Box).attrs({
-  background: 'white',
   padding: [2],
   borderWith: [1],
-  borderColor: 'primaryBlue40',
-  boxShadow: 's',
+  borderColor: 'primary',
 })<StyledProps>`
   position: absolute;
   max-width: 300px;

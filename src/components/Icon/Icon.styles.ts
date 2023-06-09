@@ -1,9 +1,8 @@
 import { StyledProps } from './Icon.types';
-import { Box } from 'src/components/Box';
 import styled, { css } from 'styled-components';
 import { getIconSize } from './Icon.helpers';
 
-export const StyledWrapper = styled(Box)<StyledProps>`
+export const StyledWrapper = styled.div<StyledProps>`
   line-height: 0;
   display: inline-block;
   width: ${({ size, width }) => {

@@ -3,8 +3,13 @@ import styled from 'styled-components';
 import { StyleProps } from './Box.types';
 
 export const StyledBoxWrapper = styled.div<StyleProps>`
-  background: ${({ theme, background = 'transparent' }) =>
-    theme.colors[background]};
+  background: ${({
+    theme,
+    background = 'background',
+    backgroundShade = 'main',
+  }) => theme.palette[background][backgroundShade]};
+  color: ${({ theme, background = 'background' }) =>
+    theme.palette[background].contrast};
   border-radius: ${({ theme, borderRadius = 's' }) => {
     if (Array.isArray(borderRadius)) {
       return borderRadius
@@ -20,8 +25,8 @@ export const StyledBoxWrapper = styled.div<StyleProps>`
     return `${borderWidth}px`;
   }};
   border-style: ${({ borderStyle = 'solid' }) => borderStyle};
-  border-color: ${({ theme, borderColor = 'transparent' }) =>
-    theme.colors[borderColor]};
+  border-color: ${({ theme, borderColor }) =>
+    borderColor ? theme.palette[borderColor].main : 'transparent'};
   box-shadow: ${({ theme, boxShadow = 'none' }) => theme.boxShadow[boxShadow]};
   margin-bottom: ${({ theme, gutterBottom = 0 }) =>
     theme.spacing(gutterBottom)};

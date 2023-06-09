@@ -8,7 +8,6 @@ export const ListParentItems = ({
   setIsSelected,
   isSelected,
   setChildrenItems,
-  inverseStyle,
 }: ListParentItemsProps) => {
   const handleClick = () => {
     if (isSelected === subItem.parent.name) return setIsSelected('');
@@ -21,7 +20,7 @@ export const ListParentItems = ({
       <Item
         hover="background"
         selected={isSelected === subItem.parent.name}
-        color={inverseStyle ? 'arcticWind' : 'polarNight'}
+        color="polarNight"
       >
         {subItem.parent.name}
       </Item>

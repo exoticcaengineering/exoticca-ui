@@ -5,13 +5,13 @@ import { StyledProps } from './Dropdown.types';
 import {
   getBackgroundColor,
   getBorderColor,
-  getColor,
   getPadding,
+  getTextColor,
   getUnderLineBottomPosition,
   getUnderLineLeftRightPosition,
 } from './Dropdown.helpers';
 
-export const StyledDropdownWrapper = styled(Box)<StyledProps>`
+export const StyledDropdownWrapper = styled.div<StyledProps>`
   position: relative;
 `;
 
@@ -21,17 +21,17 @@ export const StyledDropdownButton = styled.button<StyledProps>`
   justify-content: space-between;
   align-items: center;
   border-width: 1px;
-  border-color: ${({ theme, isOpen, inverseStyle }) =>
-    theme.colors[getBorderColor({ isOpen, inverseStyle })]};
+  border-color: ${({ theme, isOpen, openBackgroundColor }) =>
+    getBorderColor({ theme, isOpen, openBackgroundColor })};
   border-bottom: none;
   border-radius: ${({ theme }) => theme.newBorderRadius.s};
   border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
   border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};
-  background-color: ${({ theme, isOpen, inverseStyle }) =>
-    theme.colors[getBackgroundColor({ isOpen, inverseStyle })]};
+  background-color: ${({ theme, isOpen, openBackgroundColor }) =>
+    getBackgroundColor({ theme, isOpen, openBackgroundColor })};
   padding: ${({ theme, size = 'medium' }) => getPadding(theme, size)};
-  color: ${({ theme, inverseStyle, isOpen }) =>
-    theme.colors[getColor({ inverseStyle, isOpen })]};
+  color: ${({ theme, isOpen, openBackgroundColor, textColor }) =>
+    getTextColor({ theme, isOpen, openBackgroundColor, textColor })};
   &:hover {
     &:after {
       content: '';
@@ -50,8 +50,8 @@ export const StyledDropdownList = styled(Box)<StyledProps>`
   min-width: 100%;
   animation: fadein ${({ theme }) => theme.transition.duration.shortest} linear;
   right: ${({ position }) => position === 'left' && '0'};
-  border-color: ${({ theme, isOpen, inverseStyle }) =>
-    theme.colors[getBorderColor({ isOpen, inverseStyle })]};
+  border-color: ${({ theme, isOpen, openBackgroundColor }) =>
+    getBorderColor({ theme, isOpen, openBackgroundColor })};
   border-top: none;
   @keyframes fadein {
     from {

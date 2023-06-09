@@ -1,10 +1,13 @@
-type BackgroundType = 'transparent' | 'solid';
+import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
+import { BoxProps } from '../Box';
 
-export interface Props {
+export interface Props
+  extends ComponentPropsBase,
+    Pick<BoxProps, 'background' | 'backgroundShade'> {
   leftComponent?: JSX.Element;
   centerComponent?: JSX.Element;
   rightComponent?: JSX.Element;
-  backgroundType?: BackgroundType;
 }
 
-export interface StyledProps extends Pick<Props, 'backgroundType'> {}
+export interface StyledProps
+  extends Pick<Props, 'background' | 'backgroundShade'> {}

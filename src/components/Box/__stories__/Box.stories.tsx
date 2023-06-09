@@ -55,7 +55,7 @@ Base.args = {
 export const WithBorder = Template.bind({});
 
 WithBorder.args = {
-  borderColor: 'brownPromo',
+  borderColor: 'promotion',
   borderWidth: 1,
 };
 
@@ -63,7 +63,7 @@ export const WithBorderTop = Template.bind({});
 
 WithBorderTop.args = {
   borderRadius: 'none',
-  borderColor: 'brownPromo',
+  borderColor: 'promotion',
   borderWidth: [2, 0, 0, 0],
 };
 
@@ -71,7 +71,7 @@ export const WithBorderBottom = Template.bind({});
 
 WithBorderBottom.args = {
   borderRadius: 'none',
-  borderColor: 'brownPromo',
+  borderColor: 'promotion',
   borderWidth: [0, 0, 2, 0],
 };
 
@@ -79,7 +79,7 @@ export const WithBorderLeft = Template.bind({});
 
 WithBorderLeft.args = {
   borderRadius: 'none',
-  borderColor: 'brownPromo',
+  borderColor: 'promotion',
   borderWidth: [0, 0, 0, 2],
   padding: [1],
 };
@@ -87,14 +87,14 @@ WithBorderLeft.args = {
 export const WithPadding = Template.bind({});
 
 WithPadding.args = {
-  borderColor: 'brownPromo',
+  borderColor: 'promotion',
   padding: [1, 2],
 };
 
 export const WithBackground = Template.bind({});
 
 WithBackground.args = {
-  background: 'brownPromo',
+  background: 'promotion',
 };
 
 export const WithBoxShadow = Template.bind({});
@@ -107,12 +107,12 @@ export const WithRadius = Template.bind({});
 
 WithRadius.args = {
   borderRadius: 'l',
-  background: 'exoticcaLogo',
+  background: 'promotion',
 };
 
 export const WithDifferentRadius = Template.bind({});
 
 WithDifferentRadius.args = {
   borderRadius: ['s', 'm', 'l', 'xl'],
-  background: 'exoticcaLogo',
+  background: 'promotion',
 };

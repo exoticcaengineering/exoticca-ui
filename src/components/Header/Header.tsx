@@ -11,13 +11,23 @@ export const Header: FC<Props> = ({
   leftComponent,
   centerComponent,
   rightComponent,
-  backgroundType = 'solid',
+  background = 'header',
+  backgroundShade = 'main',
 }) => {
   return (
-    <StyledHeaderWrapper backgroundType={backgroundType}>
-      <StyledHeaderContent>{leftComponent ?? ''}</StyledHeaderContent>
-      <StyledCenterContent>{centerComponent ?? ''}</StyledCenterContent>
-      <StyledRightContent>{rightComponent ?? ''}</StyledRightContent>
+    <StyledHeaderWrapper
+      background={background}
+      backgroundShade={backgroundShade}
+    >
+      <StyledHeaderContent background={background}>
+        {leftComponent ?? ''}
+      </StyledHeaderContent>
+      <StyledCenterContent background={background}>
+        {centerComponent ?? ''}
+      </StyledCenterContent>
+      <StyledRightContent background={background}>
+        {rightComponent ?? ''}
+      </StyledRightContent>
     </StyledHeaderWrapper>
   );
 };

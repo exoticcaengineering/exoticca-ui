@@ -1,12 +1,13 @@
 import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
-import { BorderRadius, BoxShadow, Colors } from 'src/types/theme';
+import { BorderRadius, BoxShadow, ColorShade, Palette } from 'src/types/theme';
 import * as CSS from 'csstype';
 export interface Props extends ComponentPropsBaseWithOptionalChildren {
-  background?: keyof Colors;
+  background?: keyof Palette;
+  backgroundShade?: keyof ColorShade;
   borderRadius?: keyof BorderRadius | Array<keyof BorderRadius>;
   borderWidth?: number | number[];
   borderStyle?: CSS.Property.BorderStyle;
-  borderColor?: keyof Colors;
+  borderColor?: keyof Palette;
   gutterBottom?: number;
   boxShadow?: keyof BoxShadow;
   padding?: number | number[];
@@ -16,6 +17,7 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
 export type StyleProps = Pick<
   Partial<Props>,
   | 'background'
+  | 'backgroundShade'
   | 'borderRadius'
   | 'borderColor'
   | 'gutterBottom'

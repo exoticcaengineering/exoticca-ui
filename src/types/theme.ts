@@ -296,7 +296,12 @@ export interface ColorShade {
   contrast: string;
 }
 
-type PaletteType = 'primary' | 'secondary' | 'promotion' | 'background';
+type PaletteType =
+  | 'primary'
+  | 'secondary'
+  | 'promotion'
+  | 'background'
+  | 'header';
 
 type FontFamilyType =
   | 'main'

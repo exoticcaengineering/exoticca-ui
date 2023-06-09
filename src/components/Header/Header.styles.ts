@@ -12,10 +12,8 @@ export const StyledHeaderWrapper = styled(Box).attrs({
   justify-content: space-between;
   width: 100%;
   height: 60px;
-  background: ${({ theme, backgroundType }) =>
-    backgroundType === 'solid'
-      ? theme.colors.polarNight
-      : theme.colors.transparent};
+  background: ${({ theme, background = 'header', backgroundShade = 'main' }) =>
+    theme.palette[background][backgroundShade]};
   padding: ${({ theme }) => theme.spacing(1, 3)};
   transition: background-color
     ${({ theme }) => theme.transition.duration.standard};
@@ -24,8 +22,9 @@ export const StyledHeaderWrapper = styled(Box).attrs({
   }
 `;
 
-export const StyledHeaderContent = styled(Box)`
-  color: ${({ theme }) => theme.colors.arcticWind};
+export const StyledHeaderContent = styled.div<StyledProps>`
+  color: ${({ theme, background = 'header' }) =>
+    theme.palette[background].contrast};
   height: 100%;
   display: flex;
   align-items: center;

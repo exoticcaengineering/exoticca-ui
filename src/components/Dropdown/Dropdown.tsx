@@ -26,7 +26,8 @@ export const Dropdown: FC<Props> = ({
   testId = 'dropdown',
   onClick,
   onClose,
-  inverseStyle,
+  textColor,
+  openBackgroundColor,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -87,7 +88,8 @@ export const Dropdown: FC<Props> = ({
         isOpen={isOpen}
         size={size}
         className={className}
-        inverseStyle={inverseStyle}
+        textColor={textColor}
+        openBackgroundColor={openBackgroundColor}
       >
         <StyledFirstPart>
           {startIcon && <StyledIcon {...startIcon} />}
@@ -99,10 +101,8 @@ export const Dropdown: FC<Props> = ({
 
       {isOpen && (
         <StyledDropdownList
-          inverseStyle={inverseStyle}
           isOpen={isOpen}
           position={position}
-          background={inverseStyle ? 'polarNight' : 'arcticWind'}
           padding={[1.5, 2]}
           borderRadius={setBorderRadius(position)}
           testId={`${testId}-list`}

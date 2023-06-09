@@ -1,11 +1,12 @@
-import { Colors, FontFamily } from 'src/types/theme';
+import { ColorShade, FontFamily, Palette } from 'src/types/theme';
 
 export interface ColorBlockProps {
-  colorName: keyof Colors;
+  colorName: keyof Palette;
+  colorShade: keyof ColorShade;
   colorValue: string;
 }
 export interface ColorPaletteProps {
-  colors: Colors;
+  colors: Palette;
 }
 
 export interface TypographyContainerProps {
