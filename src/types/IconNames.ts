@@ -49,6 +49,7 @@ export const iconNames = [
   'travel-baggage',
   'travel-no-baggage',
   'travel-hand-baggage',
+  'check-circle',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
