@@ -301,7 +301,8 @@ type PaletteType =
   | 'secondary'
   | 'promotion'
   | 'background'
-  | 'header';
+  | 'header'
+  | 'footer';
 
 type FontFamilyType =
   | 'main'
