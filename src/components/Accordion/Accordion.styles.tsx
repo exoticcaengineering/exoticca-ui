@@ -9,12 +9,6 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   border-radius: ${({ theme }) =>
     `${theme.newBorderRadius.xs} ${theme.newBorderRadius.xs} 0 0 `};
   cursor: pointer;
-  ${({ isOpen, backgroundColor }) =>
-    isOpen &&
-    !backgroundColor &&
-    css`
-      padding-bottom: 0;
-    `}
   ${({ isDisabled }) =>
     isDisabled &&
     css`
