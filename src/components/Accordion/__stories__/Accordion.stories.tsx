@@ -42,6 +42,26 @@ export const Base: Story = {
 };
 
 /**
+ * We can pass a isOpen props to Accordions, to make it open by default.
+ */
+export const DefaultOpen: Story = {
+  args: {
+    isOpen: true,
+  },
+  render: (args) => <Accordion {...args} />,
+};
+
+/**
+ * We can pass a isDisabled props to Accordions, to make it disabled.
+ */
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+  render: (args) => <Accordion {...args} />,
+};
+
+/**
  * Accordions also can take a startIcon props to show an icon at the start of the header.
  */
 export const WithStartIcon: Story = {
