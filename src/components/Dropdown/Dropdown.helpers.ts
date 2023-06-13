@@ -49,11 +49,20 @@ export const getUnderLineBottomPosition = (size: DropDownSize) => {
   }
 };
 
-export const getUnderLineLeftRightPosition = (size: DropDownSize) => {
+export const getUnderLineLeftPosition = (size: DropDownSize) => {
   switch (size) {
     case 'small':
-      return '4px';
+      return '6px';
     case 'medium':
       return '12px';
+  }
+};
+
+export const getUnderLineRightPosition = (size: DropDownSize) => {
+  switch (size) {
+    case 'small':
+      return '26px';
+    case 'medium':
+      return '36px';
   }
 };

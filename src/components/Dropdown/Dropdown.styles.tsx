@@ -8,7 +8,8 @@ import {
   getPadding,
   getTextColor,
   getUnderLineBottomPosition,
-  getUnderLineLeftRightPosition,
+  getUnderLineLeftPosition,
+  getUnderLineRightPosition,
 } from './Dropdown.helpers';
 
 export const StyledDropdownWrapper = styled.div<StyledProps>`
@@ -37,8 +38,8 @@ export const StyledDropdownButton = styled.button<StyledProps>`
       content: '';
       position: absolute;
       bottom: ${({ size = 'medium' }) => getUnderLineBottomPosition(size)};
-      left: ${({ size = 'medium' }) => getUnderLineLeftRightPosition(size)};
-      right: ${({ size = 'medium' }) => getUnderLineLeftRightPosition(size)};
+      left: ${({ size = 'medium' }) => getUnderLineLeftPosition(size)};
+      right: ${({ size = 'medium' }) => getUnderLineRightPosition(size)};
       height: 2px;
       background-color: currentColor;
     }

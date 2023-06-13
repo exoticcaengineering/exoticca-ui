@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { Icon } from '../Icon';
 import {
   StyledContent,
+  StyledContentInner,
   StyledHeader,
   StyledHeaderWrapper,
 } from './Accordion.styles';
@@ -31,16 +32,16 @@ export const Accordion: FC<Props> = ({
   const isEnabledAndOpen = !isDisabled && isAccordionOpen;
 
   return (
-    <>
+    <div data-testid={testId}>
       <StyledHeaderWrapper
         onClick={toggleIsOpen}
         isOpen={isAccordionOpen}
         isDisabled={isDisabled}
         className={className}
-        data-testid={testId}
+        data-testid={`${testId}-header-wrapper`}
       >
         {header && (
-          <StyledHeader>
+          <StyledHeader data-testid={`${testId}-header`}>
             {startIcon && (
               <Icon size="regular" stroke="primary" {...startIcon} />
             )}
@@ -56,9 +57,15 @@ export const Accordion: FC<Props> = ({
         />
       </StyledHeaderWrapper>
 
-      {isEnabledAndOpen && (
-        <StyledContent isOpen={isAccordionOpen}>{content}</StyledContent>
-      )}
-    </>
+      <StyledContent
+        isOpen={isAccordionOpen}
+        isEnabledAndOpen={isEnabledAndOpen}
+        data-testid={`${testId}-content`}
+      >
+        <StyledContentInner isEnabledAndOpen={isEnabledAndOpen}>
+          {content}
+        </StyledContentInner>
+      </StyledContent>
+    </div>
   );
 };
