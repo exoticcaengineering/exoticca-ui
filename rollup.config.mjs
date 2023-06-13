@@ -9,7 +9,8 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 export default [
   {
-    external: ['react-dom'],
+    external: ['styled-components', 'react-dom'],
+    globals: { 'styled-components': 'styled' },
     input: 'src/index.ts',
     output: [
       {

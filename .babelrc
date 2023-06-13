@@ -4,7 +4,9 @@
         "babel-plugin-styled-components",
         {
             "displayName": true,
-            "pure": true
+            "pure": true,
+            "cssProp": true,
+            "ssr": true
         }
       ]
     ],
