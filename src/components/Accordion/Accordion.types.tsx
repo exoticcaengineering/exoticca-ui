@@ -11,4 +11,6 @@ export interface Props extends ComponentPropsBase {
   endIcon?: IconConfig;
 }
 
-export interface StyledProps extends Pick<Props, 'isOpen' | 'isDisabled'> {}
+export interface StyledProps extends Pick<Props, 'isOpen' | 'isDisabled'> {
+  isEnabledAndOpen?: boolean;
+}

@@ -19,10 +19,15 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
 `;
 
 export const StyledContent = styled.div<StyledProps>`
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  word-break: break-word;
+  display: grid;
+  grid-template-rows: ${({ isEnabledAndOpen }) =>
+    isEnabledAndOpen ? '1fr' : '0fr'};
+  transition: grid-template-rows
+    ${({ theme }) => theme.transition.duration.short} ease-in-out;
+`;
+
+export const StyledContentInner = styled.div<StyledProps>`
+  overflow: hidden;
 `;
 
 export const StyledHeader = styled.div`

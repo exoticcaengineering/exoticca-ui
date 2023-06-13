@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { Icon } from '../Icon';
 import {
   StyledContent,
+  StyledContentInner,
   StyledHeader,
   StyledHeaderWrapper,
 } from './Accordion.styles';
@@ -56,14 +57,15 @@ export const Accordion: FC<Props> = ({
         />
       </StyledHeaderWrapper>
 
-      {isEnabledAndOpen && (
-        <StyledContent
-          isOpen={isAccordionOpen}
-          data-testid={`${testId}-content`}
-        >
+      <StyledContent
+        isOpen={isAccordionOpen}
+        data-testid={`${testId}-content`}
+        isEnabledAndOpen={isEnabledAndOpen}
+      >
+        <StyledContentInner isEnabledAndOpen={isEnabledAndOpen}>
           {content}
-        </StyledContent>
-      )}
+        </StyledContentInner>
+      </StyledContent>
     </div>
   );
 };
