@@ -77,6 +77,7 @@ export const StyledBody3 = styled(Typography).attrs({
 `;
 
 export const StyledBody4 = styled(Typography).attrs({
+  fontSize: 'body4',
   lineHeight: 'tight',
 })`
   @media print {
@@ -85,6 +86,7 @@ export const StyledBody4 = styled(Typography).attrs({
 `;
 
 export const StyledBody5 = styled(Typography).attrs({
+  fontSize: 'body5',
   lineHeight: 'tight',
 })`
   @media print {
