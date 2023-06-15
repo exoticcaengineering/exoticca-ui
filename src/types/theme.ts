@@ -338,6 +338,8 @@ type FontSizeType =
   | 'body1'
   | 'body2'
   | 'body3'
+  | 'body4'
+  | 'body5'
   | 'button1'
   | 'button2'
   | 'button3'
