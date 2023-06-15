@@ -117,7 +117,7 @@ export const printSize: PrintSize = {
   heading3: '15pt', // 20px
   body1: '12pt', // 16px
   body2: '10.5pt', // 14px
-  body3: '9', // 12px
+  body3: '9pt', // 12px
   body4: '8pt', // 10px
   body5: '6pt', // 8px
 };
