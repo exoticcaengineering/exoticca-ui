@@ -26,6 +26,8 @@ type RebrandPaletteType =
   | 'carribeanSunriseLight'
   | 'carribeanSunriseMedium'
   | 'carribeanSunrise'
+  | 'redDessertLight'
+  | 'redDessertMedium'
   | 'redDessert'
   | 'success'
   | 'pending'
@@ -302,7 +304,9 @@ type PaletteType =
   | 'promotion'
   | 'background'
   | 'header'
-  | 'footer';
+  | 'footer'
+  | 'success'
+  | 'warning';
 
 type FontFamilyType =
   | 'main'
