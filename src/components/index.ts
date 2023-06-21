@@ -14,3 +14,4 @@ export { Modal } from './Modal';
 export { FilterInput } from './Input/FilterInput';
 export { Input } from './Input';
 export { HeroWrapper } from './HeroWrapper';
+export { ProgressBar } from './ProgressBar';

@@ -62,7 +62,9 @@ describe('Accordion is disabled', () => {
   test('should render content is visible by default', async () => {
     render(<Disabled />);
     const accordion = screen.getByTestId('accordion');
-    const headerWrapper = within(accordion).getByTestId('accordion-header');
+    const headerWrapper = within(accordion).getByTestId(
+      'accordion-header-wrapper',
+    );
     expect(headerWrapper).toHaveStyle('cursor: not-allowed');
 
     const content = within(accordion).getByTestId('accordion-content');
