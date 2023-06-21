@@ -9,6 +9,7 @@ export interface Props extends ComponentPropsBase {
   text: string;
   variant?: TagVariant;
   color?: keyof Palette;
+  shape?: 'square' | 'rounded';
 }
 
 export interface StyledProps extends Omit<Props, 'text'> {}
