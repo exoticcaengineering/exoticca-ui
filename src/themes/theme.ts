@@ -20,6 +20,7 @@ import {
   RebrandPalette,
   PrintSize,
   Palette,
+  TagInterface,
 } from 'src/types/theme';
 
 import { GlobalStyleDefaultCss, GlobalStyleNewBrandingCss } from './global.css';
@@ -523,6 +524,13 @@ const newBorderRadius: BorderRadius = {
   rounded: '100%',
 };
 
+const tag: TagInterface = {
+  borderRadius: {
+    square: newBorderRadius.semiRounded,
+    rounded: newBorderRadius.semiRounded,
+  },
+};
+
 const boxShadow: BoxShadow = {
   none: 'none',
   xs: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
@@ -591,6 +599,7 @@ export const themeDefault: Theme = {
     duration,
   },
   zIndex,
+  tag,
 };
 
 export const GlobalStyleDefault = createGlobalStyle`
