@@ -407,6 +407,8 @@ type ZIndexType =
   | 'level9'
   | 'level10';
 
+type TagShape = 'square' | 'rounded';
+
 export type Breakpoints = Record<BreakpointsType, string>;
 export type NewBreakpoints = Record<NewBreakpointsType, string>;
 export type FontFamily = Record<FontFamilyType, string>;
@@ -424,6 +426,7 @@ export type BoxShadow = Record<BoxShadowType, string>;
 export type TextShadow = Record<TextShadowType, string>;
 export type Duration = Record<DurationType, string>;
 export type ZIndex = Record<ZIndexType, number>;
+
 export interface Font {
   fontFamily: FontFamily;
   fontSize: FontSize;
@@ -432,6 +435,10 @@ export interface Font {
   fontWeight: FontWeight;
   letterSpacing: LetterSpacing;
   lineHeight: LineHeight;
+}
+
+export interface TagInterface {
+  borderRadius: Record<TagShape, string>;
 }
 
 interface Transition {
@@ -452,4 +459,5 @@ export interface Theme {
   spacing: MapSpacingValue;
   transition: Transition;
   zIndex: ZIndex;
+  tag: TagInterface;
 }

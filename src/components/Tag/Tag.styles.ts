@@ -11,8 +11,8 @@ export const StyledWrapper = styled.div<StyledProps>`
     return 'transparent';
   }};
   border-radius: ${({ theme, shape = 'rounded' }) => {
-    if (shape === 'rounded') return theme.newBorderRadius.semiRounded;
-    return theme.newBorderRadius.none;
+    if (shape === 'rounded') return theme.tag.borderRadius.rounded;
+    return theme.tag.borderRadius.square;
   }};
   border: 1px solid
     ${({ theme, color = 'primary', variant }) => {
