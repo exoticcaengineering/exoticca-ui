@@ -67,6 +67,7 @@ import { IconArrowDownCircle } from 'src/components/Icon/SVGIcons/IconArrowDownC
 import { IconCheckCircle } from 'src/components/Icon/SVGIcons/IconCheckCircle';
 import { IconAlertTriangle } from 'src/components/Icon/SVGIcons/IconAlertTriangle';
 import { IconEnvelope } from 'src/components/Icon/SVGIcons/IconEnvelope';
+import { IconContactPhone } from './SVGIcons/IconContactPhone';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -75,6 +76,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   close: IconClose,
   'pill-status': Promo,
   contact: IconContact,
+  'contact-phone': IconContactPhone,
   user: IconUser,
   search: IconSearch,
   'flag-us': FlagUS,
