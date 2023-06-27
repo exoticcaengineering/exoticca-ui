@@ -23,7 +23,7 @@ export const Tag: FC<Props> = ({
       color={color}
       variant={variant}
       className={className}
-      data-testid={testId}
+      testId={testId}
       shape={shape}
     >
       {renderText()}
