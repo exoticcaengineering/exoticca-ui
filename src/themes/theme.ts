@@ -478,6 +478,12 @@ export const palette: Palette = {
     medium: rebrandPalette.redDessertMedium,
     contrast: rebrandPalette.arcticWind,
   },
+  rating: {
+    main: rebrandPalette.polarNight,
+    light: rebrandPalette.polarNightLight,
+    medium: rebrandPalette.polarNightMedium,
+    contrast: rebrandPalette.arcticWind,
+  },
 };
 
 export const newBreakpoints: NewBreakpoints = {
