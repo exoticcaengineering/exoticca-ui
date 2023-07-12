@@ -6,6 +6,7 @@ export const IconArrow = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <title>arrow</title>
     <path
       d="M18 15L12 9L6 15"
       stroke="currentColor"

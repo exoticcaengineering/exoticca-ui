@@ -12,8 +12,11 @@ const progress = ({ progressFrom = 0, progressTo = 100 }) => keyframes`
 
 export const StyledProgressBarBcg = styled.div<StyledProps>`
   position: relative;
-  background-color: ${({ theme, backgroundColor = 'secondaryGold50' }) =>
-    theme.colors[backgroundColor]};
+  background-color: ${({
+    theme,
+    backgroundColor = 'background',
+    backgroundColorShade = 'main',
+  }) => theme.palette[backgroundColor][backgroundColorShade]};
   height: 4px;
   width: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.xxl};
@@ -25,8 +28,11 @@ export const StyledProgressBarBcg = styled.div<StyledProps>`
     left: 0;
     width: 0;
     height: 100%;
-    background-color: ${({ theme, progressColor = 'grey80' }) =>
-      theme.colors[progressColor]};
+    background-color: ${({
+      theme,
+      progressColor = 'primary',
+      progressColorShade = 'main',
+    }) => theme.palette[progressColor][progressColorShade]};
     animation: ${({
       progressFrom = 0,
       progressTo = 100,

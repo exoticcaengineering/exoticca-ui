@@ -20,6 +20,7 @@ import {
   RebrandPalette,
   PrintSize,
   Palette,
+  TagInterface,
 } from 'src/types/theme';
 
 import { GlobalStyleDefaultCss, GlobalStyleNewBrandingCss } from './global.css';
@@ -104,6 +105,8 @@ export const fontSize: FontSize = {
   body1: '1rem', // 16px
   body2: '0.875rem', // 14px
   body3: '0.75rem', // 12px
+  body4: '0.625rem', // 10px
+  body5: '0.5rem', // 8px
   button1: '1.25rem', // 20px
   button2: '1rem', // 16px
   button3: '0.875rem', // 14px
@@ -115,7 +118,7 @@ export const printSize: PrintSize = {
   heading3: '15pt', // 20px
   body1: '12pt', // 16px
   body2: '10.5pt', // 14px
-  body3: '9', // 12px
+  body3: '9pt', // 12px
   body4: '8pt', // 10px
   body5: '6pt', // 8px
 };
@@ -148,7 +151,9 @@ const rebrandPalette: RebrandPalette = {
   carribeanSunriseLight: '#FCDECF',
   carribeanSunriseMedium: '#F6A57E',
   carribeanSunrise: '#F2773B',
-  redDessert: '#C93957  ',
+  redDessertLight: '#F7BAC7',
+  redDessertMedium: '#F5708D',
+  redDessert: '#C93957',
   success: '#67D071',
   pending: '#F8D447',
   error: '#F2773B',
@@ -461,6 +466,24 @@ export const palette: Palette = {
     medium: rebrandPalette.polarNightMedium,
     contrast: rebrandPalette.arcticWind,
   },
+  success: {
+    main: rebrandPalette.savageForest,
+    light: rebrandPalette.savageForestLight,
+    medium: rebrandPalette.savageForestMedium,
+    contrast: rebrandPalette.arcticWind,
+  },
+  warning: {
+    main: rebrandPalette.redDessert,
+    light: rebrandPalette.redDessertLight,
+    medium: rebrandPalette.redDessertMedium,
+    contrast: rebrandPalette.arcticWind,
+  },
+  rating: {
+    main: rebrandPalette.polarNight,
+    light: rebrandPalette.polarNightLight,
+    medium: rebrandPalette.polarNightMedium,
+    contrast: rebrandPalette.arcticWind,
+  },
 };
 
 export const newBreakpoints: NewBreakpoints = {
@@ -505,6 +528,13 @@ const newBorderRadius: BorderRadius = {
   xxl: '40px',
   semiRounded: '100px',
   rounded: '100%',
+};
+
+const tag: TagInterface = {
+  borderRadius: {
+    square: newBorderRadius.semiRounded,
+    rounded: newBorderRadius.semiRounded,
+  },
 };
 
 const boxShadow: BoxShadow = {
@@ -575,6 +605,7 @@ export const themeDefault: Theme = {
     duration,
   },
   zIndex,
+  tag,
 };
 
 export const GlobalStyleDefault = createGlobalStyle`

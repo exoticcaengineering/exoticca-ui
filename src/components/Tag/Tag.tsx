@@ -10,6 +10,7 @@ export const Tag: FC<Props> = ({
   variant = 'primary',
   className,
   testId = 'tag',
+  shape = 'rounded',
 }) => {
   const renderText = () => {
     if (size === 'small') {
@@ -22,7 +23,8 @@ export const Tag: FC<Props> = ({
       color={color}
       variant={variant}
       className={className}
-      testId={testId}
+      data-testid={testId}
+      shape={shape}
     >
       {renderText()}
     </StyledWrapper>

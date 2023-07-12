@@ -13,3 +13,6 @@ export { Tabs, Tab } from './Tabs';
 export { Modal } from './Modal';
 export { FilterInput } from './Input/FilterInput';
 export { Input } from './Input';
+export { HeroWrapper } from './HeroWrapper';
+export { ProgressBar, ProgressBarProps } from './ProgressBar';
+export { Loader } from './Loader';

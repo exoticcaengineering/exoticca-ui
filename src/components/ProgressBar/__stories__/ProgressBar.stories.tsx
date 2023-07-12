@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { themeDefault } from 'src/themes/theme';
 import { ProgressBar } from '../ProgressBar';
 
@@ -17,10 +17,12 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof ProgressBar>;
+} as Meta<typeof ProgressBar>;
 
-const Tempalte: ComponentStory<typeof ProgressBar> = (args) => (
-  <ProgressBar {...args} />
-);
+type Story = StoryObj<typeof ProgressBar>;
 
-export const Base = Tempalte.bind({});
+export const Base: Story = {
+  args: {
+    backgroundColorShade: 'light',
+  },
+};

@@ -26,6 +26,8 @@ type RebrandPaletteType =
   | 'carribeanSunriseLight'
   | 'carribeanSunriseMedium'
   | 'carribeanSunrise'
+  | 'redDessertLight'
+  | 'redDessertMedium'
   | 'redDessert'
   | 'success'
   | 'pending'
@@ -302,7 +304,10 @@ type PaletteType =
   | 'promotion'
   | 'background'
   | 'header'
-  | 'footer';
+  | 'footer'
+  | 'success'
+  | 'warning'
+  | 'rating';
 
 type FontFamilyType =
   | 'main'
@@ -338,6 +343,8 @@ type FontSizeType =
   | 'body1'
   | 'body2'
   | 'body3'
+  | 'body4'
+  | 'body5'
   | 'button1'
   | 'button2'
   | 'button3'
@@ -401,6 +408,8 @@ type ZIndexType =
   | 'level9'
   | 'level10';
 
+type TagShape = 'square' | 'rounded';
+
 export type Breakpoints = Record<BreakpointsType, string>;
 export type NewBreakpoints = Record<NewBreakpointsType, string>;
 export type FontFamily = Record<FontFamilyType, string>;
@@ -418,6 +427,7 @@ export type BoxShadow = Record<BoxShadowType, string>;
 export type TextShadow = Record<TextShadowType, string>;
 export type Duration = Record<DurationType, string>;
 export type ZIndex = Record<ZIndexType, number>;
+
 export interface Font {
   fontFamily: FontFamily;
   fontSize: FontSize;
@@ -426,6 +436,10 @@ export interface Font {
   fontWeight: FontWeight;
   letterSpacing: LetterSpacing;
   lineHeight: LineHeight;
+}
+
+export interface TagInterface {
+  borderRadius: Record<TagShape, string>;
 }
 
 interface Transition {
@@ -446,4 +460,5 @@ export interface Theme {
   spacing: MapSpacingValue;
   transition: Transition;
   zIndex: ZIndex;
+  tag: TagInterface;
 }

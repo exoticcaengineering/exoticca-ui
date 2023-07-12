@@ -8,7 +8,8 @@ import {
   getPadding,
   getTextColor,
   getUnderLineBottomPosition,
-  getUnderLineLeftRightPosition,
+  getUnderLineLeftPosition,
+  getUnderLineRightPosition,
 } from './Dropdown.helpers';
 
 export const StyledDropdownWrapper = styled.div<StyledProps>`
@@ -17,6 +18,7 @@ export const StyledDropdownWrapper = styled.div<StyledProps>`
 
 export const StyledDropdownButton = styled.button<StyledProps>`
   display: flex;
+  position: relative;
   gap: ${({ theme }) => theme.spacing(1)};
   justify-content: space-between;
   align-items: center;
@@ -27,6 +29,7 @@ export const StyledDropdownButton = styled.button<StyledProps>`
   border-radius: ${({ theme }) => theme.newBorderRadius.s};
   border-bottom-left-radius: ${({ theme }) => theme.newBorderRadius.none};
   border-bottom-right-radius: ${({ theme }) => theme.newBorderRadius.none};
+  z-index: 2;
   background-color: ${({ theme, isOpen, openBackgroundColor }) =>
     getBackgroundColor({ theme, isOpen, openBackgroundColor })};
   padding: ${({ theme, size = 'medium' }) => getPadding(theme, size)};
@@ -37,8 +40,8 @@ export const StyledDropdownButton = styled.button<StyledProps>`
       content: '';
       position: absolute;
       bottom: ${({ size = 'medium' }) => getUnderLineBottomPosition(size)};
-      left: ${({ size = 'medium' }) => getUnderLineLeftRightPosition(size)};
-      right: ${({ size = 'medium' }) => getUnderLineLeftRightPosition(size)};
+      left: ${({ size = 'medium' }) => getUnderLineLeftPosition(size)};
+      right: ${({ size = 'medium' }) => getUnderLineRightPosition(size)};
       height: 2px;
       background-color: currentColor;
     }
@@ -48,11 +51,12 @@ export const StyledDropdownButton = styled.button<StyledProps>`
 export const StyledDropdownList = styled(Box)<StyledProps>`
   position: absolute;
   min-width: 100%;
+  z-index: 1;
   animation: fadein ${({ theme }) => theme.transition.duration.shortest} linear;
+  margin-top: -2px;
   right: ${({ position }) => position === 'left' && '0'};
   border-color: ${({ theme, isOpen, openBackgroundColor }) =>
     getBorderColor({ theme, isOpen, openBackgroundColor })};
-  border-top: none;
   @keyframes fadein {
     from {
       opacity: 0;

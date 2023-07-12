@@ -18,20 +18,48 @@ import {
   StyledOverline,
 } from './TypographyVariants.styles';
 
-export const TextDisplay1: FC<Props> = (props) => <StyledDisplay1 {...props} />;
-export const TextDisplay2: FC<Props> = (props) => <StyledDisplay2 {...props} />;
-export const TextHeading1: FC<Props> = (props) => <StyledHeading1 {...props} />;
-export const TextHeading2: FC<Props> = (props) => <StyledHeading2 {...props} />;
-export const TextHeading3: FC<Props> = (props) => <StyledHeading3 {...props} />;
-export const TextBody1: FC<Props> = (props) => <StyledBody1 {...props} />;
-export const TextBody2: FC<Props> = (props) => <StyledBody2 {...props} />;
-export const TextBody3: FC<Props> = (props) => <StyledBody3 {...props} />;
-export const TextBody4: FC<Props> = (props) => <StyledBody4 {...props} />;
-export const TextBody5: FC<Props> = (props) => <StyledBody5 {...props} />;
-export const TextButton1: FC<Props> = (props) => <StyledButton1 {...props} />;
-export const TextButton2: FC<Props> = (props) => <StyledButton2 {...props} />;
-export const TextButton3: FC<Props> = (props) => <StyledButton3 {...props} />;
-export const TextCaption: FC<Props> = (props) => <StyledCaption {...props} />;
-export const TextOverline: FC<TextOverLineProps> = (props) => (
-  <StyledOverline {...props} />
+export const TextDisplay1: FC<Props> = ({ as, ...props }) => (
+  <StyledDisplay1 {...props} forwardedAs={as} />
+);
+export const TextDisplay2: FC<Props> = ({ as, ...props }) => (
+  <StyledDisplay2 {...props} forwardedAs={as} />
+);
+export const TextHeading1: FC<Props> = ({ as, ...props }) => (
+  <StyledHeading1 {...props} forwardedAs={as} />
+);
+export const TextHeading2: FC<Props> = ({ as, ...props }) => (
+  <StyledHeading2 {...props} forwardedAs={as} />
+);
+export const TextHeading3: FC<Props> = ({ as, ...props }) => (
+  <StyledHeading3 {...props} forwardedAs={as} />
+);
+export const TextBody1: FC<Props> = ({ as, ...props }) => (
+  <StyledBody1 {...props} forwardedAs={as} />
+);
+export const TextBody2: FC<Props> = ({ as, ...props }) => (
+  <StyledBody2 {...props} forwardedAs={as} />
+);
+export const TextBody3: FC<Props> = ({ as, ...props }) => (
+  <StyledBody3 {...props} forwardedAs={as} />
+);
+export const TextBody4: FC<Props> = ({ as, ...props }) => (
+  <StyledBody4 {...props} forwardedAs={as} />
+);
+export const TextBody5: FC<Props> = ({ as, ...props }) => (
+  <StyledBody5 {...props} forwardedAs={as} />
+);
+export const TextButton1: FC<Props> = ({ as, ...props }) => (
+  <StyledButton1 {...props} forwardedAs={as} />
+);
+export const TextButton2: FC<Props> = ({ as, ...props }) => (
+  <StyledButton2 {...props} forwardedAs={as} />
+);
+export const TextButton3: FC<Props> = ({ as, ...props }) => (
+  <StyledButton3 {...props} forwardedAs={as} />
+);
+export const TextCaption: FC<Props> = ({ as, ...props }) => (
+  <StyledCaption {...props} forwardedAs={as} />
+);
+export const TextOverline: FC<TextOverLineProps> = ({ as, ...props }) => (
+  <StyledOverline {...props} forwardedAs={as} />
 );
