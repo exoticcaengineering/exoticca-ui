@@ -43,4 +43,9 @@ export const StyledWrapper = styled.div<StyledProps>`
           : theme.palette[fill][fillShade]};
       }
     `}
+    ${({ flexShrink }) =>
+    flexShrink &&
+    css`
+      flex-shrink: ${flexShrink};
+    `}
 `;

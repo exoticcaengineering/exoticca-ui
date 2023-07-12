@@ -67,6 +67,8 @@ import { IconArrowDownCircle } from 'src/components/Icon/SVGIcons/IconArrowDownC
 import { IconCheckCircle } from 'src/components/Icon/SVGIcons/IconCheckCircle';
 import { IconAlertTriangle } from 'src/components/Icon/SVGIcons/IconAlertTriangle';
 import { IconEnvelope } from 'src/components/Icon/SVGIcons/IconEnvelope';
+import { IconTrash } from './SVGIcons/IconTrash';
+import { IconDocumentText } from './SVGIcons/IconDocumentText';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -135,4 +137,6 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'check-circle': IconCheckCircle,
   'alert-triangle': IconAlertTriangle,
   envelope: IconEnvelope,
+  trash: IconTrash,
+  'document-text': IconDocumentText,
 };
