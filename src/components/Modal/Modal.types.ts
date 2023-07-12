@@ -12,6 +12,7 @@ export interface ModalProps extends ComponentPropsBaseWithChildren {
   blackoutHeader?: boolean;
   title?: string | JSX.Element;
   subtitle?: string | JSX.Element;
+  border?: boolean;
   highlights?: {
     icon?: IconName;
     image?: string;

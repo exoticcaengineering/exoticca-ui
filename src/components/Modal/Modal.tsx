@@ -64,6 +64,7 @@ const ModalComponent = (
     mobileFullscreen,
     overflowHidden,
     blackoutHeader,
+    border,
   }: ModalProps,
   ref: React.Ref<unknown>,
 ) => {
@@ -273,6 +274,7 @@ const ModalComponent = (
         id="modalWrapper"
         key={modalUniqueKey}
         width={stringwidhtPX}
+        border={!!border}
       >
         {content}
       </ModalWrapper>
