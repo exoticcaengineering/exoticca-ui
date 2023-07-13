@@ -19,6 +19,7 @@ export const Shade = styled.div`
 
 export const ModalWrapper = styled.div<{
   width?: string;
+  border?: boolean;
 }>`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.level10};
@@ -29,6 +30,8 @@ export const ModalWrapper = styled.div<{
   top: 50%;
   transform: translate(-50%, -50%);
   width: 95vw;
+  border: ${({ border, theme }) =>
+    border ? `1.5px solid ${theme.palette.primary.medium}` : 'none'};
 
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     top: 50%;
