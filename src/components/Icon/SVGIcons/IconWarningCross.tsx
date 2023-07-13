@@ -1,4 +1,4 @@
-export const WarningCross = () => (
+export const IconWarningCross = () => (
   <svg
     width="40"
     height="40"
