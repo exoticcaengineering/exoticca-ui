@@ -17,7 +17,7 @@ export const Tag: FC<Props> = ({
 }) => {
   const renderText = () => {
     if (size === 'small') {
-      return <TextCaption>{text}</TextCaption>;
+      return <TextCaption align="center">{text}</TextCaption>;
     }
   };
   return (
