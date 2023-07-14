@@ -61,6 +61,9 @@ export const Shapes: Story = {
   render: (args) => <ShapesStory {...args} />,
 };
 
+/**
+ * <p>Tag can receive a start icon or a end icon</p>
+ */
 export const WithIcon: Story = {
   render: (args) => <WithIconStory {...args} />,
 };
