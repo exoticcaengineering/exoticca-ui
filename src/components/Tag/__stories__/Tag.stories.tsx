@@ -28,6 +28,25 @@ const ShapesStory = (props: Props) => {
   );
 };
 
+const WithIconStory = (props: Props) => {
+  return (
+    <StyledRowWrapper>
+      <Tag
+        {...props}
+        text="With start icon"
+        variant="primary"
+        startIcon={{ icon: 'travel-baggage' }}
+      />
+      <Tag
+        {...props}
+        text="With end icon"
+        variant="secondary"
+        endIcon={{ icon: 'travel-hand-baggage' }}
+      />
+    </StyledRowWrapper>
+  );
+};
+
 export const Variants: Story = {
   render: (args) => <VariantsStory {...args} />,
 };
@@ -40,4 +59,8 @@ export const Variants: Story = {
  * */
 export const Shapes: Story = {
   render: (args) => <ShapesStory {...args} />,
+};
+
+export const WithIcon: Story = {
+  render: (args) => <WithIconStory {...args} />,
 };

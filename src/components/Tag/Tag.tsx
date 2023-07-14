@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Props } from './Tag.types';
 import { StyledWrapper } from './Tag.styles';
 import { TextCaption } from 'src/components/TypographyVariants';
+import { Icon } from 'src/components/Icon';
 
 export const Tag: FC<Props> = ({
   text,
@@ -11,6 +12,8 @@ export const Tag: FC<Props> = ({
   className,
   testId = 'tag',
   shape = 'rounded',
+  startIcon,
+  endIcon,
 }) => {
   const renderText = () => {
     if (size === 'small') {
@@ -26,7 +29,11 @@ export const Tag: FC<Props> = ({
       data-testid={testId}
       shape={shape}
     >
+      {startIcon && (
+        <Icon size="regular" stroke="currentColor" {...startIcon} />
+      )}
       {renderText()}
+      {endIcon && <Icon size="regular" stroke="currentColor" {...endIcon} />}
     </StyledWrapper>
   );
 };
