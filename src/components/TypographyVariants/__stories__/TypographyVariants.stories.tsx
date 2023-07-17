@@ -83,8 +83,8 @@ export const Body2: ComponentStory<typeof TextDisplay1> = () => (
 export const Body3: ComponentStory<typeof TextDisplay1> = () => (
   <Box>
     <TextBody3>Body3</TextBody3>
-    <TextBody3>For all screens: 14px / LH 1.25</TextBody3>
-    <TextBody3>For print: 14px / LH 1.25</TextBody3>
+    <TextBody3>For all screens: 12px / LH 1.25</TextBody3>
+    <TextBody3>For print: 12px / LH 1.25</TextBody3>
   </Box>
 );
 

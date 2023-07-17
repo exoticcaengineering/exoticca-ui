@@ -57,6 +57,7 @@ import { IconTwitterBox } from './SVGIcons/IconTwitterBox';
 import { IconYoutubeBox } from './SVGIcons/IconYoutubeBox';
 import { IconSpotifyBox } from './SVGIcons/IconSpotifyBox';
 import { IconClock } from './SVGIcons/IconClock';
+import { IconWarningCross } from './SVGIcons/IconWarningCross';
 import { IconClockFast } from './SVGIcons/IconClockFast';
 import { IconSmile } from './SVGIcons/IconSmile';
 import { IconCog } from './SVGIcons/IconCog';
@@ -135,6 +136,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'travel-hand-baggage': IconHandBaggage,
   'arrow-down-circle': IconArrowDownCircle,
   'check-circle': IconCheckCircle,
+  'warning-cross': IconWarningCross,
   'alert-triangle': IconAlertTriangle,
   envelope: IconEnvelope,
   trash: IconTrash,

@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import { StyledProps } from './Tag.types';
 
 export const StyledWrapper = styled.div<StyledProps>`
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(0.5)};
   padding: ${({ theme, size }) => {
     if (size === 'small') return theme.spacing(0.75, 1);
   }};

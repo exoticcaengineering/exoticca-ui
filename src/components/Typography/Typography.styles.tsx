@@ -20,7 +20,7 @@ export const StyledTypographyContainer = styled.p<StyledProps>`
     color ? theme.colors[color] : 'currentColor'};
   text-decoration: ${({ textDecoration = 'inherit' }) => textDecoration};
   text-transform: ${({ textTransform = 'inherit' }) => textTransform};
-  white-space: ${({ noWrap }) => (noWrap ? 'noWrap' : 'revert')};
+  white-space: ${({ noWrap }) => (noWrap ? 'noWrap' : 'normal')};
   cursor: ${({ cursor = 'inherit' }) => cursor};
   cursor: ${({ cursor }) => cursor};
   letter-spacing: ${({ theme, letterSpacing = 'normal' }) =>

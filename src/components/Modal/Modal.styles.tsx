@@ -19,6 +19,7 @@ export const Shade = styled.div`
 
 export const ModalWrapper = styled.div<{
   width?: string;
+  border?: boolean;
 }>`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.level10};
@@ -29,6 +30,8 @@ export const ModalWrapper = styled.div<{
   top: 50%;
   transform: translate(-50%, -50%);
   width: 95vw;
+  border: ${({ border, theme }) =>
+    border ? `1.5px solid ${theme.palette.primary.medium}` : 'none'};
 
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     top: 50%;
@@ -47,8 +50,10 @@ export const ContentWrapper = styled.div<{
   noPadding?: boolean;
   overflowHidden?: boolean;
 }>`
-color: ${({ theme, darkMode }) =>
-  darkMode ? theme.palette.background.main : theme.palette.background.contrast};
+  color: ${({ theme, darkMode }) =>
+    darkMode
+      ? theme.palette.background.main
+      : theme.palette.background.contrast};
   background: ${({ theme, darkMode }) =>
     darkMode
       ? theme.palette.background.contrast
@@ -75,6 +80,7 @@ color: ${({ theme, darkMode }) =>
     min-width: unset;
     max-width: unset;
     top: 0;
+  }
 `;
 
 export const FullScreen = styled.div`
@@ -85,7 +91,7 @@ export const FullScreen = styled.div`
   height: 100%;
   background-color: ${(props) => props.theme.colors.arcticWind};
   z-index: ${({ theme }) => theme.zIndex.level10};
-  overflow: scroll;
+  overflow: auto;
 `;
 
 export const ModalHeader = styled.div<{
