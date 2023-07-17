@@ -1,47 +1,36 @@
-import { SetStateAction, useEffect, useRef } from 'react';
-import { handleFileUpload } from './UploadInput.utils';
+import { useRef } from 'react';
 import { WrapperLabel, FlexColumn, Description } from './UploadInput.styles';
 import { Button } from '../Button';
-import { Tooltip } from '../Tooltip';
-import { TextBody2 } from '../TypographyVariants';
 import UploadedItem from './UploadedItem';
 import { deleteByValue, onChange } from './UploadInput.utils';
-// import { InputProps } from './Input.types';
 
 interface props {
-  value: File[] | [''];
+  value: File[];
   description?: string;
   testId?: string;
-  setValue: React.Dispatch<SetStateAction<File[]>>;
+  setValue: (field: string, value: File[]) => void;
   type?: string;
+  name?: string;
 }
 
 export const UploadInput = ({
-  // icon,
-  // label,
-  // placeholder,
-  // rounded,
   setValue,
   value = [],
   description = 'File size limit: 3MB · Allowed file types: word, excel, PDF and Image',
   testId = 'upload-input',
   type = 'image/*, .pdf, .doc, .docx, .ppt, .pptx, .odt',
-}: // onClick,
-// readOnly,
-// disabled,
-// className,
-props) => {
-  const inputRef = useRef<any>(null);
+  name = 'uploadedDocs',
+}: props) => {
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleClick = (event) => {
-    inputRef.current.click();
+  const handleClick = () => {
+    if (!inputRef) return;
+    return inputRef?.current?.click();
   };
-
-  const mockedValue = [{ name: 'dsaadasda', size: '3.4kb' }];
 
   return (
     <FlexColumn>
-      <WrapperLabel>
+      <WrapperLabel data-testid={testId}>
         <Button
           text="Add documents"
           variant="secondary"
@@ -54,8 +43,8 @@ props) => {
           style={{ display: 'none' }}
           id="uploads"
           accept={type}
-          // placeholder={placeholder}
-          onChange={(e) => onChange(e, setValue)}
+          name={name}
+          onChange={(e) => onChange({ e, value, name, setValue })}
           multiple
         />
       </WrapperLabel>
@@ -63,14 +52,20 @@ props) => {
         <ul>
           {value.map((item, index) => {
             console.log({ item });
-            if (item === '') return;
             return (
               <>
                 <UploadedItem
                   key={item.name + index}
                   name={item.name}
                   size={item.size}
-                  onDeleteCB={() => deleteByValue(item.name, setValue)}
+                  onDeleteCB={() =>
+                    deleteByValue({
+                      value: item.name,
+                      setValue,
+                      name: name,
+                      prevValue: value,
+                    })
+                  }
                 />
               </>
             );

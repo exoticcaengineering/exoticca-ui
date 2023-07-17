@@ -6,35 +6,46 @@ export const handleFileUpload = (uploads: File[]) => {
       size: element.size,
       totalSize: 1048576 * 3,
     });
-
+    //MAX SIZE 3 MB PER EACH FILE
     return element.size <= 1048576 * 3;
   });
-  // const  fileType = file.type; // image/jpeg
-  // let fileSize = file.size; // 3MB
 
   return filteredList;
 };
-export const deleteByValue = (
-  value: string,
-  setValue: React.Dispatch<SetStateAction<File[]>>,
-) => {
-  return setValue((prev) => {
-    console.log('inside remove', { value, prev });
-    return prev.filter((item) => item.name !== value);
-  });
+export const deleteByValue = ({
+  prevValue,
+  value,
+  name,
+  setValue,
+}: {
+  prevValue: File[];
+  value: string;
+  name: string;
+  setValue: (field: string, value: File[]) => void;
+}) => {
+  return setValue(
+    name,
+    prevValue.filter((item) => item.name !== value),
+  );
 };
 
-export const onChange = (
-  e: ChangeEvent<HTMLInputElement>,
-  setValue: React.Dispatch<SetStateAction<File[]>>,
-) => {
+export const onChange = ({
+  e,
+  name,
+  value,
+  setValue,
+}: {
+  name: string;
+  value: File[];
+  e: ChangeEvent<HTMLInputElement>;
+  setValue: (field: string, value: File[]) => void;
+}) => {
   if (!e.target?.files) {
     return;
   }
   const filteredFiles = handleFileUpload([...e.target.files]);
   console.log('INSIDE ACTION', [...e.target.files]);
-  setValue((prev) => {
-    console.log('prev', prev);
-    return [...prev, ...filteredFiles] as File[];
-  });
+  const newData = [...value, ...filteredFiles];
+  console.log(newData);
+  return setValue(name, newData);
 };
