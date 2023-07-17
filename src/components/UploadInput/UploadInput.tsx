@@ -23,7 +23,8 @@ export const UploadInput = ({
 }: props) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (!inputRef) return;
     return inputRef?.current?.click();
   };
