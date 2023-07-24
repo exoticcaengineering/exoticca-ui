@@ -8,7 +8,7 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   align-items: center;
   border-radius: ${({ theme }) =>
     `${theme.newBorderRadius.xs} ${theme.newBorderRadius.xs} 0 0 `};
-  cursor: pointer;
+  cursor: ${({ hasCustomTrigger }) => (hasCustomTrigger ? 'auto' : 'pointer')};
   ${({ isDisabled }) =>
     isDisabled &&
     css`
