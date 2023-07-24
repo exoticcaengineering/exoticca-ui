@@ -68,6 +68,7 @@ export const iconNames = [
   'star-4',
   'star-4-sp',
   'star-3-sp',
+  'touristGuide',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];
