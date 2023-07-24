@@ -4,7 +4,7 @@ import {
   StyledDropDownInner,
   StyledFilter,
 } from './FilterInput.styles';
-import { Input } from '../Input';
+import { Input } from '../Input/Input';
 import { useOnClickOutside } from 'src/hooks';
 import { InputFilterProps } from './FilterInput.types';
 

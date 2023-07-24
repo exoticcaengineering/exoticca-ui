@@ -1,6 +1,6 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconName } from 'src/types/IconNames';
-import { InputProps } from '../Input.types';
+import { InputProps } from '../Input/Input.types';
 
 export interface InputListProps {
   closeDropdown: () => void;
