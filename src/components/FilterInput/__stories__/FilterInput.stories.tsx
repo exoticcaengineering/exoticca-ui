@@ -26,7 +26,7 @@ export default {
 type Story = StoryObj<InputFilterProps>;
 
 const Template = ({ ...args }) => {
-  const [value, setValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
 
   const LIST = [
@@ -38,7 +38,7 @@ const Template = ({ ...args }) => {
   ];
 
   useEffect(() => {
-    setValue(selectedValue);
+    setInputValue(selectedValue);
   }, [selectedValue]);
 
   const [list, setList] = useState(LIST);
@@ -47,7 +47,7 @@ const Template = ({ ...args }) => {
     const list = [...LIST];
 
     const updatedList = list.filter(
-      ({ item }) => item.toLowerCase().indexOf(value.toLowerCase()) !== -1,
+      ({ item }) => item.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1,
     );
     if (updatedList.length === 0) {
       setList([{ item: 'No Items with this text', id: '1' }]);
@@ -59,7 +59,7 @@ const Template = ({ ...args }) => {
 
   useEffect(() => {
     filterBySearch();
-  }, [value]);
+  }, [inputValue]);
 
   return (
     <div
@@ -76,12 +76,12 @@ const Template = ({ ...args }) => {
         }}
       >
         <FilterInput
-          icon="arrow"
+          startIcon={{ icon: 'arrow' }}
           label="Label"
           placeholder="Placeholder"
           rounded="both"
-          setValue={setValue}
-          value={value}
+          onChange={(e) => setInputValue(e.target.value)}
+          defaultValue={selectedValue}
           inputList={(props) => {
             return list.map(({ item, id }) => (
               <Item

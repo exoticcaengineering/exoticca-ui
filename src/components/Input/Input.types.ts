@@ -1,24 +1,26 @@
+import { ChangeEvent } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconName } from 'src/types/IconNames';
+import { IconConfig } from '../Icon';
 
 type LabelPosition = 'inside' | 'outside';
 
-export interface InputProps extends ComponentPropsBase {
-  icon: IconName | undefined;
+export interface Props extends ComponentPropsBase {
+  startIcon?: IconConfig;
   label: string;
   labelPosition?: LabelPosition;
-  placeholder: string;
-  rounded: 'none' | 'left' | 'right' | 'both';
-  setValue: (state: string) => void;
+  placeholder?: string;
+  rounded?: 'none' | 'left' | 'right' | 'both';
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
-  value: string;
+  defaultValue?: string;
   readOnly?: boolean;
   disabled?: boolean;
 }
 
-export interface StyleProps {
+export interface StyleProps
+  extends Pick<
+    Partial<Props>,
+    'labelPosition' | 'rounded' | 'placeholder' | 'label'
+  > {
   hasIcon?: boolean;
-  label?: string;
-  placeholder?: string;
-  rounded?: 'none' | 'left' | 'right' | 'both';
 }

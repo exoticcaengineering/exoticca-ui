@@ -14,7 +14,8 @@ export const StyledInputWrapper = styled.div<StyleProps>`
   padding-left: ${({ hasIcon }) => (hasIcon ? ICON_SPACE : NO_ICON_PADDING)};
   padding-right: ${({ theme }) => theme.spacing(2)};
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
-  height: 50px;
+  height: ${({ labelPosition }) =>
+    labelPosition === 'inside' ? '50px' : '44px'};
   width: 100%;
   background-color: ${({ theme }) => theme.colors.arcticWind};
   border-radius: ${({ rounded, theme }) => {
@@ -61,7 +62,6 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledOutsideLabel = styled.label`
-  padding-left: ${({ theme }) => theme.spacing(2)};
   font-size: ${({ theme }) => theme.typography.fontSize.body2};
 `;
 
