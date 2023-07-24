@@ -1,30 +1,38 @@
-import { ChangeEvent, useRef } from 'react';
+import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
 import {
   StyledIcon,
   StyledInput,
   StyledInputInner,
   StyledInputWrapper,
   StyledLabel,
+  StyledOutsideLabel,
 } from './Input.styles';
-import { InputProps } from './Input.types';
+import { Props } from './Input.types';
 
-export const Input = ({
-  icon,
+export const Input: FC<Props> = ({
+  startIcon,
   label,
+  labelPosition = 'outside',
   placeholder,
-  rounded,
-  setValue,
-  value,
+  rounded = 'both',
+  onChange,
+  defaultValue,
   onClick,
   readOnly,
   disabled,
   className,
   testId = 'input',
-}: InputProps) => {
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+  const [value, setValue] = useState(defaultValue ?? '');
+
+  const hasIcon = !!startIcon?.icon;
+
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    onChange?.(e);
   };
 
   const handleOnClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
@@ -32,28 +40,43 @@ export const Input = ({
     onClick?.(e);
   };
 
+  useEffect(() => {
+    if (!defaultValue) return;
+    setValue(defaultValue);
+  }, [defaultValue]);
+
   return (
-    <StyledInputWrapper
-      tabIndex={0}
-      rounded={rounded}
-      icon={icon}
-      onClick={handleOnClick}
-      className={className}
-      data-testid={testId}
-    >
-      {icon && <StyledIcon icon={icon} stroke="primary" size={'regular'} />}
-      <StyledInputInner>
-        {value === '' && <StyledLabel icon={icon}>{label}</StyledLabel>}
-        <StyledInput
-          ref={inputRef}
-          type="text"
-          value={value}
-          placeholder={placeholder}
-          onChange={onChange}
-          readOnly={readOnly}
-          disabled={disabled}
-        />
-      </StyledInputInner>
-    </StyledInputWrapper>
+    <div>
+      {labelPosition === 'outside' && (
+        <StyledOutsideLabel>{label}</StyledOutsideLabel>
+      )}
+      <StyledInputWrapper
+        tabIndex={0}
+        rounded={rounded}
+        hasIcon={hasIcon}
+        labelPosition={labelPosition}
+        onClick={handleOnClick}
+        className={className}
+        data-testid={testId}
+      >
+        {startIcon && (
+          <StyledIcon stroke="primary" size={'regular'} {...startIcon} />
+        )}
+        <StyledInputInner>
+          {value === '' && labelPosition === 'inside' && (
+            <StyledLabel>{label}</StyledLabel>
+          )}
+          <StyledInput
+            ref={inputRef}
+            type="text"
+            value={value}
+            placeholder={placeholder}
+            onChange={handleOnChange}
+            readOnly={readOnly}
+            disabled={disabled}
+          />
+        </StyledInputInner>
+      </StyledInputWrapper>
+    </div>
   );
 };

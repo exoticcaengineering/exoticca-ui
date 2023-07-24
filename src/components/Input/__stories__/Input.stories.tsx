@@ -1,37 +1,30 @@
 import { ComponentStory, Meta, StoryObj } from '@storybook/react';
 import { Input } from '../Input';
-import { useState } from 'react';
-import { iconNames } from 'src/types/IconNames';
-import { InputProps } from '../Input.types';
+import { Props } from '../Input.types';
 
 export default {
   title: 'Components/Input',
   component: Input,
   args: {
-    icon: 'user',
+    startIcon: {
+      icon: 'user',
+    },
     label: 'Label',
     placeholder: 'Placeholder',
     rounded: 'both',
   },
   argTypes: {
-    icon: {
-      options: [...iconNames, 'user'],
-      control: { type: 'select' },
-      category: 'Prop',
-    },
     rounded: {
       options: ['right', 'left', 'both'],
       control: { type: 'select' },
       category: 'Prop',
     },
   },
-} as Meta<InputProps>;
+} as Meta<Props>;
 
-type Story = StoryObj<InputProps>;
+type Story = StoryObj<Props>;
 
 const Template: ComponentStory<typeof Input> = ({ ...props }) => {
-  const [value, setValue] = useState('');
-
   return (
     <div
       style={{
@@ -46,7 +39,7 @@ const Template: ComponentStory<typeof Input> = ({ ...props }) => {
           width: '15rem',
         }}
       >
-        <Input {...props} value={value} setValue={setValue} />
+        <Input {...props} />
       </div>
     </div>
   );
@@ -54,6 +47,10 @@ const Template: ComponentStory<typeof Input> = ({ ...props }) => {
 
 export const Base: Story = {
   render: (args) => <Template {...args} />,
+};
+
+export const LabelInside: Story = {
+  render: (args) => <Template {...args} labelPosition="inside" />,
 };
 
 export const LeftRounded: Story = {
@@ -65,7 +62,7 @@ export const RightRounded: Story = {
 };
 
 export const WithoutIcon: Story = {
-  render: (args) => <Template {...args} icon={undefined} />,
+  render: (args) => <Template {...args} />,
 };
 
 export const ReadOnly: Story = {

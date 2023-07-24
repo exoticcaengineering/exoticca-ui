@@ -11,10 +11,11 @@ export const StyledInputWrapper = styled.div<StyleProps>`
   align-items: center;
   padding-top: ${({ theme }) => theme.spacing(0.2)};
   padding-bottom: ${({ theme }) => theme.spacing(0.2)};
-  padding-left: ${({ icon }) => (icon ? ICON_SPACE : NO_ICON_PADDING)};
+  padding-left: ${({ hasIcon }) => (hasIcon ? ICON_SPACE : NO_ICON_PADDING)};
   padding-right: ${({ theme }) => theme.spacing(2)};
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
-  height: 50px;
+  height: ${({ labelPosition }) =>
+    labelPosition === 'inside' ? '50px' : '44px'};
   width: 100%;
   background-color: ${({ theme }) => theme.colors.arcticWind};
   border-radius: ${({ rounded, theme }) => {
@@ -54,12 +55,14 @@ export const StyledInput = styled.input`
   }
 `;
 
-export const StyledLabel = styled.label<StyleProps>`
-  left: ${({ icon }) => (icon ? ICON_SPACE : NO_ICON_PADDING)};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
-  color: ${({ theme }) => theme.colors.grey80};
+export const StyledLabel = styled.label`
+  color: ${({ theme }) => theme.palette.background.medium};
   font-size: ${({ theme }) => theme.typography.fontSize.body2};
   cursor: pointer;
+`;
+
+export const StyledOutsideLabel = styled.label`
+  font-size: ${({ theme }) => theme.typography.fontSize.body2};
 `;
 
 export const StyledIcon = styled(Icon)`
