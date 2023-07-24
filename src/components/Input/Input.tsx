@@ -5,12 +5,14 @@ import {
   StyledInputInner,
   StyledInputWrapper,
   StyledLabel,
+  StyledOutsideLabel,
 } from './Input.styles';
 import { InputProps } from './Input.types';
 
 export const Input = ({
   icon,
   label,
+  labelPosition = 'outside',
   placeholder,
   rounded,
   setValue,
@@ -23,6 +25,8 @@ export const Input = ({
 }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const hasIcon = !!icon;
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
@@ -33,27 +37,34 @@ export const Input = ({
   };
 
   return (
-    <StyledInputWrapper
-      tabIndex={0}
-      rounded={rounded}
-      icon={icon}
-      onClick={handleOnClick}
-      className={className}
-      data-testid={testId}
-    >
-      {icon && <StyledIcon icon={icon} stroke="primary" size={'regular'} />}
-      <StyledInputInner>
-        {value === '' && <StyledLabel icon={icon}>{label}</StyledLabel>}
-        <StyledInput
-          ref={inputRef}
-          type="text"
-          value={value}
-          placeholder={placeholder}
-          onChange={onChange}
-          readOnly={readOnly}
-          disabled={disabled}
-        />
-      </StyledInputInner>
-    </StyledInputWrapper>
+    <>
+      {labelPosition === 'outside' && (
+        <StyledOutsideLabel>{label}</StyledOutsideLabel>
+      )}
+      <StyledInputWrapper
+        tabIndex={0}
+        rounded={rounded}
+        hasIcon={hasIcon}
+        onClick={handleOnClick}
+        className={className}
+        data-testid={testId}
+      >
+        {icon && <StyledIcon icon={icon} stroke="primary" size={'regular'} />}
+        <StyledInputInner>
+          {value === '' && labelPosition === 'inside' && (
+            <StyledLabel>{label}</StyledLabel>
+          )}
+          <StyledInput
+            ref={inputRef}
+            type="text"
+            value={value}
+            placeholder={placeholder}
+            onChange={onChange}
+            readOnly={readOnly}
+            disabled={disabled}
+          />
+        </StyledInputInner>
+      </StyledInputWrapper>
+    </>
   );
 };

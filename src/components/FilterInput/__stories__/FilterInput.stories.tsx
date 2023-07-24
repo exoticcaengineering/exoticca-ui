@@ -7,7 +7,7 @@ import { Typography } from 'src/components/Typography';
 import { InputFilterProps } from '../FilterInput.types';
 
 export default {
-  title: 'Components/Input/FilterInput',
+  title: 'Components/FilterInput',
   component: FilterInput,
   argTypes: {
     icon: {

@@ -27,7 +27,12 @@ export const FilterInput = ({
 
   return (
     <StyledFilter ref={dropdownRef}>
-      <Input onClick={handleClick} testId={testId} {...inputProps} />
+      <Input
+        onClick={handleClick}
+        testId={testId}
+        {...inputProps}
+        labelPosition="inside"
+      />
       {dropdownIsOpen && (
         <StyledDropDown>
           <StyledDropDownInner>

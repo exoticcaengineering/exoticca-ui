@@ -56,6 +56,10 @@ export const Base: Story = {
   render: (args) => <Template {...args} />,
 };
 
+export const LabelInside: Story = {
+  render: (args) => <Template {...args} labelPosition="inside" />,
+};
+
 export const LeftRounded: Story = {
   render: (args) => <Template {...args} rounded="left" />,
 };
