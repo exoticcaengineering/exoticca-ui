@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { StyleProps } from './Input.types';
 import { Icon } from '../Icon';
+import { TextBody2 } from '../TypographyVariants';
 
 const ICON_SPACE = '44px';
 const NO_ICON_PADDING = '16px';
@@ -70,4 +71,8 @@ export const StyledIcon = styled(Icon)`
   top: 50%;
   transform: translateY(-50%);
   left: 14px;
+`;
+
+export const StyledErrorMessage = styled(TextBody2)`
+  color: ${({ theme }) => theme.palette.warning.main};
 `;

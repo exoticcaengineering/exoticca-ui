@@ -72,3 +72,7 @@ export const ReadOnly: Story = {
 export const Disabled: Story = {
   render: (args) => <Template {...args} disabled />,
 };
+
+export const Error: Story = {
+  render: (args) => <Template {...args} errorMessage="Error message" />,
+};

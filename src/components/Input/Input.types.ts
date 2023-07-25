@@ -14,6 +14,7 @@ export interface Props extends ComponentPropsBase {
   readOnly?: boolean;
   disabled?: boolean;
   name?: string;
+  errorMessage?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
