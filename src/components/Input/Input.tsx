@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
 import {
+  StyledErrorMessage,
   StyledIcon,
   StyledInput,
   StyledInputInner,
@@ -19,6 +20,7 @@ export const Input: FC<Props> = ({
   onClick,
   className,
   testId = 'input',
+  errorMessage,
   name,
   ...inputProps
 }) => {
@@ -75,6 +77,7 @@ export const Input: FC<Props> = ({
           />
         </StyledInputInner>
       </StyledInputWrapper>
+      <StyledErrorMessage>{errorMessage}</StyledErrorMessage>
     </div>
   );
 };
