@@ -13,15 +13,13 @@ export const Input: FC<Props> = ({
   startIcon,
   label,
   labelPosition = 'outside',
-  placeholder,
   rounded = 'both',
   onChange,
   defaultValue,
   onClick,
-  readOnly,
-  disabled,
   className,
   testId = 'input',
+  ...inputProps
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -70,10 +68,8 @@ export const Input: FC<Props> = ({
             ref={inputRef}
             type="text"
             value={value}
-            placeholder={placeholder}
             onChange={handleOnChange}
-            readOnly={readOnly}
-            disabled={disabled}
+            {...inputProps}
           />
         </StyledInputInner>
       </StyledInputWrapper>
