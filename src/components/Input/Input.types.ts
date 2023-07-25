@@ -10,11 +10,14 @@ export interface Props extends ComponentPropsBase {
   labelPosition?: LabelPosition;
   placeholder?: string;
   rounded?: 'none' | 'left' | 'right' | 'both';
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
   defaultValue?: string;
   readOnly?: boolean;
   disabled?: boolean;
+  name?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export interface StyleProps
