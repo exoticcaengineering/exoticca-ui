@@ -19,6 +19,7 @@ export const Input: FC<Props> = ({
   onClick,
   className,
   testId = 'input',
+  name,
   ...inputProps
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -69,6 +70,7 @@ export const Input: FC<Props> = ({
             type="text"
             value={value}
             onChange={handleOnChange}
+            name={name || label}
             {...inputProps}
           />
         </StyledInputInner>

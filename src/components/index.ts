@@ -16,3 +16,5 @@ export { Input } from './Input';
 export { HeroWrapper } from './HeroWrapper';
 export { ProgressBar, ProgressBarProps } from './ProgressBar';
 export { Loader } from './Loader';
+export * from './Spinner';
+export * from './Checkbox';
