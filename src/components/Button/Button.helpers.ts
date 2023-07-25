@@ -102,7 +102,9 @@ export const setFontsize = (theme: Theme, size: ButtonSize) => {
   return fontSizes[size];
 };
 
-export const getIconSize = (size: ButtonSize): IconSize => {
+export const getIconSize = (
+  size: ButtonSize,
+): Extract<IconSize, 'regular' | 'medium'> => {
   if (size === 'small') return 'regular';
   return 'medium';
 };
