@@ -4,7 +4,7 @@ import {
   StyledDropDownInner,
   StyledFilter,
 } from './FilterInput.styles';
-import { Input } from '../Input';
+import { Input } from '../Input/Input';
 import { useOnClickOutside } from 'src/hooks';
 import { InputFilterProps } from './FilterInput.types';
 
@@ -27,7 +27,12 @@ export const FilterInput = ({
 
   return (
     <StyledFilter ref={dropdownRef}>
-      <Input onClick={handleClick} testId={testId} {...inputProps} />
+      <Input
+        onClick={handleClick}
+        testId={testId}
+        {...inputProps}
+        labelPosition="inside"
+      />
       {dropdownIsOpen && (
         <StyledDropDown>
           <StyledDropDownInner>

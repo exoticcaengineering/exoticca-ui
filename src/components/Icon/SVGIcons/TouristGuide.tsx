@@ -1,0 +1,54 @@
+export const TouristGuide = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 7.875V6C15 3.92893 13.3211 2.25 11.25 2.25H5.25C3.17893 2.25 1.5 3.92893 1.5 6V12C1.5 14.0711 3.17893 15.75 5.25 15.75H7.5"
+      stroke="#323232"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle
+      cx="8.25"
+      cy="7.125"
+      r="1.875"
+      stroke="#323232"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9 10.875H6.5917C5.8467 10.8754 5.17268 11.3171 4.875 12"
+      stroke="#323232"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.25 10.125H16.5L15.75 11.8125L16.5 13.5H11.25"
+      stroke="#323232"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12 16.5H10.5"
+      stroke="#323232"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.25 16.5V10.125"
+      stroke="#323232"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
