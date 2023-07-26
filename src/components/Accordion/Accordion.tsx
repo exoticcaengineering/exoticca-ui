@@ -18,8 +18,11 @@ export const Accordion: FC<Props> = ({
   endIcon = { icon: 'arrow' },
   className,
   testId = 'accordion',
+  CustomTrigger,
 }) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(isOpen);
+
+  const hasCustomTrigger = !!CustomTrigger;
 
   useEffect(() => {
     setIsAccordionOpen(isOpen);
@@ -31,14 +34,17 @@ export const Accordion: FC<Props> = ({
   };
   const isEnabledAndOpen = !isDisabled && isAccordionOpen;
 
+  const handleOnClickWrapper = () => (hasCustomTrigger ? null : toggleIsOpen());
+
   return (
     <div data-testid={testId}>
       <StyledHeaderWrapper
-        onClick={toggleIsOpen}
+        onClick={handleOnClickWrapper}
         isOpen={isAccordionOpen}
         isDisabled={isDisabled}
         className={className}
         data-testid={`${testId}-header-wrapper`}
+        hasCustomTrigger={hasCustomTrigger}
       >
         {header && (
           <StyledHeader data-testid={`${testId}-header`}>
@@ -49,12 +55,16 @@ export const Accordion: FC<Props> = ({
           </StyledHeader>
         )}
 
-        <Icon
-          size="regular"
-          stroke="primary"
-          rotate={isEnabledAndOpen ? 180 : 0}
-          {...endIcon}
-        />
+        {hasCustomTrigger ? (
+          <CustomTrigger isOpen={isAccordionOpen} onClick={toggleIsOpen} />
+        ) : (
+          <Icon
+            size="regular"
+            stroke="primary"
+            rotate={isEnabledAndOpen ? 180 : 0}
+            {...endIcon}
+          />
+        )}
       </StyledHeaderWrapper>
 
       <StyledContent

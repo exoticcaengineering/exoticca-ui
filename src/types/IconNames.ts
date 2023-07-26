@@ -70,6 +70,7 @@ export const iconNames = [
   'star-3-sp',
   'trash',
   'document-text',
+  'touristGuide',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];

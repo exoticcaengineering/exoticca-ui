@@ -70,6 +70,7 @@ import { IconAlertTriangle } from 'src/components/Icon/SVGIcons/IconAlertTriangl
 import { IconEnvelope } from 'src/components/Icon/SVGIcons/IconEnvelope';
 import { IconTrash } from './SVGIcons/IconTrash';
 import { IconDocumentText } from './SVGIcons/IconDocumentText';
+import { TouristGuide } from './SVGIcons/TouristGuide';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -87,6 +88,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'flag-de': FlagDE,
   'flag-mx': FlagMX,
   'flag-fr': FlagFR,
+  touristGuide: TouristGuide,
   loader: IconLoader,
   adventure: IconAdventure,
   beach: IconBeach,

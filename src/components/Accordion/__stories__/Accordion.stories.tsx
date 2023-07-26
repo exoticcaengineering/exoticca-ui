@@ -2,6 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from '../Accordion';
 import { Typography } from 'src/components/Typography';
 import { Wrapper } from './Story.styles';
+import { CustomTriggerProps } from '../Accordion.types';
+import { Button } from 'src/components/Button';
 
 /**
  * ## Accordion is a component that can be used to hide and show content.
@@ -62,11 +64,45 @@ export const Disabled: Story = {
 };
 
 /**
- * Accordions also can take a startIcon props to show an icon at the start of the header.
+ * Accordions  can take a startIcon props to show an icon at the start of the header.
  */
 export const WithStartIcon: Story = {
   args: {
     startIcon: { icon: 'calendar' },
+  },
+  render: (args) => <Accordion {...args} />,
+};
+
+/**
+ * Accordions  can take a endIcon props to show an icon at the end of the header.
+ */
+export const WithEndIcon: Story = {
+  args: {
+    endIcon: { icon: 'arrow-down-circle' },
+  },
+  render: (args) => <Accordion {...args} />,
+};
+
+const CustomTrigger = ({ isOpen, onClick }: CustomTriggerProps) => {
+  return (
+    <Button
+      onClick={onClick}
+      text={isOpen ? 'Close' : 'Open'}
+      size="small"
+      variant="secondary"
+      shape="square"
+    />
+  );
+};
+
+/**
+ * Accordions can take a customTrigger props to show a custom trigger.
+ * with customer trigger, the accordion will not open or close when we click on the header.
+ * we have to handle the open and close state by clicking on the trigger.
+ */
+export const WithCustomTrigger: Story = {
+  args: {
+    CustomTrigger: CustomTrigger,
   },
   render: (args) => <Accordion {...args} />,
 };

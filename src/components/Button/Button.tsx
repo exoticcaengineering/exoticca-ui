@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Props } from './Button.types';
 import { StyledButton, StyledIcon } from './Button.styles';
-import { Spinner } from './Spinner';
 import { getIconSize } from './Button.helpers';
 import { Typography } from '../Typography';
+import { Spinner } from '../Spinner/Spinner';
 
 export const Button: FC<Props> = ({
   text,
@@ -24,7 +24,9 @@ export const Button: FC<Props> = ({
 
   const hasIcon = startIcon || endIcon;
 
-  const renderLoadingIcon = () => <Spinner size={size} color="currentColor" />;
+  const renderLoadingIcon = () => (
+    <Spinner size={iconSize} color="currentColor" />
+  );
 
   const renderStartIcon = () => {
     if (!startIcon) return;
