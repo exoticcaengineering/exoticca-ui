@@ -22,6 +22,7 @@ export interface IconConfig {
   originalIconColor?: boolean;
   rotate?: number;
   flexShrink?: number;
+  style?: object;
 }
 export interface Props extends ComponentPropsBase, IconConfig {
   onClick?: () => void;

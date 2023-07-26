@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Icon } from '../Icon';
 import { ProgressBar } from '../ProgressBar';
 import {
@@ -14,9 +13,9 @@ interface ItemProps {
   onDeleteCB: () => void;
 }
 
-const UploadedItem = ({ name, size, key, onDeleteCB }: ItemProps) => {
+const UploadedItem = ({ name, size, onDeleteCB }: ItemProps) => {
   return (
-    <StyledListItem key={key}>
+    <StyledListItem>
       <Icon icon="document-text" size="xLarge" flexShrink={0} />
       <ItemDescription>
         <span>{name}</span>

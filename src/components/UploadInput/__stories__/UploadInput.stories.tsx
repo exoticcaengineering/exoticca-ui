@@ -1,36 +1,25 @@
 import { ComponentStory, Meta, StoryObj } from '@storybook/react';
 import { UploadInput } from '../UploadInput';
 import { useState } from 'react';
-import { iconNames } from 'src/types/IconNames';
+import { uploadInputProps } from '../UploadInput.types';
 // import { InputProps } from '../UploadInput.types';
 
 export default {
   title: 'Components/UploadInput',
   component: UploadInput,
   args: {
-    icon: 'user',
-    label: 'Label',
-    placeholder: 'Placeholder',
-    rounded: 'both',
+    value: [],
+    setValue: () => null,
   },
-  argTypes: {
-    icon: {
-      options: [...iconNames, 'user'],
-      control: { type: 'select' },
-      category: 'Prop',
-    },
-    rounded: {
-      options: ['right', 'left', 'both'],
-      control: { type: 'select' },
-      category: 'Prop',
-    },
-  },
-} as Meta<any>;
+} as Meta<uploadInputProps>;
 
-type Story = StoryObj<any>;
+type Story = StoryObj<uploadInputProps>;
 
 const Template: ComponentStory<typeof UploadInput> = ({ ...props }) => {
-  const [value, setValue] = useState(['']);
+  const [value, setValue] = useState<File[]>([]);
+  const mockedChangeFieldHandler = (field: string, newValue: File[]) => {
+    return setValue(newValue);
+  };
 
   return (
     <div
@@ -47,7 +36,11 @@ const Template: ComponentStory<typeof UploadInput> = ({ ...props }) => {
           // margin: '0 auto',
         }}
       >
-        <UploadInput {...props} value={value} setValue={setValue} />
+        <UploadInput
+          {...props}
+          value={value}
+          setValue={mockedChangeFieldHandler}
+        />
       </div>
     </div>
   );

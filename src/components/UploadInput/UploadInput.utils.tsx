@@ -1,11 +1,13 @@
-import { ChangeEvent, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, ChangeEvent } from 'react';
 
-export const handleFileUpload = (uploads: File[]) => {
+export const handleFileUpload = (
+  uploads: File[],
+  setError: Dispatch<SetStateAction<string[]>>,
+) => {
   const filteredList = uploads.filter((element) => {
-    console.log(element.size <= 1048576 * 3, {
-      size: element.size,
-      totalSize: 1048576 * 3,
-    });
+    if (element.size >= 1048576 * 3) {
+      return setError((prev) => [...prev, `File ${element.name} is too Big`]);
+    }
     //MAX SIZE 3 MB PER EACH FILE
     return element.size <= 1048576 * 3;
   });
@@ -17,16 +19,19 @@ export const deleteByValue = ({
   value,
   name,
   setValue,
+  setError,
 }: {
   prevValue: File[];
   value: string;
   name: string;
   setValue: (field: string, value: File[]) => void;
+  setError: Dispatch<SetStateAction<string[]>>;
 }) => {
-  return setValue(
+  setValue(
     name,
     prevValue.filter((item) => item.name !== value),
   );
+  return setError((prev) => [...prev, `File ${name} removed correctly`]);
 };
 
 export const onChange = ({
@@ -34,18 +39,18 @@ export const onChange = ({
   name,
   value,
   setValue,
+  setError,
 }: {
   name: string;
   value: File[];
   e: ChangeEvent<HTMLInputElement>;
   setValue: (field: string, value: File[]) => void;
+  setError: Dispatch<SetStateAction<string[]>>;
 }) => {
   if (!e.target?.files) {
     return;
   }
-  const filteredFiles = handleFileUpload([...e.target.files]);
-  console.log('INSIDE ACTION', [...e.target.files]);
+  const filteredFiles = handleFileUpload([...e.target.files], setError);
   const newData = [...value, ...filteredFiles];
-  console.log(newData);
   return setValue(name, newData);
 };

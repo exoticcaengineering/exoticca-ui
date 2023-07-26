@@ -58,3 +58,8 @@ export const ProgressBarContainer = styled.div`
   width: 150px;
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
 `;
+
+export const ErrorMessage = styled.li`
+  color: red;
+  list-style: none;
+`;
