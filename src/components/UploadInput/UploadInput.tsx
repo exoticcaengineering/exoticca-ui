@@ -18,6 +18,10 @@ export interface uploadInputProps {
   type?: string;
   name?: string;
   buttonText?: string;
+  errorMessages?: {
+    exceededSizeLimit: string;
+    erasedCorrectly: string;
+  };
 }
 
 export const UploadInput = ({
@@ -28,6 +32,10 @@ export const UploadInput = ({
   type = 'image/*, .pdf, .doc, .docx, .ppt, .pptx, .odt',
   name = 'uploadedDocs',
   buttonText = 'Add documents',
+  errorMessages = {
+    exceededSizeLimit: 'exceeeds the size limit',
+    erasedCorrectly: 'removed correctly',
+  },
 }: uploadInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string[]>([]);
@@ -39,11 +47,11 @@ export const UploadInput = ({
         () =>
           setError((prev) => {
             const previous = [...prev];
-            console.log('im in prev', prev);
+
             previous.shift();
             return previous;
           }),
-        5000,
+        10000,
       );
     }
   }, [error]);
@@ -71,7 +79,16 @@ export const UploadInput = ({
           data-testid="upload-native-input"
           accept={type}
           name={name}
-          onChange={(e) => onChange({ e, value, name, setValue, setError })}
+          onChange={(e) =>
+            onChange({
+              e,
+              value,
+              name,
+              setValue,
+              setError,
+              exceededSizeLimit: errorMessages.exceededSizeLimit,
+            })
+          }
           multiple
         />
       </WrapperLabel>
@@ -96,6 +113,7 @@ export const UploadInput = ({
                     setValue,
                     name: name,
                     prevValue: value,
+                    deletedMessage: errorMessages.erasedCorrectly,
                     setError,
                   })
                 }

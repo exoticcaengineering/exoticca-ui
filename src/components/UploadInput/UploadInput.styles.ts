@@ -14,6 +14,7 @@ export const StyledInput = styled.input`
 `;
 
 export const Description = styled(TextBody2)`
+  margin: 12px 0;
   color: ${({ theme }) => theme.colors.polarNightMedium};
 `;
 export const FlexColumn = styled.div`
