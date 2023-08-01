@@ -25,7 +25,7 @@ export const Checkbox: FC<Props> = ({
 
   return (
     <StyledCheckboxWrapper
-      id={name}
+      htmlFor={name}
       data-testid={testId}
       error={error}
       disabled={disabled}
@@ -38,6 +38,7 @@ export const Checkbox: FC<Props> = ({
         name={name}
         error={error}
         aria-label={name}
+        id={name}
       />
       {isLoading ? (
         <Spinner size="regular" />
