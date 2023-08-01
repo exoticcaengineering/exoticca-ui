@@ -20,6 +20,8 @@ export const Checkbox: FC<Props> = ({
   className,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('handleOnChange', e.target.checked);
+
     onChange?.(e);
   };
 
@@ -29,7 +31,6 @@ export const Checkbox: FC<Props> = ({
       error={error}
       disabled={disabled}
       className={className}
-      htmlFor={name}
     >
       <StyledInputCheckbox
         onChange={handleOnChange}
