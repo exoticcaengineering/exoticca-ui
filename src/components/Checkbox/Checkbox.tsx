@@ -29,6 +29,7 @@ export const Checkbox: FC<Props> = ({
       error={error}
       disabled={disabled}
       className={className}
+      htmlFor={name}
     >
       <StyledInputCheckbox
         onChange={handleOnChange}
