@@ -20,8 +20,6 @@ export const Checkbox: FC<Props> = ({
   className,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('handleOnChange', e.target.checked);
-
     onChange?.(e);
   };
 
