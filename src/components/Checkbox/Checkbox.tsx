@@ -27,6 +27,7 @@ export const Checkbox: FC<Props> = ({
 
   return (
     <StyledCheckboxWrapper
+      id={name}
       data-testid={testId}
       error={error}
       disabled={disabled}
