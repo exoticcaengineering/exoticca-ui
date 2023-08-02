@@ -6,9 +6,6 @@ export default {
   title: 'Components/Input',
   component: Input,
   args: {
-    startIcon: {
-      icon: 'user',
-    },
     label: 'Label',
     placeholder: 'Placeholder',
     rounded: 'both',
@@ -61,7 +58,12 @@ export const RightRounded: Story = {
   render: (args) => <Template {...args} rounded="right" />,
 };
 
-export const WithoutIcon: Story = {
+export const WithIcon: Story = {
+  args: {
+    startIcon: {
+      icon: 'user',
+    },
+  },
   render: (args) => <Template {...args} />,
 };
 

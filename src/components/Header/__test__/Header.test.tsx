@@ -1,41 +1,20 @@
 import { composeStories } from '@storybook/react';
 import * as stories from '../__stories__/Header.stories';
 import { render, screen } from '@testing-library/react';
-import { Header } from '../Header';
-import { ThemeProvider } from 'styled-components';
 import { themeDefault } from 'src/themes';
 
-const { LeftCenterRight, LeftCenter, LeftRight, CenterRight } =
+const { Background, LeftCenterRight, LeftCenter, LeftRight, CenterRight } =
   composeStories(stories);
 
 describe('Header', () => {
-  it('should be transparent', () => {
-    render(
-      <ThemeProvider theme={themeDefault}>
-        <Header background="header" backgroundShade="light" />
-      </ThemeProvider>,
-    );
+  it('should show corresponding background color', () => {
+    render(<Background />);
 
     const header = screen.getByRole('heading');
 
     expect(header).toHaveStyleRule(
       'background',
-      themeDefault.colors.transparent,
-    );
-  });
-
-  it('should be solid', () => {
-    render(
-      <ThemeProvider theme={themeDefault}>
-        <Header background="header" />
-      </ThemeProvider>,
-    );
-
-    const header = screen.getByRole('heading');
-
-    expect(header).toHaveStyleRule(
-      'background',
-      themeDefault.colors.polarNight,
+      themeDefault.palette.promotion.main,
     );
   });
 
