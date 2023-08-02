@@ -33,6 +33,10 @@ export const deleteByValue = ({
   setValue: (field: string, value: File[]) => void;
   setError: Dispatch<SetStateAction<string[]>>;
 }) => {
+  console.log(
+    'filter -> ',
+    prevValue.filter((item) => item.name !== value),
+  );
   setValue(
     name,
     prevValue.filter((item) => item.name !== value),
@@ -59,6 +63,7 @@ export const onChange = ({
   if (!e.target?.files) {
     return;
   }
+
   const filteredFiles = handleFileUpload(
     [...e.target.files],
     setError,
