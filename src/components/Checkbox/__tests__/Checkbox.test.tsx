@@ -32,7 +32,7 @@ describe('Checkbox', () => {
     expect(inputEl.checked).toEqual(true);
   });
 
-  // unchecked when clicked twice
+  // checkbox can be unchecked
   it('tests checkbox can be unchecked', async () => {
     const user = userEvent.setup();
     const { container } = render(<Base />);
