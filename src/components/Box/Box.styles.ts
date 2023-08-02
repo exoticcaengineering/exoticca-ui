@@ -36,5 +36,5 @@ export const StyledBoxWrapper = styled.div<StyleProps>`
     }
     return theme.spacing(padding);
   }};
-  cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'default')};
+  cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'inherit')};
 `;

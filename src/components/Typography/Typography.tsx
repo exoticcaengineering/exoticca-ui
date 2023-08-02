@@ -9,10 +9,12 @@ export const Typography: FC<Props> = ({
   className,
   ...props
 }) => {
+  const isClickable = !!props.onClick;
   return (
     <StyledTypographyContainer
       className={className}
       data-testid={testId}
+      isClickable={isClickable}
       {...props}
     >
       {children}
