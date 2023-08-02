@@ -1,8 +1,13 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  ComponentMeta,
+  ComponentStory,
+  Meta,
+  StoryObj,
+} from '@storybook/react';
 import { Header } from '../Header';
 import { TextBody2 } from 'src/components/TypographyVariants';
 import { Icon } from 'src/components/Icon';
-import { Box } from 'src/components/Box';
+import { Props } from '../Header.types';
 
 export default {
   title: 'Components/Header',
@@ -33,11 +38,13 @@ export default {
         'Pass the background shade of the background color. By default, it will be displayed in the main shade',
     },
   },
-} as ComponentMeta<typeof Header>;
+} as Meta<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = (args) => {
-  return <Header {...args} />;
-};
+type Story = StoryObj<typeof Header>;
+
+const BackgroundColor = (props: Props) => (
+  <Header {...props} background="promotion" />
+);
 
 const LeftComponent = () => <TextBody2>Left</TextBody2>;
 const CenterComponent = () => <TextBody2 as="span">center</TextBody2>;
@@ -48,31 +55,43 @@ const RightComponent = () => (
   </div>
 );
 
-export const LeftCenterRight = Template.bind({});
-
-LeftCenterRight.args = {
-  leftComponent: <LeftComponent />,
-  centerComponent: <CenterComponent />,
-  rightComponent: <RightComponent />,
+/**
+ * Header background can be changed by passing the background and backgroundShade props you want to display.
+ */
+export const Background: Story = {
+  args: {
+    leftComponent: <LeftComponent />,
+    centerComponent: <CenterComponent />,
+    rightComponent: <RightComponent />,
+  },
+  render: BackgroundColor,
 };
 
-export const LeftCenter = Template.bind({});
-
-LeftCenter.args = {
-  leftComponent: <LeftComponent />,
-  centerComponent: <CenterComponent />,
+export const LeftCenterRight: Story = {
+  args: {
+    leftComponent: <LeftComponent />,
+    centerComponent: <CenterComponent />,
+    rightComponent: <RightComponent />,
+  },
 };
 
-export const LeftRight = Template.bind({});
-
-LeftRight.args = {
-  leftComponent: <LeftComponent />,
-  rightComponent: <RightComponent />,
+export const LeftCenter: Story = {
+  args: {
+    leftComponent: <LeftComponent />,
+    centerComponent: <CenterComponent />,
+  },
 };
 
-export const CenterRight = Template.bind({});
+export const LeftRight: Story = {
+  args: {
+    leftComponent: <LeftComponent />,
+    rightComponent: <RightComponent />,
+  },
+};
 
-CenterRight.args = {
-  centerComponent: <CenterComponent />,
-  rightComponent: <RightComponent />,
+export const CenterRight: Story = {
+  args: {
+    centerComponent: <CenterComponent />,
+    rightComponent: <RightComponent />,
+  },
 };

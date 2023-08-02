@@ -8,7 +8,7 @@ export default {
   title: 'Components/Checkbox',
   component: Checkbox,
   args: {
-    name: 'checkbox',
+    name: 'checkbox-name',
     label: 'Checkbox label',
   },
 } as Meta<typeof Checkbox>;
