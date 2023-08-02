@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import * as stories from '../__stories__/Input.stories';
 import { composeStories } from '@storybook/react';
 
-const { Base, LeftRounded, RightRounded, WithoutIcon, ReadOnly, Disabled } =
+const { Base, LeftRounded, RightRounded, WithIcon, ReadOnly, Disabled } =
   composeStories(stories);
 
 describe('Input', () => {
@@ -42,10 +42,10 @@ describe('Input', () => {
     expect(input).toHaveStyle('border-radius: 0 24px 24px 0');
   });
 
-  it('render input without icon', () => {
-    render(<WithoutIcon />);
+  it('render input with icon', () => {
+    render(<WithIcon />);
     const icon = screen.queryByTestId('user-icon');
-    expect(icon).not.toBeInTheDocument();
+    expect(icon).toBeInTheDocument();
   });
 
   it('render read only input', () => {
