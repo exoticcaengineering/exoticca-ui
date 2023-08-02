@@ -25,8 +25,8 @@ export const StyledBoxWrapper = styled.div<StyleProps>`
     return `${borderWidth}px`;
   }};
   border-style: ${({ borderStyle = 'solid' }) => borderStyle};
-  border-color: ${({ theme, borderColor }) =>
-    borderColor ? theme.palette[borderColor].main : 'transparent'};
+  border-color: ${({ theme, borderColor, borderColorShade = 'main' }) =>
+    borderColor ? theme.palette[borderColor][borderColorShade] : 'transparent'};
   box-shadow: ${({ theme, boxShadow = 'none' }) => theme.boxShadow[boxShadow]};
   margin-bottom: ${({ theme, gutterBottom = 0 }) =>
     theme.spacing(gutterBottom)};
@@ -36,4 +36,5 @@ export const StyledBoxWrapper = styled.div<StyleProps>`
     }
     return theme.spacing(padding);
   }};
+  cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'default')};
 `;

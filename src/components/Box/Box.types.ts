@@ -8,21 +8,26 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   borderWidth?: number | number[];
   borderStyle?: CSS.Property.BorderStyle;
   borderColor?: keyof Palette;
+  borderColorShade?: keyof ColorShade;
   gutterBottom?: number;
   boxShadow?: keyof BoxShadow;
   padding?: number | number[];
   onClick?: () => void;
 }
 
-export type StyleProps = Pick<
-  Partial<Props>,
-  | 'background'
-  | 'backgroundShade'
-  | 'borderRadius'
-  | 'borderColor'
-  | 'gutterBottom'
-  | 'boxShadow'
-  | 'padding'
-  | 'borderWidth'
-  | 'borderStyle'
->;
+export interface StyleProps
+  extends Pick<
+    Partial<Props>,
+    | 'background'
+    | 'backgroundShade'
+    | 'borderRadius'
+    | 'borderColor'
+    | 'borderColorShade'
+    | 'gutterBottom'
+    | 'boxShadow'
+    | 'padding'
+    | 'borderWidth'
+    | 'borderStyle'
+  > {
+  isClickable?: boolean;
+}
