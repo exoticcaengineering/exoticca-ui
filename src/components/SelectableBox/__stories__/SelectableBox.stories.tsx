@@ -7,6 +7,7 @@ export default {
   component: SelectableBox,
   args: {
     children: 'SelectableBox',
+    onClick: undefined,
   },
 } as Meta<typeof SelectableBox>;
 

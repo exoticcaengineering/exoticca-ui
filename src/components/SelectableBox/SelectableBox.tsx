@@ -13,7 +13,7 @@ export const SelectableBox: FC<Props> = ({
       borderColor="background"
       borderColorShade={isSelected ? 'contrast' : 'light'}
       borderWidth={1}
-      padding={[3, 2, 2, 2]}
+      padding={[2]}
       isSelected={isSelected}
       {...boxProps}
     >
