@@ -9,6 +9,7 @@ export const StyledWrapper = styled.div`
 export const StyledBox = styled(Box)`
   overflow: hidden;
   position: relative;
+  height: 100%;
 `;
 
 export const SelectedIconWrapper = styled.div`
@@ -27,6 +28,7 @@ export const SelectedIconWrapper = styled.div`
 export const StyledRecommendedTag = styled.div<StyledProps>`
   position: absolute;
   width: 50%;
+  min-width: fit-content;
   top: 0;
   left: 50%;
   transform: translate(-50%, -100%);
