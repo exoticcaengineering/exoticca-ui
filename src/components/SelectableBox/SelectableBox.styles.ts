@@ -1,11 +1,4 @@
 import styled from 'styled-components';
-import { Box } from '../Box';
-import { StyleProps } from './SelectableBox.types';
-
-export const StyledBox = styled(Box)<StyleProps>`
-  overflow: hidden;
-  position: relative;
-`;
 
 export const SelectedIconWrapper = styled.div`
   width: 50px;
