@@ -11,7 +11,7 @@ export default {
   args: {
     children: 'RecommendedBox',
     onClick: undefined,
-    recommendedText: 'Recommended',
+    recommendationText: 'Recommended',
   },
 } as Meta<typeof RecommendedBox>;
 

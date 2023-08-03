@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { StyledProps } from './RecommendedBox.types';
+import { TextBody2 } from '../TypographyVariants';
+import { Typography } from '../Typography';
+import { Palette } from 'src/types';
 
 export const StyledWrapper = styled.div`
   position: relative;
@@ -23,4 +26,9 @@ export const StyledRecommendedTag = styled.div<StyledProps>`
   padding: ${({ theme }) => theme.spacing(0.5, 3)};
   border-radius: ${({ theme }) => theme.newBorderRadius.m}
     ${({ theme }) => theme.newBorderRadius.m} 0 0;
+`;
+
+export const StyledRecommendedTagText = styled(Typography)<StyledProps>`
+  color: ${({ theme, color = 'promotion' }) =>
+    theme.palette[color as keyof Palette].contrast};
 `;

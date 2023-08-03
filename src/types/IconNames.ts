@@ -72,6 +72,9 @@ export const iconNames = [
   'star-4',
   'star-4-sp',
   'star-3-sp',
+  'premium-care',
+  'premium-care-flex',
+  'premium-care-flex-plus',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];
