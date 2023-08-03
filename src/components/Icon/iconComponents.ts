@@ -69,6 +69,9 @@ import { IconCheckCircle } from 'src/components/Icon/SVGIcons/IconCheckCircle';
 import { IconAlertTriangle } from 'src/components/Icon/SVGIcons/IconAlertTriangle';
 import { IconEnvelope } from 'src/components/Icon/SVGIcons/IconEnvelope';
 import { TouristGuide } from './SVGIcons/TouristGuide';
+import { IconShield } from './SVGIcons/IconShield';
+import { IconPiggyBank } from './SVGIcons/IconPiggyBank';
+import { IconCalendarCross } from './SVGIcons/IconCalendarCross';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -139,4 +142,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'warning-cross': IconWarningCross,
   'alert-triangle': IconAlertTriangle,
   envelope: IconEnvelope,
+  shield: IconShield,
+  'piggy-bank': IconPiggyBank,
+  'calendar-cross': IconCalendarCross,
 };

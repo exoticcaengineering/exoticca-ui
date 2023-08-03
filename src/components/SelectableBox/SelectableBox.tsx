@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { Props } from './SelectableBox.types';
-import { SelectedIconWrapper } from './SelectableBox.styles';
+import { SelectedIconWrapper, StyledBox } from './SelectableBox.styles';
 import { Icon } from '../Icon';
-import { Box } from '../Box';
 
 export const SelectableBox: FC<Props> = ({
   isSelected,
@@ -10,7 +9,7 @@ export const SelectableBox: FC<Props> = ({
   ...boxProps
 }) => {
   return (
-    <Box
+    <StyledBox
       borderColor="primary"
       borderColorShade={isSelected ? 'main' : 'light'}
       borderWidth={1}
@@ -28,6 +27,6 @@ export const SelectableBox: FC<Props> = ({
           />
         </SelectedIconWrapper>
       )}
-    </Box>
+    </StyledBox>
   );
 };

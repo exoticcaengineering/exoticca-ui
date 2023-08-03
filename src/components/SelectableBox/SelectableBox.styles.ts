@@ -1,4 +1,10 @@
 import styled from 'styled-components';
+import { Box } from '../Box';
+
+export const StyledBox = styled(Box)`
+  overflow: hidden;
+  position: relative;
+`;
 
 export const SelectedIconWrapper = styled.div`
   width: 50px;

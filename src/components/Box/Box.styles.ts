@@ -4,7 +4,6 @@ import { StyleProps } from './Box.types';
 
 export const StyledBoxWrapper = styled.div<StyleProps>`
   position: relative;
-  overflow: hidden;
   background: ${({
     theme,
     background = 'background',
