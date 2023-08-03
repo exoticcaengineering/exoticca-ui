@@ -18,3 +18,5 @@ export { ProgressBar, ProgressBarProps } from './ProgressBar';
 export { Loader } from './Loader';
 export * from './Spinner';
 export * from './Checkbox';
+export * from './SelectableBox';
+export * from './RecommendedBox';
