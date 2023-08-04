@@ -15,6 +15,8 @@ export const SelectableBox: FC<Props> = ({
   highlightColor = 'promotion',
   highlightColorShade = 'main',
   highlightText,
+  testId,
+  className,
   ...boxProps
 }) => {
   const hasHighlight = !!highlightText;
@@ -31,7 +33,7 @@ export const SelectableBox: FC<Props> = ({
   };
 
   return (
-    <StyledWrapper>
+    <StyledWrapper data-testid={testId} className={className}>
       <StyledBox
         borderColor={getBorderColor()}
         borderColorShade={getBorderShade()}
