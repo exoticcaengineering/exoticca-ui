@@ -19,3 +19,4 @@ export { UploadInput } from './UploadInput';
 export { Loader } from './Loader';
 export * from './Spinner';
 export * from './Checkbox';
+export * from './SelectableBox';

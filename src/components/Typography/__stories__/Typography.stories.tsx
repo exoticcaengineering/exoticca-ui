@@ -59,6 +59,9 @@ const fontStyles = ['normal', 'italic', 'oblique'];
 export default {
   title: 'Components/Typography',
   component: Typography,
+  args: {
+    onClick: undefined,
+  },
   argTypes: {
     fontFamily: {
       options: Object.keys(fontFamily),

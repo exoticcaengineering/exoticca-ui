@@ -34,4 +34,5 @@ export const StyledTypographyContainer = styled.p<StyledProps>`
       text-overflow: ellipsis;
       white-space: nowrap;
     `}
+  cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'inherit')};
 `;

@@ -5,6 +5,7 @@ import { getIconSize } from './Icon.helpers';
 export const StyledWrapper = styled.div<StyledProps>`
   line-height: 0;
   display: inline-block;
+  flex-shrink: 0;
   width: ${({ size, width }) => {
     if (width) return typeof width === 'number' ? `${width}px` : width;
     return getIconSize(size);

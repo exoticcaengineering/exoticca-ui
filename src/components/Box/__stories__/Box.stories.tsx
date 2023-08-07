@@ -1,4 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  ComponentMeta,
+  ComponentStory,
+  Meta,
+  StoryObj,
+} from '@storybook/react';
 import { themeDefault } from 'src/themes/theme';
 import { Box } from '../Box';
 
@@ -22,6 +27,11 @@ const borderStyles = [
 export default {
   title: 'Components/Box',
   component: Box,
+  args: {
+    testId: 'basic-box',
+    children: 'Box component works as a container',
+    onClick: undefined,
+  },
   argTypes: {
     borderColor: {
       options: Object.keys(colors),
@@ -40,79 +50,85 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Box>;
+} as Meta<typeof Box>;
 
 const Template: ComponentStory<typeof Box> = (args) => (
   <Box {...args}>Box component works as a container</Box>
 );
 
-export const Base = Template.bind({});
+type Story = StoryObj<typeof Box>;
 
-Base.args = {
-  testId: 'basic-box',
+export const Base: Story = {};
+
+export const WithBorder: Story = {
+  args: {
+    borderColor: 'promotion',
+    borderWidth: 1,
+  },
 };
 
-export const WithBorder = Template.bind({});
-
-WithBorder.args = {
-  borderColor: 'promotion',
-  borderWidth: 1,
+export const WithBorderTop: Story = {
+  args: {
+    borderRadius: 'none',
+    borderColor: 'promotion',
+    borderWidth: [2, 0, 0, 0],
+  },
 };
 
-export const WithBorderTop = Template.bind({});
-
-WithBorderTop.args = {
-  borderRadius: 'none',
-  borderColor: 'promotion',
-  borderWidth: [2, 0, 0, 0],
+export const WithBorderBottom: Story = {
+  args: {
+    borderRadius: 'none',
+    borderColor: 'promotion',
+    borderWidth: [0, 0, 2, 0],
+  },
 };
 
-export const WithBorderBottom = Template.bind({});
-
-WithBorderBottom.args = {
-  borderRadius: 'none',
-  borderColor: 'promotion',
-  borderWidth: [0, 0, 2, 0],
+export const WithBorderLeft: Story = {
+  args: {
+    borderRadius: 'none',
+    borderColor: 'promotion',
+    borderWidth: [0, 0, 0, 2],
+    padding: [1],
+  },
 };
 
-export const WithBorderLeft = Template.bind({});
-
-WithBorderLeft.args = {
-  borderRadius: 'none',
-  borderColor: 'promotion',
-  borderWidth: [0, 0, 0, 2],
-  padding: [1],
+export const WithPadding: Story = {
+  args: {
+    borderColor: 'promotion',
+    padding: [1, 2],
+  },
 };
 
-export const WithPadding = Template.bind({});
-
-WithPadding.args = {
-  borderColor: 'promotion',
-  padding: [1, 2],
+export const WithBackground: Story = {
+  args: {
+    background: 'promotion',
+  },
 };
 
-export const WithBackground = Template.bind({});
-
-WithBackground.args = {
-  background: 'promotion',
+export const WithBoxShadow: Story = {
+  args: {
+    boxShadow: 's',
+  },
 };
 
-export const WithBoxShadow = Template.bind({});
-
-WithBoxShadow.args = {
-  boxShadow: 's',
+export const WithRadius: Story = {
+  args: {
+    borderRadius: 'l',
+    background: 'promotion',
+  },
 };
 
-export const WithRadius = Template.bind({});
-
-WithRadius.args = {
-  borderRadius: 'l',
-  background: 'promotion',
+export const WithDifferentRadius: Story = {
+  args: {
+    borderRadius: ['s', 'm', 'l', 'xl'],
+    background: 'promotion',
+  },
 };
 
-export const WithDifferentRadius = Template.bind({});
-
-WithDifferentRadius.args = {
-  borderRadius: ['s', 'm', 'l', 'xl'],
-  background: 'promotion',
+export const Clickable: Story = {
+  args: {
+    borderColor: 'promotion',
+    padding: [1, 2],
+    onClick: () => alert('Clicked'),
+  },
 };
