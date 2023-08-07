@@ -103,5 +103,5 @@ const Template = ({ ...args }) => {
 };
 
 export const Base: Story = {
-  render: (args) => <Template {...args} />,
+  render: () => <Template />,
 };

@@ -42,8 +42,7 @@ export const Input: FC<Props> = ({
   };
 
   useEffect(() => {
-    if (!defaultValue) return;
-    setValue(defaultValue);
+    setValue(defaultValue ?? '');
   }, [defaultValue]);
 
   return (
