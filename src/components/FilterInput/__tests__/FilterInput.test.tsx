@@ -17,7 +17,7 @@ describe('FilterInput', () => {
     // Open dropdown
     fireEvent.click(filterInput);
     const listItems = screen.getAllByRole('listitem');
-    expect(listItems).toHaveLength(5);
+    expect(listItems).toHaveLength(6);
   });
 
   it('should update the value when item selected', () => {
@@ -27,9 +27,20 @@ describe('FilterInput', () => {
     fireEvent.click(filterInput);
     const listItems = screen.getAllByRole('listitem');
     // Select first item in the dropdown
-    fireEvent.click(listItems[0]);
+    fireEvent.click(listItems[1]);
     const input = screen.getByRole('textbox');
     expect(input).toHaveValue('Item 1');
+  });
+
+  it('should show all values when select an item with no value', () => {
+    render(<Base />);
+
+    const filterInput = screen.getByTestId('filter-input');
+    fireEvent.click(filterInput);
+    const listItems = screen.getAllByRole('listitem');
+    fireEvent.click(listItems[0]);
+
+    expect(listItems).toHaveLength(6);
   });
 
   it("shouldn't update the value if clicked outside the dropdown", () => {

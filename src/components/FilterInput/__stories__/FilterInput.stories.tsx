@@ -30,6 +30,7 @@ const Template = ({ ...args }) => {
   const [selectedValue, setSelectedValue] = useState('');
 
   const LIST = [
+    { item: '', id: '0' },
     { item: 'Item 1', id: '1' },
     { item: 'Item 2', id: '2' },
     { item: 'Item 3', id: '3' },
@@ -50,11 +51,15 @@ const Template = ({ ...args }) => {
       ({ item }) => item.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1,
     );
     if (updatedList.length === 0) {
-      setList([{ item: 'No Items with this text', id: '1' }]);
+      setList([{ item: 'No Items with this text', id: '6' }]);
+      return;
+    }
+    if (updatedList.length === list.length) {
+      setList(list);
       return;
     }
 
-    setList(updatedList);
+    setList([list[0], ...updatedList]);
   };
 
   useEffect(() => {
@@ -103,5 +108,5 @@ const Template = ({ ...args }) => {
 };
 
 export const Base: Story = {
-  render: (args) => <Template {...args} />,
+  render: () => <Template />,
 };
