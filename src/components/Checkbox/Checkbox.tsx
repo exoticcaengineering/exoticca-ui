@@ -10,6 +10,7 @@ import {
 
 export const Checkbox: FC<Props> = ({
   label,
+  customLabel,
   name,
   defaultChecked,
   disabled,
@@ -21,6 +22,12 @@ export const Checkbox: FC<Props> = ({
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e);
+  };
+
+  const renderLabel = () => {
+    if (customLabel) return customLabel;
+    if (label)
+      return <StyledLabel dangerouslySetInnerHTML={{ __html: label }} />;
   };
 
   return (
@@ -45,7 +52,7 @@ export const Checkbox: FC<Props> = ({
       ) : (
         <StyledCheckBox data-testid={'checkbox__checkmark'} error={error} />
       )}
-      {label && <StyledLabel dangerouslySetInnerHTML={{ __html: label }} />}
+      {renderLabel()}
     </StyledCheckboxWrapper>
   );
 };
