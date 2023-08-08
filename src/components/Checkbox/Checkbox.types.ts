@@ -4,6 +4,7 @@ import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 export interface Props extends ComponentPropsBase {
   name: string;
   label?: string;
+  customLabel?: JSX.Element;
   defaultChecked?: boolean;
   error?: boolean;
   secondary?: boolean;
