@@ -20,22 +20,16 @@ export const SelectableBox: FC<Props> = ({
   ...boxProps
 }) => {
   const hasHighlight = !!highlightText;
-  const getBorderColor = () => {
-    if (isSelected) return 'primary';
-    if (hasHighlight) return highlightColor;
-    return 'primary';
-  };
 
   const getBorderShade = () => {
     if (isSelected) return 'main';
-    if (hasHighlight) return highlightColorShade;
     return 'light';
   };
 
   return (
     <StyledWrapper data-testid={testId} className={className}>
       <StyledBox
-        borderColor={getBorderColor()}
+        borderColor="primary"
         borderColorShade={getBorderShade()}
         borderWidth={1}
         padding={[2]}
