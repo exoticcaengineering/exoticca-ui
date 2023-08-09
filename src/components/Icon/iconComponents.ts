@@ -73,9 +73,12 @@ import { IconShield } from './SVGIcons/IconShield';
 import { IconPiggyBank } from './SVGIcons/IconPiggyBank';
 import { IconCalendarCross } from './SVGIcons/IconCalendarCross';
 import { IconPremiumCare } from './SVGIcons/IconPremiumCare';
-import { Icon } from './Icon';
 import { IconPremiumCareFlex } from './SVGIcons/IconPremiumCareFlex';
 import { IconPremiumCareFlexPlus } from './SVGIcons/IconPremiumCareFlexPlus';
+import { IconLoop } from './SVGIcons/IconLoop';
+import { IconStar } from './SVGIcons/IconStar';
+import { IconTag } from './SVGIcons/IconTag';
+import { IconWallet } from './SVGIcons/IconWallet';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -152,4 +155,8 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'premium-care': IconPremiumCare,
   'premium-care-flex': IconPremiumCareFlex,
   'premium-care-flex-plus': IconPremiumCareFlexPlus,
+  loop: IconLoop,
+  star: IconStar,
+  tag: IconTag,
+  wallet: IconWallet,
 };
