@@ -73,9 +73,18 @@ import { IconShield } from './SVGIcons/IconShield';
 import { IconPiggyBank } from './SVGIcons/IconPiggyBank';
 import { IconCalendarCross } from './SVGIcons/IconCalendarCross';
 import { IconPremiumCare } from './SVGIcons/IconPremiumCare';
-import { Icon } from './Icon';
 import { IconPremiumCareFlex } from './SVGIcons/IconPremiumCareFlex';
 import { IconPremiumCareFlexPlus } from './SVGIcons/IconPremiumCareFlexPlus';
+import { PlayStoreIconDE } from 'src/components/Icon/SVGIcons/PlayStoreIconDE';
+import { PlayStoreIconEN } from 'src/components/Icon/SVGIcons/PlayStoreIconEN';
+import { PlayStoreIconES } from 'src/components/Icon/SVGIcons/PlayStoreIconES';
+import { PlayStoreIconFR } from 'src/components/Icon/SVGIcons/PlayStoreIconFR';
+import { PlayStoreIconMX } from 'src/components/Icon/SVGIcons/PlayStoreIconMX';
+import { AppStoreIconDE } from 'src/components/Icon/SVGIcons/AppStoreIconDE';
+import { AppStoreIconEN } from 'src/components/Icon/SVGIcons/AppStoreIconEN';
+import { AppStoreIconES } from 'src/components/Icon/SVGIcons/AppStoreIconES';
+import { AppStoreIconFR } from 'src/components/Icon/SVGIcons/AppStoreIconFR';
+import { ArrowCircleLoginIcon } from 'src/components/Icon/SVGIcons/ArrowCircleLoginIcon';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -152,4 +161,14 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'premium-care': IconPremiumCare,
   'premium-care-flex': IconPremiumCareFlex,
   'premium-care-flex-plus': IconPremiumCareFlexPlus,
+  'arrow-circle-login': ArrowCircleLoginIcon,
+  play_store_icon_de: PlayStoreIconDE,
+  play_store_icon_en: PlayStoreIconEN,
+  play_store_icon_es: PlayStoreIconES,
+  play_store_icon_fr: PlayStoreIconFR,
+  play_store_icon_mx: PlayStoreIconMX,
+  app_store_icon_de: AppStoreIconDE,
+  app_store_icon_en: AppStoreIconEN,
+  app_store_icon_es: AppStoreIconES,
+  app_store_icon_fr: AppStoreIconFR,
 };
