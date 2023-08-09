@@ -6,7 +6,7 @@ export interface ButtonComponentProps {
   onClose: () => void;
 }
 
-export interface ModalProps extends ComponentPropsBaseWithChildren {
+export interface Props extends ComponentPropsBaseWithChildren {
   id: string;
   headerContent?: React.ReactNode;
   blackoutHeader?: boolean;
