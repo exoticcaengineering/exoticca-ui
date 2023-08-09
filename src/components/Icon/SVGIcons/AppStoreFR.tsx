@@ -1,4 +1,4 @@
-export const AppStoreIconFR = () => (
+export const AppStoreFR = () => (
   <svg
     height="40"
     viewBox="0 0 126.51549 40"

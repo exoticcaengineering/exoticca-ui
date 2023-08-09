@@ -1,4 +1,4 @@
-export const ArrowCircleLoginIcon = () => (
+export const IconArrowCircleLogin = () => (
   <svg
     width="24"
     height="24"

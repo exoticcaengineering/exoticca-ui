@@ -1,4 +1,4 @@
-export const PlayStoreIconDE = () => (
+export const PlayStoreDE = () => (
   <svg
     fill="none"
     height="47"
