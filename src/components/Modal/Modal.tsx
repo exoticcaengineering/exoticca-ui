@@ -33,7 +33,7 @@ import {
 } from './Modal.styles';
 import { enableScroll } from 'src/utils/enableScroll';
 import { disableScroll } from 'src/utils/disableScroll';
-import { ModalProps } from './Modal.types';
+import { Props } from './Modal.types';
 import { createRandomId } from 'src/utils/createRandomId';
 
 const ModalComponent = (
@@ -65,7 +65,7 @@ const ModalComponent = (
     overflowHidden,
     blackoutHeader,
     border,
-  }: ModalProps,
+  }: Props,
   ref: React.Ref<unknown>,
 ) => {
   const [isOpen, setIsOpen] = useState(false);
