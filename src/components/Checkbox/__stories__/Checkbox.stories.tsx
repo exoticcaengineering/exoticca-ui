@@ -59,6 +59,12 @@ const LabelComponent = () => {
 
 export const Base: Story = {};
 
+export const DefaultChecked: Story = {
+  args: {
+    defaultChecked: true,
+  },
+};
+
 export const States: Story = {
   render: CheckboxStates,
 };

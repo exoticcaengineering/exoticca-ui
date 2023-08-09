@@ -57,6 +57,10 @@ export const iconNames = [
   'piggy-bank',
   'touristGuide',
   'calendar-cross',
+  'loop',
+  'star',
+  'tag',
+  'wallet',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
