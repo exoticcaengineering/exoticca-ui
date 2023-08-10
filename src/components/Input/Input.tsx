@@ -24,6 +24,7 @@ export const Input: FC<Props> = ({
   testId = 'input',
   errorMessage,
   name,
+  type = 'text',
   ...inputProps
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -71,8 +72,9 @@ export const Input: FC<Props> = ({
             <StyledLabel>{label}</StyledLabel>
           )}
           <StyledInput
+            data-testid="input"
             ref={inputRef}
-            type="text"
+            type={type}
             value={value}
             onChange={handleOnChange}
             name={name || label}

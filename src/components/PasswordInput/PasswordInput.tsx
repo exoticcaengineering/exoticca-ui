@@ -4,6 +4,7 @@ import { Props } from './PasswordInput.types';
 
 export const PasswordInput: FC<Props> = ({
   defaultShowPassword,
+  testId = 'password-input',
   ...inputProps
 }) => {
   const [showPassword, setShowPassword] = useState(defaultShowPassword);
@@ -23,6 +24,7 @@ export const PasswordInput: FC<Props> = ({
   return (
     <Input
       {...inputProps}
+      testId={testId}
       type={inputType}
       endIcon={{ icon: icon, onClick: handleToggleShowPassword }}
     />

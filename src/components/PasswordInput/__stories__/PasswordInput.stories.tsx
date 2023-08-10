@@ -12,6 +12,7 @@ type Story = StoryObj<typeof PasswordInput>;
 export const Base: Story = {
   args: {
     defaultValue: 'password',
+    label: 'password',
   },
 };
 
