@@ -27,14 +27,12 @@ export interface Props extends ComponentPropsBaseWithChildren {
   isClosable?: boolean;
   onOpenCallback?(): void;
   onCloseCallback?(): void;
-  customContentSpacing?: object;
   disableCloseOnClickOutside?: boolean;
   closableFixed?: boolean;
   closeBtnshiftLeft?: string;
   closeBtnTransparant?: boolean;
   closeBtnText?: string;
   darkMode?: boolean;
-  fullWidthContent?: boolean;
   fullHeightContent?: boolean;
   mobileFullscreen?: boolean;
   overflowHidden?: boolean;
