@@ -21,9 +21,10 @@ export interface IconConfig {
   height?: CSS.Property.Height | number;
   originalIconColor?: boolean;
   rotate?: number;
-}
-export interface Props extends ComponentPropsBase, IconConfig {
   onClick?: () => void;
 }
+export interface Props extends ComponentPropsBase, IconConfig {}
 
-export interface StyledProps extends Omit<Props, 'icon'> {}
+export interface StyledProps extends Omit<Props, 'icon' | 'onClick'> {
+  isClickable?: boolean;
+}
