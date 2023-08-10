@@ -72,13 +72,23 @@ import { TouristGuide } from './SVGIcons/TouristGuide';
 import { IconShield } from './SVGIcons/IconShield';
 import { IconPiggyBank } from './SVGIcons/IconPiggyBank';
 import { IconCalendarCross } from './SVGIcons/IconCalendarCross';
-import { IconPremiumCare } from './SVGIcons/IconPremiumCare';
-import { IconPremiumCareFlex } from './SVGIcons/IconPremiumCareFlex';
-import { IconPremiumCareFlexPlus } from './SVGIcons/IconPremiumCareFlexPlus';
+import { PremiumCare } from './SVGIcons/PremiumCare';
+import { PremiumCareFlex } from './SVGIcons/PremiumCareFlex';
+import { PremiumCareFlexPlus } from './SVGIcons/PremiumCareFlexPlus';
 import { IconLoop } from './SVGIcons/IconLoop';
 import { IconStar } from './SVGIcons/IconStar';
 import { IconTag } from './SVGIcons/IconTag';
 import { IconWallet } from './SVGIcons/IconWallet';
+import { PlayStoreDE } from 'src/components/Icon/SVGIcons/PlayStoreDE';
+import { PlayStoreEN } from 'src/components/Icon/SVGIcons/PlayStoreEN';
+import { PlayStoreES } from 'src/components/Icon/SVGIcons/PlayStoreES';
+import { PlayStoreFR } from 'src/components/Icon/SVGIcons/PlayStoreFR';
+import { PlayStoreMX } from 'src/components/Icon/SVGIcons/PlayStoreMX';
+import { AppStoreDE } from 'src/components/Icon/SVGIcons/AppStoreDE';
+import { AppStoreEN } from 'src/components/Icon/SVGIcons/AppStoreEN';
+import { AppStoreES } from 'src/components/Icon/SVGIcons/AppStoreES';
+import { AppStoreFR } from 'src/components/Icon/SVGIcons/AppStoreFR';
+import { IconArrowCircleLogin } from 'src/components/Icon/SVGIcons/IconArrowCircleLogin';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -152,11 +162,21 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   shield: IconShield,
   'piggy-bank': IconPiggyBank,
   'calendar-cross': IconCalendarCross,
-  'premium-care': IconPremiumCare,
-  'premium-care-flex': IconPremiumCareFlex,
-  'premium-care-flex-plus': IconPremiumCareFlexPlus,
+  'premium-care': PremiumCare,
+  'premium-care-flex': PremiumCareFlex,
+  'premium-care-flex-plus': PremiumCareFlexPlus,
   loop: IconLoop,
   star: IconStar,
   tag: IconTag,
   wallet: IconWallet,
+  'arrow-circle-login': IconArrowCircleLogin,
+  play_store_icon_de: PlayStoreDE,
+  play_store_icon_en: PlayStoreEN,
+  play_store_icon_es: PlayStoreES,
+  play_store_icon_fr: PlayStoreFR,
+  play_store_icon_mx: PlayStoreMX,
+  app_store_icon_de: AppStoreDE,
+  app_store_icon_en: AppStoreEN,
+  app_store_icon_es: AppStoreES,
+  app_store_icon_fr: AppStoreFR,
 };

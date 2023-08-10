@@ -1,4 +1,4 @@
-export const IconPremiumCareFlexPlus = () => (
+export const PremiumCareFlexPlus = () => (
   <svg
     width="148"
     height="27"
