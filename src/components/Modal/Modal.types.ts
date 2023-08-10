@@ -13,12 +13,6 @@ export interface Props extends ComponentPropsBaseWithChildren {
   title?: string | JSX.Element;
   subtitle?: string | JSX.Element;
   border?: boolean;
-  highlights?: {
-    icon?: IconName;
-    image?: string;
-    text?: string;
-    color?: string;
-  }[];
   footer?: string | JSX.Element;
   ButtonComponent?: (props: ButtonComponentProps) => JSX.Element | null;
   footerBackgroundColor?: string;

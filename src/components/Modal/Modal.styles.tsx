@@ -98,18 +98,17 @@ export const ModalHeader = styled.div<{
   withImage: boolean;
   image?: string;
   blackoutHeader?: boolean;
-  hasHighlight: boolean;
 }>`
   width: 100%;
   display: grid;
 
-  ${({ withImage, theme, image, blackoutHeader, hasHighlight }) =>
+  ${({ withImage, theme, image, blackoutHeader }) =>
     withImage &&
     `
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  height: ${hasHighlight ? '64px' : '40px'};
+  height: 40px;
   background: ${
     blackoutHeader ? theme.colors.polarNight : image ? `url(${image})` : ''
   };
@@ -251,13 +250,13 @@ export const HighlightText = styled(TextBody3)`
   }
 `;
 
-export const Title = styled(TextHeading1)<{ margin: number }>`
-  margin: calc(8px + ${(props) => props.margin}px) 0 2px;
+export const Title = styled(TextHeading1)`
+  margin: 8px 0 2px;
   margin-top: ${({ theme }) => theme.typography.fontSize.heading2};
   line-height: 30px;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
-    margin: calc(16px + ${(props) => props.margin}px) 0 16px;
+    margin: 16px 0 16px;
     margin-top: ${({ theme }) => theme.typography.fontSize.heading1};
     line-height: 40px;
     text-align: center;
