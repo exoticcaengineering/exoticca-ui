@@ -10,16 +10,10 @@ import ReactDOM from 'react-dom';
 import { Icon } from 'src/components/Icon';
 import {
   CloseBtnWrapper,
-  Container,
   ContentContainer,
   ContentWrapper,
   FullScreen,
   GridPadding,
-  Highlight,
-  HighlightIcon,
-  HighlightImage,
-  Highlights,
-  HighlightText,
   ModalContent,
   ModalFooter,
   ModalHeader,
