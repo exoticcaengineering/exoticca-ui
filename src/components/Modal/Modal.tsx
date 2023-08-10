@@ -220,22 +220,7 @@ const ModalComponent = (
         )}
 
         <ModalContent noPadding={!!fullHeightContent}>
-          <Container
-            style={{
-              paddingLeft: 0,
-              paddingRight: 0,
-            }}
-          >
-            <ContentContainer>
-              {fullWidthContent ? (
-                <>{children}</>
-              ) : (
-                <GridPadding style={customContentSpacing}>
-                  {children}
-                </GridPadding>
-              )}
-            </ContentContainer>
-          </Container>
+          <ContentContainer>{children}</ContentContainer>
         </ModalContent>
         {footer && (
           <ModalFooter

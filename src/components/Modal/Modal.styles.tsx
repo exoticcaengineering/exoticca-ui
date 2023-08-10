@@ -288,10 +288,9 @@ export const Container = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  display: grid;
-  justify-content: flex-start;
-  align-items: center;
   width: 100%;
+  padding-left: ${({ theme }) => theme.spacing(2)};
+  padding-right: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const GridPadding = styled.div`
