@@ -1,17 +1,19 @@
 import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
 import {
+  StyledEndIcon,
   StyledErrorMessage,
-  StyledIcon,
   StyledInput,
   StyledInputInner,
   StyledInputWrapper,
   StyledLabel,
   StyledOutsideLabel,
+  StyledStartIcon,
 } from './Input.styles';
 import { Props } from './Input.types';
 
 export const Input: FC<Props> = ({
   startIcon,
+  endIcon,
   label,
   labelPosition = 'outside',
   rounded = 'both',
@@ -28,7 +30,8 @@ export const Input: FC<Props> = ({
 
   const [value, setValue] = useState(defaultValue ?? '');
 
-  const hasIcon = !!startIcon?.icon;
+  const hasStartIcon = !!startIcon?.icon;
+  const hasEndIcon = !!endIcon?.icon;
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
@@ -53,14 +56,15 @@ export const Input: FC<Props> = ({
       <StyledInputWrapper
         tabIndex={0}
         rounded={rounded}
-        hasIcon={hasIcon}
+        hasStartIcon={hasStartIcon}
+        hasEndIcon={hasEndIcon}
         labelPosition={labelPosition}
         onClick={handleOnClick}
         className={className}
         data-testid={testId}
       >
         {startIcon && (
-          <StyledIcon stroke="primary" size={'regular'} {...startIcon} />
+          <StyledStartIcon stroke="primary" size={'regular'} {...startIcon} />
         )}
         <StyledInputInner>
           {value === '' && labelPosition === 'inside' && (
@@ -75,6 +79,9 @@ export const Input: FC<Props> = ({
             {...inputProps}
           />
         </StyledInputInner>
+        {endIcon && (
+          <StyledEndIcon stroke="primary" size={'regular'} {...endIcon} />
+        )}
       </StyledInputWrapper>
       <StyledErrorMessage>{errorMessage}</StyledErrorMessage>
     </div>

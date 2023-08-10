@@ -58,9 +58,18 @@ export const RightRounded: Story = {
   render: (args) => <Template {...args} rounded="right" />,
 };
 
-export const WithIcon: Story = {
+export const WithStartIcon: Story = {
   args: {
     startIcon: {
+      icon: 'user',
+    },
+  },
+  render: (args) => <Template {...args} />,
+};
+
+export const WithEndIcon: Story = {
+  args: {
+    endIcon: {
       icon: 'user',
     },
   },

@@ -6,6 +6,7 @@ type LabelPosition = 'inside' | 'outside';
 
 export interface Props extends ComponentPropsBase {
   startIcon?: IconConfig;
+  endIcon?: IconConfig;
   label: string;
   labelPosition?: LabelPosition;
   placeholder?: string;
@@ -26,5 +27,6 @@ export interface StyleProps
     Partial<Props>,
     'labelPosition' | 'rounded' | 'placeholder' | 'label'
   > {
-  hasIcon?: boolean;
+  hasStartIcon?: boolean;
+  hasEndIcon?: boolean;
 }
