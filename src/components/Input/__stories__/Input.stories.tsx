@@ -70,7 +70,7 @@ export const WithStartIcon: Story = {
 export const WithEndIcon: Story = {
   args: {
     endIcon: {
-      icon: 'user',
+      icon: 'contact',
     },
   },
   render: (args) => <Template {...args} />,

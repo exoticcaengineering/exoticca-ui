@@ -2,8 +2,15 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import * as stories from '../__stories__/Input.stories';
 import { composeStories } from '@storybook/react';
 
-const { Base, LeftRounded, RightRounded, WithIcon, ReadOnly, Disabled } =
-  composeStories(stories);
+const {
+  Base,
+  LeftRounded,
+  RightRounded,
+  WithStartIcon,
+  WithEndIcon,
+  ReadOnly,
+  Disabled,
+} = composeStories(stories);
 
 describe('Input', () => {
   it('renders the input correctly', () => {
@@ -42,9 +49,15 @@ describe('Input', () => {
     expect(input).toHaveStyle('border-radius: 0 24px 24px 0');
   });
 
-  it('render input with icon', () => {
-    render(<WithIcon />);
+  it('render input with start icon', () => {
+    render(<WithStartIcon />);
     const icon = screen.queryByTestId('user-icon');
+    expect(icon).toBeInTheDocument();
+  });
+
+  it('render input with end icon', () => {
+    render(<WithEndIcon />);
+    const icon = screen.queryByTestId('contact-icon');
     expect(icon).toBeInTheDocument();
   });
 
