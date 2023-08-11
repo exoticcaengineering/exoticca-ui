@@ -61,6 +61,8 @@ export const iconNames = [
   'star',
   'tag',
   'wallet',
+  'eye-open',
+  'eye-closed',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',

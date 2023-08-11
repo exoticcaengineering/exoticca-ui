@@ -1,6 +1,6 @@
 import { themeDefault } from 'src/themes';
 import styled from 'styled-components';
-import { TextBody3, TextHeading1, TextHeading3 } from '../TypographyVariants';
+import { TextHeading1, TextHeading3 } from '../TypographyVariants';
 
 export const Shade = styled.div`
   position: fixed !important; /* Must have !important because POSE adds absolute */
@@ -98,18 +98,17 @@ export const ModalHeader = styled.div<{
   withImage: boolean;
   image?: string;
   blackoutHeader?: boolean;
-  hasHighlight: boolean;
 }>`
   width: 100%;
   display: grid;
 
-  ${({ withImage, theme, image, blackoutHeader, hasHighlight }) =>
+  ${({ withImage, theme, image, blackoutHeader }) =>
     withImage &&
     `
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  height: ${hasHighlight ? '64px' : '40px'};
+  height: 40px;
   background: ${
     blackoutHeader ? theme.colors.polarNight : image ? `url(${image})` : ''
   };
@@ -202,62 +201,13 @@ export const StyledCloseIcon = styled.div<{
   }
 `;
 
-export const Highlights = styled.div<{ margin: number }>`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  position: absolute;
-  width: 100%;
-  padding-left: ${({ theme }) => theme.spacing(2)};
-  padding-right: ${({ theme }) => theme.spacing(2)};
-  bottom: calc(-26px - ${(props) => props.margin}px);
-
-  @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
-    padding-left: ${({ theme }) => theme.spacing(4)};
-    padding-right: ${({ theme }) => theme.spacing(4)};
-  }
-`;
-
-export const Highlight = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const HighlightImage = styled.img`
-  height: 52px;
-  width: 52px;
-  margin: auto;
-`;
-
-export const HighlightIcon = styled.div<{ color?: string }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 52px;
-  width: 52px;
-  border-radius: 52px;
-  margin: auto;
-  background-color: ${(props) => props.theme.colors.polarNightLight};
-`;
-
-export const HighlightText = styled(TextBody3)`
-  text-align: center;
-  width: 90px;
-  height: 36px;
-  margin-top: ${({ theme }) => theme.spacing(1)};
-
-  @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
-    margin-top: 10px;
-  }
-`;
-
-export const Title = styled(TextHeading1)<{ margin: number }>`
-  margin: calc(8px + ${(props) => props.margin}px) 0 2px;
+export const Title = styled(TextHeading1)`
+  margin: 8px 0 2px;
   margin-top: ${({ theme }) => theme.typography.fontSize.heading2};
   line-height: 30px;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
-    margin: calc(16px + ${(props) => props.margin}px) 0 16px;
+    margin: 16px 0 16px;
     margin-top: ${({ theme }) => theme.typography.fontSize.heading1};
     line-height: 40px;
     text-align: center;
@@ -281,17 +231,10 @@ export const ModalContent = styled.div<{ noPadding: boolean }>`
   z-index: ${({ theme }) => theme.zIndex.level10};
 `;
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const ContentContainer = styled.div`
-  display: grid;
-  justify-content: flex-start;
-  align-items: center;
   width: 100%;
+  padding-left: ${({ theme }) => theme.spacing(4)};
+  padding-right: ${({ theme }) => theme.spacing(4)};
 `;
 
 export const GridPadding = styled.div`

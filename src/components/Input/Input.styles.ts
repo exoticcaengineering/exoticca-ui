@@ -12,8 +12,10 @@ export const StyledInputWrapper = styled.div<StyleProps>`
   align-items: center;
   padding-top: ${({ theme }) => theme.spacing(0.2)};
   padding-bottom: ${({ theme }) => theme.spacing(0.2)};
-  padding-left: ${({ hasIcon }) => (hasIcon ? ICON_SPACE : NO_ICON_PADDING)};
-  padding-right: ${({ theme }) => theme.spacing(2)};
+  padding-left: ${({ hasStartIcon }) =>
+    hasStartIcon ? ICON_SPACE : NO_ICON_PADDING};
+  padding-right: ${({ hasEndIcon }) =>
+    hasEndIcon ? ICON_SPACE : NO_ICON_PADDING};
   border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
   height: ${({ labelPosition }) =>
     labelPosition === 'inside' ? '50px' : '44px'};
@@ -66,11 +68,18 @@ export const StyledOutsideLabel = styled.label`
   font-size: ${({ theme }) => theme.typography.fontSize.body2};
 `;
 
-export const StyledIcon = styled(Icon)`
+export const StyledStartIcon = styled(Icon)`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 14px;
+`;
+
+export const StyledEndIcon = styled(Icon)`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14px;
 `;
 
 export const StyledErrorMessage = styled(TextBody2)`

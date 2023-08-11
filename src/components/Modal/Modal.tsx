@@ -10,16 +10,10 @@ import ReactDOM from 'react-dom';
 import { Icon } from 'src/components/Icon';
 import {
   CloseBtnWrapper,
-  Container,
   ContentContainer,
   ContentWrapper,
   FullScreen,
   GridPadding,
-  Highlight,
-  HighlightIcon,
-  HighlightImage,
-  Highlights,
-  HighlightText,
   ModalContent,
   ModalFooter,
   ModalHeader,
@@ -40,7 +34,6 @@ const ModalComponent = (
   {
     id,
     headerContent,
-    highlights,
     title,
     subtitle,
     children,
@@ -51,7 +44,6 @@ const ModalComponent = (
     isClosable = true,
     onOpenCallback,
     onCloseCallback,
-    customContentSpacing,
     ButtonComponent,
     disableCloseOnClickOutside,
     closableFixed,
@@ -59,7 +51,6 @@ const ModalComponent = (
     closeBtnTransparant,
     closeBtnText,
     darkMode,
-    fullWidthContent,
     fullHeightContent,
     mobileFullscreen,
     overflowHidden,
@@ -122,21 +113,6 @@ const ModalComponent = (
     };
   }, [handleEscape, id, isOpen]);
 
-  // Handle margins depending on Highlights content
-  let highlightsImageExtraMargin = 0;
-  let highlightsTextExtraMargin = 0;
-
-  if (highlights && highlights.length > 0) {
-    highlightsImageExtraMargin +=
-      highlights.filter((highlight) => highlight.image || highlight.icon)
-        .length > 0
-        ? 26
-        : 0;
-
-    highlightsTextExtraMargin +=
-      highlights.filter((highlight) => highlight.text).length > 0 ? 46 : 0;
-  }
-
   const handleOnClickOutside = () => {
     if (disableCloseOnClickOutside) return;
     handleCloseModal();
@@ -159,7 +135,6 @@ const ModalComponent = (
         <ModalHeader
           blackoutHeader={blackoutHeader}
           withImage={!!blackoutHeader}
-          hasHighlight={!!highlights?.length}
           id="modalHeader"
         >
           {headerContent}
@@ -190,29 +165,10 @@ const ModalComponent = (
                 <Icon stroke="currentColor" size={'regular'} icon="close" />
               </StyledCloseIcon>
             ))}
-          <Highlights margin={highlightsTextExtraMargin}>
-            {highlights &&
-              highlights.length > 0 &&
-              highlights.map((highlight, index) => (
-                <Highlight key={index}>
-                  {highlight.image && <HighlightImage src={highlight.image} />}
-                  {highlight.icon && (
-                    <HighlightIcon color={highlight.color}>
-                      <Icon icon={highlight.icon} size={'medium'} />
-                    </HighlightIcon>
-                  )}
-                  {highlight.text && (
-                    <HighlightText>{highlight.text}</HighlightText>
-                  )}
-                </Highlight>
-              ))}
-          </Highlights>
         </ModalHeader>
         {title && (
           <GridPadding id={'modalTitle'}>
-            <Title
-              margin={highlightsImageExtraMargin + highlightsTextExtraMargin}
-            >
+            <Title>
               {title}
               {subtitle && <Subtitle>{subtitle}</Subtitle>}
             </Title>
@@ -220,22 +176,7 @@ const ModalComponent = (
         )}
 
         <ModalContent noPadding={!!fullHeightContent}>
-          <Container
-            style={{
-              paddingLeft: 0,
-              paddingRight: 0,
-            }}
-          >
-            <ContentContainer>
-              {fullWidthContent ? (
-                <>{children}</>
-              ) : (
-                <GridPadding style={customContentSpacing}>
-                  {children}
-                </GridPadding>
-              )}
-            </ContentContainer>
-          </Container>
+          <ContentContainer>{children}</ContentContainer>
         </ModalContent>
         {footer && (
           <ModalFooter

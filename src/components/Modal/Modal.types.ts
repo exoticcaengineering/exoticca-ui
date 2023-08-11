@@ -13,12 +13,6 @@ export interface Props extends ComponentPropsBaseWithChildren {
   title?: string | JSX.Element;
   subtitle?: string | JSX.Element;
   border?: boolean;
-  highlights?: {
-    icon?: IconName;
-    image?: string;
-    text?: string;
-    color?: string;
-  }[];
   footer?: string | JSX.Element;
   ButtonComponent?: (props: ButtonComponentProps) => JSX.Element | null;
   footerBackgroundColor?: string;
@@ -27,14 +21,12 @@ export interface Props extends ComponentPropsBaseWithChildren {
   isClosable?: boolean;
   onOpenCallback?(): void;
   onCloseCallback?(): void;
-  customContentSpacing?: object;
   disableCloseOnClickOutside?: boolean;
   closableFixed?: boolean;
   closeBtnshiftLeft?: string;
   closeBtnTransparant?: boolean;
   closeBtnText?: string;
   darkMode?: boolean;
-  fullWidthContent?: boolean;
   fullHeightContent?: boolean;
   mobileFullscreen?: boolean;
   overflowHidden?: boolean;
