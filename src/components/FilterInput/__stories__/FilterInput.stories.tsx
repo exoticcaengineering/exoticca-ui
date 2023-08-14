@@ -4,7 +4,6 @@ import { iconNames } from 'src/types/IconNames';
 import { useEffect, useState } from 'react';
 import { Item } from 'src/components/Item';
 import { Typography } from 'src/components/Typography';
-import { InputFilterProps } from '../FilterInput.types';
 
 export default {
   title: 'Components/FilterInput',
@@ -21,9 +20,9 @@ export default {
       category: 'Prop',
     },
   },
-} as Meta<InputFilterProps>;
+} as Meta<typeof FilterInput>;
 
-type Story = StoryObj<InputFilterProps>;
+type Story = StoryObj<typeof FilterInput>;
 
 const Template = ({ ...args }) => {
   const [inputValue, setInputValue] = useState('');

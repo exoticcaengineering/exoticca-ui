@@ -14,7 +14,7 @@ export const StyledDrawerInnerContainer = styled.div<StyledProps>`
   left: 0;
   right: 0;
   bottom: 0;
-  transform: translateY(100%);
+  transform: translateY(calc(100% + 150px));
   top: ${({ heightProp }) => `calc(100% - ${heightProp}%)`};
   overflow: hidden;
   transition: ${({ theme }) => theme.transition.duration.short} ease-in-out;

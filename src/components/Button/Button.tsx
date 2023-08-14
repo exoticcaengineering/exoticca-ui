@@ -40,6 +40,11 @@ export const Button: FC<Props> = ({
     return <StyledIcon size={iconSize} stroke="currentColor" {...endIcon} />;
   };
 
+  const handleOnClick: React.MouseEventHandler = (e) => {
+    if (isLoading) return;
+    onClick?.(e);
+  };
+
   return (
     <StyledButton
       fullWidth={fullWidth}
@@ -47,7 +52,7 @@ export const Button: FC<Props> = ({
       shape={shape}
       color={color}
       size={size}
-      onClick={onClick}
+      onClick={handleOnClick}
       disabled={isDisabled}
       className={className}
       data-testid={testId}

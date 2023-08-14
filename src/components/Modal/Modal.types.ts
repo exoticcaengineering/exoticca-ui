@@ -6,19 +6,13 @@ export interface ButtonComponentProps {
   onClose: () => void;
 }
 
-export interface ModalProps extends ComponentPropsBaseWithChildren {
+export interface Props extends ComponentPropsBaseWithChildren {
   id: string;
   headerContent?: React.ReactNode;
   blackoutHeader?: boolean;
   title?: string | JSX.Element;
   subtitle?: string | JSX.Element;
   border?: boolean;
-  highlights?: {
-    icon?: IconName;
-    image?: string;
-    text?: string;
-    color?: string;
-  }[];
   footer?: string | JSX.Element;
   ButtonComponent?: (props: ButtonComponentProps) => JSX.Element | null;
   footerBackgroundColor?: string;
@@ -27,14 +21,12 @@ export interface ModalProps extends ComponentPropsBaseWithChildren {
   isClosable?: boolean;
   onOpenCallback?(): void;
   onCloseCallback?(): void;
-  customContentSpacing?: object;
   disableCloseOnClickOutside?: boolean;
   closableFixed?: boolean;
   closeBtnshiftLeft?: string;
   closeBtnTransparant?: boolean;
   closeBtnText?: string;
   darkMode?: boolean;
-  fullWidthContent?: boolean;
   fullHeightContent?: boolean;
   mobileFullscreen?: boolean;
   overflowHidden?: boolean;

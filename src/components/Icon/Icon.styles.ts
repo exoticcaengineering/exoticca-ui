@@ -44,4 +44,5 @@ export const StyledWrapper = styled.div<StyledProps>`
           : theme.palette[fill][fillShade]};
       }
     `}
+    cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'inherit')};
 `;

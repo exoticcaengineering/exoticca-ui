@@ -89,6 +89,8 @@ import { AppStoreEN } from 'src/components/Icon/SVGIcons/AppStoreEN';
 import { AppStoreES } from 'src/components/Icon/SVGIcons/AppStoreES';
 import { AppStoreFR } from 'src/components/Icon/SVGIcons/AppStoreFR';
 import { IconArrowCircleLogin } from 'src/components/Icon/SVGIcons/IconArrowCircleLogin';
+import { IconEyeOpen } from './SVGIcons/IconEyeOpen';
+import { IconEyeClosed } from './SVGIcons/IconEyeClosed';
 import { IconInfo } from 'src/components/Icon/SVGIcons/IconInfo';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
@@ -180,5 +182,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   app_store_icon_en: AppStoreEN,
   app_store_icon_es: AppStoreES,
   app_store_icon_fr: AppStoreFR,
+  'eye-open': IconEyeOpen,
+  'eye-closed': IconEyeClosed,
   info: IconInfo,
 };

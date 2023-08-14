@@ -1,2 +1,2 @@
 export { FilterInput } from './FilterInput';
-export * from './FilterInput.types';
+export { Props as FilterInputProps } from './FilterInput.types';

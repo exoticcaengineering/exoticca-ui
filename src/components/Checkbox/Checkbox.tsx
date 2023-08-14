@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Spinner } from '../Spinner';
 import { Props } from './Checkbox.types';
 import {
@@ -20,7 +20,14 @@ export const Checkbox: FC<Props> = ({
   testId = 'checkbox',
   className,
 }) => {
+  const [checked, setChecked] = useState(defaultChecked);
+
+  useEffect(() => {
+    setChecked(defaultChecked);
+  }, [defaultChecked]);
+
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(e.target.checked);
     onChange?.(e);
   };
 
@@ -40,7 +47,7 @@ export const Checkbox: FC<Props> = ({
     >
       <StyledInputCheckbox
         onChange={handleOnChange}
-        checked={defaultChecked}
+        checked={checked}
         disabled={disabled}
         name={name}
         error={error}

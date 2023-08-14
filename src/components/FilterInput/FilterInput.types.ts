@@ -1,12 +1,12 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconName } from 'src/types/IconNames';
-import { Props } from '../Input/Input.types';
+import { InputProps } from '../Input';
 
 export interface InputListProps {
   closeDropdown: () => void;
 }
 
-export interface InputFilterProps extends Props, ComponentPropsBase {
+export interface Props extends InputProps, ComponentPropsBase {
   inputList: (props: InputListProps) => JSX.Element[] | JSX.Element;
 }
 
