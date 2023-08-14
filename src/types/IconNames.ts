@@ -75,6 +75,17 @@ export const iconNames = [
   'premium-care',
   'premium-care-flex',
   'premium-care-flex-plus',
+  'arrow-circle-login',
+  'play_store_icon_de',
+  'play_store_icon_en',
+  'play_store_icon_es',
+  'play_store_icon_fr',
+  'play_store_icon_mx',
+  'app_store_icon_de',
+  'app_store_icon_en',
+  'app_store_icon_es',
+  'app_store_icon_fr',
+  'info',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];
