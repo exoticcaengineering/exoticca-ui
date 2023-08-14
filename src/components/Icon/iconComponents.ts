@@ -91,6 +91,7 @@ import { AppStoreFR } from 'src/components/Icon/SVGIcons/AppStoreFR';
 import { IconArrowCircleLogin } from 'src/components/Icon/SVGIcons/IconArrowCircleLogin';
 import { IconEyeOpen } from './SVGIcons/IconEyeOpen';
 import { IconEyeClosed } from './SVGIcons/IconEyeClosed';
+import { IconInfo } from 'src/components/Icon/SVGIcons/IconInfo';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -183,4 +184,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   app_store_icon_fr: AppStoreFR,
   'eye-open': IconEyeOpen,
   'eye-closed': IconEyeClosed,
+  info: IconInfo,
 };
