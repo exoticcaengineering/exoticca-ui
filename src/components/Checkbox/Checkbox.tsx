@@ -27,6 +27,7 @@ export const Checkbox: FC<Props> = ({
   }, [defaultChecked]);
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (isLoading) return;
     setChecked(e.target.checked);
     onChange?.(e);
   };
