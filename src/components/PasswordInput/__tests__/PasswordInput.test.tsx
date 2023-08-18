@@ -10,7 +10,7 @@ describe('Default passwordInput', () => {
     render(<Base />);
     const passwordInput = screen.getByTestId('password-input');
     expect(passwordInput).toBeInTheDocument();
-    const input = screen.getByTestId('input');
+    const input = screen.getByTestId('input-field');
     expect(input).toHaveAttribute('type', 'password');
     const eyeOpenIcon = screen.getByTestId('eye-open-icon');
     expect(eyeOpenIcon).toBeInTheDocument();
@@ -19,7 +19,7 @@ describe('Default passwordInput', () => {
   it('should reveal the password after click the eye icon', async () => {
     render(<Base />);
     const user = userEvent.setup();
-    const input = screen.getByTestId('input');
+    const input = screen.getByTestId('input-field');
     await user.clear(input);
     await user.type(input, 'password');
     const eyeOpenIcon = screen.getByTestId('eye-open-icon');
@@ -36,7 +36,7 @@ describe('PasswordInput default show password', () => {
     render(<DefaultShowPassword />);
     const passwordInput = screen.getByTestId('password-input');
     expect(passwordInput).toBeInTheDocument();
-    const input = screen.getByTestId('input');
+    const input = screen.getByTestId('input-field');
     expect(input).toHaveAttribute('type', 'text');
     const eyeClosedIcon = screen.getByTestId('eye-closed-icon');
     expect(eyeClosedIcon).toBeInTheDocument();

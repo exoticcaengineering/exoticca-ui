@@ -72,7 +72,7 @@ export const Input: FC<Props> = ({
             <StyledLabel>{label}</StyledLabel>
           )}
           <StyledInput
-            data-testid="input"
+            data-testid="input-field"
             ref={inputRef}
             type={type}
             value={value}
