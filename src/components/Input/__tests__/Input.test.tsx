@@ -43,7 +43,7 @@ describe('Input', () => {
     expect(input).toHaveStyle('border-radius: 24px 0 0 24px');
   });
 
-  it('render input with right side rounded', () => {
+  it.only('render input with right side rounded', () => {
     render(<RightRounded />);
     const input = screen.getByTestId('input');
     expect(input).toHaveStyle('border-radius: 0 24px 24px 0');
