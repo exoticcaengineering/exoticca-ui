@@ -11,6 +11,7 @@ export interface Props extends ComponentPropsBase {
   content: string | JSX.Element;
   isOpen?: boolean;
   isDisabled?: boolean;
+  onOpen?: () => void;
   onClose?: () => void;
   startIcon?: IconConfig;
   endIcon?: IconConfig;
