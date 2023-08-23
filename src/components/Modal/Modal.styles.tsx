@@ -9,7 +9,7 @@ export const Shade = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: ${({ theme }) => theme.zIndex.level7};
+  z-index: ${({ theme }) => theme.zIndex.level10};
   overflow: hidden;
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
