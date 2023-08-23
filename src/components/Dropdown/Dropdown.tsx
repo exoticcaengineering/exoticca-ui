@@ -45,7 +45,7 @@ export const Dropdown: FC<Props> = ({
   //   if (isOpen) return closeDropdown();
   //   return setIsOpen(!isOpen);
   // };
- 
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -117,7 +117,7 @@ export const Dropdown: FC<Props> = ({
             </CloseWrapper>
           )}
           {dropdownList({
-            closeDropdown: () => setIsOpen(false),
+            closeDropdown: closeDropdown,
           })}
         </StyledDropdownList>
       )}
