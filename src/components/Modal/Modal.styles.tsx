@@ -29,19 +29,25 @@ export const StyledModalWrapper = styled.div<StyledProps>`
   top: 50%;
   transform: translate(-50%, -50%);
   max-height: 85vh;
-  max-width: calc(100% - 32px);
+  width: calc(100% - 32px);
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.palette.background.main};
   color: ${({ theme }) => theme.palette.background.contrast};
+  @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
+    width: 544px;
+  }
 
   ${({ fullScreen }) =>
     fullScreen &&
     css`
-      max-width: unset;
+      width: auto;
       max-height: unset;
       transform: none;
       inset: 0;
+      @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
+        width: auto;
+      }
     `}
 `;
 
