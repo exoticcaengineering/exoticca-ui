@@ -102,8 +102,6 @@ export const Dropdown: FC<Props> = ({
 
         <StyledIcon icon="arrow" rotate={isOpen ? 0 : 180} {...endIcon} />
       </StyledDropdownButton>
-
-      {/* {isOpen && ( */}
       <StyledDropdownList
         isOpen={isOpen}
         position={position}
@@ -120,7 +118,6 @@ export const Dropdown: FC<Props> = ({
           closeDropdown: closeDropdown,
         })}
       </StyledDropdownList>
-      {/* )} */}
     </StyledDropdownWrapper>
   );
 };
