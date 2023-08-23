@@ -211,6 +211,7 @@ const ModalComponent = (
 
   return ReactDOM.createPortal(
     <>
+      <Shade key="shade" role="layout" onClick={handleOnClickOutside} />,
       <ModalWrapper
         id="modalWrapper"
         key={modalUniqueKey}
@@ -219,8 +220,6 @@ const ModalComponent = (
       >
         {content}
       </ModalWrapper>
-      ,
-      <Shade key="shade" role="layout" onClick={handleOnClickOutside} />
     </>,
 
     document.body,
