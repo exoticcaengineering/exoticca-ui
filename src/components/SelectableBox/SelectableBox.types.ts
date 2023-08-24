@@ -9,4 +9,9 @@ export interface Props extends BoxProps {
 }
 
 export interface StyledProps
-  extends Pick<Partial<Props>, 'highlightColor' | 'highlightColorShade'> {}
+  extends Pick<
+    Partial<Props>,
+    'highlightColor' | 'highlightColorShade' | 'isSelected'
+  > {
+  isClickable?: boolean;
+}

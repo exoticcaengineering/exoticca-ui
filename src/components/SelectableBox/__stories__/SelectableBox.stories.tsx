@@ -11,6 +11,7 @@ export default {
   args: {
     children: 'SelectableBox',
     onClick: undefined,
+    testId: 'selectable-box',
   },
 } as Meta<typeof SelectableBox>;
 
@@ -42,6 +43,21 @@ export const HighlightBox: Story = {
 export const SelectedHighlightBox: Story = {
   args: {
     highlightText: 'recommended',
+    isSelected: true,
+  },
+  render: (args) => <WithWrapper {...args} />,
+};
+
+export const ClickableBox: Story = {
+  args: {
+    onClick: () => alert('clicked'),
+  },
+  render: (args) => <WithWrapper {...args} />,
+};
+
+export const SelectedClickableBox: Story = {
+  args: {
+    onClick: () => alert('clicked'),
     isSelected: true,
   },
   render: (args) => <WithWrapper {...args} />,
