@@ -41,11 +41,6 @@ export const Dropdown: FC<Props> = ({
 
   useOnClickOutside(dropdownRef, closeDropdown);
 
-  // const toggleDropdown = () => {
-  //   if (isOpen) return closeDropdown();
-  //   return setIsOpen(!isOpen);
-  // };
-
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
