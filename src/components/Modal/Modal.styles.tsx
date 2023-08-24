@@ -70,13 +70,15 @@ export const StyledCloseBtnWrapper = styled.div`
 export const StyledModalContentWrapper = styled.div<StyledProps>`
   overflow: auto;
   scrollbar-width: none;
-  padding: ${({ theme }) => theme.spacing(2)};
+  padding-left: ${({ theme }) => theme.spacing(2)};
+  padding-right: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ hasBottomCloseButton, theme }) =>
     hasBottomCloseButton ? theme.spacing(12) : theme.spacing(4)};
   padding-top: ${({ theme, shouldHaveContentExtraTopPadding }) =>
     shouldHaveContentExtraTopPadding ? theme.spacing(7) : theme.spacing(4)};
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
-    padding: ${({ theme }) => theme.spacing(4)};
+    padding-left: ${({ theme }) => theme.spacing(4)};
+    padding-right: ${({ theme }) => theme.spacing(4)};
   }
 `;
 
