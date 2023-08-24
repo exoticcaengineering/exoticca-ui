@@ -42,7 +42,8 @@ export const Dropdown: FC<Props> = ({
   useOnClickOutside(dropdownRef, closeDropdown);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    if (isOpen) return closeDropdown();
+    return setIsOpen(!isOpen);
   };
 
   const setBorderRadius = (
