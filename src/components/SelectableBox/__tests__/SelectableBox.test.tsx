@@ -3,8 +3,7 @@ import * as stories from '../__stories__/SelectableBox.stories';
 import { composeStories } from '@storybook/react';
 import userEvent from '@testing-library/user-event';
 
-const { Base, Selected, HighlightBox, ClickableBox, SelectedClickableBox } =
-  composeStories(stories);
+const { Base, Selected, HighlightBox, ClickableBox } = composeStories(stories);
 
 describe('SelectableBox', () => {
   it('should render the selectable box', () => {
