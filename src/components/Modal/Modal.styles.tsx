@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 import { StyledProps } from './Modal.types';
 import { colorWithOpacity } from 'src/utils/getColorWithOpacity';
 
-const contentPadding = 2;
-
 export const StyledModal = styled.div`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.level10};
@@ -64,21 +62,22 @@ export const StyledModalHeaderWrapper = styled.div`
 
 export const StyledCloseBtnWrapper = styled.div`
   position: absolute;
-  top: 6px;
-  right: 10px;
+  top: 16px;
+  right: 16px;
   z-index: ${({ theme }) => theme.zIndex.level1};
 `;
 
 export const StyledModalContentWrapper = styled.div<StyledProps>`
   overflow: auto;
   scrollbar-width: none;
-  padding: ${({ theme }) => theme.spacing(contentPadding)};
+  padding: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ hasBottomCloseButton, theme }) =>
-    hasBottomCloseButton ? theme.spacing(12) : theme.spacing(contentPadding)};
+    hasBottomCloseButton ? theme.spacing(12) : theme.spacing(4)};
   padding-top: ${({ theme, shouldHaveContentExtraTopPadding }) =>
-    shouldHaveContentExtraTopPadding
-      ? theme.spacing(6)
-      : theme.spacing(contentPadding)};
+    shouldHaveContentExtraTopPadding ? theme.spacing(7) : theme.spacing(4)};
+  @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
+    padding: ${({ theme }) => theme.spacing(4)};
+  }
 `;
 
 export const StyledBottomCloseButtonWrapper = styled.div`

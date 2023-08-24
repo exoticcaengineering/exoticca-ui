@@ -90,6 +90,7 @@ export const Animation = styled.div<{ size: number }>`
 
 export const StyledIconButtonWrapper = styled.button<StyledProps>`
   all: unset;
+  box-sizing: border-box;
   color: ${({ theme, color, variant }) =>
     setTextColor({ theme, variant, color })};
   width: ${({ size = 'medium' }) => getIconButtonSize(size)};
