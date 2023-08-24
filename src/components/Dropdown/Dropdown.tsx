@@ -98,25 +98,22 @@ export const Dropdown: FC<Props> = ({
 
         <StyledIcon icon="arrow" rotate={isOpen ? 0 : 180} {...endIcon} />
       </StyledDropdownButton>
-
-      {isOpen && (
-        <StyledDropdownList
-          isOpen={isOpen}
-          position={position}
-          padding={[1.5, 2]}
-          borderRadius={setBorderRadius(position)}
-          testId={`${testId}-list`}
-        >
-          {withCloseButton && (
-            <CloseWrapper position={position} onClick={closeDropdown}>
-              <CloseIcon icon={'close'} />
-            </CloseWrapper>
-          )}
-          {dropdownList({
-            closeDropdown: () => setIsOpen(false),
-          })}
-        </StyledDropdownList>
-      )}
+      <StyledDropdownList
+        isOpen={isOpen}
+        position={position}
+        padding={[1.5, 2]}
+        borderRadius={setBorderRadius(position)}
+        testId={`${testId}-list`}
+      >
+        {withCloseButton && (
+          <CloseWrapper position={position} onClick={closeDropdown}>
+            <CloseIcon icon={'close'} />
+          </CloseWrapper>
+        )}
+        {dropdownList({
+          closeDropdown: closeDropdown,
+        })}
+      </StyledDropdownList>
     </StyledDropdownWrapper>
   );
 };
