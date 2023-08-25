@@ -20,11 +20,11 @@ import {
 } from './Modal.styles';
 import { enableScroll } from 'src/utils/enableScroll';
 import { disableScroll } from 'src/utils/disableScroll';
-import { Props } from './Modal.types';
+import { ModalRef, Props } from './Modal.types';
 import { createRandomId } from 'src/utils/createRandomId';
 import { Button, IconButton } from '../Button';
 
-export const Modal = forwardRef(
+export const Modal = forwardRef<ModalRef, Props>(
   (
     {
       id,
@@ -32,14 +32,14 @@ export const Modal = forwardRef(
       className,
       children,
       header,
-      BottomCloseButtonText,
+      bottomActionButton,
       fullScreen,
       isClosable = true,
       disableCloseOnClickOutside,
       onOpenCallback,
       onCloseCallback,
-    }: Props,
-    ref: React.Ref<unknown>,
+    },
+    ref,
   ) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -100,10 +100,11 @@ export const Modal = forwardRef(
       handleCloseModal();
     };
 
-    const hasBottomCloseButton = !!BottomCloseButtonText;
+    const hasBottomActionButton =
+      !!bottomActionButton?.onClick && !!bottomActionButton?.text;
     const hasHeader = !!header;
-    const shouldRenderBottomCloseButton = hasBottomCloseButton && isClosable;
 
+    const shouldRenderBottomCloseButton = hasBottomActionButton;
     const shouldHaveContentExtraTopPadding = hasHeader;
 
     if (typeof document === 'undefined') return null;
@@ -123,7 +124,7 @@ export const Modal = forwardRef(
             <StyledModalHeaderWrapper>{header}</StyledModalHeaderWrapper>
 
             <StyledModalContentWrapper
-              hasBottomCloseButton={hasBottomCloseButton}
+              hasBottomCloseButton={hasBottomActionButton}
               shouldHaveContentExtraTopPadding={
                 shouldHaveContentExtraTopPadding
               }
@@ -135,8 +136,8 @@ export const Modal = forwardRef(
             <StyledBottomCloseButtonWrapper id="modal-bottom-close-Button">
               {
                 <Button
-                  text={BottomCloseButtonText}
-                  onClick={handleCloseModal}
+                  text={bottomActionButton?.text}
+                  onClick={bottomActionButton?.onClick}
                   size="small"
                 />
               }

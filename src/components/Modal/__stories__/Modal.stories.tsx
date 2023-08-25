@@ -18,7 +18,7 @@ const ModalHeader = () => {
   return <StyledModalHeader>Modal header</StyledModalHeader>;
 };
 
-const BasicModal = forwardRef((props, ref) => {
+const BasicModal = forwardRef<ModalRef>((props, ref) => {
   return (
     <Modal ref={ref} id="basicModal">
       <TextBody1>This is a closeable modal</TextBody1>
@@ -26,7 +26,7 @@ const BasicModal = forwardRef((props, ref) => {
   );
 });
 
-const WithHeaderModal = forwardRef((props, ref) => {
+const WithHeaderModal = forwardRef<ModalRef>((props, ref) => {
   return (
     <Modal ref={ref} id="withHeaderModal" header={<ModalHeader />}>
       <TextBody1>This is a modal with header</TextBody1>
@@ -34,13 +34,16 @@ const WithHeaderModal = forwardRef((props, ref) => {
   );
 });
 
-const WithBottomCloseButtonModal = forwardRef((props, ref) => {
+const WithBottomActionButtonModal = forwardRef<ModalRef>((props, ref) => {
   return (
     <Modal
       ref={ref}
       id="withBottomCloseButtonModal"
       header={<ModalHeader />}
-      BottomCloseButtonText="Close modal"
+      bottomActionButton={{
+        text: 'Click here',
+        onClick: () => alert('clicked'),
+      }}
     >
       <TextBody1>This is a modal with close button at the bottom.</TextBody1>
       <TextBody1>
@@ -53,9 +56,16 @@ const WithBottomCloseButtonModal = forwardRef((props, ref) => {
   );
 });
 
-const LongContentModal = forwardRef((props, ref) => {
+const LongContentModal = forwardRef<ModalRef>((props, ref) => {
   return (
-    <Modal ref={ref} id="LongContentModal" BottomCloseButtonText="Close modal">
+    <Modal
+      ref={ref}
+      id="LongContentModal"
+      bottomActionButton={{
+        text: 'Click here',
+        onClick: () => alert('clicked'),
+      }}
+    >
       <TextBody1>This is a modal has a very long content.</TextBody1>
       <TextBody1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorumadad
@@ -115,14 +125,14 @@ const LongContentModal = forwardRef((props, ref) => {
   );
 });
 
-const FullScreenModal = forwardRef((props, ref) => {
+const FullScreenModal = forwardRef<ModalRef>((props, ref) => {
   return (
     <Modal ref={ref} id="fullScreenModal" fullScreen>
       <TextBody1>This is a FullScreenModal modal</TextBody1>
     </Modal>
   );
 });
-const NonClosableModal = forwardRef((props, ref) => {
+const NonClosableModal = forwardRef<ModalRef>((props, ref) => {
   return (
     <Modal ref={ref} id="nonClosableModal" isClosable={false}>
       <TextBody1>This is a closeable modal</TextBody1>
@@ -168,7 +178,7 @@ const Template = () => {
       <BasicModal ref={basicModal} />
       <WithHeaderModal ref={withHeaderModal} />
       <NonClosableModal ref={nonClosableModal} />
-      <WithBottomCloseButtonModal ref={withBottomCloseButtonModal} />
+      <WithBottomActionButtonModal ref={withBottomCloseButtonModal} />
       <LongContentModal ref={longContentModal} />
       <FullScreenModal ref={fullScreenModal} />
     </div>
