@@ -50,6 +50,7 @@ export const StyledDropdownButton = styled.button<StyledProps>`
 
 export const StyledDropdownList = styled(Box)<StyledProps>`
   position: absolute;
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   min-width: 100%;
   z-index: 1;
   animation: fadein ${({ theme }) => theme.transition.duration.shortest} linear;

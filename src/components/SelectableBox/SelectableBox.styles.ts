@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Box } from '../Box';
 import { StyledProps } from './SelectableBox.types';
 
@@ -6,15 +6,25 @@ export const StyledWrapper = styled.div`
   position: relative;
 `;
 
-export const StyledBox = styled(Box)`
+export const StyledBox = styled(Box)<StyledProps>`
   overflow: hidden;
   position: relative;
   height: 100%;
+  transition: background-color
+    ${({ theme }) => theme.transition.duration.shorter} ease-in-out;
+  ${({ isClickable, isSelected }) =>
+    isClickable &&
+    !isSelected &&
+    css`
+      &:hover {
+        background: ${({ theme }) => theme.palette.background.light};
+      }
+    `}
 `;
 
 export const SelectedIconWrapper = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: ${({ theme }) => theme.palette.primary.main};
   display: flex;
   justify-content: flex-end;
