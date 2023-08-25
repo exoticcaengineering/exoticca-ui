@@ -17,4 +17,5 @@ export const StyledModalHeader = styled.div`
   background-color: ${({ theme }) => theme.palette.promotion.main};
   height: 100%;
   padding: ${({ theme }) => theme.spacing(2)};
+  height: 75px;
 `;

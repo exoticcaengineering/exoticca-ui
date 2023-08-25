@@ -104,7 +104,7 @@ export const Modal = forwardRef(
     const hasHeader = !!header;
     const shouldRenderBottomCloseButton = hasBottomCloseButton && isClosable;
 
-    const shouldHaveContentExtraTopPadding = !hasHeader && isClosable;
+    const shouldHaveContentExtraTopPadding = hasHeader;
 
     if (typeof document === 'undefined') return null;
     if (!isOpen) return null;
@@ -120,9 +120,8 @@ export const Modal = forwardRef(
           fullScreen={fullScreen}
         >
           <StyledModalInnerWrapper>
-            {hasHeader && (
-              <StyledModalHeaderWrapper>{header}</StyledModalHeaderWrapper>
-            )}
+            <StyledModalHeaderWrapper>{header}</StyledModalHeaderWrapper>
+
             <StyledModalContentWrapper
               hasBottomCloseButton={hasBottomCloseButton}
               shouldHaveContentExtraTopPadding={

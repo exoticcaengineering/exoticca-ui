@@ -55,18 +55,13 @@ const WithBottomCloseButtonModal = forwardRef((props, ref) => {
 
 const LongContentModal = forwardRef((props, ref) => {
   return (
-    <Modal
-      ref={ref}
-      id="LongContentModal"
-      header={<ModalHeader />}
-      BottomCloseButtonText="Close modal"
-    >
+    <Modal ref={ref} id="LongContentModal" BottomCloseButtonText="Close modal">
       <TextBody1>This is a modal has a very long content.</TextBody1>
       <TextBody1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam
-        quaerat a. Placeatasdada distinctio earum eos sint maiores provident
-        cumque vel facere adipisciasd asda officia, tempore consequuntur,
-        corrupti voluptatum dignissimos commodidsad as?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorumadad
+        numquam quaerat a. Placeatasdada distinctio earum eos sint maiores
+        provident cumque vel facere adipisciasd asda officia, tempore
+        consequuntur, corrupti voluptatum dignissimos commodidsad as?
       </TextBody1>
       <TextBody1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam

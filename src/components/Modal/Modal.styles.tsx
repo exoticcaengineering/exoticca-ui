@@ -56,8 +56,9 @@ export const StyledModalInnerWrapper = styled.div<StyledProps>`
 `;
 
 export const StyledModalHeaderWrapper = styled.div`
-  height: 70px;
   flex-shrink: 0;
+  min-height: 64px;
+  background: ${({ theme }) => theme.palette.background.main};
 `;
 
 export const StyledCloseBtnWrapper = styled.div`
@@ -75,7 +76,7 @@ export const StyledModalContentWrapper = styled.div<StyledProps>`
   padding-bottom: ${({ hasBottomCloseButton, theme }) =>
     hasBottomCloseButton ? theme.spacing(12) : theme.spacing(4)};
   padding-top: ${({ theme, shouldHaveContentExtraTopPadding }) =>
-    shouldHaveContentExtraTopPadding ? theme.spacing(7) : theme.spacing(4)};
+    shouldHaveContentExtraTopPadding ? theme.spacing(4) : 0};
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     padding-left: ${({ theme }) => theme.spacing(4)};
     padding-right: ${({ theme }) => theme.spacing(4)};
