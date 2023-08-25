@@ -12,14 +12,6 @@ export const StyledBox = styled(Box)<StyledProps>`
   height: 100%;
   transition: background-color
     ${({ theme }) => theme.transition.duration.shorter} ease-in-out;
-  &:hover {
-    background: ${({ theme }) => {
-      console.log('hover color', theme.palette.background.light);
-
-      return theme.palette.background.light;
-    }};
-  }
-
   ${({ isClickable, isSelected }) =>
     isClickable &&
     !isSelected &&
