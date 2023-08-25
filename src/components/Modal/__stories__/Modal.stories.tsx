@@ -24,7 +24,7 @@ const BasicModal = () => {
     <>
       <Button onClick={() => ref.current?.open()} text="Basic modal" />
       <Modal ref={ref} id="basicModal">
-        <TextBody1>This is a closeable modal</TextBody1>
+        <TextBody1>This is a basic modal</TextBody1>
       </Modal>
     </>
   );
@@ -160,7 +160,7 @@ const NonClosableModal = () => {
     <>
       <Button onClick={() => ref.current?.open()} text="Non closeable modal" />
       <Modal ref={ref} id="nonClosableModal" isClosable={false}>
-        <TextBody1>This is a closeable modal</TextBody1>
+        <TextBody1>This is a non closeable modal</TextBody1>
       </Modal>
     </>
   );
@@ -178,6 +178,31 @@ const Variants = () => {
     </StyledRowWrapper>
   );
 };
+
 export const ModalVariants: Story = {
   render: Variants,
+};
+
+export const Basic: Story = {
+  render: BasicModal,
+};
+
+export const WithHeader: Story = {
+  render: WithHeaderModal,
+};
+
+export const WithBottomActionButton: Story = {
+  render: WithBottomActionButtonModal,
+};
+
+export const LongContent: Story = {
+  render: LongContentModal,
+};
+
+export const FullScreen: Story = {
+  render: FullScreenModal,
+};
+
+export const NonClosable: Story = {
+  render: NonClosableModal,
 };
