@@ -20,7 +20,10 @@ export const StyledShade = styled.div`
 export const StyledModalWrapper = styled.div<StyledProps>`
   position: absolute;
   z-index: ${({ theme }) => theme.zIndex.level1};
-  border-radius: ${({ theme }) => theme.newBorderRadius.l};
+  border-radius: ${({ theme, fullScreen }) =>
+    fullScreen
+      ? `${theme.newBorderRadius.l} ${theme.newBorderRadius.l} ${theme.newBorderRadius.none} ${theme.newBorderRadius.none}`
+      : theme.newBorderRadius.l};
   overflow-y: auto;
   overflow: hidden;
   left: 50%;
