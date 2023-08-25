@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { forwardRef, useRef } from 'react';
 import { Modal } from '../Modal';
-import { ModalRef } from '../Modal.types';
+import { ModalRef, Props } from '../Modal.types';
 import { TextBody1 } from 'src/components/TypographyVariants';
 import { Button } from 'src/components/Button';
 import { StyledModalHeader, StyledRowWrapper } from './Story.styles';
@@ -18,30 +18,30 @@ const ModalHeader = () => {
   return <StyledModalHeader>Modal header</StyledModalHeader>;
 };
 
-const BasicModal = () => {
+const BasicModal = (props: Props) => {
   const ref = useRef<ModalRef>(null);
   return (
     <>
       <Button onClick={() => ref.current?.open()} text="Basic modal" />
-      <Modal ref={ref} id="basicModal">
+      <Modal {...props} ref={ref} id="basicModal">
         <TextBody1>This is a basic modal</TextBody1>
       </Modal>
     </>
   );
 };
-const WithHeaderModal = () => {
+const WithHeaderModal = (props: Props) => {
   const ref = useRef<ModalRef>(null);
   return (
     <>
       <Button onClick={() => ref.current?.open()} text="Modal with header" />
-      <Modal ref={ref} id="withHeaderModal" header={<ModalHeader />}>
+      <Modal {...props} ref={ref} id="withHeaderModal" header={<ModalHeader />}>
         <TextBody1>This is a modal with header</TextBody1>
       </Modal>
     </>
   );
 };
 
-const WithBottomActionButtonModal = () => {
+const WithBottomActionButtonModal = (props: Props) => {
   const ref = useRef<ModalRef>(null);
   return (
     <>
@@ -50,12 +50,14 @@ const WithBottomActionButtonModal = () => {
         text="Modal with action button at the bottom"
       />
       <Modal
+        {...props}
         ref={ref}
         id="withBottomCloseButtonModal"
         header={<ModalHeader />}
         bottomActionButton={{
-          text: 'Click here',
-          onClick: () => alert('clicked'),
+          text: props.bottomActionButton?.text || 'Click here',
+          onClick: () =>
+            props.bottomActionButton?.onClick?.() || alert('clicked'),
         }}
       >
         <TextBody1>This is a modal with close button at the bottom.</TextBody1>
@@ -70,12 +72,13 @@ const WithBottomActionButtonModal = () => {
   );
 };
 
-const LongContentModal = () => {
+const LongContentModal = (props: Props) => {
   const ref = useRef<ModalRef>(null);
   return (
     <>
       <Button onClick={() => ref.current?.open()} text="long content modal" />
       <Modal
+        {...props}
         ref={ref}
         id="LongContentModal"
         bottomActionButton={{
@@ -143,38 +146,38 @@ const LongContentModal = () => {
   );
 };
 
-const FullScreenModal = () => {
+const FullScreenModal = (props: Props) => {
   const ref = useRef<ModalRef>(null);
   return (
     <>
       <Button onClick={() => ref.current?.open()} text="Full screen modal" />
-      <Modal ref={ref} id="fullScreenModal" fullScreen>
+      <Modal {...props} ref={ref} id="fullScreenModal" fullScreen>
         <TextBody1>This is a FullScreenModal modal</TextBody1>
       </Modal>
     </>
   );
 };
-const NonClosableModal = () => {
+const NonClosableModal = (props: Props) => {
   const ref = useRef<ModalRef>(null);
   return (
     <>
       <Button onClick={() => ref.current?.open()} text="Non closeable modal" />
-      <Modal ref={ref} id="nonClosableModal" isClosable={false}>
+      <Modal {...props} ref={ref} id="nonClosableModal" isClosable={false}>
         <TextBody1>This is a non closeable modal</TextBody1>
       </Modal>
     </>
   );
 };
 
-const Variants = () => {
+const Variants = (props: Props) => {
   return (
     <StyledRowWrapper>
-      <BasicModal />
-      <WithHeaderModal />
-      <WithBottomActionButtonModal />
-      <LongContentModal />
-      <FullScreenModal />
-      <NonClosableModal />
+      <BasicModal {...props} />
+      <WithHeaderModal {...props} />
+      <WithBottomActionButtonModal {...props} />
+      <LongContentModal {...props} />
+      <FullScreenModal {...props} />
+      <NonClosableModal {...props} />
     </StyledRowWrapper>
   );
 };

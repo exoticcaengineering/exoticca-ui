@@ -86,7 +86,7 @@ export const StyledModalContentWrapper = styled.div<StyledProps>`
   }
 `;
 
-export const StyledBottomCloseButtonWrapper = styled.div`
+export const StyledBottomActionButtonWrapper = styled.div`
   position: absolute;
   width: 100%;
   bottom: 0;

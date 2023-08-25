@@ -9,7 +9,7 @@ import React, {
 import ReactDOM from 'react-dom';
 
 import {
-  StyledBottomCloseButtonWrapper,
+  StyledBottomActionButtonWrapper,
   StyledCloseBtnWrapper,
   StyledModal,
   StyledModalContentWrapper,
@@ -133,15 +133,15 @@ export const Modal = forwardRef<ModalRef, Props>(
             </StyledModalContentWrapper>
           </StyledModalInnerWrapper>
           {shouldRenderBottomCloseButton && (
-            <StyledBottomCloseButtonWrapper id="modal-bottom-close-Button">
+            <StyledBottomActionButtonWrapper id="modal-bottom-close-Button">
               {
                 <Button
                   text={bottomActionButton?.text}
-                  onClick={bottomActionButton?.onClick}
+                  onClick={() => bottomActionButton?.onClick()}
                   size="small"
                 />
               }
-            </StyledBottomCloseButtonWrapper>
+            </StyledBottomActionButtonWrapper>
           )}
           {isClosable && (
             <StyledCloseBtnWrapper>
@@ -150,6 +150,7 @@ export const Modal = forwardRef<ModalRef, Props>(
                 variant="secondary"
                 size="small"
                 onClick={handleCloseModal}
+                testId="modal-close-button"
               />
             </StyledCloseBtnWrapper>
           )}
