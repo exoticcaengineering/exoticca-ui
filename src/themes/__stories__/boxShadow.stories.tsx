@@ -18,9 +18,7 @@ export const BoxShadow: ComponentStory<typeof Box> = () => (
     {boxShadowArray.map((shadow) => (
       <Box boxShadow={shadow} padding={[2]} gutterBottom={2} key={shadow}>
         <Typography align="center">theme.boxShadow.{shadow}:</Typography>
-        <Typography align="center" color="exoticcaLogo">
-          {themeDefault.boxShadow[shadow]}
-        </Typography>
+        <Typography align="center">{themeDefault.boxShadow[shadow]}</Typography>
       </Box>
     ))}
   </>

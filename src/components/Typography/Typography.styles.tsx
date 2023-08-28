@@ -16,8 +16,8 @@ export const StyledTypographyContainer = styled.p<StyledProps>`
   margin: 0;
   margin-bottom: ${({ theme, gutterBottom = 0 }) =>
     theme.spacing(gutterBottom)};
-  color: ${({ theme, color }) =>
-    color ? theme.colors[color] : 'currentColor'};
+  color: ${({ theme, color, colorShade = 'main' }) =>
+    color ? theme.palette[color][colorShade] : 'currentColor'};
   text-decoration: ${({ textDecoration = 'inherit' }) => textDecoration};
   text-transform: ${({ textTransform = 'inherit' }) => textTransform};
   white-space: ${({ noWrap }) => (noWrap ? 'noWrap' : 'normal')};

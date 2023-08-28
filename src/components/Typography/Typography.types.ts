@@ -8,6 +8,8 @@ import {
   FontWeight,
   PrintSize,
   LineHeight,
+  ColorShade,
+  Palette,
 } from 'src/types/theme';
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
@@ -18,7 +20,8 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   align?: CSS.Property.TextAlign;
   gutterBottom?: number;
   as?: keyof JSX.IntrinsicElements;
-  color?: keyof Colors;
+  color?: keyof Palette;
+  colorShade?: keyof ColorShade;
   fontWeight?: keyof FontWeight;
   textDecoration?: CSS.Property.TextDecoration;
   textTransform?: CSS.Property.TextTransform;
