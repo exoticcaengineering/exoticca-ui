@@ -65,6 +65,7 @@ describe('Modal', () => {
 
   it('renders modal with bottom action button correctly', async () => {
     const onClickMock = jest.fn();
+    window.alert = jest.fn();
     render(
       <WithBottomActionButton
         bottomActionButton={{
