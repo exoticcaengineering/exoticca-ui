@@ -113,7 +113,7 @@ export const Modal = forwardRef<ModalRef, Props>(
     return ReactDOM.createPortal(
       <StyledModal>
         <StyledModalWrapper
-          id="modalWrapper"
+          id={id}
           key={modalUniqueKey}
           data-testid={testId}
           className={className}
