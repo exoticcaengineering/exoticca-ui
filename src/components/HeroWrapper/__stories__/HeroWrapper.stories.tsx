@@ -16,14 +16,15 @@ const Content: FC = () => {
   return (
     <>
       <Typography
-        color="white"
+        color="primary"
+        colorShade="contrast"
         fontSize="h1"
         textTransform="uppercase"
         fontWeight="bolder"
       >
         Hero wrapper content title
       </Typography>
-      <Typography color="white" fontSize="h3">
+      <Typography color="primary" colorShade="contrast" fontSize="h3">
         Hero wrapper content subtitle
       </Typography>
     </>

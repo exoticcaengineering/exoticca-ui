@@ -12,7 +12,7 @@ export const Checkbox: FC<Props> = ({
   label,
   customLabel,
   name,
-  defaultChecked,
+  defaultChecked = false,
   disabled,
   error,
   onChange,
