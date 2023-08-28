@@ -29,6 +29,7 @@ export const IconButton: FC<IconButtonProps> = ({
       variant={variant}
       size={size}
       disabled={isDisabled}
+      data-testid={props.testId}
       {...props}
     >
       <Icon {...icon} size={getIconSize(size)} />
