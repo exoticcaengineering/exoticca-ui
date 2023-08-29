@@ -62,7 +62,7 @@ export const Accordion: FC<Props> = ({
           <Icon
             size="regular"
             stroke="primary"
-            rotate={isEnabledAndOpen ? 180 : 0}
+            rotate={isEnabledAndOpen ? 0 : 180}
             {...endIcon}
           />
         )}
