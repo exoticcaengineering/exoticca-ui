@@ -67,6 +67,7 @@ export const iconNames = [
   'info',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
+  'logo-tico',
   'pill-status',
   'flag-us',
   'flag-uk',
