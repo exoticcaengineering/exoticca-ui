@@ -93,6 +93,9 @@ import { IconArrowCircleLogin } from 'src/components/Icon/SVGIcons/IconArrowCirc
 import { IconEyeOpen } from './SVGIcons/IconEyeOpen';
 import { IconEyeClosed } from './SVGIcons/IconEyeClosed';
 import { IconInfo } from 'src/components/Icon/SVGIcons/IconInfo';
+import { IconPencil } from 'src/components/Icon/SVGIcons/IconPencil';
+import { IconHospitalCenter } from 'src/components/Icon/SVGIcons/IconHospitalCenter';
+import { IconSyringe } from 'src/components/Icon/SVGIcons/IconSyringe';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -187,4 +190,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'eye-closed': IconEyeClosed,
   info: IconInfo,
   'logo-tico': LogoTico,
+  pencil: IconPencil,
+  'hospital-center': IconHospitalCenter,
+  syringe: IconSyringe,
 };

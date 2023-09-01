@@ -16,7 +16,7 @@ const TypographyContainer: FC<TypographyContainerProps> = ({ fontFamily }) => {
           <Typography fontFamily={key} gutterBottom={1}>
             theme.typography.fontFamily{key}:
           </Typography>
-          <Typography fontFamily={key} gutterBottom={1} color="exoticcaLogo">
+          <Typography fontFamily={key} gutterBottom={1}>
             {fontFamily[key]}
           </Typography>
         </Box>

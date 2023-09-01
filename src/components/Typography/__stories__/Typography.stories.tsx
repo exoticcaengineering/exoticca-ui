@@ -133,7 +133,7 @@ export const CenteredText: Story = {
 export const ColoredText: Story = {
   args: {
     ...Base.args,
-    color: 'exoticcaLogo',
+    color: 'promotion',
   },
 };
 

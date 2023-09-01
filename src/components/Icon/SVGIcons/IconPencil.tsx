@@ -1,0 +1,33 @@
+export const IconPencil = () => (
+  <svg
+    width="24"
+    height="25"
+    viewBox="0 0 24 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.52196 20.6437H3.99707V16.1188C3.99707 15.655 4.18124 15.2102 4.50928 14.8823L15.2418 4.1498C15.5696 3.82131 16.0147 3.63672 16.4788 3.63672C16.9429 3.63672 17.3879 3.82131 17.7158 4.1498L20.4909 6.92496C20.8194 7.25282 21.004 7.69787 21.004 8.16197C21.004 8.62608 20.8194 9.07113 20.4909 9.39899L9.75847 20.1315C9.43034 20.4591 8.98568 20.6433 8.52196 20.6437Z"
+      stroke="#2A2A2A"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M13.001 6.63867L18.0031 11.6408"
+      stroke="#2A2A2A"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8.99902 15.6419L12.0003 12.6406"
+      stroke="#2A2A2A"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

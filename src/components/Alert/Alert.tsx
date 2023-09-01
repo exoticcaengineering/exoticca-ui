@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import {
   StyledAlertWrapper,
+  StyledText,
   StyledTextWrapper,
 } from 'src/components/Alert/Alert.styles';
 import { Props } from 'src/components/Alert/Alert.types';
 import { BoxProps } from 'src/components/Box';
 import { Icon } from 'src/components/Icon';
-import { Typography } from 'src/components/Typography';
 
 export const Alert: FC<Props> = ({
   testId,
@@ -58,8 +58,8 @@ export const Alert: FC<Props> = ({
         size="medium"
       />
       <StyledTextWrapper>
-        <Typography fontSize={rounded ? 'body2' : 'body1'}>{title}</Typography>
-        <Typography fontSize={rounded ? 'body2' : 'body1'}>{text}</Typography>
+        <StyledText rounded={rounded}>{title}</StyledText>
+        <StyledText rounded={rounded}>{text}</StyledText>
       </StyledTextWrapper>
     </StyledAlertWrapper>
   );

@@ -24,7 +24,7 @@ export const PrintSize: ComponentStory<typeof Typography> = () => (
         <Typography printSize={key}>
           theme.typography.printSize.{key}:
         </Typography>
-        <Typography printSize={key} color="exoticcaLogo">
+        <Typography printSize={key}>
           {`${printSize[key]}: ${ptStringToPx(printSize[key])}px`}
         </Typography>
       </Box>

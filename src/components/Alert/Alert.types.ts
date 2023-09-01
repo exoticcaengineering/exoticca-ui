@@ -6,3 +6,7 @@ export interface Props extends ComponentPropsBase {
   text?: string;
   rounded?: boolean;
 }
+
+export interface StyledProps {
+  rounded?: boolean;
+}
