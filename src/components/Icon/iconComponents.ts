@@ -95,6 +95,8 @@ import { IconInfo } from 'src/components/Icon/SVGIcons/IconInfo';
 import { IconPencil } from 'src/components/Icon/SVGIcons/IconPencil';
 import { IconHospitalCenter } from 'src/components/Icon/SVGIcons/IconHospitalCenter';
 import { IconSyringe } from 'src/components/Icon/SVGIcons/IconSyringe';
+import { IconThreeQuarter } from './SVGIcons/IconThreeQuarter';
+import { CircleFull } from './SVGIcons/IconCircleFull';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -173,6 +175,8 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'premium-care-flex-plus': PremiumCareFlexPlus,
   loop: IconLoop,
   star: IconStar,
+  'circle-three-quarter': IconThreeQuarter,
+  'circle-full': CircleFull,
   tag: IconTag,
   wallet: IconWallet,
   'arrow-circle-login': IconArrowCircleLogin,
