@@ -2,7 +2,6 @@ import { ComponentStory, Meta, StoryObj } from '@storybook/react';
 import { UploadInput } from '../UploadInput';
 import { useState } from 'react';
 import { uploadInputProps } from '../UploadInput.types';
-// import { InputProps } from '../UploadInput.types';
 
 export default {
   title: 'Components/UploadInput',
@@ -33,7 +32,6 @@ const Template: ComponentStory<typeof UploadInput> = ({ ...props }) => {
         style={{
           margin: '5rem',
           width: '100%',
-          // margin: '0 auto',
         }}
       >
         <UploadInput
