@@ -27,7 +27,6 @@ export interface IconConfig {
 export interface Props extends ComponentPropsBase, IconConfig {
   onClick?: () => void;
 }
-export interface Props extends ComponentPropsBase, IconConfig {}
 
 export interface StyledProps extends Omit<Props, 'icon' | 'onClick'> {
   isClickable?: boolean;
