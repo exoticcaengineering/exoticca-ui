@@ -13,7 +13,6 @@ export const handleFileUpload = (
         (e) => e.name === element.name && e.size === element.size,
       )
     ) {
-      console.log('heyyy i found it ', element);
       return false;
     }
     if (element.size >= 1048576 * 3) {
