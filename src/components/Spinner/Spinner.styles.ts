@@ -15,4 +15,5 @@ export const StyledSpinnerWrapper = styled.div`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
   transform-origin: center;
+  font-size: 0;
 `;

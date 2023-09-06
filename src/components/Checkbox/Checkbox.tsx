@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Spinner } from '../Spinner';
 import { Props } from './Checkbox.types';
 import {
@@ -10,8 +10,9 @@ import {
 
 export const Checkbox: FC<Props> = ({
   label,
+  customLabel,
   name,
-  defaultChecked,
+  defaultChecked = false,
   disabled,
   error,
   onChange,
@@ -19,8 +20,22 @@ export const Checkbox: FC<Props> = ({
   testId = 'checkbox',
   className,
 }) => {
+  const [checked, setChecked] = useState(defaultChecked);
+
+  useEffect(() => {
+    setChecked(defaultChecked);
+  }, [defaultChecked]);
+
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (isLoading) return;
+    setChecked(e.target.checked);
     onChange?.(e);
+  };
+
+  const renderLabel = () => {
+    if (customLabel) return customLabel;
+    if (label)
+      return <StyledLabel dangerouslySetInnerHTML={{ __html: label }} />;
   };
 
   return (
@@ -33,7 +48,7 @@ export const Checkbox: FC<Props> = ({
     >
       <StyledInputCheckbox
         onChange={handleOnChange}
-        checked={defaultChecked}
+        checked={checked}
         disabled={disabled}
         name={name}
         error={error}
@@ -45,7 +60,7 @@ export const Checkbox: FC<Props> = ({
       ) : (
         <StyledCheckBox data-testid={'checkbox__checkmark'} error={error} />
       )}
-      {label && <StyledLabel dangerouslySetInnerHTML={{ __html: label }} />}
+      {renderLabel()}
     </StyledCheckboxWrapper>
   );
 };

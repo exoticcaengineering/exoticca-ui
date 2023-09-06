@@ -17,9 +17,7 @@ export const FontWeight: ComponentStory<typeof Typography> = () => (
         <Typography fontWeight={key}>
           theme.typography.fontWeight.{key}:
         </Typography>
-        <Typography fontWeight={key} color="exoticcaLogo">
-          {fontWeight[key]}
-        </Typography>
+        <Typography fontWeight={key}>{fontWeight[key]}</Typography>
       </Box>
     ))}
   </>

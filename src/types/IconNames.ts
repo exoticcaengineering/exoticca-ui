@@ -57,6 +57,17 @@ export const iconNames = [
   'piggy-bank',
   'touristGuide',
   'calendar-cross',
+  'loop',
+  'star',
+  'tag',
+  'wallet',
+  'eye-open',
+  'eye-closed',
+  'arrow-circle-login',
+  'info',
+  'pencil',
+  'hospital-center',
+  'syringe',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
   'pill-status',
@@ -78,6 +89,15 @@ export const iconNames = [
   'premium-care',
   'premium-care-flex',
   'premium-care-flex-plus',
+  'play_store_icon_de',
+  'play_store_icon_en',
+  'play_store_icon_es',
+  'play_store_icon_fr',
+  'play_store_icon_mx',
+  'app_store_icon_de',
+  'app_store_icon_en',
+  'app_store_icon_es',
+  'app_store_icon_fr',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];

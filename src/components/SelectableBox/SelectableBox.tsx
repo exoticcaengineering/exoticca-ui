@@ -15,30 +15,29 @@ export const SelectableBox: FC<Props> = ({
   highlightColor = 'promotion',
   highlightColorShade = 'main',
   highlightText,
-  testId,
+  testId = 'selectable-box',
   className,
   ...boxProps
 }) => {
   const hasHighlight = !!highlightText;
-  const getBorderColor = () => {
-    if (isSelected) return 'primary';
-    if (hasHighlight) return highlightColor;
-    return 'primary';
-  };
 
   const getBorderShade = () => {
     if (isSelected) return 'main';
-    if (hasHighlight) return highlightColorShade;
     return 'light';
   };
 
+  const isClickable = !!boxProps.onClick;
+
   return (
-    <StyledWrapper data-testid={testId} className={className}>
+    <StyledWrapper data-testid={`${testId}-wrapper`} className={className}>
       <StyledBox
-        borderColor={getBorderColor()}
+        borderColor="primary"
         borderColorShade={getBorderShade()}
         borderWidth={1}
         padding={[2]}
+        isClickable={isClickable}
+        isSelected={isSelected}
+        testId={testId}
         {...boxProps}
       >
         {children}
@@ -49,6 +48,7 @@ export const SelectableBox: FC<Props> = ({
               stroke="background"
               strokeShade="main"
               rotate={-45}
+              size="small"
             />
           </SelectedIconWrapper>
         )}

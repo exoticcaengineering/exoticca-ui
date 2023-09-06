@@ -49,4 +49,5 @@ export const StyledWrapper = styled.div<StyledProps>`
     css`
       flex-shrink: ${flexShrink};
     `}
+    cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'inherit')};
 `;

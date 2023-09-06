@@ -24,7 +24,7 @@ export const FontSize: ComponentStory<typeof Typography> = () => (
     {fontSizes.map((key) => (
       <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
         <Typography fontSize={key}>theme.typography.fontSize.{key}:</Typography>
-        <Typography fontSize={key} color="exoticcaLogo">
+        <Typography fontSize={key}>
           {`${fontSize[key]}: ${remStringToPx(fontSize[key])}px`}
         </Typography>
       </Box>

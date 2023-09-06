@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, HTMLInputTypeAttribute } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconConfig } from '../Icon';
 
@@ -6,6 +6,7 @@ type LabelPosition = 'inside' | 'outside';
 
 export interface Props extends ComponentPropsBase {
   startIcon?: IconConfig;
+  endIcon?: IconConfig;
   label: string;
   labelPosition?: LabelPosition;
   placeholder?: string;
@@ -19,6 +20,7 @@ export interface Props extends ComponentPropsBase {
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
+  type?: HTMLInputTypeAttribute;
 }
 
 export interface StyleProps
@@ -26,5 +28,6 @@ export interface StyleProps
     Partial<Props>,
     'labelPosition' | 'rounded' | 'placeholder' | 'label'
   > {
-  hasIcon?: boolean;
+  hasStartIcon?: boolean;
+  hasEndIcon?: boolean;
 }

@@ -1,0 +1,24 @@
+export const IconArrowCircleLogin = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.9996 8.99902L14.0008 12.0003L10.9996 15.0015"
+      stroke="#2A2A2A"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14.0098 12.0001H4.18273C3.43557 11.9995 2.83017 11.3937 2.83017 10.6465V10.6465C2.83046 8.76444 3.57612 6.9591 4.90403 5.6254V5.6254C6.69302 3.83356 9.12182 2.82777 11.6538 2.83016C16.1932 2.8116 20.0656 6.11115 20.7678 10.5959C21.47 15.0806 18.7914 19.4059 14.4636 20.7756C10.1358 22.1453 5.45643 20.1488 3.45043 16.0768"
+      stroke="#2A2A2A"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

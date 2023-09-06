@@ -4,7 +4,6 @@ import { iconNames } from 'src/types/IconNames';
 import { useEffect, useState } from 'react';
 import { Item } from 'src/components/Item';
 import { Typography } from 'src/components/Typography';
-import { InputFilterProps } from '../FilterInput.types';
 
 export default {
   title: 'Components/FilterInput',
@@ -21,15 +20,16 @@ export default {
       category: 'Prop',
     },
   },
-} as Meta<InputFilterProps>;
+} as Meta<typeof FilterInput>;
 
-type Story = StoryObj<InputFilterProps>;
+type Story = StoryObj<typeof FilterInput>;
 
 const Template = ({ ...args }) => {
   const [inputValue, setInputValue] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
 
   const LIST = [
+    { item: '', id: '0' },
     { item: 'Item 1', id: '1' },
     { item: 'Item 2', id: '2' },
     { item: 'Item 3', id: '3' },
@@ -50,11 +50,15 @@ const Template = ({ ...args }) => {
       ({ item }) => item.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1,
     );
     if (updatedList.length === 0) {
-      setList([{ item: 'No Items with this text', id: '1' }]);
+      setList([{ item: 'No Items with this text', id: '6' }]);
+      return;
+    }
+    if (updatedList.length === list.length) {
+      setList(list);
       return;
     }
 
-    setList(updatedList);
+    setList([list[0], ...updatedList]);
   };
 
   useEffect(() => {
@@ -103,5 +107,5 @@ const Template = ({ ...args }) => {
 };
 
 export const Base: Story = {
-  render: (args) => <Template {...args} />,
+  render: () => <Template />,
 };

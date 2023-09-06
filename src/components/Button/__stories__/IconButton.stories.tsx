@@ -1,5 +1,12 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  ComponentMeta,
+  ComponentStory,
+  Meta,
+  StoryObj,
+} from '@storybook/react';
 import { IconButton } from '../IconButton';
+import { IconButtonProps } from '../Button.types';
+import { StyledRowWrapper } from './Story.styles';
 
 export default {
   title: 'Components/IconButton',
@@ -26,15 +33,42 @@ export default {
       category: 'Prop',
     },
   },
-} as ComponentMeta<typeof IconButton>;
+} as Meta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton {...args} />
+type Story = StoryObj<typeof IconButton>;
+
+const PrimaryIconButton = (props: IconButtonProps) => (
+  <IconButton {...props} icon={{ icon: 'close' }} variant="primary" />
 );
 
-export const Base = Template.bind({});
-Base.args = {
-  icon: {
-    icon: 'close',
-  },
+const SecondaryIconButton = (props: IconButtonProps) => (
+  <IconButton {...props} icon={{ icon: 'close' }} variant="secondary" />
+);
+
+const TertiaryIconButton = (props: IconButtonProps) => (
+  <IconButton {...props} icon={{ icon: 'close' }} variant="tertiary" />
+);
+
+const IconButtonVariants = (props: IconButtonProps) => (
+  <StyledRowWrapper>
+    <PrimaryIconButton {...props} />
+    <SecondaryIconButton {...props} />
+    <TertiaryIconButton {...props} />
+  </StyledRowWrapper>
+);
+
+export const Variants: Story = {
+  render: (args) => <IconButtonVariants {...args} />,
+};
+
+export const Primary: Story = {
+  render: (args) => <PrimaryIconButton {...args} />,
+};
+
+export const Secondary: Story = {
+  render: (args) => <SecondaryIconButton {...args} />,
+};
+
+export const Tertiary: Story = {
+  render: (args) => <TertiaryIconButton {...args} />,
 };
