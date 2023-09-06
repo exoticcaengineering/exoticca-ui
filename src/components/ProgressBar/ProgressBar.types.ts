@@ -13,6 +13,7 @@ export interface Props extends ComponentPropsBase {
   fillMode?: CSS.Property.AnimationFillMode;
   progressFrom?: number;
   progressTo?: number;
+  height?: number;
 }
 
 export interface StyledProps
@@ -28,4 +29,5 @@ export interface StyledProps
     | 'fillMode'
     | 'progressFrom'
     | 'progressTo'
+    | 'height'
   > {}

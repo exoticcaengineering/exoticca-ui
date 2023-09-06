@@ -69,6 +69,8 @@ import { IconArrowDownCircle } from 'src/components/Icon/SVGIcons/IconArrowDownC
 import { IconCheckCircle } from 'src/components/Icon/SVGIcons/IconCheckCircle';
 import { IconAlertTriangle } from 'src/components/Icon/SVGIcons/IconAlertTriangle';
 import { IconEnvelope } from 'src/components/Icon/SVGIcons/IconEnvelope';
+import { IconTrash } from './SVGIcons/IconTrash';
+import { IconDocumentText } from './SVGIcons/IconDocumentText';
 import { TouristGuide } from './SVGIcons/TouristGuide';
 import { IconShield } from './SVGIcons/IconShield';
 import { IconPiggyBank } from './SVGIcons/IconPiggyBank';
@@ -168,6 +170,8 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'warning-cross': IconWarningCross,
   'alert-triangle': IconAlertTriangle,
   envelope: IconEnvelope,
+  trash: IconTrash,
+  'document-text': IconDocumentText,
   shield: IconShield,
   'piggy-bank': IconPiggyBank,
   'calendar-cross': IconCalendarCross,

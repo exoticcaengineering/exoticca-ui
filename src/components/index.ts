@@ -15,6 +15,7 @@ export { FilterInput } from './FilterInput';
 export { Input } from './Input';
 export { HeroWrapper } from './HeroWrapper';
 export { ProgressBar, ProgressBarProps } from './ProgressBar';
+export { UploadInput } from './UploadInput';
 export { Loader } from './Loader';
 export * from './Spinner';
 export * from './Checkbox';
