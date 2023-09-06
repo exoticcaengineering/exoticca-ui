@@ -6,6 +6,7 @@ export interface Props extends ComponentPropsBaseWithChildren {
   openHeight: number;
   onOpen?: () => void;
   onClose?: () => void;
+  isOpenOnLoad?: boolean;
 }
 
 export interface StyledProps {

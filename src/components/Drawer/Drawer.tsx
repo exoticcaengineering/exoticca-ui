@@ -20,10 +20,11 @@ const DrawerComp = (
     testId = 'drawer',
     onOpen,
     onClose,
+    isOpenOnLoad,
   }: Props,
   ref: React.Ref<DrawerRef>,
 ) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(isOpenOnLoad ?? false);
 
   const handleOpen = () => {
     onOpen?.();
