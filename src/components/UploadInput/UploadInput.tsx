@@ -7,22 +7,11 @@ import {
   ErrorMessage,
 } from './UploadInput.styles';
 import { Button } from '../Button';
-import UploadedItem from './UploadedItem';
+import { UploadedItem } from './UploadedItem';
 import { deleteByValue, onChange } from './UploadInput.utils';
 
-export interface uploadInputProps {
-  value: File[];
-  description?: string;
-  testId?: string;
-  setValue: (field: string, value: File[]) => void;
-  type?: string;
-  name?: string;
-  buttonText?: string;
-  errorMessages?: {
-    exceededSizeLimit: string;
-    erasedCorrectly: string;
-  };
-}
+//TYPES
+import { uploadInputProps } from './UploadInput.types';
 
 export const UploadInput = ({
   setValue,

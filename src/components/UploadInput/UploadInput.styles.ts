@@ -8,14 +8,14 @@ export const StyledInput = styled.input`
   width: 100%;
   text-overflow: ellipsis;
   ::placeholder {
-    color: ${({ theme }) => theme.colors.grey70};
+    color: ${({ theme }) => theme.palette.primary.light};
     font-weight: ${({ theme }) => theme.typography.fontWeight.normal};
   }
 `;
 
 export const Description = styled(TextBody2)`
-  margin: 12px 0;
-  color: ${({ theme }) => theme.colors.polarNightMedium};
+  margin: ${({ theme }) => theme.spacing(1.5)} 0;
+  color: ${({ theme }) => theme.palette.primary.medium};
 `;
 export const FlexColumn = styled.div`
   display: flex;
@@ -36,13 +36,13 @@ export const StyledListItem = styled.li`
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: ${({ theme }) => theme.spacing(1.5)};
 `;
 
 export const ItemDescription = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 24px;
+  margin-right: ${({ theme }) => theme.spacing(4)};
   & span {
     overflow: hidden;
     white-space: nowrap;
@@ -50,17 +50,17 @@ export const ItemDescription = styled.div`
     width: 18ch;
   }
   & :nth-child(2) {
-    color: ${({ theme }) => theme.colors.polarNightMedium};
+    color: ${({ theme }) => theme.palette.primary.medium};
   }
 `;
 
 export const ProgressBarContainer = styled.div`
-  border-radius: ${({ theme }) => theme.borderRadius.xxl};
+  border-radius: ${({ theme }) => theme.newBorderRadius.xxl};
   width: 150px;
-  border: 1px solid ${({ theme }) => theme.colors.polarNightMedium};
+  border: 1px solid ${({ theme }) => theme.palette.primary.medium};
 `;
 
 export const ErrorMessage = styled.li`
-  color: red;
+  color: ${({ theme }) => theme.palette.warning.main};
   list-style: none;
 `;

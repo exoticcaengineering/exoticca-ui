@@ -1,5 +1,6 @@
 import { Icon } from '../Icon';
 import { ProgressBar } from '../ProgressBar';
+import { TextBody3 } from '../TypographyVariants';
 import {
   StyledListItem,
   ItemDescription,
@@ -13,13 +14,13 @@ interface ItemProps {
   onDeleteCB: () => void;
 }
 
-const UploadedItem = ({ name, size, onDeleteCB }: ItemProps) => {
+export const UploadedItem = ({ name, size, onDeleteCB }: ItemProps) => {
   return (
     <StyledListItem>
-      <Icon icon="document-text" size="xLarge" flexShrink={0} />
+      <Icon icon="document-text" size="xLarge" />
       <ItemDescription>
-        <span>{name}</span>
-        <span>{Math.trunc(size / 1000)} Kb</span>
+        <TextBody3>{name}</TextBody3>
+        <TextBody3>{Math.trunc(size / 1000)} Kb</TextBody3>
       </ItemDescription>
 
       <ProgressBarContainer>
@@ -33,15 +34,7 @@ const UploadedItem = ({ name, size, onDeleteCB }: ItemProps) => {
           iterationCount=""
         />
       </ProgressBarContainer>
-      <Icon
-        style={{ cursor: 'pointer' }}
-        icon="trash"
-        size="medium"
-        flexShrink={0}
-        onClick={onDeleteCB}
-      />
+      <Icon icon="trash" size="medium" onClick={onDeleteCB} />
     </StyledListItem>
   );
 };
-
-export default UploadedItem;
