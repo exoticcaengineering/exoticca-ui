@@ -96,6 +96,8 @@ export const iconNames = [
   'app_store_icon_en',
   'app_store_icon_es',
   'app_store_icon_fr',
+  'circle-three-quarter',
+  'circle-full',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];
