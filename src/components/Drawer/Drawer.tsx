@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import { useState } from 'react';
 import { useImperativeHandle } from 'react';
 import {
@@ -25,6 +25,10 @@ const DrawerComp = (
   ref: React.Ref<DrawerRef>,
 ) => {
   const [open, setOpen] = useState(isOpenOnLoad ?? false);
+
+  useEffect(() => {
+    setOpen(!!isOpenOnLoad);
+  }, [isOpenOnLoad]);
 
   const handleOpen = () => {
     onOpen?.();
