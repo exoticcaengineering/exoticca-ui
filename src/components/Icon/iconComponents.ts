@@ -7,6 +7,7 @@ import { IconClose } from './SVGIcons/IconClose';
 import { Promo } from './SVGIcons/Promo';
 import { IconContact } from './SVGIcons/IconContact';
 import { LogoRebrand } from './SVGIcons/LogoRebrand';
+import { LogoTico } from './SVGIcons/LogoTico';
 import { IconUser } from './SVGIcons/IconUser';
 import { IconSearch } from './SVGIcons/IconSearch';
 import { IconLoader } from './SVGIcons/IconLoader';
@@ -192,6 +193,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'eye-open': IconEyeOpen,
   'eye-closed': IconEyeClosed,
   info: IconInfo,
+  'logo-tico': LogoTico,
   pencil: IconPencil,
   'hospital-center': IconHospitalCenter,
   syringe: IconSyringe,
