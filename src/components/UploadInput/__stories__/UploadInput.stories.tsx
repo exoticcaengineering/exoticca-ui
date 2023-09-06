@@ -49,23 +49,3 @@ const Template: ComponentStory<typeof UploadInput> = ({ ...props }) => {
 export const Base: Story = {
   render: (args) => <Template {...args} />,
 };
-
-// export const LeftRounded: Story = {
-//   render: (args) => <Template {...args} rounded="left" />,
-// };
-
-// export const RightRounded: Story = {
-//   render: (args) => <Template {...args} rounded="right" />,
-// };
-
-// export const WithoutIcon: Story = {
-//   render: (args) => <Template {...args} icon={undefined} />,
-// };
-
-// export const ReadOnly: Story = {
-//   render: (args) => <Template {...args} readOnly />,
-// };
-
-// export const Disabled: Story = {
-//   render: (args) => <Template {...args} disabled />,
-// };

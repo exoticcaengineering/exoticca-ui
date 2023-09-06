@@ -1,10 +1,5 @@
 import { Dispatch, SetStateAction, ChangeEvent } from 'react';
 
-const duplicityCheck = (arr) => {
-  const IDs = new Set(arr.map((item) => item.name));
-  console.log('ids', IDs);
-};
-
 export const handleFileUpload = (
   uploads: File[],
   setError: Dispatch<SetStateAction<string[]>>,
@@ -48,13 +43,7 @@ export const deleteByValue = ({
   setValue: (field: string, value: File[]) => void;
   setError: Dispatch<SetStateAction<string[]>>;
 }) => {
-  console.log(
-    'filter -> ',
-    name,
-    prevValue.filter((item) => item.name !== value),
-  );
   setValue(name, [...new Set(prevValue.filter((item) => item.name !== value))]);
-
   return setError((prev) => [...prev, `${name} ${deletedMessage}`]);
 };
 
@@ -83,8 +72,7 @@ export const onChange = ({
     exceededSizeLimit,
     value,
   );
-  duplicityCheck([...value, ...filteredFiles]);
+
   const newData = [...new Set([...value, ...filteredFiles])];
-  console.log(newData);
   return setValue(name, newData);
 };
