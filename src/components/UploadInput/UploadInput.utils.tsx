@@ -18,7 +18,7 @@ export const handleFileUpload = (
     if (element.size >= 1048576 * 3) {
       return setError((prev) => [
         ...prev,
-        `${element.name}${exceededSizeLimit}`,
+        `${element.name} ${exceededSizeLimit}`,
       ]);
     }
     //MAX SIZE 3 MB PER EACH FILE
@@ -43,7 +43,7 @@ export const deleteByValue = ({
   setError: Dispatch<SetStateAction<string[]>>;
 }) => {
   setValue(name, [...new Set(prevValue.filter((item) => item.name !== value))]);
-  return setError((prev) => [...prev, `${name} ${deletedMessage}`]);
+  return setError((prev) => [...prev, deletedMessage]);
 };
 
 export const onChange = ({
