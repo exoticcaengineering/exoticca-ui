@@ -21,6 +21,7 @@ export interface IconConfig {
   height?: CSS.Property.Height | number;
   originalIconColor?: boolean;
   rotate?: number;
+  onClick?: () => void;
 }
 export interface Props extends ComponentPropsBase, IconConfig {}
 
