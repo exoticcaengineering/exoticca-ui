@@ -1,3 +1,5 @@
+import { Palette } from 'src/types';
+
 export interface YoYoBarProps {
   phoneNumber?: string;
   interval: number;
@@ -19,5 +21,5 @@ export interface PromotionStylingYoBar {
   ssr?: boolean;
   background?: string;
   backgroundGradient?: string;
-  backgroundColor: string;
+  backgroundColor: keyof Palette;
 }

@@ -1,5 +1,6 @@
 import { Tag } from 'src/components/Tag';
 import { TextBody2, TextBody3 } from 'src/components/TypographyVariants';
+import { Palette } from 'src/types';
 import styled, { keyframes } from 'styled-components';
 
 const CardTransition = keyframes`
@@ -13,7 +14,7 @@ const CardTransition = keyframes`
 
 export const YoYoBarWrapper = styled.aside<{
   backgroundImage?: string;
-  backgroundColor?: string;
+  backgroundColor?: keyof Palette;
   gradient?: string;
   isClickable: boolean;
 }>`
