@@ -1,9 +1,4 @@
-import {
-  ComponentMeta,
-  ComponentStory,
-  Meta,
-  StoryObj,
-} from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { themeDefault } from 'src/themes/theme';
 import { Box } from '../Box';
 
@@ -51,10 +46,6 @@ export default {
     },
   },
 } as Meta<typeof Box>;
-
-const Template: ComponentStory<typeof Box> = (args) => (
-  <Box {...args}>Box component works as a container</Box>
-);
 
 type Story = StoryObj<typeof Box>;
 
