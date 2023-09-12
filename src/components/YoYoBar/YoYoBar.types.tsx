@@ -1,11 +1,14 @@
-import { Palette } from 'src/types';
+import React from 'react';
+import { Palette, ColorShade } from 'src/types';
 
 export interface YoYoBarProps {
-  phoneNumber?: string;
   interval: number;
   cardData: YoYoBarCardDataType[];
-  offsetHideBar: number;
-  styling: PromotionStylingYoBar;
+  background: keyof Palette;
+  backgroundShade?: keyof ColorShade;
+  containerRef: React.RefObject<HTMLDivElement>;
+  pillColor?: keyof Palette;
+  textColor?: keyof Palette;
 }
 
 export interface YoYoBarCardDataType {
@@ -22,4 +25,28 @@ export interface PromotionStylingYoBar {
   background?: string;
   backgroundGradient?: string;
   backgroundColor: keyof Palette;
+}
+
+export interface StyledProps {
+  gradient?: string;
+  isClickable?: boolean;
+  interval?: number;
+  backgroundColor?: keyof Palette;
+  backgroundShade?: keyof ColorShade;
+  pillColor?: keyof Palette;
+  textColor?: keyof Palette;
+}
+
+export interface YoyoBarCarProps {
+  styling?: PromotionStylingYoBar;
+  isLastChance?: boolean;
+  tagText: string | undefined;
+  desktopHtmlString: string;
+  mobileHtmlString: string;
+  absolute?: boolean;
+  onClick?: () => void;
+  plusInfo?: string | undefined;
+  interval: number;
+  pillColor?: keyof Palette;
+  textColor?: keyof Palette;
 }

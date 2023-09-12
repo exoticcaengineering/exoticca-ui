@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { YoYoBarWrapper } from './YoYoBar.styles';
 import { YoYoBarProps } from './YoYoBar.types';
 import YoYoBarCard from './YoYoBarCard';
@@ -6,11 +6,13 @@ import YoYoBarCard from './YoYoBarCard';
 export const YoYoBar: React.FC<YoYoBarProps> = ({
   interval,
   cardData,
-  offsetHideBar,
-  styling,
+  background,
+  backgroundShade,
+  containerRef,
+  pillColor,
+  textColor,
 }) => {
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
-  const yoyobarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const transitionSlide = () => {
@@ -25,54 +27,26 @@ export const YoYoBar: React.FC<YoYoBarProps> = ({
     return () => clearInterval(slideTimer);
   }, [activeSlideIdx, cardData.length, interval]);
 
-  useEffect(() => {
-    if (window) {
-      let prevScrollpos = window.pageYOffset;
-
-      const handleScroll = () => {
-        if (yoyobarRef.current === null) return;
-
-        const currentScrollPos = window.pageYOffset;
-
-        if (
-          prevScrollpos > currentScrollPos ||
-          currentScrollPos < offsetHideBar
-        ) {
-          yoyobarRef.current.style.height = '28px';
-          yoyobarRef.current.style.opacity = '1';
-        } else {
-          yoyobarRef.current.style.height = '0';
-          yoyobarRef.current.style.opacity = '1';
-        }
-        prevScrollpos = currentScrollPos;
-      };
-
-      window.addEventListener('scroll', handleScroll, { passive: true });
-
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
+  const slide = cardData[activeSlideIdx];
 
   return (
-    <>
-      <YoYoBarWrapper
-        ref={yoyobarRef}
-        data-test-id={'yoyobar-wrapper'}
-        backgroundColor={styling.backgroundColor}
-        gradient={styling?.backgroundGradient}
-        backgroundImage={`/assets/images/${styling?.background}`}
-        isClickable={!!cardData[activeSlideIdx].isClickable}
-        onClick={() => cardData[activeSlideIdx].onClick?.()}
-      >
-        <YoYoBarCard
-          interval={8}
-          styling={styling}
-          desktopHtmlString={cardData[activeSlideIdx].desktopHtmlString}
-          mobileHtmlString={cardData[activeSlideIdx].mobileHtmlString}
-          tagText={cardData[activeSlideIdx].tagText}
-          plusInfo={cardData[activeSlideIdx].plusInfo}
-        />
-      </YoYoBarWrapper>
-    </>
+    <YoYoBarWrapper
+      ref={containerRef}
+      data-testid={'yoyobar-wrapper'}
+      backgroundColor={background}
+      backgroundShade={backgroundShade}
+      isClickable={!!slide.isClickable}
+      onClick={() => slide.onClick?.()}
+    >
+      <YoYoBarCard
+        interval={8}
+        desktopHtmlString={slide.desktopHtmlString}
+        mobileHtmlString={slide.mobileHtmlString}
+        tagText={slide.tagText}
+        plusInfo={slide.plusInfo}
+        pillColor={pillColor}
+        textColor={textColor}
+      />
+    </YoYoBarWrapper>
   );
 };

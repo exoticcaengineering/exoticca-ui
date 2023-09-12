@@ -21,28 +21,24 @@ const dummyCardData = [
   },
 ];
 
-const styling = {
-  backgroundColor: themeDefault.palette.promotion.main,
-  ssr: true,
-};
-
 export default {
   title: 'Components/YoYoBar',
   component: YoYoBar,
   args: {
     cardData: dummyCardData,
     interval: 8,
-    offsetHideBar: 60,
-    styling,
+    background: 'promotion',
+    backgroundShade: 'main',
+    pillColor: 'primary',
   },
   argTypes: {
     interval: {
       desciption: 'Interval between slide changes',
       control: 'number',
     },
-    offsetHideBar: {
-      desciption: 'Window scroll offset at which to hide YoYoBar',
-      control: 'number',
+    backgroundColor: {
+      options: themeDefault.palette,
+      control: { type: 'select' },
     },
   },
 } as Meta<YoYoBarProps>;

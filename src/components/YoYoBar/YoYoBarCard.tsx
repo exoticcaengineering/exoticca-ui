@@ -5,19 +5,7 @@ import {
   TextYoYobarMobile,
   YoYoBarCardWrapper,
 } from './YoYoBar.styles';
-import { PromotionStylingYoBar } from './YoYoBar.types';
-
-type Props = {
-  styling?: PromotionStylingYoBar;
-  isLastChance?: boolean;
-  tagText: string | undefined;
-  desktopHtmlString: string;
-  mobileHtmlString: string;
-  absolute?: boolean;
-  onClick?: () => void;
-  plusInfo?: string | undefined;
-  interval: number;
-};
+import { YoyoBarCarProps } from './YoYoBar.types';
 
 const YoYoBarCard = ({
   tagText,
@@ -26,7 +14,9 @@ const YoYoBarCard = ({
   plusInfo,
   interval,
   onClick,
-}: Props) => {
+  textColor,
+  pillColor,
+}: YoyoBarCarProps) => {
   return (
     <YoYoBarCardWrapper
       data-test-id={'yoyobar-card'}
@@ -34,17 +24,20 @@ const YoYoBarCard = ({
       onClick={onClick}
     >
       <TextYoYobarDesktop
+        color={textColor}
         dangerouslySetInnerHTML={{
           __html: desktopHtmlString,
         }}
       />
       <TextYoYobarMobile
+        color={textColor}
         dangerouslySetInnerHTML={{
           __html: mobileHtmlString,
         }}
       />
-      {tagText && <StyledTag text={tagText} color="primary" size="small" />}
+      {tagText && <StyledTag text={tagText} color={pillColor} size="small" />}
       <TextYoYobarInfo
+        color={textColor}
         dangerouslySetInnerHTML={{
           __html: plusInfo || '',
         }}
