@@ -26,9 +26,6 @@ export const YoYoBarWrapper = styled.aside<StyledProps>`
     backgroundColor = 'promotion',
     backgroundShade = 'main',
   }) => theme.palette[backgroundColor][backgroundShade]};
-  .cardCarousel {
-    width: 100%;
-  }
 `;
 
 // ** CARD STYLES ** //
