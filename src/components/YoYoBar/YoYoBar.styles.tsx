@@ -19,7 +19,7 @@ export const YoYoBarWrapper = styled.aside<StyledProps>`
   justify-content: space-between;
   cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'default')};
   transition: ${({ theme }) =>
-    `height 200ms linear ${theme.transition.duration.shortest}`};
+    `height ${theme.transition.duration.shortest} linear 200ms`};
   overflow: hidden;
   background-color: ${({
     theme,
@@ -34,16 +34,17 @@ export const YoYoBarCardWrapper = styled.div<StyledProps>`
   z-index: ${({ theme }) => theme.zIndex.level8};
   width: 100%;
   display: flex;
-  gap: 8px;
+  gap: ${({ theme }) => theme.spacing(1)};
   justify-content: center;
   align-items: center;
   position: relative;
   height: 28px;
-  padding: 4px 8px;
+  padding: ${({ theme }) => theme.spacing(0.5, 1)};
   width: 100%;
   min-width: 360px;
   justify-content: center;
-  transition: opacity 200ms linear;
+  transition: ${({ theme }) =>
+    `opacity ${theme.transition.duration.short} linear`};
   animation-iteration-count: infinite;
   animation-duration: ${({ interval }) => `${interval}s`};
   animation-name: ${CardTransition};
