@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { YoYoBarWrapper } from './YoYoBar.styles';
 import { YoYoBarProps } from './YoYoBar.types';
-import YoYoBarCard from './YoYoBarCard';
+import { YoYoBarCard } from './YoYoBarCard';
 
 export const YoYoBar: React.FC<YoYoBarProps> = ({
   interval,

@@ -57,17 +57,17 @@ export const YoYoBarCardWrapper = styled.div<StyledProps>`
 
 export const TextYoYobarDesktop = styled(TextBody2)<StyledProps>`
   color: ${({ theme, color = 'primary' }) => theme.palette[color].main};
-  display: initial;
-  @media (max-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
-    display: none;
+  display: none;
+  @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
+    display: initial;
   }
 `;
 
 export const TextYoYobarMobile = styled(TextBody3)`
-  display: none;
+  display: initial;
   color: ${({ theme, color = 'primary' }) => theme.palette[color].main};
-  @media (max-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
-    display: initial;
+  @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
+    display: none;
   }
 `;
 

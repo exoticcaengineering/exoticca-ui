@@ -7,7 +7,7 @@ import {
 } from './YoYoBar.styles';
 import { YoyoBarCarProps } from './YoYoBar.types';
 
-const YoYoBarCard = ({
+export const YoYoBarCard = ({
   tagText,
   desktopHtmlString,
   mobileHtmlString,
@@ -19,7 +19,7 @@ const YoYoBarCard = ({
 }: YoyoBarCarProps) => {
   return (
     <YoYoBarCardWrapper
-      data-test-id={'yoyobar-card'}
+      data-testid={'yoyobar-card'}
       interval={interval}
       onClick={onClick}
     >
@@ -45,5 +45,3 @@ const YoYoBarCard = ({
     </YoYoBarCardWrapper>
   );
 };
-
-export default YoYoBarCard;
