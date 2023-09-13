@@ -5,16 +5,16 @@ import { Props } from 'src/components/Flex/Flex.types';
 export const Flex: FC<Props> = ({
   children,
   direction = 'row',
-  items = 'flex-start',
-  justify = 'flex-start',
+  alignItems = 'flex-start',
+  justifyContent = 'flex-start',
   gap = 0,
   ...props
 }) => {
   return (
     <StyledFlexWrapper
       direction={direction}
-      items={items}
-      justify={justify}
+      alignItems={alignItems}
+      justifyContent={justifyContent}
       gap={gap}
       {...props}
     >

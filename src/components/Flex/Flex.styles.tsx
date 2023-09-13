@@ -5,11 +5,7 @@ import styled from 'styled-components';
 export const StyledFlexWrapper = styled(Box)<StyledProps>`
   display: flex;
   flex-direction: ${({ direction }) => direction};
-  align-items: ${({ items }) => items};
-  justify-content: ${({ justify }) => justify};
-  gap: ${({ theme, gap }) => theme.spacing(gap)};
-
-  @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
-    flex-direction: column;
-  }
+  align-items: ${({ alignItems }) => alignItems};
+  justify-content: ${({ justifyContent }) => justifyContent};
+  gap: ${({ theme, gap = 0 }) => theme.spacing(gap)};
 `;

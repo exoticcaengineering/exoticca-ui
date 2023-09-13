@@ -1,24 +1,12 @@
 import { BoxProps } from 'src/components/Box';
+import * as CSS from 'csstype';
 
 export interface Props extends BoxProps {
-  direction: 'column' | 'row' | 'column-reverse' | 'row-reverse';
-  items:
-    | 'baseline'
-    | 'flex-start'
-    | 'center'
-    | 'flex-end'
-    | 'space-between'
-    | 'space-around';
-  justify:
-    | 'flex-start'
-    | 'center'
-    | 'flex-end'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly'
-    | 'stretch';
-  gap: number;
+  direction?: CSS.Property.FlexDirection;
+  alignItems?: CSS.Property.AlignItems;
+  justifyContent?: CSS.Property.JustifyContent;
+  gap?: number;
 }
 
 export interface StyledProps
-  extends Pick<Props, 'direction' | 'items' | 'justify' | 'gap'> {}
+  extends Pick<Props, 'direction' | 'alignItems' | 'justifyContent' | 'gap'> {}
