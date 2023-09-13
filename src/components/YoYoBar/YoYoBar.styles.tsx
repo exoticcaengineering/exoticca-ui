@@ -5,10 +5,10 @@ import { StyledProps } from './YoYoBar.types';
 
 const CardTransition = keyframes`
   0% { opacity: 0}
-  3% { opacity: 0}
+  5% { opacity: 0}
   10% { opacity: 1}
   90% { opacity: 1 }
-  97% { opacity: 0 }
+  95% { opacity: 0 }
   100% { opacity: 0 }
 `;
 

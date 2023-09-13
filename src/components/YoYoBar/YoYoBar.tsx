@@ -39,7 +39,7 @@ export const YoYoBar: React.FC<YoYoBarProps> = ({
       onClick={() => slide.onClick?.()}
     >
       <YoYoBarCard
-        interval={8}
+        interval={interval}
         desktopHtmlString={slide.desktopHtmlString}
         mobileHtmlString={slide.mobileHtmlString}
         tagText={slide.tagText}
