@@ -70,6 +70,7 @@ export const iconNames = [
   'syringe',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'logo-rebrand',
+  'logo-tico',
   'pill-status',
   'flag-us',
   'flag-uk',
@@ -83,6 +84,9 @@ export const iconNames = [
   'star-4',
   'star-4-sp',
   'star-3-sp',
+  'trash',
+  'document-text',
+  'touristGuide',
   'premium-care',
   'premium-care-flex',
   'premium-care-flex-plus',
@@ -95,6 +99,8 @@ export const iconNames = [
   'app_store_icon_en',
   'app_store_icon_es',
   'app_store_icon_fr',
+  'circle-three-quarter',
+  'circle-full',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];

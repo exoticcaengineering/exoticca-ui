@@ -17,7 +17,7 @@ export const StyledProgressBarBcg = styled.div<StyledProps>`
     backgroundColor = 'background',
     backgroundColorShade = 'main',
   }) => theme.palette[backgroundColor][backgroundColorShade]};
-  height: 4px;
+  height: ${({ height }) => (height ? `${height}px` : '4px')};
   width: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.xxl};
   overflow: hidden;

@@ -7,6 +7,7 @@ import { IconClose } from './SVGIcons/IconClose';
 import { Promo } from './SVGIcons/Promo';
 import { IconContact } from './SVGIcons/IconContact';
 import { LogoRebrand } from './SVGIcons/LogoRebrand';
+import { LogoTico } from './SVGIcons/LogoTico';
 import { IconUser } from './SVGIcons/IconUser';
 import { IconSearch } from './SVGIcons/IconSearch';
 import { IconLoader } from './SVGIcons/IconLoader';
@@ -68,6 +69,8 @@ import { IconArrowDownCircle } from 'src/components/Icon/SVGIcons/IconArrowDownC
 import { IconCheckCircle } from 'src/components/Icon/SVGIcons/IconCheckCircle';
 import { IconAlertTriangle } from 'src/components/Icon/SVGIcons/IconAlertTriangle';
 import { IconEnvelope } from 'src/components/Icon/SVGIcons/IconEnvelope';
+import { IconTrash } from './SVGIcons/IconTrash';
+import { IconDocumentText } from './SVGIcons/IconDocumentText';
 import { TouristGuide } from './SVGIcons/TouristGuide';
 import { IconShield } from './SVGIcons/IconShield';
 import { IconPiggyBank } from './SVGIcons/IconPiggyBank';
@@ -95,6 +98,8 @@ import { IconInfo } from 'src/components/Icon/SVGIcons/IconInfo';
 import { IconPencil } from 'src/components/Icon/SVGIcons/IconPencil';
 import { IconHospitalCenter } from 'src/components/Icon/SVGIcons/IconHospitalCenter';
 import { IconSyringe } from 'src/components/Icon/SVGIcons/IconSyringe';
+import { IconThreeQuarter } from './SVGIcons/IconThreeQuarter';
+import { CircleFull } from './SVGIcons/IconCircleFull';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -165,6 +170,8 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'warning-cross': IconWarningCross,
   'alert-triangle': IconAlertTriangle,
   envelope: IconEnvelope,
+  trash: IconTrash,
+  'document-text': IconDocumentText,
   shield: IconShield,
   'piggy-bank': IconPiggyBank,
   'calendar-cross': IconCalendarCross,
@@ -173,6 +180,8 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'premium-care-flex-plus': PremiumCareFlexPlus,
   loop: IconLoop,
   star: IconStar,
+  'circle-three-quarter': IconThreeQuarter,
+  'circle-full': CircleFull,
   tag: IconTag,
   wallet: IconWallet,
   'arrow-circle-login': IconArrowCircleLogin,
@@ -188,6 +197,7 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'eye-open': IconEyeOpen,
   'eye-closed': IconEyeClosed,
   info: IconInfo,
+  'logo-tico': LogoTico,
   pencil: IconPencil,
   'hospital-center': IconHospitalCenter,
   syringe: IconSyringe,
