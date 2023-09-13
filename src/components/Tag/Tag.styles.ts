@@ -9,8 +9,8 @@ export const StyledWrapper = styled.div<StyledProps>`
   padding: ${({ theme, size }) => {
     if (size === 'small') return theme.spacing(0.75, 1);
   }};
-  background: ${({ theme, color = 'primary', variant }) => {
-    if (variant === 'primary') return theme.palette[color].main;
+  background: ${({ theme, color = 'primary', shade = 'main', variant }) => {
+    if (variant === 'primary') return theme.palette[color][shade];
     return 'transparent';
   }};
   border-radius: ${({ theme, shape = 'rounded' }) => {

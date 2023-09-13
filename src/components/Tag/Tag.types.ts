@@ -1,4 +1,4 @@
-import { Palette } from 'src/types';
+import { ColorShade, Palette } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconConfig } from '../Icon/Icon.types';
 
@@ -11,6 +11,7 @@ export interface Props extends ComponentPropsBase {
   variant?: TagVariant;
   color?: keyof Palette;
   shape?: 'square' | 'rounded';
+  shade?: keyof ColorShade;
   startIcon?: IconConfig;
   endIcon?: IconConfig;
 }
