@@ -38,12 +38,11 @@ export const Accordion: FC<Props> = ({
   const handleOnClickWrapper = () => (hasCustomTrigger ? null : toggleIsOpen());
 
   return (
-    <div data-testid={testId}>
+    <div data-testid={testId} className={className}>
       <StyledHeaderWrapper
         onClick={handleOnClickWrapper}
         isOpen={isAccordionOpen}
         isDisabled={isDisabled}
-        className={className}
         data-testid={`${testId}-header-wrapper`}
         hasCustomTrigger={hasCustomTrigger}
       >
