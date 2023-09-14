@@ -1,4 +1,4 @@
-import { BoxProps } from 'src/components/Box';
+import { Props as BoxProps } from 'src/components/Box/Box.types';
 import * as CSS from 'csstype';
 
 export interface Props extends BoxProps {
