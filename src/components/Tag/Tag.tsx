@@ -8,6 +8,7 @@ export const Tag: FC<Props> = ({
   text,
   size = 'small',
   color = 'primary',
+  shade = 'main',
   variant = 'primary',
   className,
   testId = 'tag',
@@ -24,6 +25,7 @@ export const Tag: FC<Props> = ({
     <StyledWrapper
       size={size}
       color={color}
+      shade={shade}
       variant={variant}
       className={className}
       data-testid={testId}

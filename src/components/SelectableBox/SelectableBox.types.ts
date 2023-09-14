@@ -1,5 +1,5 @@
 import { ColorShade, Palette } from 'src/types';
-import { BoxProps } from '../Box';
+import { Props as BoxProps } from 'src/components/Box/Box.types';
 
 export interface Props extends BoxProps {
   isSelected?: boolean;

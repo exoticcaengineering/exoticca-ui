@@ -5,7 +5,7 @@ import {
   StyledTextWrapper,
 } from 'src/components/Alert/Alert.styles';
 import { Props } from 'src/components/Alert/Alert.types';
-import { BoxProps } from 'src/components/Box';
+import { Props as BoxProps } from 'src/components/Box/Box.types';
 import { Icon } from 'src/components/Icon';
 
 export const Alert: FC<Props> = ({

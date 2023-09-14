@@ -1,5 +1,5 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { BoxProps } from '../Box';
+import { Props as BoxProps } from 'src/components/Box/Box.types';
 
 export interface Props
   extends ComponentPropsBase,
