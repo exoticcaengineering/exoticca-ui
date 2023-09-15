@@ -8,6 +8,7 @@ export const Flex: FC<Props> = ({
   alignItems = 'flex-start',
   justifyContent = 'flex-start',
   gap = 0,
+  as,
   ...props
 }) => {
   return (
@@ -16,6 +17,7 @@ export const Flex: FC<Props> = ({
       alignItems={alignItems}
       justifyContent={justifyContent}
       gap={gap}
+      forwardedAs={as}
       {...props}
     >
       {children}
