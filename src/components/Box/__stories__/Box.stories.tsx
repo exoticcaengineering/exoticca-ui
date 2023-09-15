@@ -123,3 +123,10 @@ export const Clickable: Story = {
     onClick: () => alert('Clicked'),
   },
 };
+
+export const CastAs: Story = {
+  args: {
+    as: 'main',
+    children: 'This box is casted as a main HTML element, using the prop "as"',
+  },
+};
