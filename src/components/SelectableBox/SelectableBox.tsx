@@ -17,6 +17,7 @@ export const SelectableBox: FC<Props> = ({
   highlightText,
   testId = 'selectable-box',
   className,
+  as,
   ...boxProps
 }) => {
   const hasHighlight = !!highlightText;
@@ -38,6 +39,7 @@ export const SelectableBox: FC<Props> = ({
         isClickable={isClickable}
         isSelected={isSelected}
         testId={testId}
+        forwardedAs={as}
         {...boxProps}
       >
         {children}

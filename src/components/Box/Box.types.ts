@@ -13,6 +13,7 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   boxShadow?: keyof BoxShadow;
   padding?: number | number[];
   onClick?: () => void;
+  as?: keyof JSX.IntrinsicElements;
 }
 
 export interface StyleProps
