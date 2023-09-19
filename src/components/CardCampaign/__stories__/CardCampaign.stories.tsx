@@ -42,7 +42,6 @@ export default {
     fromText: 'from',
     newText: 'New',
     wishListBtn: <></>,
-    handleDatalayerClick: jest.fn(),
   },
 } as Meta<CardCampaignProps>;
 

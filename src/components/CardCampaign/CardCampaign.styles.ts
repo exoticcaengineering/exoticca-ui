@@ -34,7 +34,7 @@ export const HeaderWrapper = styled.div`
   }
   &:hover {
     img {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
   }
 `;
@@ -69,12 +69,12 @@ export const Days = styled(TextBody2)`
 `;
 
 export const Title = styled(TextBody2)`
-  margin-bottom: 13px;
+  margin-bottom: ${({ theme }) => theme.spacing(1.6)};
   min-height: 40px;
 
   @media (min-width: ${({ theme }) => theme.newBreakpoints.mobile}) {
     min-height: 44px;
-    margin-bottom: 10px;
+    margin-bottom: ${({ theme }) => theme.spacing(1.2)};
   }
 `;
 
