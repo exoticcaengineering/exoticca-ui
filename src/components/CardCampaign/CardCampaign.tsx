@@ -1,4 +1,3 @@
-// import WishlistButton from '../wishlist/WishlistButton';
 import React from 'react';
 import {
   CardCampaignProps,

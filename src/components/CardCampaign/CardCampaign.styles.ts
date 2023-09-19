@@ -43,11 +43,11 @@ export const HeaderContentWrapper = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 8px;
+  padding: ${({ theme }) => theme.spacing(1)};
   width: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
   @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
-    padding: 16px;
+    padding: ${({ theme }) => theme.spacing(2)};
   }
 `;
 
@@ -202,10 +202,10 @@ export const TagWrapper = styled.div`
   height: 24px;
   z-index: 2;
   > span {
-    margin-bottom: 4px;
+    margin-bottom: ${({ theme }) => theme.spacing(0.5)};
   }
   > a {
-    margin-bottom: 4px;
+    margin-bottom: ${({ theme }) => theme.spacing(0.5)};
     display: block;
   }
 
@@ -225,6 +225,8 @@ export const NewContent = styled.div<StyledProps>`
   border: ${({ theme, hasBorder }) =>
     hasBorder ? `1.5px solid ${theme.colors.arcticWind}` : 'none'};
   margin: ${({ hasMargin }) => (hasMargin ? '0px 1.5px 1.5px 1.5px' : '0px')};
-  border-radius: ${({ hasBorderRadius }) =>
-    hasBorderRadius ? '0px 0px 24px 24px' : '0px'};
+  border-radius: ${({ hasBorderRadius, theme }) =>
+    hasBorderRadius
+      ? `0px 0px ${theme.newBorderRadius.l} ${theme.newBorderRadius.l}`
+      : '0px'};
 `;
