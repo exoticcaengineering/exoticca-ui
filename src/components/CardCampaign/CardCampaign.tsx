@@ -87,7 +87,7 @@ export const CardCampaign = ({
             <TagWrapper>
               <LinkWrapper href={pillTag?.uri ?? ''}>
                 <ThemePromoTagWrap>
-                  <ThemePromoTag onClick={pillTagClickEvent}>
+                  <ThemePromoTag onClick={() => pillTagClickEvent?.()}>
                     {pillTag.name}
                   </ThemePromoTag>
                 </ThemePromoTagWrap>
