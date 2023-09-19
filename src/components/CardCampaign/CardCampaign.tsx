@@ -50,10 +50,6 @@ export const CardCampaign = ({
   newText,
   WishlistBtn,
 }: CardCampaignProps) => {
-  const handleDatalayerClick = () => {
-    console.log('click');
-  };
-
   const isPromotedProduct = tagHeadLine?.some(
     (tag: Tag) =>
       tag.alias === PROMOTED_ALIAS || tag.alias === FLASH_SALES_ALIAS,
@@ -85,7 +81,7 @@ export const CardCampaign = ({
   };
 
   return (
-    <Card data-testid={id} onClick={handleDatalayerClick}>
+    <Card data-testid={id}>
       <a href={url}>
         <CardLink data-testid="card-campaign-link">
           {pillTag && (
