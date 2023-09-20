@@ -35,15 +35,16 @@ export const StyledListItem = styled.li`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   gap: ${({ theme }) => theme.spacing(1.5)};
 `;
 
 export const ItemDescription = styled.div`
+  flex-grow: 2;
   display: flex;
   flex-direction: column;
   margin-right: ${({ theme }) => theme.spacing(4)};
-  & span {
+  & p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -55,8 +56,10 @@ export const ItemDescription = styled.div`
 `;
 
 export const ProgressBarContainer = styled.div`
+  align-self: ;
   border-radius: ${({ theme }) => theme.newBorderRadius.xxl};
-  width: 150px;
+  max-width: 150px;
+  min-width: 150px;
   border: 1px solid ${({ theme }) => theme.palette.primary.medium};
 `;
 
