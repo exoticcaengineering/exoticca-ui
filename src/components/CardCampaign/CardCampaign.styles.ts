@@ -86,6 +86,10 @@ export const PriceWrapper = styled.div`
   align-items: baseline;
 `;
 
+export const PillLink = styled.span`
+  position: relative;
+  z-index: 10000;
+`;
 export const PriceRow = styled.div`
   display: flex;
   margin-right: ${({ theme }) => theme.spacing(2)};
