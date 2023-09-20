@@ -56,7 +56,6 @@ export const ItemDescription = styled.div`
 `;
 
 export const ProgressBarContainer = styled.div`
-  align-self: ;
   border-radius: ${({ theme }) => theme.newBorderRadius.xxl};
   max-width: 150px;
   min-width: 150px;
