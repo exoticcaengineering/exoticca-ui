@@ -13,7 +13,8 @@
     "build": "rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "ci": "npm run test && npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
@@ -52,6 +53,7 @@
     "react-docgen-typescript-plugin": "^1.0.5",
     "react-dom": "^17.0.2",
     "rollup": "^3.20.2",
+    "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^7.0.11",
