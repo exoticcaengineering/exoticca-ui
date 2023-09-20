@@ -6,6 +6,7 @@ import dts from 'rollup-plugin-dts';
 import packageJson from './package.json' assert { type: 'json' };
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import filesize from 'rollup-plugin-filesize';
 
 export default [
   {
@@ -31,6 +32,7 @@ export default [
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
+      filesize(),
     ],
   },
   {
