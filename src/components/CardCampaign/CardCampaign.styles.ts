@@ -4,6 +4,7 @@ import { TextBody2, TextHeading2 } from '../TypographyVariants';
 
 export const Card = styled.div`
   width: 100%;
+  height: 100%;
   cursor: pointer;
   overflow: hidden;
   position: relative;
