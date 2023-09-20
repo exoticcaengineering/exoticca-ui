@@ -17,7 +17,7 @@ export const CardLink = styled.a`
   text-align: initial;
   width: 100%;
   position: relative;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndex.level1};
   &:hover img {
     transform: scale(1.015);
   }
@@ -137,7 +137,7 @@ export const PercentageSaving = styled.div<StyledProps>`
     isPromotedProduct
       ? theme.palette.promotion.contrast
       : theme.palette.primary.contrast};
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndex.level1};
   background: ${({ theme, isPromotedProduct }) =>
     isPromotedProduct
       ? theme.palette.promotion.main
@@ -174,7 +174,7 @@ export const ThemePromoTag = styled.div`
   color: ${({ theme }) => theme.colors.grey80};
   border: 1.5px solid;
   border-color: ${({ theme }) => theme.colors.arcticWind};
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndex.level1};
   background: ${({ theme }) => theme.colors.arcticWind};
   border-radius: ${({ theme }) => theme.newBorderRadius.semiRounded};
   overflow: hidden;
@@ -191,7 +191,7 @@ export const TagWrapper = styled.div`
   right: ${({ theme }) => theme.spacing(0.5)};
   top: 0px;
   height: 24px;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.zIndex.level2};
   > span {
     margin-bottom: ${({ theme }) => theme.spacing(0.5)};
   }
