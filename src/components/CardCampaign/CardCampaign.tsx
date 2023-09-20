@@ -75,12 +75,15 @@ export const CardCampaign = ({
   }) => {
     const handlePillClick = (e: React.MouseEvent<HTMLSpanElement>) => {
       e.stopPropagation();
-      if (window) window.location.href = href;
     };
     if (href === '' || href === undefined) {
       return <>{children}</>;
     }
-    return <PillLink onClick={(e) => handlePillClick(e)}>{children}</PillLink>;
+    return (
+      <a href={href} onClick={(e) => handlePillClick(e)}>
+        {children}
+      </a>
+    );
   };
 
   const handleCardClick = () => {
