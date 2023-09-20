@@ -51,7 +51,7 @@ export const HeaderContentWrapper = styled.div`
   }
 `;
 
-export const HeadingCard = styled.h3`
+export const HeadingCard = styled.div`
   margin: 0;
 `;
 

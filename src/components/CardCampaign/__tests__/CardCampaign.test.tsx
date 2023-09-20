@@ -18,12 +18,18 @@ const imgProp = [
 describe('render Base UI elements', () => {
   test('should render card with title, day data and no isNew element', () => {
     render(<Base />);
+    const titleElement = screen.queryByRole('heading', {
+      level: 4,
+      name: title,
+    });
+    const daysElement = screen.queryByRole('heading', {
+      level: 5,
+      name: daysText,
+    });
     const isNewElement = screen.queryByText(newText);
-    const titleElement = screen.getByText(title);
-    const daysElement = screen.getByText(daysText);
-    expect(isNewElement).not.toBeInTheDocument();
     expect(titleElement).toBeInTheDocument();
     expect(daysElement).toBeInTheDocument();
+    expect(isNewElement).not.toBeInTheDocument();
   });
 
   test('should render image with correct src', async () => {

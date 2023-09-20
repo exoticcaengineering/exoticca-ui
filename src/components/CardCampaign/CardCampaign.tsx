@@ -73,10 +73,13 @@ export const CardCampaign = ({
     href: string;
     children: React.ReactNode;
   }) => {
+    const handleRedirect = () => {
+      if (window) window.location.href = href;
+    };
     if (href === '' || href === undefined) {
       return <>{children}</>;
     }
-    return <a href={href}>{children}</a>;
+    return <span onClick={handleRedirect}>{children}</span>;
   };
 
   return (
@@ -101,7 +104,7 @@ export const CardCampaign = ({
             <HeaderContentWrapper>
               <HeadingCard>
                 <Destination>{destination} </Destination>
-                <Days>
+                <Days forwardedAs={'h5'}>
                   {hasExtraNights && `${fromText} `}
                   {daysText}
                 </Days>
