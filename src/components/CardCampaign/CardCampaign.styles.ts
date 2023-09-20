@@ -4,7 +4,9 @@ import { TextBody2, TextHeading2 } from '../TypographyVariants';
 
 export const Card = styled.div`
   width: 100%;
+  cursor: pointer;
   overflow: hidden;
+  position: relative;
   border-radius: ${({ theme }) => theme.newBorderRadius.l};
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -34,7 +36,7 @@ export const HeaderWrapper = styled.div`
   }
   &:hover {
     img {
-      transform: scale(1.1);
+      transform: scale(1.03);
     }
   }
 `;
@@ -116,17 +118,6 @@ export const PriceBeforeBeauty = styled(PriceBeauty)`
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     font-size: ${({ theme }) => theme.typography.fontSize.default};
-  }
-`;
-
-export const CardLink = styled.a`
-  display: block;
-  text-align: initial;
-  width: 100%;
-  position: relative;
-  &:hover img {
-    transform: scale(1.015);
-  }
 `;
 
 export const PercentageSaving = styled.div<StyledProps>`
