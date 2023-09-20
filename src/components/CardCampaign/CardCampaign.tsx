@@ -83,7 +83,7 @@ export const CardCampaign = ({
       <CardLink href={url}>
         {WishlistBtn}
         <HeaderWrapper>
-          <img src={image[0].url ?? ''} alt={title} />
+          <img src={image[0] ? image[0].url : ''} alt={title} />
           <HeaderContentWrapper>
             <HeadingCard>
               <Destination>{destination} </Destination>
