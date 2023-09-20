@@ -74,7 +74,6 @@ export const CardCampaign = ({
     children: React.ReactNode;
   }) => {
     const handlePillClick = (e: React.MouseEvent<HTMLSpanElement>) => {
-      console.log('hello');
       e.stopPropagation();
       if (window) window.location.href = href;
     };
