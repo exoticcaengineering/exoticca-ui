@@ -10,6 +10,7 @@ import {
 import {
   Card,
   CardContent,
+  CardLink,
   Days,
   Destination,
   HeaderContentWrapper,
@@ -17,7 +18,6 @@ import {
   HeadingCard,
   NewContent,
   PercentageSaving,
-  PillLink,
   PriceBeauty,
   PriceBeforeBeauty,
   PriceFrom,
@@ -66,84 +66,62 @@ export const CardCampaign = ({
       tagHeadLine.length === 0 ||
       (tagHeadLine.length === 1 && tagHeadLine[0].alias === PROMOTED_ALIAS));
 
-  const LinkWrapper = ({
-    href,
-    children,
-  }: {
-    href: string;
-    children: React.ReactNode;
-  }) => {
-    const handlePillClick = (e: React.MouseEvent<HTMLSpanElement>) => {
-      e.stopPropagation();
-    };
-    if (href === '' || href === undefined) {
-      return <>{children}</>;
-    }
-    return (
-      <a href={href} onClick={(e) => handlePillClick(e)}>
-        {children}
-      </a>
-    );
-  };
-
-  const handleCardClick = () => {
-    if (window) window.location.href = url;
-  };
+  const handlePillClick = (e: React.MouseEvent) =>
+    pillTagClickEvent?.(e, pillTag?.uri ?? '');
 
   return (
-    <Card onClick={handleCardClick} data-testid={id}>
+    <Card data-testid={id}>
       {pillTag && (
         <TagWrapper>
-          <LinkWrapper href={pillTag?.uri ?? ''}>
-            <ThemePromoTagWrap>
-              <ThemePromoTag onClick={() => pillTagClickEvent?.()}>
-                {pillTag.name}
-              </ThemePromoTag>
-            </ThemePromoTagWrap>
-          </LinkWrapper>
+          <ThemePromoTagWrap>
+            <ThemePromoTag onClick={(e) => handlePillClick(e)}>
+              {pillTag.name}
+            </ThemePromoTag>
+          </ThemePromoTagWrap>
         </TagWrapper>
       )}
+      <CardLink href={url}>
+        {WishlistBtn}
+        <HeaderWrapper>
+          <img src={image[0].url ?? ''} alt={title} />
+          <HeaderContentWrapper>
+            <HeadingCard>
+              <Destination>{destination} </Destination>
+              <Days forwardedAs={'h5'}>
+                {hasExtraNights && `${fromText} `}
+                {daysText}
+              </Days>
+            </HeadingCard>
+          </HeaderContentWrapper>
+        </HeaderWrapper>
+        <CardContent>
+          <Title as="h4">{title}</Title>
 
-      {WishlistBtn}
-      <HeaderWrapper>
-        <img src={image[0].url ?? ''} alt={title} />
-        <HeaderContentWrapper>
-          <HeadingCard>
-            <Destination>{destination} </Destination>
-            <Days forwardedAs={'h5'}>
-              {hasExtraNights && `${fromText} `}
-              {daysText}
-            </Days>
-          </HeadingCard>
-        </HeaderContentWrapper>
-      </HeaderWrapper>
-      <CardContent>
-        <Title as="h4">{title}</Title>
-
-        <PriceWrapper>
-          <PriceRow>
-            <PriceFrom>{fromText}</PriceFrom>
-            {oldPrice && <PriceBeforeBeauty>{oldPrice}</PriceBeforeBeauty>}
-          </PriceRow>
-          <PriceRow>
-            <PriceBeauty as="b">{fromPriceBeautify}</PriceBeauty>
-            {pricingPercentage && (
-              <PercentageSaving isPromotedProduct={isPromotedProduct}>
-                -{pricingPercentage}
-              </PercentageSaving>
-            )}
-          </PriceRow>
-        </PriceWrapper>
-      </CardContent>
-      {showNew && isNew ? (
-        <NewContent
-          hasBorder={hasBorder}
-          hasMargin={hasMargin}
-          hasBorderRadius={hasBorderRadius}
-        >
-          {newText}
-        </NewContent>
-      ) : null}
+          <PriceWrapper>
+            <PriceRow>
+              <PriceFrom>{fromText}</PriceFrom>
+              {oldPrice && <PriceBeforeBeauty>{oldPrice}</PriceBeforeBeauty>}
+            </PriceRow>
+            <PriceRow>
+              <PriceBeauty as="b">{fromPriceBeautify}</PriceBeauty>
+              {pricingPercentage && (
+                <PercentageSaving isPromotedProduct={isPromotedProduct}>
+                  -{pricingPercentage}
+                </PercentageSaving>
+              )}
+            </PriceRow>
+          </PriceWrapper>
+        </CardContent>
+        {showNew && isNew ? (
+          <NewContent
+            hasBorder={hasBorder}
+            hasMargin={hasMargin}
+            hasBorderRadius={hasBorderRadius}
+          >
+            {newText}
+          </NewContent>
+        ) : null}
+      </CardLink>
     </Card>
   );
 };

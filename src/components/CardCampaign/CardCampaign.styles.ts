@@ -12,6 +12,17 @@ export const Card = styled.div`
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 `;
 
+export const CardLink = styled.a`
+  display: block;
+  text-align: initial;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  &:hover img {
+    transform: scale(1.015);
+  }
+`;
+
 export const CardContent = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.contrast};
   padding: ${({ theme }) => theme.spacing(2)};
@@ -88,10 +99,6 @@ export const PriceWrapper = styled.div`
   align-items: baseline;
 `;
 
-export const PillLink = styled.span`
-  position: relative;
-  z-index: 10000;
-`;
 export const PriceRow = styled.div`
   display: flex;
   margin-right: ${({ theme }) => theme.spacing(2)};
@@ -147,21 +154,10 @@ export const PercentageSaving = styled.div<StyledProps>`
 
 export const ThemePromoTagWrap = styled.div`
   position: absolute;
-  z-index: 5;
   right: ${({ theme }) => theme.spacing(1)};
   top: 0px;
   @media (max-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     right: ${({ theme }) => theme.spacing(0.25)};
-    top: ${({ theme }) => theme.spacing(1)};
-  }
-`;
-
-export const PillTagWrap = styled.div`
-  position: absolute;
-  right: ${({ theme }) => theme.spacing(1)};
-  top: ${({ theme }) => theme.spacing(1.5)};
-  z-index: 5;
-  @media (min-width: ${({ theme }) => theme.newBreakpoints.phablet}) {
     top: ${({ theme }) => theme.spacing(1)};
   }
 `;

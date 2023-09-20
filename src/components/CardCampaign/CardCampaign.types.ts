@@ -23,7 +23,7 @@ export interface Tag {
 }
 
 export interface CardCampaignProps {
-  id: number;
+  id: string;
   image: { text: string; url: string }[];
   destination: string;
   title: string;
@@ -39,7 +39,7 @@ export interface CardCampaignProps {
   WishlistBtn: React.ReactNode;
 
   // Optional
-  pillTagClickEvent?: () => void;
+  pillTagClickEvent?: (e: React.MouseEvent, url: string) => void;
   hasExtraNights?: boolean;
   pricingPercentage?: string;
   oldPrice?: string;

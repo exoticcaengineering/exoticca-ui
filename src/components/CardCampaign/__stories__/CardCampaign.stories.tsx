@@ -3,7 +3,7 @@ import { CardCampaign } from '../CardCampaign';
 import { CardCampaignProps } from '../CardCampaign.types';
 
 const defaultArgs = {
-  id: 123,
+  id: '123',
   title: 'Parques, lagos y gorilas de montaña',
   destination: 'Uganda',
   tagHeadLine: [
