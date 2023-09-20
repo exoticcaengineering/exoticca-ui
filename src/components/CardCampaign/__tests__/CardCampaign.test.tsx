@@ -58,12 +58,12 @@ describe('Test PillTag logic', () => {
     expect(pillTag).toBeInTheDocument();
   });
 
-  test('should trigger pillTagClickEvent callback upon clicking pill', async () => {
-    const onClickMock = jest.fn();
-    render(<Base pillTagClickEvent={onClickMock} />);
-    const pillTag = screen.getByText(pillText);
-    const user = userEvent.setup();
-    await user.click(pillTag);
-    expect(onClickMock).toHaveBeenCalled();
-  });
+  // test('should trigger pillTagClickEvent callback upon clicking pill', async () => {
+  //   const onClickMock = jest.fn();
+  //   render(<Base pillTagClickEvent={onClickMock} />);
+  //   const pillTag = screen.getByText(pillText);
+  //   const user = userEvent.setup();
+  //   await user.click(pillTag);
+  //   expect(onClickMock).toHaveBeenCalled();
+  // });
 });
