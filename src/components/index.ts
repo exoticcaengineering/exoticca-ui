@@ -23,4 +23,5 @@ export * from './SelectableBox';
 export * from './PasswordInput';
 export { Alert } from './Alert';
 export * from './YoYoBar';
+export * from './CardCampaign';
 export * from './Flex';
