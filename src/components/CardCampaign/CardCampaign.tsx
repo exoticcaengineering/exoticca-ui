@@ -86,7 +86,7 @@ export const CardCampaign = ({
           <img src={image[0] ? image[0].url : ''} alt={title} />
           <HeaderContentWrapper>
             <HeadingCard>
-              <Destination>{destination} </Destination>
+              <Destination forwardedAs={'h3'}>{destination} </Destination>
               <Days forwardedAs={'h5'}>
                 {hasExtraNights && `${fromText} `}
                 {daysText}

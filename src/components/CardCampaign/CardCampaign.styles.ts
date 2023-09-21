@@ -27,7 +27,7 @@ export const CardLink = styled.a`
 
 export const CardContent = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.contrast};
-  padding: ${({ theme }) => theme.spacing(2)};
+  padding: ${({ theme }) => theme.spacing(1.5)};
 `;
 
 export const HeaderWrapper = styled.div`
