@@ -12,8 +12,23 @@ export interface Props extends ComponentPropsBase {
   subtitle: string;
   height?: number;
   Content?: React.FC;
+  columns?: number;
+  rows?: number;
 }
 
 export interface StyledProps {
   rounded?: boolean;
+}
+
+export interface StyledWrapperProps {
+  testId?: string;
+  image?: string;
+  height?: number;
+  rows: number;
+  columns: number;
+}
+
+export interface StyledContentSectionProps {
+  row: number;
+  column: number;
 }

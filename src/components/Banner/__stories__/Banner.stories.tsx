@@ -1,13 +1,13 @@
 import { ComponentStory, Meta, StoryObj } from '@storybook/react';
 import { Button } from 'src/components/Button';
-import { HeroBanner } from 'src/components/HeroBanner';
-import { Props } from 'src/components/HeroBanner/HeroBanner.types';
+import { Banner } from 'src/components/Banner';
+import { Props } from 'src/components/Banner/Banner.types';
 
 export default {
-  title: 'Components/HeroBanner',
-  component: HeroBanner,
+  title: 'Components/Banner',
+  component: Banner,
   args: {
-    testId: 'heroBanner-wrapper',
+    testId: 'Banner-wrapper',
     height: 500,
     title: 'This is a Title',
     subtitle: ' This is an example of subtitle',
@@ -30,8 +30,8 @@ const contentMock: React.FC = () => {
 
 type Story = StoryObj<Props>;
 
-const Template: ComponentStory<typeof HeroBanner> = ({ ...props }) => {
-  return <HeroBanner {...props} />;
+const Template: ComponentStory<typeof Banner> = ({ ...props }) => {
+  return <Banner {...props} />;
 };
 
 export const WithoutContent: Story = {
@@ -41,6 +41,20 @@ export const WithoutContent: Story = {
 export const Base: Story = {
   render: (args) => <Template {...args} Content={contentMock} />,
 };
+
+export const TextAndImgBanner: Story = {
+  render: (args) => (
+    <Template
+      {...args}
+      Content={contentMock}
+      rows={1}
+      columns={2}
+      verticalPosition="top"
+      horizontalPosition="left"
+    />
+  ),
+};
+
 export const CenteredBase: Story = {
   render: (args) => (
     <Template

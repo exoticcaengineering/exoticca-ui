@@ -1,4 +1,4 @@
-import { PositionType } from './HeroBanner.types';
+import { PositionType } from './Banner.types';
 
 export const getPosition = (position?: PositionType) => {
   switch (position) {
