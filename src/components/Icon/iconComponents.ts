@@ -100,7 +100,7 @@ import { IconHospitalCenter } from 'src/components/Icon/SVGIcons/IconHospitalCen
 import { IconSyringe } from 'src/components/Icon/SVGIcons/IconSyringe';
 import { IconThreeQuarter } from './SVGIcons/IconThreeQuarter';
 import { CircleFull } from './SVGIcons/IconCircleFull';
-
+import { PlayYoutube } from './SVGIcons/PlayYoutube';
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
   arrow: IconArrow,
@@ -201,4 +201,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   pencil: IconPencil,
   'hospital-center': IconHospitalCenter,
   syringe: IconSyringe,
+  'play-video': PlayYoutube,
 };
