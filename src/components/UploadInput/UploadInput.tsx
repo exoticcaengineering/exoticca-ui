@@ -5,6 +5,7 @@ import {
   FlexColumn,
   Description,
   ErrorMessage,
+  StyledList,
 } from './UploadInput.styles';
 import { Button } from '../Button';
 import { UploadedItem } from './UploadedItem';
@@ -89,7 +90,7 @@ export const UploadInput = ({
         </ul>
       ) : null}
       {value?.length ? (
-        <ul data-testid="upload-input-list">
+        <StyledList data-testid="upload-input-list">
           {value.map((item) => {
             return (
               <UploadedItem
@@ -109,7 +110,7 @@ export const UploadInput = ({
               />
             );
           })}
-        </ul>
+        </StyledList>
       ) : null}
     </FlexColumn>
   );
