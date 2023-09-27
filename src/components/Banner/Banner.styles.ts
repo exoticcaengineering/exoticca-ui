@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { TextDisplay2 } from '../TypographyVariants';
-import type { StyledWrapperProps } from './Grid.types';
+import type { StyledWrapperProps } from './Banner.types';
 
 export const Wrapper = styled.section<StyledWrapperProps>`
   display: grid;
@@ -8,9 +8,10 @@ export const Wrapper = styled.section<StyledWrapperProps>`
   height: ${({ height }) => (height ? `${height}px` : '100%')};
   background-position: center;
   background-size: cover;
-  grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
-  grid-template-rows: ${({ rows }) => `repeat(${rows}, 1fr)`};
-  padding: ${({ theme }) => theme.spacing(4)};
+  grid-template-columns: ${({ columns, theme }) =>
+    `${theme.spacing(4)} repeat(${columns}, 1fr) ${theme.spacing(4)}`};
+  grid-template-rows: ${({ rows, theme }) =>
+    `${theme.spacing(4)} repeat(${rows}, 1fr) ${theme.spacing(4)}`};
 `;
 
 export const Title = styled(TextDisplay2)`
