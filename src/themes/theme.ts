@@ -443,9 +443,9 @@ export const palette: Palette = {
     contrast: rebrandPalette.polarNight,
   },
   promotion: {
-    main: rebrandPalette.silentSavana,
-    light: rebrandPalette.silentSavanaLight,
-    medium: rebrandPalette.silentSavanaMedium,
+    main: rebrandPalette.pacificOcean,
+    light: rebrandPalette.pacificOceanLight,
+    medium: rebrandPalette.pacificOceanMedium,
     contrast: rebrandPalette.polarNight,
   },
   background: {
