@@ -1,14 +1,14 @@
 import { composeStories } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
-import * as stories from 'src/components/Banner/__stories__/Banner.stories';
+import * as stories from 'src/components/Grid/__stories__/Grid.stories';
 
 const { Base, WithoutContent } = composeStories(stories);
 
-describe('Banner', () => {
+describe('Grid', () => {
   test('should render wrapper', () => {
     render(<Base />);
 
-    const wrapper = screen.getByTestId('Banner-wrapper');
+    const wrapper = screen.getByTestId('Grid-wrapper');
     expect(wrapper).toBeInTheDocument();
   });
 
