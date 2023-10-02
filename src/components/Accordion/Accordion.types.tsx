@@ -16,6 +16,7 @@ export interface Props extends ComponentPropsBase {
   startIcon?: IconConfig;
   endIcon?: IconConfig;
   CustomTrigger?: (props: CustomTriggerProps) => JSX.Element | null;
+  CustomTriggerEnd?: (props: CustomTriggerProps) => JSX.Element | null;
 }
 
 export interface StyledProps extends Pick<Props, 'isOpen' | 'isDisabled'> {

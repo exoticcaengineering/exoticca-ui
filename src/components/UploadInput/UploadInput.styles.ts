@@ -17,17 +17,26 @@ export const Description = styled(TextBody2)`
   margin: ${({ theme }) => theme.spacing(1.5)} 0;
   color: ${({ theme }) => theme.palette.primary.medium};
 `;
+
 export const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 95vw;
+  @min-width (${({ theme }) => theme.newBreakpoints.phablet}) {
+    width: auto;
+  }
 `;
 export const WrapperLabel = styled.label`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+export const StyledList = styled.ul`
+  padding: 0;
 `;
 
 export const StyledListItem = styled.li`
@@ -43,15 +52,22 @@ export const ItemDescription = styled.div`
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  margin-right: ${({ theme }) => theme.spacing(4)};
-  & p {
+  margin-right: ${({ theme }) => theme.spacing(1)};
+
+  p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 18ch;
+    width: 14ch;
   }
   & :nth-child(2) {
     color: ${({ theme }) => theme.palette.primary.medium};
+  }
+  @min-width (${({ theme }) => theme.newBreakpoints.phablet}) {
+    margin-right: ${({ theme }) => theme.spacing(4)};
+    p {
+      width: 18ch;
+    }
   }
 `;
 

@@ -106,3 +106,27 @@ export const WithCustomTrigger: Story = {
   },
   render: (args) => <Accordion {...args} />,
 };
+
+const CustomTriggerEnd = ({ isOpen, onClick }: CustomTriggerProps) => {
+  return (
+    <Button
+      onClick={onClick}
+      text={isOpen ? 'Close' : 'Open'}
+      size="small"
+      variant="secondary"
+      shape="square"
+    />
+  );
+};
+
+/**
+ * Accordions can take a customTriggerEnd props to show a custom trigger at the end of the content.
+ * with customer trigger, the accordion will not open or close when we click on the header.
+ * we have to handle the open and close state by clicking on the trigger.
+ */
+export const WithCustomTriggerEnd: Story = {
+  args: {
+    CustomTriggerEnd: CustomTriggerEnd,
+  },
+  render: (args) => <Accordion {...args} />,
+};
