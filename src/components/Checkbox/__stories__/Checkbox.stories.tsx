@@ -5,14 +5,16 @@ import { Props } from '../Checkbox.types';
 import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
 import { Icon } from 'src/components/Icon';
 
-export default {
+const Meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
   component: Checkbox,
   args: {
     name: 'checkbox-name',
     label: 'Checkbox label',
   },
-} as Meta<typeof Checkbox>;
+};
+
+export default Meta;
 
 type Story = StoryObj<typeof Checkbox>;
 

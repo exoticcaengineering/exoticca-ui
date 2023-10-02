@@ -19,7 +19,7 @@ const borderStyles = [
   'inherit',
 ];
 
-export default {
+const Meta: Meta<typeof Box> = {
   title: 'Components/Box',
   component: Box,
   args: {
@@ -45,7 +45,9 @@ export default {
       control: { type: 'select' },
     },
   },
-} as Meta<typeof Box>;
+};
+
+export default Meta;
 
 type Story = StoryObj<typeof Box>;
 

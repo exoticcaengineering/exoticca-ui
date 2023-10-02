@@ -3,7 +3,7 @@ import { ComponentProps, useRef } from 'react';
 import { Drawer } from '../Drawer';
 import { DrawerRef, Props } from '../Drawer.types';
 
-export default {
+const Meta: Meta<typeof Drawer> = {
   title: 'Components/Drawer',
   component: Drawer,
   argTypes: {
@@ -30,7 +30,9 @@ export default {
       description: 'Additional CSS class name to apply to the drawer',
     },
   },
-} as Meta<typeof Drawer>;
+};
+
+export default Meta;
 
 type CustomItemProps = ComponentProps<typeof Drawer> & {
   text: string;

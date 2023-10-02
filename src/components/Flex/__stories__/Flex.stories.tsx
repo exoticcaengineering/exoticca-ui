@@ -1,6 +1,5 @@
-import { ComponentStory, Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Flex } from 'src/components/Flex';
-import { Props } from 'src/components/Flex/Flex.types';
 
 const directions = ['column', 'row', 'row-reverse', 'column-reverse'];
 const alignItems = ['flex-start', 'flex-end', 'center', 'baseline', 'stretch'];
@@ -13,7 +12,7 @@ const justifyContent = [
   'space-evenly',
 ];
 
-export default {
+const Meta: Meta<typeof Flex> = {
   title: 'Components/Flex',
   component: Flex,
   args: {
@@ -37,11 +36,13 @@ export default {
       control: { type: 'select' },
     },
   },
-} as Meta<Props>;
+};
 
-type Story = StoryObj<Props>;
+export default Meta;
 
-const Template: ComponentStory<typeof Flex> = ({ ...props }) => {
+type Story = StoryObj<typeof Flex>;
+
+const Template = ({ ...props }) => {
   return (
     <Flex {...props}>
       <div>Child 1</div>

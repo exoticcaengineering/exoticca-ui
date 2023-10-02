@@ -7,7 +7,7 @@ import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
  *  ## Button can have variations, sizes, shapes, icons, states.
  *
  */
-export default {
+const Meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   args: {
@@ -15,7 +15,6 @@ export default {
     size: 'medium',
     color: 'primary',
     shape: 'rounded',
-    state: 'default',
     variant: 'primary',
   },
   argTypes: {
@@ -50,7 +49,9 @@ export default {
       category: 'Prop',
     },
   },
-} as Meta<typeof Button>;
+};
+
+export default Meta;
 
 type Story = StoryObj<typeof Button>;
 

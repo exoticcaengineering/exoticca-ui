@@ -40,11 +40,13 @@ const defaultArgs = {
   newText: 'New',
   wishListBtn: <></>,
 };
-export default {
+const Meta: Meta<CardCampaignProps> = {
   title: 'Components/cardCampaign',
   component: CardCampaign,
   args: defaultArgs,
-} as Meta<CardCampaignProps>;
+};
+
+export default Meta;
 
 type Story = StoryObj<CardCampaignProps>;
 const Default = ({ ...args }: CardCampaignProps) => {
