@@ -39,6 +39,13 @@ export const Accordion: FC<Props> = ({
 
   const handleOnClickWrapper = () => (hasCustomTrigger ? null : toggleIsOpen());
 
+  const renderContent = () => {
+    if (typeof content === 'function') {
+      return content({ isOpen: isAccordionOpen });
+    }
+    return content;
+  };
+
   return (
     <div data-testid={testId} className={className}>
       <StyledHeaderWrapper
@@ -75,7 +82,7 @@ export const Accordion: FC<Props> = ({
         data-testid={`${testId}-content`}
       >
         <StyledContentInner isEnabledAndOpen={isEnabledAndOpen}>
-          {content({ isOpen: isAccordionOpen })}
+          {renderContent()}
         </StyledContentInner>
       </StyledContent>
 

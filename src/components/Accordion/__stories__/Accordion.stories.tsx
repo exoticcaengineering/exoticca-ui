@@ -23,7 +23,7 @@ export default {
     withHeaderTitle: true,
     header: <Typography fontSize="heading3">I am a Header Text</Typography>,
     isOpen: false,
-    content: () => (
+    content: (
       <Typography fontSize="body1">
         Accordion content. Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Nullam feugiat risus eu varius fringilla. Fusce luctus ipsum vitae

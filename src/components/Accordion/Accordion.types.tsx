@@ -12,7 +12,10 @@ interface AccordionContentProps {
 
 export interface Props extends ComponentPropsBase {
   header?: string | JSX.Element;
-  content: (props: AccordionContentProps) => JSX.Element;
+  content:
+    | string
+    | JSX.Element
+    | ((props: AccordionContentProps) => JSX.Element);
   isOpen?: boolean;
   isDisabled?: boolean;
   onOpen?: () => void;
