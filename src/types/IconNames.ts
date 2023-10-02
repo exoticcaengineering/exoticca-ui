@@ -101,6 +101,7 @@ export const iconNames = [
   'app_store_icon_fr',
   'circle-three-quarter',
   'circle-full',
+  'play-video',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];
