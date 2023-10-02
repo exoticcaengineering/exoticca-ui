@@ -75,7 +75,7 @@ export const Accordion: FC<Props> = ({
         data-testid={`${testId}-content`}
       >
         <StyledContentInner isEnabledAndOpen={isEnabledAndOpen}>
-          {content}
+          {content({ isOpen: isAccordionOpen })}
         </StyledContentInner>
       </StyledContent>
 
