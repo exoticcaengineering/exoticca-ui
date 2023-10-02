@@ -112,6 +112,7 @@ export const Dropdown: FC<Props> = ({
         )}
         {dropdownList({
           closeDropdown: closeDropdown,
+          isOpen: isOpen,
         })}
       </StyledDropdownList>
     </StyledDropdownWrapper>
