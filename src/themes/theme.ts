@@ -470,7 +470,7 @@ export const palette: Palette = {
     main: rebrandPalette.savageForest,
     light: rebrandPalette.savageForestLight,
     medium: rebrandPalette.savageForestMedium,
-    contrast: rebrandPalette.arcticWind,
+    contrast: rebrandPalette.polarNight,
   },
   warning: {
     main: rebrandPalette.redDessert,
