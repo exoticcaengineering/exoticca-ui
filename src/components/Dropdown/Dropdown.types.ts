@@ -30,7 +30,7 @@ export interface StyledProps
 
 export interface DropdownListProps {
   closeDropdown: () => void;
-  isOpen: boolean;
+  isOpen?: boolean;
 }
 
 export interface GetColorParams {
