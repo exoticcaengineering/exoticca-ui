@@ -110,6 +110,13 @@ export const iconNames = [
   'star-5',
   'touristGuide',
   'trash',
+  'app_store_icon_de',
+  'app_store_icon_en',
+  'app_store_icon_es',
+  'app_store_icon_fr',
+  'circle-three-quarter',
+  'circle-full',
+  'play-video',
 ] as const;
 
 type IconNameType = (typeof iconNames)[number];
