@@ -6,9 +6,16 @@ export interface CustomTriggerProps {
   onClick?: () => void;
 }
 
+interface AccordionContentProps {
+  isOpen: boolean;
+}
+
 export interface Props extends ComponentPropsBase {
   header?: string | JSX.Element;
-  content: string | JSX.Element;
+  content:
+    | string
+    | JSX.Element
+    | ((props: AccordionContentProps) => JSX.Element);
   isOpen?: boolean;
   isDisabled?: boolean;
   onOpen?: () => void;
