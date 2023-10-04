@@ -80,7 +80,7 @@ export const CardCampaign = ({
           </ThemePromoTagWrap>
         </TagWrapper>
       )}
-      <CardLink href={url}>
+      <CardLink data-testid={'card-campaign-link'} href={url}>
         {WishlistBtn}
         <HeaderWrapper>
           <img src={image[0] ? image[0].url : ''} alt={title} />
