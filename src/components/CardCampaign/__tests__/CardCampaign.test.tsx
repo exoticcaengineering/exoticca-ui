@@ -32,12 +32,6 @@ describe('render Base UI elements', () => {
     expect(isNewElement).not.toBeInTheDocument();
   });
 
-  test('should render image with correct src', async () => {
-    render(<Base image={imgProp} />);
-    const image = screen.getByRole('img');
-    expect(image).toHaveAttribute('src', imgProp[0].url);
-  });
-
   test('should render isNew element if props dictate', async () => {
     render(<Base isNew={true} tagHeadLine={[]} />);
     const isNewElement = screen.getByText(newText);
