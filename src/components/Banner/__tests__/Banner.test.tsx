@@ -8,7 +8,7 @@ describe('Grid', () => {
   test('should render wrapper', () => {
     render(<Base />);
 
-    const wrapper = screen.getByTestId('Grid-wrapper');
+    const wrapper = screen.getByTestId('Banner-wrapper');
     expect(wrapper).toBeInTheDocument();
   });
 });
