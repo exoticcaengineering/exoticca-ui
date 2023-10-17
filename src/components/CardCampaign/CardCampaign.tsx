@@ -48,6 +48,7 @@ export const CardCampaign = ({
   fromText,
   newText,
   WishlistBtn,
+  ImageNext
 }: CardCampaignProps) => {
   const isPromotedProduct = tagHeadLine?.some(
     (tag: Tag) =>
@@ -80,13 +81,13 @@ export const CardCampaign = ({
           </ThemePromoTagWrap>
         </TagWrapper>
       )}
-      <CardLink href={url}>
+      <CardLink data-testid={'card-campaign-link'} href={url}>
         {WishlistBtn}
         <HeaderWrapper>
-          <img src={image[0].url ?? ''} alt={title} />
+          {ImageNext}
           <HeaderContentWrapper>
             <HeadingCard>
-              <Destination>{destination} </Destination>
+              <Destination forwardedAs={'h3'}>{destination} </Destination>
               <Days forwardedAs={'h5'}>
                 {hasExtraNights && `${fromText} `}
                 {daysText}

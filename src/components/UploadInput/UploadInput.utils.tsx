@@ -72,6 +72,6 @@ export const onChange = ({
     value,
   );
 
-  const newData = [...new Set([...value, ...filteredFiles])];
+  const newData = [...new Set([...value, ...filteredFiles])].slice(0, 8);
   return setValue(name, newData);
 };

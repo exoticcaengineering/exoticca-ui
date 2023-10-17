@@ -20,10 +20,12 @@ export const Accordion: FC<Props> = ({
   className,
   testId = 'accordion',
   CustomTrigger,
+  CustomTriggerEnd,
 }) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(isOpen);
 
   const hasCustomTrigger = !!CustomTrigger;
+  const hasCustomTriggerEnd = !!CustomTriggerEnd;
 
   useEffect(() => {
     setIsAccordionOpen(isOpen);
@@ -36,6 +38,13 @@ export const Accordion: FC<Props> = ({
   const isEnabledAndOpen = !isDisabled && isAccordionOpen;
 
   const handleOnClickWrapper = () => (hasCustomTrigger ? null : toggleIsOpen());
+
+  const renderContent = () => {
+    if (typeof content === 'function') {
+      return content({ isOpen: isAccordionOpen });
+    }
+    return content;
+  };
 
   return (
     <div data-testid={testId} className={className}>
@@ -73,9 +82,13 @@ export const Accordion: FC<Props> = ({
         data-testid={`${testId}-content`}
       >
         <StyledContentInner isEnabledAndOpen={isEnabledAndOpen}>
-          {content}
+          {renderContent()}
         </StyledContentInner>
       </StyledContent>
+
+      {hasCustomTriggerEnd && (
+        <CustomTriggerEnd isOpen={isAccordionOpen} onClick={toggleIsOpen} />
+      )}
     </div>
   );
 };

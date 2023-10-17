@@ -1,6 +1,6 @@
 {
   "name": "@exoticcaengineering/exoticca-ui",
-  "version": "0.3.76",
+  "version": "0.3.94",
   "author": "exoticcaengineering",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -14,7 +14,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest",
-    "ci": "npm run test && npm run build"
+    "ci": "npm run test && npm run build",
+    "test:coverage": "jest --env=jest-environment-jsdom --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",

@@ -17,11 +17,16 @@ export const Description = styled(TextBody2)`
   margin: ${({ theme }) => theme.spacing(1.5)} 0;
   color: ${({ theme }) => theme.palette.primary.medium};
 `;
+
 export const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 95vw;
+  @min-width (${({ theme }) => theme.newBreakpoints.phablet}) {
+    width: auto;
+  }
 `;
 export const WrapperLabel = styled.label`
   display: flex;
@@ -30,33 +35,46 @@ export const WrapperLabel = styled.label`
   align-items: center;
 `;
 
+export const StyledList = styled.ul`
+  padding: 0;
+`;
+
 export const StyledListItem = styled.li`
   list-style: none;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   gap: ${({ theme }) => theme.spacing(1.5)};
 `;
 
 export const ItemDescription = styled.div`
+  flex-grow: 2;
   display: flex;
   flex-direction: column;
-  margin-right: ${({ theme }) => theme.spacing(4)};
-  & span {
+  margin-right: ${({ theme }) => theme.spacing(1)};
+
+  p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 18ch;
+    width: 14ch;
   }
   & :nth-child(2) {
     color: ${({ theme }) => theme.palette.primary.medium};
+  }
+  @min-width (${({ theme }) => theme.newBreakpoints.phablet}) {
+    margin-right: ${({ theme }) => theme.spacing(4)};
+    p {
+      width: 18ch;
+    }
   }
 `;
 
 export const ProgressBarContainer = styled.div`
   border-radius: ${({ theme }) => theme.newBorderRadius.xxl};
-  width: 150px;
+  max-width: 150px;
+  min-width: 150px;
   border: 1px solid ${({ theme }) => theme.palette.primary.medium};
 `;
 

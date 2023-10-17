@@ -49,7 +49,7 @@ export default {
 type Story = StoryObj<CardCampaignProps>;
 const Default = ({ ...args }: CardCampaignProps) => {
   return (
-    <div style={{ height: '400px', width: '350px' }}>
+    <div style={{ height: '450px', width: '350px' }}>
       <CardCampaign {...args} />
     </div>
   );
