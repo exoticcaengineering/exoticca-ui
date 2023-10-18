@@ -7,6 +7,8 @@ import packageJson from './package.json' assert { type: 'json' };
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import filesize from 'rollup-plugin-filesize';
+import svgr from '@svgr/rollup';
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 
 export default [
   {
@@ -18,18 +20,22 @@ export default [
         format: 'cjs',
         sourcemap: true,
         interop: 'auto',
+        inlineDynamicImports: true,
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
         interop: 'esModule',
+        inlineDynamicImports: true,
       },
     ],
     plugins: [
       peerDepsExternal(),
       resolve(),
       commonjs(),
+      svgr({ icon: true }),
+      dynamicImportVars({ warnOnError: true }),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
       filesize(),

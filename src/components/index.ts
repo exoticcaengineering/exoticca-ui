@@ -26,3 +26,4 @@ export * from './YoYoBar';
 export * from './CardCampaign';
 export * from './Flex';
 export * from './Banner';
+export * from './SvgIcon';
