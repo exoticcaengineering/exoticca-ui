@@ -1,8 +1,18 @@
 export const iconNames = [
   //add simple icons here,simple icons are squared, and only use stroke color, and color can be changed
+<<<<<<< Updated upstream
   'contact',
   'user',
   'search',
+=======
+  'adventure',
+  'affiliate-star',
+  'alert-triangle',
+  'arrow-circle-login',
+  'arrow-down-circle',
+  'arrow-simple',
+  'arrow-square',
+>>>>>>> Stashed changes
   'arrow',
   'arrow-simple',
   'loader',
