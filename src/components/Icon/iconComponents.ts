@@ -100,8 +100,6 @@ import { IconHospitalCenter } from 'src/components/Icon/SVGIcons/IconHospitalCen
 import { IconSyringe } from 'src/components/Icon/SVGIcons/IconSyringe';
 import { IconThreeQuarter } from './SVGIcons/IconThreeQuarter';
 import { CircleFull } from './SVGIcons/IconCircleFull';
-<<<<<<< Updated upstream
-=======
 import { IconUsers } from 'src/components/Icon/SVGIcons/IconUsers';
 import { IconBookings } from 'src/components/Icon/SVGIcons/IconBookings';
 import { IconWishlist } from 'src/components/Icon/SVGIcons/IconWishlist';
@@ -113,7 +111,6 @@ import { IconContactUs } from 'src/components/Icon/SVGIcons/IconContactUs';
 import { IconLogoutCircle } from 'src/components/Icon/SVGIcons/IconLogoutCircle';
 import { PlayYoutube } from './SVGIcons/PlayYoutube';
 import { IconAffiliateStar } from 'src/components/Icon/SVGIcons/IconAffiliateStar';
->>>>>>> Stashed changes
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -215,8 +212,6 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   pencil: IconPencil,
   'hospital-center': IconHospitalCenter,
   syringe: IconSyringe,
-<<<<<<< Updated upstream
-=======
   users: IconUsers,
   bookings: IconBookings,
   wishlist: IconWishlist,
@@ -228,5 +223,4 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logout-circle': IconLogoutCircle,
   'play-video': PlayYoutube,
   'affiliate-star': IconAffiliateStar,
->>>>>>> Stashed changes
 };

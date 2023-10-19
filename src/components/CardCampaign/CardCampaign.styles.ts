@@ -127,6 +127,7 @@ export const PriceBeforeBeauty = styled(PriceBeauty)`
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     font-size: ${({ theme }) => theme.typography.fontSize.default};
+  }
 `;
 
 export const PercentageSaving = styled.div<StyledProps>`
