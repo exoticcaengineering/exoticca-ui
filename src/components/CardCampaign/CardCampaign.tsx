@@ -10,7 +10,6 @@ import {
 import {
   Card,
   CardContent,
-  CardLink,
   Days,
   Destination,
   HeaderContentWrapper,
@@ -48,7 +47,6 @@ export const CardCampaign = ({
   fromText,
   newText,
   WishlistBtn,
-  ImageNext
 }: CardCampaignProps) => {
   const isPromotedProduct = tagHeadLine?.some(
     (tag: Tag) =>
@@ -81,48 +79,46 @@ export const CardCampaign = ({
           </ThemePromoTagWrap>
         </TagWrapper>
       )}
-      <CardLink data-testid={'card-campaign-link'} href={url}>
-        {WishlistBtn}
-        <HeaderWrapper>
-          {ImageNext}
-          <HeaderContentWrapper>
-            <HeadingCard>
-              <Destination forwardedAs={'h3'}>{destination} </Destination>
-              <Days forwardedAs={'h5'}>
-                {hasExtraNights && `${fromText} `}
-                {daysText}
-              </Days>
-            </HeadingCard>
-          </HeaderContentWrapper>
-        </HeaderWrapper>
-        <CardContent>
-          <Title as="h4">{title}</Title>
+      {WishlistBtn}
+      <HeaderWrapper>
+        <img src={image[0] ? image[0].url : ''} alt={title} />
+        <HeaderContentWrapper>
+          <HeadingCard>
+            <Destination forwardedAs={'h3'}>{destination} </Destination>
+            <Days forwardedAs={'h5'}>
+              {hasExtraNights && `${fromText} `}
+              {daysText}
+            </Days>
+          </HeadingCard>
+        </HeaderContentWrapper>
+      </HeaderWrapper>
+      <CardContent>
+        <Title as="h4">{title}</Title>
 
-          <PriceWrapper>
-            <PriceRow>
-              <PriceFrom>{fromText}</PriceFrom>
-              {oldPrice && <PriceBeforeBeauty>{oldPrice}</PriceBeforeBeauty>}
-            </PriceRow>
-            <PriceRow>
-              <PriceBeauty as="b">{fromPriceBeautify}</PriceBeauty>
-              {pricingPercentage && (
-                <PercentageSaving isPromotedProduct={isPromotedProduct}>
-                  -{pricingPercentage}
-                </PercentageSaving>
-              )}
-            </PriceRow>
-          </PriceWrapper>
-        </CardContent>
-        {showNew && isNew ? (
-          <NewContent
-            hasBorder={hasBorder}
-            hasMargin={hasMargin}
-            hasBorderRadius={hasBorderRadius}
-          >
-            {newText}
-          </NewContent>
-        ) : null}
-      </CardLink>
+        <PriceWrapper>
+          <PriceRow>
+            <PriceFrom>{fromText}</PriceFrom>
+            {oldPrice && <PriceBeforeBeauty>{oldPrice}</PriceBeforeBeauty>}
+          </PriceRow>
+          <PriceRow>
+            <PriceBeauty as="b">{fromPriceBeautify}</PriceBeauty>
+            {pricingPercentage && (
+              <PercentageSaving isPromotedProduct={isPromotedProduct}>
+                -{pricingPercentage}
+              </PercentageSaving>
+            )}
+          </PriceRow>
+        </PriceWrapper>
+      </CardContent>
+      {showNew && isNew ? (
+        <NewContent
+          hasBorder={hasBorder}
+          hasMargin={hasMargin}
+          hasBorderRadius={hasBorderRadius}
+        >
+          {newText}
+        </NewContent>
+      ) : null}
     </Card>
   );
 };
