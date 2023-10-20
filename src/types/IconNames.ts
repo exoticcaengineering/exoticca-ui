@@ -1,6 +1,7 @@
 export const iconNames = [
   //add simple icons here,simple icons are squared, and only use stroke color, and color can be changed
   'adventure',
+  'affiliate-star',
   'alert-triangle',
   'arrow-circle-login',
   'arrow-down-circle',
