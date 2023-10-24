@@ -110,6 +110,7 @@ import { IconSubscriptions } from 'src/components/Icon/SVGIcons/IconSubscription
 import { IconContactUs } from 'src/components/Icon/SVGIcons/IconContactUs';
 import { IconLogoutCircle } from 'src/components/Icon/SVGIcons/IconLogoutCircle';
 import { PlayYoutube } from './SVGIcons/PlayYoutube';
+import { IconAffiliateStar } from 'src/components/Icon/SVGIcons/IconAffiliateStar';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logo-rebrand': LogoRebrand,
@@ -221,4 +222,5 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'contact-us': IconContactUs,
   'logout-circle': IconLogoutCircle,
   'play-video': PlayYoutube,
+  'affiliate-star': IconAffiliateStar,
 };

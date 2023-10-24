@@ -8,6 +8,7 @@ export const StyledWrapper = styled.div<StyledProps>`
   gap: ${({ theme }) => theme.spacing(0.5)};
   padding: ${({ theme, size }) => {
     if (size === 'small') return theme.spacing(0.75, 1);
+    if (size === 'medium') return theme.spacing(0.75, 2);
   }};
   background: ${({ theme, color = 'primary', shade = 'main', variant }) => {
     if (variant === 'primary') return theme.palette[color][shade];

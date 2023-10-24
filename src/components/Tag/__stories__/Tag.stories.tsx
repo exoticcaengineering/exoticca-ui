@@ -10,6 +10,15 @@ export default {
 
 type Story = StoryObj<typeof Tag>;
 
+const SizesStory = (props: Props) => {
+  return (
+    <StyledRowWrapper>
+      <Tag {...props} text="Small tag" size="small" />
+      <Tag {...props} text="Medium tag" size="medium" />
+    </StyledRowWrapper>
+  );
+};
+
 const VariantsStory = (props: Props) => {
   return (
     <StyledRowWrapper>
@@ -59,6 +68,13 @@ export const Variants: Story = {
  * */
 export const Shapes: Story = {
   render: (args) => <ShapesStory {...args} />,
+};
+
+/**
+ * <p>Tag can be both small and medium size</p>
+ */
+export const Sizes: Story = {
+  render: (args) => <SizesStory {...args} />,
 };
 
 /**
