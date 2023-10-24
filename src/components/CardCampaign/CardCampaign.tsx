@@ -46,6 +46,7 @@ export const CardCampaign = ({
   newText,
   WishlistBtn,
   ImageNext,
+  isFlashSales,
 }: CardCampaignProps) => {
   const isPromotedProduct = tagHeadLine?.some(
     (tag: Tag) =>
@@ -109,7 +110,7 @@ export const CardCampaign = ({
           </PriceRow>
         </PriceWrapper>
       </CardContent>
-      {showNew && isNew ? (
+      {(showNew && isNew) || isFlashSales ? (
         <NewContent
           hasBorder={hasBorder}
           hasMargin={hasMargin}
