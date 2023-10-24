@@ -118,8 +118,7 @@ export const iconNames = [
   'circle-three-quarter',
   'circle-full',
   'play-video',
+  'black-friday-pill',
 ] as const;
 
-type IconNameType = (typeof iconNames)[number];
-
-export type IconName = IconNameType;
+export type IconName = (typeof iconNames)[number];
