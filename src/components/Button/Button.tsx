@@ -19,6 +19,7 @@ export const Button: FC<Props> = ({
   isLoading,
   isDisabled,
   fullWidth,
+  type = 'button',
 }) => {
   const iconSize = getIconSize(size);
 
@@ -56,6 +57,7 @@ export const Button: FC<Props> = ({
       disabled={isDisabled}
       className={className}
       data-testid={testId}
+      type={type}
     >
       {renderStartIcon()}
       {text && <Typography as="span">{text}</Typography>}
