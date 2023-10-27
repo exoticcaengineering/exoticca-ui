@@ -20,7 +20,6 @@ export interface Props extends ComponentPropsBase {
   endIcon?: IconConfig;
   onClick?: MouseEventHandler<Element> | undefined;
   fullWidth?: boolean;
-  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
 export interface IconButtonProps
   extends ComponentPropsBase,
