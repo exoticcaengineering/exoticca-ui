@@ -11,7 +11,7 @@ describe('Accordion ', () => {
   test('should render start icon', () => {
     render(<WithStartIcon />);
     const accordion = screen.getByTestId('accordion');
-    const startIcon = within(accordion).getByTitle('arrow');
+    const startIcon = within(accordion).getByTestId('arrow-icon');
     expect(startIcon).toBeInTheDocument();
   });
 
@@ -39,10 +39,12 @@ describe('Accordion ', () => {
 
 describe('Accordion with start icon', () => {
   // test start icon is visible
-  test('should render start icon', () => {
+  test.only('should render start icon', async () => {
     render(<WithStartIcon />);
     const accordionHeader = screen.getByTestId('accordion-header');
-    const startIcon = within(accordionHeader).getByTitle('calendar');
+    const startIcon = await within(accordionHeader).findByTestId(
+      'calendar-icon',
+    );
     expect(startIcon).toBeInTheDocument();
   });
 });

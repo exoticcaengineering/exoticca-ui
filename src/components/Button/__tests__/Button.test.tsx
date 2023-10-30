@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
 // import stories file as a module
 import * as stories from '../__stories__/Button.stories';
@@ -43,32 +43,32 @@ describe('Button variations', () => {
   });
 
   // //start icon
-  // it('renders start icon correctly', () => {
+  // it('renders start icon correctly', async () => {
   //   render(<WithStartIcon />);
-  //   const icon = screen.getByTitle('calendar');
+  //   const icon = await screen.findByTestId('calendar-icon');
   //   expect(icon).toBeInTheDocument();
   // });
 
   // //end icon
   // it('renders end icon correctly', () => {
   //   render(<WithEndIcon />);
-  //   const icon = screen.getByTitle('calendar');
+  //   const icon = await screen.findByTestId('calendar-icon');
   //   expect(icon).toBeInTheDocument();
   // });
 
   // //start icon loading
-  // it('renders start icon loading correctly', () => {
+  // it('renders start icon loading correctly', async () => {
   //   render(<WithStartIconLoading />);
-  //   const loadingIcon = screen.getByTitle('loader');
+  //   const loadingIcon = await screen.findByTestId('loader-icon');
   //   expect(loadingIcon).toBeInTheDocument();
   //   const startIcon = screen.queryByTitle('calendar');
   //   expect(startIcon).not.toBeInTheDocument();
   // });
 
   // //end icon loading
-  // it('renders end icon loading correctly', () => {
+  // it('renders end icon loading correctly', async () => {
   //   render(<WithEndIconLoading />);
-  //   const loadingIcon = screen.getByTitle('loader');
+  //   const loadingIcon = await screen.findByTestId('loader-icon');
   //   expect(loadingIcon).toBeInTheDocument();
   //   const endIcon = screen.queryByTitle('calendar');
   //   expect(endIcon).not.toBeInTheDocument();
@@ -115,86 +115,94 @@ describe('Button shapes', () => {
 });
 
 describe('Button states', () => {
-  it('renders button loading correctly', () => {
+  it('renders button loading correctly', async () => {
     render(<States />);
     const loadingButton = screen.getByText('button loading').closest('button');
     expect(loadingButton).toBeInTheDocument();
-    const loaderIcon = screen.getByTitle('loader');
+    const loaderIcon = await screen.findByTestId('loader-icon');
     expect(loaderIcon).toBeInTheDocument();
   });
 
-  it('renders primary button disabled correctly', () => {
+  it('renders primary button disabled correctly', async () => {
     render(<States />);
-    const disabledButton = screen
-      .getByText('primary button disabled')
-      .closest('button');
-    expect(disabledButton).toBeInTheDocument();
-    expect(disabledButton).toHaveStyle('cursor: not-allowed');
-    expect(disabledButton).toHaveStyle('background-color: #E5E5E5');
-    expect(disabledButton).toHaveStyle('border-color: transparent');
-    expect(disabledButton).toHaveStyle('color: #717171');
+    waitFor(() => {
+      const disabledButton = screen
+        .getByText('primary button disabled')
+        .closest('button');
+      expect(disabledButton).toBeInTheDocument();
+      expect(disabledButton).toHaveStyle('cursor: not-allowed');
+      expect(disabledButton).toHaveStyle('background-color: #E5E5E5');
+      expect(disabledButton).toHaveStyle('border-color: transparent');
+      expect(disabledButton).toHaveStyle('color: #717171');
+    });
   });
 
-  it('renders secondary button disabled correctly', () => {
+  it('renders secondary button disabled correctly', async () => {
     render(<States />);
-    const disabledButton = screen
-      .getByText('secondary button disabled')
-      .closest('button');
-    expect(disabledButton).toBeInTheDocument();
-    expect(disabledButton).toHaveStyle('cursor: not-allowed');
-    expect(disabledButton).toHaveStyle('background-color: transparent');
-    expect(disabledButton).toHaveStyle('border-color: #717171');
-    expect(disabledButton).toHaveStyle('color: #717171');
+    waitFor(() => {
+      const disabledButton = screen
+        .getByText('secondary button disabled')
+        .closest('button');
+      expect(disabledButton).toBeInTheDocument();
+      expect(disabledButton).toHaveStyle('cursor: not-allowed');
+      expect(disabledButton).toHaveStyle('background-color: transparent');
+      expect(disabledButton).toHaveStyle('border-color: #717171');
+      expect(disabledButton).toHaveStyle('color: #717171');
+    });
   });
 
-  it('renders tertiary button disabled correctly', () => {
+  it('renders tertiary button disabled correctly', async () => {
     render(<States />);
-    const disabledButton = screen
-      .getByText('tertiary button disabled')
-      .closest('button');
-    expect(disabledButton).toBeInTheDocument();
-    expect(disabledButton).toHaveStyle('cursor: not-allowed');
-    expect(disabledButton).toHaveStyle('background-color: transparent');
-    expect(disabledButton).toHaveStyle('border-color: transparent');
-    expect(disabledButton).toHaveStyle('color: #717171');
+    waitFor(() => {
+      const disabledButton = screen
+        .getByText('tertiary button disabled')
+        .closest('button');
+      expect(disabledButton).toBeInTheDocument();
+      expect(disabledButton).toHaveStyle('cursor: not-allowed');
+      expect(disabledButton).toHaveStyle('background-color: transparent');
+      expect(disabledButton).toHaveStyle('border-color: transparent');
+      expect(disabledButton).toHaveStyle('color: #717171');
+    });
   });
 });
 
 describe('Button with icon and loading', () => {
-  it('renders start icon correctly', () => {
+  it('renders start icon correctly', async () => {
     render(<WithIconAndLoading />);
     const startIconButton = screen
       .getByText('start icon')
       .closest('button') as HTMLButtonElement;
-    const icon = within(startIconButton).getByTitle('calendar');
+    const icon = await within(startIconButton).findByTestId('calendar-icon');
     expect(icon).toBeInTheDocument();
   });
-  it('renders start icon loading correctly', () => {
+  it('renders start icon loading correctly', async () => {
     render(<WithIconAndLoading />);
     const startIconButton = screen
       .getByText('start icon loading')
       .closest('button') as HTMLButtonElement;
-    const loadingIcon = within(startIconButton).getByTitle('loader');
+    const loadingIcon = await within(startIconButton).findByTestId(
+      'loader-icon',
+    );
     expect(loadingIcon).toBeInTheDocument();
     const icon = within(startIconButton).queryByTitle('calendar');
     expect(icon).not.toBeInTheDocument();
   });
 
-  it('renders end icon correctly', () => {
+  it('renders end icon correctly', async () => {
     render(<WithIconAndLoading />);
     const endIconButton = screen
       .getByText('start icon')
       .closest('button') as HTMLButtonElement;
-    const icon = within(endIconButton).getByTitle('calendar');
+    const icon = await within(endIconButton).findByTestId('calendar-icon');
     expect(icon).toBeInTheDocument();
   });
 
-  it('renders end icon loading correctly', () => {
+  it('renders end icon loading correctly', async () => {
     render(<WithIconAndLoading />);
     const endIconButton = screen
       .getByText('start icon loading')
       .closest('button') as HTMLButtonElement;
-    const loadingIcon = within(endIconButton).getByTitle('loader');
+    const loadingIcon = await within(endIconButton).findByTestId('loader-icon');
     expect(loadingIcon).toBeInTheDocument();
     const icon = within(endIconButton).queryByTitle('calendar');
     expect(icon).not.toBeInTheDocument();
