@@ -7,76 +7,76 @@
     <path
       d="M12 5.39062V7.89062"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M13.25 6.64062H10.75"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <circle
       cx="12"
       cy="6.64062"
       r="4"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
       d="M9 14.6406H15C15.5523 14.6406 16 15.0883 16 15.6406V21.6406H8V15.6406C8 15.0883 8.44772 14.6406 9 14.6406Z"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M3 8.64062V21.6406"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M21 21.6406V8.64062"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M8.53658 8.64062H3C2.44772 8.64062 2 8.19291 2 7.64062V6.64062C2 6.08834 2.44772 5.64062 3 5.64062H8.1277"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M15.8721 5.64062H20.9996C21.5519 5.64062 21.9996 6.08834 21.9996 6.64062V7.64062C21.9996 8.19291 21.5519 8.64062 20.9996 8.64062H15.4639"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M22 21.6406H2"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M12 14.6406V21.6406"
       stroke="#2A2A2A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 

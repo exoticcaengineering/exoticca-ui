@@ -6,9 +6,9 @@
   >
     <g
       stroke="#2a2a2a"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1.5"
     >
       <rect height="18" rx="2" width="16" x="4" y="3" />
       <path d="m11 8h-3" />

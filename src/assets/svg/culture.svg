@@ -7,30 +7,30 @@
     <path
       d="M12 15V21"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M13 21H11"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M12 15C10.8505 16.2733 9.2154 17 7.5 17C5.7846 17 4.14949 16.2733 3 15"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M21 15C19.8505 16.2733 18.2154 17 16.5 17C14.7846 17 13.1495 16.2733 12 15"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <rect
       x="3"
@@ -38,30 +38,30 @@
       width="0.1"
       height="6"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M2 21H4"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M21 15V21"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M22 21H20"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <rect
       x="5"
@@ -70,9 +70,9 @@
       height="9"
       rx="1"
       stroke="#121212"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 

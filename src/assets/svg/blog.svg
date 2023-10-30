@@ -5,13 +5,13 @@
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
       d="M7.5 3H16.504C18.987 3 21 5.013 21 7.496V16.505C21 18.987 18.987 21 16.504 21H7.496C5.013 21 3 18.987 3 16.504V7.5C3 5.015 5.015 3 7.5 3V3Z"
       stroke="currentColor"
-      strokeWidth="1"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       style="fill:none"
     />
     <path

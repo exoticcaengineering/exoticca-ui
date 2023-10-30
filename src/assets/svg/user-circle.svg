@@ -8,25 +8,25 @@
       cy="25"
       r="18.7578"
       stroke="#121212"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
       d="M33.3372 33.3368C33.0948 32.727 32.7188 32.1793 32.2367 31.7341V31.7341C31.4245 30.9791 30.3569 30.5592 29.248 30.5586H20.7549C19.6454 30.5593 18.5771 30.9792 17.764 31.7341V31.7341C17.2831 32.1803 16.9072 32.7277 16.6636 33.3368"
       stroke="#121212"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <circle
       cx="25"
       cy="21.3535"
       r="4.68945"
       stroke="#121212"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 
