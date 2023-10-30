@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { StyledWrapper } from './Icon.styles';
 import { Props } from './Icon.types';
+import IconFallback from '../../assets/svg/fallback.svg';
 
 export const Icon: FC<Props> = ({ icon, testId, ...props }) => {
   const iconRef = useRef<any>(null);
@@ -26,7 +27,7 @@ export const Icon: FC<Props> = ({ icon, testId, ...props }) => {
         isClickable={isClickable}
         {...props}
       >
-        asdsa
+        <IconFallback />
       </StyledWrapper>
     );
 
