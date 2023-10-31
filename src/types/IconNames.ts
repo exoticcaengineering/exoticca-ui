@@ -120,6 +120,4 @@ export const iconNames = [
   'play-video',
 ] as const;
 
-type IconNameType = (typeof iconNames)[number];
-
-export type IconName = IconNameType;
+export type IconName = (typeof iconNames)[number];
