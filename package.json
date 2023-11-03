@@ -1,6 +1,6 @@
 {
   "name": "@exoticcaengineering/exoticca-ui",
-  "version": "0.3.102-beta.1",
+  "version": "0.3.102-beta.2",
   "author": "exoticcaengineering",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,7 +10,8 @@
   "types": "dist/index.d.ts",
   "license": "ISC",
   "scripts": {
-    "build": "rollup -c",
+    "svrg": "svgr --icon --title-prop --typescript -d src/components/svgIcon src/assets/svg",
+    "build": "npm run svrg && rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest",
@@ -33,6 +34,7 @@
     "@storybook/react-webpack5": "^7.0.11",
     "@storybook/test-runner": "^0.10.0",
     "@storybook/theming": "^7.0.11",
+    "@svgr/cli": "^8.1.0",
     "@svgr/rollup": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^5.16.5",
