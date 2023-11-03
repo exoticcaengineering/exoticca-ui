@@ -8,6 +8,9 @@ export const Card = styled.div`
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.palette.primary.contrast};
   border-radius: ${({ theme }) => theme.newBorderRadius.l};
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
