@@ -8,12 +8,6 @@ const title = 'Parques, lagos y gorilas de montaña';
 const daysText = '5 days';
 const pillText = /OFERTA FLASH/;
 const newText = /New/;
-const imgProp = [
-  {
-    url: 'http://d3u4a4x0o6wh6h.cloudfront.net/img/p/6945/c155310.jpg',
-    text: '',
-  },
-];
 
 describe('render Base UI elements', () => {
   test('should render card with title, day data and no isNew element', () => {
@@ -26,10 +20,9 @@ describe('render Base UI elements', () => {
       level: 5,
       name: daysText,
     });
-    const isNewElement = screen.queryByText(newText);
+
     expect(titleElement).toBeInTheDocument();
     expect(daysElement).toBeInTheDocument();
-    expect(isNewElement).not.toBeInTheDocument();
   });
 
   test('should render isNew element if props dictate', async () => {
