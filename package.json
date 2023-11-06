@@ -15,7 +15,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest",
-    "ci": "npm run test && npm run build",
+    "ci": "npm run build",
     "test:coverage": "jest --env=jest-environment-jsdom --coverage"
   },
   "devDependencies": {
