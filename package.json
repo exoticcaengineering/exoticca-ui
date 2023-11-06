@@ -10,7 +10,7 @@
   "types": "dist/index.d.ts",
   "license": "ISC",
   "scripts": {
-    "svrg": "svgr --icon --title-prop --typescript -d src/components/svgIcon src/assets/svg",
+    "svrg": "svgr --icon --title-prop --typescript -d src/components/SvgIcons src/assets/svg",
     "build": "npm run svrg && rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
