@@ -307,7 +307,8 @@ type PaletteType =
   | 'footer'
   | 'success'
   | 'warning'
-  | 'rating';
+  | 'rating'
+  | 'info';
 
 type FontFamilyType =
   | 'main'
