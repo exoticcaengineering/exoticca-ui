@@ -13,7 +13,7 @@ export const Icon: FC<Props> = ({ icon, testId, ...props }) => {
   useEffect(() => {
     const importIcon = async () => {
       setIsLoading(true);
-      const importedIcon = await import(`../../assets/svg/${icon}.svg`);
+      const importedIcon = await import(`../../assets/svg/fallback.svg`);
       iconRef.current = importedIcon.default;
       setIsLoading(false);
     };
