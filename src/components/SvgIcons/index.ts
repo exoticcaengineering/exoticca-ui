@@ -57,6 +57,7 @@ export { default as Logout } from './Logout';
 export { default as Loop } from './Loop';
 export { default as Luxury } from './Luxury';
 export { default as MapPin } from './MapPin';
+export { default as Microfono } from './Microfono';
 export { default as Moon } from './Moon';
 export { default as MultiCountry } from './MultiCountry';
 export { default as Nature } from './Nature';
