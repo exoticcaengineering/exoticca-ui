@@ -10,15 +10,15 @@ export const Icon: FC<Props> = ({ icon, testId, ...props }) => {
   const defaultTestId = `${icon}-icon`;
   const isClickable = !!props.onClick;
 
-  useEffect(() => {
-    const importIcon = async () => {
-      setIsLoading(true);
-      const importedIcon = await import(`../../../assets/svg/${icon}.svg`);
-      iconRef.current = importedIcon.default;
-      setIsLoading(false);
-    };
-    importIcon();
-  }, []);
+  // useEffect(() => {
+  //   const importIcon = async () => {
+  //     setIsLoading(true);
+  //     const importedIcon = await import(`../../../assets/svg/${icon}.svg`);
+  //     iconRef.current = importedIcon.default;
+  //     setIsLoading(false);
+  //   };
+  //   importIcon();
+  // }, []);
 
   if (isLoading || !iconRef.current)
     return (
@@ -39,7 +39,7 @@ export const Icon: FC<Props> = ({ icon, testId, ...props }) => {
       isClickable={isClickable}
       {...props}
     >
-      <Icon />
+      <Fallback />
     </StyledWrapper>
   );
 };
