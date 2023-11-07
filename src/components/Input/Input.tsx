@@ -48,7 +48,7 @@ export const Input: FC<Props> = ({
   useEffect(() => {
     setValue(defaultValue ?? '');
   }, [defaultValue]);
-  console.log(inputProps);
+
   return (
     <div>
       {labelPosition === 'outside' && (

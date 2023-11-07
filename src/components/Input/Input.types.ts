@@ -21,7 +21,7 @@ export interface Props extends ComponentPropsBase {
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   type?: HTMLInputTypeAttribute;
-  autocomplete?: 'on' | 'off';
+  autoComplete?: 'on' | 'off';
 }
 
 export interface StyleProps
