@@ -25,12 +25,12 @@ const TypographyContainer: FC<TypographyContainerProps> = ({ fontFamily }) => {
   );
 };
 
-const Meta: Meta<typeof TypographyContainer> = {
+const meta: Meta<typeof TypographyContainer> = {
   title: 'Theme/Typography/FontFamily',
   component: TypographyContainer,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Box>;
 
 //Theme Default

@@ -6,7 +6,7 @@ import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
 import { Props } from '../Icon.types';
 
-const Meta: Meta<typeof Icon> = {
+const meta: Meta<typeof Icon> = {
   title: 'Components/Icons',
   component: Icon,
   argTypes: {
@@ -22,7 +22,7 @@ const Meta: Meta<typeof Icon> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Icon>;
 

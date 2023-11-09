@@ -7,12 +7,12 @@ import {
 } from 'src/types/theme';
 import { themeDefault } from '../theme';
 
-const Meta: Meta<typeof Box> = {
+const meta: Meta<typeof Box> = {
   title: 'Theme/Breakpoint',
   component: Box,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Box>;
 
 const breakpointsArray = Object.keys(themeDefault.breakpoints) as Array<

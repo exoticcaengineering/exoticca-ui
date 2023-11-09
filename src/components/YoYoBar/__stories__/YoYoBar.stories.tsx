@@ -21,7 +21,7 @@ const dummyCardData = [
   },
 ];
 
-const Meta: Meta<typeof YoYoBar> = {
+const meta: Meta<typeof YoYoBar> = {
   title: 'Components/YoYoBar',
   component: YoYoBar,
   args: {
@@ -43,7 +43,7 @@ const Meta: Meta<typeof YoYoBar> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<YoYoBarProps>;
 

@@ -1,5 +1,5 @@
 import { Colors, Theme } from 'src/types';
-import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
+import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 import { IconConfig } from 'src/components/Icon/Icon.types';
 import { SyntheticEvent, MouseEvent } from 'react';
 
@@ -9,7 +9,7 @@ type ItemColor = Extract<keyof Colors, 'arcticWind' | 'polarNight'>;
 
 export type ItemSize = 'xSmall' | 'small' | 'medium' | 'large';
 
-export interface Props extends ComponentPropsBase {
+export interface Props extends ComponentPropsBaseWithChildren {
   hover?: 'underlined' | 'background' | 'underlined-bold';
   color?: ItemColor;
   selected?: boolean;

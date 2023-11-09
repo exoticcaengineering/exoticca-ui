@@ -56,7 +56,7 @@ const textDecorations = [
 
 const fontStyles = ['normal', 'italic', 'oblique'];
 
-const Meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Typography> = {
   title: 'Components/Typography',
   component: Typography,
   args: {
@@ -94,7 +94,7 @@ const Meta: Meta<typeof Typography> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Typography>;
 

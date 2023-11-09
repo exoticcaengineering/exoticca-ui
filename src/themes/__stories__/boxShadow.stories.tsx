@@ -4,12 +4,12 @@ import { Typography } from 'src/components/Typography';
 import { BoxShadow as BoxShadowType } from 'src/types/theme';
 import { themeDefault } from '../theme';
 
-const Meta: Meta<typeof Box> = {
+const meta: Meta<typeof Box> = {
   title: 'Theme/BoxShadow',
   component: Box,
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Box>;
 

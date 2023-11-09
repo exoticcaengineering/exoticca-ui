@@ -3,7 +3,7 @@ import { ComponentProps, useRef } from 'react';
 import { Drawer } from '../Drawer';
 import { DrawerRef, Props } from '../Drawer.types';
 
-const Meta: Meta<typeof Drawer> = {
+const meta: Meta<typeof Drawer> = {
   title: 'Components/Drawer',
   component: Drawer,
   argTypes: {
@@ -32,7 +32,7 @@ const Meta: Meta<typeof Drawer> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type CustomItemProps = ComponentProps<typeof Drawer> & {
   text: string;

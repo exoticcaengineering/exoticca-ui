@@ -5,14 +5,14 @@ import { useState } from 'react';
 import { Typography } from 'src/components/Typography';
 import { Tab } from '../Tab/Tab';
 
-const Meta: Meta<typeof Tabs> = {
+const meta: Meta<typeof Tabs> = {
   title: 'Components/Tabs',
   component: Tabs,
   args: {},
   argTypes: {},
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Tabs>;
 

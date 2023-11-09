@@ -5,12 +5,12 @@ import { Typography } from 'src/components/Typography';
 import { FontSize as FontSizeType } from 'src/types/theme';
 import { fontSize } from '../theme';
 
-const Meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Typography> = {
   title: 'Theme/Typography/FontSize',
   component: Typography,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Typography>;
 
 const fontBase = 16;

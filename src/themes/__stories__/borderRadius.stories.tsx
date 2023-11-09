@@ -4,12 +4,12 @@ import { Typography } from 'src/components/Typography';
 import { BorderRadius as BorderRadiusType } from 'src/types/theme';
 
 import { themeDefault } from '../theme';
-const Meta: Meta<typeof Box> = {
+const meta: Meta<typeof Box> = {
   title: 'Theme/BorderRadius',
   component: Box,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Box>;
 
 const borderRadiusArray = Object.keys(themeDefault.borderRadius) as Array<

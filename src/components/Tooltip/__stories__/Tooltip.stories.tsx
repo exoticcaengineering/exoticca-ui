@@ -4,12 +4,12 @@ import { Tooltip } from '../Tooltip';
 import { Typography } from 'src/components/Typography';
 import { Props } from '../Tooltip.types';
 
-const Meta: Meta<typeof Tooltip> = {
+const meta: Meta<typeof Tooltip> = {
   title: 'Components/Tooltip',
   component: Tooltip,
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Tooltip>;
 

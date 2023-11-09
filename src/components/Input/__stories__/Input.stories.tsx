@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Input } from '../Input';
 import { Props } from '../Input.types';
 
-const Meta: Meta<typeof Input> = {
+const meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input,
   args: {
@@ -19,7 +19,7 @@ const Meta: Meta<typeof Input> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Input>;
 

@@ -5,7 +5,7 @@ import { Wrapper } from './Story.styles';
 import { FC } from 'react';
 import { Props } from '../SelectableBox.types';
 
-const Meta: Meta<typeof SelectableBox> = {
+const meta: Meta<typeof SelectableBox> = {
   title: 'Components/SelectableBox',
   component: SelectableBox,
   args: {
@@ -15,7 +15,7 @@ const Meta: Meta<typeof SelectableBox> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof SelectableBox>;
 

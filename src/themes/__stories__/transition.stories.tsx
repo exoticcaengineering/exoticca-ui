@@ -6,12 +6,12 @@ import { Duration as DurationType } from 'src/types/theme';
 import { themeDefault } from '../theme';
 import { StyledAnimationDot, StyledDurationWrapper } from './themeStory.styles';
 
-const Meta: Meta<typeof Box> = {
+const meta: Meta<typeof Box> = {
   title: 'Theme/Transition/Duration',
   component: Box,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Box>;
 
 const durationValueArray = Object.keys(

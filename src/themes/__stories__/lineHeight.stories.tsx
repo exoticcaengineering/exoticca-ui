@@ -2,12 +2,12 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 import { Typography, TypographyProps } from 'src/components/Typography';
 
-const Meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Typography> = {
   title: 'Theme/Typography/LineHeight',
   component: Typography,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Typography>;
 
 const Template = (props: TypographyProps) => (

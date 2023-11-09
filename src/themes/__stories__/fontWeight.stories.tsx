@@ -5,12 +5,12 @@ import { Typography } from 'src/components/Typography';
 import { FontWeight as FontWeightType } from 'src/types/theme';
 import { fontWeight } from '../theme';
 
-const Meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Typography> = {
   title: 'Theme/Typography/FontWeight',
   component: Typography,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Typography>;
 
 const FontWeightComponent = () => (

@@ -19,12 +19,12 @@ import {
 } from '../TypographyVariants';
 import { Box } from 'src/components/Box';
 
-const Meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Typography> = {
   title: 'Components/TypographyVariants',
   component: Typography,
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Typography>;
 

@@ -67,12 +67,12 @@ const ColorPalette: FC<ColorPaletteProps> = ({ colors }) => {
   );
 };
 
-const Meta: Meta<typeof ColorPalette> = {
+const meta: Meta<typeof ColorPalette> = {
   title: 'Theme/Colors',
   component: ColorPalette,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof ColorPalette>;
 
 export const BorderRadius: Story = {

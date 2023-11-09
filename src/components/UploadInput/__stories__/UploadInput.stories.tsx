@@ -3,7 +3,7 @@ import { UploadInput } from '../UploadInput';
 import { useState } from 'react';
 import { uploadInputProps } from '../UploadInput.types';
 
-const Meta: Meta<typeof UploadInput> = {
+const meta: Meta<typeof UploadInput> = {
   title: 'Components/UploadInput',
   component: UploadInput,
   args: {
@@ -12,7 +12,7 @@ const Meta: Meta<typeof UploadInput> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof UploadInput>;
 

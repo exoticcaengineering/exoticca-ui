@@ -3,12 +3,12 @@ import { FC } from 'react';
 import { Typography } from 'src/components/Typography';
 import { HeroWrapper } from '../HeroWrapper';
 
-const Meta: Meta<typeof HeroWrapper> = {
+const meta: Meta<typeof HeroWrapper> = {
   title: 'Components/HeroWrapper',
   component: HeroWrapper,
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof HeroWrapper>;
 

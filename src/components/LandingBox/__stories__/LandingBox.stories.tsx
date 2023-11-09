@@ -3,12 +3,12 @@ import { Typography } from 'src/components/Typography';
 import { LandingBox } from '../LandingBox';
 import { Props } from '../LandingBox.types';
 
-const Meta: Meta<typeof LandingBox> = {
+const meta: Meta<typeof LandingBox> = {
   title: 'Components/LandingBox',
   component: LandingBox,
 };
 
-export default Meta;
+export default meta;
 
 const Template = (args: Props) => (
   <LandingBox {...args}>

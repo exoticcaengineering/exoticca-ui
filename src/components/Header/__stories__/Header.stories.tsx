@@ -4,7 +4,7 @@ import { TextBody2 } from 'src/components/TypographyVariants';
 import { Icon } from 'src/components/Icon';
 import { Props } from '../Header.types';
 
-const Meta: Meta<typeof Header> = {
+const meta: Meta<typeof Header> = {
   title: 'Components/Header',
   component: Header,
   argTypes: {
@@ -35,7 +35,7 @@ const Meta: Meta<typeof Header> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Header>;
 

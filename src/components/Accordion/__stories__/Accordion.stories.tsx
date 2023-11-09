@@ -8,7 +8,7 @@ import { Button } from 'src/components/Button';
 /**
  * ## Accordion is a component that can be used to hide and show content.
  */
-const Meta: Meta<typeof Accordion> = {
+const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',
   component: Accordion,
   decorators: [
@@ -33,7 +33,7 @@ const Meta: Meta<typeof Accordion> = {
   argTypes: {},
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Accordion>;
 

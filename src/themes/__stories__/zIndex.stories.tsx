@@ -6,12 +6,12 @@ import { ZIndex as ZIndexType } from 'src/types/theme';
 
 import { zIndex } from '../theme';
 
-const Meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Typography> = {
   title: 'Theme/ZIndex',
   component: Typography,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Typography>;
 
 export const ZIndexComponent = () => (

@@ -12,7 +12,7 @@ const justifyContent = [
   'space-evenly',
 ];
 
-const Meta: Meta<typeof Flex> = {
+const meta: Meta<typeof Flex> = {
   title: 'Components/Flex',
   component: Flex,
   args: {
@@ -38,7 +38,7 @@ const Meta: Meta<typeof Flex> = {
   },
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Flex>;
 

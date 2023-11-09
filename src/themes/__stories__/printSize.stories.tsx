@@ -5,12 +5,12 @@ import { Typography } from 'src/components/Typography';
 import { PrintSize as PrintSizeType } from 'src/types/theme';
 import { printSize } from '../theme';
 
-const Meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Typography> = {
   title: 'Theme/Typography/PrintSize',
   component: Typography,
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Typography>;
 
 const ptStringToPx = (remString: string) => {

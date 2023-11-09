@@ -3,13 +3,13 @@ import { Item } from '../Item';
 import { Box } from 'src/components/Box';
 import { ComponentProps } from 'react';
 
-type CustomItemProps = ComponentProps<typeof Item> & { itemText?: string };
+type CustomItemProps = ComponentProps<typeof Item>;
 
-const Meta: Meta<typeof Item> = {
+const meta: Meta<typeof Item> = {
   title: 'Components/Item',
   component: Item,
   args: {
-    itemText: 'Selectable Item',
+    children: 'Selectable Item',
     hover: 'background',
   },
   argTypes: {
@@ -22,7 +22,7 @@ const Meta: Meta<typeof Item> = {
       control: { type: 'select' },
       category: 'Prop',
     },
-    itemText: {
+    children: {
       table: {
         category: 'Text',
         control: 'text',
@@ -31,10 +31,10 @@ const Meta: Meta<typeof Item> = {
   },
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof Item>;
 
-const Template = ({ itemText = 'itemText', ...props }: CustomItemProps) => (
+const Template = ({ children = 'itemText', ...props }: CustomItemProps) => (
   <div
     style={{
       display: 'flex',
@@ -49,7 +49,7 @@ const Template = ({ itemText = 'itemText', ...props }: CustomItemProps) => (
     >
       <Box boxShadow="s" padding={[1]} borderRadius={'xl'}>
         <Item {...props}>
-          <a>{itemText}</a>
+          <a>{children}</a>
         </Item>
       </Box>
     </div>

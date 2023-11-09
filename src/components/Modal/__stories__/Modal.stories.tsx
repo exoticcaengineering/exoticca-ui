@@ -6,13 +6,13 @@ import { TextBody1 } from 'src/components/TypographyVariants';
 import { Button } from 'src/components/Button';
 import { StyledModalHeader, StyledRowWrapper } from './Story.styles';
 
-const Meta: Meta<typeof Modal> = {
+const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
   args: {},
 };
 
-export default Meta;
+export default meta;
 
 type Story = StoryObj<typeof Modal>;
 

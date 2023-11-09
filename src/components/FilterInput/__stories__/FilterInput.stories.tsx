@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Item } from 'src/components/Item';
 import { Typography } from 'src/components/Typography';
 
-const Meta: Meta<typeof FilterInput> = {
+const meta: Meta<typeof FilterInput> = {
   title: 'Components/FilterInput',
   component: FilterInput,
   argTypes: {
@@ -22,7 +22,7 @@ const Meta: Meta<typeof FilterInput> = {
   },
 };
 
-export default Meta;
+export default meta;
 type Story = StoryObj<typeof FilterInput>;
 
 const Template = ({ ...args }) => {
