@@ -1,19 +1,23 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
 import { BoxShadow as BoxShadowType } from 'src/types/theme';
 import { themeDefault } from '../theme';
 
-export default {
+const Meta: Meta<typeof Box> = {
   title: 'Theme/BoxShadow',
   component: Box,
-} as ComponentMeta<typeof Box>;
+};
+
+export default Meta;
+
+type Story = StoryObj<typeof Box>;
 
 const boxShadowArray = Object.keys(themeDefault.boxShadow) as Array<
   keyof BoxShadowType
 >;
 
-export const BoxShadow: ComponentStory<typeof Box> = () => (
+const Base = () => (
   <>
     {boxShadowArray.map((shadow) => (
       <Box boxShadow={shadow} padding={[2]} gutterBottom={2} key={shadow}>
@@ -23,3 +27,7 @@ export const BoxShadow: ComponentStory<typeof Box> = () => (
     ))}
   </>
 );
+
+export const BoxShadow: Story = {
+  render: () => <Base />,
+};

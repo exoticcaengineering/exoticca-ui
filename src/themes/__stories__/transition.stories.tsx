@@ -1,20 +1,24 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
 import { Duration as DurationType } from 'src/types/theme';
 
 import { themeDefault } from '../theme';
 import { StyledAnimationDot, StyledDurationWrapper } from './themeStory.styles';
-export default {
+
+const Meta: Meta<typeof Box> = {
   title: 'Theme/Transition/Duration',
   component: Box,
-} as ComponentMeta<typeof Box>;
+};
+
+export default Meta;
+type Story = StoryObj<typeof Box>;
 
 const durationValueArray = Object.keys(
   themeDefault.transition.duration,
 ) as Array<keyof DurationType>;
 
-export const Duration: ComponentStory<typeof Box> = () => (
+export const DurationComponent = () => (
   <Box>
     <Typography gutterBottom={1} fontSize="h3">
       Hover to sse the animation:
@@ -38,3 +42,7 @@ export const Duration: ComponentStory<typeof Box> = () => (
     })}
   </Box>
 );
+
+export const Duration: Story = {
+  render: () => <DurationComponent />,
+};

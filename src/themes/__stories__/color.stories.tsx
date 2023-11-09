@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { FC } from 'react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
@@ -67,17 +67,14 @@ const ColorPalette: FC<ColorPaletteProps> = ({ colors }) => {
   );
 };
 
-export default {
+const Meta: Meta<typeof ColorPalette> = {
   title: 'Theme/Colors',
   component: ColorPalette,
-} as ComponentMeta<typeof ColorPalette>;
+};
 
-const Template: ComponentStory<typeof ColorPalette> = (args) => (
-  <ColorPalette {...args} />
-);
+export default Meta;
+type Story = StoryObj<typeof ColorPalette>;
 
-export const DefaultColorPalette = Template.bind({});
-
-DefaultColorPalette.args = {
-  colors: palette,
+export const BorderRadius: Story = {
+  render: (args) => <ColorPalette {...args} colors={palette} />,
 };

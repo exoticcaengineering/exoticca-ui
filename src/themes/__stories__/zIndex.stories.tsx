@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 
 import { Typography } from 'src/components/Typography';
@@ -6,12 +6,15 @@ import { ZIndex as ZIndexType } from 'src/types/theme';
 
 import { zIndex } from '../theme';
 
-export default {
+const Meta: Meta<typeof Typography> = {
   title: 'Theme/ZIndex',
   component: Typography,
-} as ComponentMeta<typeof Typography>;
+};
 
-export const ZIndex: ComponentStory<typeof Typography> = () => (
+export default Meta;
+type Story = StoryObj<typeof Typography>;
+
+export const ZIndexComponent = () => (
   <>
     {(Object.keys(zIndex) as Array<keyof ZIndexType>).map((key) => (
       <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
@@ -21,3 +24,7 @@ export const ZIndex: ComponentStory<typeof Typography> = () => (
     ))}
   </>
 );
+
+export const ZIndex: Story = {
+  render: () => <ZIndexComponent />,
+};
