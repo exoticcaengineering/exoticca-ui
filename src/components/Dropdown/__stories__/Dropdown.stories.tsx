@@ -16,15 +16,6 @@ const meta: Meta<typeof Dropdown> = {
     withCloseButton: {
       category: 'Prop',
     },
-    isCloseDropdown: {
-      category: 'Prop',
-    },
-    itemText: {
-      table: {
-        category: 'Text',
-        control: 'text',
-      },
-    },
     size: {
       options: ['small', 'medium'],
       control: { type: 'radio' },

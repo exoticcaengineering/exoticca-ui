@@ -11,18 +11,15 @@ const meta: Meta<typeof Header> = {
     leftComponent: {
       description:
         'Instantiate a component and it will be displayed on the left side.',
-      type: { required: false },
     },
 
     centerComponent: {
       description:
         'Instantiate a component and it will be displayed on the center side.',
-      type: { required: false },
     },
     rightComponent: {
       description:
         'Instantiate a component and it will be displayed on the right side.',
-      type: { required: false },
     },
     background: {
       description:
