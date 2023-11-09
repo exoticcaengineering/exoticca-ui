@@ -4,7 +4,7 @@ import { Dropdown } from '../Dropdown';
 import { DropdownList } from './DropdownList';
 import { Props } from '../Dropdown.types';
 
-export default {
+const Meta: Meta<typeof Dropdown> = {
   title: 'components/Dropdown',
   component: Dropdown,
   argTypes: {
@@ -30,7 +30,9 @@ export default {
       control: { type: 'radio' },
     },
   },
-} as Meta<typeof Dropdown>;
+};
+
+export default Meta;
 
 type Story = StoryObj<typeof Dropdown>;
 

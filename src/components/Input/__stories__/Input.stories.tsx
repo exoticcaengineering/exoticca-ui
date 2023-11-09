@@ -1,8 +1,8 @@
-import { ComponentStory, Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Input } from '../Input';
 import { Props } from '../Input.types';
 
-export default {
+const Meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input,
   args: {
@@ -17,11 +17,13 @@ export default {
       category: 'Prop',
     },
   },
-} as Meta<Props>;
+};
 
-type Story = StoryObj<Props>;
+export default Meta;
 
-const Template: ComponentStory<typeof Input> = ({ ...props }) => {
+type Story = StoryObj<typeof Input>;
+
+const Template = ({ ...props }: Props) => {
   return (
     <div
       style={{

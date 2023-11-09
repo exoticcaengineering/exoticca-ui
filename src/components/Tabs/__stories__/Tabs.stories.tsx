@@ -1,18 +1,22 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from '../Tabs';
 import { Box } from 'src/components/Box';
 import { useState } from 'react';
 import { Typography } from 'src/components/Typography';
 import { Tab } from '../Tab/Tab';
 
-export default {
+const Meta: Meta<typeof Tabs> = {
   title: 'Components/Tabs',
   component: Tabs,
   args: {},
   argTypes: {},
-} as Meta;
+};
 
-const Template: Story = () => {
+export default Meta;
+
+type Story = StoryObj<typeof Tabs>;
+
+const Template = () => {
   const [selectedTabId, setSelectedTabId] = useState('');
   const TABS = [
     { text: 'Item 1', id: '1' },
@@ -58,4 +62,6 @@ const Template: Story = () => {
     </div>
   );
 };
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
+};

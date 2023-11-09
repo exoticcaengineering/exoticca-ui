@@ -1,11 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { PasswordInput } from '../PasswordInput';
 
-export default {
+export default {};
+const Meta: Meta<typeof PasswordInput> = {
   title: 'Components/PasswordInput',
   component: PasswordInput,
   args: {},
-} as Meta<typeof PasswordInput>;
+};
 
 type Story = StoryObj<typeof PasswordInput>;
 

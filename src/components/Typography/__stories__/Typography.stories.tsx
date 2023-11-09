@@ -56,7 +56,7 @@ const textDecorations = [
 
 const fontStyles = ['normal', 'italic', 'oblique'];
 
-export default {
+const Meta: Meta<typeof Typography> = {
   title: 'Components/Typography',
   component: Typography,
   args: {
@@ -92,7 +92,9 @@ export default {
       control: { type: 'select' },
     },
   },
-} as Meta<typeof Typography>;
+};
+
+export default Meta;
 
 type Story = StoryObj<typeof Typography>;
 

@@ -3,10 +3,12 @@ import { Tag } from '../Tag';
 import { Props } from '../Tag.types';
 import { StyledRowWrapper } from './Story.styles';
 
-export default {
+const Meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
   component: Tag,
-} as Meta<typeof Tag>;
+};
+
+export default Meta;
 
 type Story = StoryObj<typeof Tag>;
 

@@ -1,15 +1,10 @@
-import {
-  ComponentMeta,
-  ComponentStory,
-  Meta,
-  StoryObj,
-} from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Header } from '../Header';
 import { TextBody2 } from 'src/components/TypographyVariants';
 import { Icon } from 'src/components/Icon';
 import { Props } from '../Header.types';
 
-export default {
+const Meta: Meta<typeof Header> = {
   title: 'Components/Header',
   component: Header,
   argTypes: {
@@ -38,7 +33,9 @@ export default {
         'Pass the background shade of the background color. By default, it will be displayed in the main shade',
     },
   },
-} as Meta<typeof Header>;
+};
+
+export default Meta;
 
 type Story = StoryObj<typeof Header>;
 

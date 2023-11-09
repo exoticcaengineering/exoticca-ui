@@ -1,11 +1,11 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Item } from '../Item';
 import { Box } from 'src/components/Box';
 import { ComponentProps } from 'react';
 
-type CustomItemProps = ComponentProps<typeof Item> & { itemText: string };
+type CustomItemProps = ComponentProps<typeof Item> & { itemText?: string };
 
-export default {
+const Meta: Meta<typeof Item> = {
   title: 'Components/Item',
   component: Item,
   args: {
@@ -29,12 +29,12 @@ export default {
       },
     },
   },
-} as Meta<CustomItemProps>;
+};
 
-const Template: Story<CustomItemProps> = ({
-  itemText,
-  ...props
-}: CustomItemProps) => (
+export default Meta;
+type Story = StoryObj<typeof Item>;
+
+const Template = ({ itemText = 'itemText', ...props }: CustomItemProps) => (
   <div
     style={{
       display: 'flex',
@@ -55,16 +55,21 @@ const Template: Story<CustomItemProps> = ({
     </div>
   </div>
 );
-export const Base = Template.bind({});
 
-export const withStartIcon = Template.bind({});
-
-withStartIcon.args = {
-  startIcon: { icon: 'arrow' },
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
 };
 
-export const withEndIcon = Template.bind({});
+export const WithStartIcon: Story = {
+  args: {
+    startIcon: { icon: 'arrow' },
+  },
+  render: (args) => <Template {...args} />,
+};
 
-withEndIcon.args = {
-  endIcon: { icon: 'arrow' },
+export const WithEndIcon: Story = {
+  args: {
+    endIcon: { icon: 'arrow' },
+  },
+  render: (args) => <Template {...args} />,
 };
