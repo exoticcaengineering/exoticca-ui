@@ -37,7 +37,7 @@ export interface CardCampaignProps {
   fromText: string;
   newText: string;
   WishlistBtn: React.ReactNode;
-  ImageNext: React.ReactNode;
+  ImageNext?: React.ReactNode;
 
   // Optional
   pillTagClickEvent?: (e: React.MouseEvent, url: string) => void;
