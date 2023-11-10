@@ -65,3 +65,10 @@ const Template = (args: Props) => (
 export const Default: Story = {
   render: (args) => <Template {...args} />,
 };
+
+export const DefaultOpen: Story = {
+  args: {
+    isDefaultOpen: true,
+  },
+  render: (args) => <Template {...args} />,
+};

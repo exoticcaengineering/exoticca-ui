@@ -18,6 +18,7 @@ export interface Props extends ComponentPropsBase {
   dropdownList: (props: DropdownListProps) => JSX.Element;
   textColor?: keyof Palette;
   openBackgroundColor?: keyof Palette;
+  isDefaultOpen?: boolean;
 }
 
 export interface StyledProps
@@ -30,6 +31,7 @@ export interface StyledProps
 
 export interface DropdownListProps {
   closeDropdown: () => void;
+  isOpen?: boolean;
 }
 
 export interface GetColorParams {

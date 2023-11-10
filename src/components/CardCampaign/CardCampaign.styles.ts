@@ -8,21 +8,13 @@ export const Card = styled.div`
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.palette.primary.contrast};
   border-radius: ${({ theme }) => theme.newBorderRadius.l};
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-`;
-
-export const CardLink = styled.a`
-  display: block;
-  text-align: initial;
-  width: 100%;
-  position: relative;
-  z-index: ${({ theme }) => theme.zIndex.level1};
-  &:hover img {
-    transform: scale(1.015);
-  }
 `;
 
 export const CardContent = styled.div`
@@ -127,6 +119,7 @@ export const PriceBeforeBeauty = styled(PriceBeauty)`
 
   @media (min-width: ${(props) => props.theme.newBreakpoints.phablet}) {
     font-size: ${({ theme }) => theme.typography.fontSize.default};
+  }
 `;
 
 export const PercentageSaving = styled.div<StyledProps>`

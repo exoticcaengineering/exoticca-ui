@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Props } from './Tag.types';
 import { StyledWrapper } from './Tag.styles';
-import { TextCaption } from 'src/components/TypographyVariants';
+import { TextCaption, TextBody1 } from 'src/components/TypographyVariants';
 import { Icon } from 'src/components/Icon';
 
 export const Tag: FC<Props> = ({
@@ -16,11 +16,6 @@ export const Tag: FC<Props> = ({
   startIcon,
   endIcon,
 }) => {
-  const renderText = () => {
-    if (size === 'small') {
-      return <TextCaption align="center">{text}</TextCaption>;
-    }
-  };
   return (
     <StyledWrapper
       size={size}
@@ -34,7 +29,8 @@ export const Tag: FC<Props> = ({
       {startIcon && (
         <Icon size="regular" stroke="currentColor" {...startIcon} />
       )}
-      {renderText()}
+      {size === 'small' && <TextCaption align="center">{text}</TextCaption>}
+      {size === 'medium' && <TextBody1 align="center">{text}</TextBody1>}
       {endIcon && <Icon size="regular" stroke="currentColor" {...endIcon} />}
     </StyledWrapper>
   );

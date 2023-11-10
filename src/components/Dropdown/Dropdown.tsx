@@ -28,9 +28,14 @@ export const Dropdown: FC<Props> = ({
   onClose,
   textColor,
   openBackgroundColor,
+  isDefaultOpen = false,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(isDefaultOpen);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsOpen(isDefaultOpen);
+  }, [isDefaultOpen]);
 
   const closeDropdown = () => {
     if (!isOpen) return;
@@ -112,6 +117,7 @@ export const Dropdown: FC<Props> = ({
         )}
         {dropdownList({
           closeDropdown: closeDropdown,
+          isOpen: isOpen,
         })}
       </StyledDropdownList>
     </StyledDropdownWrapper>
