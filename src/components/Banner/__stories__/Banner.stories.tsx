@@ -1,16 +1,20 @@
-import { ComponentStory, Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Button } from 'src/components/Button';
 import { Banner } from 'src/components/Banner';
 import { Props } from 'src/components/Banner/Banner.types';
 
-export default {
+const meta: Meta<typeof Banner> = {
   title: 'Components/Banner',
   component: Banner,
   args: {
     testId: 'Banner-wrapper',
     height: 500,
   },
-} as Meta<Props>;
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Banner>;
 
 const ContentMock: React.FC = () => {
   return (
@@ -48,24 +52,26 @@ const BannerMock: React.FC = () => {
   );
 };
 
-type Story = StoryObj<Props>;
+const BaseComponent = (props: Props) => {
+  return (
+    <Banner {...props}>
+      <ContentMock />
+    </Banner>
+  );
+};
 
-const Template: ComponentStory<typeof Banner> = ({ ...props }) => {
-  return <Banner {...props} />;
+const TwoColumnBannerComponent = (props: Props) => {
+  return (
+    <Banner {...props}>
+      <BannerMock />
+    </Banner>
+  );
 };
 
 export const Base: Story = {
-  render: (args) => (
-    <Template {...args}>
-      <ContentMock />
-    </Template>
-  ),
+  render: (args) => <BaseComponent {...args} />,
 };
 
 export const TwoColumnBanner: Story = {
-  render: (args) => (
-    <Template {...args} columns={2} rows={1}>
-      <BannerMock />
-    </Template>
-  ),
+  render: (args) => <TwoColumnBannerComponent {...args} />,
 };
