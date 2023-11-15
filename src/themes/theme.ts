@@ -443,9 +443,9 @@ export const palette: Palette = {
     contrast: rebrandPalette.polarNight,
   },
   promotion: {
-    main: rebrandPalette.silentSavana,
-    light: rebrandPalette.silentSavanaLight,
-    medium: rebrandPalette.silentSavanaMedium,
+    main: rebrandPalette.carribeanSunrise,
+    light: rebrandPalette.carribeanSunriseLight,
+    medium: rebrandPalette.carribeanSunriseMedium,
     contrast: rebrandPalette.polarNight,
   },
   background: {
@@ -483,6 +483,12 @@ export const palette: Palette = {
     light: rebrandPalette.polarNightLight,
     medium: rebrandPalette.polarNightMedium,
     contrast: rebrandPalette.arcticWind,
+  },
+  info: {
+    main: rebrandPalette.pacificOcean,
+    light: rebrandPalette.pacificOceanLight,
+    medium: rebrandPalette.pacificOceanMedium,
+    contrast: rebrandPalette.polarNight,
   },
 };
 

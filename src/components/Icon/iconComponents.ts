@@ -111,6 +111,7 @@ import { IconContactUs } from 'src/components/Icon/SVGIcons/IconContactUs';
 import { IconLogoutCircle } from 'src/components/Icon/SVGIcons/IconLogoutCircle';
 import { PlayYoutube } from './SVGIcons/PlayYoutube';
 import { IconAffiliateStar } from 'src/components/Icon/SVGIcons/IconAffiliateStar';
+import { IconDollarSign } from './SVGIcons/IconDollarSign';
 import { IconDownloadCloud } from 'src/components/Icon/SVGIcons/IconDownloadCloud';
 
 export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
@@ -224,5 +225,6 @@ export const iconComponents: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   'logout-circle': IconLogoutCircle,
   'play-video': PlayYoutube,
   'affiliate-star': IconAffiliateStar,
+  dollar: IconDollarSign,
   'download-cloud': IconDownloadCloud,
 };
