@@ -78,6 +78,7 @@ export const iconNames = [
   'winter',
   'wishlist',
   'youtube-box',
+  'dollar',
   // add other svg image here, usually we don't want the icon color to change, like the flag, logos
   'app_store_icon_de',
   'app_store_icon_en',
