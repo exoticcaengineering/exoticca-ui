@@ -22,6 +22,7 @@ export const iconNames = [
   'contact-us',
   'contact',
   'culture',
+  'download-cloud',
   'easter-egg',
   'envelope',
   'exclamation',
