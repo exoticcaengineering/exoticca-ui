@@ -1,13 +1,16 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Typography } from 'src/components/Typography';
 import { LandingBox } from '../LandingBox';
+import { Props } from '../LandingBox.types';
 
-export default {
+const meta: Meta<typeof LandingBox> = {
   title: 'Components/LandingBox',
   component: LandingBox,
-} as ComponentMeta<typeof LandingBox>;
+};
 
-const Template: ComponentStory<typeof LandingBox> = (args) => (
+export default meta;
+
+const Template = (args: Props) => (
   <LandingBox {...args}>
     <Typography>
       Landing Box is a component extends from Box component,with an extra style,
@@ -23,11 +26,15 @@ const Template: ComponentStory<typeof LandingBox> = (args) => (
   </LandingBox>
 );
 
-export const Base = Template.bind({});
+type Story = StoryObj<typeof LandingBox>;
 
-Base.args = {};
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
+};
 
-export const CustomTopLineColor = Template.bind({});
-CustomTopLineColor.args = {
-  topLineColor: 'blue20',
+export const CustomTopLineColor: Story = {
+  args: {
+    topLineColor: 'blue20',
+  },
+  render: (args) => <Template {...args} />,
 };

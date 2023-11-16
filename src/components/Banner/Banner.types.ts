@@ -1,6 +1,6 @@
-import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
+import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 
-export interface Props extends ComponentPropsBase {
+export interface Props extends ComponentPropsBaseWithChildren {
   height?: number;
   columns?: number;
   rows?: number;

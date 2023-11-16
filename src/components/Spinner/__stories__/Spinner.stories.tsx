@@ -3,10 +3,12 @@ import { Spinner } from '../Spinner';
 import { StyledColumnWrapper } from './Story.styles';
 import { TextBody1 } from 'src/components/TypographyVariants';
 
-export default {
+const meta: Meta<typeof Spinner> = {
   title: 'Components/Spinner',
   component: Spinner,
-} as Meta<typeof Spinner>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Spinner>;
 

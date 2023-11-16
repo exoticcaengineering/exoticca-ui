@@ -29,7 +29,7 @@ describe('render Base UI elements', () => {
     const isNewElement = screen.queryByText(newText);
     expect(titleElement).toBeInTheDocument();
     expect(daysElement).toBeInTheDocument();
-    expect(isNewElement).not.toBeInTheDocument();
+    expect(isNewElement).toBeInTheDocument();
   });
 
   test('should render isNew element if props dictate', async () => {

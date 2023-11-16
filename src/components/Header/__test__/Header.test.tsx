@@ -12,9 +12,8 @@ describe('Header', () => {
 
     const header = screen.getByRole('heading');
 
-    expect(header).toHaveStyleRule(
-      'background',
-      themeDefault.palette.promotion.main,
+    expect(header).toHaveStyle(
+      `background:${themeDefault.palette.promotion.main}`,
     );
   });
 

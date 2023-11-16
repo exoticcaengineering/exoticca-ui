@@ -1,27 +1,22 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { FilterInput } from '../FilterInput';
-import { iconNames } from 'src/types/IconNames';
 import { useEffect, useState } from 'react';
 import { Item } from 'src/components/Item';
 import { Typography } from 'src/components/Typography';
 
-export default {
+const meta: Meta<typeof FilterInput> = {
   title: 'Components/FilterInput',
   component: FilterInput,
   argTypes: {
-    icon: {
-      options: [...iconNames, undefined],
-      control: { type: 'select' },
-      category: 'Prop',
-    },
     rounded: {
       options: ['right', 'left', 'both'],
       control: { type: 'select' },
       category: 'Prop',
     },
   },
-} as Meta<typeof FilterInput>;
+};
 
+export default meta;
 type Story = StoryObj<typeof FilterInput>;
 
 const Template = ({ ...args }) => {

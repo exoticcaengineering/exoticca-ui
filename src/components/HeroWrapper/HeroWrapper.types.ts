@@ -1,6 +1,6 @@
-import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
+import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 import * as CSS from 'csstype';
-export interface Props extends ComponentPropsBase {
+export interface Props extends ComponentPropsBaseWithChildren {
   fixedHeight?: number;
   backgroundImg: string;
   backgroundPositionX?: CSS.Property.BackgroundPositionX;
