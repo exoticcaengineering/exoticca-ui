@@ -1,26 +1,19 @@
-import { ChangeEvent, HTMLInputTypeAttribute } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { IconConfig } from '../Icon';
 
 type LabelPosition = 'inside' | 'outside';
 
-export interface Props extends ComponentPropsBase {
+export interface Props
+  extends ComponentPropsBase,
+    React.InputHTMLAttributes<HTMLInputElement> {
   startIcon?: IconConfig;
   endIcon?: IconConfig;
   label: string;
   labelPosition?: LabelPosition;
-  placeholder?: string;
   rounded?: 'none' | 'left' | 'right' | 'both';
   defaultValue?: string;
-  readOnly?: boolean;
-  disabled?: boolean;
-  name?: string;
   errorMessage?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: React.FocusEventHandler<HTMLInputElement>;
-  onFocus?: React.FocusEventHandler<HTMLInputElement>;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
-  type?: HTMLInputTypeAttribute;
   autoComplete?: 'on' | 'off';
 }
 
