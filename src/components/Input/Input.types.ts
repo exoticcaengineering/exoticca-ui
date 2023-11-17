@@ -15,6 +15,7 @@ export interface Props
   errorMessage?: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   autoComplete?: 'on' | 'off';
+  validate?: (value: string) => boolean;
 }
 
 export interface StyleProps

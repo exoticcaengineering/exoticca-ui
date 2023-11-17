@@ -25,6 +25,7 @@ export const Input: FC<Props> = ({
   errorMessage,
   name,
   type = 'text',
+  validate,
   ...inputProps
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -36,6 +37,7 @@ export const Input: FC<Props> = ({
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
+    if (validate && !validate(newValue)) return;
     setValue(newValue);
     onChange?.(e);
   };
