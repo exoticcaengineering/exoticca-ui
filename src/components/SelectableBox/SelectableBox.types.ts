@@ -1,17 +1,19 @@
 import { ColorShade, Palette } from 'src/types';
 import { Props as BoxProps } from 'src/components/Box/Box.types';
 
-export interface Props extends BoxProps {
-  isSelected?: boolean;
+interface HightLightConfig {
   highlightColor?: keyof Palette;
   highlightColorShade?: keyof ColorShade;
   highlightText?: string;
+  highlightTextWrap?: boolean;
+}
+export interface Props extends BoxProps {
+  isSelected?: boolean;
+  highlightConfig?: HightLightConfig;
 }
 
 export interface StyledProps
-  extends Pick<
-    Partial<Props>,
-    'highlightColor' | 'highlightColorShade' | 'isSelected'
-  > {
+  extends Pick<Partial<Props>, 'isSelected'>,
+    Pick<HightLightConfig, 'highlightColor' | 'highlightColorShade'> {
   isClickable?: boolean;
 }
