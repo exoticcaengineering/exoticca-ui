@@ -37,14 +37,18 @@ export const Selected: Story = {
 
 export const HighlightBox: Story = {
   args: {
-    highlightText: 'recommended',
+    highlightConfig: {
+      highlightText: 'recommended',
+    },
   },
   render: (args) => <WithWrapper {...args} />,
 };
 
 export const SelectedHighlightBox: Story = {
   args: {
-    highlightText: 'recommended',
+    highlightConfig: {
+      highlightText: 'recommended',
+    },
     isSelected: true,
   },
   render: (args) => <WithWrapper {...args} />,
