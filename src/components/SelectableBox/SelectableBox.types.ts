@@ -5,7 +5,6 @@ interface HightLightConfig {
   highlightColor?: keyof Palette;
   highlightColorShade?: keyof ColorShade;
   highlightText?: string;
-  highlightTextWrap?: boolean;
 }
 export interface Props extends BoxProps {
   isSelected?: boolean;
