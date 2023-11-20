@@ -37,7 +37,7 @@ export const SelectedIconWrapper = styled.div`
 
 export const StyledRecommendedTag = styled.div<StyledProps>`
   position: absolute;
-  width: 50%;
+  width: 80%;
   min-width: fit-content;
   top: 0;
   left: 50%;
