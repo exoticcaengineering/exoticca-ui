@@ -24,7 +24,7 @@ const SvgExclamation = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M7 1.75v0c2.9 0 5.25 2.35 5.25 5.25v0c0 2.9-2.35 5.25-5.25 5.25v0A5.25 5.25 0 0 1 1.75 7v0C1.75 4.1 4.1 1.75 7 1.75Z"
+      d="M7 1.75c2.9 0 5.25 2.35 5.25 5.25v0c0 2.9-2.35 5.25-5.25 5.25v0A5.25 5.25 0 0 1 1.75 7v0C1.75 4.1 4.1 1.75 7 1.75"
       clipRule="evenodd"
     />
     <path

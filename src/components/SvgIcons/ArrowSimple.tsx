@@ -24,7 +24,7 @@ const SvgArrowSimple = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
-      d="M12.667 8H3.333M8 12.667 3.333 8 8 3.333"
+      d="M12.667 8H3.334M8 12.667 3.334 8 8 3.333"
     />
   </svg>
 );

@@ -27,7 +27,7 @@ const SvgPlayVideo = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="m17.514 14.144 8.098 4.86a1 1 0 0 1 0 1.714l-8.098 4.86A1 1 0 0 1 16 24.718v-9.718a1 1 0 0 1 1.514-.857Z"
+      d="m17.514 14.144 8.098 4.86a1 1 0 0 1 0 1.714l-8.098 4.86A1 1 0 0 1 16 24.718v-9.718a1 1 0 0 1 1.514-.857"
       clipRule="evenodd"
     />
   </svg>

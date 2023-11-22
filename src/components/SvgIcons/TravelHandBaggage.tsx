@@ -24,7 +24,7 @@ const SvgTravelHandBaggage = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={5}
-      d="M92.625 97.5h-68.25a9.747 9.747 0 0 1-9.75-9.75V46.312a9.747 9.747 0 0 1 9.75-9.75h68.25a9.747 9.747 0 0 1 9.75 9.75V87.75a9.747 9.747 0 0 1-9.75 9.75Z"
+      d="M92.625 97.5h-68.25a9.747 9.747 0 0 1-9.75-9.75V46.313a9.747 9.747 0 0 1 9.75-9.75h68.25a9.747 9.747 0 0 1 9.75 9.75V87.75a9.747 9.747 0 0 1-9.75 9.75"
       clipRule="evenodd"
     />
     <path
@@ -32,14 +32,14 @@ const SvgTravelHandBaggage = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={5}
-      d="M76.27 36.563v-7.669a9.747 9.747 0 0 0-9.75-9.75H50.475a9.747 9.747 0 0 0-9.75 9.75v7.669M36.563 36.563V97.5M80.438 63.375V36.562"
+      d="M76.27 36.563v-7.669a9.747 9.747 0 0 0-9.75-9.75H50.475a9.747 9.747 0 0 0-9.75 9.75v7.669M36.563 36.563V97.5M80.438 63.375V36.563"
     />
     <path
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={5}
-      d="M63.375 63.375H87.75V78H63.375V63.375Z"
+      d="M63.375 63.375H87.75V78H63.375z"
       clipRule="evenodd"
     />
     <path

@@ -40,7 +40,7 @@ const SvgHospitalCenter = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M9 14.64h6a1 1 0 0 1 1 1v6H8v-6a1 1 0 0 1 1-1Z"
+      d="M9 14.64h6a1 1 0 0 1 1 1v6H8v-6a1 1 0 0 1 1-1"
       clipRule="evenodd"
     />
     <path

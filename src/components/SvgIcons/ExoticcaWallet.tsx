@@ -31,7 +31,7 @@ const SvgExoticcaWallet = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M18.503 11.5h2.501a1 1 0 0 1 1 1v3.002a1 1 0 0 1-1 1h-2.501a2.501 2.501 0 0 1-2.501-2.501v0a2.501 2.501 0 0 1 2.501-2.501v0Z"
+      d="M18.503 11.5h2.501a1 1 0 0 1 1 1v3.002a1 1 0 0 1-1 1h-2.501a2.501 2.501 0 0 1-2.501-2.501v0a2.501 2.501 0 0 1 2.501-2.501"
       clipRule="evenodd"
     />
     <path

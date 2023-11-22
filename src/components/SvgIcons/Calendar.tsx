@@ -31,7 +31,7 @@ const SvgCalendar = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M21 7.5v8.257a3 3 0 0 1-.879 2.122L17.88 20.12a3 3 0 0 1-2.122.879H6a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3Z"
+      d="M21 7.5v8.257a3 3 0 0 1-.879 2.122L17.88 20.12a3 3 0 0 1-2.122.879H6a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3"
       clipRule="evenodd"
     />
     <path

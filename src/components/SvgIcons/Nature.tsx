@@ -31,7 +31,7 @@ const SvgNature = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="m11.648 7.143-2.69 2.66A.7.7 0 0 0 9.452 11h5.097a.7.7 0 0 0 .492-1.198l-2.689-2.659a.503.503 0 0 0-.703 0v0Z"
+      d="m11.648 7.143-2.69 2.66A.7.7 0 0 0 9.452 11h5.097a.7.7 0 0 0 .492-1.198l-2.689-2.659a.503.503 0 0 0-.703 0v0"
       clipRule="evenodd"
     />
     <path

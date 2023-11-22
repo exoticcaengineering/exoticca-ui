@@ -24,7 +24,7 @@ const SvgMoon = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M17.5 11.158A7.5 7.5 0 1 1 9.342 3a5.833 5.833 0 0 0 8.158 8.158v0Z"
+      d="M17.5 11.158A7.5 7.5 0 1 1 9.342 3a5.833 5.833 0 0 0 8.158 8.158v0"
     />
   </svg>
 );

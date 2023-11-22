@@ -24,7 +24,7 @@ const SvgTree = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M11.293 4.293 8.295 7.29a1 1 0 0 0 .707 1.707h5.996a1 1 0 0 0 .707-1.707l-2.998-2.998a1 1 0 0 0-1.414 0Z"
+      d="M11.293 4.293 8.295 7.29a1 1 0 0 0 .707 1.707h5.996a1 1 0 0 0 .707-1.707l-2.998-2.998a1 1 0 0 0-1.414 0"
       clipRule="evenodd"
     />
     <path

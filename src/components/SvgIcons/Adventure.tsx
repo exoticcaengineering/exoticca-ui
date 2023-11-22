@@ -31,7 +31,7 @@ const SvgAdventure = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M8.435 4.519A1.745 1.745 0 0 1 8.25 8H4.5a1.5 1.5 0 1 1 0-3 1.997 1.997 0 0 1 3.935-.481Z"
+      d="M8.435 4.519A1.745 1.745 0 0 1 8.25 8H4.5a1.5 1.5 0 1 1 0-3 1.997 1.997 0 0 1 3.935-.481"
       clipRule="evenodd"
     />
     <path
