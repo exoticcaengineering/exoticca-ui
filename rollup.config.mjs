@@ -34,7 +34,7 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      svgr({ icon: true }),
+      svgr(),
       dynamicImportVars({ warnOnError: true }),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
