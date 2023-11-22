@@ -27,6 +27,7 @@ export { default as ContactUs } from './ContactUs';
 export { default as Contact } from './Contact';
 export { default as Culture } from './Culture';
 export { default as DocumentText } from './DocumentText';
+export { default as DownloadCloud } from './DownloadCloud';
 export { default as EasterEgg } from './EasterEgg';
 export { default as Envelope } from './Envelope';
 export { default as Exclamation } from './Exclamation';
