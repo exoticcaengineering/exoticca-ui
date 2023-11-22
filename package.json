@@ -10,13 +10,13 @@
   "types": "dist/index.d.ts",
   "license": "ISC",
   "scripts": {
-    "svgr": "svgr --icon --title-prop --typescript -d src/components/SvgIcons assets/svg",
-    "prebuild":"rimraf src/components/SvgIcons",
+    "svgr": "svgr -d src/components/SvgIcons assets/svg",
+    "prebuild": "rimraf src/components/SvgIcons",
     "build": "npm run svgr && rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest --verbose --maxWorkers=80%",
-    "ci": "npm run build",
+    "ci": "npm run prebuild & npm run build" ,
     "test:coverage": "jest --env=jest-environment-jsdom --coverage --silent --maxWorkers=80%"
   },
   "devDependencies": {
