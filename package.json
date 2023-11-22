@@ -10,9 +10,9 @@
   "types": "dist/index.d.ts",
   "license": "ISC",
   "scripts": {
-    "svrg": "svgr --icon --title-prop --typescript -d src/components/SvgIcons assets/svg",
+    "svgr": "svgr --icon --title-prop --typescript -d src/components/SvgIcons assets/svg",
     "prebuild":"rimraf src/components/SvgIcons",
-    "build": "npm run svrg && rollup -c",
+    "build": "npm run svgr && rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest --verbose --maxWorkers=80%",
