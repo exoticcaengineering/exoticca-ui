@@ -4,7 +4,7 @@ import { ProgressBar } from '../ProgressBar';
 
 const { colors } = themeDefault;
 
-export default {
+const meta: Meta<typeof ProgressBar> = {
   title: 'Components/ProgressBar',
   component: ProgressBar,
   argTypes: {
@@ -17,7 +17,9 @@ export default {
       control: { type: 'select' },
     },
   },
-} as Meta<typeof ProgressBar>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof ProgressBar>;
 

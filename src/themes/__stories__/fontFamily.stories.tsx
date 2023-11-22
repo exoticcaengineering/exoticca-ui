@@ -1,4 +1,4 @@
-import { ComponentStory } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { FC } from 'react';
 import { Typography } from 'src/components/Typography';
 import { FontFamily } from 'src/types/theme';
@@ -25,18 +25,18 @@ const TypographyContainer: FC<TypographyContainerProps> = ({ fontFamily }) => {
   );
 };
 
-export default {
+const meta: Meta<typeof TypographyContainer> = {
   title: 'Theme/Typography/FontFamily',
-  component: Typography,
+  component: TypographyContainer,
 };
 
-const Template: ComponentStory<typeof TypographyContainer> = (args) => (
-  <TypographyContainer {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof Box>;
 
 //Theme Default
-export const DefaultThemeFontFamily = Template.bind({});
 
-DefaultThemeFontFamily.args = {
-  fontFamily: defaultThemeFontFamily,
+export const DefaultThemeFontFamily: Story = {
+  render: (args) => (
+    <TypographyContainer {...args} fontFamily={defaultThemeFontFamily} />
+  ),
 };

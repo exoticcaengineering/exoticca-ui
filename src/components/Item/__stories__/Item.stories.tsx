@@ -1,15 +1,15 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Item } from '../Item';
 import { Box } from 'src/components/Box';
 import { ComponentProps } from 'react';
 
-type CustomItemProps = ComponentProps<typeof Item> & { itemText: string };
+type CustomItemProps = ComponentProps<typeof Item>;
 
-export default {
+const meta: Meta<typeof Item> = {
   title: 'Components/Item',
   component: Item,
   args: {
-    itemText: 'Selectable Item',
+    children: 'Selectable Item',
     hover: 'background',
   },
   argTypes: {
@@ -22,19 +22,19 @@ export default {
       control: { type: 'select' },
       category: 'Prop',
     },
-    itemText: {
+    children: {
       table: {
         category: 'Text',
         control: 'text',
       },
     },
   },
-} as Meta<CustomItemProps>;
+};
 
-const Template: Story<CustomItemProps> = ({
-  itemText,
-  ...props
-}: CustomItemProps) => (
+export default meta;
+type Story = StoryObj<typeof Item>;
+
+const Template = ({ children = 'itemText', ...props }: CustomItemProps) => (
   <div
     style={{
       display: 'flex',
@@ -49,22 +49,27 @@ const Template: Story<CustomItemProps> = ({
     >
       <Box boxShadow="s" padding={[1]} borderRadius={'xl'}>
         <Item {...props}>
-          <a>{itemText}</a>
+          <a>{children}</a>
         </Item>
       </Box>
     </div>
   </div>
 );
-export const Base = Template.bind({});
 
-export const withStartIcon = Template.bind({});
-
-withStartIcon.args = {
-  startIcon: { icon: 'arrow' },
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
 };
 
-export const withEndIcon = Template.bind({});
+export const WithStartIcon: Story = {
+  args: {
+    startIcon: { icon: 'arrow' },
+  },
+  render: (args) => <Template {...args} />,
+};
 
-withEndIcon.args = {
-  endIcon: { icon: 'arrow' },
+export const WithEndIcon: Story = {
+  args: {
+    endIcon: { icon: 'arrow' },
+  },
+  render: (args) => <Template {...args} />,
 };

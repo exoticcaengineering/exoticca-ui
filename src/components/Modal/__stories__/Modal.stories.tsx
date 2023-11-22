@@ -1,16 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { forwardRef, useRef } from 'react';
+import { useRef } from 'react';
 import { Modal } from '../Modal';
 import { ModalRef, Props } from '../Modal.types';
 import { TextBody1 } from 'src/components/TypographyVariants';
 import { Button } from 'src/components/Button';
 import { StyledModalHeader, StyledRowWrapper } from './Story.styles';
 
-export default {
+const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
   args: {},
-} as Meta<typeof Modal>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Modal>;
 

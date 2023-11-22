@@ -1,16 +1,19 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 
 import { Typography } from 'src/components/Typography';
 import { FontWeight as FontWeightType } from 'src/types/theme';
 import { fontWeight } from '../theme';
 
-export default {
+const meta: Meta<typeof Typography> = {
   title: 'Theme/Typography/FontWeight',
   component: Typography,
-} as ComponentMeta<typeof Typography>;
+};
 
-export const FontWeight: ComponentStory<typeof Typography> = () => (
+export default meta;
+type Story = StoryObj<typeof Typography>;
+
+const FontWeightComponent = () => (
   <>
     {(Object.keys(fontWeight) as Array<keyof FontWeightType>).map((key) => (
       <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
@@ -22,3 +25,7 @@ export const FontWeight: ComponentStory<typeof Typography> = () => (
     ))}
   </>
 );
+
+export const FontWeight: Story = {
+  render: () => <FontWeightComponent />,
+};

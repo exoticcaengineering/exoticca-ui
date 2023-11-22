@@ -1,19 +1,22 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
 import { BorderRadius as BorderRadiusType } from 'src/types/theme';
 
 import { themeDefault } from '../theme';
-export default {
+const meta: Meta<typeof Box> = {
   title: 'Theme/BorderRadius',
   component: Box,
-} as ComponentMeta<typeof Box>;
+};
+
+export default meta;
+type Story = StoryObj<typeof Box>;
 
 const borderRadiusArray = Object.keys(themeDefault.borderRadius) as Array<
   keyof BorderRadiusType
 >;
 
-export const BorderRadius: ComponentStory<typeof Box> = () => (
+const Base = () => (
   <>
     {borderRadiusArray.map((radius) => (
       <Box
@@ -30,3 +33,7 @@ export const BorderRadius: ComponentStory<typeof Box> = () => (
     ))}
   </>
 );
+
+export const BorderRadius: Story = {
+  render: () => <Base />,
+};

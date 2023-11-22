@@ -1,14 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'src/components/Box';
 
 import { Typography } from 'src/components/Typography';
 import { PrintSize as PrintSizeType } from 'src/types/theme';
 import { printSize } from '../theme';
 
-export default {
-  title: 'Theme/Typography/FontSize',
+const meta: Meta<typeof Typography> = {
+  title: 'Theme/Typography/PrintSize',
   component: Typography,
-} as ComponentMeta<typeof Typography>;
+};
+
+export default meta;
+type Story = StoryObj<typeof Typography>;
 
 const ptStringToPx = (remString: string) => {
   const numberString = remString.replace(/pt/i, '');
@@ -17,7 +20,7 @@ const ptStringToPx = (remString: string) => {
 
 const printSizes = Object.keys(printSize) as Array<keyof PrintSizeType>;
 
-export const PrintSize: ComponentStory<typeof Typography> = () => (
+const PrintSizeComponent = () => (
   <>
     {printSizes.map((key) => (
       <Box boxShadow="s" padding={[2]} gutterBottom={2} key={key}>
@@ -31,3 +34,7 @@ export const PrintSize: ComponentStory<typeof Typography> = () => (
     ))}
   </>
 );
+
+export const PrintSize: Story = {
+  render: () => <PrintSizeComponent />,
+};

@@ -1,33 +1,25 @@
-import {
-  ComponentMeta,
-  ComponentStory,
-  Meta,
-  StoryObj,
-} from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Header } from '../Header';
 import { TextBody2 } from 'src/components/TypographyVariants';
 import { Icon } from 'src/components/Icon';
 import { Props } from '../Header.types';
 
-export default {
+const meta: Meta<typeof Header> = {
   title: 'Components/Header',
   component: Header,
   argTypes: {
     leftComponent: {
       description:
         'Instantiate a component and it will be displayed on the left side.',
-      type: { required: false },
     },
 
     centerComponent: {
       description:
         'Instantiate a component and it will be displayed on the center side.',
-      type: { required: false },
     },
     rightComponent: {
       description:
         'Instantiate a component and it will be displayed on the right side.',
-      type: { required: false },
     },
     background: {
       description:
@@ -38,7 +30,9 @@ export default {
         'Pass the background shade of the background color. By default, it will be displayed in the main shade',
     },
   },
-} as Meta<typeof Header>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Header>;
 

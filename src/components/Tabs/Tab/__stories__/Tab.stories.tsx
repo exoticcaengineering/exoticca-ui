@@ -1,27 +1,29 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Tab } from '../Tab';
 import { Box } from 'src/components/Box';
 import { ComponentProps, useState } from 'react';
 import { Typography } from 'src/components/Typography';
 
-type CustomTabProps = ComponentProps<typeof Tab> & { text: string };
+type CustomTabProps = ComponentProps<typeof Tab>;
 
-export default {
+const meta: Meta<typeof Tab> = {
   title: 'Components/Tabs/Tab',
   component: Tab,
-  args: { text: 'Item 1', isSelected: true },
+  args: { children: 'Item 1', isSelected: true },
   argTypes: {
-    text: {
+    children: {
       control: 'text',
     },
     isSelected: {},
   },
-} as Meta<CustomTabProps>;
+};
 
-const Template: Story<CustomTabProps> = ({ ...props }: CustomTabProps) => {
+export default meta;
+type Story = StoryObj<typeof Tab>;
+
+const Template = ({ children, ...props }: CustomTabProps) => {
   const [isSelected, setIsSelected] = useState(props.isSelected);
 
-  const TABS = { text: props.text, id: '1' };
   return (
     <div
       style={{
@@ -40,11 +42,14 @@ const Template: Story<CustomTabProps> = ({ ...props }: CustomTabProps) => {
             isSelected={isSelected}
             onClick={() => setIsSelected(!isSelected)}
           >
-            <Typography>{TABS.text}</Typography>
+            <Typography>{children}</Typography>
           </Tab>
         </Box>
       </div>
     </div>
   );
 };
-export const Base = Template.bind({});
+
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
+};

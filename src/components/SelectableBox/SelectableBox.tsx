@@ -12,14 +12,18 @@ import { TextBody2 } from '../TypographyVariants';
 export const SelectableBox: FC<Props> = ({
   isSelected,
   children,
-  highlightColor = 'promotion',
-  highlightColorShade = 'main',
-  highlightText,
+  highlightConfig,
   testId = 'selectable-box',
   className,
   as,
   ...boxProps
 }) => {
+  const {
+    highlightColor = 'promotion',
+    highlightColorShade = 'main',
+    highlightText,
+  } = highlightConfig ?? {};
+
   const hasHighlight = !!highlightText;
 
   const getBorderShade = () => {

@@ -21,7 +21,7 @@ const dummyCardData = [
   },
 ];
 
-export default {
+const meta: Meta<typeof YoYoBar> = {
   title: 'Components/YoYoBar',
   component: YoYoBar,
   args: {
@@ -36,12 +36,14 @@ export default {
       desciption: 'Interval between slide changes',
       control: 'number',
     },
-    backgroundColor: {
+    background: {
       options: themeDefault.palette,
       control: { type: 'select' },
     },
   },
-} as Meta<YoYoBarProps>;
+};
+
+export default meta;
 
 type Story = StoryObj<YoYoBarProps>;
 

@@ -2,7 +2,7 @@ import { ComponentStory, Meta, StoryObj } from '@storybook/react';
 import { Alert } from 'src/components/Alert';
 import { Props } from 'src/components/Alert/Alert.types';
 
-export default {
+const meta: Meta<typeof Alert> = {
   title: 'Components/Alert',
   component: Alert,
   args: {
@@ -11,7 +11,9 @@ export default {
     text: 'This is an alert ',
     status: 'info',
   },
-} as Meta<Props>;
+};
+
+export default meta;
 
 type Story = StoryObj<Props>;
 

@@ -1,16 +1,16 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { type Meta, StoryObj } from '@storybook/react';
 import { FC } from 'react';
 import { Typography } from 'src/components/Typography';
 import { HeroWrapper } from '../HeroWrapper';
 
-export default {
+const meta: Meta<typeof HeroWrapper> = {
   title: 'Components/HeroWrapper',
   component: HeroWrapper,
-} as ComponentMeta<typeof HeroWrapper>;
+};
 
-const Template: ComponentStory<typeof HeroWrapper> = (args) => (
-  <HeroWrapper {...args} />
-);
+export default meta;
+
+type Story = StoryObj<typeof HeroWrapper>;
 
 const Content: FC = () => {
   return (
@@ -31,10 +31,10 @@ const Content: FC = () => {
   );
 };
 
-export const Base = Template.bind({});
-
-Base.args = {
-  children: <Content />,
-  backgroundImg:
-    'https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+export const Base: Story = {
+  args: {
+    children: <Content />,
+    backgroundImg:
+      'https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  },
 };

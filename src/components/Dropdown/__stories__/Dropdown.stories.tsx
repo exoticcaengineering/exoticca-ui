@@ -4,7 +4,7 @@ import { Dropdown } from '../Dropdown';
 import { DropdownList } from './DropdownList';
 import { Props } from '../Dropdown.types';
 
-export default {
+const meta: Meta<typeof Dropdown> = {
   title: 'components/Dropdown',
   component: Dropdown,
   argTypes: {
@@ -16,21 +16,14 @@ export default {
     withCloseButton: {
       category: 'Prop',
     },
-    isCloseDropdown: {
-      category: 'Prop',
-    },
-    itemText: {
-      table: {
-        category: 'Text',
-        control: 'text',
-      },
-    },
     size: {
       options: ['small', 'medium'],
       control: { type: 'radio' },
     },
   },
-} as Meta<typeof Dropdown>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Dropdown>;
 
@@ -70,5 +63,12 @@ const Template = (args: Props) => (
 );
 
 export const Default: Story = {
+  render: (args) => <Template {...args} />,
+};
+
+export const DefaultOpen: Story = {
+  args: {
+    isDefaultOpen: true,
+  },
   render: (args) => <Template {...args} />,
 };

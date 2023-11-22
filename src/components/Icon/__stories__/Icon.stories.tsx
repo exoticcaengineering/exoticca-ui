@@ -1,11 +1,12 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Icon } from '../Icon';
 import { StyledIconsWrapper } from './Icon.styles';
 import { iconNames } from 'src/types/IconNames';
 import { Box } from 'src/components/Box';
 import { Typography } from 'src/components/Typography';
+import { Props } from '../Icon.types';
 
-export default {
+const meta: Meta<typeof Icon> = {
   title: 'Components/Icons',
   component: Icon,
   argTypes: {
@@ -19,9 +20,13 @@ export default {
       defaultValue: 0,
     },
   },
-} as ComponentMeta<typeof Icon>;
+};
 
-export const Icons: ComponentStory<typeof Icon> = (args) => {
+export default meta;
+
+type Story = StoryObj<typeof Icon>;
+
+export const AllIcons = (args: Props) => {
   return (
     <StyledIconsWrapper>
       {iconNames.map((iconName) => (
@@ -32,4 +37,8 @@ export const Icons: ComponentStory<typeof Icon> = (args) => {
       ))}
     </StyledIconsWrapper>
   );
+};
+
+export const Icons: Story = {
+  render: (args) => <AllIcons {...args} />,
 };

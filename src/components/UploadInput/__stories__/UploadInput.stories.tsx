@@ -1,20 +1,22 @@
-import { ComponentStory, Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { UploadInput } from '../UploadInput';
 import { useState } from 'react';
 import { uploadInputProps } from '../UploadInput.types';
 
-export default {
+const meta: Meta<typeof UploadInput> = {
   title: 'Components/UploadInput',
   component: UploadInput,
   args: {
     value: [],
     setValue: () => null,
   },
-} as Meta<uploadInputProps>;
+};
 
-type Story = StoryObj<uploadInputProps>;
+export default meta;
 
-const Template: ComponentStory<typeof UploadInput> = ({ ...props }) => {
+type Story = StoryObj<typeof UploadInput>;
+
+const Template = ({ ...props }: uploadInputProps) => {
   const [value, setValue] = useState<File[]>([]);
   const mockedChangeFieldHandler = (field: string, newValue: File[]) => {
     return setValue(newValue);
