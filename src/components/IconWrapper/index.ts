@@ -1,2 +1,2 @@
 export { IconWrapper } from './IconWrapper';
-export { IconSize, IconConfig } from './IconWrapper.types';
+export { IconSize, IconConfig, Props } from './IconWrapper.types';

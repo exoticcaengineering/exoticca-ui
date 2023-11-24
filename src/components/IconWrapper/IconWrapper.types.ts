@@ -1,9 +1,5 @@
 import { ColorShade, Palette } from 'src/types';
-import {
-  ComponentPropsBase,
-  ComponentPropsBaseWithChildren,
-} from 'src/types/ComponentPropsBase';
-import { IconName } from 'src/types/IconNames';
+import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 import * as CSS from 'csstype';
 
 export type IconSize =
@@ -14,7 +10,6 @@ export type IconSize =
   | 'xLarge'; // 50px
 
 export interface IconConfig {
-  icon: IconName;
   size?: IconSize;
   fill?: keyof Palette | 'currentColor';
   fillShade?: keyof ColorShade;

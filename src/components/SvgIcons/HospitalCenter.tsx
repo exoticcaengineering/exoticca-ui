@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -52,4 +53,4 @@ const SvgHospitalCenter = ({
     />
   </svg>
 );
-export default SvgHospitalCenter;
+export default WithIconWrapper(SvgHospitalCenter);

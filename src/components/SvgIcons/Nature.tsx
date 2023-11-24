@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -55,4 +56,4 @@ const SvgNature = ({
     />
   </svg>
 );
-export default SvgNature;
+export default WithIconWrapper(SvgNature);

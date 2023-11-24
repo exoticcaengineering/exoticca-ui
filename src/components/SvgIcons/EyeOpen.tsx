@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -22,4 +23,4 @@ const SvgEyeOpen = ({
     <path d="M21.333 9.28a5.653 5.653 0 1 0 0 11.306 5.653 5.653 0 0 0 0-11.306zm0 2.333a3.32 3.32 0 1 1 .001 6.639 3.32 3.32 0 0 1-.001-6.639" />
   </svg>
 );
-export default SvgEyeOpen;
+export default WithIconWrapper(SvgEyeOpen);

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -26,4 +27,4 @@ const SvgContact = ({
     <path stroke="currentColor" strokeLinecap="round" d="M8.334 11.832v.833" />
   </svg>
 );
-export default SvgContact;
+export default WithIconWrapper(SvgContact);

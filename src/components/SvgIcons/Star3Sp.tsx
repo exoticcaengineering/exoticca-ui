@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -33,4 +34,4 @@ const SvgStar3Sp = ({
     />
   </svg>
 );
-export default SvgStar3Sp;
+export default WithIconWrapper(SvgStar3Sp);

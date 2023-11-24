@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -47,4 +48,4 @@ const SvgEasterEgg = ({
     <circle cx={12.75} cy={17.75} r={0.75} fill="#323232" />
   </svg>
 );
-export default SvgEasterEgg;
+export default WithIconWrapper(SvgEasterEgg);

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -22,4 +23,4 @@ const SvgAlertTriangle = ({
     <path d="M17.698 8.85c.661 0 1.204.485 1.26 1.103l.005.104v6.436c0 .666-.566 1.207-1.264 1.207-.661 0-1.204-.485-1.26-1.103l-.005-.104v-6.436c0-.666.566-1.207 1.264-1.207zM17.706 21.492a1.26 1.26 0 0 1 1.256 1.264c0 .662-.505 1.204-1.147 1.26l-.125.005a1.26 1.26 0 0 1-1.256-1.264c0-.661.505-1.204 1.147-1.26z" />
   </svg>
 );
-export default SvgAlertTriangle;
+export default WithIconWrapper(SvgAlertTriangle);

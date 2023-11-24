@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -21,4 +22,4 @@ const SvgEnvelope = ({
     <path d="M44.898 1.143a2.57 2.57 0 0 1 2.571 2.571v25.714a2.57 2.57 0 0 1-2.571 2.571H3.755a2.57 2.57 0 0 1-2.571-2.571V3.714a2.57 2.57 0 0 1 2.571-2.571h41.143zM18.58 15.803 4.098 30.285h40.437L30.06 15.81l-5.21 4.011a.86.86 0 0 1-1.046 0l-5.223-4.018zM45.753 3.744 31.431 14.759l14.322 14.322zm-42.855 0v25.317L17.209 14.75zm41.195-.887H4.557l19.769 15.204z" />
   </svg>
 );
-export default SvgEnvelope;
+export default WithIconWrapper(SvgEnvelope);

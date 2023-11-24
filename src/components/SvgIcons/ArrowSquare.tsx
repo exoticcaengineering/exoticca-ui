@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -23,4 +24,4 @@ const SvgArrowSquare = ({
     <path stroke="#fff" d="M7.833 12h9.333M12.5 7.333 17.167 12 12.5 16.667" />
   </svg>
 );
-export default SvgArrowSquare;
+export default WithIconWrapper(SvgArrowSquare);

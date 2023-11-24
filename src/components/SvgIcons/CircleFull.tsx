@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -22,4 +23,4 @@ const SvgCircleFull = ({
     <rect width={16} height={16} x={0.5} y={0.501} rx={8} />
   </svg>
 );
-export default SvgCircleFull;
+export default WithIconWrapper(SvgCircleFull);

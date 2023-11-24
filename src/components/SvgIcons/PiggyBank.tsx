@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -25,4 +26,4 @@ const SvgPiggyBank = ({
     </g>
   </svg>
 );
-export default SvgPiggyBank;
+export default WithIconWrapper(SvgPiggyBank);

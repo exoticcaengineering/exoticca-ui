@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -22,4 +23,4 @@ const SvgTag = ({
     <path d="M25.297 8.625a2.389 2.389 0 0 0-1.855 4.392l.299.126a2.395 2.395 0 0 0 3.057-1.475 2.39 2.39 0 0 0-1.182-2.911l-.319-.133z" />
   </svg>
 );
-export default SvgTag;
+export default WithIconWrapper(SvgTag);
