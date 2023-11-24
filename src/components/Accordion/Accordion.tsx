@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from 'react';
-import { Icon } from '../Icon';
 import {
   StyledContent,
   StyledContentInner,
@@ -7,6 +6,7 @@ import {
   StyledHeaderWrapper,
 } from './Accordion.styles';
 import { Props } from './Accordion.types';
+import { Arrow } from '../SvgIcons';
 
 export const Accordion: FC<Props> = ({
   header,
@@ -57,9 +57,7 @@ export const Accordion: FC<Props> = ({
       >
         {header && (
           <StyledHeader data-testid={`${testId}-header`}>
-            {startIcon && (
-              <Icon size="regular" stroke="primary" {...startIcon} />
-            )}
+            {startIcon && startIcon}
             {header}
           </StyledHeader>
         )}
@@ -67,12 +65,7 @@ export const Accordion: FC<Props> = ({
         {hasCustomTrigger ? (
           <CustomTrigger isOpen={isAccordionOpen} onClick={toggleIsOpen} />
         ) : (
-          <Icon
-            size="regular"
-            stroke="primary"
-            rotate={isEnabledAndOpen ? 0 : 180}
-            {...endIcon}
-          />
+          <Arrow />
         )}
       </StyledHeaderWrapper>
 

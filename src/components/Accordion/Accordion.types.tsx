@@ -1,5 +1,4 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconConfig } from '../Icon';
 
 export interface CustomTriggerProps {
   isOpen: boolean;
@@ -20,8 +19,8 @@ export interface Props extends ComponentPropsBase {
   isDisabled?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
-  startIcon?: IconConfig;
-  endIcon?: IconConfig;
+  startIcon?: JSX.Element;
+  endIcon?: JSX.Element;
   CustomTrigger?: (props: CustomTriggerProps) => JSX.Element | null;
   CustomTriggerEnd?: (props: CustomTriggerProps) => JSX.Element | null;
 }
