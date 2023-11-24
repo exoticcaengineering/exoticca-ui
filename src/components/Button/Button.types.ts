@@ -1,6 +1,5 @@
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconConfig } from '../Icon';
 import { Palette, Theme } from 'src/types';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
@@ -16,15 +15,15 @@ export interface Props extends ComponentPropsBase {
   isLoading?: boolean;
   isDisabled?: boolean;
   variant?: ButtonVariant;
-  startIcon?: IconConfig;
-  endIcon?: IconConfig;
+  startIcon?: JSX.Element;
+  endIcon?: JSX.Element;
   onClick?: MouseEventHandler<Element> | undefined;
   fullWidth?: boolean;
 }
 export interface IconButtonProps
   extends ComponentPropsBase,
     Pick<Props, 'color' | 'size' | 'onClick' | 'variant' | 'isDisabled'> {
-  icon: IconConfig;
+  icon: JSX.Element;
 }
 
 export interface StyledProps extends Props {}

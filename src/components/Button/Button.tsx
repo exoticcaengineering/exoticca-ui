@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Props } from './Button.types';
-import { StyledButton, StyledIcon } from './Button.styles';
+import { StyledButton } from './Button.styles';
 import { getIconSize } from './Button.helpers';
 import { Typography } from '../Typography';
 import { Spinner } from '../Spinner/Spinner';
@@ -31,13 +31,13 @@ export const Button: FC<Props> = ({
   const renderStartIcon = () => {
     if (!startIcon) return;
     if (isLoading) return renderLoadingIcon();
-    return <StyledIcon size={iconSize} stroke="currentColor" {...startIcon} />;
+    return startIcon;
   };
 
   const renderEndIcon = () => {
     if (!endIcon) return;
     if (isLoading) return renderLoadingIcon();
-    return <StyledIcon size={iconSize} stroke="currentColor" {...endIcon} />;
+    return endIcon;
   };
 
   const handleOnClick: React.MouseEventHandler = (e) => {

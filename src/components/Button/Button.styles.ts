@@ -14,7 +14,6 @@ import {
   setDisabledBackgroundColor,
   setFocusBackgroundColor,
 } from './Button.helpers';
-import { Icon } from 'src/components/Icon';
 
 const buttonCommonStyle = css<StyledProps>`
   display: flex;
@@ -74,10 +73,6 @@ const rotate360 = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
-
-export const StyledIcon = styled(Icon)`
-  flex-shrink: 0;
 `;
 
 export const Animation = styled.div<{ size: number }>`

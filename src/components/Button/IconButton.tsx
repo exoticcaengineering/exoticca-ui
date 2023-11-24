@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Icon, IconSize } from '../Icon';
 import { StyledIconButtonWrapper } from './Button.styles';
 import { ButtonSize, IconButtonProps } from './Button.types';
+import { IconSize } from '../IconWrapper';
 
 export const IconButton: FC<IconButtonProps> = ({
   icon,
@@ -32,7 +32,7 @@ export const IconButton: FC<IconButtonProps> = ({
       data-testid={props.testId}
       {...props}
     >
-      <Icon {...icon} size={getIconSize(size)} />
+      {icon}
     </StyledIconButtonWrapper>
   );
 };
