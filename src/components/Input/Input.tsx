@@ -66,7 +66,7 @@ export const Input: FC<Props> = ({
         className={className}
         data-testid={testId}
       >
-        {hasStartIcon && startIcon}
+        {startIcon}
         <StyledInputInner>
           {value === '' && labelPosition === 'inside' && (
             <StyledLabel>{label}</StyledLabel>
@@ -81,7 +81,7 @@ export const Input: FC<Props> = ({
             {...inputProps}
           />
         </StyledInputInner>
-        {!!hasEndIcon && endIcon}
+        {endIcon}
       </StyledInputWrapper>
       <StyledErrorMessage>{errorMessage}</StyledErrorMessage>
     </div>
