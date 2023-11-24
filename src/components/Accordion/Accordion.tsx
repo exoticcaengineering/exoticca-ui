@@ -65,7 +65,7 @@ export const Accordion: FC<Props> = ({
         {hasCustomTrigger ? (
           <CustomTrigger isOpen={isAccordionOpen} onClick={toggleIsOpen} />
         ) : (
-          <Arrow />
+          <Arrow rotate={isEnabledAndOpen ? 0 : 180} />
         )}
       </StyledHeaderWrapper>
 

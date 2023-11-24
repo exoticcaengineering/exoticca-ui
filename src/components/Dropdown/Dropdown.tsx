@@ -13,6 +13,7 @@ import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
 import { TextBody1, TextBody2 } from '../TypographyVariants';
+import { Arrow } from '../SvgIcons';
 
 export const Dropdown: FC<Props> = ({
   dropdownList,
@@ -97,11 +98,11 @@ export const Dropdown: FC<Props> = ({
         openBackgroundColor={openBackgroundColor}
       >
         <StyledFirstPart>
-          {startIcon && <StyledIcon {...startIcon} />}
+          {!!startIcon && startIcon}
           <StyledButtonTextWrapper>{renderText()}</StyledButtonTextWrapper>
         </StyledFirstPart>
 
-        <StyledIcon icon="arrow" rotate={isOpen ? 0 : 180} {...endIcon} />
+        <Arrow rotate={isOpen ? 0 : 180} />
       </StyledDropdownButton>
       <StyledDropdownList
         isOpen={isOpen}
