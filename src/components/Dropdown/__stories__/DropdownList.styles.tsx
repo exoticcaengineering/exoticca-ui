@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Icon } from 'src/components/Icon';
 
 type Props = {
   position?: 'left' | 'right';
@@ -22,7 +21,7 @@ export const ParentButton = styled.button`
   height: fit-content;
 `;
 
-export const ChildrenIcon = styled(Icon)`
+export const ChildrenIcon = styled.div`
   margin-right: 0.5rem;
 `;
 

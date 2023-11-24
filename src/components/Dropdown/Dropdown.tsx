@@ -7,13 +7,12 @@ import {
   StyledDropdownList,
   StyledFirstPart,
   StyledButtonTextWrapper,
-  StyledIcon,
 } from './Dropdown.styles';
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
 import { TextBody1, TextBody2 } from '../TypographyVariants';
-import { Arrow } from '../SvgIcons';
+import { Arrow, Close } from '../SvgIcons';
 
 export const Dropdown: FC<Props> = ({
   dropdownList,
@@ -113,7 +112,9 @@ export const Dropdown: FC<Props> = ({
       >
         {withCloseButton && (
           <CloseWrapper position={position} onClick={closeDropdown}>
-            <CloseIcon icon={'close'} />
+            <CloseIcon>
+              <Close />
+            </CloseIcon>
           </CloseWrapper>
         )}
         {dropdownList({

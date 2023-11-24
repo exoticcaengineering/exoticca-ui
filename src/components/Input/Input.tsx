@@ -1,13 +1,13 @@
 import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
 import {
-  StyledEndIcon,
+  StyledEndIconWrapper,
   StyledErrorMessage,
   StyledInput,
   StyledInputInner,
   StyledInputWrapper,
   StyledLabel,
   StyledOutsideLabel,
-  StyledStartIcon,
+  StyledStartIconWrapper,
 } from './Input.styles';
 import { Props } from './Input.types';
 
@@ -66,7 +66,10 @@ export const Input: FC<Props> = ({
         className={className}
         data-testid={testId}
       >
-        {startIcon}
+        {!!startIcon && (
+          <StyledEndIconWrapper>{startIcon}</StyledEndIconWrapper>
+        )}
+
         <StyledInputInner>
           {value === '' && labelPosition === 'inside' && (
             <StyledLabel>{label}</StyledLabel>
@@ -81,7 +84,9 @@ export const Input: FC<Props> = ({
             {...inputProps}
           />
         </StyledInputInner>
-        {endIcon}
+        {!!endIcon && (
+          <StyledStartIconWrapper>{endIcon}</StyledStartIconWrapper>
+        )}
       </StyledInputWrapper>
       <StyledErrorMessage>{errorMessage}</StyledErrorMessage>
     </div>

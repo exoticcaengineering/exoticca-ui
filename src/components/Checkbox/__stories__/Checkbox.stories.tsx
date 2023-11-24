@@ -3,7 +3,7 @@ import { Checkbox } from '../Checkbox';
 import { TextBody1 } from 'src/components/TypographyVariants';
 import { Props } from '../Checkbox.types';
 import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
-import { Icon } from 'src/components/Icon';
+import { Adventure } from 'src/components/SvgIcons';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
@@ -51,7 +51,7 @@ const LabelComponent = () => {
   return (
     <div>
       <StyledRowWrapper>
-        <Icon icon="adventure" />
+        <Adventure />
         <TextBody1>Custom label with an icon component</TextBody1>
       </StyledRowWrapper>
       <TextBody1>Another paragraph</TextBody1>

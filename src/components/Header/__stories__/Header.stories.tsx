@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Header } from '../Header';
 import { TextBody2 } from 'src/components/TypographyVariants';
-import { Icon } from 'src/components/Icon';
 import { Props } from '../Header.types';
+import { Search } from 'src/components/SvgIcons';
 
 const meta: Meta<typeof Header> = {
   title: 'Components/Header',
@@ -44,7 +44,7 @@ const LeftComponent = () => <TextBody2>Left</TextBody2>;
 const CenterComponent = () => <TextBody2 as="span">center</TextBody2>;
 const RightComponent = () => (
   <div>
-    <Icon icon="search" size="regular" stroke="currentColor" />
+    <Search size="regular" stroke="currentColor" />
     <TextBody2 as="span">right</TextBody2>
   </div>
 );

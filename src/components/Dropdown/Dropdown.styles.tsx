@@ -1,4 +1,3 @@
-import { Icon } from '../Icon/Icon';
 import { Box } from '../Box';
 import styled from 'styled-components';
 import { StyledProps } from './Dropdown.types';
@@ -68,7 +67,7 @@ export const StyledDropdownList = styled(Box)<StyledProps>`
   }
 `;
 
-export const CloseIcon = styled(Icon)`
+export const CloseIcon = styled.div`
   cursor: pointer;
 `;
 
@@ -90,8 +89,4 @@ export const StyledFirstPart = styled.div`
 export const StyledButtonTextWrapper = styled.div<StyledProps>`
   position: relative;
   overflow: hidden;
-`;
-
-export const StyledIcon = styled(Icon)`
-  flex-shrink: 0;
 `;
