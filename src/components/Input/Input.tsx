@@ -32,8 +32,8 @@ export const Input: FC<Props> = ({
 
   const [value, setValue] = useState(defaultValue ?? '');
 
-  const hasStartIcon = !!startIcon?.icon;
-  const hasEndIcon = !!endIcon?.icon;
+  const hasStartIcon = !!startIcon;
+  const hasEndIcon = !!endIcon;
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
@@ -66,9 +66,7 @@ export const Input: FC<Props> = ({
         className={className}
         data-testid={testId}
       >
-        {startIcon && (
-          <StyledStartIcon stroke="primary" size={'regular'} {...startIcon} />
-        )}
+        {hasStartIcon && startIcon}
         <StyledInputInner>
           {value === '' && labelPosition === 'inside' && (
             <StyledLabel>{label}</StyledLabel>
@@ -83,9 +81,7 @@ export const Input: FC<Props> = ({
             {...inputProps}
           />
         </StyledInputInner>
-        {endIcon && (
-          <StyledEndIcon stroke="primary" size={'regular'} {...endIcon} />
-        )}
+        {!!hasEndIcon && endIcon}
       </StyledInputWrapper>
       <StyledErrorMessage>{errorMessage}</StyledErrorMessage>
     </div>
