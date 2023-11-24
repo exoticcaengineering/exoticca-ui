@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Props } from './Item.types';
 import { StyledContent, StyledWrapper } from './Item.styles';
-import { Icon } from 'src/components/Icon';
 
 export const Item: FC<Props> = ({
   className,
@@ -28,10 +27,10 @@ export const Item: FC<Props> = ({
       data-testid={testId}
     >
       <StyledContent>
-        {startIcon && <Icon {...startIcon} />}
+        {startIcon}
         {children}
       </StyledContent>
-      {endIcon && <Icon {...endIcon} />}
+      {endIcon}
     </StyledWrapper>
   );
 };

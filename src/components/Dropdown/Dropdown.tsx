@@ -98,7 +98,7 @@ export const Dropdown: FC<Props> = ({
         openBackgroundColor={openBackgroundColor}
       >
         <StyledFirstPart>
-          {!!startIcon && startIcon}
+          {startIcon}
           <StyledButtonTextWrapper>{renderText()}</StyledButtonTextWrapper>
         </StyledFirstPart>
 

@@ -1,6 +1,5 @@
 import { Colors, Theme } from 'src/types';
 import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
-import { IconConfig } from 'src/components/Icon/Icon.types';
 import { SyntheticEvent, MouseEvent } from 'react';
 
 import * as CSS from 'csstype';
@@ -13,8 +12,8 @@ export interface Props extends ComponentPropsBaseWithChildren {
   hover?: 'underlined' | 'background' | 'underlined-bold';
   color?: ItemColor;
   selected?: boolean;
-  startIcon?: IconConfig;
-  endIcon?: IconConfig;
+  startIcon?: JSX.Element;
+  endIcon?: JSX.Element;
   onClick?: (
     event: SyntheticEvent<HTMLLIElement> | MouseEvent<HTMLElement, MouseEvent>,
   ) => void;

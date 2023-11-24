@@ -16,7 +16,7 @@ export const Accordion: FC<Props> = ({
   isOpen = false,
   isDisabled,
   startIcon,
-  endIcon = { icon: 'arrow' },
+  endIcon,
   className,
   testId = 'accordion',
   CustomTrigger,
@@ -57,7 +57,7 @@ export const Accordion: FC<Props> = ({
       >
         {header && (
           <StyledHeader data-testid={`${testId}-header`}>
-            {startIcon && startIcon}
+            {startIcon}
             {header}
           </StyledHeader>
         )}
@@ -65,7 +65,7 @@ export const Accordion: FC<Props> = ({
         {hasCustomTrigger ? (
           <CustomTrigger isOpen={isAccordionOpen} onClick={toggleIsOpen} />
         ) : (
-          <Arrow rotate={isEnabledAndOpen ? 0 : 180} />
+          endIcon || <Arrow rotate={isEnabledAndOpen ? 0 : 180} />
         )}
       </StyledHeaderWrapper>
 
