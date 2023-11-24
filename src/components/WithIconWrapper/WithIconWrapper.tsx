@@ -1,10 +1,7 @@
 import { IconWrapper, Props as IconWrapperProps } from '../IconWrapper';
 import type { SVGProps } from 'react';
+import { SVGRProps } from './WithIconWrapper.types';
 
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 export const WithIconWrapper = (
   Component: (props: SVGProps<SVGSVGElement> & SVGRProps) => JSX.Element,
 ) => {

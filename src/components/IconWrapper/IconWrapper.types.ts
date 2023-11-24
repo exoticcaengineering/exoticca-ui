@@ -23,6 +23,6 @@ export interface IconConfig {
 }
 export interface Props extends ComponentPropsBaseWithChildren, IconConfig {}
 
-export interface StyledProps extends Omit<Props, 'icon' | 'onClick'> {
+export interface StyledProps extends Omit<Props, 'onClick'> {
   isClickable?: boolean;
 }
