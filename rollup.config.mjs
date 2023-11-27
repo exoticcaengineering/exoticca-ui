@@ -8,7 +8,6 @@ import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import filesize from 'rollup-plugin-filesize';
 import svgr from '@svgr/rollup';
-import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 
 export default [
   {
@@ -35,7 +34,6 @@ export default [
       resolve(),
       commonjs(),
       svgr(),
-      dynamicImportVars({ warnOnError: true }),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
       filesize(),

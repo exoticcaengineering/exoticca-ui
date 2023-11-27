@@ -16,14 +16,13 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest --verbose --maxWorkers=80%",
-    "ci": "npm run prebuild & npm run build" ,
+    "ci": "npm run prebuild & npm run build",
     "test:coverage": "jest --env=jest-environment-jsdom --coverage --silent --maxWorkers=80%"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-typescript": "^7.21.5",
     "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-dynamic-import-vars": "^2.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
