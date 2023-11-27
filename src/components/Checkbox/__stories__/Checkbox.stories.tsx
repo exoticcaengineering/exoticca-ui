@@ -3,7 +3,7 @@ import { Checkbox } from '../Checkbox';
 import { TextBody1 } from 'src/components/TypographyVariants';
 import { Props } from '../Checkbox.types';
 import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
-import { AdventureIcon } from 'src/components/SvgIcons';
+import { AdventureIcon } from 'src/components/SvgIcons/Adventure';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',

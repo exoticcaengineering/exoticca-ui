@@ -23,7 +23,7 @@ import { disableScroll } from 'src/utils/disableScroll';
 import { ModalRef, Props } from './Modal.types';
 import { createRandomId } from 'src/utils/createRandomId';
 import { Button, IconButton } from '../Button';
-import { CloseIcon } from '../SvgIcons';
+import { CloseIcon } from '../SvgIcons/Close';
 
 export const Modal = forwardRef<ModalRef, Props>(
   (

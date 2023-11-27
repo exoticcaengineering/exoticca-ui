@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { IconButton } from '../IconButton';
 import { IconButtonProps } from '../Button.types';
 import { StyledRowWrapper } from './Story.styles';
-import { CloseIcon } from 'src/components/SvgIcons';
+import { CloseIcon } from 'src/components/SvgIcons/Close';
 
 const meta: Meta<typeof IconButton> = {
   title: 'Components/IconButton',

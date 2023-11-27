@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Item } from '../Item';
 import { Box } from 'src/components/Box';
 import { ComponentProps } from 'react';
-import { ArrowIcon } from 'src/components/SvgIcons';
+import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
 
 type CustomItemProps = ComponentProps<typeof Item>;
 

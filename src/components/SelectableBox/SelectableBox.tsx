@@ -7,7 +7,7 @@ import {
   StyledWrapper,
 } from './SelectableBox.styles';
 import { TextBody2 } from '../TypographyVariants';
-import { CheckIcon } from '../SvgIcons';
+import { CheckIcon } from '../SvgIcons/Check';
 
 export const SelectableBox: FC<Props> = ({
   isSelected,
