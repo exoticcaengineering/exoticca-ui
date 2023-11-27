@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgEyeOpenIcon = WithIconWrapper(
+export const EyeOpenIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ export const SvgEyeOpenIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgEyeOpenIcon;
+export default EyeOpenIcon;

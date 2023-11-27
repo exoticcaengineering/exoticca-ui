@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgClockFastIcon = WithIconWrapper(
+export const ClockFastIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -34,4 +34,4 @@ export const SvgClockFastIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgClockFastIcon;
+export default ClockFastIcon;

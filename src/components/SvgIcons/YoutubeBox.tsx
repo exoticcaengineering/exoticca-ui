@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgYoutubeBoxIcon = WithIconWrapper(
+export const YoutubeBoxIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,4 +29,4 @@ export const SvgYoutubeBoxIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgYoutubeBoxIcon;
+export default YoutubeBoxIcon;

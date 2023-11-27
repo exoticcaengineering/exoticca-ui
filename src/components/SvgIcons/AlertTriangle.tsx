@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgAlertTriangleIcon = WithIconWrapper(
+export const AlertTriangleIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ export const SvgAlertTriangleIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgAlertTriangleIcon;
+export default AlertTriangleIcon;

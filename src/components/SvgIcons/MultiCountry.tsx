@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgMultiCountryIcon = WithIconWrapper(
+export const MultiCountryIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -41,4 +41,4 @@ export const SvgMultiCountryIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgMultiCountryIcon;
+export default MultiCountryIcon;

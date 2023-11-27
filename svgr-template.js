@@ -2,7 +2,8 @@ const defaultTemplate = (
   { imports, interfaces, componentName, props, jsx },
   { tpl },
 ) => {
-  const componentExportedName = `${componentName}Icon`;
+  const formattedName = componentName.replace(/^Svg/, '');
+  const componentExportedName = `${formattedName}Icon`;
   return tpl`
 ${imports};
 import { WithIconWrapper } from 'src/components/WithIconWrapper';

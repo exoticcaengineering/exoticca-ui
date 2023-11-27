@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgStar4SpIcon = WithIconWrapper(
+export const Star4SpIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -32,4 +32,4 @@ export const SvgStar4SpIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgStar4SpIcon;
+export default Star4SpIcon;

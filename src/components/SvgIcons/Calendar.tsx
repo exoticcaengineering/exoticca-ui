@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgCalendarIcon = WithIconWrapper(
+export const CalendarIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -42,4 +42,4 @@ export const SvgCalendarIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgCalendarIcon;
+export default CalendarIcon;

@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgPhoneCallIcon = WithIconWrapper(
+export const PhoneCallIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,4 +28,4 @@ export const SvgPhoneCallIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgPhoneCallIcon;
+export default PhoneCallIcon;

@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgAppStoreIconEsIcon = WithIconWrapper(
+export const AppStoreIconEsIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,4 +25,4 @@ export const SvgAppStoreIconEsIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgAppStoreIconEsIcon;
+export default AppStoreIconEsIcon;

@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgDownloadCloudIcon = WithIconWrapper(
+export const DownloadCloudIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,4 +24,4 @@ export const SvgDownloadCloudIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgDownloadCloudIcon;
+export default DownloadCloudIcon;

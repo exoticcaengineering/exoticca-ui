@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgArrowDownCircleIcon = WithIconWrapper(
+export const ArrowDownCircleIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,4 +29,4 @@ export const SvgArrowDownCircleIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgArrowDownCircleIcon;
+export default ArrowDownCircleIcon;

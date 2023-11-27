@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgLogoTicoIcon = WithIconWrapper(
+export const LogoTicoIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -357,4 +357,4 @@ export const SvgLogoTicoIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgLogoTicoIcon;
+export default LogoTicoIcon;

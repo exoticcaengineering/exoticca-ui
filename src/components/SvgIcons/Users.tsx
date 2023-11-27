@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgUsersIcon = WithIconWrapper(
+export const UsersIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +20,4 @@ export const SvgUsersIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgUsersIcon;
+export default UsersIcon;

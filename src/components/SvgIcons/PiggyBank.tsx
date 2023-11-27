@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgPiggyBankIcon = WithIconWrapper(
+export const PiggyBankIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,4 +24,4 @@ export const SvgPiggyBankIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgPiggyBankIcon;
+export default PiggyBankIcon;

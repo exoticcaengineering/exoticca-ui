@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgSafariIcon = WithIconWrapper(
+export const SafariIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -60,4 +60,4 @@ export const SvgSafariIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgSafariIcon;
+export default SafariIcon;

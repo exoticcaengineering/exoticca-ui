@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const SvgPlayVideoIcon = WithIconWrapper(
+export const PlayVideoIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -31,4 +31,4 @@ export const SvgPlayVideoIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default SvgPlayVideoIcon;
+export default PlayVideoIcon;
