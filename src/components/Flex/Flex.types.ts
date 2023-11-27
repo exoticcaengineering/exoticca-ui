@@ -5,8 +5,12 @@ export interface Props extends BoxProps {
   direction?: CSS.Property.FlexDirection;
   alignItems?: CSS.Property.AlignItems;
   justifyContent?: CSS.Property.JustifyContent;
+  flexWrap?: CSS.Property.FlexWrap;
   gap?: number;
 }
 
 export interface StyledProps
-  extends Pick<Props, 'direction' | 'alignItems' | 'justifyContent' | 'gap'> {}
+  extends Pick<
+    Props,
+    'direction' | 'alignItems' | 'justifyContent' | 'gap' | 'flexWrap'
+  > {}
