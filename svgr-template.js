@@ -2,17 +2,20 @@ const defaultTemplate = (
   { imports, interfaces, componentName, props, jsx },
   { tpl },
 ) => {
+  const componentExportedName = `${componentName}Icon`;
   return tpl`
 ${imports};
 import { WithIconWrapper } from 'src/components/WithIconWrapper';
 
 ${interfaces};
 
-const ${componentName} = (${props}) => (
+export const ${componentExportedName} = WithIconWrapper((${props}) => (
   ${jsx}
-);
+));
  
-export default WithIconWrapper(${componentName});
+export default ${componentExportedName};
+
+
 `;
 };
 
