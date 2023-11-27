@@ -3,6 +3,7 @@ import { menuItems } from './mockData';
 import { Dropdown } from '../Dropdown';
 import { DropdownList } from './DropdownList';
 import { Props } from '../Dropdown.types';
+import { FlagUkIcon } from 'src/components/SvgIcons';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'components/Dropdown',
@@ -48,7 +49,7 @@ const Template = (args: Props) => (
         text="dropdown button"
         textColor="secondary"
         {...args}
-        startIcon={{ icon: 'flag-uk' }}
+        startIcon={<FlagUkIcon />}
         dropdownList={(props) => (
           <DropdownList
             {...props}

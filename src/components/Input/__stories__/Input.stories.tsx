@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Input } from '../Input';
 import { Props } from '../Input.types';
+import { ContactIcon, UserIcon } from 'src/components/SvgIcons';
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
@@ -62,18 +63,14 @@ export const RightRounded: Story = {
 
 export const WithStartIcon: Story = {
   args: {
-    startIcon: {
-      icon: 'user',
-    },
+    startIcon: <UserIcon />,
   },
   render: (args) => <Template {...args} />,
 };
 
 export const WithEndIcon: Story = {
   args: {
-    endIcon: {
-      icon: 'contact',
-    },
+    endIcon: <ContactIcon />,
   },
   render: (args) => <Template {...args} />,
 };

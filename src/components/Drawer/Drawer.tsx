@@ -11,6 +11,7 @@ import {
 } from './Drawer.styles';
 import { Props, DrawerRef } from './Drawer.types';
 import { IconButton } from 'src/components/Button';
+import { CloseIcon } from 'src/components/SvgIcons';
 
 export const Drawer = forwardRef<DrawerRef, Props>(
   (
@@ -57,7 +58,7 @@ export const Drawer = forwardRef<DrawerRef, Props>(
             <>
               <StyledIconWrapper>
                 <IconButton
-                  icon={{ icon: 'close' }}
+                  icon={<CloseIcon />}
                   color="primary"
                   size="medium"
                   onClick={handleClose}
