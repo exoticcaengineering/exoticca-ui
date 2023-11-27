@@ -50,4 +50,44 @@ export default [
       }),
     ],
   },
+  {
+    external: ['react-dom'],
+    input: 'src/components/SvgIcons/index.ts',
+    output: [
+      {
+        file: 'dist/cjs/icons/index.js',
+        format: 'cjs',
+        sourcemap: true,
+        interop: 'auto',
+        inlineDynamicImports: true,
+      },
+      {
+        file: 'dist/esm/icons/index.js',
+        format: 'esm',
+        sourcemap: true,
+        interop: 'esModule',
+        inlineDynamicImports: true,
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      svgr(),
+      typescript({ tsconfig: './tsconfig.json' }),
+      terser(),
+      filesize(),
+    ],
+  },
+  {
+    input: 'dist/esm/types/components/SvgIcons/index.d.ts',
+    output: [{ file: 'dist/icons/index.d.ts', format: 'esm' }],
+    plugins: [
+      dts({
+        compilerOptions: {
+          baseUrl: '.',
+        },
+      }),
+    ],
+  },
 ];

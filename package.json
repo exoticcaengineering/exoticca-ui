@@ -1,6 +1,6 @@
 {
   "name": "@exoticcaengineering/exoticca-ui",
-  "version": "0.4.5-beta.2",
+  "version": "0.4.5-beta.3",
   "author": "exoticcaengineering",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,7 +17,8 @@
     "build-storybook": "storybook build",
     "test": "jest --verbose --maxWorkers=80%",
     "ci": "npm run prebuild & npm run build",
-    "test:coverage": "jest --env=jest-environment-jsdom --coverage --silent --maxWorkers=80%"
+    "test:coverage": "jest --env=jest-environment-jsdom --coverage --silent --maxWorkers=80%",
+    "rollup": "rollup -c"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
