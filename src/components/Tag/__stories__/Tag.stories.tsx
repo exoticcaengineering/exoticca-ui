@@ -2,6 +2,10 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Tag } from '../Tag';
 import { Props } from '../Tag.types';
 import { StyledRowWrapper } from './Story.styles';
+import {
+  TravelHandBaggageIcon,
+  TravelNoBaggageIcon,
+} from 'src/components/SvgIcons';
 
 const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
@@ -46,13 +50,13 @@ const WithIconStory = (props: Props) => {
         {...props}
         text="With start icon"
         variant="primary"
-        startIcon={{ icon: 'travel-baggage' }}
+        startIcon={<TravelNoBaggageIcon />}
       />
       <Tag
         {...props}
         text="With end icon"
         variant="secondary"
-        endIcon={{ icon: 'travel-hand-baggage' }}
+        endIcon={<TravelHandBaggageIcon />}
       />
     </StyledRowWrapper>
   );

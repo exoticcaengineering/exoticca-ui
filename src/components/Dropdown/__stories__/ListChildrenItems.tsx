@@ -2,7 +2,7 @@ import { Item } from 'src/components/Item/Item';
 
 import { ChildrenIcon, Container, Title } from './DropdownList.styles';
 import { ListChildrenItemsProps } from './Story.types';
-import { Arrow } from 'src/components/SvgIcons';
+import { ArrowIcon } from 'src/components/SvgIcons';
 
 export const ListChildrenItems = ({
   isSelected,
@@ -22,7 +22,7 @@ export const ListChildrenItems = ({
             <Item key={subItem.name} hover="underlined">
               <a href={subItem.slug} style={{ whiteSpace: 'nowrap' }}>
                 <ChildrenIcon>
-                  <Arrow />
+                  <ArrowIcon />
                 </ChildrenIcon>
                 {subItem.name}
               </a>

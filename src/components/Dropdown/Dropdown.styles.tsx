@@ -67,7 +67,7 @@ export const StyledDropdownList = styled(Box)<StyledProps>`
   }
 `;
 
-export const CloseIcon = styled.div`
+export const CloseIconWrapper = styled.div`
   cursor: pointer;
 `;
 

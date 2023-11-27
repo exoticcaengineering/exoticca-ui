@@ -1,7 +1,7 @@
 import { StyledSpinnerWrapper } from './Spinner.styles';
 import { FC } from 'react';
 import { Props } from './Spinner.types';
-import { Loader } from '../SvgIcons';
+import { LoaderIcon } from '../SvgIcons';
 
 export const Spinner: FC<Props> = ({
   size = 'regular',
@@ -11,7 +11,7 @@ export const Spinner: FC<Props> = ({
 }) => {
   return (
     <StyledSpinnerWrapper data-testid={testId} className={className}>
-      <Loader size={size} stroke={color} />
+      <LoaderIcon size={size} stroke={color} />
     </StyledSpinnerWrapper>
   );
 };

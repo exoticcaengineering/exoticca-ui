@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import {
   StyledDropdownButton,
-  CloseIcon,
+  CloseIconWrapper,
   CloseWrapper,
   StyledDropdownWrapper,
   StyledDropdownList,
@@ -12,7 +12,7 @@ import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
 import { TextBody1, TextBody2 } from '../TypographyVariants';
-import { Arrow, Close } from '../SvgIcons';
+import { ArrowIcon, CloseIcon } from 'src/components/SvgIcons';
 
 export const Dropdown: FC<Props> = ({
   dropdownList,
@@ -101,7 +101,7 @@ export const Dropdown: FC<Props> = ({
           <StyledButtonTextWrapper>{renderText()}</StyledButtonTextWrapper>
         </StyledFirstPart>
 
-        <Arrow rotate={isOpen ? 0 : 180} />
+        <ArrowIcon rotate={isOpen ? 0 : 180} />
       </StyledDropdownButton>
       <StyledDropdownList
         isOpen={isOpen}
@@ -112,9 +112,9 @@ export const Dropdown: FC<Props> = ({
       >
         {withCloseButton && (
           <CloseWrapper position={position} onClick={closeDropdown}>
-            <CloseIcon>
-              <Close />
-            </CloseIcon>
+            <CloseIconWrapper>
+              <CloseIcon />
+            </CloseIconWrapper>
           </CloseWrapper>
         )}
         {dropdownList({

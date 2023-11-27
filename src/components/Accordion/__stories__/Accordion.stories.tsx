@@ -4,6 +4,7 @@ import { Typography } from 'src/components/Typography';
 import { Wrapper } from './Story.styles';
 import { CustomTriggerProps } from '../Accordion.types';
 import { Button } from 'src/components/Button';
+import { ArrowDownCircleIcon, CalendarIcon } from 'src/components/SvgIcons';
 
 /**
  * ## Accordion is a component that can be used to hide and show content.
@@ -69,7 +70,7 @@ export const Disabled: Story = {
  */
 export const WithStartIcon: Story = {
   args: {
-    startIcon: { icon: 'calendar' },
+    startIcon: <CalendarIcon />,
   },
   render: (args) => <Accordion {...args} />,
 };
@@ -79,7 +80,7 @@ export const WithStartIcon: Story = {
  */
 export const WithEndIcon: Story = {
   args: {
-    endIcon: { icon: 'arrow-down-circle' },
+    endIcon: <ArrowDownCircleIcon />,
   },
   render: (args) => <Accordion {...args} />,
 };

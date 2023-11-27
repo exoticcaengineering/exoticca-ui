@@ -6,7 +6,7 @@ import {
   StyledHeaderWrapper,
 } from './Accordion.styles';
 import { Props } from './Accordion.types';
-import { Arrow } from '../SvgIcons';
+import { ArrowIcon } from '../SvgIcons';
 
 export const Accordion: FC<Props> = ({
   header,
@@ -65,7 +65,7 @@ export const Accordion: FC<Props> = ({
         {hasCustomTrigger ? (
           <CustomTrigger isOpen={isAccordionOpen} onClick={toggleIsOpen} />
         ) : (
-          endIcon || <Arrow rotate={isEnabledAndOpen ? 0 : 180} />
+          endIcon || <ArrowIcon rotate={isEnabledAndOpen ? 0 : 180} />
         )}
       </StyledHeaderWrapper>
 

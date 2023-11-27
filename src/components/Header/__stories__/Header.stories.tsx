@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Header } from '../Header';
 import { TextBody2 } from 'src/components/TypographyVariants';
 import { Props } from '../Header.types';
-import { Search } from 'src/components/SvgIcons';
+import { SearchIcon } from 'src/components/SvgIcons';
 
 const meta: Meta<typeof Header> = {
   title: 'Components/Header',
@@ -44,7 +44,7 @@ const LeftComponent = () => <TextBody2>Left</TextBody2>;
 const CenterComponent = () => <TextBody2 as="span">center</TextBody2>;
 const RightComponent = () => (
   <div>
-    <Search size="regular" stroke="currentColor" />
+    <SearchIcon size="regular" stroke="currentColor" />
     <TextBody2 as="span">right</TextBody2>
   </div>
 );
