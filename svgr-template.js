@@ -1,6 +1,5 @@
-const Wrapper = (component) => component;
 const defaultTemplate = (
-  { imports, interfaces, componentName, props, jsx, exports },
+  { imports, interfaces, componentName, props, jsx },
   { tpl },
 ) => {
   return tpl`
