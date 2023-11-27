@@ -1,8 +1,7 @@
-const template = require('./svgr-template')
-
 module.exports = {
     icon: true,
     titleProp:true,
     typescript: true,
-    template: template
+    template: require('./svgr-template'),
+    indexTemplate:require('./svgr-index-template')
   }
