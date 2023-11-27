@@ -1,6 +1,6 @@
 {
   "name": "@exoticcaengineering/exoticca-ui",
-  "version": "0.4.5-beta.0",
+  "version": "0.4.5-beta.1",
   "author": "exoticcaengineering",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "scripts": {
     "svgr": "svgr -d src/components/SvgIcons assets/svg",
-    "prebuild": "rimraf src/components/SvgIcons",
+    "prebuild": "rimraf src/components/SvgIcons/*.tsx",
     "build": "npm run svgr && rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
