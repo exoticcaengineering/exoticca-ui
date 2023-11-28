@@ -4,7 +4,7 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 
 import mainPackageJson from './package.json' assert { type: 'json' };
-import iconsPackageJson from './package.json' assert { type: 'json' };
+import iconsPackageJson from './icons/package.json' assert { type: 'json' };
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import filesize from 'rollup-plugin-filesize';
