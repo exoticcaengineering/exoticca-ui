@@ -1,10 +1,10 @@
 export { default as AdventureIcon } from './Adventure';
 export { default as AffiliateStarIcon } from './AffiliateStar';
 export { default as AlertTriangleIcon } from './AlertTriangle';
-export { default as AppStoreIconDeIcon } from './AppStoreIconDe';
-export { default as AppStoreIconEnIcon } from './AppStoreIconEn';
-export { default as AppStoreIconEsIcon } from './AppStoreIconEs';
-export { default as AppStoreIconFrIcon } from './AppStoreIconFr';
+export { default as AppStoreDeIcon } from './AppStoreDe';
+export { default as AppStoreEnIcon } from './AppStoreEn';
+export { default as AppStoreEsIcon } from './AppStoreEs';
+export { default as AppStoreFrIcon } from './AppStoreFr';
 export { default as ArrowCircleLoginIcon } from './ArrowCircleLogin';
 export { default as ArrowDownCircleIcon } from './ArrowDownCircle';
 export { default as ArrowSimpleIcon } from './ArrowSimple';
