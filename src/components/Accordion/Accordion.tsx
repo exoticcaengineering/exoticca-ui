@@ -6,7 +6,7 @@ import {
   StyledHeaderWrapper,
 } from './Accordion.styles';
 import { Props } from './Accordion.types';
-import { ArrowIcon } from 'icons/SvgIcons/Arrow';
+import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
 
 export const Accordion: FC<Props> = ({
   header,

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
 import { Props } from '../Button.types';
 import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
-import { CalendarIcon } from 'icons/SvgIcons/Calendar';
+import { CalendarIcon } from 'src/components/SvgIcons/Calendar';
 
 /**
  *  ## Button can have variations, sizes, shapes, icons, states.

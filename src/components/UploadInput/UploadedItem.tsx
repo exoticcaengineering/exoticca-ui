@@ -1,6 +1,6 @@
 import { ProgressBar } from '../ProgressBar';
-import { DocumentTextIcon } from 'icons/SvgIcons/DocumentText';
-import { TrashIcon } from 'icons/SvgIcons/Trash';
+import { DocumentTextIcon } from 'src/components/SvgIcons/DocumentText';
+import { TrashIcon } from 'src/components/SvgIcons/Trash';
 import { TextBody3 } from '../TypographyVariants';
 import {
   StyledListItem,

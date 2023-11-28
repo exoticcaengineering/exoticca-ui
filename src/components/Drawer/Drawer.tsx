@@ -11,7 +11,7 @@ import {
 } from './Drawer.styles';
 import { Props, DrawerRef } from './Drawer.types';
 import { IconButton } from 'src/components/Button';
-import { CloseIcon } from 'icons/SvgIcons/Close';
+import { CloseIcon } from 'src/components/SvgIcons/Close';
 
 export const Drawer = forwardRef<DrawerRef, Props>(
   (

@@ -2,7 +2,7 @@ import { Item } from 'src/components/Item/Item';
 
 import { ChildrenIcon, Container, Title } from './DropdownList.styles';
 import { ListChildrenItemsProps } from './Story.types';
-import { ArrowIcon } from 'icons/SvgIcons/Arrow';
+import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
 
 export const ListChildrenItems = ({
   isSelected,

@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Input } from '../Input';
 import { Props } from '../Input.types';
-import { ContactIcon } from 'icons/SvgIcons/Contact';
-import { UserIcon } from 'icons/SvgIcons/User';
+import { ContactIcon } from 'src/components/SvgIcons/Contact';
+import { UserIcon } from 'src/components/SvgIcons/User';
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',

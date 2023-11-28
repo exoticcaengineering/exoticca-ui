@@ -6,7 +6,7 @@ const defaultTemplate = (
   const componentExportedName = `${formattedName}Icon`;
   return tpl`
 ${imports};
-import { WithIconWrapper } from 'icons/WithIconWrapper';
+import { WithIconWrapper } from 'src/components/WithIconWrapper';
 
 ${interfaces};
 

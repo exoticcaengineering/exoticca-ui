@@ -1,6 +1,0 @@
-{
-    "name": "@exoticcaengineering/exoticca-ui/icons",
-    "main": "../dist/cjs/icons/index.js",
-    "module": "../dist/esm/icons/index.js",
-    "types": "../dist/icons/index.d.ts"
-  }

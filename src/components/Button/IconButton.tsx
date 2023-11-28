@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { StyledIconButtonWrapper } from './Button.styles';
 import { ButtonSize, IconButtonProps } from './Button.types';
-import { IconSize } from 'icons/IconWrapper';
+import { IconSize } from 'src/components/IconWrapper';
 
 export const IconButton: FC<IconButtonProps> = ({
   icon,

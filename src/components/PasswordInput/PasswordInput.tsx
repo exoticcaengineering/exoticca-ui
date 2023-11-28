@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import { Input } from '../Input';
 import { Props } from './PasswordInput.types';
-import { EyeClosedIcon } from 'icons/SvgIcons/EyeClosed';
-import { EyeOpenIcon } from 'icons/SvgIcons/EyeOpen';
+import { EyeClosedIcon } from 'src/components/SvgIcons/EyeClosed';
+import { EyeOpenIcon } from 'src/components/SvgIcons/EyeOpen';
 
 export const PasswordInput: FC<Props> = ({
   defaultShowPassword,
