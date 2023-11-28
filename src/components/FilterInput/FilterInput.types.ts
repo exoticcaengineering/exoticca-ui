@@ -1,5 +1,4 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconName } from 'src/types/IconNames';
 import { InputProps } from '../Input';
 
 export interface InputListProps {
@@ -11,7 +10,7 @@ export interface Props extends InputProps, ComponentPropsBase {
 }
 
 export interface StyleProps {
-  icon?: IconName;
+  icon?: JSX.Element;
   label?: string;
   placeholder?: string;
   rounded?: 'left' | 'right' | 'both';
