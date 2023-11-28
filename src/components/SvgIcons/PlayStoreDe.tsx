@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const PlayStoreIconDeIcon = WithIconWrapper(
+export const PlayStoreDeIcon = WithIconWrapper(
   ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -47,4 +47,4 @@ export const PlayStoreIconDeIcon = WithIconWrapper(
     </svg>
   ),
 );
-export default PlayStoreIconDeIcon;
+export default PlayStoreDeIcon;

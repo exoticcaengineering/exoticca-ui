@@ -12,7 +12,7 @@
   "license": "ISC",
   "scripts": {
     "svgr": "svgr -d src/components/SvgIcons assets/svg",
-    "prebuild": "rimraf components/SvgIcons/*.tsx",
+    "prebuild": "rimraf src/components/SvgIcons/*.tsx",
     "build": "npm run svgr && rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
