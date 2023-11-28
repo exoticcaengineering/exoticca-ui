@@ -16,7 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
     "allowJs": true,
-    "types": ["@testing-library/jest-dom"]
+    "types": ["@testing-library/jest-dom"],
   },
-  "include": ["src", "icons", "custom.d.ts"]
+  "include": ["src", "icons", "custom.d.ts"],
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
-import { WithIconWrapper } from 'icons/WithIconWrapper';
+import { WithIconWrapper } from '../WithIconWrapper';
 interface SVGRProps {
   title?: string;
   titleId?: string;
