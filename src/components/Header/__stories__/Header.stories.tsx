@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Header } from '../Header';
 import { TextBody2 } from 'src/components/TypographyVariants';
 import { Props } from '../Header.types';
-import { SearchIcon } from 'src/components/SvgIcons/Search';
+import { SearchIcon } from 'icons/SvgIcons/Search';
 
 const meta: Meta<typeof Header> = {
   title: 'Components/Header',

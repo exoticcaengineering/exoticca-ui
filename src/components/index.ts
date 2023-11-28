@@ -25,4 +25,3 @@ export * from './YoYoBar';
 export * from './CardCampaign';
 export * from './Flex';
 export * from './Banner';
-export { IconProps } from './WithIconWrapper';

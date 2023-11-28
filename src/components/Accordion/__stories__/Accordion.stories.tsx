@@ -4,8 +4,8 @@ import { Typography } from 'src/components/Typography';
 import { Wrapper } from './Story.styles';
 import { CustomTriggerProps } from '../Accordion.types';
 import { Button } from 'src/components/Button';
-import { ArrowDownCircleIcon } from 'src/components/SvgIcons/ArrowDownCircle';
-import { CalendarIcon } from 'src/components/SvgIcons/Calendar';
+import { ArrowDownCircleIcon } from 'icons/SvgIcons/ArrowDownCircle';
+import { CalendarIcon } from 'icons/SvgIcons/Calendar';
 
 /**
  * ## Accordion is a component that can be used to hide and show content.

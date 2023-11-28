@@ -1,6 +1,6 @@
 import { Palette } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconSize } from '../IconWrapper';
+import { IconSize } from 'icons/IconWrapper';
 
 type SpinnerSize = Extract<IconSize, 'regular' | 'medium' | 'large'>;
 

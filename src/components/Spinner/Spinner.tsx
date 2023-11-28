@@ -1,7 +1,7 @@
 import { StyledSpinnerWrapper } from './Spinner.styles';
 import { FC } from 'react';
 import { Props } from './Spinner.types';
-import { LoaderIcon } from '../SvgIcons/Loader';
+import { LoaderIcon } from 'icons/SvgIcons/Loader';
 
 export const Spinner: FC<Props> = ({
   size = 'regular',

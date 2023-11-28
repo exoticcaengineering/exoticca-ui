@@ -40,7 +40,7 @@ export default [
     ],
   },
   {
-    input: 'dist/esm/types/index.d.ts',
+    input: 'dist/esm/types/src/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [
       dts({
@@ -52,7 +52,7 @@ export default [
   },
   {
     external: ['react-dom'],
-    input: 'src/components/SvgIcons/index.ts',
+    input: 'icons/SvgIcons/index.ts',
     output: [
       {
         file: 'dist/cjs/icons/index.js',
@@ -80,7 +80,7 @@ export default [
     ],
   },
   {
-    input: 'dist/esm/types/components/SvgIcons/index.d.ts',
+    input: 'dist/esm/types/icons/index.d.ts',
     output: [{ file: 'dist/icons/index.d.ts', format: 'esm' }],
     plugins: [
       dts({

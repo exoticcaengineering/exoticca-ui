@@ -12,8 +12,8 @@ import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
 import { TextBody1, TextBody2 } from '../TypographyVariants';
-import { CloseIcon } from 'src/components/SvgIcons/Close';
-import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
+import { CloseIcon } from 'icons/SvgIcons/Close';
+import { ArrowIcon } from 'icons/SvgIcons/Arrow';
 
 export const Dropdown: FC<Props> = ({
   dropdownList,

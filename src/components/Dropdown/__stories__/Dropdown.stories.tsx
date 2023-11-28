@@ -3,7 +3,7 @@ import { menuItems } from './mockData';
 import { Dropdown } from '../Dropdown';
 import { DropdownList } from './DropdownList';
 import { Props } from '../Dropdown.types';
-import { FlagUkIcon } from 'src/components/SvgIcons/FlagUk';
+import { FlagUkIcon } from 'icons/SvgIcons/FlagUk';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'components/Dropdown',

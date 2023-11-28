@@ -2,9 +2,9 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Tag } from '../Tag';
 import { Props } from '../Tag.types';
 import { StyledRowWrapper } from './Story.styles';
-import { TravelHandBaggageIcon } from 'src/components/SvgIcons/TravelHandBaggage';
+import { TravelHandBaggageIcon } from 'icons/SvgIcons/TravelHandBaggage';
 
-import { TravelNoBaggageIcon } from 'src/components/SvgIcons/TravelNoBaggage';
+import { TravelNoBaggageIcon } from 'icons/SvgIcons/TravelNoBaggage';
 
 const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
