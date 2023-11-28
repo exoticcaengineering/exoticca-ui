@@ -23,6 +23,7 @@ export const IconButton: FC<IconButtonProps> = ({
         return 'medium';
     }
   };
+
   return (
     <StyledIconButtonWrapper
       color={color}
@@ -30,6 +31,7 @@ export const IconButton: FC<IconButtonProps> = ({
       size={size}
       disabled={isDisabled}
       data-testid={props.testId}
+      iconSize={getIconSize(size)}
       {...props}
     >
       {icon}

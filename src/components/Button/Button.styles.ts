@@ -14,6 +14,7 @@ import {
   setDisabledBackgroundColor,
   setFocusBackgroundColor,
 } from './Button.helpers';
+import { getIconSize } from 'src/components/IconWrapper';
 
 const buttonCommonStyle = css<StyledProps>`
   display: flex;
@@ -92,4 +93,8 @@ export const StyledIconButtonWrapper = styled.button<StyledProps>`
   height: ${({ size = 'medium' }) => getIconButtonSize(size)};
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
   ${buttonCommonStyle}
+  & > div {
+    width: ${({ iconSize = 'medium' }) => getIconSize(iconSize)};
+    height: ${({ iconSize = 'medium' }) => getIconSize(iconSize)};
+  }
 `;

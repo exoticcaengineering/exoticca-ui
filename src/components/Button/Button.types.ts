@@ -1,6 +1,7 @@
 import { MouseEventHandler } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { Palette, Theme } from 'src/types';
+import { IconSize } from 'src/components/IconWrapper';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 
@@ -26,7 +27,9 @@ export interface IconButtonProps
   icon: JSX.Element;
 }
 
-export interface StyledProps extends Props {}
+export interface StyledProps extends Props {
+  iconSize?: IconSize;
+}
 
 export interface ButtonHelperParams {
   theme: Theme;
