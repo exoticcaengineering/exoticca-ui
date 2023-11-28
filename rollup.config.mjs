@@ -53,7 +53,7 @@ export default [
   },
   {
     external: ['react-dom'],
-    input: 'icons/SvgIcons/index.ts',
+    input: 'icons/index.ts',
     output: [
       {
         file: iconsPackageJson.main,
