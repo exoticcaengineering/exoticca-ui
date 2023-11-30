@@ -34,7 +34,10 @@ export default [
       resolve(),
       commonjs(),
       svgr(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: ['**/__tests__', '**/__stories__'],
+      }),
       terser(),
       filesize(),
     ],
