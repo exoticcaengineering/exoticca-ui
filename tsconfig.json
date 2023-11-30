@@ -19,4 +19,5 @@
     "types": ["@testing-library/jest-dom"],
   },
   "include": ["src","custom.d.ts"],
+  "exclude": ["src/**/__stories__/*", "src/**/__tests__/*"]
 }

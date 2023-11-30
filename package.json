@@ -1,6 +1,6 @@
 {
   "name": "@exoticcaengineering/exoticca-ui",
-  "version": "0.4.5-beta.10",
+  "version": "0.4.5-beta.11",
   "author": "exoticcaengineering",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,14 +11,15 @@
   "license": "ISC",
   "scripts": {
     "svgr": "svgr -d src/components/SvgIcons assets/svg",
+    "rollup": "rimraf dist && rollup -c",
     "prebuild": "rimraf src/components/SvgIcons/*.tsx",
-    "build": "npm run svgr && rollup -c",
+    "build": "npm run svgr && npm run rollup",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest --verbose --maxWorkers=80%",
     "ci": "npm run prebuild & npm run build",
-    "test:coverage": "jest --env=jest-environment-jsdom --coverage --silent --maxWorkers=80%",
-    "rollup": "rollup -c"
+    "test:coverage": "jest --env=jest-environment-jsdom --coverage --silent --maxWorkers=80%"
+   
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
