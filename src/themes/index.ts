@@ -3,3 +3,4 @@ export {
   GlobalStyleDefault,
   GlobalStyleNewBranding,
 } from './theme';
+export { ThemeProvider } from 'styled-components';
