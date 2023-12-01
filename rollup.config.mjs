@@ -21,39 +21,55 @@ const plugins = [
   filesize(),
 ];
 
-export default [
-  {
-    external: ['react-dom'],
-    input: 'src/index.ts',
-    output: [
-      {
-        file: mainPackageJson.main,
-        format: 'cjs',
-        sourcemap: true,
-        interop: 'auto',
-        inlineDynamicImports: true,
-        exports: 'named',
-      },
-      {
-        file: mainPackageJson.module,
-        format: 'esm',
-        sourcemap: true,
-        interop: 'esModule',
-        inlineDynamicImports: true,
-        exports: 'named',
-      },
-    ],
-    plugins,
+// export default [
+//   {
+//     external: ['react-dom'],
+//     input: 'src/index.ts',
+//     output: [
+//       {
+//         file: mainPackageJson.main,
+//         format: 'cjs',
+//         sourcemap: true,
+//         interop: 'auto',
+//         inlineDynamicImports: true,
+//         exports: 'named',
+//       },
+//       {
+//         file: mainPackageJson.module,
+//         format: 'esm',
+//         sourcemap: true,
+//         interop: 'esModule',
+//         inlineDynamicImports: true,
+//         exports: 'named',
+//       },
+//     ],
+//     plugins,
+//   },
+//   {
+//     input: 'dist/esm/index.d.ts',
+//     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+//     plugins: [
+//       dts({
+//         compilerOptions: {
+//           baseUrl: '.',
+//         },
+//       }),
+//     ],
+//   },
+// ];
+
+export default {
+  input: {
+    index: 'src/index.ts',
+    'components/index': 'src/components/index.ts',
+    'themes/index': 'src/themes/index.ts',
   },
-  {
-    input: 'dist/esm/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [
-      dts({
-        compilerOptions: {
-          baseUrl: '.',
-        },
-      }),
-    ],
+  output: {
+    dir: 'dist',
+    format: 'esm',
+    sourcemap: true,
+    interop: 'esModule',
+    exports: 'named',
   },
-];
+  plugins,
+};
