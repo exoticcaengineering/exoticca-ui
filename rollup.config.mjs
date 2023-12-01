@@ -9,6 +9,18 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import filesize from 'rollup-plugin-filesize';
 import svgr from '@svgr/rollup';
 
+const plugins = [
+  peerDepsExternal(),
+  resolve(),
+  commonjs(),
+  svgr(),
+  typescript({
+    tsconfig: './tsconfig.build.json',
+  }),
+  terser(),
+  filesize(),
+];
+
 export default [
   {
     external: ['react-dom'],
@@ -20,6 +32,7 @@ export default [
         sourcemap: true,
         interop: 'auto',
         inlineDynamicImports: true,
+        exports: 'named',
       },
       {
         file: mainPackageJson.module,
@@ -27,20 +40,10 @@ export default [
         sourcemap: true,
         interop: 'esModule',
         inlineDynamicImports: true,
+        exports: 'named',
       },
     ],
-    plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      svgr(),
-      typescript({
-        tsconfig: './tsconfig.json',
-        exclude: ['**/__tests__', '**/__stories__'],
-      }),
-      terser(),
-      filesize(),
-    ],
+    plugins,
   },
   {
     input: 'dist/esm/index.d.ts',
