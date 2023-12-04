@@ -67,7 +67,7 @@ export const Input: FC<Props> = ({
         data-testid={testId}
       >
         {!!startIcon && (
-          <StyledEndIconWrapper>{startIcon}</StyledEndIconWrapper>
+          <StyledStartIconWrapper>{startIcon}</StyledStartIconWrapper>
         )}
 
         <StyledInputInner>
@@ -84,9 +84,7 @@ export const Input: FC<Props> = ({
             {...inputProps}
           />
         </StyledInputInner>
-        {!!endIcon && (
-          <StyledStartIconWrapper>{endIcon}</StyledStartIconWrapper>
-        )}
+        {!!endIcon && <StyledEndIconWrapper>{endIcon}</StyledEndIconWrapper>}
       </StyledInputWrapper>
       <StyledErrorMessage>{errorMessage}</StyledErrorMessage>
     </div>

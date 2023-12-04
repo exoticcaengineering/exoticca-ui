@@ -14,7 +14,7 @@ describe('SelectableBox', () => {
 
   it('should render the selectable box with selected icon', () => {
     render(<Selected />);
-    const checkIcon = screen.getByTestId('check-icon');
+    const checkIcon = screen.getByTitle('check-icon');
     expect(checkIcon).toBeInTheDocument();
   });
 

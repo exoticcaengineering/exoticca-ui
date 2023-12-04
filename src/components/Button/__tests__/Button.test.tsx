@@ -45,21 +45,21 @@ describe('Button variations', () => {
   // //start icon
   // it('renders start icon correctly', async () => {
   //   render(<WithStartIcon />);
-  //   const icon = await screen.findByTestId('calendar-icon');
+  //   const icon = await screen.findByTitle('calendar-icon');
   //   expect(icon).toBeInTheDocument();
   // });
 
   // //end icon
   // it('renders end icon correctly', () => {
   //   render(<WithEndIcon />);
-  //   const icon = await screen.findByTestId('calendar-icon');
+  //   const icon = await screen.findByTitle('calendar-icon');
   //   expect(icon).toBeInTheDocument();
   // });
 
   // //start icon loading
   // it('renders start icon loading correctly', async () => {
   //   render(<WithStartIconLoading />);
-  //   const loadingIcon = await screen.findByTestId('loader-icon');
+  //   const loadingIcon = await screen.findByTitle('loader-icon');
   //   expect(loadingIcon).toBeInTheDocument();
   //   const startIcon = screen.queryByTitle('calendar');
   //   expect(startIcon).not.toBeInTheDocument();
@@ -68,7 +68,7 @@ describe('Button variations', () => {
   // //end icon loading
   // it('renders end icon loading correctly', async () => {
   //   render(<WithEndIconLoading />);
-  //   const loadingIcon = await screen.findByTestId('loader-icon');
+  //   const loadingIcon = await screen.findByTitle('loader-icon');
   //   expect(loadingIcon).toBeInTheDocument();
   //   const endIcon = screen.queryByTitle('calendar');
   //   expect(endIcon).not.toBeInTheDocument();
@@ -119,7 +119,7 @@ describe('Button states', () => {
     render(<States />);
     const loadingButton = screen.getByText('button loading').closest('button');
     expect(loadingButton).toBeInTheDocument();
-    const loaderIcon = await screen.findByTestId('loader-icon');
+    const loaderIcon = await screen.findByTitle('loader-icon');
     expect(loaderIcon).toBeInTheDocument();
   });
 
@@ -172,7 +172,7 @@ describe('Button with icon and loading', () => {
     const startIconButton = screen
       .getByText('start icon')
       .closest('button') as HTMLButtonElement;
-    const icon = await within(startIconButton).findByTestId('calendar-icon');
+    const icon = await within(startIconButton).findByTitle('calendar-icon');
     expect(icon).toBeInTheDocument();
   });
   it('renders start icon loading correctly', async () => {
@@ -180,7 +180,7 @@ describe('Button with icon and loading', () => {
     const startIconButton = screen
       .getByText('start icon loading')
       .closest('button') as HTMLButtonElement;
-    const loadingIcon = await within(startIconButton).findByTestId(
+    const loadingIcon = await within(startIconButton).findByTitle(
       'loader-icon',
     );
     expect(loadingIcon).toBeInTheDocument();
@@ -193,7 +193,7 @@ describe('Button with icon and loading', () => {
     const endIconButton = screen
       .getByText('start icon')
       .closest('button') as HTMLButtonElement;
-    const icon = await within(endIconButton).findByTestId('calendar-icon');
+    const icon = await within(endIconButton).findByTitle('calendar-icon');
     expect(icon).toBeInTheDocument();
   });
 
@@ -202,7 +202,7 @@ describe('Button with icon and loading', () => {
     const endIconButton = screen
       .getByText('start icon loading')
       .closest('button') as HTMLButtonElement;
-    const loadingIcon = await within(endIconButton).findByTestId('loader-icon');
+    const loadingIcon = await within(endIconButton).findByTitle('loader-icon');
     expect(loadingIcon).toBeInTheDocument();
     const icon = within(endIconButton).queryByTitle('calendar');
     expect(icon).not.toBeInTheDocument();

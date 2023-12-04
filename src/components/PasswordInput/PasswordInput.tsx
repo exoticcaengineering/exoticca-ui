@@ -24,7 +24,7 @@ export const PasswordInput: FC<Props> = ({
   const renderIcon = () => {
     if (showPassword)
       return <EyeClosedIcon onClick={handleToggleShowPassword} />;
-    <EyeOpenIcon onClick={handleToggleShowPassword} />;
+    return <EyeOpenIcon onClick={handleToggleShowPassword} />;
   };
 
   return (
