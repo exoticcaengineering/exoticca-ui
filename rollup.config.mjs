@@ -61,6 +61,19 @@ const plugins = [
 
 export default [
   {
+    external: ['react-dom'],
+    input: 'src/index.ts',
+    output: {
+      file: mainPackageJson.main,
+      format: 'cjs',
+      sourcemap: true,
+      interop: 'auto',
+      inlineDynamicImports: true,
+      exports: 'named',
+    },
+    plugins,
+  },
+  {
     input: {
       index: 'src/index.ts',
       'components/index': 'src/components/index.ts',
