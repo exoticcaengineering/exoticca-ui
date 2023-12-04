@@ -101,7 +101,7 @@ export default [
         baseContents: {
           name: '@exoticcaengineering/exoticca-ui/components',
           private: true,
-          main: '../index.js', // --> points to cjs format entry point of whole library
+          main: '../cjs/index.js', // --> points to cjs format entry point of whole library
           module: './index.js', // --> points to esm format entry point of individual component
           types: './index.d.ts', // --> points to types definition file of individual component
         },
@@ -121,7 +121,7 @@ export default [
         baseContents: {
           name: '@exoticcaengineering/exoticca-ui/themes',
           private: true,
-          main: '../index.js', // --> points to cjs format entry point of whole library
+          main: '../cjs/index.js', // --> points to cjs format entry point of whole library
           module: './index.js', // --> points to esm format entry point of individual component
           types: './index.d.ts', // --> points to types definition file of individual component
         },
