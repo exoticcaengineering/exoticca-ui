@@ -6,7 +6,11 @@ interface SVGRProps {
   titleId?: string;
 }
 export const UsersIcon = WithIconWrapper(
-  ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+  ({
+    title = 'users-icon',
+    titleId,
+    ...props
+  }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 768 768"

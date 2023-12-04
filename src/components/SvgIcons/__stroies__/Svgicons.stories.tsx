@@ -6,7 +6,7 @@ import { Box } from 'src/components/Box';
 import { Flex } from 'src/components/Flex';
 
 const meta: Meta<typeof IconWrapper> = {
-  title: 'Icons',
+  title: 'Components/Icons',
   component: IconWrapper,
 };
 

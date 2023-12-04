@@ -6,7 +6,11 @@ interface SVGRProps {
   titleId?: string;
 }
 export const MoonIcon = WithIconWrapper(
-  ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+  ({
+    title = 'moon-icon',
+    titleId,
+    ...props
+  }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

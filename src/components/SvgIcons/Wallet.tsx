@@ -6,7 +6,11 @@ interface SVGRProps {
   titleId?: string;
 }
 export const WalletIcon = WithIconWrapper(
-  ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+  ({
+    title = 'wallet-icon',
+    titleId,
+    ...props
+  }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"

@@ -6,7 +6,11 @@ interface SVGRProps {
   titleId?: string;
 }
 export const Star3SpIcon = WithIconWrapper(
-  ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+  ({
+    title = 'star3sp-icon',
+    titleId,
+    ...props
+  }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

@@ -6,7 +6,11 @@ interface SVGRProps {
   titleId?: string;
 }
 export const LogoRebrandIcon = WithIconWrapper(
-  ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+  ({
+    title = 'logo-rebrand-icon',
+    titleId,
+    ...props
+  }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 2192 384"

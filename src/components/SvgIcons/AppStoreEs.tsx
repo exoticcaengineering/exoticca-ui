@@ -6,7 +6,11 @@ interface SVGRProps {
   titleId?: string;
 }
 export const AppStoreEsIcon = WithIconWrapper(
-  ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+  ({
+    title = 'app-store-es-icon',
+    titleId,
+    ...props
+  }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 119.664 40"
