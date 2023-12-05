@@ -17,6 +17,7 @@ export const Star3SpIcon = WithIconWrapper(
       viewBox="0 0 113 24"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

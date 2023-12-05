@@ -17,6 +17,7 @@ export const PlayStoreDeIcon = WithIconWrapper(
       viewBox="0 0 159 47"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

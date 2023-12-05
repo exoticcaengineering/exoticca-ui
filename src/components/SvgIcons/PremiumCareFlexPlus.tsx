@@ -17,6 +17,7 @@ export const PremiumCareFlexPlusIcon = WithIconWrapper(
       viewBox="0 0 215 28"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

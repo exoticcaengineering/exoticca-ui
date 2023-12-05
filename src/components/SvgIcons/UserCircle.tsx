@@ -17,6 +17,7 @@ export const UserCircleIcon = WithIconWrapper(
       viewBox="0 0 50 50"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

@@ -3,5 +3,6 @@ module.exports = {
     titleProp:true,
     typescript: true,
     template: require('./svgr-template'),
-    indexTemplate:require('./svgr-index-template')
+    indexTemplate:require('./svgr-index-template'),
+    svgProps: { 'data-testid': '{title}' }
   }

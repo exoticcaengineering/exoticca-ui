@@ -17,6 +17,7 @@ export const LogoTicoIcon = WithIconWrapper(
       viewBox="0 0 157 51"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

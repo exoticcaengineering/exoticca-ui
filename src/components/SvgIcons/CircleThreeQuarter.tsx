@@ -17,6 +17,7 @@ export const CircleThreeQuarterIcon = WithIconWrapper(
       viewBox="0 0 17 17"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

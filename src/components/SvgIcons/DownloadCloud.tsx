@@ -17,6 +17,7 @@ export const DownloadCloudIcon = WithIconWrapper(
       height="1em"
       fill="none"
       viewBox="0 0 18 19"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

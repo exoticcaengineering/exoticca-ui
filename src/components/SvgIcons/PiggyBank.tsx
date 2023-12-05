@@ -17,6 +17,7 @@ export const PiggyBankIcon = WithIconWrapper(
       viewBox="0 0 20 20"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

@@ -17,6 +17,7 @@ export const PhoneCallIcon = WithIconWrapper(
       viewBox="0 0 25 25"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

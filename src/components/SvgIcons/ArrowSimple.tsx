@@ -17,6 +17,7 @@ export const ArrowSimpleIcon = WithIconWrapper(
       viewBox="0 0 16 16"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

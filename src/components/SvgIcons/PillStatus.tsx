@@ -17,6 +17,7 @@ export const PillStatusIcon = WithIconWrapper(
       viewBox="0 0 54 21"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

@@ -16,6 +16,7 @@ export const LogoRebrandIcon = WithIconWrapper(
       viewBox="0 0 2192 384"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >

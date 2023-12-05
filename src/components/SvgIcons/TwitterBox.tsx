@@ -17,6 +17,7 @@ export const TwitterBoxIcon = WithIconWrapper(
       viewBox="0 0 41 40"
       width="1em"
       height="1em"
+      data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >
