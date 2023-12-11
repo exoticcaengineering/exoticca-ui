@@ -22,43 +22,6 @@ const plugins = [
   filesize(),
 ];
 
-// export default [
-//   {
-//     external: ['react-dom'],
-//     input: 'src/index.ts',
-//     output: [
-//       {
-//         file: mainPackageJson.main,
-//         format: 'cjs',
-//         sourcemap: true,
-//         interop: 'auto',
-//         inlineDynamicImports: true,
-//         exports: 'named',
-//       },
-//       {
-//         file: mainPackageJson.module,
-//         format: 'esm',
-//         sourcemap: true,
-//         interop: 'esModule',
-//         inlineDynamicImports: true,
-//         exports: 'named',
-//       },
-//     ],
-//     plugins,
-//   },
-//   {
-//     input: 'dist/esm/index.d.ts',
-//     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-//     plugins: [
-//       dts({
-//         compilerOptions: {
-//           baseUrl: '.',
-//         },
-//       }),
-//     ],
-//   },
-// ];
-
 export default [
   {
     external: ['react-dom'],
