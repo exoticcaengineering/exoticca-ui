@@ -27,3 +27,7 @@ export * from './Flex';
 export * from './Banner';
 export * from './SvgIcons';
 export { IconProps } from './WithIconWrapper';
+
+import * as SvgIcons from './SvgIcons';
+
+export const iconNames = Object.keys(SvgIcons);
