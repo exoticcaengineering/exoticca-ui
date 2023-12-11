@@ -26,4 +26,9 @@ export * from './CardCampaign';
 export * from './Flex';
 export * from './Banner';
 export * from './SvgIcons';
+
 export { IconProps } from './WithIconWrapper';
+
+import * as SvgIcon from './SvgIcons';
+
+export type IconName = keyof typeof SvgIcon;
