@@ -4,5 +4,6 @@ module.exports = {
     typescript: true,
     template: require('./svgr-template'),
     indexTemplate:require('./svgr-index-template'),
-    svgProps: { 'data-testid': '{title}' }
+    svgProps: { 'data-testid': '{title}' },
+    replaceAttrValues: { '#323232': 'currentColor' }
   }

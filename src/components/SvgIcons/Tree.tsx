@@ -23,7 +23,7 @@ export const TreeIcon = WithIconWrapper(
     >
       {title ? <title id={titleId}>{title}</title> : null}
       <path
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
@@ -31,7 +31,7 @@ export const TreeIcon = WithIconWrapper(
         clipRule="evenodd"
       />
       <path
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}

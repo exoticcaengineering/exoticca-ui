@@ -23,14 +23,14 @@ export const EasterEggIcon = WithIconWrapper(
     >
       {title ? <title id={titleId}>{title}</title> : null}
       <path
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
         d="M10.89 5.457A5.124 5.124 0 0 1 15 2.997c3.312 0 6.003 4.03 6.003 9.003 0 3.872-2.691 7.003-6.003 7.003a5.354 5.354 0 0 1-1.6-.25"
       />
       <path
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
@@ -38,16 +38,16 @@ export const EasterEggIcon = WithIconWrapper(
         clipRule="evenodd"
       />
       <path
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinejoin="round"
         strokeWidth={1.5}
         d="m3 15.5 2-2 2 2 2-2 2 2 2-2 2 2M14 10l2-2 2 2 2-2M15 13l1-1 2 2 3-3"
       />
-      <circle cx={6.75} cy={10.75} r={0.75} fill="#323232" />
-      <circle cx={10.75} cy={10.75} r={0.75} fill="#323232" />
-      <circle cx={8.75} cy={17.75} r={0.75} fill="#323232" />
-      <circle cx={4.75} cy={17.75} r={0.75} fill="#323232" />
-      <circle cx={12.75} cy={17.75} r={0.75} fill="#323232" />
+      <circle cx={6.75} cy={10.75} r={0.75} fill="currentColor" />
+      <circle cx={10.75} cy={10.75} r={0.75} fill="currentColor" />
+      <circle cx={8.75} cy={17.75} r={0.75} fill="currentColor" />
+      <circle cx={4.75} cy={17.75} r={0.75} fill="currentColor" />
+      <circle cx={12.75} cy={17.75} r={0.75} fill="currentColor" />
     </svg>
   ),
 );

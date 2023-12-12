@@ -23,7 +23,7 @@ export const TouristGuideIcon = WithIconWrapper(
     >
       {title ? <title id={titleId}>{title}</title> : null}
       <path
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
@@ -33,13 +33,13 @@ export const TouristGuideIcon = WithIconWrapper(
         cx={8.25}
         cy={7.125}
         r={1.875}
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
       />
       <path
-        stroke="#323232"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
