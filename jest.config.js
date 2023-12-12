@@ -6,6 +6,7 @@ const config = {
   moduleNameMapper: {
     'src/(.*)': '<rootDir>/src/$1',
     '@/(.*)': '<rootDir>/src/$1',
+    '\\.svg$': '<rootDir>/__mocks__/svg.js',
   },
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['<rootDir>/src/**/*.test.*'],

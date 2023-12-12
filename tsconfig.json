@@ -9,14 +9,14 @@
     "jsx": "react-jsx", 
     "module": "ESNext",  
     "declaration": true,
-    "declarationDir": "types",
     "sourceMap": true,
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
     "allowJs": true,
-    "types": ["@testing-library/jest-dom"]
+    "types": ["@testing-library/jest-dom"],
   },
-  "include": ["src", "custom.d.ts"]
+  "include": ["src","custom.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

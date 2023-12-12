@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
 import { Props } from '../Button.types';
 import { StyledColumnWrapper, StyledRowWrapper } from './Story.styles';
+import { CalendarIcon } from 'src/components/SvgIcons/Calendar';
 
 /**
  *  ## Button can have variations, sizes, shapes, icons, states.
@@ -111,20 +112,20 @@ const ButtonWithIcon = (props: Props) => {
   return (
     <StyledColumnWrapper>
       <StyledRowWrapper>
-        <Button {...props} startIcon={{ icon: 'calendar' }} text="start icon" />
+        <Button {...props} startIcon={<CalendarIcon />} text="start icon" />
         <Button
           {...props}
-          startIcon={{ icon: 'calendar' }}
+          startIcon={<CalendarIcon />}
           text="start icon loading"
           isLoading
         />
       </StyledRowWrapper>
 
       <StyledRowWrapper>
-        <Button {...props} endIcon={{ icon: 'calendar' }} text=" end icon" />
+        <Button {...props} endIcon={<CalendarIcon />} text=" end icon" />
         <Button
           {...props}
-          endIcon={{ icon: 'calendar' }}
+          endIcon={<CalendarIcon />}
           text="end icon loading"
           isLoading
         />

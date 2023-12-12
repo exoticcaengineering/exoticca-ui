@@ -1,13 +1,12 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconConfig } from '../Icon';
 
 type LabelPosition = 'inside' | 'outside';
 
 export interface Props
   extends ComponentPropsBase,
     React.InputHTMLAttributes<HTMLInputElement> {
-  startIcon?: IconConfig;
-  endIcon?: IconConfig;
+  startIcon?: JSX.Element;
+  endIcon?: JSX.Element;
   label: string;
   labelPosition?: LabelPosition;
   rounded?: 'none' | 'left' | 'right' | 'both';

@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { IconButton } from '../IconButton';
 import { IconButtonProps } from '../Button.types';
 import { StyledRowWrapper } from './Story.styles';
+import { CloseIcon } from 'src/components/SvgIcons/Close';
 
 const meta: Meta<typeof IconButton> = {
   title: 'Components/IconButton',
@@ -35,15 +36,15 @@ export default meta;
 type Story = StoryObj<typeof IconButton>;
 
 const PrimaryIconButton = (props: IconButtonProps) => (
-  <IconButton {...props} icon={{ icon: 'close' }} variant="primary" />
+  <IconButton {...props} icon={<CloseIcon />} variant="primary" />
 );
 
 const SecondaryIconButton = (props: IconButtonProps) => (
-  <IconButton {...props} icon={{ icon: 'close' }} variant="secondary" />
+  <IconButton {...props} icon={<CloseIcon />} variant="secondary" />
 );
 
 const TertiaryIconButton = (props: IconButtonProps) => (
-  <IconButton {...props} icon={{ icon: 'close' }} variant="tertiary" />
+  <IconButton {...props} icon={<CloseIcon />} variant="tertiary" />
 );
 
 const IconButtonVariants = (props: IconButtonProps) => (

@@ -3,6 +3,7 @@ import { FilterInput } from '../FilterInput';
 import { useEffect, useState } from 'react';
 import { Item } from 'src/components/Item';
 import { Typography } from 'src/components/Typography';
+import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
 
 const meta: Meta<typeof FilterInput> = {
   title: 'Components/FilterInput',
@@ -75,7 +76,7 @@ const Template = ({ ...args }) => {
         }}
       >
         <FilterInput
-          startIcon={{ icon: 'arrow' }}
+          startIcon={<ArrowIcon />}
           label="Label"
           placeholder="Placeholder"
           rounded="both"

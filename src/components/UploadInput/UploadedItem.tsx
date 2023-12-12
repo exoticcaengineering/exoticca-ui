@@ -1,5 +1,6 @@
-import { Icon } from '../Icon';
 import { ProgressBar } from '../ProgressBar';
+import { DocumentTextIcon } from 'src/components/SvgIcons/DocumentText';
+import { TrashIcon } from 'src/components/SvgIcons/Trash';
 import { TextBody3 } from '../TypographyVariants';
 import {
   StyledListItem,
@@ -17,7 +18,7 @@ interface ItemProps {
 export const UploadedItem = ({ name, size, onDeleteCB }: ItemProps) => {
   return (
     <StyledListItem>
-      <Icon icon="document-text" size="xLarge" />
+      <DocumentTextIcon size="xLarge" />
       <ItemDescription>
         <TextBody3>{name}</TextBody3>
         <TextBody3>{Math.trunc(size / 1000)} Kb</TextBody3>
@@ -34,7 +35,7 @@ export const UploadedItem = ({ name, size, onDeleteCB }: ItemProps) => {
           iterationCount=""
         />
       </ProgressBarContainer>
-      <Icon icon="trash" size="medium" onClick={onDeleteCB} />
+      <TrashIcon size="medium" onClick={onDeleteCB} />
     </StyledListItem>
   );
 };

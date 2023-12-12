@@ -1,5 +1,4 @@
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
-import { IconConfig } from '../Icon';
 import { Palette, Theme } from 'src/types';
 
 export type DropDownPosition = 'left' | 'right';
@@ -13,8 +12,8 @@ export interface Props extends ComponentPropsBase {
   onClick?: (isOpen: boolean) => void;
   onClose?: () => void;
   size?: DropDownSize;
-  startIcon?: IconConfig;
-  endIcon?: IconConfig;
+  startIcon?: JSX.Element;
+  endIcon?: JSX.Element;
   dropdownList: (props: DropdownListProps) => JSX.Element;
   textColor?: keyof Palette;
   openBackgroundColor?: keyof Palette;

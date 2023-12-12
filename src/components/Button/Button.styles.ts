@@ -14,7 +14,7 @@ import {
   setDisabledBackgroundColor,
   setFocusBackgroundColor,
 } from './Button.helpers';
-import { Icon } from 'src/components/Icon';
+import { getIconSize } from 'src/components/IconWrapper';
 
 const buttonCommonStyle = css<StyledProps>`
   display: flex;
@@ -76,10 +76,6 @@ const rotate360 = keyframes`
   }
 `;
 
-export const StyledIcon = styled(Icon)`
-  flex-shrink: 0;
-`;
-
 export const Animation = styled.div<{ size: number }>`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
@@ -97,4 +93,8 @@ export const StyledIconButtonWrapper = styled.button<StyledProps>`
   height: ${({ size = 'medium' }) => getIconButtonSize(size)};
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
   ${buttonCommonStyle}
+  & > div {
+    width: ${({ iconSize = 'medium' }) => getIconSize(iconSize)};
+    height: ${({ iconSize = 'medium' }) => getIconSize(iconSize)};
+  }
 `;

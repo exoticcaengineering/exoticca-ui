@@ -29,7 +29,7 @@ describe('Alert', () => {
   test('should render alert with icon', () => {
     render(<Info />);
 
-    const icon = screen.getByTestId('info-icon');
+    const icon = screen.getByTitle('info-icon');
     expect(icon).toBeInTheDocument();
   });
 

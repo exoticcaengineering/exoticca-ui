@@ -8,4 +8,5 @@ export const StyledFlexWrapper = styled(Box)<StyledProps>`
   align-items: ${({ alignItems }) => alignItems};
   justify-content: ${({ justifyContent }) => justifyContent};
   gap: ${({ theme, gap = 0 }) => theme.spacing(gap)};
+  flex-wrap: ${({ flexWrap = 'nowrap' }) => flexWrap};
 `;

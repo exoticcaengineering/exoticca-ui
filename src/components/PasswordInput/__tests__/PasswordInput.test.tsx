@@ -13,7 +13,7 @@ describe('PasswordInput', () => {
       expect(passwordInput).toBeInTheDocument();
       const input = screen.getByTestId('input-field');
       expect(input).toHaveAttribute('type', 'password');
-      const eyeOpenIcon = screen.getByTestId('eye-open-icon');
+      const eyeOpenIcon = screen.getByTitle('eye-open-icon');
       expect(eyeOpenIcon).toBeInTheDocument();
     });
 
@@ -23,11 +23,11 @@ describe('PasswordInput', () => {
       const input = screen.getByTestId('input-field');
       await user.clear(input);
       await user.type(input, 'password');
-      const eyeOpenIcon = screen.getByTestId('eye-open-icon');
+      const eyeOpenIcon = screen.getByTitle('eye-open-icon');
       await user.click(eyeOpenIcon);
       expect(input).toHaveAttribute('type', 'text');
       expect(input).toHaveValue('password');
-      const eyeClosedIcon = screen.getByTestId('eye-closed-icon');
+      const eyeClosedIcon = screen.getByTitle('eye-closed-icon');
       expect(eyeClosedIcon).toBeInTheDocument();
     });
   });
@@ -39,7 +39,7 @@ describe('PasswordInput', () => {
       expect(passwordInput).toBeInTheDocument();
       const input = screen.getByTestId('input-field');
       expect(input).toHaveAttribute('type', 'text');
-      const eyeClosedIcon = screen.getByTestId('eye-closed-icon');
+      const eyeClosedIcon = screen.getByTitle('eye-closed-icon');
       expect(eyeClosedIcon).toBeInTheDocument();
     });
   });

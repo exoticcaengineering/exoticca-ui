@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Item } from '../Item';
 import { Box } from 'src/components/Box';
 import { ComponentProps } from 'react';
+import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
 
 type CustomItemProps = ComponentProps<typeof Item>;
 
@@ -62,14 +63,14 @@ export const Base: Story = {
 
 export const WithStartIcon: Story = {
   args: {
-    startIcon: { icon: 'arrow' },
+    startIcon: <ArrowIcon />,
   },
   render: (args) => <Template {...args} />,
 };
 
 export const WithEndIcon: Story = {
   args: {
-    endIcon: { icon: 'arrow' },
+    endIcon: <ArrowIcon />,
   },
   render: (args) => <Template {...args} />,
 };

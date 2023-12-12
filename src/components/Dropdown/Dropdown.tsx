@@ -1,18 +1,19 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import {
   StyledDropdownButton,
-  CloseIcon,
+  CloseIconWrapper,
   CloseWrapper,
   StyledDropdownWrapper,
   StyledDropdownList,
   StyledFirstPart,
   StyledButtonTextWrapper,
-  StyledIcon,
 } from './Dropdown.styles';
 import { DropDownPosition, Props } from './Dropdown.types';
 import { BorderRadius } from 'src/types/theme';
 import { useOnClickOutside } from 'src/hooks';
 import { TextBody1, TextBody2 } from '../TypographyVariants';
+import { CloseIcon } from 'src/components/SvgIcons/Close';
+import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
 
 export const Dropdown: FC<Props> = ({
   dropdownList,
@@ -97,11 +98,11 @@ export const Dropdown: FC<Props> = ({
         openBackgroundColor={openBackgroundColor}
       >
         <StyledFirstPart>
-          {startIcon && <StyledIcon {...startIcon} />}
+          {startIcon}
           <StyledButtonTextWrapper>{renderText()}</StyledButtonTextWrapper>
         </StyledFirstPart>
 
-        <StyledIcon icon="arrow" rotate={isOpen ? 0 : 180} {...endIcon} />
+        <ArrowIcon rotate={isOpen ? 0 : 180} />
       </StyledDropdownButton>
       <StyledDropdownList
         isOpen={isOpen}
@@ -112,7 +113,9 @@ export const Dropdown: FC<Props> = ({
       >
         {withCloseButton && (
           <CloseWrapper position={position} onClick={closeDropdown}>
-            <CloseIcon icon={'close'} />
+            <CloseIconWrapper>
+              <CloseIcon />
+            </CloseIconWrapper>
           </CloseWrapper>
         )}
         {dropdownList({

@@ -6,7 +6,7 @@ import {
 } from 'src/components/Alert/Alert.styles';
 import { Props } from 'src/components/Alert/Alert.types';
 import { Props as BoxProps } from 'src/components/Box/Box.types';
-import { Icon } from 'src/components/Icon';
+import { InfoIcon } from 'src/components/SvgIcons/Info';
 
 export const Alert: FC<Props> = ({
   testId,
@@ -52,8 +52,7 @@ export const Alert: FC<Props> = ({
       data-testid={testId}
       {...statusStyle}
     >
-      <Icon
-        icon="info"
+      <InfoIcon
         stroke={status === 'warning' ? 'warning' : 'primary'}
         size="medium"
       />

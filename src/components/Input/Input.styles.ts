@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { StyleProps } from './Input.types';
-import { Icon } from '../Icon';
 import { TextBody2 } from '../TypographyVariants';
 
 const ICON_SPACE = '44px';
@@ -68,14 +67,14 @@ export const StyledOutsideLabel = styled.label`
   font-size: ${({ theme }) => theme.typography.fontSize.body2};
 `;
 
-export const StyledStartIcon = styled(Icon)`
+export const StyledStartIconWrapper = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 14px;
 `;
 
-export const StyledEndIcon = styled(Icon)`
+export const StyledEndIconWrapper = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

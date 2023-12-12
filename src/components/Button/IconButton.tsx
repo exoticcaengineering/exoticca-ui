@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Icon, IconSize } from '../Icon';
 import { StyledIconButtonWrapper } from './Button.styles';
 import { ButtonSize, IconButtonProps } from './Button.types';
+import { IconSize } from 'src/components/IconWrapper';
 
 export const IconButton: FC<IconButtonProps> = ({
   icon,
@@ -23,6 +23,7 @@ export const IconButton: FC<IconButtonProps> = ({
         return 'medium';
     }
   };
+
   return (
     <StyledIconButtonWrapper
       color={color}
@@ -30,9 +31,10 @@ export const IconButton: FC<IconButtonProps> = ({
       size={size}
       disabled={isDisabled}
       data-testid={props.testId}
+      iconSize={getIconSize(size)}
       {...props}
     >
-      <Icon {...icon} size={getIconSize(size)} />
+      {icon}
     </StyledIconButtonWrapper>
   );
 };

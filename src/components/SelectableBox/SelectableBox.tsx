@@ -6,8 +6,8 @@ import {
   StyledRecommendedTag,
   StyledWrapper,
 } from './SelectableBox.styles';
-import { Icon } from '../Icon';
 import { TextBody2 } from '../TypographyVariants';
+import { CheckIcon } from 'src/components/SvgIcons/Check';
 
 export const SelectableBox: FC<Props> = ({
   isSelected,
@@ -49,8 +49,7 @@ export const SelectableBox: FC<Props> = ({
         {children}
         {isSelected && (
           <SelectedIconWrapper>
-            <Icon
-              icon="check"
+            <CheckIcon
               stroke="background"
               strokeShade="main"
               rotate={-45}

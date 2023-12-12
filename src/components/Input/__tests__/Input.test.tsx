@@ -51,13 +51,13 @@ describe('Input', () => {
 
   it('render input with start icon', () => {
     render(<WithStartIcon />);
-    const icon = screen.queryByTestId('user-icon');
+    const icon = screen.queryByTitle('user-icon');
     expect(icon).toBeInTheDocument();
   });
 
   it('render input with end icon', () => {
     render(<WithEndIcon />);
-    const icon = screen.queryByTestId('contact-icon');
+    const icon = screen.queryByTitle('contact-icon');
     expect(icon).toBeInTheDocument();
   });
 
