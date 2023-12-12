@@ -5,39 +5,33 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const TreeIcon = WithIconWrapper(
+export const MgmStepAirplaneIcon = WithIconWrapper(
   ({
-    title = 'tree-icon',
+    title = 'mgm-step-airplane-icon',
     titleId,
     ...props
   }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
       width="1em"
       height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
       data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
-      <path
+      <g
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
-        d="M11.293 4.293 8.295 7.29a1 1 0 0 0 .707 1.707h5.996a1 1 0 0 0 .707-1.707l-2.998-2.998a1 1 0 0 0-1.414 0"
-        clipRule="evenodd"
-      />
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={1.5}
-        d="m8.655 8.933-2.36 2.36A1 1 0 0 0 7.002 13h9.996a1 1 0 0 0 .707-1.707l-2.36-2.36M13.5 18v3M10.5 21v-3M15 21H9M7.588 13l-3.293 3.293A1 1 0 0 0 5.002 18h13.996a1 1 0 0 0 .707-1.707L16.412 13"
-      />
+      >
+        <rect width={8} height={9} x={8} y={4} rx={4} />
+        <path d="M12 2v2M11.25 7.5h1.5M22 9h-6M2 9h6M19 10.5V9M5 10.5V9M19 21l-1-7M5 21l1-7M10.75 17.5l2.5 2.5M13.25 17.5l-2.5 2.5" />
+      </g>
     </svg>
   ),
 );
-export default TreeIcon;
+export default MgmStepAirplaneIcon;
