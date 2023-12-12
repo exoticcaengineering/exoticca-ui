@@ -47,6 +47,21 @@ export const Base: Story = {
 };
 
 /**
+ * For multiple accordions in a column we can add and underline separator between them.
+ */
+export const UnderlineBase: Story = {
+  args: {
+    underline: true,
+  },
+  render: (args) => (
+    <>
+      <Accordion {...args} />
+      <Accordion {...args} />
+    </>
+  ),
+};
+
+/**
  * We can pass a isOpen props to Accordions, to make it open by default.
  */
 export const DefaultOpen: Story = {
