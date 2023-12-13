@@ -11,22 +11,28 @@ type NewBreakpointsType =
 
 type RebrandPaletteType =
   | 'polarNightLight'
+  | 'polarNightLighter'
   | 'polarNightMedium'
   | 'polarNight'
   | 'arcticWind'
   | 'pacificOceanLight'
+  | 'pacificOceanLighter'
   | 'pacificOceanMedium'
   | 'pacificOcean'
   | 'savageForestLight'
+  | 'savageForestLighter'
   | 'savageForestMedium'
   | 'savageForest'
   | 'silentSavanaLight'
+  | 'silentSavanaLighter'
   | 'silentSavanaMedium'
   | 'silentSavana'
   | 'carribeanSunriseLight'
+  | 'carribeanSunriseLighter'
   | 'carribeanSunriseMedium'
   | 'carribeanSunrise'
   | 'redDessertLight'
+  | 'redDessertLighter'
   | 'redDessertMedium'
   | 'redDessert'
   | 'success'
@@ -294,6 +300,7 @@ type ColorsType =
 export interface ColorShade {
   main: string;
   light: string;
+  lighter: string;
   medium: string;
   contrast: string;
 }
