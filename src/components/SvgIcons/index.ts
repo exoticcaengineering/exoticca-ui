@@ -1,5 +1,6 @@
 export { default as AdventureIcon } from './Adventure';
 export { default as AffiliateStarIcon } from './AffiliateStar';
+export { default as AirlineTicketsIcon } from './AirlineTickets';
 export { default as AlertTriangleIcon } from './AlertTriangle';
 export { default as AppStoreDeIcon } from './AppStoreDe';
 export { default as AppStoreEnIcon } from './AppStoreEn';

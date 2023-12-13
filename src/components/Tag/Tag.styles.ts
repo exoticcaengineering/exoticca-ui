@@ -12,6 +12,7 @@ export const StyledWrapper = styled.div<StyledProps>`
   }};
   background: ${({ theme, color = 'primary', shade = 'main', variant }) => {
     if (variant === 'primary') return theme.palette[color][shade];
+    if (variant === 'outlined') return theme.palette[color].extraLight;
     return 'transparent';
   }};
   border-radius: ${({ theme, shape = 'rounded' }) => {
@@ -21,10 +22,12 @@ export const StyledWrapper = styled.div<StyledProps>`
   border: 1px solid
     ${({ theme, color = 'primary', variant }) => {
       if (variant === 'primary') return 'transparent';
+      if (variant === 'outlined') return theme.palette[color].lighter;
       return theme.palette[color].main;
     }};
   color: ${({ theme, color = 'primary', variant }) => {
     if (variant === 'primary') return theme.palette[color].contrast;
+    if (variant === 'outlined') return theme.palette[color].dark;
     return theme.palette.background.contrast;
   }};
 `;
