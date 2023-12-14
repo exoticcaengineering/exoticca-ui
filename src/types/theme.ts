@@ -10,42 +10,24 @@ type NewBreakpointsType =
   | 'desktopMAX';
 
 type RebrandPaletteType =
-  | 'polarNightExtraLight'
   | 'polarNightLight'
-  | 'polarNightLighter'
   | 'polarNightMedium'
-  | 'polarNightDark'
   | 'polarNight'
   | 'arcticWind'
-  | 'pacificOceanExtraLight'
   | 'pacificOceanLight'
-  | 'pacificOceanLighter'
   | 'pacificOceanMedium'
-  | 'pacificOceanDark'
   | 'pacificOcean'
-  | 'savageForestExtraLight'
   | 'savageForestLight'
-  | 'savageForestLighter'
   | 'savageForestMedium'
-  | 'savageForestDark'
   | 'savageForest'
-  | 'silentSavanaExtraLight'
   | 'silentSavanaLight'
-  | 'silentSavanaLighter'
   | 'silentSavanaMedium'
-  | 'silentSavanaDark'
   | 'silentSavana'
-  | 'carribeanSunriseExtraLight'
   | 'carribeanSunriseLight'
-  | 'carribeanSunriseLighter'
   | 'carribeanSunriseMedium'
-  | 'carribeanSunriseDark'
   | 'carribeanSunrise'
-  | 'redDessertExtraLight'
   | 'redDessertLight'
-  | 'redDessertLighter'
   | 'redDessertMedium'
-  | 'redDessertDark'
   | 'redDessert'
   | 'success'
   | 'pending'
@@ -311,11 +293,8 @@ type ColorsType =
 
 export interface ColorShade {
   main: string;
-  extraLight: string;
   light: string;
-  lighter: string;
   medium: string;
-  dark: string;
   contrast: string;
 }
 

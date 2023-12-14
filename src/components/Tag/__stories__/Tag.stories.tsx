@@ -29,7 +29,6 @@ const VariantsStory = (props: Props) => {
     <StyledRowWrapper>
       <Tag {...props} text="Primary tag" variant="primary" />
       <Tag {...props} text="Secondary tag" variant="secondary" />
-      <Tag {...props} text="Outlined tag" variant="outlined" />
     </StyledRowWrapper>
   );
 };
