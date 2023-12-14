@@ -3,6 +3,7 @@ import { StyledProps } from './Accordion.types';
 import { Box } from 'src/components/Box';
 
 export const Wrapper = styled.div<StyledProps>`
+  margin-bottom: ${({ theme }) => theme.spacing(1)};
   ${({ underline }) =>
     underline &&
     css`
