@@ -6,7 +6,7 @@ export const Wrapper = styled.div<StyledProps>`
   ${({ underline }) =>
     underline &&
     css`
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid ${({ theme }) => theme.palette.primary.medium};
       padding-bottom: ${({ theme }) => theme.spacing(1)};
     `};
 `;
@@ -14,6 +14,7 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: ${({ theme }) => theme.spacing(1)};
   border-radius: ${({ theme }) =>
     `${theme.newBorderRadius.xs} ${theme.newBorderRadius.xs} 0 0 `};
   cursor: ${({ hasCustomTrigger }) => (hasCustomTrigger ? 'auto' : 'pointer')};
