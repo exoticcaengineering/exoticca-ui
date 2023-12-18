@@ -2,6 +2,14 @@ import styled, { css } from 'styled-components';
 import { StyledProps } from './Accordion.types';
 import { Box } from 'src/components/Box';
 
+export const Wrapper = styled.div<StyledProps>`
+  ${({ underline }) =>
+    underline &&
+    css`
+      border-bottom: 1px solid ${({ theme }) => theme.palette.primary.medium};
+      padding: ${({ theme }) => theme.spacing(1)} 0;
+    `};
+`;
 export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   display: flex;
   justify-content: space-between;
@@ -9,6 +17,7 @@ export const StyledHeaderWrapper = styled(Box)<StyledProps>`
   border-radius: ${({ theme }) =>
     `${theme.newBorderRadius.xs} ${theme.newBorderRadius.xs} 0 0 `};
   cursor: ${({ hasCustomTrigger }) => (hasCustomTrigger ? 'auto' : 'pointer')};
+
   ${({ isDisabled }) =>
     isDisabled &&
     css`

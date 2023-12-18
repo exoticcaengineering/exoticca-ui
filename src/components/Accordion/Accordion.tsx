@@ -4,6 +4,7 @@ import {
   StyledContentInner,
   StyledHeader,
   StyledHeaderWrapper,
+  Wrapper,
 } from './Accordion.styles';
 import { Props } from './Accordion.types';
 import { ArrowIcon } from 'src/components/SvgIcons/Arrow';
@@ -21,6 +22,7 @@ export const Accordion: FC<Props> = ({
   testId = 'accordion',
   CustomTrigger,
   CustomTriggerEnd,
+  underline,
 }) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(isOpen);
 
@@ -47,7 +49,7 @@ export const Accordion: FC<Props> = ({
   };
 
   return (
-    <div data-testid={testId} className={className}>
+    <Wrapper data-testid={testId} className={className} underline={underline}>
       <StyledHeaderWrapper
         onClick={handleOnClickWrapper}
         isOpen={isAccordionOpen}
@@ -82,6 +84,6 @@ export const Accordion: FC<Props> = ({
       {hasCustomTriggerEnd && (
         <CustomTriggerEnd isOpen={isAccordionOpen} onClick={toggleIsOpen} />
       )}
-    </div>
+    </Wrapper>
   );
 };

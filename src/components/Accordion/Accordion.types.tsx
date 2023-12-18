@@ -23,9 +23,11 @@ export interface Props extends ComponentPropsBase {
   endIcon?: JSX.Element;
   CustomTrigger?: (props: CustomTriggerProps) => JSX.Element | null;
   CustomTriggerEnd?: (props: CustomTriggerProps) => JSX.Element | null;
+  underline?: boolean;
 }
 
-export interface StyledProps extends Pick<Props, 'isOpen' | 'isDisabled'> {
+export interface StyledProps
+  extends Pick<Props, 'isOpen' | 'isDisabled' | 'underline'> {
   isEnabledAndOpen?: boolean;
   hasCustomTrigger?: boolean;
 }
