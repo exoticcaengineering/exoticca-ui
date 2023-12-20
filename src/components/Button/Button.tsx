@@ -19,6 +19,7 @@ export const Button: FC<Props> = ({
   isLoading,
   isDisabled,
   fullWidth,
+  ...props
 }) => {
   const iconSize = getIconSize(size);
 
@@ -40,7 +41,7 @@ export const Button: FC<Props> = ({
     return endIcon;
   };
 
-  const handleOnClick: React.MouseEventHandler = (e) => {
+  const handleOnClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     if (isLoading) return;
     onClick?.(e);
   };
@@ -56,6 +57,7 @@ export const Button: FC<Props> = ({
       disabled={isDisabled}
       className={className}
       data-testid={testId}
+      {...props}
     >
       {renderStartIcon()}
       {text && <Typography as="span">{text}</Typography>}
