@@ -46,6 +46,8 @@ export const Button: FC<Props> = ({
     onClick?.(e);
   };
 
+  console.log('Button id', props.id);
+
   return (
     <StyledButton
       fullWidth={fullWidth}
