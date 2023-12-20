@@ -1,4 +1,4 @@
-import { MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 import { Palette, Theme } from 'src/types';
 import { IconSize } from 'src/components/IconWrapper';
@@ -8,7 +8,9 @@ export type ButtonSize = 'small' | 'medium' | 'large';
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 
 export type ButtonColor = keyof Palette;
-export interface Props extends ComponentPropsBase {
+export interface Props
+  extends ComponentPropsBase,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   size?: ButtonSize;
   color?: ButtonColor;
@@ -18,7 +20,6 @@ export interface Props extends ComponentPropsBase {
   variant?: ButtonVariant;
   startIcon?: JSX.Element;
   endIcon?: JSX.Element;
-  onClick?: MouseEventHandler<Element> | undefined;
   fullWidth?: boolean;
 }
 export interface IconButtonProps
