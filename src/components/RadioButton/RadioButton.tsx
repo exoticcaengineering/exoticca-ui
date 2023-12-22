@@ -14,6 +14,7 @@ export const RadioButton: FC<Props> = ({
   label,
   startIcon,
   endIcon,
+  disabled,
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
   useEffect(() => {
@@ -21,14 +22,12 @@ export const RadioButton: FC<Props> = ({
   }, [checked]);
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('e.target.checked', e.target.checked);
-
     setIsChecked(e.target.checked);
     onChange?.(e);
   };
 
   return (
-    <StyledRadioButtonWrapper data-testid={testId}>
+    <StyledRadioButtonWrapper data-testid={testId} disabled={disabled}>
       <StyledRadioButton isChecked={isChecked}>
         <StyledRadioButtonInner />
       </StyledRadioButton>

@@ -10,4 +10,5 @@ export interface Props
 
 export interface StyledProps {
   isChecked?: boolean;
+  disabled?: boolean;
 }

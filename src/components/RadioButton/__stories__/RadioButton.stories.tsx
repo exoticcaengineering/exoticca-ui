@@ -34,3 +34,9 @@ export const WithEndIcon: Story = {
     endIcon: <EnvelopeIcon />,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};
