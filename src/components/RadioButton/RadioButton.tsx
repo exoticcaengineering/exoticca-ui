@@ -15,6 +15,7 @@ export const RadioButton: FC<Props> = ({
   startIcon,
   endIcon,
   disabled,
+  id = 'radio-button',
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
   useEffect(() => {
@@ -28,14 +29,14 @@ export const RadioButton: FC<Props> = ({
 
   return (
     <StyledRadioButtonWrapper data-testid={testId} disabled={disabled}>
-      <StyledRadioButton isChecked={isChecked}>
+      <StyledRadioButton isChecked={isChecked} disabled={disabled}>
         <StyledRadioButtonInner />
       </StyledRadioButton>
       {!!startIcon && startIcon}
       <input
         type="radio"
         name="radio"
-        id="radio"
+        id={id}
         onChange={handleOnChange}
         hidden
       />

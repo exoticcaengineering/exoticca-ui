@@ -2,13 +2,12 @@ import styled from 'styled-components';
 import { StyledProps } from './RadioButton.types';
 
 export const StyledRadioButtonWrapper = styled.div<StyledProps>`
+  --disabled-color: ${({ theme }) => theme.palette.background.medium};
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(1)};
   color: ${({ theme, disabled }) =>
-    disabled
-      ? theme.palette.background.medium
-      : theme.palette.background.contrast};
+    disabled ? 'var(--disabled-color)' : theme.palette.background.contrast};
   pointer-events: ${({ disabled }) => (disabled ? 'none' : 'auto')};
 `;
 
@@ -21,10 +20,11 @@ export const StyledRadioButton = styled.div<StyledProps>`
   height: 30px;
   border: 1px solid currentColor;
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
-  background-color: ${({ theme, isChecked }) =>
-    isChecked
-      ? theme.palette.background.contrast
-      : theme.palette.background.main};
+  background-color: ${({ theme, isChecked, disabled }) => {
+    if (disabled) return 'var(--disabled-color)';
+    if (isChecked) return theme.palette.primary.main;
+    return theme.palette.background.main;
+  }};
 `;
 
 export const StyledRadioButtonInner = styled.span<StyledProps>`

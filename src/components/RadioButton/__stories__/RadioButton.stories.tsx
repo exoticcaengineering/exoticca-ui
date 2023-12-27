@@ -9,6 +9,12 @@ const meta: Meta<typeof RadioButton> = {
     label: 'Radio Button',
     testId: 'radio-button',
   },
+  argTypes: {
+    disabled: {
+      options: [true, false],
+      control: { type: 'radio' },
+    },
+  },
 };
 
 export default meta;
