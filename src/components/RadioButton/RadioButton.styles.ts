@@ -34,3 +34,10 @@ export const StyledRadioButtonInner = styled.span<StyledProps>`
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
   background-color: ${({ theme }) => theme.palette.background.main};
 `;
+
+export const StyledLabel = styled.label<StyledProps>`
+  cursor: pointer;
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(1)};
+  align-items: center;
+`;

@@ -1,6 +1,7 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useId, useState } from 'react';
 import { Props } from './RadioButton.types';
 import {
+  StyledLabel,
   StyledRadioButton,
   StyledRadioButtonInner,
   StyledRadioButtonWrapper,
@@ -15,8 +16,8 @@ export const RadioButton: FC<Props> = ({
   startIcon,
   endIcon,
   disabled,
-  id = 'radio-button',
 }) => {
+  const id = useId();
   const [isChecked, setIsChecked] = useState(checked);
   useEffect(() => {
     setIsChecked(checked);
@@ -29,21 +30,24 @@ export const RadioButton: FC<Props> = ({
 
   return (
     <StyledRadioButtonWrapper data-testid={testId} disabled={disabled}>
-      <StyledRadioButton isChecked={isChecked} disabled={disabled}>
-        <StyledRadioButtonInner />
-      </StyledRadioButton>
-      {!!startIcon && startIcon}
       <input
         type="radio"
-        name="radio"
+        name={id}
         id={id}
         onChange={handleOnChange}
         hidden
+        checked={isChecked}
       />
-      <label htmlFor="radio">
-        <TextBody1>{label}</TextBody1>{' '}
-      </label>
-      {!!endIcon && endIcon}
+      <StyledLabel htmlFor={id}>
+        <StyledRadioButton isChecked={isChecked} disabled={disabled}>
+          <StyledRadioButtonInner />
+        </StyledRadioButton>
+        {!!startIcon && startIcon}
+
+        <TextBody1>{label}</TextBody1>
+
+        {!!endIcon && endIcon}
+      </StyledLabel>
     </StyledRadioButtonWrapper>
   );
 };
