@@ -37,6 +37,7 @@ export const RadioButton: FC<Props> = ({
         onChange={handleOnChange}
         hidden
         checked={isChecked}
+        disabled={disabled}
       />
       <StyledLabel htmlFor={id}>
         <StyledRadioButton isChecked={isChecked} disabled={disabled}>
