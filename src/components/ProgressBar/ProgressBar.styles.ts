@@ -5,9 +5,12 @@ export const StyledProgressBarBcg = styled.div<StyledProps>`
   position: relative;
   background-color: ${({
     theme,
-    backgroundColor = 'background',
+    backgroundColor,
     backgroundColorShade = 'main',
-  }) => theme.palette[backgroundColor][backgroundColorShade]};
+  }) => {
+    if (!backgroundColor) return 'transparent';
+    return theme.palette[backgroundColor][backgroundColorShade];
+  }};
   height: ${({ height }) => (height ? `${height}px` : '4px')};
   width: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.xxl};
