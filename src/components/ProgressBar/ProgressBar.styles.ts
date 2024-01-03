@@ -1,14 +1,5 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { StyledProps } from './ProgressBar.types';
-
-const progress = ({ progressFrom = 0, progressTo = 100 }) => keyframes`
-   from {
-      width: ${`${progressFrom}%`};
-    }
-    to {
-      width: ${`${progressTo}%`};
-    }
-`;
 
 export const StyledProgressBarBcg = styled.div<StyledProps>`
   position: relative;
