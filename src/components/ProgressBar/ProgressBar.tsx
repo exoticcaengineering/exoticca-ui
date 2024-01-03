@@ -11,7 +11,7 @@ export const ProgressBar: FC<Props> = ({
   const [progress, setProgress] = useState(0);
   useEffect(() => {
     setProgress(value);
-  }, [progress]);
+  }, [value]);
   return (
     <StyledProgressBarBcg
       data-testid={testId}
