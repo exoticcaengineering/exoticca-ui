@@ -26,25 +26,15 @@ export const StyledProgressBarBcg = styled.div<StyledProps>`
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 100%;
+    margin-left: ${({ value = 0 }) => `calc(${value}% - 100%)`};
     background-color: ${({
       theme,
       progressColor = 'primary',
       progressColorShade = 'main',
     }) => theme.palette[progressColor][progressColorShade]};
-    animation: ${({
-      progressFrom = 0,
-      progressTo = 100,
-      duration = 40,
-      iterationCount = 'infinite',
-      timingFunction = 'ease',
-      fillMode = 'forwards',
-    }) => css`
-      ${progress({
-        progressFrom,
-        progressTo,
-      })} ${duration}s ${timingFunction} ${iterationCount} ${fillMode}
-    `};
+    transition: ${({ duration = 40, timingFunction = 'ease' }) =>
+      `margin-left ${duration}s ${timingFunction}`};
   }
 `;
