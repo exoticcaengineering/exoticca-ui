@@ -8,11 +8,9 @@ export interface Props extends ComponentPropsBase {
   progressColor?: keyof Palette;
   progressColorShade?: keyof ColorShade;
   duration?: number;
-  iterationCount?: CSS.Property.AnimationIterationCount;
   timingFunction?: CSS.Property.AnimationTimingFunction;
   fillMode?: CSS.Property.AnimationFillMode;
-  progressFrom?: number;
-  progressTo?: number;
+  value?: number;
   height?: number;
 }
 
@@ -24,10 +22,8 @@ export interface StyledProps
     | 'progressColor'
     | 'progressColorShade'
     | 'duration'
-    | 'iterationCount'
     | 'timingFunction'
     | 'fillMode'
-    | 'progressFrom'
-    | 'progressTo'
+    | 'value'
     | 'height'
   > {}

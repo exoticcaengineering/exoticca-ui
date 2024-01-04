@@ -26,6 +26,7 @@ export * from './CardCampaign';
 export * from './Flex';
 export * from './Banner';
 export * from './SvgIcons';
+export * from './RadioButton';
 
 export { IconProps } from './WithIconWrapper';
 

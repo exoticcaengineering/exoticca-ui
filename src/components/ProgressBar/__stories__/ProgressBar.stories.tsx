@@ -25,6 +25,7 @@ type Story = StoryObj<typeof ProgressBar>;
 
 export const Base: Story = {
   args: {
+    backgroundColor: 'primary',
     backgroundColorShade: 'light',
   },
 };
