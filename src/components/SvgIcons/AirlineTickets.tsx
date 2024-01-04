@@ -5,9 +5,9 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const ExclamationIcon = WithIconWrapper(
+export const AirlineTicketsIcon = WithIconWrapper(
   ({
-    title = 'exclamation-icon',
+    title = 'airline-tickets-icon',
     titleId,
     ...props
   }: SVGProps<SVGSVGElement> & SVGRProps) => (
@@ -16,25 +16,23 @@ export const ExclamationIcon = WithIconWrapper(
       width="1em"
       height="1em"
       fill="none"
-      viewBox="0 0 24 24"
+      viewBox="0 0 17 16"
       data-testid={title}
       aria-labelledby={titleId}
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
       <g
-        stroke="currentColor"
+        stroke="#121212"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={1.5}
+        strokeWidth={1.25}
       >
-        <path
-          d="M12 3a9 9 0 0 1 9 9v0a9 9 0 0 1-9 9v0a9 9 0 0 1-9-9v0a9 9 0 0 1 9-9"
-          clipRule="evenodd"
-        />
-        <path d="M12 12.5v-5M11.999 16a.25.25 0 1 0 .002.5A.25.25 0 0 0 12 16" />
+        <path d="M5.167 11.333H3.5c-.92 0-1.667-.746-1.667-1.666V4.333A1.667 1.667 0 0 1 3.5 2.667h7.333c.92 0 1.667.746 1.667 1.666v1" />
+        <rect width={10} height={8} x={5.167} y={5.333} rx={2.5} />
+        <path d="m8.167 9.999.593-.65-.593-.683M8.76 9.351l3.407-.018M9.5 7.499l1.333 1.833M9.5 11.166l1.333-1.834" />
       </g>
     </svg>
   ),
 );
-export default ExclamationIcon;
+export default AirlineTicketsIcon;

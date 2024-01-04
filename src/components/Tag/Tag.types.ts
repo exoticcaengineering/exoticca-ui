@@ -2,7 +2,7 @@ import { ColorShade, Palette } from 'src/types';
 import { ComponentPropsBase } from 'src/types/ComponentPropsBase';
 
 export type TagSize = 'small' | 'medium';
-export type TagVariant = 'primary' | 'secondary';
+export type TagVariant = 'primary' | 'secondary' | 'outlined';
 
 export interface Props extends ComponentPropsBase {
   size?: TagSize;
