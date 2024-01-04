@@ -27,12 +27,10 @@ export const UploadedItem = ({ name, size, onDeleteCB }: ItemProps) => {
       <ProgressBarContainer>
         <ProgressBar
           progressColor="success"
-          progressFrom={0}
-          progressTo={100}
+          value={100}
           duration={1}
           height={9}
           fillMode="forwards"
-          iterationCount=""
         />
       </ProgressBarContainer>
       <TrashIcon size="medium" onClick={onDeleteCB} />

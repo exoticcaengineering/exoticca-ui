@@ -1,22 +1,16 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { StyledProps } from './ProgressBar.types';
-
-const progress = ({ progressFrom = 0, progressTo = 100 }) => keyframes`
-   from {
-      width: ${`${progressFrom}%`};
-    }
-    to {
-      width: ${`${progressTo}%`};
-    }
-`;
 
 export const StyledProgressBarBcg = styled.div<StyledProps>`
   position: relative;
   background-color: ${({
     theme,
-    backgroundColor = 'background',
+    backgroundColor,
     backgroundColorShade = 'main',
-  }) => theme.palette[backgroundColor][backgroundColorShade]};
+  }) => {
+    if (!backgroundColor) return 'transparent';
+    return theme.palette[backgroundColor][backgroundColorShade];
+  }};
   height: ${({ height }) => (height ? `${height}px` : '4px')};
   width: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.xxl};
@@ -26,25 +20,15 @@ export const StyledProgressBarBcg = styled.div<StyledProps>`
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 100%;
+    margin-left: ${({ value = 0 }) => `calc(${value}% - 100%)`};
     background-color: ${({
       theme,
       progressColor = 'primary',
       progressColorShade = 'main',
     }) => theme.palette[progressColor][progressColorShade]};
-    animation: ${({
-      progressFrom = 0,
-      progressTo = 100,
-      duration = 40,
-      iterationCount = 'infinite',
-      timingFunction = 'ease',
-      fillMode = 'forwards',
-    }) => css`
-      ${progress({
-        progressFrom,
-        progressTo,
-      })} ${duration}s ${timingFunction} ${iterationCount} ${fillMode}
-    `};
+    transition: ${({ duration = 40, timingFunction = 'ease' }) =>
+      `margin-left ${duration}s ${timingFunction}`};
   }
 `;
