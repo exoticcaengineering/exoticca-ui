@@ -1,7 +1,8 @@
-import { Props as BoxProps } from 'src/components/Box/Box.types';
+import { BoxProps } from 'src/components/Box/Box.types';
+import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 import { Colors } from 'src/types/theme';
 
-export interface Props extends BoxProps {
+export interface Props extends ComponentPropsBaseWithChildren, BoxProps {
   topLineColor?: keyof Colors;
 }
 
