@@ -1,3 +1,4 @@
+export { default as TwentyFourHoursIcon } from './TwentyFourHours';
 export { default as AdventureIcon } from './Adventure';
 export { default as AffiliateStarIcon } from './AffiliateStar';
 export { default as AffirmIcon } from './Affirm';
