@@ -1,4 +1,4 @@
-export { Box } from './Box';
+export { Box, BoxProps } from './Box';
 export { Typography } from './Typography';
 export * from './TypographyVariants';
 export { Tag } from './Tag';
