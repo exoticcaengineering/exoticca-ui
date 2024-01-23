@@ -10,6 +10,7 @@ const meta: Meta<typeof RadioButton> = {
   args: {
     label: 'Radio Button',
     testId: 'radio-button',
+    value: 'radio-button-value',
   },
   argTypes: {
     disabled: {

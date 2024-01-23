@@ -16,6 +16,7 @@ export const RadioButton: FC<Props> = ({
   startIcon,
   endIcon,
   disabled,
+  value,
 }) => {
   const id = useId();
   const [isChecked, setIsChecked] = useState(checked);
@@ -38,6 +39,7 @@ export const RadioButton: FC<Props> = ({
         hidden
         checked={isChecked}
         disabled={disabled}
+        value={value}
       />
       <StyledLabel htmlFor={id}>
         <StyledRadioButton
