@@ -22,6 +22,7 @@ export { default as CardAmericanExpressIcon } from './CardAmericanExpress';
 export { default as CardMaestroIcon } from './CardMaestro';
 export { default as CardMasterIcon } from './CardMaster';
 export { default as CardVisaIcon } from './CardVisa';
+export { default as CbFranceIcon } from './CbFrance';
 export { default as CheckCircleIcon } from './CheckCircle';
 export { default as CheckIcon } from './Check';
 export { default as CircleFullIcon } from './CircleFull';
