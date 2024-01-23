@@ -43,9 +43,17 @@ export const WithEndIcon: Story = {
   },
 };
 
-export const Disabled: Story = {
+export const DisabledChecked: Story = {
   args: {
     disabled: true,
+    checked: true,
+  },
+};
+
+export const DisabledUnChecked: Story = {
+  args: {
+    disabled: true,
+    checked: false,
   },
 };
 

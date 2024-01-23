@@ -21,7 +21,8 @@ export const StyledRadioButton = styled.div<StyledProps>`
   border: 1px solid currentColor;
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
   background-color: ${({ theme, isChecked, disabled }) => {
-    if (disabled) return 'var(--disabled-color)';
+    if (disabled && isChecked) return 'var(--disabled-color)';
+    if (disabled) return theme.palette.background.main;
     if (isChecked) return theme.palette.primary.main;
     return theme.palette.background.main;
   }};

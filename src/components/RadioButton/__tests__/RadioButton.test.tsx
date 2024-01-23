@@ -4,8 +4,15 @@ import { composeStories } from '@storybook/react';
 import * as stories from '../__stories__/RadioButton.stories';
 import userEvent from '@testing-library/user-event';
 
-const { Base, Checked, WithStartIcon, WithEndIcon, Disabled, Group } =
-  composeStories(stories);
+const {
+  Base,
+  Checked,
+  WithStartIcon,
+  WithEndIcon,
+  DisabledChecked,
+  DisabledUnChecked,
+  Group,
+} = composeStories(stories);
 
 describe('RadioButton', () => {
   it('renders base RadioButton correctly', () => {
@@ -30,10 +37,30 @@ describe('RadioButton', () => {
     expect(icon).toBeInTheDocument();
   });
 
-  it('renders disabled RadioButton correctly', () => {
-    render(<Disabled />);
+  it('renders disabled checked RadioButton correctly', () => {
+    render(<DisabledChecked />);
     const radioButton = screen.getByLabelText('Radio Button');
     expect(radioButton).toBeDisabled();
+    const radioButtonCircle = screen.getByTestId('radio-button-circle');
+    expect(radioButtonCircle).toHaveStyle(
+      'background-color: var(--disabled-color)',
+    );
+    const radioButtonCircleInner = screen.getByTestId(
+      'radio-button-circle-inner',
+    );
+    expect(radioButtonCircleInner).toHaveStyle('background-color: #ffffff');
+  });
+
+  it('renders Disabled unChecked RadioButton correctly', () => {
+    render(<DisabledUnChecked />);
+    const radioButton = screen.getByLabelText('Radio Button');
+    expect(radioButton).toBeDisabled();
+    const radioButtonCircle = screen.getByTestId('radio-button-circle');
+    expect(radioButtonCircle).toHaveStyle('background-color: #ffffff');
+    const radioButtonCircleInner = screen.getByTestId(
+      'radio-button-circle-inner',
+    );
+    expect(radioButtonCircleInner).toHaveStyle('background-color: #ffffff');
   });
 
   it('renders RadioButton group correctly', async () => {
