@@ -40,8 +40,12 @@ export const RadioButton: FC<Props> = ({
         disabled={disabled}
       />
       <StyledLabel htmlFor={id}>
-        <StyledRadioButton isChecked={isChecked} disabled={disabled}>
-          <StyledRadioButtonInner />
+        <StyledRadioButton
+          isChecked={isChecked}
+          disabled={disabled}
+          data-testid="radio-button-circle"
+        >
+          <StyledRadioButtonInner data-testid="radio-button-circle-inner" />
         </StyledRadioButton>
         {!!startIcon && startIcon}
 
