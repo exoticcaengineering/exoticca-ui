@@ -27,6 +27,7 @@ export * from './Flex';
 export * from './Banner';
 export * from './SvgIcons';
 export * from './RadioButton';
+export * from './Tooltip';
 
 export { IconProps } from './WithIconWrapper';
 
