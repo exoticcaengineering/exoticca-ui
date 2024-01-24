@@ -19,6 +19,7 @@ export { default as BookingsIcon } from './Bookings';
 export { default as CalendarCrossIcon } from './CalendarCross';
 export { default as CalendarIcon } from './Calendar';
 export { default as CardAmericanExpressIcon } from './CardAmericanExpress';
+export { default as CardBackSideIcon } from './CardBackSide';
 export { default as CardMaestroIcon } from './CardMaestro';
 export { default as CardMasterIcon } from './CardMaster';
 export { default as CardVisaIcon } from './CardVisa';
