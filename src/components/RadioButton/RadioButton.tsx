@@ -50,7 +50,7 @@ export const RadioButton: FC<Props> = ({
         >
           <StyledRadioButtonInner data-testid="radio-button-circle-inner" />
         </StyledRadioButton>
-        <Flex gap={1} flexWrap="wrap">
+        <Flex gap={1} flexWrap="wrap" alignItems="center">
           {!!startIcon && startIcon}
 
           <TextBody1>{label}</TextBody1>
