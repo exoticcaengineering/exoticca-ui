@@ -17,8 +17,8 @@ export const StyledRadioButton = styled.div<StyledProps>`
   justify-content: center;
   flex-shrink: 0;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border: 1px solid currentColor;
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
   background-color: ${({ theme, isChecked, disabled }) => {

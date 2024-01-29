@@ -7,6 +7,7 @@ import {
   StyledRadioButtonWrapper,
 } from './RadioButton.styles';
 import { TextBody1 } from '../TypographyVariants';
+import { Flex } from '../Flex';
 
 export const RadioButton: FC<Props> = ({
   testId,
@@ -49,11 +50,13 @@ export const RadioButton: FC<Props> = ({
         >
           <StyledRadioButtonInner data-testid="radio-button-circle-inner" />
         </StyledRadioButton>
-        {!!startIcon && startIcon}
+        <Flex gap={1} flexWrap="wrap">
+          {!!startIcon && startIcon}
 
-        <TextBody1>{label}</TextBody1>
+          <TextBody1>{label}</TextBody1>
 
-        {!!endIcon && endIcon}
+          {!!endIcon && endIcon}
+        </Flex>
       </StyledLabel>
     </StyledRadioButtonWrapper>
   );
