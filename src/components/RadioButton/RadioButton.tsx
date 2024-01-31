@@ -5,6 +5,7 @@ import {
   StyledRadioButton,
   StyledRadioButtonInner,
   StyledRadioButtonWrapper,
+  StyledTextIconWrapper,
 } from './RadioButton.styles';
 import { TextBody1 } from '../TypographyVariants';
 import { Flex } from '../Flex';
@@ -50,13 +51,13 @@ export const RadioButton: FC<Props> = ({
         >
           <StyledRadioButtonInner data-testid="radio-button-circle-inner" />
         </StyledRadioButton>
-        <Flex gap={1} flexWrap="wrap" alignItems="center">
+        <StyledTextIconWrapper>
           {!!startIcon && startIcon}
 
           <TextBody1>{label}</TextBody1>
 
           {!!endIcon && endIcon}
-        </Flex>
+        </StyledTextIconWrapper>
       </StyledLabel>
     </StyledRadioButtonWrapper>
   );

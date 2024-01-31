@@ -43,3 +43,11 @@ export const StyledLabel = styled.label<StyledProps>`
   gap: ${({ theme }) => theme.spacing(1)};
   align-items: center;
 `;
+
+export const StyledTextIconWrapper = styled.div`
+  color: currentColor;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing(0.5)};
+`;
