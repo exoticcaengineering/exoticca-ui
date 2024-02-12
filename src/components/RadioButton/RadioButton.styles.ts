@@ -15,13 +15,15 @@ export const StyledRadioButton = styled.div<StyledProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border: 1px solid currentColor;
   border-radius: ${({ theme }) => theme.newBorderRadius.rounded};
   background-color: ${({ theme, isChecked, disabled }) => {
-    if (disabled) return 'var(--disabled-color)';
+    if (disabled && isChecked) return 'var(--disabled-color)';
+    if (disabled) return theme.palette.background.main;
     if (isChecked) return theme.palette.primary.main;
     return theme.palette.background.main;
   }};
@@ -40,4 +42,12 @@ export const StyledLabel = styled.label<StyledProps>`
   display: flex;
   gap: ${({ theme }) => theme.spacing(1)};
   align-items: center;
+`;
+
+export const StyledTextIconWrapper = styled.div`
+  color: currentColor;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing(0.5)};
 `;

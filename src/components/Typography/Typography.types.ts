@@ -19,7 +19,6 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   printSize?: keyof PrintSize;
   align?: CSS.Property.TextAlign;
   gutterBottom?: number;
-  as?: keyof JSX.IntrinsicElements;
   color?: keyof Palette;
   colorShade?: keyof ColorShade;
   fontWeight?: keyof FontWeight;

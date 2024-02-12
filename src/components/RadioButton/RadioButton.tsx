@@ -5,8 +5,10 @@ import {
   StyledRadioButton,
   StyledRadioButtonInner,
   StyledRadioButtonWrapper,
+  StyledTextIconWrapper,
 } from './RadioButton.styles';
 import { TextBody1 } from '../TypographyVariants';
+import { Flex } from '../Flex';
 
 export const RadioButton: FC<Props> = ({
   testId,
@@ -16,6 +18,7 @@ export const RadioButton: FC<Props> = ({
   startIcon,
   endIcon,
   disabled,
+  value,
 }) => {
   const id = useId();
   const [isChecked, setIsChecked] = useState(checked);
@@ -38,16 +41,23 @@ export const RadioButton: FC<Props> = ({
         hidden
         checked={isChecked}
         disabled={disabled}
+        value={value}
       />
       <StyledLabel htmlFor={id}>
-        <StyledRadioButton isChecked={isChecked} disabled={disabled}>
-          <StyledRadioButtonInner />
+        <StyledRadioButton
+          isChecked={isChecked}
+          disabled={disabled}
+          data-testid="radio-button-circle"
+        >
+          <StyledRadioButtonInner data-testid="radio-button-circle-inner" />
         </StyledRadioButton>
-        {!!startIcon && startIcon}
+        <StyledTextIconWrapper>
+          {!!startIcon && startIcon}
 
-        <TextBody1>{label}</TextBody1>
+          <TextBody1>{label}</TextBody1>
 
-        {!!endIcon && endIcon}
+          {!!endIcon && endIcon}
+        </StyledTextIconWrapper>
       </StyledLabel>
     </StyledRadioButtonWrapper>
   );

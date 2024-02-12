@@ -1,12 +1,13 @@
 import { ColorShade, Palette } from 'src/types';
-import { Props as BoxProps } from 'src/components/Box/Box.types';
+import { BoxProps } from 'src/components/Box/Box.types';
+import { ComponentPropsBaseWithChildren } from 'src/types/ComponentPropsBase';
 
 interface HightLightConfig {
   highlightColor?: keyof Palette;
   highlightColorShade?: keyof ColorShade;
   highlightText?: string;
 }
-export interface Props extends BoxProps {
+export interface Props extends ComponentPropsBaseWithChildren, BoxProps {
   isSelected?: boolean;
   highlightConfig?: HightLightConfig;
 }

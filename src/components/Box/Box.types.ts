@@ -1,7 +1,8 @@
 import { ComponentPropsBaseWithOptionalChildren } from 'src/types/ComponentPropsBase';
 import { BorderRadius, BoxShadow, ColorShade, Palette } from 'src/types/theme';
 import * as CSS from 'csstype';
-export interface Props extends ComponentPropsBaseWithOptionalChildren {
+
+export interface BoxProps {
   background?: keyof Palette;
   backgroundShade?: keyof ColorShade;
   borderRadius?: keyof BorderRadius | Array<keyof BorderRadius>;
@@ -13,8 +14,10 @@ export interface Props extends ComponentPropsBaseWithOptionalChildren {
   boxShadow?: keyof BoxShadow;
   padding?: number | number[];
   onClick?: () => void;
-  as?: keyof JSX.IntrinsicElements;
 }
+export interface Props
+  extends ComponentPropsBaseWithOptionalChildren,
+    BoxProps {}
 
 export interface StyleProps
   extends Pick<

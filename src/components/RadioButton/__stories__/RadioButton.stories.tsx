@@ -10,6 +10,7 @@ const meta: Meta<typeof RadioButton> = {
   args: {
     label: 'Radio Button',
     testId: 'radio-button',
+    value: 'radio-button-value',
   },
   argTypes: {
     disabled: {
@@ -43,9 +44,17 @@ export const WithEndIcon: Story = {
   },
 };
 
-export const Disabled: Story = {
+export const DisabledChecked: Story = {
   args: {
     disabled: true,
+    checked: true,
+  },
+};
+
+export const DisabledUnChecked: Story = {
+  args: {
+    disabled: true,
+    checked: false,
   },
 };
 

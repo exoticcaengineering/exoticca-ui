@@ -1,4 +1,4 @@
-export { Box } from './Box';
+export { Box, BoxProps } from './Box';
 export { Typography } from './Typography';
 export * from './TypographyVariants';
 export { Tag } from './Tag';
@@ -27,6 +27,7 @@ export * from './Flex';
 export * from './Banner';
 export * from './SvgIcons';
 export * from './RadioButton';
+export * from './Tooltip';
 
 export { IconProps } from './WithIconWrapper';
 
