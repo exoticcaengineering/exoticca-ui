@@ -1,6 +1,6 @@
 {
   "name": "@exoticcaengineering/exoticca-ui",
-  "version": "0.5.17",
+  "version": "0.5.18",
   "author": "exoticcaengineering",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
