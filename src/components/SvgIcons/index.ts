@@ -117,6 +117,7 @@ export { default as Star5Icon } from './Star5';
 export { default as StarIcon } from './Star';
 export { default as StripeIcon } from './Stripe';
 export { default as SubscriptionsIcon } from './Subscriptions';
+export { default as SuccessIcon } from './Success';
 export { default as SummerIcon } from './Summer';
 export { default as SyringeIcon } from './Syringe';
 export { default as TagIcon } from './Tag';
