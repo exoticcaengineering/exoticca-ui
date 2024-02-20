@@ -5,18 +5,18 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-export const DocumentTextIcon = WithIconWrapper(
+export const MapPinCheckIcon = WithIconWrapper(
   ({
-    title = 'document-text-icon',
+    title = 'map-pin-check-icon',
     titleId,
     ...props
   }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
       width="1em"
       height="1em"
+      fill="none"
+      viewBox="0 0 16 16"
       data-testid={title}
       aria-labelledby={titleId}
       {...props}
@@ -28,10 +28,13 @@ export const DocumentTextIcon = WithIconWrapper(
         strokeLinejoin="round"
         strokeWidth={1.5}
       >
-        <rect width={16} height={18} x={4} y={3} rx={2} />
-        <path d="M11 8H8M8 12h8M16 16H8" />
+        <path
+          d="M11.518 4.015a4.975 4.975 0 0 1 0 7.035L8.829 13.74c-.458.458-1.2.458-1.658 0L4.482 11.05a4.975 4.975 0 1 1 7.036-7.035z"
+          clipRule="evenodd"
+        />
+        <path d="M9.64 6.822 7.69 8.77l-.948-.944" />
       </g>
     </svg>
   ),
 );
-export default DocumentTextIcon;
+export default MapPinCheckIcon;
