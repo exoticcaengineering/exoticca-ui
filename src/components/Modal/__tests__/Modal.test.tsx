@@ -45,6 +45,15 @@ describe('Modal', () => {
     expect(body).not.toHaveClass('disableScroll');
   });
 
+  it('Modal should have close button with white background when has header', async () => {
+    render(<WithHeader />);
+    const user = userEvent.setup();
+    const trigger = screen.getByRole('button');
+    await user.click(trigger);
+    const closeButton = screen.queryByTestId('modal-close-button');
+    expect(closeButton).toHaveStyle('background-color: rgb(255, 255, 255);');
+  });
+
   it('When open modal, body should have disableScroll class', async () => {
     render(<Basic />);
     const user = userEvent.setup();

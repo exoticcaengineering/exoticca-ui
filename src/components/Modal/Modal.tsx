@@ -148,7 +148,8 @@ export const Modal = forwardRef<ModalRef, Props>(
             <StyledCloseBtnWrapper>
               <IconButton
                 icon={<CloseIcon />}
-                variant="secondary"
+                variant={hasHeader ? 'primary' : 'secondary'}
+                color={hasHeader ? 'secondary' : 'primary'}
                 size="small"
                 onClick={handleCloseModal}
                 testId="modal-close-button"
