@@ -1,0 +1,9 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group">
+<path id="Path" d="M8 11V9C7.99985 8.46952 8.21052 7.96073 8.58563 7.58563C8.96073 7.21052 9.46952 6.99985 10 7H19C19.5305 6.99985 20.0393 7.21052 20.4144 7.58563C20.7895 7.96073 21.0001 8.46952 21 9V18C21.0001 18.5305 20.7895 19.0393 20.4144 19.4144C20.0393 19.7895 19.5305 20.0001 19 20H14" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_2" d="M18 21V20" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_3" d="M18 7V4C18.0001 3.46952 17.7895 2.96073 17.4144 2.58563C17.0393 2.21052 16.5305 1.99985 16 2H13C12.4695 1.99985 11.9607 2.21052 11.5856 2.58563C11.2105 2.96073 10.9999 3.46952 11 4V7" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_4" d="M6.025 14.3V12.1C6.025 11.4925 6.51749 11 7.125 11H9.875C10.4825 11 10.975 11.4925 10.975 12.1V14.3" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect id="Rectangle" x="3" y="14.3" width="11" height="7.7" rx="1.65" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

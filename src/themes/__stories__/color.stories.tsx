@@ -47,13 +47,28 @@ const ColorPalette: FC<ColorPaletteProps> = ({ colors }) => {
             />
             <ColorBlock
               colorName={colorName}
+              colorShade="extraLight"
+              colorValue={colors[colorName].extraLight}
+            />
+            <ColorBlock
+              colorName={colorName}
               colorShade="light"
               colorValue={colors[colorName].light}
             />
             <ColorBlock
               colorName={colorName}
+              colorShade="lighter"
+              colorValue={colors[colorName].lighter}
+            />
+            <ColorBlock
+              colorName={colorName}
               colorShade="medium"
               colorValue={colors[colorName].medium}
+            />
+            <ColorBlock
+              colorName={colorName}
+              colorShade="dark"
+              colorValue={colors[colorName].dark}
             />
             <ColorBlock
               colorName={colorName}
