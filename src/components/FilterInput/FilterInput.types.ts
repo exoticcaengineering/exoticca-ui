@@ -7,6 +7,7 @@ export interface InputListProps {
 
 export interface Props extends InputProps, ComponentPropsBase {
   inputList: (props: InputListProps) => JSX.Element[] | JSX.Element;
+  disableWriting?: boolean;
 }
 
 export interface StyleProps {

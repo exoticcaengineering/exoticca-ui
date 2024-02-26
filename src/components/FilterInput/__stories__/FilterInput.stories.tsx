@@ -14,6 +14,11 @@ const meta: Meta<typeof FilterInput> = {
       control: { type: 'select' },
       category: 'Prop',
     },
+    labelPosition: {
+      options: ['inside', 'outside'],
+      control: { type: 'select' },
+      category: 'Prop',
+    },
   },
 };
 
