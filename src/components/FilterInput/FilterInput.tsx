@@ -12,6 +12,8 @@ export const FilterInput: FC<Props> = ({
   inputList,
   onClick,
   testId = 'filter-input',
+  labelPosition = 'inside',
+  disableWriting = false,
   ...inputProps
 }) => {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
@@ -31,7 +33,8 @@ export const FilterInput: FC<Props> = ({
         onClick={handleClick}
         testId={testId}
         {...inputProps}
-        labelPosition="inside"
+        readOnly={disableWriting}
+        labelPosition={labelPosition}
       />
       {dropdownIsOpen && (
         <StyledDropDown>
