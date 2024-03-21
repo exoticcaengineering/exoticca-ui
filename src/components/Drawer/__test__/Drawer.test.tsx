@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
 import userEvent from '@testing-library/user-event';
 
-const { Base } = composeStories(stories);
+const { Base, WithCustomTrigger } = composeStories(stories);
 
 describe('Drawer', () => {
   it('should open when click in button', async () => {
@@ -36,5 +36,31 @@ describe('Drawer', () => {
     const content = await screen.findByText(/Drawer contents/i);
 
     expect(content).toBeInTheDocument();
+  });
+
+  it('should render custom trigger', async () => {
+    render(<WithCustomTrigger />);
+
+    const button = screen.getByText(/Open Drawer/i);
+
+    await userEvent.click(button);
+
+    const customTrigger = screen.getByText(/Close/);
+
+    expect(customTrigger).toBeInTheDocument();
+  });
+
+  it('should close drawer if click on custom trigger', async () => {
+    render(<WithCustomTrigger />);
+
+    const button = screen.getByText(/Open Drawer/i);
+
+    await userEvent.click(button);
+
+    const customTrigger = screen.getByText(/Close/);
+
+    await userEvent.click(customTrigger);
+
+    expect(customTrigger).not.toBeInTheDocument();
   });
 });
