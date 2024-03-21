@@ -23,10 +23,13 @@ export const Drawer = forwardRef<DrawerRef, Props>(
       onOpen,
       onClose,
       isOpenOnLoad,
+      CustomTrigger,
     }: Props,
     ref,
   ) => {
     const [open, setOpen] = useState(isOpenOnLoad ?? false);
+
+    const hasCustomTrigger = !!CustomTrigger;
 
     useEffect(() => {
       setOpen(!!isOpenOnLoad);
@@ -57,13 +60,17 @@ export const Drawer = forwardRef<DrawerRef, Props>(
           {open && (
             <>
               <StyledIconWrapper>
-                <IconButton
-                  icon={<CloseIcon />}
-                  color="primary"
-                  size="medium"
-                  onClick={handleClose}
-                  variant="tertiary"
-                />
+                {hasCustomTrigger ? (
+                  <CustomTrigger onClick={handleClose} />
+                ) : (
+                  <IconButton
+                    icon={<CloseIcon />}
+                    color="primary"
+                    size="medium"
+                    onClick={handleClose}
+                    variant="tertiary"
+                  />
+                )}
               </StyledIconWrapper>
 
               <StyledContentWrapper

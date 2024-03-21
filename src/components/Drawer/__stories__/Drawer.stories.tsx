@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { ComponentProps, useRef } from 'react';
 import { Drawer } from '../Drawer';
-import { DrawerRef, Props } from '../Drawer.types';
+import { CustomTriggerProps, DrawerRef, Props } from '../Drawer.types';
+import { Button } from 'src/components/Button';
 
 const meta: Meta<typeof Drawer> = {
   title: 'Components/Drawer',
@@ -70,5 +71,16 @@ const Default = ({ openHeight = 50, ...args }: Props) => {
   );
 };
 export const Base: Story = {
+  render: (args) => <Default {...args} />,
+};
+
+const CustomTrigger = ({ onClick }: CustomTriggerProps) => (
+  <Button onClick={onClick} text="Close" size="small" />
+);
+
+export const WithCustomTrigger: Story = {
+  args: {
+    CustomTrigger: CustomTrigger,
+  },
   render: (args) => <Default {...args} />,
 };
