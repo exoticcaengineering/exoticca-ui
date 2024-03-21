@@ -23,7 +23,7 @@ export const FullScreenIcon = WithIconWrapper(
     >
       {title ? <title id={titleId}>{title}</title> : null}
       <path
-        stroke="#fff"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}

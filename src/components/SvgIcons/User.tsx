@@ -13,10 +13,10 @@ export const UserIcon = WithIconWrapper(
   }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 14 14"
       width="1em"
       height="1em"
+      fill="none"
+      viewBox="0 0 19 18"
       data-testid={title}
       aria-labelledby={titleId}
       {...props}
@@ -26,17 +26,15 @@ export const UserIcon = WithIconWrapper(
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={1.5}
-        d="M11.667 11.667v-.438A2.48 2.48 0 0 0 9.188 8.75H4.813a2.48 2.48 0 0 0-2.479 2.48v.437"
+        d="M15.5 15v-.562a3.188 3.188 0 0 0-3.187-3.188H6.687A3.188 3.188 0 0 0 3.5 14.438V15"
       />
       <circle
-        cx={6.999}
-        cy={4.083}
-        r={2.333}
+        cx={9.5}
+        cy={5.25}
+        r={3}
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={1.5}
       />
     </svg>
   ),
