@@ -1,23 +1,4 @@
-  <svg
-    viewBox="0 0 14 14"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M11.6673 11.6667V11.2292C11.6673 9.85996 10.5574 8.75 9.18815 8.75H4.81315C3.44395 8.75 2.33398 9.85996 2.33398 11.2292V11.6667"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <circle
-      cx="6.99935"
-      cy="4.08333"
-      r="2.33333"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-
+<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5 15V14.4375C15.5 12.6771 14.0729 11.25 12.3125 11.25H6.6875C4.92709 11.25 3.5 12.6771 3.5 14.4375V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="9.5" cy="5.25" r="3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
