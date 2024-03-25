@@ -12,6 +12,7 @@ export { default as ArrowDownCircleIcon } from './ArrowDownCircle';
 export { default as ArrowSimpleIcon } from './ArrowSimple';
 export { default as ArrowSquareIcon } from './ArrowSquare';
 export { default as ArrowIcon } from './Arrow';
+export { default as ArrowsIcon } from './Arrows';
 export { default as BankTransferIcon } from './BankTransfer';
 export { default as BeachIcon } from './Beach';
 export { default as BlogIcon } from './Blog';
