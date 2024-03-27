@@ -28,7 +28,7 @@ export const SelectableBox: FC<Props> = ({
 
   const getBorderShade = () => {
     if (isSelected) return 'main';
-    return 'light';
+    return 'medium';
   };
 
   const isClickable = !!boxProps.onClick;
@@ -38,7 +38,7 @@ export const SelectableBox: FC<Props> = ({
       <StyledBox
         borderColor="primary"
         borderColorShade={getBorderShade()}
-        borderWidth={1}
+        borderWidth={isSelected ? 2 : 1}
         padding={[2]}
         isClickable={isClickable}
         isSelected={isSelected}
