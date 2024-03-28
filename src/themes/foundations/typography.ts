@@ -1,0 +1,50 @@
+const typography = {
+  fontFamily: {
+    default: 'Oakes Grotesk, sans-serif',
+  },
+  fontWeight: {
+    regular: 400,
+    semibold: 600,
+  },
+  fontSize: {
+    display1: '64px',
+    display2: '48px',
+    display3: '32px',
+    display4: '24px',
+    display5: '20px',
+    text1: '16px',
+    text2: '14px',
+    text3: '12px',
+    text4: '10px',
+    text5: '8px',
+  },
+  lineHeight: {
+    display1: '80px',
+    display2: '48px',
+    display3: '40px',
+    display4: '30px',
+    display5: '25px',
+    text1: '24px',
+    text2: '21px',
+    text3: '18px',
+    text4: '15px',
+    text5: '12px',
+    text1Reduced: '20px',
+    text2Reduced: '17.5px',
+    text3Reduced: '15px',
+  },
+  letterSpacing: {
+    display1: '-0.02em',
+    display2: '-0.015em',
+    display3: '-0.01em',
+    display4: '-0.005em',
+    display5: '0em',
+    text1: '0em',
+    text2: '0em',
+    text3: '0em',
+    text4: '0em',
+    text5: '0em',
+  },
+};
+
+export default typography;
